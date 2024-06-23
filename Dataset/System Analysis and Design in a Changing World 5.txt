@@ -1,0 +1,110 @@
+﻿1. Apply the rules of normalization to the class diagram 
+to check the diagram for processing effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+J. For the A Video Store problem in Chapter 4 (exercises 
+L, M, and N), Chapter 5 (exercises R and S), Chapter 
+6 (exercise E), Chapter 7 (exercise B), and Chapter 8 
+(exercise B):
+ 1. Apply the rules of normalization to the class 
+ diagram to check the diagram for processing 
+ effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+K. For the gym membership problem in Chapter 4 (exer cises O, P, and Q), Chapter 5 (exercises T and U), 
+Chapter 6 (exercise F), Chapter 7 (exercise C), and 
+Chapter 8 (exercise C):
+ 1. Apply the rules of normalization to the class 
+ diagram to check the diagram for processing 
+ effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+L. For the Picnics R Us problem in Chapter 4 (exercises 
+R, S, and T), Chapter 5 (exercises V and W), Chapter 
+6 (exercise G), Chapter 7 (exercise D), and Chapter 8 
+(exercise D):
+ 1. Apply the rules of normalization to the class diagram 
+to check the diagram for processing effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+M. For the Of-the-Month-Club problem in Chapter 4 
+(exercises U, V, and W), Chapter 5 (exercises X and 
+Y), Chapter 6 (exercise H), Chapter 7 (exercise E), and 
+Chapter 8 (exercise E):
+ 1. Apply the rules of normalization to the class dia gram to check the diagram for processing effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+MINICASES
+1. Th e system development team at the Wilcon Company 
+is working on developing a new customer order entry 
+system. In the process of designing the new system, the 
+team has identifi ed the following class and its attributes:
+ Inventory Order
+ Order Number (PK)
+ Order Date
+ Customer Name
+ Street Address
+ City
+ State
+ Zip
+ Customer Type
+ Initials
+ District Number
+ Region Number
+ 1 to 22 occurrences of:
+ Item Name
+ Quantity Ordered
+ Item Unit
+ Quantity Shipped
+ Item Out
+ Quantity Received
+ a. State the rule that is applied to place a class in fi rst 
+normal form. Based on the above class, create a 
+class diagram that will be in 1NF.
+ b. State the rule that is applied to place a class into 
+second normal form. Revise the class diagram for 
+the Wilcon Company using the class and attributes 
+described (if necessary) to place it in 2NF.
+ c. State the rule that is applied to place a class into 
+third normal form. Revise the class diagram to 
+place it in 3NF.
+ d. When planning for the physical design of this data base, can you identify any likely situations where 
+the project team might choose to denormalize the 
+366 Chapter 9 Data Management Layer Design
+class diagram? Aft er going through the work of 
+normalizing, why would this be considered?
+2. In the new system under development for Holiday 
+Travel Vehicles, seven tables will be implemented in 
+the new relational database. Th ese tables are: New 
+Vehicle, Trade-in Vehicle, Sales Invoice, Customer, 
+Salesperson, Installed Option, and Option. Th e 
+expected average record size for these tables and the 
+initial record count per table are given here.
+Average Initial Table 
+Table Name Record Size Size (records)
+New Vehicle 65 characters 10,000
+Trade-in Vehicle 48 characters 7,500
+Sales Invoice 76 characters 16,000
+Customer 61 characters 13,000
+Salesperson 34 characters 100
+Installed Option 16 characters 25,000
+Option 28 characters 500
+ Perform a volumetrics analysis for the Holiday 
+Travel Vehicle system. Assume that the DBMS that 
+will be used to implement the system requires 35 per cent overhead to be factored into the estimates. Also, 
+assume a growth rate for the company of 10 percent 
+per year. Th e systems development team wants to 
+ensure that adequate hardware is obtained for the next 
+three years.
+3. Refer to the Professional and Scientifi c Staff Manage ment (PSSM) minicase in Chapters 4, 6, 7, and 8.
+ a. Apply the rules of normalization to the class 
+diagram to check the diagram for processing 
+effi ciency.
+ b. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database

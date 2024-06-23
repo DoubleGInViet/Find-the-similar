@@ -1,0 +1,526 @@
+﻿This chapter primarily describes the project management workfl ow of the Unifi ed Process. 
+Th e fi rst step in the process is to identify a project that will deliver value to the business 
+and to create a system request that provides basic information about the proposed system. 
+Second, the analysts perform a feasibility analysis to determine the technical, economic, and 
+organizational feasibility of the system; if appropriate, the system is selected and the development project begins. Th ird, the project manager estimates the functionality of the project and 
+identifi es the tasks that need to be performed. Fourth, the manager staff s the project. Finally, 
+the manager identifi es the tools, standards, and process to be used; identifi es opportunities for 
+reuse; determines how the current project fi ts into the portfolio of projects currently under 
+development; and identifi es opportunities to update the overall structure of the fi rm’s portfolio of systems current in use.
+OBJECTIVES
+■ Understand the importance of linking the information system to business needs.
+■ Be able to create a system request.
+■ Understand how to assess technical, economic, and organizational feasibility.
+■ Be able to perform a feasibility analysis.
+■ Understand how projects are selected in some organizations.
+■ Become familiar with work breakdown structures, Gantt charts, and network diagrams.
+■ Become familiar with use-case–driven eff ort estimation.
+■ Be able to create an iterative project workplan.
+■ Understand how to manage the scope, refi ne the estimates, and manage the risk 
+of a project.
+■ Become familiar with how to staff a project.
+■ Understand how the environment and infrastructure workfl ows interact with 
+the project management workfl ow.
+INTRODUCTION
+Most projects occurring in people’s lives, such as weddings or graduation celebrations, 
+require planning and management. Months are spent in advance identifying and performing all the tasks that need to get done, such as sending out invitations and selecting a 
+menu, and time and money are carefully allocated among them. Along the way, decisions 
+are recorded, problems are addressed, and changes are made. Th e increasing popularity of 
+the party planner, a person whose sole job is to coordinate a party, suggests how tough this 
+job can be. In the end, the success of any party has a lot to do with the eff ort that went into 
+planning along the way. System development projects can be much more complicated than 
+the projects we encounter in our personal lives—usually, more people are involved (e.g., the 
+41
+CHAPTER 2
+Project Management
+42 Chapter 2 Project Management
+organization), the costs are higher, and more tasks need to be completed. Owing to the 
+complexity of soft ware and soft ware development, it is virtually impossible to “know” all of 
+the possible things that could happen during system development projects. Th erefore, it is 
+not surprising that “party planners” exist for information systems projects: Th ey are called 
+project managers.
+Project management is the process of planning and controlling the development of a 
+system within a specifi ed time frame at a minimum cost with the right functionality.1 In 
+general, a project is a set of activities with a starting point and an ending point meant to 
+create a system that brings value to the business. A project manager has the primary responsibility for managing the hundreds of tasks and roles that need to be carefully coordinated. 
+Today, project management is an actual profession, and analysts spend years working on 
+projects before tackling the management of them. However, in many cases, unreasonable 
+demands set by project sponsors and business managers can make project management very 
+diffi cult. Too oft en, the approach of the holiday season, the chance at winning a proposal 
+with a low bid, or a funding opportunity pressures project managers to promise systems 
+long before they are able to deliver them. Th ese overly optimistic timetables are thought to 
+be one of the biggest problems that projects face; instead of pushing a project forward faster, 
+they result in delays. Another source is the changing nature of information technology. An 
+innovation in information technology may look so attractive that organizations embrace 
+projects using this technology without assessing whether the technology adds value to the 
+organization; instead the technology itself seems important in its own right. Problems can 
+usually be traced back to the very beginning of the development of the system, where too 
+little attention was given to identifying the business value and understanding the risks associated with the project.
+During the inception phase of the Unifi ed Process of a new systems development project, someone—a manager, staff member, sales representative, or systems analyst—typically 
+identifi es some business value that can be gained from using information technology. New 
+systems development projects should start from a business need or opportunity. Many ideas 
+for new systems or improvements to existing ones arise from the application of a new technology, but an understanding of technology is usually secondary to a solid understanding of 
+the business and its objectives. Th is does not mean that technical people should not recommend new systems projects. In fact, the ideal situation is for both IT people (i.e., the experts 
+in systems) and business people (i.e., the experts in business) to work closely to fi nd ways for 
+technology to support business needs. In this way, organizations can leverage the exciting 
+innovative technologies that are available while ensuring that projects are based upon real 
+business objectives, such as increasing sales, improving customer service, and decreasing 
+operating expenses. Ultimately, information systems need to aff ect the organization’s bottom line (in a positive way!). To ensure that a real business need is being addressed, the 
+aff ected business organization (called the project sponsor), proposes the new systems development project using a system request. Th e system request eff ectively kicks off the inception 
+1 For a very good comprehensive description of project management for information systems, see R.K. Wysocki, 
+Eff ective Project Management: Traditional, Agile, Extreme, 5th Ed. (Indianapolis, IN: Wiley Publishing, 2009). 
+Also, the Project Management Institute (www.pmi.org) and the Information Systems Community of Practice 
+of the Project Management Institute (is.vc.pmi.org) have valuable resources on information systems project management. Finally, the following are good books on project management for object-oriented projects: 
+G. Booch, Object Solutions: Managing the Object-Oriented Project (Menlo Park, CA: Addison-Wesley, 1996); M. 
+R. Cantor, Object-Oriented Project Management with UML (New York: Wiley, 1998); A. Cockburn, Surviving 
+Object-Oriented Projects: A Manager’s Guide (Reading, MA: Addison-Wesley, 1998); I. Jacobson, G. Booch, and J. 
+Rumbaugh, Th e Unifi ed Soft ware Development Process (Reading, MA: Addison-Wesley, 1999); W. Royce, Soft ware 
+Project Management: A Unifi ed Framework (Reading, MA: Addison-Wesley, 1998).
+Project Identifi cation  43
+phase for the new systems development project. Th e request is forwarded to an approval 
+committee for consideration. Th e approval committee reviews the request and makes an 
+initial determination of whether to investigate the proposal or not. If the committee initially 
+approves the request, the systems development team gathers more information to determine 
+the feasibility of the project.
+A feasibility analysis plays an important role in deciding whether to proceed with an 
+information systems development project. It examines the technical, economic, and organizational pros and cons of developing the system, and it gives the organization a slightly more 
+detailed picture of the advantages of investing in the system as well as any obstacles that could 
+arise. In most cases, the project sponsor works closely with the development team to develop 
+the feasibility analysis. Once the feasibility analysis has been completed, it is submitted to 
+the approval committee, along with a revised system request. Th e committee then decides 
+whether to approve the project, decline the project, or table it until additional information is 
+available. Projects are selected by weighing risks and returns and by making trade-off s at the 
+organizational level.
+Once the committee has approved a project, the development team must carefully plan 
+for the actual development of the system. Because we are following a Unifi ed Process-based 
+approach, the systems development workplan will evolve throughout the development process. Given this evolutionary approach, one critical success factor for project management is 
+to start with a realistic assessment of the work that needs to be accomplished and then manage the project according to that assessment. Th is can be achieved by carefully creating and 
+managing the workplan, estimating the eff ort to develop the system, staffi ng the project, and 
+coordinating project activities.
+In addition to covering the above material, this chapter also covers three traditional project management tools that are very useful to manage object-oriented systems development 
+projects: work breakdown structures, Gantt charts, and network diagrams.
+PROJECT IDENTIFICATION
+A project is identifi ed when someone in the organization identifi es a business need to build 
+a system. Th is could occur within a business unit or IT, come from a steering committee 
+charged with identifying business opportunities, or evolve from a recommendation made 
+by external consultants. Examples of business needs include supporting a new marketing 
+campaign, reaching out to a new type of customer, or improving interactions with suppliers. 
+Sometimes, needs arise from some kind of “pain” within the organization, such as a drop in 
+market share, poor customer service levels, or increased competition. Other times, new business initiatives and strategies are created, and a system is required to enable them.
+Business needs also can surface when the organization identifi es unique and competitive ways of using IT. Many organizations keep an eye on emerging technology, which is 
+technology that is still being developed and is not yet viable for widespread business use. For 
+example, if companies stay abreast of technology such as the augmented reality, games, smart 
+cards, and mobile devices, they can develop business strategies that leverage the capabilities of 
+these technologies and introduce them into the marketplace as a fi rst mover. Ideally, they can 
+take advantage of this fi rst-mover advantage by making money and continuing to innovate 
+while competitors trail behind.
+Th e project sponsor is someone who recognizes the strong business need for a system and 
+has an interest in seeing the system succeed. He or she will work throughout the development 
+process to make sure that the project is moving in the right direction from the perspective of the 
+44 Chapter 2 Project Management
+business. Th e project sponsor serves as the primary point of contact for the system. Usually, the 
+sponsor of the project is from a business function, such as marketing, accounting, or fi nance; 
+however, members of the IT area also can sponsor or cosponsor a project.
+The size or scope of a project determines the kind of sponsor needed. A small 
+departmental system might require sponsorship from only a single manager, whereas a 
+large organizational initiative might need support from the entire senior management 
+team and even the CEO. If a project is purely technical in nature (e.g., improvements to 
+the existing IT infrastructure or research into the viability of an emerging technology), 
+then sponsorship from IT is appropriate. When projects have great importance to the 
+business yet are technically complex, joint sponsorship by both the business and IT may 
+be necessary.
+Th e business need drives the high-level business requirements for the system. Requirements 
+are what the information system will do, or the functionality it will contain. Th ey need to be 
+explained at a high level so that the approval committee and, ultimately, the project team 
+understand what the business expects from the fi nal product. Business requirements are the 
+features and capabilities the information system will have to include, such as the ability to 
+collect customer orders online or the ability for suppliers to receive inventory information as 
+orders are placed and sales are made.
+Th e project sponsor also should have an idea of the business value to be gained from the 
+system, both in tangible and intangible ways. Tangible value can be quantifi ed and measured 
+easily (e.g., 2 percent reduction in operating costs). An intangible value results from an intuitive belief that the system provides important, but hard-to-measure, benefi ts to the organization (e.g., improved customer service or a better competitive position).
+Once the project sponsor identifi es a project that meets an important business need and 
+he or she can identify the system’s business requirements and value, it is time to formally 
+initiate the project. In most organizations, project initiation begins with a document called a 
+system request.
+System Request
+A system request is a document that describes the business reasons for building a system 
+and the value that the system is expected to provide. Th e project sponsor usually completes 
+this form as part of a formal system project selection process within the organization. Most 
+ system requests include fi ve elements: project sponsor, business need, business requirements, business value, and special issues. Th e sponsor describes the person who will serve as 
+ the primary contact for the project, and the business need presents the reasons prompting 
+the project. Th e business requirements of the project refer to the business capabilities that the 
+system will need to have, and the business value describes the benefi ts that the organization 
+should expect from the system. Special issues are included on the document as a catch-all 
+for other information that should be considered in assessing the project. For example, the 
+project may need to be completed by a specifi c deadline. Project teams need to be aware of 
+any special circumstances that could aff ect the outcome of the system. Figure 2-1 shows a 
+template for a system request.
+Th e completed system request is submitted to the approval committee for consideration. 
+Th is approval committee could be a company steering committee that meets regularly to 
+make information systems decisions, a senior executive who has control of organizational 
+resources, or any other decision-making body that governs the use of business investments. 
+Th e committee reviews the system request and makes an initial determination, based on the 
+information provided, of whether to investigate the proposal or not. If so, the next step is to 
+conduct a feasibility analysis.
+Feasibility Analysis  45
+FEASIBILITY ANALYSIS
+Once the need for the system and its business requirements have been defi ned, it is time to 
+create a more detailed business case to better understand the opportunities and limitations 
+associated with the proposed project. Feasibility analysis guides the organization in determining whether or not to proceed with a project. Feasibility analysis also identifi es the important 
+risks associated with the project that must be addressed if the project is approved. As with the 
+system request, each organization has its own process and format for the feasibility analysis, 
+but most include three types: technical feasibility, economic feasibility, and organizational 
+feasibility. Th e results of these analyses are combined into a feasibility study, which is given to 
+the approval committee (see Figure 2-2).
+Although we now discuss feasibility analysis within the context of initiating a project, 
+most project teams will revise their feasibility study throughout the development process and 
+revisit its contents at various checkpoints during the project. If at any point the project’s risks 
+and limitations outweigh its benefi ts, the project team may decide to cancel the project or 
+make necessary improvements.
+Technical Feasibility
+Th e fi rst type of feasibility analysis addresses the technical feasibility of the project: the extent 
+to which the system can be successfully designed, developed, and installed by the IT group. 
+System Request—Name of Project
+Project Sponsor: Name of project sponsor
+Business Need: Short description of business need
+Business Requirements: Description of business requirements
+Business Value: Expected value that the system will provide
+Special Issues or Constraints: Any additional information that may be relevant 
+ to the stakeholders
+FIGURE 2-1
+System Request 
+Template
+Technical Feasibility: Can We Build It?
+• Familiarity with Functional area: Less familiarity generates more risk
+• Familiarity with Technology: Less familiarity generates more risk
+• Project Size: Large projects have more risk
+• Compatibility: The harder it is to integrate the system with the company’s existing 
+technology, the higher the risk
+Economic Feasibility: Should We Build It?
+• Development costs
+• Annual operating costs
+• Annual benefi ts (cost savings and revenues)
+• Intangible costs and benefi ts
+Organizational Feasibility: If We Build It, Will They Come?
+• Is the project strategically aligned with the business?
+• Project champion(s)
+• Senior management
+• Users
+• Other stakeholders
+FIGURE 2-2 
+Feasibility Analysis 
+Assessment Factors
+46 Chapter 2 Project Management
+Technical feasibility analysis is in essence a technical risk analysis that strives to answer this 
+question: Can we build it?2
+Many risks can endanger the successful completion of a project. First is the users’ and 
+analysts’ lack of familiarity with the functional area. When analysts are unfamiliar with 
+the business functional area, they have a greater chance of misunderstanding the users 
+or of missing opportunities for improvement. Th e risk increases dramatically when the 
+users themselves are less familiar with an application, such as with the development of 
+a system to support a business innovation. In general, developing new systems is riskier 
+than producing extensions to an existing system because existing systems tend to be better 
+understood.
+Familiarity with the technology is another important source of technical risk. When 
+a system uses technology that has not been used before within the organization, there is 
+a greater chance that problems will occur and delays will be incurred because of the need 
+to learn how to use the technology. Risk increases dramatically when the technology itself 
+is new.
+Project size is an important consideration, whether measured as the number of people on 
+the development team, the length of time it will take to complete the project, or the number of 
+distinct features in the system. Larger projects present more risk, both because they are more 
+complicated to manage and because there is a greater chance that important system requirements will be overlooked or misunderstood. Furthermore, the extent to which the project is 
+highly integrated with other systems can cause problems because complexity increases when 
+many systems must work together.
+Finally, project teams need to consider the compatibility of the new system with the 
+technology that already exists in the organization. Systems are rarely built in a vacuum—they 
+are built in organizations that already have numerous systems in place. New technology and 
+applications need to integrate with the existing environment for many reasons. Th ey might 
+rely on data from existing systems, they might produce data that feed other applications, and 
+they might have to use the company’s existing communications infrastructure.
+Th e assessment of a project’s technical feasibility is not cut and dried because in many 
+cases, some interpretation of the underlying conditions is needed. One approach is to compare the project under consideration with prior projects undertaken by the organization. 
+Another option is to consult with experienced IT professionals in the organization or external IT consultants; oft en they are able to judge whether a project is feasible from a technical 
+perspective.
+Economic Feasibility
+Th e second element of a feasibility analysis is to perform an economic feasibility analysis (also called a cost–benefi t analysis), which identifi es the fi nancial risk associated with 
+the project. It attempts to answer the question, Should we build the system? Economic 
+ feasibility is determined by identifying costs and benefi ts associated with the system, assigning values to them, and then calculating the cash fl ow and return on investment for the 
+project. Th e more expensive the project, the more rigorous and detailed the analysis should 
+be. Figure 2-3 lists the steps in performing a cost–benefi t analysis; each step is described in 
+the following sections.
+2 We use build it in the broadest sense. Organizations can also choose to buy a commercial soft ware package and 
+install it, in which case, the question might be, Can we select the right package and successfully install it?
+Feasibility Analysis  47
+Identifying Costs and Benefi ts Th e fi rst task when developing an economic feasibility analysis is to identify the kinds of costs and benefi ts the system will have and list them along the 
+left -hand column of a spreadsheet. Figure 2-4 lists examples of costs and benefi ts that may 
+be included.
+1. Identifi ng Costs and Benefi ts List the tangible costs and benefi ts for the project. 
+Include both one-time and recurring costs.
+2. Assigning Values to Costs and Benefi ts Work with business users and IT professionals to 
+create numbers for each of the costs and benefi ts. 
+Even intangibles should be valued if at all possible.
+3. Determining Cash Flow Project what the costs and benefi ts will be over a 
+period of time, usually three to fi ve years. Apply a 
+growth rate to the numbers, if necessary.
+4. Determining Net Present Value (NPV) Calculate what the value of future costs and benefi ts are if measured by today’s standards. You will 
+need to select a rate of growth to apply the NPV 
+formula.
+5. Determining Return on Investment (ROI) Calculate how much money the organization will 
+receive in return for the investment it will make 
+using the ROI formula.
+6. Determining the Break-Even Point Find the fi rst year in which the system has greater 
+benefi ts than costs. Apply the break-even formula 
+using fi gures from that year. This will help you 
+understand how long it will take before the system 
+creates real value for the organization.
+7. Graphing the Break-Even Point Plot the yearly costs and benefi ts on a line graph. 
+The point at which the lines cross is the break-even 
+point.
+FIGURE 2-3
+Steps for Conducting Economic 
+ Feasibility
+FIGURE 2-4
+Example Costs and 
+Benefi ts for Economic Feasibility
+Development Team Salaries Software Upgrades
+Consultant Fees Software Licensing Fees
+Development Training Hardware Repairs
+Hardware and Software Hardware Upgrades
+Vendor Installation Operational Team Salaries
+Offi ce Space and Equipment Communications Charges
+Data Conversion Costs User Training
+Increased Sales Increased Market Share
+Reductions in Staff Increased Brand Recognition
+Reductions in Inventory Higher Quality Products
+Reductions in IT Costs Improved Customer Service
+Better Supplier Prices Better Supplier Relations
+ Development Costs Operational Costs
+ Tangible Benefi ts Intangible Benefi ts
+48 Chapter 2 Project Management
+Costs and benefi ts can be broken down into four categories: development costs, operational costs, tangible benefi ts, and intangibles. Development costs are tangible expenses 
+incurred during the construction of the system, such as salaries for the project team, hardware and soft ware expenses, consultant fees, training, and offi ce space and equipment. 
+Development costs are usually thought of as one-time costs. Operational costs are tangible 
+costs required to operate the system, such as the salaries for operations staff , soft ware licensing fees, equipment upgrades, and communications charges. Operational costs are usually 
+thought of as ongoing costs.
+Revenues and cost savings are the tangible benefi ts the system enables the organization 
+to collect or the tangible expenses the system enables the organization to avoid. Tangible 
+benefi ts could include increased sales, reductions in staff , and reductions in inventory. Of 
+course, a project also can aff ect the organization’s bottom line by reaping intangible benefi ts
+or incurring intangible costs. Intangible costs and benefi ts are more diffi cult to incorporate 
+into the economic feasibility because they are based on intuition and belief rather than 
+“hard numbers.” Nonetheless, they should be listed in the spreadsheet along with the tangible items.
+Assigning Values to Costs and Benefi ts Once the types of costs and benefi ts have been 
+identifi ed, analysts assign specifi c dollar values to them. Th is might seem impossible; how 
+can someone quantify costs and benefi ts that haven’t happened yet? And how can those 
+predictions be realistic? Although this task is very diffi cult, analysts have to do the best they 
+can to come up with reasonable numbers for all the costs and benefi ts. Only then can the 
+approval committee make an educated decision about whether or not to move ahead with 
+the project.
+Th e best strategy for estimating costs and benefi ts is to rely on the people who have the 
+clearest understanding of them. For example, costs and benefi ts related to the technology or 
+the project itself can be provided by the company’s IT group or external consultants, and 
+business users can develop the numbers associated with the business (e.g., sales projections, 
+order levels). Analysts can also consider past projects, industry reports, and vendor information, although these approaches probably will be a bit less accurate. All the estimates will 
+probably be revised as the project proceeds.
+Sometimes it is acceptable for analysts to list intangible benefi ts, such as improved 
+customer service, without assigning a dollar value, whereas other times they have to 
+make estimates regarding the value of an intangible benefi t. If at all possible, they should 
+quantify intangible costs or benefi ts. Otherwise, it will not be apparent whether the costs 
+and benefi ts have been realized. Consider a system that is supposed to improve customer 
+service. Th is is intangible, but assume that the greater customer service will decrease the 
+number of customer complaints by 10 percent each year over three years and that $200,000 
+is spent on phone charges and phone operators who handle complaint calls. Suddenly 
+there are some very tangible numbers with which to set goals and measure the original 
+intangible benefi t.
+Figure 2-5 shows costs and benefi ts along with assigned dollar values. Notice that the 
+customer service intangible benefi t has been quantifi ed based on fewer customer complaint 
+phone calls. Th e intangible benefi t of being able to off er services that competitors currently 
+off er was not quantifi ed, but it was listed so that the approval committee will consider the 
+benefi t when assessing the system’s economic feasibility.
+Determining Cash Flow A formal cost–benefi t analysis usually contains costs and benefi ts 
+over a selected number of years (usually three to fi ve years) to show cash fl ow over time 
+Feasibility Analysis  49
+(see Figure 2-6). When using this cash-fl ow method, the years are listed across the top of the 
+spreadsheet to represent the time period for analysis, and numeric values are entered in the 
+appropriate cells within the spreadsheet’s body. Sometimes fi xed amounts are entered into 
+the columns. For example, Figure 2-6 lists the same amount for customer complaint calls and 
+inventory costs for all fi ve years. Usually amounts are augmented by some rate of growth to 
+adjust for infl ation or business improvements, as shown by the 6 percent increase that is 
+added to the sales numbers in the sample spreadsheet. Finally, totals are added to determine 
+what the overall benefi ts will be; the higher the overall total, the greater the economic feasibility of the solution.
+Determining Net Present Value and Return on Investment Th ere are several problems 
+with the cash-fl ow method—(1) it does not consider the time value of money (i.e., a dollar 
+today is not worth a dollar tomorrow), and (2) it does not show the overall “bang for the buck” 
+that the organization is receiving from its investment. Th erefore, some project teams add 
+additional calculations to the spreadsheet to provide the approval committee with a moreaccurate picture of the project’s worth.
+Net present value (NPV) is used to compare the present value of future cash fl ows with 
+the investment outlay required to implement the project. For example, if you have a friend 
+who owes you a dollar today but instead gives you a dollar three years from now, you’ve been 
+had! Given a 10 percent increase in value, you’ll be receiving the equivalent of 75 cents in 
+today’s terms.
+NPV can be calculated in many diff erent ways, some of which are extremely complex. 
+Figure 2-7 shows a basic calculation that can be used in your cash fl ow analysis to get more 
+Benefi tsa
+ Increased sales 500,000
+ Improved customer serviceb 70,000
+ Reduced inventory costs 68,000
+Total benefi ts 638,000
+Development costs
+ 2 servers @ $125,000 250,000
+ Printer 100,000
+ Software licenses 34,825
+ Server software 10,945
+ Development labor 1,236,525
+Total development costs 1,632,295
+Operational costs
+ Hardware 54,000
+ Software 20,000
+ Operational labor 111,788
+Total operational costs 185,788
+Total costs 1,818,083
+a An important yet intangible benefi t will be the ability to offer 
+services that our competitors currently offer.
+b Customer service numbers have been based on reduced costs for 
+customer complaint phone calls.
+FIGURE 2-5
+Assigning Values to 
+Costs and Benefi ts
+relevant values. In Figure 2-6, the present value of the costs and benefi ts are calculated fi rst 
+(i.e., they are shown at a discounted rate). Th en, net present value is calculated, and it shows 
+the discounted rate of the combined costs and benefi ts.
+Th e return on investment (ROI) is a calculation listed somewhere on the spreadsheet that 
+measures the amount of money an organization receives in return for the money it spends. 
+A high ROI results when benefi ts far outweigh costs. ROI is determined by fi nding the total 
+benefi ts less the costs of the system and dividing that number by the total costs of the system 
+(see Figure 2-7). ROI can be determined per year or for the entire project over a period of 
+time. One drawback of ROI is that it considers only the end points of the investment, not the 
+cash fl ow in between, so it should not be used as the sole indicator of a project’s worth. Th e 
+spreadsheet in Figure 2-6 shows an ROI fi gure.
+Determining the Break-Even Point If the project team needs to perform a rigorous cost–
+benefi t analysis, it might need to include information about the length of time before the 
+project will break even, or when the returns will match the amount invested in the project. 
+FIGURE 2-6 Cost–Benefi t Analysis
+Increased sales 500,000 530,000 561,800 595,508 631,238
+Reduction in customer complaint calls 70,000 70,000 70,000 70,000 70,000
+Reduced inventory costs 68,000 68,000 68,000 68,000 68,000
+TOTAL BENEFITS: 638,000 668,000 699,800 733,508 769,238
+PV OF BENEFITS: 619,417 629,654 640,416 651,712 663,552 3,204,752
+PV OF ALL BENEFITS: 619,417 1,249,072 1,889,488 2,541,200 3,204,752
+2 Servers @ $125,000 250,000 0 0 0 0
+Printer 100,000 0 0 0 0
+Software licenses 34,825 0 0 0 0
+Server software 10,945 0 0 0 0
+Development labor 1,236,525 0 0 0 0
+TOTAL DEVELOPMENT COSTS: 1,632,295 0 0 0 0
+Hardware 54,000 81,261 81,261 81,261 81,261
+Software 20,000 20,000 20,000 20,000 20,000
+Operational labor 111,788 116,260 120,910 125,746 130,776
+TOTAL OPERATIONAL COSTS: 185,788 217,521 222,171 227,007 232,037
+TOTAL COSTS: 1,818,083 217,521 222,171 227,007 232,037
+PV OF COSTS: 1,765,129 205,034 203,318 201,693 200,157 2,575,331
+PV OF ALL COSTS: 1,765,129 1,970,163 2,173,481 2,375,174 2,575,331
+TOTAL PROJECT BENEFITS COSTS: (1,180,083) 450,479 477,629 506,501 537,201
+YEARLY NPV: (1,145,712) 424,620 437,098 450,019 463,395 629,421
+CUMULATIVE NPV: (1,145,712) (721,091) (283,993) 166,026 629,421
+RETURN ON INVESTMENT: 24.44% (629,421/2,575,331)
+BREAK-EVEN POINT: 3.63 years [break-even occurs in year 4; (450,019 2 166,026)/450,019 5 0.63]
+INTANGIBLE BENEFITS: This service is currently provided by competitors 
+Improved customer satisfaction
+ 2015 2016 2017 2018 2019 Total
+50 Chapter 2 Project Management
+Th e greater the time it takes to break even, the riskier the project. Th e break-even point is 
+determined by looking at the cash fl ow over time and identifying the year in which the benefi ts are larger than the costs (see Figure 2-6). Th en, the diff erence between the yearly and 
+cumulative NPV for that year is divided by the yearly NPV to determine how far into the year 
+the break-even point will occur. See Figure 2-7 for the break-even calculation. Th e break-even 
+point also can be depicted graphically, as shown in Figure 2-8. Th e cumulative present value 
+of the costs and benefi ts for each year is plotted on a line graph; the point at which the lines 
+cross is the break-even point.
+Organizational Feasibility
+Th e fi nal type of feasibility analysis is to assess the organizational feasibility of the system, 
+how well the system ultimately will be accepted by its users and incorporated into the ongoing operations of the organization. Th ere are many organizational factors that can have aneff ect on the project, and seasoned developers know that organizational feasibility can be the 
+most diffi cult feasibility dimension to assess. In essence, an organizational feasibility analysis 
+attempts to answer the question, If we build it, will they come?
+One way to assess the organizational feasibility of the project is to understand how well 
+the goals of the project align with business objectives. Strategic alignment is the fi t between 
+the project and business strategy—the greater the alignment, the less risky the project will 
+be from an organizational feasibility perspective. For example, if the marketing department 
+has decided to become more customer focused, then a CRM project that produces integrated 
+customer information would have strong strategic alignment with marketing’s goal. Many IT 
+projects fail when the IT department initiates them, because there is little or no alignment 
+with business unit or organizational strategies.
+A second way to assess organizational feasibility is to conduct a stakeholder analysis.
+3 A 
+stakeholder is a person, group, or organization that can aff ect (or will be aff ected by) a new 
+system. In general, the most important stakeholders in the introduction of a new system are 
+the project champion, system users, and organizational management (see Figure 2-9), but 
+systems sometimes aff ect other stakeholders as well. For example, the IS department can 
+be a stakeholder of a system because IS jobs or roles may be changed signifi cantly aft er its 
+implementation. 
+Th e champion is a high-level, non–information systems executive who is usually the 
+project sponsor who created the system request. Th e champion supports the project with 
+time, resources (e.g., money), and political support within the organization by communicating the importance of the system to other organizational decision makers. More than one 
+champion is preferable because if the champion leaves the organization, the support could 
+leave as well.
+Whereas champions provide day-to-day support for the system, organizational management support conveys to the rest of the organization the belief that the system will make a 
+Champion A champion: • Make a presentation about the objectives of the 
+• Initiates the project project and the proposed benefi ts to those executives 
+• Promotes the project who will benefi t directly from the system
+• Allocates his or her time to project • Create a prototype of the system to demonstrate its 
+• Provides resources potential value
+Organizational Organizational managers: • Make a presentation to management about the 
+ Management • Know about the project objectives of the project and the proposed benefi ts
+• Budget enough money for the project • Market the benefi ts of the system using memos and 
+• Encourage users to accept and use the system organizational newsletters
+ • Encourage the champion to talk about the project 
+with his or her peers
+System Users Users: • Assign users offi cial roles on the project team
+• Make decisions that infl uence the project • Assign users specifi c tasks to perform with clear 
+• Perform hands-on activities for the project deadlines
+• Ultimately determine whether the project is • Ask for regular feedback from users (e.g., at 
+ successful by using or not using the system weekly meetings)
+Role Techniques for Improvement
+FIGURE 2-9 Some Important Stakeholders for Organizational Feasibility
+52 Chapter 2 Project Management
+3 A good book that presents a series of stakeholder analysis techniques is R. O. Mason and I. I. Mittroff , Challenging 
+Strategic Planning Assumptions: Th eory, Cases, and Techniques (New York: Wiley, 1981).
+valuable contribution and that necessary resources will be made available. Ideally, management should encourage people in the organization to use the system and to accept the many 
+changes that the system will likely create.
+A third important group of stakeholders are the system users who ultimately use the 
+system once it has been installed in the organization. Too oft en, the project team meets 
+with users at the beginning of a project and then disappears until aft er the system is created. 
+In this situation, rarely does the fi nal product meet the expectations and needs of those 
+who are supposed to use it because needs change and users become savvier as the project 
+progresses. User participation should be promoted throughout the development process by 
+getting users involved in the development of the system (e.g., performing tasks, providing 
+feedback, making decisions).
+Finally, the feasibility study helps organizations make wiser investments by forcing project teams to consider technical, economic, and organizational factors that can aff ect their 
+projects. It protects IT professionals from criticism by keeping the business units educated 
+about decisions and positioned as the leaders in the decision-making process. Remember, the 
+feasibility study should be revised several times during the project at points where the project 
+team makes critical decisions about the system (e.g., before each iteration of the development 
+process).
+PROJECT SELECTION
+Once the feasibility analysis has been completed, it is submitted to the approval committee, 
+along with a revised system request. Th e committee then decides whether to approve the 
+project, decline the project, or table it until additional information is available. At the project level, the committee considers the value of the project by examining the business need 
+(found in the system request) and the risks of building the system (presented in the feasibility 
+analysis).
+Before approving the project, however, the committee also considers the project from an 
+organizational perspective; it has to keep in mind the company’s entire portfolio of projects. 
+Th is way of managing projects is called portfolio management. Portfolio management takes 
+into consideration the diff erent kinds of projects that exist in an organization—large and 
+small, high risk and low risk, strategic and tactical. (See Figure 2-10 for the diff erent ways of 
+Size What is the size? How many people are needed to work on the 
+ project?
+Cost How much will the project cost the organization?
+Purpose What is the purpose of the project? Is it meant to improve the 
+ technical infrastructure? Support a current business strategy? 
+Improve operations? Demonstrate a new innovation?
+Length How long will the project take before completion? How much 
+ time will go by before value is delivered to the business?
+Risk How likely is it that the project will succeed or fail?
+Scope How much of the organization is affected by the system? A 
+ department? A division? The entire corporation?
+Return on investment How much money does the organization expect to receive in

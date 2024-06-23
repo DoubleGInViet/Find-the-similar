@@ -1,0 +1,744 @@
+﻿The other thing you need to add is a starting initial state and a final state. 
+Let’s define transitions to createItem for the beginning and deleteItem for the 
+end. DeleteItem is when it is removed completely from the system and the database. In other words, it is no longer offered for sale. Figure 4-33 presents the 
+final state machine diagram for the InventoryItem object class.
+As noted by these examples, the benefit of developing a state machine diagram for a problem domain object is that it helps you capture and clarify business rules. As you develop the state machine diagrams, you must think more 
+deeply about the behavior of these objects and what kind of conditions need to 
+be accounted for in the program code. As always, the benefits of careful model 
+building help you gain a true understanding of the system requirements.
+Figure 4-33 Final state machine diagram for InventoryItem object
+orderItem
+createItem deleteItem
+Not on order On order
+reduceInventory
+[at reorder point]
+/reorder
+restock
+restock
+Normal stock Low stock
+reduceInventory
+[at last Item]
+/reorder Zero stock
+itemArrives
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 123
+concurrency (concurrent states)
+concurrent paths
+data entities
+destination state
+domain classes
+domain model class diagram
+entity-relationship diagram 
+(ERD)
+generalization/specialization 
+relationships
+guard-condition
+identifier (key)
+inheritance
+multiplicity
+multiplicity constraints
+n-ary association
+abstract class
+action-expressions
+aggregation
+association
+association class
+attributes
+binary associations
+brainstorming technique
+camelback notation
+camelcase notation
+cardinality
+class
+class diagram
+composition
+compound attribute
+concrete class
+Key Terms
+noun technique
+origin state
+path
+problem domain
+pseudostate
+relationship
+semantic net
+state
+state machine diagram
+subclass
+superclass
+ternary association
+transition
+unary association
+whole-part relationship
+1. What are the two key concepts—one from 
+Chapter 3 and one from this chapter—that define 
+functional requirements?
+2. What is the problem domain?
+3. What is a “thing” called in models used by traditional analysts and database analysts?
+4. What is a “thing” called in newer approaches that 
+use UNL?
+5. What are two techniques for identifying things in 
+the problem domain?
+6. What are some examples of tangible things in the 
+problem domain of a restaurant?
+7. What are some sites or locations in the problem 
+domain of a restaurant?
+8. What are some roles played by people in the problem domain of a restaurant?
+9. What are the main steps of the brainstorming 
+technique?
+10. Explain why identifying nouns helps identify 
+things in the problem domain.
+11. What are the main steps of the noun technique?
+12. What is an attribute, an identifier or key, and a 
+compound attribute?
+13. What is an association, and what system development standard defines it?
+14. How would you describe or name the association 
+between a ship and a captain?
+15. What is the term used for association by traditional analysts and database analysts?
+16. What is an association class? Why is an association class used for modeling?
+17. What is multiplicity, and what is the other 
+term used by traditional analysts and database 
+analysts?
+18. What is the minimum multiplicity for the 
+association that reads a customer places zero or 
+more orders?
+19. What is the maximum multiplicity for the association that reads an order is placed by exactly one 
+customer?
+20. What are some examples of multiplicity constraints?
+21. What are the three types of associations, and 
+which is the most commonly used?
+22. What are the three key parts of an entity-relationship 
+diagram (ERD)?
+23. Sketch a simple ERD that shows a team has zero 
+or more players and each player is on one and 
+only one team.
+24. Sketch a semantic net that shows two teams and 
+five players based on your ERD from question 23.
+REVIEW QUESTIONS
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+124 PART 2 ■ Systems Analysis Activities
+32. What is a generalization/specialization relationship, 
+and what object-oriented terms does it illustrate?
+33. Compare/contrast superclass and subclass. Compare/contrasts abstract class and concrete class.
+34. What is a whole-part relationship, and why does 
+it show multiplicity?
+35. Compare/contrast aggregation with composition 
+for a whole-part relationship.
+36. What is an object state?
+37. What is a state transition?
+38. When considering requirements, states and state 
+transitions are important for understanding 
+which other diagram?
+39. What UML diagram is used to show the states 
+and transitions for an object?
+40. List the elements that make up a transition 
+description. Which elements are optional?
+41. What is a composite state? What is it used for?
+42. What is meant by the term path?
+43. What is the purpose of a guard-condition?
+25. What is a class, a domain class, and the key parts 
+of a class diagram?
+26. What does a domain model class diagram show 
+about system requirements, and how is it different from an ERD?
+27. List appropriate UML class names by using the 
+camelback notation for the following classes: 
+graduate student, undergraduate major, course 
+instructor, and final exam feedback.
+28. List appropriate UML attribute names for the 
+following attributes: student name, course grade, 
+major name, and final exam quantity score.
+29. Draw a simple domain model class diagram for 
+the example in question #23 where a team has 
+zero or more players and each player is on one 
+and only one team.
+30. Extend the domain model class diagram for 
+teams and players to show a record of game 
+statistics for each player in each game using an 
+association class.
+31. In UML, what are three types of relationships 
+found on a class diagram?
+Problems and Exercises
+1. Draw an entity-relationship diagram, including 
+minimum and maximum cardinality, for the following: The system stores information about two 
+things: cars and owners. A car has attributes for 
+make, model, and year. The owner has attributes 
+for name and address. Assume that a car must 
+be owned by one owner and an owner can own 
+many cars, but an owner might not own any cars 
+(perhaps she just sold them all, but you still want 
+a record of her in the system).
+2. Draw a class diagram for the cars and owners 
+described in exercise 1, but include subclasses for 
+sports car, sedan, and minivan, with appropriate 
+attributes.
+3. Consider the domain model class diagram shown in 
+Figure 4-16—the refined diagram showing course 
+enrollment with an association class. Does this 
+model allow a student to enroll in more than one 
+course section at a time? Does the model allow a 
+course section to contain more than one student? 
+Does the model allow a student to enroll in several 
+sections of the same course and get a grade for each 
+enrollment? Does the model store information about 
+all grades earned by all students in all sections?
+4. Again consider the domain model class diagram 
+shown in Figure 4-16. Add the following to the 
+diagram and list any assumptions you had to 
+make: A faculty member usually teaches many 
+course sections, but some semesters, a faculty 
+member may not teach any. Each course section 
+must have at least one faculty member teaching 
+it, but sometimes, faculty teams teach course 
+sections. Furthermore, to make sure that all 
+course sections are similar, one faculty member 
+is assigned as course coordinator to oversee the 
+course, and each faculty member can be the 
+coordinator of many courses.
+5. If the domain model class diagram you drew in 
+exercise 4 showed a many-to-many association 
+between faculty member and course section, 
+a further look at the association might reveal 
+the need to store some additional information. 
+What might this information include? (Hint: 
+Does the instructor have specific office hours for 
+each course section? Do you give an instructor 
+some sort of evaluation for each course section?) 
+Expand the domain model class diagram to allow 
+the system to store this additional information.
+6. Consider a system that needs to store information about computers in a computer lab at a 
+university, such as the features and location of 
+each computer. What are the domain classes that 
+might be included in a model? What are some of 
+the associations among these classes? What are 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 125
+d. Can a faculty member work in more than one 
+department at the same time? Explain.
+e. Can a faculty member work in two departments at the same time, where one department 
+is in the college of business and the other 
+department is in the college of arts and sciences? Explain.
+11. Review information about your own university. 
+Create generalization/specialization hierarchies 
+by using the domain model class diagram notation for (a) types of faculty, (b) types of students, 
+(c) types of courses, (d) types of financial aid, 
+and (e) types of housing. Include attributes for 
+the superclass and the subclasses in each case.
+12. Consider the classes involved when modeling a 
+car and all its parts. Draw a domain model class 
+diagram that shows the whole-part relationships 
+involved, including multiplicity. Which type of 
+whole-part relationships are involved?
+13. Refer to the complete RMO CSMS domain model 
+class diagram shown in Figure 4-25. Based on 
+that model and on the discussion of subsystems in 
+Chapter , draw a domain model class diagram for 
+the CSMS Marketing subsystem.
+14. Again based on the complete RMO CSMS 
+domain model class diagram shown in Figure 4-25, 
+draw a domain model class diagram for the CSMS 
+Order Fulfillment subsystem.
+15. Based on the following description of a shipment 
+made by Union Parcel Shipments, identify all the 
+states and exit transitions and then develop a 
+state machine diagram.
+A shipment is first recognized after it has been 
+picked up from a customer. Once in the system, 
+some of the attributes of each class? Draw a 
+domain model class diagram for this system.
+7. Consider the domain model class diagram for 
+the RMO CSMS Sales subsystem shown in 
+Figure 4-20. If an InStoreSale is created, how 
+many attributes does it have? If an OnlineSale 
+is created, how many attributes does it have? If 
+an existing customer places a telephone order 
+for one item, how many new objects are created 
+overall for this transaction? Explain.
+8. Again consider the domain model class diagram 
+shown in Figure 4-23. How many attributes does 
+an active cart object have? Can an on-reserve 
+cart contain cart items? Explain.
+9. A product item for RMO is not the same as an 
+inventory item. A product item is something 
+like a men’s leather hunting jacket supplied by 
+Leather ‘R’ Us. An inventory item is a specific 
+size and color of the jacket—like a size medium 
+brown leather hunting jacket. If RMO adds a 
+new jacket to its catalog and six sizes and three 
+colors are available in inventory, how many 
+objects need to be added overall? Explain.
+10. Consider the domain model class diagram 
+shown in Figure 4-34, which includes classes for 
+college, department, and faculty members:
+a. What kind of UML relationships are shown in 
+the model?
+b. How many attributes does a faculty member 
+have? Which (if any) have been inherited from 
+another class?
+c. If you add information about one college, one 
+department, and four faculty members, how 
+many objects do you add to the system?
+departmentName
+departmentHead
+officeLocation
+officePhone
+Department
+firstName
+lastName
+currentRank
+specialty
+officePhone
+FacultyMember
+collegeName
+collegeDean
+collegeLocation
+College
+0..*
+1
+1..*
+1..*
+Figure 4-34 Domain model class 
+diagram for a university
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+126 PART 2 ■ Systems Analysis Activities
+is handed off to another courier, it is noted as 
+being handed over. In those instances, a tracking number for the new courier is recorded (if it 
+is provided). Union also asks the new courier to 
+provide a status change notice after the package 
+has been delivered.
+Unfortunately, from time to time, a package 
+gets lost. In that case, it remains in an active state 
+for two weeks but is also marked as misplaced. If 
+after two weeks the package hasn’t been found, 
+it is considered lost. At that point, the customer 
+can initiate lost-package procedures to recover 
+any damages.
+it is considered active and in transit. Every time 
+it goes through a checkpoint, such as arrival at 
+an intermediate destination, it is scanned and a 
+record is created indicating the time and place of 
+the checkpoint scan. The status changes when it 
+is placed on the delivery truck. It is still active, 
+but now it is also considered to have a status of 
+delivery pending. After it is delivered, the status 
+changes again.
+From time to time, a shipment has a destination that is outside the area served by Union. In 
+those cases, Union has working relationships 
+with other courier services. After a package 
+Metropolitan Car Service Bureau
+Metropolitan Car Service Bureau needs a system that 
+keeps car service records. The company’s analyst has provided information about the problem domain in the form of 
+notes. Your job is to use those notes to draw the domain 
+model class diagram. The analyst’s notes are as follows:
+■ The Owner class has the attributes name and address.
+■ The Vehicle class is an abstract class that has the 
+attributes VIN, model, and model year.
+■ There are two types of vehicles, cars and trucks:
+■ Car has additional attributes for the number of 
+doors and luxury level.
+■ Truck has an additional attribute of cargo capacity.
+■ The Manufacturer class has the attributes name and 
+location.
+■ The Dealer class has the attributes name and address.
+A service record is an association class between 
+each vehicle and a dealer, with the attributes service date 
+and current mileage. A warranty service record is a special type of service record with an additional attribute: 
+eligibility verification. Each service record is associated 
+with a predefined service type, with the attributes type 
+ID, description, and labor cost. Each service type is associated with zero or more parts, with the attributes part 
+ID, description, and unit cost. Parts are used with one or 
+more service types.
+An owner can own many vehicles, and a vehicle can 
+be owned by many owners. An owner and a vehicle are entered into the system only when an owned vehicle is first 
+serviced by a dealer. Vehicles are serviced many times at 
+various dealers, which service many vehicles.
+1. Draw a UML domain model class diagram for the 
+system as described here. Be as specific and accurate as possible, given the information provided. 
+If needed information is not given, make realistic 
+assumptions.
+2. Answer True or False to the following statements, 
+which are based on the domain model. You may want 
+to draw a semantic net to help you think through the 
+questions.
+a. This domain model is for a single car dealer service 
+department.
+b. This domain model is for a single car manufacturer.
+c. A vehicle can have service records with more than 
+one dealer.
+d. A dealer can service vehicles from more than one 
+manufacturer.
+e. Current mileage is recorded for service records 
+and warranty service records.
+f. An owner can have each of his or her cars serviced 
+by a different dealer.
+g. A warranty service for a car can include many 
+parts.
+h. A vehicle can be made by more than one 
+manufacturer.
+3. Consider that a vehicle goes through many states and 
+state transitions from the perspective of Metropolitan. For example, a new vehicle might be brought in 
+for the first time. A previously serviced vehicle might 
+be brought in. Think through the sequences that go 
+on for a vehicle when it is being worked on by Metropolitan. Draw a state machine diagram showing 
+states and state transitions, including names for the 
+transitionsIn Chapter 3, you identified use cases for the Board of 
+Realtors Multiple Listing Service (MLS) system, which 
+supplies information that local real estate agents use 
+to help them sell houses to their customers. During 
+the month, agents list houses for sale (listings) by contracting with homeowners. Each agent works for a 
+real estate office, which sends information on listings 
+to the Multiple Listing Service. Therefore, any agent 
+in the community can get information on the listing. 
+Much of the information is available to potential customers on the Internet.
+Information on a listing includes the address, 
+year built, square feet, number of bedrooms, number 
+of bathrooms, owner name, owner phone number, 
+asking price, and status code. Additionally, many 
+pictures and videos showing features of the listing 
+are included. It is also important to have information 
+on the listing agent, such as name, office phone, cell 
+phone, and e-mail address. Agents work through a 
+real estate office, so it is important to know the office 
+name, office manager name, office phone, and street 
+address.
+1. Based on the information here, draw a domain 
+model class diagram for the MLS system. Be 
+sure to consider what information needs to be 
+included versus information that is not in the 
+problem domain. For example, is detailed information about the owner, such as his employer or 
+his credit history, required in the MLS system? 
+Is that information required regarding a potential buyer?
+2. Draw a second domain model class diagram 
+that adds the following specifications. First, 
+there are two types of listings: a listing for 
+sale and a listing for lease. Additionally, a 
+listing might include no structures, such as 
+vacant land, or it might include more than one 
+structure, such as a main house and a guest 
+house, each with separate values for square 
+footage, number of bedrooms, and number of 
+bathrooms.
+3. Draw a third domain model class diagram that 
+assumes a listing might have multiple owners. 
+Additionally, a listing might be shared by two 
+or more agents, and the percentage of the commission that each agent gets from the sale can be 
+different for each agent.
+4. Consider that a real estate listing goes though 
+several different states over time. For example, 
+it might be a new listing, a mature listing, a 
+revised listing, an under contract listing, and a 
+sold listing. Draw a state machine diagram for 
+a listing object based on this information. Include transition names and be sure to consider 
+all of the possible transitions. For example, can 
+a new listing transition directly to an under 
+contract listing?
+Running Case Studies
+The Spring Breaks ‘R’ Us Travel Service
+In Chapter 3, you identified use cases for the Social 
+Networking subsystem SBRU is researching. Let 
+us assume you were thinking about a number of 
+potential domain classes that might be involved. For 
+example, there would need to be information about 
+a traveler attending a resort for a particular week. 
+The traveler would be assigned to a room along with 
+roommates but might also be connected to other 
+friends. There might be different interests or hobbies 
+a traveler can associate with in the hopes of connecting to others. The resort has many locations where a 
+traveler might be hanging out at any given time, and 
+a traveler can note whether the location is “liked.” 
+People might schedule a party at a location and invite 
+specific friends.
+1. For the Social Networking subsystem as 
+described here, list the domain classes and their 
+attributes that should be included in the Social 
+Networking subsystem. Be creative and add 
+those you think should be included to make the 
+system useful and appealing.
+2. Based on the domain classes you identified, 
+draw a domain model class diagram showing 
+domain classes with attributes and associations 
+with multiplicity.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+128 PART 2 ■ Systems Analysis Activities
+On the Spot Courier Services
+On the Spot courier services grew and changed over 
+the years. At first, Bill received requests for package 
+pickups on his mobile phone, recorded that information in a log, and would then drive around to retrieve 
+all the packages later in the day. However, he soon 
+discovered that with another driver, it was difficult 
+to coordinate pickups between the two of them from 
+his van. It was not long before he reorganized his 
+business and turned the warehouse employee into a 
+driver. Then, he stayed in the warehouse himself, and 
+his two employees made all the pickups and deliveries. This worked well because he could control and 
+coordinate the pickups and deliveries better. It was 
+also easier for him to receive pickup requests working 
+at a desk rather than trying to do it while driving a 
+delivery van.
+As he thought about how his business was growing and the services he provided to his customers, Bill 
+began to itemize the kinds of information he would 
+need to maintain.
+Of course, he needed to maintain information 
+about his customers. Some of his customers were 
+businesses; some were individuals. He needed to have 
+basic address and contact information for every customer. Also, for his corporate customers, he needed to 
+identify a primary contact person. It was mostly his 
+corporate customers who wanted to receive monthly 
+statements listing all their shipments during the month 
+and the total cost. Bill needed to distinguish which 
+customers paid cash and which wanted monthly statements. In fact, for those who paid monthly, he needed 
+to keep a running account of such things as when they 
+were last billed, when they paid, and any outstanding 
+balances. Finally, when payments were received, either 
+for individual shipments or from monthly invoices, 
+he needed to record information about the payment: 
+type of payment, date, and amount. Although this was 
+not a sophisticated billing and payment system, Bill 
+thought it would suffice for his needs.
+Next, he started thinking about his packages and 
+shipments. At the time that a request for a pickup 
+came in, he needed to keep track of it as some type 
+of delivery request or delivery order. At that point in 
+time, Bill mostly needed to know who the customer 
+was, where the pickup location was, and what date 
+and time the package(s) would be ready for pickup. He 
+also recorded the date and time that he received the 
+order. A delivery order was considered “open” until 
+the delivery van arrived at the pickup location and the 
+packages were all retrieved. At that point, the delivery 
+order was satisfied.
+Once the packages were retrieved, each package needed to be uniquely identified. Bill needed to 
+know when it was picked up and which delivery person picked it up. Other important information was 
+the “deliver to” entity name and the address. He also 
+needed to identify the type of delivery. Some packages were high priority, requiring same-day delivery. 
+Others were overnight. Of course, the weight and cost 
+were recorded so the customer could either pay or have 
+it added to the monthly invoice.
+In the courier and delivery business, one of the 
+most important information requirements is the date 
+and time stamp. For each package, it is important to 
+know when it was picked up, when it arrived at the 
+warehouse, when it went back out on the delivery 
+run, and when it was delivered. When possible, it is 
+also important to have names associated with each of 
+these events.
+1. Using the noun technique, read through this case 
+and identify all the nouns that may be important 
+for this system. You may also find it helpful to 
+read back through the case descriptions in the 
+previous chapters.
+2. Once you have identified all the nouns, identify 
+which are classes and which are attributes of 
+these primary classes. Begin constructing a class 
+diagram based on the classes and attributes you 
+have identified.
+3. Now that you have identified the classes, determine what the relationships should be among 
+the classes. Add multiplicity constraints, being 
+especially cognizant of zero-to-many versus oneto-many differences.
+4. Finalize the class diagram, including all your 
+classes, attributes, primary keys, relationships, 
+and multiplicity constraints.
+Sandia Medical Devices
+Initial discussions about the functional requirements 
+resulted in an initial domain model class diagram for 
+Sandia Medical Devices’ Real-Time Glucose Monitoring (RTGM) system (see Figure 4-35). After consultations with system stakeholders, the following potential 
+changes to the diagram are being considered:
+■ Include additional medical personnel (nurses and 
+physicians’ assistants, at a minimum).
+■ Include alerts sent by the system to medical personnel and messages sent by medical personnel to 
+the patient.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 129
+Classic and more recent texts include the following: 
+Grady Booch, Ivar Jacobson, and James 
+Rumbaugh, The Unified Modeling Language 
+User Guide. Addison-Wesley, 1999.
+Craig Larman, Applying UML and Patterns (3rd ed.). 
+Prentice Hall, 2005.
+Peter Rob and Carlos Coronel, Database Systems: 
+Design, Implementation, and Management
+(7th ed.). Course Technology, 2007.
+Further Resources
+1. Modify the diagram to incorporate the changes 
+under consideration. You may need to use 
+generalization/specialization (inheritance).
+2. Are a set of abstract and concrete classes needed 
+to represent variations among cell phones? 
+Why or why not?
+Figure 4-35 Initial domain 
+model class diagram for 
+Sandia RTGM system id
+lastName
+firstName
+id
+medicalRecordNumber
+lastName
+dateOfBirth
+gender
+race
+height
+weight
+Patient
+dateTime
+level
+GlucoseObservation
+id
+phoneNumber
+operatingSystem
+osVersion
+applicationVersion
+CellPhone
+Physician
+serialNumber
+manufacturer
+dateOfManufacture
+firmwareVersion
+MonitoringDevice
+1..1
+1..1
+0..*
+0..*
+0..*
+0..*
+1..1
+1..1
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+Chapter FIVE
+After reading this chapter, you should be able to:
+Write fully developed use case descriptions
+Develop activity diagrams to model flow of 
+activities
+Develop system sequence diagrams
+Use the CRUD technique to validate use cases
+Explain how use case descriptions and 
+UML diagrams work together to define 
+functional requirements
+Learning Objectives
+Use Case Modeling
+Use Case Descriptions
+Activity Diagrams for Use Cases
+The System Sequence Diagram—Identifying 
+Use Case Inputs and Outputs
+SSD Notation
+Use Cases and CRUD
+Integrating Requirements Models
+Chapter Outline
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+132 PART 2 ■ Systems Analysis Activities
+■ Overview
+The main objective of defining requirements in system development is understanding users’ needs, how the business processes are carried out, and how 
+the system will be used to support those business processes. As indicated in 
+Chapter 2, system developers use a set of models to discover and understand the 
+requirements for a new system. This activity is a key part of systems analysis in 
+the system development process. The first step in the process for developing this 
+understanding requires the fact-finding skills you learned in Chapter 2. Factfinding activities are also called discovery activities, and obviously, discovery 
+must precede understanding.
+The models introduced in Chapters 3 and 4 focus on two primary aspects of 
+functional requirements: the use cases and the problem domain classes involved 
+in users’ work. User stories are sometimes used in place of use cases with Agile 
+development. Use cases are identified by using the user goal technique and the 
+Opening case Electronics Unlimited: Integrating the Supply Chain
+Electronics Unlimited is a warehousing distributor that 
+buys electronic equipment from various suppliers and 
+sells it to retailers throughout the United States and 
+Canada. It has operations and warehouses in Los Angeles, Houston, Baltimore, Atlanta, New York, Denver, and 
+Minneapolis. Its customers range from large nationwide 
+retailers, such as Target, to medium-sized independent 
+electronics stores.
+Most large retailers have moved toward integrated 
+supply chains. Information systems used to be focused 
+on processing internal data; however, today, these retail 
+chains want suppliers to become part of a totally integrated supply chain system. In other words, the systems 
+need to communicate between companies to make the 
+supply chain more efficient.
+To maintain its position as a leading wholesale distributor, Electronics Unlimited has to convert its system to 
+link with its suppliers (the manufacturers of the electronic 
+equipment) and its customers (the retailers). It is developing a completely new system that uses object-oriented 
+techniques to provide these links. Object-oriented techniques facilitate system-to-system interfaces by using 
+predefined components and objects to accelerate the 
+development process. Fortunately, many of the system 
+development staff members have experience with objectoriented development and are eager to apply the techniques and models to the system development project.
+William Jones is explaining object-oriented development to the group of systems analysts who are being 
+trained in this approach.
+“We’re developing most of our new systems by 
+using object-oriented principles,” he tells them. “The 
+complexity of the new system, along with its interactivity, makes the object-oriented approach a natural way to 
+develop requirements. The object-oriented models track 
+very closely with the new object-oriented programming 
+languages and frameworks.”
+William is just getting warmed up.
+“This way of thinking about a system in terms of 
+objects is very interesting,” he adds. “It is also consistent with the object-oriented programming techniques 
+you learned in your programming classes. You probably first learned to think about objects when you developed screens for the user interface. All the controls 
+on the screen, such as buttons, text boxes, and dropdown boxes, are objects. Each has its own set of trigger 
+events that activate its program functions.”
+“How does this apply to our situation?” one of the 
+analysts asks.
+“You just extend that thought process,” William 
+explains.” You think of such things as purchase orders 
+and employees as objects, too. We can call them the 
+problem domain objects to differentiate them from userinterface objects, such as windows and buttons. During 
+analysis, we have to find out all the trigger events and 
+methods associated with each business object.”
+“And how do we do that?” another analyst asks.
+“You continue with your fact-finding activities and 
+build a better understanding of each use case,” William 
+says. “The way the problem domain objects interact 
+with each other in the use case determines how you 
+identify the initiating activity. We refer to those activities as the messages between objects. The tricky part 
+is that you need to think in terms of objects instead of 
+just processes. Sometimes, it helps me to pretend I am 
+an object. I will say, ‘I am a purchase order object. What 
+functions and services are other objects going to ask me 
+to do?’ After you get the hang of it, it works very well, 
+and it is enlightening to see how the system requirements unfold as you develop the diagrams.”
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 133
+event decomposition technique. The Unified Modeling Language (UML) use 
+case diagram was introduced to show use cases and actors. An information system also needs to record and store information about classes of objects involved 
+in the business processes. In a manual system, the information is recorded on 
+paper and stored in a filing cabinet. In an automated system, the information is 
+stored in electronic files or a database. The information storage requirements of 
+a system are documented either with entity-relationship diagrams (ERDs) or, as 
+emphasized in this text, with UML domain model class diagrams.
+In this chapter, you learn additional techniques and models that will allow 
+you to extend the requirements models to show additional information about 
+the use cases for the system. Fully developed use case descriptions, UML activity diagrams, and UML system sequence diagrams (SSDs) are introduced to 
+show more information about each use case. Additionally, the CRUD technique 
+is introduced to help validate the use cases in terms of supporting all of the 
+domain classes in the domain model class diagram. Remember, when defining 
+requirements for a system, you will also be doing design and implementation 
+work, as illustrated in the Trade Show application developed in Chapter 1.
+■ Use Case Descriptions
+A list of use cases and use case diagrams provides an overview of all the use 
+cases for a system. Detailed information about each use case is described 
+with a use case description. Brief use case descriptions were introduced in 
+Chapter 3. This chapter introduces fully developed use case descriptions that list 
+and describe the processing details for a use case.
+■ Brief Use Case Descriptions
+Depending on an analyst’s needs, use case descriptions tend to be written at 
+two separate levels of detail: brief description and fully developed description. 
+Some brief use case descriptions were shown in Chapter 3 (repeated again as 
+Figure 5-1). A brief description gives enough detail for very simple use cases, 
+especially when the system to be developed is a small, well-understood application. Examples of simple use cases are Add product comment or Send message. 
+A use case such as Fill shopping cart is complex enough that a fully developed 
+description is also written after the initial brief use case description is finalized.
+■ Fully Developed Use Case Descriptions
+The fully developed description is the most formal method for documenting a 
+use case. One of the major difficulties for software developers is that they often 
+struggle to obtain a deep understanding of the users’ needs. But if you create a 
+fully developed use case description, you increase the probability that you thoroughly understand the business processes and the ways the system must support 
+them. To create a comprehensive, robust system that truly meets users’ needs,

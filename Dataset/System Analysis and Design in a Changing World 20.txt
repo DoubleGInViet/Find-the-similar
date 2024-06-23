@@ -1,0 +1,497 @@
+﻿Create a use-case test plan, including the specifi c class 
+plans and invariant tests for a use case from the health 
+club exercises in previous chapters.
+L. Create an invariant test specifi cation for the class you 
+chose for Picnics R Us in exercise D in Chapter 8.
+M. Create a use-case test plan, including the specifi c 
+class plans and invariant tests, for a use case from the 
+Picnics R Us exercises in the previous chapters.
+N. Create an invariant test specifi cation for the class you 
+chose for the Of-the-Month Club (OTMC) in exercise 
+E in Chapter 8.
+O. Create a use-case test plan, including the specifi c 
+class plans and invariant tests, for a use case from the 
+Of-the-Month Club (OTMC) exercises in the previous chapters.
+MINICASES
+1. Pete is a project manager on a new systems development project. Th is project is Pete’s fi rst experience as a 
+project manager, and he has led his team successfully 
+to the programming phase of the project. Th e project 
+has not always gone smoothly, and Pete has made a 
+few mistakes, but he is generally pleased with the progress of his team and the quality of the system being 
+developed. Now that programming has begun, Pete 
+has been hoping for a little break in the hectic pace of 
+his workday.
+ Prior to beginning programming, Pete recognized 
+that the time estimates made earlier in the project 
+were too optimistic. However, he was fi rmly committed to meeting the project deadline because of his 
+desire for his fi rst project as project manager to be a 
+success. In anticipation of this time pressure problem, 
+Pete arranged with the Human Resources department 
+to bring in two new college graduates and two college 
+interns to beef up the programming staff . Pete would 
+have liked to fi nd some staff with more experience, 
+but the budget was too tight, and he was committed 
+to keeping the project budget under control.
+ Pete made his programming assignments, and 
+work on the programs began about two weeks ago. 
+Now, Pete has started to hear some rumbles from the 
+programming team leaders that might signal trouble. 
+It seems that the programmers have reported several 
+instances where they wrote programs, only to be 
+unable to fi nd them when they went to test them. 
+Also, several programmers have opened programs 
+that they had written, only to fi nd that someone had 
+changed portions of their programs without their 
+knowledge.
+ a. Is the programming phase of a project a time for 
+the project manager to relax? Why or why not?
+ b. What problems can you identify in this situation?
+ c. What advice do you have for the project manager? 
+How likely does it seem that Pete will achieve his 
+desired goals of being on time and within budget 
+if nothing is done?
+2. Th e systems analysts are developing the test plan for 
+the user interface for the Holiday Travel Vehicles 
+system. As the salespeople are entering a sales invoice 
+into the system, they will be able to enter an option 
+code into a text box or to select an option code from 
+a drop-down list. A combo box was used to implement this, because it was felt that the salespeople 
+would quickly become familiar with the most common option codes and would prefer entering them 
+directly to speed up the entry process.
+ It is now time to develop the test for validating 
+the option code fi eld during data entry. If the customer did not request any dealer-installed options 
+for the vehicle, the salesperson should enter “none”; 
+the fi eld should not be blank. Th e valid option codes 
+are four-character alphabetic codes and should be 
+matched against a list of valid codes.
+ Prepare a test plan for the test of the option code 
+fi eld during data entry.
+481
+CHAPTER 13
+Installation and Operations
+This chapter examines the activities needed to install an information system and successfully convert an organization to using it. It also discusses post-implementation activities, 
+such as system support, system maintenance, and project assessment. Installing the system 
+and making it available for use from a technical perspective are relatively straightforward. 
+However, the training and organizational issues surrounding the installation are more complex and challenging because they focus on people, not computers.
+OBJECTIVES
+■ Be familiar with the system installation process.
+■ Understand diff erent types of conversion strategies and when to use them.
+■ Understand several techniques for managing change.
+■ Be familiar with post-installation processes.
+INTRODUCTION
+“It must be remembered that there is nothing more diffi cult to plan, more doubtful of success, 
+nor more dangerous to manage than the creation of a new system. For the initiator has the animosity of all who would profi t by the preservation of the old institution and merely lukewarm 
+defenders in those who would gain by the new.”
+—Niccolò Machiavelli, Th e Prince, 1513
+Although written almost 500 years ago, Machiavelli’s comments are still true today. Managing 
+the change to a new system—whether it is computerized or not—is one of the most diffi cult 
+tasks in any organization. Because of the challenges involved, most organizations begin 
+developing their conversion and change management plans while the programmers are still 
+developing the soft ware. Leaving conversion and change management planning to the last 
+minute is a recipe for failure.
+In many ways, using a computer system or set of work processes is much like driving on a 
+dirt road. Over time, with repeated use, the road begins to develop ruts in the most commonly 
+used parts of the road. Although these ruts show where to drive, they make change diffi cult. 
+As people use a computer system or set of work processes, those systems or work processes 
+begin to become habits or norms; people learn them and become comfortable with them. 
+Th ese systems or work processes then begin to limit people’s activities and make it diffi cult 
+for them to change because they begin to see their jobs in terms of these processes rather than 
+of the fi nal business goal of serving customers.
+482 Chapter 13 Installation and Operations
+One of the earliest models for managing organizational change was developed by Kurt 
+Lewin.1 Lewin argued that change is a three-step process: unfreeze, move, refreeze (Figure 
+13-1). First, the project team must unfreeze the existing habits and norms (the as-is system) so 
+that change is possible. Most of system development to this point has laid the groundwork for 
+unfreezing. Users are aware of the new system being developed, some have participated in an 
+analysis of the current system (and so are aware of its problems), and some have helped design 
+the new system (and so have some sense of the potential benefi ts of the new system). Th ese activities have helped to unfreeze the current habits and norms.
+Th e second step is to help the organization move to the new system via a migration plan. 
+Th e migration plan has two major elements. One is technical, which includes how the new 
+system will be installed and how data in the as-is system will be moved into the to-be system; 
+this is discussed in the conversion section of this chapter. Th e second component is organizational, which includes helping users understand the change and motivating them to adopt 
+it; this is discussed in the change management section of this chapter.
+Th e third step is to refreeze the new system as the habitual way of performing the 
+work processes—ensuring that the new system successfully becomes the standard way of 
+performing the business function it supports. Th is refreezing process is a key goal of the 
+post-implementation activities discussed in the fi nal section of this chapter. By providing 
+ongoing support for the new system and immediately beginning to identify improvements 
+for the next version of the system, the organization helps solidify the new system as the 
+new habitual way of doing business. Post-implementation activities include system support, 
+which means providing help desk and telephone support for users with problems; system 
+maintenance, which means fi xing bugs and improving the system aft er it has been installed; 
+and project assessment, evaluating the project to identify what went well and what could be 
+improved for the next system development project.
+Change management is the most challenging of the three components because it focuses 
+on people, not technology, and because it is the one aspect of the project that is the least controllable by the project team. Change management means winning the hearts and minds of 
+potential users and convincing them that the new system actually provides value.
+Maintenance is the most costly aspect of the installation process, because the cost of 
+maintaining systems usually greatly exceeds the initial development costs. It is not unusual 
+for organizations to spend 60 to 80 percent of their total IS development budget on maintenance. Although this might sound surprising initially, think about the soft ware you use. How 
+many soft ware packages do you use that are the very fi rst version? Most commercial soft ware 
+1 Kurt Lewin, “Frontiers in Group Dynamics,” Human Relations 1, no. 5 (1947): 5–41; Kurt Lewin, “Group Decision 
+and Social Change,” in E. E. Maccoby, T. M. Newcomb, and E. L. Hartley (eds.), Readings in Social Psychology (New 
+York: Holt, Rinehart, & Winston, 1958), pp. 197–211.
+FIGURE 13-1
+Implementing 
+Change
+As-Is
+system
+To-Be
+system
+Unfreeze
+Analysis and
+design
+Refreeze
+Support and
+maintenance
+Transition
+Move
+Migration plan:
+■ Technical conversion
+■ Change management
+Cultural Issues and Information Technology Adoption  483
+packages become truly useful and enter widespread use only in their second or third version. 
+Maintenance and continual improvement of soft ware is ongoing, whether it is a commercially 
+available package or soft ware developed in-house. Would you buy soft ware if you knew that no 
+new versions were going to be produced? Of course, commercial soft ware is somewhat diff erent 
+from custom in-house soft ware used by only one company, but the fundamental issues remain.
+Project assessment is probably the least commonly performed part of system development but is perhaps the one that has the most long-term value to the IS department. 
+Project assessment enables project team members to step back and consider what they did 
+right and what they could have done better. It is an important component in the individual 
+growth and development of each member of the team, because it encourages team members 
+to learn from their successes and failures. It also enables new ideas or new approaches to 
+system development to be recognized, examined, and shared with other project teams to 
+improve their performance.
+CULTURAL ISSUES AND INFORMATION
+TECHNOLOGY ADOPTION2
+Cultural issues are one of the things that are typically identifi ed as at least partially to blame 
+when there is a failure in an organization. Cultural issues have been studied at both organizational and national levels. In previous chapters, we discussed the eff ect that cultural issues 
+can have on designing the human–computer interaction and physical architecture layers 
+(see Chapters 10 and 11) and the management of programmers (Chapter 12). Th e cultural 
+dimensions identifi ed by Hall and Hofstede included speed of messages, context, time, power 
+distance, uncertainty avoidance, individualism versus collectivism, masculinity versus femininity, and long- versus short-term orientation.3 In this chapter, we describe how these 
+dimensions can aff ect the successful deployment of an information system that supports a 
+global information supply chain.
+Hall’s fi rst dimension, speed of messages, has implications for the development of 
+documentation (see Chapter 12) and training approaches (see later in this chapter). 
+In a culture that values “deep” content, so that members of the culture can take their 
+time to thoroughly understand the new system, simply providing an online help system 
+is not going to be suffi cient to ensure the successful adoption of the new information 
+system. However, in a culture that prefers “fast” messages, an online help system could 
+be suffi cient.
+Hall’s second dimension, context, also aff ects the adoption and deployment of a new system. In high-context cultures, it is expected that the new information system will be placed 
+into the entire context of the enterprise-wide system. Members of this type of society expect 
+to be able to understand exactly where the system fi ts into the fi rm’s overall picture. Again, 
+like the speed of messages dimension, this aff ects the training approach used and the documentation developed.
+Hall’s third dimension, time, can also eff ect the adoption and deployment of a new 
+system. In a polychronic time culture, the training could need to be spread out over a longer 
+2 A good summary of cultural issues and information systems is Dorothy E. Leidner and Timothy Kayworth, “A 
+Review of Culture in Information Systems Research: Toward a Th eory of Information Technology Culture Confl ict,”
+MIS Quarterly 30, no. 2 (2006): 357–399.
+3 See Geert Hofstede, Culture’s Consequences: Comparing Values, Behaviors, Institutions and Organizations across 
+Nations, 2nd Ed. (Th ousand Oaks, CA: Sage, 2001); Geert Hofstede, Gert Jan Hofstede, and Michael Minkov, Cultures 
+and Organizations: Soft ware of the Mind, 3rd Ed. (New York: McGraw-Hill, 2010); Edward T. Hall, Beyond Culture
+(New York: Anchor Books, 1981).
+484 Chapter 13 Installation and Operations
+period of time, when compared to a monochronic time culture. In a monochromic time 
+culture, interruptions would be considered rude. Consequently, training could be accomplished in a small set of intense sessions. However, with a polychronic time culture, because 
+interruptions may occur frequently, maximum fl exibility in setting up the training sessions 
+may be necessary.
+Hofstede’s fi rst dimension, power distance, addresses how power issues are dealt 
+with in the culture. For example, if a superior in an organization has an incorrect belief 
+about an important issue, can a subordinate point out this error? In some cultures, the 
+answer is a resounding no. Consequently, this dimension could have major ramifi cations 
+for the successful deployment of an information system. For example, in a culture with 
+a high power distance, the deployment of a new information system is dependent on the 
+impression of the most important stakeholder (see Chapter 2). Th erefore, much care must 
+be taken to ensure that this stakeholder is pleased with the system. Otherwise, it might 
+never be used.
+Hofstede’s second dimension, uncertainty avoidance, is based on the degree to which 
+the culture depends on rules for direction, how well individuals in the culture handle stress, 
+and the importance of employment stability. For example, in a high-uncertainty-avoidance 
+culture, the use of detailed procedures manuals (see Chapter 12) and good training (see later 
+in this chapter) can reduce the uncertainty in adopting the new system.
+Hofstede’s third dimension, individualism versus collectivism, is based on the level of 
+emphasis the culture places on the individual or the collective. Th e relationship between the 
+individual and the group is important for the success of an information system. Depending 
+on the culture’s orientation, the success of an information system being transitioned into 
+production can depend on whether the focus of the information system will benefi t the individual or the group.
+Hofstede’s fourth dimension, masculinity versus femininity, addresses how well masculine and feminine characteristics are valued by the culture. Some of the diff erences that 
+could aff ect the adoption of an information system include employee motivational issues. 
+In a masculine culture, motivation would be based on advancement, earnings, and training, 
+whereas in a feminine culture, motivations would include friendly atmosphere, physical 
+conditions, and cooperation. Depending on how the culture views this dimension, diff erent 
+motivations might need to be used to increase the likelihood of the information system being 
+successfully deployed.
+Th e fi fth dimension, long- versus short-term orientation, deals with how the culture views 
+the past and the future. In East Asia, long-term thinking is highly respected, whereas in North 
+America and Europe, short-term profi ts and the current stock price seem to be the only things 
+that matter. Based on this dimension, all the political concerns raised previously in this text 
+become very important. For example, if the local culture views success only in a short-term 
+manner, then any new information system that is deployed to support one department of 
+an organization may give that department a competitive advantage over other departments 
+in the short run. If only short-run measures are used to judge the success of a department, 
+then it would be in the interest of the other departments to fi ght the successful deployment 
+of the information system. However, if a longer-run perspective is the norm, then the other 
+departments could be convinced to support the new information system because they could 
+have new supportive information systems in the future.
+Obviously, when reviewing these dimensions, we can see they interact with each other. 
+Th e most important thing to remember from an IT perspective is that we must be careful 
+not to view the local user community through our eyes; in a global economy, we must take 
+into consideration the local cultural concerns for the information system to be deployed in a 
+successful manner.
+Conversion  485
+CONVERSION4
+Conversion is the technical process by which a new system replaces an old system. Users are 
+moved from using the as-is business processes and computer programs to the to-be business 
+processes and programs. Th e migration plan specifi es what activities will be performed when 
+and by whom and includes both technical aspects (such as installing hardware and soft ware 
+and converting data from the as-is system to the to-be system) and organizational aspects 
+(such as training and motivating the users to embrace the new system). Conversion refers to 
+the technical aspects of the migration plan.
+Th ere are three major steps to the conversion plan before commencement of operations: 
+Install hardware, install soft ware, and convert data (Figure 13-2). Although it may be possible 
+to do some of these steps in parallel, usually they must be done sequentially at any one location.
+Th e fi rst step in the conversion plan is to buy and install any needed hardware. In many 
+cases, no new hardware is needed, but sometimes the project requires new hardware such as 
+servers, client computers, printers, and networking equipment. It is critical to work closely 
+with vendors who are supplying needed hardware and soft ware to ensure that the deliveries 
+are coordinated with the conversion schedule so that the equipment is available when it is 
+needed. Nothing can stop a conversion plan in its tracks as easily as the failure of a vendor to 
+deliver needed equipment.
+Once the hardware is installed, tested, and certifi ed as being operational, the second step 
+is to install the soft ware. Th is includes the to-be system under development and, sometimes, 
+additional soft ware that must be installed to make the system operational. At this point, the 
+system is usually tested again to ensure that it operates as planned.
+Th e third step is to convert the data from the as-is system to the to-be system. Data conversion 
+is usually the most technically complicated step in the migration plan. Oft en, separate programs 
+must be written to convert the data from the as-is system to the new formats required in the to-be 
+system and store it in the to-be system fi les and databases. Th is process is oft en complicated by the 
+fact that the fi les and databases in the to-be system do not exactly match the fi les and databases in 
+the as-is system (e.g., the to-be system may use several tables in a database to store customer data 
+that were contained in one fi le in the as-is system). Formal test plans are always required for data 
+conversion eff orts (see Chapter 12).
+Conversion can be thought of along three dimensions: the style in which the conversion is 
+done (conversion style), what location or work groups are converted at what time (conversion 
+4 Th e material in this section is related to the Enhanced Unifi ed Process’s Transition phase and the Deployment 
+workfl ow (see Figure 1-18).
+FIGURE 13-2
+Elements of a 
+Migration Plan
+Commence
+operations
+Conversion Plan
+(Technical Issues)
+Install hardware
+Install software
+Convert data
+Change Management Plan
+(Organizational Issues)
+Revise management policies
+Conduct training
+Assess costs and benefits
+Motivate adoption
+486 Chapter 13 Installation and Operations
+FIGURE 13-3
+Conversion 
+Strategies
+Pilot Phased
+Modular
+Whole system
+Direct
+Parallel
+Simultaneous
+Location
+Modules
+Style
+location), and what modules of the system are converted at what time (conversion modules). 
+Figure 13-3 shows the potential relationships among these three dimensions.
+Conversion Style
+Th e conversion style is the way users are switched between the old and new systems. Th ere 
+are two fundamentally diff erent approaches to the style of conversion: direct conversion and 
+parallel conversion.
+Direct Conversion With direct conversion (sometimes called cold turkey, big bang, or 
+abrupt cutover), the new system instantly replaces the old system. Th e new system is turned 
+on, and the old system is immediately turned off . Th is is the approach that we are likely to use 
+when we upgrade commercial soft ware (e.g., Microsoft Word) from one version to another; 
+we simply begin using the new version and stop using the old version.
+Direct conversion is the simplest and most straightforward. However, it is the most risky 
+because any problems with the new system that have escaped detection during testing can 
+seriously disrupt the organization.
+Parallel Conversion With parallel conversion, the new system is operated side by side with 
+the old system; both systems are used simultaneously. For example, if a new accounting 
+system is installed, the organization enters data into both the old system and the new system 
+and then carefully compares the output from both systems to ensure that the new system is 
+performing correctly. Aft er some time period (oft en one to two months) of parallel operation 
+and intense comparison between the two systems, the old system is turned off and the organization continues using the new system.
+Th is approach is more likely to catch any major bugs in the new system and prevent the 
+organization from suff ering major problems. If problems are discovered in the new system, the 
+system is simply turned off and fi xed and then the conversion process starts again. Th e problem 
+with this approach is the added expense of operating two systems that perform the same function.
+Conversion Location
+Conversion location refers to the parts of the organization that are converted when the conversion 
+occurs. Oft en, parts of the organization are physically located in diff erent offi ces (e.g., Toronto, 
+Atlanta, Los Angeles). In other cases, location refers to diff erent organizational units located in 
+Conversion  487
+diff erent parts of the same offi ce complex (e.g., order entry, shipping, purchasing). Th ere are at 
+least three fundamentally diff erent approaches to selecting the way diff erent organizational locations are converted: pilot conversion, phased conversion, and simultaneous conversion.
+Pilot Conversion With a pilot conversion, one or more locations or units or work groups 
+within a location are selected to be converted fi rst as part of a pilot test. Th e locations participating in the pilot test are converted (using either direct or parallel conversion). If the system 
+passes the pilot test, then the system is installed at the remaining locations (again using either 
+direct or parallel conversion).
+Pilot conversion has the advantage of providing an additional level of testing before the 
+system is widely deployed throughout the organization, so that any problems with the system aff ect only the pilot locations. However, this type of conversion obviously requires more 
+time before the system is installed at all organizational locations. Also, it means that diff erent 
+organizational units are using diff erent versions of the system and business processes, which 
+can make it diffi cult for them to exchange data.
+Phased Conversion With phased conversion, the system is installed sequentially at diff erent locations. A fi rst set of locations is converted, then a second set, then a third set, and 
+so on, until all locations are converted. Sometimes there is a deliberate delay between the 
+diff erent sets (at least between the fi rst and the second), so that any problems with the system are detected before too much of the organization is aff ected. In other cases, the sets are 
+converted back to back so that as soon as those converting one location have fi nished, the 
+project team moves to the next and continues the conversion.
+Phased conversion has the same advantages and disadvantages of pilot conversion. In 
+addition, it means that fewer people are required to perform the actual conversion (and any 
+associated user training) than if all locations were converted at once.
+Simultaneous Conversion Simultaneous conversion, as the name suggests, means that all 
+locations are converted at the same time. Th e new system is installed and made ready at all 
+locations; at a preset time, all users begin using the new system. Simultaneous conversion is 
+oft en used with direct conversion, but it can also be used with parallel conversion.
+Simultaneous conversion eliminates problems with having diff erent organizational units 
+using diff erent systems and processes. However, it also means that the organization must have 
+suffi cient staff to perform the conversion and train the users at all locations simultaneously.
+Conversion Modules
+Although it is natural to assume that systems are usually installed in their entirety, this is not 
+always the case.
+Whole-System Conversion A whole-system conversion, in which the entire system is 
+installed at one time, is the most common. It is simple and the easiest to understand. However, if the system is large and/or extremely complex (e.g., an enterprise resource-planning 
+system such as SAP or PeopleSoft ), the whole system can prove too diffi cult for users to learn 
+in one conversion step.
+Modular Conversion When the modules5 within a system are separate and distinct, organizations sometimes choose to convert to the new system one module at a time—i.e., using 
+modular conversion. Modular conversion requires special care in developing the system 
+5 In this case, a module is typically a component or a package, i.e., a set of collaborating classes.
+488 Chapter 13 Installation and Operations
+(and usually adds extra cost). Each module either must be written to work with both the old 
+and new systems or object wrappers (see Chapter 7) must be used to encapsulate the old system from the new. When modules are tightly integrated, this is very challenging and therefore 
+is seldom done. However, when there is only a loose association between modules, module 
+conversion is easier. For example, consider a conversion from an old version of Microsoft 
+Offi ce to a new version. It is relatively simple to convert from the old version of Word to the 
+new version without simultaneously having to change from the old to the new version of 
+Microsoft Excel.
+Modular conversion reduces the amount of training required to begin using the new 
+system. Users need training only in the new module being implemented. However, modular 
+conversion does take longer and has more steps than does the whole-system process.
+Selecting the Appropriate Conversion Strategy
+Each of the three dimensions in Figure 13-3 is independent, so that a conversion strategy can 
+be developed to fi t in any one of the boxes in this fi gure. Diff erent boxes can also be mixed 
+and matched into one conversion strategy. For example, one commonly used approach is 
+to begin with a pilot conversion of the whole system using parallel conversion in a handful of test locations. Once the system has passed the pilot test at these locations, it is then 
+installed in the remaining locations using phased conversion with direct cutover. Th ere are 
+three important factors to consider in selecting a conversion strategy: risk, cost, and the time
+required (Figure 13-4).
+Risk Aft er the system has passed a rigorous battery of unit, system, integration, and acceptance testing, it should be bug free . . . maybe. Because humans make mistakes, nothing built by 
+people is ever perfect. Even aft er all these tests, there might still be a few undiscovered bugs. 
+Th e conversion process provides one last step in which to catch these bugs before the system 
+goes live and the bugs have the chance to cause problems.
+Parallel conversion is less risky than is direct conversion because it has a greater chance 
+of detecting bugs that have gone undiscovered in testing. Likewise, pilot conversion is less 
+risky than is phased conversion or simultaneous conversion because if bugs do occur, they 
+occur in pilot test locations whose staff are aware that they might encounter bugs. Because 
+potential bugs aff ect fewer users, there is less risk. Likewise, converting a few modules at a 
+time lowers the probability of a bug because there is more likely to be a bug in the whole 
+system than in any given module.
+How important the risk is depends on the system being implemented—the combination 
+of the probability that bugs remain undetected in the system and the potential cost of those 
+undetected bugs. If the system has indeed been subjected to extensive methodical testing, 
+including alpha and beta testing, then the probability of undetected bugs is lower than if the 
+testing was less rigorous. However, there still might have been mistakes made in the analysis 
+Risk High Low Low Medium High High Medium
+Cost Low High Medium Medium High Medium High
+Time Short Long Medium Long Short Short Long
+Conversion Style Conversion Location Conversion Modules
+Direct Parallel Pilot Phased Simultaneous Whole-System Modular
+Characteristic Conversion Conversion Conversion Conversion Conversion Conversion Conversion
+FIGURE 13-4  Characteristics of Conversion Strategies
+Change Management  489
+process, so that although there might be no soft ware bugs, the soft ware might fail to properly 
+address the business needs.
+Assessing the cost of a bug is challenging, but most analysts and senior managers can 
+make a reasonable guess at the relative cost of a bug. For example, the cost of a bug in an 
+automated stock market trading program or a heart–lung machine keeping someone alive 
+is likely to be much greater than a bug in a computer game or word processing program. 
+Th erefore, risk is likely to be a very important factor in the conversion process if the system 
+has not been as thoroughly tested as it might have been or if the cost of bugs is high. If the 
+system has been thoroughly tested or the cost of bugs is not that high, then risk becomes less 
+important to the conversion decision.
+Cost As might be expected, diff erent conversion strategies have diff erent costs. Th ese costs 
+can include things such as salaries for people who work with the system (e.g., users, trainers, 
+system administrators, external consultants), travel expenses, operation expenses, communication costs, and hardware leases. Parallel conversion is more expensive than direct cutover 
+because it requires that two systems (the old and the new) be operated at the same time. 
+Employees must then perform twice the usual work because they have to enter the same data 
+into both the old and the new systems. Parallel conversion also requires the results of the two 
+systems to be completely crosschecked to make sure there are no diff erences between the two, 
+which entails additional time and cost.
+Pilot conversion and phased conversion have somewhat similar costs. Simultaneous conversion has higher costs because more staff are required to support all the locations as they 
+simultaneously switch from the old to the new system. Modular conversion is more expensive 
+than whole-system conversion because it requires more programming. Th e old system must 
+be updated to work with selected modules in the new system, and modules in the new system 
+must be programmed to work with selected modules in both the old and new systems.
+Time Th e fi nal factor is the amount of time required to convert between the old and the 
+new system. Direct conversion is the fastest because it is immediate. Parallel conversion 
+takes longer because the full advantages of the new system do not become available until 
+the old system is turned off . Simultaneous conversion is fastest because all locations are 
+converted at the same time. Phased conversion usually takes longer than pilot conversion 
+because once the pilot test is complete all remaining locations are usually (but not always) 
+converted simultaneously. Phased conversion proceeds in waves, oft en requiring several 
+months before all locations are converted. Likewise, modular conversion takes longer than 
+whole-system conversion because the models are introduced one aft er another.
+CHANGE MANAGEMENT6
+In the context of a systems development project, change management is the process of 
+helping people to adopt and adapt to the to-be system and its accompanying work processes 
+without undue stress. Th ere are three key roles in any major organizational change. Th e fi rst 
+is the sponsor of the change—the person who wants the change. Th is person is the business 
+sponsor who fi rst initiated the request for the new system (see Chapter 2). Usually, the 
+6 Th e material in this section is related to the Enhanced Unifi ed Process’s Transition and Production phases and the 
+Confi guration and Change Management workfl ow (see Figure 1-18). Many books have been written on change management. Some of our favorites are the following: Patrick Connor and Linda Lake, Managing Organizational Change, 
+2nd Ed. (Westport, CT: Praeger, 1994); Douglas Smith, Taking Charge of Change (Reading, MA: Addison-Wesley, 
+1996); Daryl Conner, Managing at the Speed of Change (New York: Villard Books, 1992); Mary Lynn Manns and 
+Linda Rising, Fearless Change: Patterns for Introducing New Ideas (Boston: Addison-Wesley, 2005) sponsor is a senior manager of the part of the organization that must adopt and use the new 
+system. It is critical that the sponsor be active in the change management process because a 
+change that is clearly being driven by the sponsor, not by the project team or the IS organization, has greater legitimacy. Th e sponsor has direct management authority over those who 
+adopt the system.
+Th e second role is that of the change agent—the person(s) leading the change eff ort. 
+Th e change agent, charged with actually planning and implementing the change, is usually someone outside of the business unit adopting the system and therefore has no direct 
+management authority over the potential adopters. Because the change agent is an outsider, 
+he or she has less credibility than do the sponsor and other members of the business unit. 
+Aft er all, once the system has been installed, the change agent usually leaves and thus has 
+no ongoing impact.
+Th e third role is that of potential adopters, or targets of the change—the people who 
+actually must change. Th ese are the people for whom the new system is designed and who will 
+ultimately choose to use or not use the system.
+In the early days of computing, many project teams simply assumed that their job ended 
+when the old system was converted to the new system at a technical level. Th e philosophy was 
+“build it and they will come.” Unfortunately, that happens only in the movies. Resistance to 
+change is common in most organizations. Th erefore, the change management plan is an important part of the overall installation plan that glues together the key steps in the change management process. Successful change requires that people want to adopt the change and are able 
+to adopt the change. Th e change management plan has four basic steps: revising management 
+policies, assessing the cost and benefi t models of potential adopters, motivating adoption, and 
+enabling people to adopt through training (see Figure 13-2). However, before we can discuss the 
+change management plan, we must fi rst understand why people resist change.
+Understanding Resistance to Change7
+People resist change—even change for the better—for very rational reasons. What is good for 
+the organization is not necessarily good for the people who work there. For example, consider an order-processing clerk who used to receive orders to be shipped on paper shipping 
+documents but now uses a computer to receive the same information. Rather than typing 
+shipping labels with a typewriter, the clerk now clicks on the print button on the computer 
+and the label is produced automatically. Th e clerk can now ship many more orders each day, 
+which is a clear benefi t to the organization. Th e clerk, however, probably doesn’t really care 
+how many packages are shipped. His or her pay doesn’t change; it’s just a question of which 
+the clerk prefers to use, a computer or typewriter. Learning to use the new system and work 
+processes—even if the change is minor—requires more eff ort than continuing to use the 
+existing, well-understood system and work processes.
+So why do people accept change? Simply put, every change has a set of costs and benefi ts 
+associated with it. If the benefi ts of accepting the change outweigh the costs of the change, 
+then people change. Sometimes the benefi t of change is avoidance of the pain that might be 
+experienced if the change were not adopted (e.g., if you don’t change, you are fi red, so one of 
+the benefi ts of adopting the change is that you still have a job).
+In general, when people are presented with an opportunity for change, they perform 
+a cost–benefi t analysis (sometime consciously, sometimes subconsciously) and decide the 
+extent to which they will embrace and adopt the change. Th ey identify the costs of and 
+7 Th is section benefi ted from conversations with Dr. Robert Briggs, research scientist at the Center for the Manage

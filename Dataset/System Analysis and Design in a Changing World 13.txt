@@ -1,0 +1,443 @@
+﻿In both using games and gamifi cation, the secret to success deals with motivating the cus tomer and/or employee to remain engaged with the business process. Even though traditional 
+motivation approaches have worked to motivate employees in the past, due to the nature of the 
+changing types of work performed, they no longer function in an effi cient or eff ective manner 
+(see Chapter 2). Traditional approaches typically used a “stick and carrot” approach to moti vation. If an individual (child, student, or employee) did something undesired, he or she was 
+punished. On the other hand, if they did something desired, they were rewarded. In other words, 
+motivation was based entirely on extrinsic benefi ts. Games and gamifi cation focuses primarily 
+on intrinsic benefi ts; not extrinsic benefi ts.24 Typically, you play games because you enjoy the 
+game. When was the last time that you played a game because you had to and not wanted to? 
+Did you play it for money? Was it so that you could please someone else? Or, was it so that you 
+could be part of something larger than yourself? How enjoyable was it? Are you motivated to 
+play it again? Why? Chances are that money was not a suffi cient motivator to play it again. But, 
+playing a game for the fun of it will probably motivate you to play it over and over again. In fact, 
+depending on your gaming personality type, playing a game to please someone else or to be part 
+of something larger than yourself may motivate you to play it again.25
+Given the success of business game development and the gamifi cation of business processes, 
+there are a few things that we can learn to improve user interfaces. One of the fi rst things is that 
+games are designed explicitly to be fun.26 Typically, when we design business information sys tems, one of the last things we think about is whether the system is fun to use or not. When was 
+the last time you considered using an accounting information system as being fun? However, 
+in this case, the fun component of a business information system deals specifi cally with how 
+engaging the user interface is.27 Th erefore, there are a few things that we can apply from games 
+to develop more engaging user interfaces.28
+First, games are about creating a user experience. Obviously, when creating an experience, 
+the user interface designer must pay close attention to all of the issues that we have described 
+earlier. Otherwise, not only will the experience be light on the engagement factor, it could create 
+a negative experience instead of the positive one that we hope for. 
+Second, game experiences are all about the ideas and themes woven throughout the game. 
+In our case, the ideas of story telling (see Chapter 3) and use cases (see Chapter 4) provide a basis 
+to design and develop the user(s)’ engagement experience. 
+Th ird, game developers worry a lot about the player (user). Th is brings a better focus to the 
+roles (actors) that the users play in our system (see Chapter 3). When it comes to game design, 
+not only do we have to worry about the tasks in which the user will be engaged, but we also 
+23 Lee Sheldon, Th e Multiplayer Classroom: Designing Coursework as a Game (Boston, MA: Course Technology, 2012); 
+Rajat Paharia, Loyalty 3.0: How Big Data and Gamifi cation Are Revolutionizing Customer and Employee Engagement
+(New York: McGraw-Hill, 2013); Gabe Zichermann and Joselin Linder, Th e Gamifi cation Revolution: How Leaders 
+Leverage Game Mechanics to Crush the Competition (New York: McGraw-Hill, 2013); Kris Duggin and Kate Shoup, 
+Business Gamifi cation for Dummies (Hoboken, NJ: Wiley, 2013).
+24 Kevin Werbach and Dan Hunter, For the Win: How Game Th inking Can Revolutionize Your Business (Philadelphia, 
+AA: Wharton Digital Press, 2012).
+25 Ralph Koster, A Th eory of Fun for Game Design, 2nd Ed. (Sebastopol, CA: O’Reilly Media, 2014); Jesse Schell, Th e 
+Art of Game Design: A Book of Lenses (Boca Raton, FL: CRC Press, 2008); Kevin Werbach and Dan Hunter, For the 
+Win: How Game Th inking Can Revolutionize Your Business (Philadelphia, AA: Wharton Digital Press, 2012).
+26 Ralph Koster, A Th eory of Fun for Game Design, 2nd Ed. (Sebastopol, CA: O’Reilly Media, 2014).
+27 Jon Radoff , Game On: Energize Your Business with Social Media Games (Indianapolis, IN: Wiley, 2011) and Bryon 
+Reeves and J. Leighton Read, Total Engagement: Using Games and Virtual Worlds to Change the Way People Work and 
+Businesses Compete (Boston, MA: Harvard Business Press, 2009).
+28 Jesse Schell, Th e Art of Game Design: A Book of Lenses (Boca Raton, FL: CRC Press, 2008).
+402 Chapter 10 Human–Computer Interaction Layer Design
+have to start thinking about the individual psychological and cognitive diff erences among the 
+ diff erent users.29 Th is applies both to diff erent types of customers and employees.
+Fourth, game developers also tend to try and build a community around the game. In 
+this way, users have a built-in support mechanism. Schell30 suggests a set of tips to develop a 
+strong community that can be applied to general business information systems development. 
+He suggests that we should foster friendships by encouraging the users to talk with each other 
+about the system and we should try to create community property by having the users (and 
+developers) take joint responsibility for the system. However, one of his more relevant sug gestions is to support multiple levels of users based on their level of experience. By having the 
+system detect the level of expertise of the user in using the system, the system can introduce 
+features, such as short cuts, once a specifi c “level” has been reached. Th is is associated with 
+“leveling up” in games. Th is would help in addressing the trade-off s between ease of learning 
+and ease of use when developing a user interface. Th is could also encourage users to “buy in” 
+to the system. 
+Fift h, when it comes to successful game design, you must consider the aesthetics. As such, 
+without a focus on aesthetics, the experience that you want the customer or employee to incur 
+may be less than desirable. In fact, it could discourage them from returning to your site.
+Multidimensional Information Visualization Design
+Th ere have been many diff erent types of multidimensional information visualizations that have 
+been used in business.31 However, the diff erent types fall into two basic categories: multidimen sional information visualizations in 2D space and multidimensional information visualizations 
+in nonimmersive 3D space. Th ose visualizations that are displayed in 2D space include the basic 
+business charts and graphs you would fi nd in a spreadsheet or statistics package, e.g., heat maps, 
+maps, node-link diagrams, parallel coordinates, radar charts, scatterplots, and treemaps.32 Th e 
+primary issue related to the use of these types of charts and diagrams deals with the potential of 
+bias creeping into the display (see earlier in the chapter). However, when considering visualiza tions that are displayed in nonimmersive 3D space, additional issues are raised.33
+Th e fi rst issue that comes up is the issue of being able to determine a specifi c value that is 
+being represented. For example, in Figure 10-17, which portrays a multidimensional surface 
+chart, it is virtually impossible to determine specifi c values represented in the 3D space. In this 
+case, there are four separate values being plotted: one for the X-axis, one for the Y-axis, one 
+for the Z-axis, and one that uses the color of the surface. Only the last value, due to the legend, 
+can be easily determined. Another example of this problem is portrayed in Figure 10-18 that 
+shows a multidimensional bar chart. Again, four separate values are depicted. Th ere are two 
+29 Chaomei Chen, Information Visualization and Virtual Environments (London: Springer-Verlag, 1999); Howard 
+Gardner, Frames of Mind: Th e Th eory of Multiple Intelligences (New York: Basic Books, 1983).
+30 Jesse Schell, Th e Art of Game Design: A Book of Lenses (Boca Raton, FL: CRC Press, 2008).
+31 David Tegarden, “Business Information Visualization,” Communications of the Association for Information Systems, 
+Vol. 1, Article 4 (1999) (http://aisel.aisnet.org/cais/vol1/iss1/4).
+32 A set of good books that address these types of information visualizations are: Ben Fry, Visualizing Data (Sebas topol, CA: O’Reilly Media, 2008); Derek L. Hansen, Ben Shneiderman, and Marc A. Smith, Analyzing Social Media 
+Networks with NodeXL: Insights from a Connected World (Burlington, MA: Morgan Kaufmann, 2011); Nathan Yau, 
+Visualize Th is: Th e FlowingData Guide to Design, Visualization, and Statistics (Indianapolis, IN: Wiley, 2011); Nathan 
+Yau, Data Points: Visualization Th at Means Something (Indianapolis, IN: Wiley, 2013).
+33 A set of good books that address these types of information visualizations are: Judith R. Brown, Rae Earnshaw, Mikael 
+Jern, and John Vince, Visualization: Using Computer Graphics to Explore Data and Present Information (New York: 
+Wiley, 1995); Robert Spence, Information Visualization (Harlow England: ACM Press, 2001); Chaomei Chen, Informa tion Visualization: Beyond the Horizon, 2nd Ed. (London: Springer-Verlag, 2004); Usama Fayyad, Georges Grinstein, 
+and Andreas Wierse (eds.), Information Visualization in Data Mining and Knowledge Discovery (San Francisco: Morgan 
+Kaufmann, 2002).
+basic approaches used to address 
+this problem: being able to rotate 
+and zoom the visualization and pro viding a drill-down capability that 
+allows the specifi c values to be dis played (see Figure 10-19). 
+Another issue that comes up 
+when displaying data in 3D space 
+is occlusion; that is, when viewing 
+data in 3D, some of the visualiza tion may be covered up, hidden, 
+by other parts of the visualization. 
+For example, in Figure 10-18, the 
+values drawn at the “back” of the 
+visualization cannot be easily deter mined. In Figure 10-19, the negative 
+values are drawn below the surface 
+of the fl oor of the visualization. As 
+such, the negative values cannot be 
+seen. However, by rotating the vis ualization “up” and being able to 
+click on a specifi c value, the values 
+associated with that observation can 
+be drilled down into and displayed 
+in a semi-transparent window. In 
+Figure 10-20, the visualization dis plays the basic values on the fl oor. 
+With this visualization, in addition 
+to supporting displays on the walls, 
+the user can also use a slicing plane 
+that “cuts through” the visualiza tion to help better understand the 
+data being visualized. Th ese types of 
+visualizations have been used quite 
+extensively in supporting business 
+decision making.
+Th ere are many more types of multidimensional information visualizations that have been 
+used in business, e.g., volumes, fl oors and walls, maps, and surfaces. Each has its own strengths, 
+weaknesses, and challenges. Furthermore, today there are many specialized tools that can be 
+used to aid in designing and developing these types of visualizations. However, the basic design 
+process is essentially the same user interface design process described earlier. You still have to 
+design the navigation controls, the input mechanisms, and the output. To begin with, you will 
+have to understand the underlying problem domain and the tasks that the user needs to per form. Next, you will need to choose the type of visualization to be designed based on the task 
+that the user needs supported. Th is is still an art form. Our recommendation is to sit down with 
+the user and go through diff erent types of information visualizations to try and determine which 
+of the information visualizations are reasonable. Th is decision should be based on whether the 
+mapping of the data to the visualization is “intuitive” from the user’s perspective or not. Also, 
+remember that just because you can implement a complex, multidimensional information visu alization does not mean that you should do it. In many cases, simple business charts and graph ics are more than suffi cient. Like game design, be sure to focus on aesthetics. If the visualization ummiesTM (Hoboken, 
+NJ: Wiley, 2011) and Dusty Reagan, TwitterTM Application Development for DummiesTM (Hoboken, NJ: Wiley, 2010).
+400 Chapter 10 Human–Computer Interaction Layer Design
+the site so that once the customer lands on your site, he or she stays there for a while. One way 
+that you can accomplish this is by providing the customer with links to “related” material. If 
+you decided to include a voting or “like” mechanism, be sure to enable the customer to see 
+the “best” or, at least, the most popular material fi rst. Another possibility is to create a lead erboard that displays the most shared material. You need to leverage the information gained 
+by implementing the fourth guideline.
+Sixth, one of the more diffi cult things to accomplish is to have your sites become a place 
+that your customers feel that they belong. You want your customers to feel that they are 
+members of something; you want to try to build a feeling of community. Th e more they feel 
+that they belong, the more likely they will recommend your site to their friends. One way to 
+accomplish this is to encourage employees, at least the “right” employees, to author their own 
+“independent” sites that discuss topics of interest to your customers. Th is will give a more 
+personal feel to the fi rm and possibly entice customers to stick around on the site longer.
+Finally, in most cases, your customers visit your sites using a variety of hardware plat forms. Th e platforms range from the desktop to the notebook to the tablet to the smartphone. 
+Consequently, all of the material related to general user interface design and to mobile com puting is applicable. Because you have a global audience, you need to be sure to take into 
+account international and cultural issues in your design.
+GAMES, MULTIDIMENSIONAL INFORMATION VISUALIZATIONS, 
+AND IMMERSIVE ENVIRONMENTS20
+With the advent of games and multidimensional information visualizations being used in busi ness and the potential of applying immersive technologies, such as Google GlassTM and the 
+Oculus RiftTM, to solve business problems using augmented and virtual reality, the design of the 
+human computer interaction layer is becoming even more important in information systems 
+development. In many ways, user interface design for games, multidimensional information 
+visualizations, and immersive environments is very similar to designing a user interface for more 
+traditional application areas. However, in other ways, it is very diff erent. 
+Games, Gamifi cation, and User Interface Design 
+Games have been around for a very, very long time. Th ey have been very successful in many 
+diff erent areas because they are fun and engaging.21 When applying games to business situations, 
+there are two general approaches to consider: development of games that support business pro cesses and gamifi cation of business processes. Th e development of games to solve business prob lems is relatively new. Traditionally, they have been used primarily with academic simulations. 
+However, given the popularity of games in our culture, business games are being developed 
+and deployed to increase customer and employee engagement.22 Gamifi cation deals with applying 
+gaming mechanics to non-gaming situations. Gamifi cation has been used to redesign classrooms 
+20 Obviously, in a short section we cannot cover all of the issues related to developing games, multidimensional infor mation visualizations, or using immersive environments to solve business applications. However, in this section we 
+provide with an overview of the types of issues that you may run into when using these technologies. We also provide 
+pointers to many references that have been useful in our development eff orts.
+21 Jane McGonigal, Reality Is Broken: Why Games Make Us Better and How Th ey Can Change the World (New York: 
+Penguin Books, 2011); James Paul Gee, Why Video Games Are Good for Your Soul (Champaign, IL: Common Ground 
+Publishing, 2005); Bernard Suits, Th e Grasshopper: Games, Life, and Utopia (Ontario, CA: Broadview Press, 2005).
+22 Jesse Schell, Th e Art of Game Design: A Book of Lenses (Boca Raton, FL: CRC Press, 2008); Jon Radoff , Game On: 
+Energize Your Business with Social Media Games (Indianapolis, IN: Wiley, 2011); Bryon Reeves and J. Leighton Read, 
+Total Engagement: Using Games and Virtual Worlds to Change the Way People Work and Businesses Compete (Boston, 
+MA: Harvard Business Press, 2009).
+Games, Multidimensional Information Visualizations, and Immersive Environments  401
+and to support learning, and, like games, it too has been used to increase customer and employee 
+engagement.23 media platforms. Two good books are Jesse Stay, FacebookTM Application Development for De comments regarding your content. Another way is to provide a is not pleasing to the eye of the user, then it 
+is probably the wrong visualization. Finally, 
+given that visualization design is more of an 
+art than a science, testing the visualization’s 
+eff ectiveness with many users is critical. 
+User Interface Design and 
+Immersive Environments
+Augmented and virtual reality using immersive technologies, such as Google GlassTM and 
+the Oculus RiftTM, is among the latest and exciting application areas being utilized to solve 
+business problems. Where virtual reality (VR) technologies completely immerse the user into 
+an artifi cial simulated digital environment, augmented reality (AR) technologies are used to augment or enhance the view of the real world. Th ere are both opportunities and challenges with 
+deploying both of these technologies.
+AR has primarily been used in advertising, real world navigation, room design, games, 
+social networking, and medical applications.34 If you happen to watch the NFLTM on TV, 
+you have already experienced augmented reality: Th ink of the “fi rst down” line that magically 
+appears on the screen. Th e typical hardware used is a smartphone or tablet. One of the primary 
+challenges in AR is the ability to use the camera to see and the soft ware to interpret the realworld landscape that is being augmented by the system. Th is is known as object recognition. Th is 
+especially is a problem when using AR browsers that “connects” the real world with content on 
+the Web. In this case, a browser, such as JunaioTM, must recognize where it is physically located 
+and add “links” to allow the user to look up additional information about the locations that it 
+sees. To do this, the browser must use the camera, the GPS, and the accelerometer of the smartphone. Another major issue with regard to AR is of a social nature. For example, using Google 
+GlassTM while talking with someone can raise issues about privacy, such as are you paying 
+attention to the other person or are you looking at the information being displayed and what 
+exactly is the information being displayed. Th ere are also apps available today that support facial 
+recognition, which obviously raises even more issues with privacy. However, there are all kinds 
+of possible benefi ts from using this technology, e.g., think about the advertising that takes place 
+in the movie Minority Report. Using Google GlassTM could allow you to see information that has 
+been personalized about the locations around you as you walk down the street. 
+A prototyping approach, similar to the user interface design approach described earlier is 
+used to design AR applications.35 All of the issues related to traditional user interface design, 
+game design, and multidimensional information visualization design are relevant and must be 
+addressed, e.g., imagine using a heads-up display while driving your car to provide information 
+about your location; occlusion becomes a real issue. Consequently, testing the AR system in 
+real-world situations is essential.
+VR has been both overhyped and under utilized. Even though today VR has primarily been 
+associated with games, it has been used in business for a long time.36 It has been used in areas 
+such as derivatives trading, fi nancial risk management, industrial process control, marketing 
+FIGURE 10-20
+Multidimensional 
+Bar Chart on Floor 
+with Line Graphs on 
+Walls in 3D Space
+34 A good book to get a basic overview of augmented reality is Gregory Kipper and Joseph Rampolla, Augmented 
+Reality: An Emerging Technologies Guide to AR (Waltham, MA: Syngress, 2013).
+35 Tony Mullen, Prototyping Augmented Reality (Indianapolis, IN: Syngress, 2011).
+36 David Tegarden, “Business Information Visualization,” Communications of the Association for Information Systems, 
+Vol. 1, Article 4 (1999) (http://aisel.aisnet.org/cais/vol1/iss1/4); Alan Wexelblat (ed.), Virtual Reality: Applications 
+and Explorations (Boston, MA: Academic Press, 1993); Dimitris Chorafas and Heinrich Steinmann, Virtual Reality: 
+Practical Applications in Business and Industry (Englewood Cliff s, NJ: Prentice Hall, 1995); Robert Th ierauf, Virtual 
+Reality Systems for Business (Westport, CN: Quorum Books, 1995).
+analysis, network modeling, operations management, organizational modeling, portfolio management, product design and manufacturing, room layout design, sensitivity analysis, simulated 
+meetings, stock market analysis, and training. However, from a user interface design perspective, 
+VR raises additional issues that need to be addressed.
+It is believed that VR attains its power by captivating the user’s attention and inducing a 
+sense of immersion, the feeling of being present in the space being simulated. Th e challenge 
+of creating the feeling of immersion has two primary dimensions: sensory and aff ective. In 
+the sensory dimension, the combination of stimuli employed must be of suffi cient vividness 
+that an individual’s automatic perceptual processes are triggered, resulting in the simulation 
+being perceived as life-like. In the aff ective dimension, the user should be cast in an interactive, 
+exploratory role. When considering these dimensions, one should remember that virtual reality 
+resides in an individual’s consciousness and, therefore, the relative contribution of each of these 
+dimensions in creating a sense of immersion will vary across individuals. Th us, immersion is a 
+function of both technology and perceiver. Th is raises the issue of individual psychological and 
+cognitive diff erences.37
+Interaction with a virtual world may take the form of wayfi nding through the virtual space, 
+rearranging existing, or creating new, 3D objects, or communicating with another agent (person 
+or automaton) sharing the same virtual space. Visitors to large virtual worlds are oft en unable 
+to comprehend the overall topological structure of the space. Th ey may wander aimlessly when 
+attempting to fi nd a particular location for the fi rst time and may subsequently have diffi culty 
+fi nding their way back to locations already visited. Wayfi nding tasks require the user to be able 
+to conceptualize the virtual space as a whole and to develop a cognitive map of it.38 A cognitive 
+map consists of not only spatial relationships, but also of auditory, sensory, and emotional 
+impressions. In games, a map is typically provided to help with understanding where one is in 
+the virtual space and from where one has come. Like the immersion issue, wayfi nding also raises 
+issues related to individual psychological and cognitive diff erences. 
+Th e last challenge with regard to using VR as a user interface platform deals with collaboration. When considering multiuser, distributed VR systems, such as many of today’s video games, 
+occlusion can become a very large problem. Not only can objects in the VR space hide other VR 
+objects, they can hide other users. Also, it is possible for one user to see something of interest that 
+the other users may not. In this case, the issue of wayfi nding comes back up. For example, if user 
+A fi nds an interesting piece of information, then user A must communicate how to navigate to a 
+location in which the other users will be able to observe the fi nding. Th ere are multiple possibilities here, including providing wayfi nding directions from a specifi ed “viewpoint,” “teleporting” 
+the other users from their individual current locations to the current location of user A, having 
+user A go fi nd the other users and bring them to the appropriate location, or having user A 
+simply “drive” all other users to the appropriate location by taking over their ability to navigate 
+through the visualization. Furthermore, once the other users are at the appropriate location, how 
+do they return to their previous location?
+Obviously, designing eff ective and effi cient VR applications is very diffi cult.39 Again, the 
+overall design process is similar to the general user interface design process described earlier. However, given the potential for VR to support business decision making by combining 
+37 Chaomei Chen, Information Visualization and Virtual Environments (London: Springer-Verlag, 1999); Howard 
+Gardner, Frames of Mind: Th e Th eory of Multiple Intelligences (New York: Basic Books, 1983).
+38 Reginald Golledge (ed.), Wayfi nding Behavior: Cognitive Mapping and Other Spatial Processes (Baltimore, MD: Th e 
+John Hopkins University Press, 1999); Rob Kitchin and Scott Freundschuh, Cognitive Mapping: Past, Present and 
+Future (London: Routledge, 2000).
+39 A recent book that tackles how to design a VR system is Ann Lantham Cudworth, Virtual World Design (Boca 
+Raton, FL: CRC Press, 2014).
+Games, Multidimensional Information Visualizations, and Immersive Environments  405
+406 Chapter 10 Human–Computer Interaction Layer Design
+gaming and information visualization technologies into a single seamless distributed environment and that the investment in specialized hardware and soft ware is dropping, VR could 
+provide large payoff s.
+INTERNATIONAL AND CULTURAL ISSUES AND USER 
+INTERFACE DESIGN40
+With the World Wide Web, virtually any fi rm can have a global presence. With this capability, a fi rm must be cognizant of a set of international and cultural issues. Th ese issues include 
+multilingual requirements, color, and cultural diff erences.
+Multilingual Requirements
+Th e fi rst and most obvious diff erence between applications used in one region and those 
+designed for global use is language. Global applications oft en have multilingual requirements,
+which means that they have to support users who speak diff erent languages and write using 
+non-English letters (e.g., those with accents, Cyrillic, Japanese). One of the most challenging 
+aspects in designing global systems is getting a good translation of the original language messages into a new language. Words oft en have similar meanings but can convey subtly diff erent 
+meanings when they are translated, so it is important to use translators skilled in translating 
+technical words. A few rules that you should follow are to:
+■ Keep the writing short and simple. It is much easier to avoid mistranslations.41
+■ Avoid humor, jargon, slang, clichés, puns, analogies, and metaphors. Th ese tend to 
+be too culturally specifi c. Consequently, the underlying point being made will most 
+likely be lost in translation.
+■ Use good grammar. Be sure to punctuate everything correctly. Even though you 
+might be tempted to ignore grammar and punctuation rules to try to make a point, it 
+makes translating more diffi cult, especially for automated translation systems. Don’t 
+depend on automated spelling and grammar checkers to enforce this. At this time, 
+they simply aren’t good enough.
+Another challenge is oft en screen space. In general, English-language messages usually take 
+20 percent to 30 percent fewer letters than their French or Spanish counterparts. Designing 
+global systems requires allocating more screen space to messages than might be used in the 
+English-language version.
+Some systems are designed to handle multiple languages on the fl y so that users in different countries can use diff erent languages concurrently; that is, the same system supports 
+several diff erent languages simultaneously (a concurrent multilingual system). Other systems 
+contain separate parts that are written in each language and must be reinstalled before a 
+specifi c language can be used; that is, each language is provided by a diff erent version of the 
+system so that any one installation will use only one language (i.e., a discrete multilingual 
+40 A set of books that provide a good introduction to building information systems for a multicultural audience 
+include Elisa M. del Galdo and Jakob Nielsen, International User Interfaces (New York, NY: Wiley, 1996); Nitish 
+Singh and Arun Pereira, Th e Culturally Customized Web Site: Customizing Web Sites for the Global Marketplace
+(Oxford, UK: Elsevier Butterworth Heinemann, 2005); John Yunker, Beyond Borders: Web Globalization Strategies
+(Berkley, CA: New Riders, 2003).
+41 However, even this does not guarantee good translations if you use an automatic translation facility. For example, 
+type the text “I would like my steak cooked rare” into babel fi sh (http://babelfi sh.yahoo.com/) and translate it to 
+Russian and back to English. You will get back “I wanted would be my rare welded [steykom] done”—not exactly 
+the most useful translation.
+International and Cultural Issues and User Interface Design   407
+system). Either approach can be eff ective, but this functionality must be designed into the 
+system well in advance of implementation.
+Finally, one other consideration that must be considered is reading direction. In most 
+Western societies, readers read from left to right and top to bottom. Th is is not true for 
+many cultures. For example, in Arabic countries, readers typically read right to left and top 
+to bottom.
+Color
+To begin with, color is not black and white. Th e meaning associated with a color is totally 
+culturally dependent. In fact, black and white isn’t necessarily black and white; they could 
+be white and black. In most Western cultures, black is associated with death, mourning, and 
+grief or with respect and formality. For example, in the United States, we typically wear black 
+to a funeral, or you would expect to see religious leaders in black (think about the robes typically worn by a Catholic priest). In many Eastern cultures, on the other hand, white is associated with death or the color of robes worn by religious leaders. In an example reported by 
+Singh and Pereira, when senior citizens in the United States and India were asked to “visualize 
+the following statement: A lady dressed in white, in a place of worship,” the results that came 
+back were as near to the opposite as one could get. In India, the lady would be a widow, but 
+in the United States she would be expected to be a bride.
+Other colors that have meanings that are culturally driven include green, blue, red, 
+ yellow, and purple. In the United States, red implies excitement, spice passion, sex, and 
+even anger; in Mexico, it indicates religion; in the United Kingdom, it indicates authority, 
+power, and government; in Scandinavian countries, it indicates strength; and in China, it 
+means communism, joy, and good luck. Blue is associated with holiness in Israel; cleanliness 
+in Scandinavia; love and truth in India; loyalty in Germany; and trust, justice, and “offi cial” 
+business in the United States. In Ireland, green signifi es nationalism and Catholicism, and in 
+the United States it denotes health, environmentalism, safety, greed, and envy. Green is a very 
+confusing color for Americans. In the Arab Middle East green is a sign of holiness, in France 
+it represents criminality, and in Malaysia it signifi es danger and disease. Yellow also has many 
+culturally dependent meanings. In the United States, it is associated with caution and cowardice; in Scandinavia, warmth; in Germany, envy; and in India, commerce. Purple signifi es 
+death, nobility, or the Church in Latin America, the United States, and Italy, respectively. 
+Obviously, when building a website for a global audience, colors must be chosen carefully; 
+otherwise, unintentional messages will be sent.
+Cultural Diff erences
+Th e New York Times columnist Tom Friedman talks about the need for a fi rm to use its own 
+local capabilities as a basis for competitive advantage in a global market. He refers to this process 
+as glocalization. In some ways, when developing a website for an international audience, you 
+need to consider the opposite of glocalization. You need to think about what message needs 
+to be sent to a local culture from your global organization to achieve the business goals of the 
+fi rm. Consequently, you need to be able to understand the diff erent local cultures. Cultural 
+issues have been studied at both organizational and national levels. Diff erent researchers have 
+emphasized diff erent dimensions on which to focus our attention. In this section, we limit our 
+discussion to cultural issues that eff ect designing eff ective user interfaces. In particular, we only 
+address the research of Edward Hall and Geert Hofstede.42
+42 See Geert Hofstede, Culture’s Consequences: Comparing Values, Behaviors, Institutions and Organizations Across 
+Nations, 2nd Ed. (Th ousand Oaks, CA: Sage, 2001); Geert Hofstede, Gert Jan Hofstede, and Michael Minkov, 
+Cultures and Organizations: Soft ware of the Mind, 3rd Ed. (New York: McGraw-Hill, 2010); Edward T. Hall, Beyond 
+Culture (New York: Anchor Books, 1981).
+408 Chapter 10 Human–Computer Interaction Layer Design
+Hall identifi ed three dimensions that are directly relevant to user interface design: 
+speed of messages, context, and time. Th e speed of messages dimension deals with how fast 
+a member of a culture is expected to understand a message and how “deep” the content 
+of a typical message will be in a culture. Th e deeper the message content, the longer it 
+will take for a member of a culture to understand the message. For example, two diff erent approaches to describe a historical event would be a news headline (fast and shallow) 
+and a documentary (slow and deep). According to Hall, diff erent cultures have diff erent 
+expectations of the content of and response to a message. Th is particular dimension has 
+implications for the content of the message contained in the user interface. Krug’s third 
+design principle turns out to be culturally driven. For a Western audience, minimizing the 
+number of words contained in a user interface makes sense. Westerners prefer to get to 
+the point as fast as possible. However, this is not true for Eastern cultures.43 Consequently, 
+for a fi rm like Amazon.com, providing detailed reviews and short excerpts from a book 
+provides support for a slow and deep culture, while providing bullet point types of comments supports the fast and shallow culture. By providing both, Amazon.com addresses 
+both needs.
+Th e second dimension, context, deals with the level of implicit information that is used 
+in the culture versus the information needing to be made explicit. In high-context cultures, 
+most information is known intrinsically and does not have to be made explicit. Th erefore, the 
+actual content of the message is fairly limited. However, in low-context cultures, everything 
+must be spelled out explicitly to avoid any ambiguity, and therefore the message needs to be 
+very detailed. You will fi nd this dimension causing problems when attempting to close a business deal. In most Western societies, the lawyers want everything spelled out. In contrast, in 
+most Eastern societies, it may, in fact, be considered insulting to have to spell everything out. 
+From a website design perspective, Singh and Pereira point out that in a high-context culture, 
+focusing the design on aesthetics, politeness, and humility produces an eff ective website, but 
+in a low-context culture, things such as the terms and conditions of a purchase, the “rank” 
+of the product and fi rm, and the use of superlatives in describing the product and fi rm are 
+critical attributes of a successful website.
+Hall’s third dimension, time, addresses how a culture deals with many diff erent things 
+going on simultaneously. In a polychronic time culture, members of the culture tend to do 
+many things at the same time but are easily distracted and view time commitments as very 
+fl exible. With monochronic time cultures, members of the culture solve many things by focusing on one thing at a time, are single-minded, and consider time commitments as something 
+that is set in stone. When designing for a polychronic culture, the liberal use of “pop-up” 
+messages might be fun and engaging, while in a monochronic culture, pop-up messages simply annoy the user. In the past, Northern Hemisphere cultures have been monochronic and 
+Southern Hemisphere cultures have been polychronic. However, with the use of e-mail interruptions and text messaging, this could change over time. Regardless, allowing interruptions 
+to occur does in fact distract the users from their current task. Depending on the culture, this 
+could be a good or bad thing to support.
+Hofstede also has identifi ed cultural dimensions that are relevant to the user interface. 
+Th ese include power distance, uncertainty avoidance, individualism versus collectivism, and 
+masculinity versus femininity. Th e fi rst dimension, power distance, addresses how the distribution of social power is dealt with in the culture. In cultures with a high power distance, 
+43 See Richarde E. Nisbett, Th e Geography of Th ought: How Asians and Westerners Th ink Diff erently … And Why
+(New York: Free Press, 2003).
+International and Cultural Issues and User Interface Design   409
+members of the culture believe in the authority of the social hierarchy. In cultures with low 
+power distance, members of the culture believe that power should be more equally distributed. Consequently, in cultures with a high power distance, emphasis on the “greatness” of 
+the leaders of the fi rm, the use of “proper titles” for members of the fi rm, and the posting 
+of testimonials on behalf of the fi rm by “prominent” members of society is important. 
+International awards won by the fi rm, its members, or its products should also be posted 
+prominently on the website.
+Th e second dimension, uncertainty avoidance, addresses to what degree a culture is 
+comfortable with uncertainty. In a culture with a high uncertainty avoidance, members avoid 
+taking risks, value tradition, and are much more comfortable in a rule-driven society. In cultures that score high on uncertainty avoidance, more customer service needs to be provided, 
+more important “local” contacts need to be available, the fi rm’s and product’s history and 
+tradition need to be provided on the website, and, in the case of soft ware, the use of free trials 
+and downloads is critical. In other words, you need to build trust and reduce perceived risk 
+between the customer and the fi rm. Th is can be supported through product seals of approval 
+or the use of WebTrustTM and SysTrustTM certifi cations for the website.44 Merely translating 
+a website from a low uncertainty avoidance culture to a high uncertainty avoidance culture 
+is not suffi cient. You also need to point out relationships between the local culture and the 
+fi rm’s products.
+Th e third dimension, individualism versus collectivism, is based on the level of emphasis the culture places on the individual or the collective, or group. In North America and 
+Europe, individualism is rewarded. However, in East Asia, it is believed that by focusing 
+on optimizing the group, the individual will be most successful. In other words, it is the 
+group that is the most important. In a collective society, presenting information on how 
+the fi rm “gives back” to the community; supports “member” clubs, “loyalty” programs, 
+and “chat” facilities; and provides links to “local” sites of interest are very important 
+characteristics for a website. In contrast, in an individualistic society, providing support 
+for personalization of the user’s experience with the website, emphasizing the uniqueness 
+of the products that the user is viewing, and emphasizing the privacy policy of the site 
+are critical.
+Hofstede’s fourth dimension, masculinity versus femininity, does not mean how men 
+and women are treated by the culture. But, instead this dimension addresses how well masculine and feminine characteristics are valued by the culture. For example, in a masculine 
+culture, characteristics such as being assertive, ambitious, aggressive, and competitive are 
+valued, whereas in a feminine culture, characteristics such as being encouraging, compassionate, thoughtful, gentle, and cooperative are valued. In masculine cultures, a focus on the 
+eff ectiveness of the fi rm’s products is essential. Also, clearly separating male- and female-oriented topics and placing them on diff erent sections of a website can be critical. According to 
+Singh and Pereira, feminine cultures value a focus on aesthetics and using more of a soft -sell 
+approach, where the focus on more aff ective, intangible aspects of the fi rm, its members, and 
+its products is more appropriate.
+Obviously, operationalizing Hall’s and Hofstede’s dimensions for eff ective user interface 
+design is not easy. Furthermore, given all of the diff erent platforms on which a user interface 
+can be deployed, the level of complexity and diffi culty in designing eff ective and effi cient user 
+interfaces that take into consideration the global and multicultural world in which we live 
+is increasing. However, in a global market, ignoring cultural issues in user interface design,

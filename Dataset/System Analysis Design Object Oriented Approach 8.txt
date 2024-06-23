@@ -1,0 +1,416 @@
+﻿external interface requirement A description of a connection between a software system and a user, another software system, or a hardware device.
+facilitator A person who is responsible for planning and leading a group activity, such as a requirements elicitation workshop.
+feature One or more logically related system capabilities that provide value to a user and are described by a set of functional requirements.
+feature tree An analysis model that depicts the features planned for a product in a hierarchical tree, showing up to two levels of subfeatures beneath each main feature.
+flowchart An analysis model that shows the processing steps and decision points in the logic of a process. Similar to an activity diagram.
+function point A measure of software size, based on the number and complexity of internal logical files, external interface files, external inputs, outputs, and queries.
+functional requirement A description of a behavior that a software system will exhibit under specific conditions.
+gap analysis A comparison of the current state to an alternative or potential state for a system, process, or other aspect of a business situation, to identify significant differences between them.
+ 
+gold-plating Unnecessary or excessively complex functionality that is specified or built into a product, sometimes without customer approval.
+green-field project A project in which new software or a new system is developed.
+horizontal prototype See mock-up.
+include relationship A construct in which several steps that recur in multiple use cases are factored out into a separate sub-use case, which the other use cases then invoke when needed.
+inspection A type of formal peer review that involves a trained team of individuals who follow a well-defined process to examine a work product carefully for defects.
+issue, requirement A defect, open question,
+or decision regarding a requirement. Examples include items flagged as TBD, pending decisions, information that is needed, and conflicts awaiting resolution.
+iteration An uninterrupted development period, typically one to four weeks in duration, during which a development team implements a defined set of functionality selected from the product backlog or baselined requirements for the product.
+mock-up A partial or possible representation
+of a user interface for a software system.
+Used to evaluate usability and to assess the completeness and correctness of requirements.
+Could be executable or could be in the form of a paper prototype. Also called a horizontal prototype.
+navigation map See dialog map.
+nonfunctional requirement A description of a property or characteristic that a system must exhibit or a constraint that it must respect.
+normal flow The default sequence of steps in a use case, which leads to satisfying the use case’s postconditions and letting the user achieve his goal. Also known as the normal course, main course, basic flow, normal sequence, main success scenario, and happy path.
+operational profile A suite of scenarios that represents the expected usage pattern of a software product.paper prototype A non-executable mock-up of a software system’s user interface using low-tech screen sketches.
+peer review An activity in which one or more persons other than the author of a work product examine that product with the intent of finding defects and improvement opportunities.
+pilot A controlled execution of a new solution (such as a process, tool, software system, or training course) with the objective of evaluating the solution under real conditions to assess its readiness for general deployment.
+Planguage A keyword-oriented language developed by Tom Gilb that enables precise and quantitative specification of requirements, particularly nonfunctional requirements.
+postcondition A condition that describes the state of a system after a use case is successfully completed.
+precondition A condition that must be satisfied or a state the system must be in before a use case can begin.
+prioritization The act of determining which requirements for a software product are the most important for achieving business success and the sequence in which requirements should be implemented.
+procedure A step-by-step description of a course of action to be taken to perform a
+specified activity, describing how the activity is to be accomplished.
+process A sequence of activities performed for a particular purpose. A process description is a documented definition of those activities.
+process assets Items such as templates, forms, checklists, policies, procedures, process
+descriptions, and sample work products that are collected to assist an organization’s effective application of software development practices.
+process flow The sequential steps of a business process or the operations of a proposed software system. Often represented by using an activity diagram, flowchart, swimlane diagram, or other modeling notation.
+product Whatever ultimate deliverable a
+project is developing. In this book, product,
+ 
+application, system, and solution are used
+interchangeably.
+product backlog See backlog, product.
+product champion A designated representative of a specific user class who supplies the user requirements for the group that he or she represents.
+product owner A role, typically on an agile project team, that represents the customer and that is responsible for setting the product vision, providing project boundaries and constraints, prioritizing the contents of the product backlog, and making product decisions.
+proof of concept A prototype that implements a portion of a software-containing system that slices through multiple layers of the architecture. Used to evaluate technical feasibility and performance. Also called a vertical prototype.
+prototype A partial, preliminary, or possible implementation of a software system. Used to explore and validate requirements and design approaches. Types of prototypes
+are evolutionary and throwaway; paper and
+electronic; and mock-up and proof-of-concept.
+quality attribute A nonfunctional requirement that describes a service or performance characteristic of a product. Types of quality attributes include usability, portability, maintainability, integrity, efficiency, reliability, and robustness. Quality attribute requirements describe the extent to which a software product must demonstrate desired characteristics.
+quality-of-service requirement See quality attribute.
+real-time system A hardware and software system that must produce a response within a specified time after an initiating event.
+requirement A statement of a customer need or objective, or of a condition or capability that a product must possess to satisfy such a need or objective. A property that a product must have to provide value to a stakeholder.
+requirement attribute Descriptive information about a requirement that enriches its definition beyond the statement of intended functionality. Example attribute types are origin, rationale, priority, owner, release number, and version number.
+ 
+requirement pattern A systematic approach to
+specifying a particular type of requirement.
+requirements allocation The process of apportioning system requirements among various architectural subsystems and components.
+requirements analysis See analysis, requirements.
+requirements analyst See business analyst.
+requirements development The process of defining a project’s scope, identifying user classes and user representatives, and
+eliciting, analyzing, specifying, and validating requirements. The product of requirements development is a set of documented requirements that defines some portion of the product to be built.
+requirements engineer See business analyst.
+requirements engineering The subdiscipline of systems engineering and software engineering that encompasses all project activities associated with understanding a product’s necessary capabilities and attributes. Includes both requirements development and requirements management.
+requirements management The process of working with a defined set of requirements throughout the product’s development process and its operational life. Includes tracking requirements status, managing changes to requirements, controlling versions of requirements specifications, and tracing individual requirements to other requirements and system elements.
+requirements specification See software requirements specification and specification, requirements.
+requirements traceability matrix
+A table that depicts logical links between individual functional requirements and other system artifacts, including other functional requirements, user requirements, business requirements, architecture and design elements, code modules, tests, and business rules.
+retrospective A review in which project participants reflect on the project’s activities and outcomes with the intent of identifying ways to make the next project be even more successful.
+ 
+reuse, requirements The act of using existing requirements knowledge in multiple systems that share some similar functionality.
+review See peer review.
+risk A condition that could cause some loss or
+otherwise threaten the success of a project.
+root cause analysis An activity that seeks to understand the underlying factors that contribute to an observed problem.
+scenario A description of a specific interaction between a user and a system to accomplish some goal. Alternatively, an instance of usage of the system, or a specific path through a use case.
+scope The portion of the ultimate product vision that the current project will address.
+The scope draws the boundary between what’s in and what’s out for a project that creates a specific release or for a single development iteration.
+scope creep A condition in which the scope of a project continues to increase in an uncontrolled fashion throughout the development process.
+software development life cycle A sequence of activities by which a software product is defined, designed, built, and verified.
+software requirements specification (SRS)
+A collection of the functional and nonfunctional
+requirements for a software product.
+solution All of the components delivered by a project to achieve a set of business objectives specified by an organization, including software, hardware, business processes, user manuals, and training.
+specification, requirements The process of documenting a software application’s requirements in a structured, shareable, and
+manageable form. Also, the product from this process (see software requirements specification).
+sprint See iteration.
+SRS See software requirements specification.
+stakeholder An individual, group, or organization that is actively involved in a project, is affected by its process or outcome, or can influence its process or outcome.
+ 
+state machine diagram An analysis model that shows the sequence of states that an object in a system goes through during its lifetime in response to specific events that take place, or that shows the possible states of the system as a whole. Similar to a state-transition diagram.
+state table An analysis model that shows in matrix form the various states that a system, or an object in the system, can be in, and which of the possible transitions between states are allowed.
+state-transition diagram An analysis model that visually depicts the various states in which a system or an object in the system can exist, the permitted transitions that can take place between states, and the conditions and/or events that trigger each transition. Similar to a state machine or statechart diagram.
+story See user story.
+subject matter expert An individual who has extensive experience and knowledge in a domain and who is recognized as an
+authoritative source of information about the
+domain.
+swimlane diagram An analysis model that shows the sequential steps of a business process flow or the operations of a proposed software system. The process is subdivided into visual components called lanes, which show the systems or actors that execute the steps.
+system A product that contains multiple software and/or hardware subsystems. Colloquially, system also is used interchangeably in this book with application, product, and solution to refer to whatever software-containing deliverable a team is building.
+system requirement A high-level requirement for a product that contains multiple subsystems, which could be all software or software and hardware.
+TBD Abbreviation for to be determined. TBD serves as a placeholder when you know you are missing some requirements information. See issue, requirement.
+template A pattern to be used as a guide for
+producing a complete document or other item.
+throwaway prototype A prototype that is created with the intent of discarding it after it has served its purpose of clarifying and validating requirements and/or design alternatives.
+tracing The process of defining logical links between one system element (user requirement, functional requirement, business rule, design component, code module, test, and the like) and another. Also called traceability.
+UML An abbreviation for the Unified Modeling Language, which describes a set of standard notations for creating various visual models
+of systems, particularly for object-oriented software development.
+usage scenario See scenario.
+use case A description of a set of logically related possible interactions between an actor and a system that results in an outcome that provides value to the actor. Can encompass multiple scenarios.
+use case diagram An analysis model that identifies the actors who can interact with a system to accomplish valuable goals and the various use cases that each actor might be involved with.
+user A customer who will interact with a system either directly or indirectly (for example, by using outputs from the system but not
+generating those outputs personally). Also called
+end user.
+user class A group of users for a system who have similar characteristics and requirements for the system. Members of a user class function as actors when interacting with the system through use cases.
+user requirement A goal or task that specific classes of users must be able to perform with a system, or a desired product attribute. Use cases,
+ 
+user stories, and scenarios are common ways to
+represent user requirements.
+user role See actor.
+user story A format to capture user requirements on agile projects in the form of one or two sentences that articulate a user need or describe a unit of desired functionality, as well as stating the benefit of the functionality to the user.
+validation The process of evaluating a project deliverable to determine whether it satisfies customer needs. Often stated as “Are we building the right product?”
+verification The process of evaluating a project deliverable to determine whether it satisfies
+the specifications on which it was based. Often stated as “Are we building the product right?”
+vertical prototype See proof of concept.
+vision A statement that describes the strategic concept or the ultimate purpose and form of a new system.
+vision and scope document A collection of the business requirements for a new system, including business objectives, success metrics,
+a product vision statement, and a project scope description.
+waterfall development life cycle A model of the software development process in which the various activities of requirements, design,
+coding, testing, and deployment are performed
+sequentially with little overlap or iteration.
+wireframe A kind of throwaway mock-up prototype that is often used for preliminary webpage design.
+work product Any interim or final deliverable created for a software project.
+ 
+
+ 
+
+References
+
+
+Abran, Alain, James W. Moore, Pierre Bourque, and Robert Dupuis, eds. 2004. Guide to the Software Engineering Body of Knowledge, 2004 Version. Los Alamitos, CA: IEEE Computer Society Press.
+Akers, Doug. 2008. “Real Reuse for Requirements.” Methods & Tools 16(1):33–40.
+Alexander, Ian F., and Ljerka Beus-Dukic. 2009. Discovering Requirements: How to Specify Products and Services. Chichester, England: John Wiley & Sons Ltd.
+Alexander, Ian F., and Neil Maiden. 2004. Scenarios, Stories, Use Cases: Through the Systems Development Life-Cycle. Chichester, England: John Wiley & Sons Ltd.
+Alexander, Ian F., and Richard Stevens. 2002. Writing Better Requirements. London: Addison-Wesley. Ambler, Scott. 2005. The Elements of UML 2.0 Style. New York: Cambridge University Press.
+Anderson, Ross J. 2008. Security Engineering: A Guide to Building Dependable Distributed Systems,
+2nd ed. Indianapolis, IN: Wiley Publishing, Inc.
+Arlow, Jim. 1998. “Use Cases, UML Visual Modeling and the Trivialisation of Business Requirements.”
+Requirements Engineering 3(2):150–152.
+Armour, Frank, and Granville Miller. 2001. Advanced Use Case Modeling: Software Systems.
+Boston: Addison-Wesley.
+Arnold, Robert S., and Shawn A. Bohner. 1996. Software Change Impact Analysis. Los Alamitos, CA: IEEE Computer Society Press.
+Basili, Victor R., and H. Dieter Rombach. 1988. “The TAME Project: Towards Improvement-Oriented Software Environments.” IEEE Transactions on Software Engineering. 14(6):758–773.
+Bass, Len, Paul Clements, and Rick Kazman. 1998. Software Architecture in Practice. Reading, MA: Addison-Wesley.
+Beatty, Joy, and Anthony Chen. 2012. Visual Models for Software Requirements. Redmond, WA: Microsoft Press.
+Beatty, Joy, and Remo Ferrari. 2011. “How to Evaluate and Select a Requirements Management Tool.”
+http://www.seilevel.com/wp-content/uploads/RequirementsManagementToolWhitepaper_1.pdf. Beck, Kent, et al. 2001. “Manifesto for Agile Software Development.” http://www.agilemanifesto.org. Beizer, Boris. 1999. “Best and Worst Testing Practices: A Baker’s Dozen.” Cutter IT Journal 12(2):32–38.
+ 
+Beyer, Hugh, and Karen Holtzblatt. 1998. Contextual Design: Defining Customer-Centered
+Systems. San Francisco, CA: Morgan Kaufmann Publishers, Inc.
+Blackburn, Joseph D., Gary D. Scudder, and Luk N. Van Wassenhove. 1996. “Improving Speed and Productivity of Software Development: A Global Survey of Software Developers.” IEEE Transactions on Software Engineering 22(12):875–885.
+Boehm, Barry W. 1981. Software Engineering Economics. Upper Saddle River, NJ: Prentice Hall.
+ 	. 1988. “A Spiral Model of Software Development and Enhancement.” IEEE Computer
+21(5):61–72.
+ 	. 2000. “Requirements that Handle IKIWISI, COTS, and Rapid Change.” IEEE Computer
+33(7):99–102.
+Boehm, Barry W., Chris Abts, A. Winsor Brown, Sunita Chulani, Bradford K. Clark, Ellis Horowitz, Ray Madachy, Donald J. Reifer, and Bert Steece. 2000. Software Cost Estimation with Cocomo II. Upper Saddle River, NJ: Prentice Hall PTR.
+Boehm, Barry W., and Philip N. Papaccio. 1988. “Understanding and Controlling Software Costs.” IEEE Transactions on Software Engineering 14(10):1462–1477.
+Boehm, Barry, and Richard Turner. 2004. Balancing Agility and Discipline: A Guide for the Perplexed. Boston: Addison-Wesley.
+Booch, Grady, James Rumbaugh, and Ivar Jacobson. 1999. The Unified Modeling Language User
+Guide. Reading, MA: Addison-Wesley.
+Box, George E. P., and Norman R. Draper. 1987. Empirical Model-Building and Response Surfaces. New York: John Wiley & Sons, Inc.
+Boyer, Jérôme, and Hafedh Mili. 2011. Agile Business Rule Development: Process, Architecture, and JRules Examples. Heidelberg, Germany: Springer.
+Bradshaw, Jeffrey M. 1997. Software Agents. Menlo Park, CA: The AAAI Press. Brijs, Bert. 2013. Business Analysis for Business Intelligence. Boca Raton, FL: CRC Press.
+Brooks, Frederick P., Jr. 1987. “No Silver Bullet: Essence and Accidents of Software Engineering.”
+IEEE Computer 20(4):10–19.
+Brosseau, Jim. 2010. “Software Quality Attributes: Following All the Steps.” http://www.clarrus.com/ resources/articles/software-quality-attributes.
+Brown, Norm. 1996. “Industrial-Strength Management Strategies.” IEEE Software 13(4):94–103. Business Rules Group. 2012. http://www.businessrulesgroup.org.
+Callele, David, Eric Neufeld, and Kevin Schneider. 2008. "Emotional Requirements.“ IEEE Software 25(1):43–45.
+Caputo, Kim. 1998. CMM Implementation Guide: Choreographing Software Process Improvement.
+Reading, MA: Addison-Wesley.
+ 
+Carr, Marvin J., Suresh L. Konda, Ira Monarch, F. Carol Ulrich, and Clay F. Walker. 1993. Taxonomy-Based Risk Identification (CMU/ SEI-93-TR-6). Pittsburgh, PA: Software Engineering Institute, Carnegie Mellon University.
+Cavano, J. P., and J. A. McCall. 1978. “A Framework for the Measurement of Software Quality.”
+ACM SIGSOFT Software Engineering Notes 3(5):133–139.
+Charette, Robert N. 1990. Applications Strategies for Risk Analysis. New York: McGraw-Hill. Chernak, Yuri. 2012. “Requirements Reuse: The State of the Practice.” In Proceedings of the 2012
+IEEE International Conference on Software Science, Technology and Engineering, 46–53. Los Alamitos, CA: IEEE Computer Society Press.
+Chung, Lawrence, Kendra Cooper, and D.T. Huynh. 2001. “COTS-Aware Requirements Engineering Techniques.“ In Proceedings of the 2001 Workshop on Embedded Software Technology (WEST‘01).
+Cockburn, Alistair. 2001. Writing Effective Use Cases. Boston: Addison-Wesley.
+Cohen, Lou. 1995. Quality Function Deployment: How to Make QFD Work for You. Reading, MA: Addison-Wesley.
+Cohn, Mike. 2004. User Stories Applied: For Agile Software Development.
+Boston: Addison-Wesley.
+ 	. 2005. Agile Estimating and Planning. Upper Saddle River, NJ: Prentice Hall.
+ 		. 2010. Succeeding with Agile: Software Development Using Scrum. Upper Saddle River, NJ: Addison-Wesley.
+Collard, Ross. 1999. “Test Design.” Software Testing & Quality Engineering 1(4):30–37.
+Colorado State University. 2013. “Writing@CSU.“ http://writing.colostate.edu/guides/guide
+.cfm?guideid=68.
+Constantine, Larry. 1998. “Prototyping from the User’s Viewpoint.” Software Development
+6(11):51–57.
+Constantine, Larry L., and Lucy A. D. Lockwood. 1999. Software for Use: A Practical Guide to the Models and Methods of Usage-Centered Design. Reading, MA: Addison-Wesley.
+Cooper, Alan. 2004. The Inmates Are Running the Asylum: Why High-Tech Products Drive Us
+Crazy and How to Restore the Sanity. Indianapolis, IN: Sams Publishing.
+Covey, Stephen R. 2004. The 7 Habits of Highly Effective People. New York: Free Press. Davenport, Thomas H., ed. 2013. Enterprise Analytics: Optimize Performance, Process, and
+Decisions through Big Data. Upper Saddle River, NJ: Pearson Education, Inc.
+Davenport, Thomas H., Jeanne G. Harris, and Robert Morrison. 2010. Analytics at Work: Smarter Decisions, Better Results. Boston: Harvard Business Review Press.
+Davis, Alan M. 1993. Software Requirements: Objects, Functions, and States, Revised Edition.
+Englewood Cliffs, NJ: Prentice Hall PTR.
+ 
+ 	. 1995. 201 Principles of Software Development. New York: McGraw-Hill.
+ 		. 2005. Just Enough Requirements Management: Where Software Development Meets Marketing. New York: Dorset House Publishing.
+DeGrace, Peter, and Leslie Hulet Stahl. 1993. The Olduvai Imperative: CASE and the State of Software Engineering Practice. Englewood Cliffs, NJ: Yourdon Press/Prentice Hall.
+Dehlinger, Josh, and Robyn R. Lutz. 2008. “Supporting Requirements Reuse in Multi-Agent System Product Line Design and Evolution.“ In Proceedings of the 24th IEEE International Conference on Software Maintenance, 207–216. Los Alamitos, CA: IEEE Computer Society Press.
+DeMarco, Tom. 1979. Structured Analysis and System Specification. Upper Saddle River, NJ: Prentice Hall PTR.
+DeMarco, Tom, and Timothy Lister. 1999. Peopleware: Productive Projects and Teams, 2nd ed.
+New York: Dorset House Publishing.
+Denne, Mark, and Jane Cleland-Huang. 2003. Software by Numbers: Low-Risk, High-Return Development. Santa Clara, CA: Sun Microsystems Press/Prentice Hall.
+Derby, Esther, and Diana Larsen. 2006. Agile Retrospectives: Making Good Teams Great. Raleigh, NC: The Pragmatic Bookshelf.
+Devine, Tom. 2008. “Replacing a Legacy System.“ http://www.richconsulting.com/our/pdfs/ RichConsulting_ReplacingLegacy.pdf.
+Douglass, Bruce Powel. 2001. “Capturing Real-Time Requirements.“ Embedded Systems Programming (November 2001). http://www.embedded.com/story/OEG20011016S0126.
+Dyché, Jill. 2012. “The 7 Steps in Big Data Delivery.“ http://www.networkworld.com/news/ tech/2012/071112-big-data-delivery-260813.html.
+Engblom, Jakob. 2007. “Using Simulation Tools For Embedded Systems Software Development: Part 1.“ Embedded Systems Programming (May 2007). http://www.embedded.com/ design/real-time-and-performance/4007090/Using-simulation-tools-for-embedded- systems-software-development-Part-1.
+Ericson II, Clifton A. 2005. Hazard Analysis Techniques for System Safety. Hoboken, NJ: John Wiley & Sons, Inc.
+ 	. 2011. Fault Tree Analysis Primer. Charleston, NC: CreateSpace.
+ 	. 2012. Hazard Analysis Primer. Charleston, NC: CreateSpace.
+Fagan, Michael E. 1976. “Design and Code Inspections to Reduce Errors in Program Development.” IBM Systems Journal 15(3):182–211.
+Ferdinandi, Patricia L. 2002. A Requirements Pattern: Succeeding in the Internet Economy.
+Boston: Addison-Wesley.
+Firesmith, Donald. 2004. “Specifying Reusable Security Requirements.“ Journal of Object Technology 3(1):61–75.
+ 
+Fisher, Roger, William Ury, and Bruce Patton. 2011. Getting to Yes: Negotiating Agreement Without Giving In. New York: Penguin Books.
+Florence, Al. 2002. “Reducing Risks Through Proper Specification of Software Requirements.”
+CrossTalk 15(4):13–15.
+Fowler, Martin. 1999. Refactoring: Improving the Design of Existing Code. Reading, MA: Addison-Wesley.
+ 	. 2003. UML Distilled: A Brief Guide to the Standard Object Modeling Language, 3rd ed.
+Boston: Addison-Wesley.
+Franks, Bill. 2012. Taming the Big Data Tidal Wave: Finding Opportunities in Huge Data Streams with Advanced Analytics. Hoboken, NJ: John Wiley & Sons, Inc.
+Frye, Colleen. 2009. “New Requirements Definition Tools Focus on Chronic Flaws.“ TechTarget. http://searchsoftwarequality.techtarget.com/news/1354455/New-requirements- definition-tools-focus-on-chronic-flaws.
+GAO (Government Accounting Office). 2004. “Stronger Management Practices Are Needed to Improve DOD‘s Software-Intensive Weapon Acquisitions.“ GAO-04-393, http://www.gao
+.gov/products/GAO-04-393.
+Garmahis, Michael. 2009. “Top 20 Wireframe Tools.“ http://garmahis.com/reviews/wireframe-tools. Gause, Donald C., and Brian Lawrence. 1999. “User-Driven Design.” Software Testing & Quality
+Engineering 1(1):22–28.
+Gause, Donald C., and Gerald M. Weinberg. 1989. Exploring Requirements: Quality Before Design. New York: Dorset House Publishing.
+Gilb, Tom. 1988. Principles of Software Engineering Management. Harlow, England: Addison-Wesley.
+ 		. 1997. “Quantifying the Qualitative: How to Avoid Vague Requirements by Clear Specification Language.” Requirenautics Quarterly 12:9–13.
+ 		. 2005. Competitive Engineering: A Handbook for Systems Engineering, Requirements Engineering, and Software Engineering Using Planguage. Oxford, England: Elsevier Butterworth-Heinemann.
+ 	. 2007. “Requirements for Outsourcing.“ Methods and Tools (Winter 2007). Gilb, Tom, and Kai Gilb. 2011. “User Stories: A Skeptical View.“ Agile Record 6:52–54.
+Gilb, Tom, and Dorothy Graham. 1993. Software Inspection. Wokingham, England: Addison-Wesley.
+Glass, Robert L. 1992. Building Quality Software. Englewood Cliffs, NJ: Prentice Hall.
+Gomaa, Hassan. 2004. Designing Software Product Lines with UML: From Use Cases to Pattern-Based Software Architectures. Boston: Addison-Wesley.
+Gorman, Mary, and Ellen Gottesdiener. 2011. “It’s the Goal, Not the Role: The Value of Business Analysis in Scrum.“ http://www.stickyminds.com/s.asp?F=S16902_COL_2.
+ 
+Gottesdiener, Ellen. 2001. “Decide How to Decide.” Software Development 9(1):65–70.
+ 	. 2002. Requirements by Collaboration: Workshops for Defining Needs.
+Boston: Addison-Wesley.
+ 	. 2005. The Software Requirements Memory Jogger. Salem, NH: Goal/QPC.
+ 	. 2009. “Agile Business Analysis in Flow: The Work of the Agile Analyst (Part 2).“
+http://ebgconsulting.com/Pubs/Articles.
+Grady, Robert B. 1999. “An Economic Release Decision Model: Insights into Software Project Management.” In Proceedings of the Applications of Software Measurement Conference, 227–239. Orange Park, FL: Software Quality Engineering.
+Grady, Robert B., and Tom Van Slack. 1994. “Key Lessons in Achieving Widespread Inspection Use.” IEEE Software 11(4):46–57.
+Graham, Dorothy. 2002. “Requirements and Testing: Seven Missing-Link Myths.” IEEE Software
+19(5):15–17.
+Grochow, Jerrold M. 2012. “IT Planning for Business Analytics.“ International Institute for Analytics Brief.
+Ham, Gary A. 1998. “Four Roads to Use Case Discovery: There Is a Use (and a Case) for Each One.” CrossTalk 11(12):17–19.
+Hammer, Michael, and Graham Champy. 2006. Reengineering the Corporation: A Manifesto for Business Revolution. New York: HarperCollins.
+Hardy, Terry L. 2011. Essential Questions in System Safety: A Guide for Safety Decision Makers.
+Bloomington, IN: AuthorHouse.
+Harmon, Paul. 2007. Business Process Change: A Guide for Business Managers and BPM and Six Sigma Professionals, 2nd ed. Burlington, MA: Morgan Kaufmann Publishers, Inc.
+Harrington, H. James. 1991. Business Process Improvement: The Breakthrough Strategy for Total Quality, Productivity, and Competitiveness. New York: McGraw-Hill.
+Haskins, B., J. Stecklein, D. Brandon, G. Moroney, R. Lovell, and J. Dabney. 2004. ‘‘Error Cost Escalation through the Project Life Cycle.’’ In Proceedings of the 14th Annual
+International Symposium of INCOSE. Toulouse, France. International Council on Systems Engineering.
+Hatley, Derek, Peter Hruschka, and Imtiaz Pirbhai. 2000. Process for System Architecture and Requirements Engineering. New York: Dorset House Publishing.
+Herrmann, Debra S. 1999. Software Safety and Reliability: Techniques, Approaches, and Standards of Key Industrial Sectors. Los Alamitos, CA: IEEE Computer Society Press.
+Hoffman, Cecilie, and Rebecca Burgess. 2009. “Use and Profit from Peer Reviews on Business Requirements Documents.“ Business Analyst Times (September–December 2009).
+Hofmann, Hubert F., and Franz Lehner. 2001. “Requirements Engineering as a Success Factor in Software Projects.” IEEE Software 18(4):58–66.
+ 
+Hooks, Ivy F., and Kristin A. Farry. 2001. Customer-Centered Products: Creating Successful Products Through Smart Requirements Management. New York: AMACOM.
+Hsia, Pei, David Kung, and Chris Sell. 1997. “Software Requirements and Acceptance Testing.”
+In Annals of Software Engineering. 3:291–317.
+Humphrey, Watts S. 1989. Managing the Software Process. Reading, MA: Addison-Wesley. IEEE. 1998. “IEEE Std 1061-1998: IEEE Standard for a Software Quality Metrics Methodology.”
+Los Alamitos, CA: IEEE Computer Society Press.
+IFPUG. 2010. Function Point Counting Practices Manual, Version 4.3.1. Princeton Junction, NJ: International Function Point Users Group.
+IIBA. 2009. A Guide to the Business Analysis Body of Knowledge (BABOK Guide), Version 2.0.
+Toronto: International Institute of Business Analysis.
+ 		. 2010. IIBA Business Analysis Self-Assessment. Toronto: International Institute of Business Analysis.
+ 		. 2011. IIBA Business Analysis Competency Model, Version 3.0. Toronto: International Institute of Business Analysis.
+ 		. 2013. IIBA Agile Extension to the BABOK Guide, Version 1.0. Toronto: International Institute of Business Analysis.
+Imhoff, Claudia. 2005. “Charting a Smooth Course to BI Implementation.“ Intelligent Solutions, Inc. http://www.sas.com/reg/wp/corp/3529.
+INCOSE. 2010. “INCOSE Requirements Management Tools Survey.” http://www.incose.org/ productspubs/products/rmsurvey.aspx.
+International Institute for Analytics. 2013. “Analytics 3.0.“ International Institute for Analytics.
+http://iianalytics.com/a3.
+ISO/IEC. 2007. “ISO/IEC 25030:2007, Software engineering—Software product Quality Requirements and Evaluation (SQuaRE)—Quality Requirements.“ Geneva, Switzerland: International Organization for Standardization.
+ 		. 2011. “ISO/IEC 25010:2011, Systems and software engineering—Systems and software Quality Requirements and Evaluation (SQuaRE)—System and software quality models.“ Geneva, Switzerland: International Organization for Standardization.
+ISO/IEC/IEEE. 2011. “ISO/IEC/IEEE 29148:2011(E), Systems and software engineering—Life cycle processes—Requirements engineering.“ Geneva, Switzerland: International Organization for Standardization.
+Jacobson, Ivar, Grady Booch, and James Rumbaugh. 1999. The Unified Software Development
+Process. Reading, MA: Addison-Wesley.
+Jacobson, Ivar, Magnus Christerson, Patrik Jonsson, and Gunnar Övergaard. 1992. Object-Oriented Software Engineering: A Use Case Driven Approach. Harlow, England: Addison-Wesley.
+Jarke, Matthias. 1998. “Requirements Tracing.” Communications of the ACM 41(12):32–36. Kukreja, Nupul, Sheetal Swaroop Payyavula, Barry Boehm, and Srinivas Padmanabhuni. 2012. “Selecting an Appropriate Framework for Value-Based Requirements Prioritization:
+A Case Study.“ In Proceedings of the 20th IEEE International Requirements Engineering Conference, 303–308. Los Alamitos, CA: IEEE Computer Society Press.
+ 
+Kulak, Daryl, and Eamonn Guiney. 2004. Use Cases: Requirements in Context, 2nd ed.
+Boston: Addison-Wesley.
+Larman, Craig. 1998. “The Use Case Model: What Are the Processes?” Java Report 3(8):62–72.
+ 	. 2004. Agile and Iterative Development: A Manager‘s Guide. Boston: Addison-Wesley. Larman, Craig, and Victor R. Basili. 2003. “Iterative and Incremental Development: A Brief
+History.“ IEEE Computer 36(6):47–56.
+Lauesen, Soren. 2002. Software Requirements: Styles and Techniques. London: Addison-Wesley. Lavi, Jonah Z., and Joseph Kudish. 2005. Systems Modeling & Requirements Specification Using
+ECSAM: An Analysis Method for Embedded and Computer-Based Systems. New York: Dorset House Publishing.
+Lawlis, Patricia K., Kathryn E. Mark, Deborah A. Thomas, and Terry Courtheyn. 2001. “A Formal Process for Evaluating COTS Software Products.” IEEE Computer 34(5):58–63.
+Lawrence, Brian. 1996. “Unresolved Ambiguity.” American Programmer 9(5):17–22.
+ 	. 1997. “Requirements Happens. . .” American Programmer 10(4):3–9.
+Lazar, Jonathan. 2001. User-Centered Web Development. Sudbury, MA: Jones and Bartlett Publishers.
+Leffingwell, Dean. 1997. “Calculating the Return on Investment from More Effective Requirements Management.” American Programmer 10(4):13–16.
+ 		. 2011. Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise. Upper Saddle River, NJ: Addison-Wesley.
+Leffingwell, Dean, and Don Widrig. 2000. Managing Software Requirements: A Unified
+Approach. Reading, MA: Addison-Wesley.
+Leishman, Theron R., and David A. Cook. 2002. “Requirements Risks Can Drown Software Projects.” CrossTalk 15(4):4–8.
+Leveson, Nancy. 1995. Safeware: System Safety and Computers. Reading, MA: Addison-Wesley. Lilly, Susan. 2000. “How to Avoid Use-Case Pitfalls.” Software Development 8(1):40–44.
+Martin, Johnny, and W. T. Tsai. 1990. “N-fold Inspection: A Requirements Analysis Technique.”
+Communications of the ACM 33(2):225–232.
+Mavin, Alistair, Philip Wilkinson, Adrian Harwood, and Mark Novak. 2009. “EARS (Easy Approach to Requirements Syntax).“ In Proceedings of the 17th International Conference on Requirements Engineering, 317–322. Los Alamitos, CA: IEEE Computer Society Press.
+McConnell, Steve. 1996. Rapid Development: Taming Wild Software Schedules. Redmond, WA: Microsoft Press.
+ 	. 1997. “Managing Outsourced Projects.“ Software Development 5(12):80, 78–79.
+ 	. 1998. Software Project Survival Guide. Redmond, WA: Microsoft Press.
+ 
+ 	. 2004. Code Complete: A Practical Handbook of Software Construction, 2nd ed.
+Redmond, WA: Microsoft Press.
+ 	. 2006. Software Estimation: Demystifying the Black Art. Redmond, WA: Microsoft Press. McGraw, Karen L., and Karan Harbison. 1997. User-Centered Requirements: The Scenario-Based
+Engineering Process. Mahwah, NJ: Lawrence Erlbaum Associates.
+Miller, Roxanne E. 2009. The Quest for Software Requirements. Milwaukee, WI: MavenMark Books.
+Moore, Geoffrey A. 2002. Crossing the Chasm: Marketing and Selling High-Tech Products to Mainstream Customers. New York: HarperBusiness.
+Morgan, Matthew. 2009. “Requirements Definition for Outsourced Teams.“ Business Analyst
+Times. http://www.batimes.com/articles/requirements-definition-for-outsourced-teams
+.html.
+Morgan, Tony. 2002. Business Rules and Information Systems: Aligning IT with Business Goals.
+Boston: Addison-Wesley.
+Musa, John D. 1996. “Software-Reliability-Engineered Testing.” IEEE Computer 29(11):61–68.
+ 	. 1999. Software Reliability Engineering. New York: McGraw-Hill.
+NASA. 2009. “NPR 7150.2A: NASA Software Engineering Requirements.“ http://nodis3.gsfc
+.nasa.gov/displayDir.cfm?Internal_ID=N_PR_7150_002A_&page_name=AppendixA.
+Nejmeh, Brian A., and Ian Thomas. 2002. “Business-Driven Product Planning Using Feature Vectors and Increments.” IEEE Software 19(6):34–42.
+Nelsen, E. Dale. 1990. “System Engineering and Requirement Allocation.” In System and Software Requirements Engineering, Richard H. Thayer and Merlin Dorfman, eds. Los Alamitos, CA: IEEE Computer Society Press.
+Nielsen, Jakob. 2000. Designing Web Usability. Indianapolis, IN: New Riders Publishing.
+OMG. 2011. Business Process Model and Notation (BPMN) version 2.0. Object Management Group. http://www.omg.org/spec/BPMN/2.0.
+Pardee, William J. 1996. To Satisfy & Delight Your Customer: How to Manage for Customer Value. New York: Dorset House Publishing.
+Patel, T., and James Taylor. 2010. “Business Analytics 101: Unlock the Business Intelligence Hidden in Company Databases.“ http://www.sas.com/resources/whitepaper/wp_28372.pdf.
+Patterson, Kelly, Joseph Grenny, Ron McMillan, and Al Switzler. 2011. Crucial Conversations: Tools for Talking When Stakes are High, 2nd ed. New York: McGraw-Hill.
+Peterson, Gary. 2002. “Risqué Requirements.” CrossTalk 15(4):31.
+Pichler, Roman. 2010. Agile Product Management with Scrum: Creating Products that Customers Love. Upper Saddle River, NJ: Addison-Wesley.
+ 
+PMI. 2013. A Guide to the Project Management Body of Knowledge: PMBOK Guide, 5th ed.
+Newtown Square, PA: Project Management Institute.
+Podeswa, Howard. 2009. The Business Analyst‘s Handbook. Boston: Course Technology.
+ 	. 2010. UML for the IT Business Analyst: A Practical Guide to Requirements Gathering
+Using the Unified Modeling Language, 2nd ed. Boston: Course Technology.
+Porter, Adam A., Lawrence G. Votta, Jr., and Victor R. Basili. 1995. “Comparing Detection Methods for Software Requirements Inspections: A Replicated Experiment.” IEEE Transactions on Software Engineering 21(6):563–575.
+Porter-Roth, Bud. 2002. Request for Proposal: A Guide to Effective RFP Development.
+Boston: Addison-Wesley.
+Poston, Robert M. 1996. Automating Specification-Based Software Testing. Los Alamitos, CA: IEEE Computer Society Press.
+Potter, Neil S., and Mary E. Sakry. 2002. Making Process Improvement Work: A Concise Action Guide for Software Managers and Practitioners. Boston: Addison-Wesley.
+Pugh, Ken. 2011. Lean-Agile Acceptance Test-Driven Development: Better Software Through Collaboration. Upper Saddle River, NJ: Addison-Wesley.
+Putnam, Lawrence H., and Ware Myers. 1997. Industrial Strength Software: Effective Management Using Measurement. Los Alamitos, CA: IEEE Computer Society Press.
+Radice, Ronald A. 2002. High Quality Low Cost Software Inspections. Andover, MA: Paradoxicon Publishing.
+Ramesh, Bala, Curtis Stubbs, Timothy Powers, and Michael Edwards. 1995. “Lessons Learned from Implementing Requirements Traceability.” CrossTalk 8(4):11–15, 20.
+Rettig, Marc. 1994. “Prototyping for Tiny Fingers.” Communications of the ACM 37(4):21–27.
+Rierson, Leanna. 2013. Developing Safety-Critical Software: A Practical Guide for Aviation Software and DO-178C Compliance. Boca Raton, FL: CRC Press.
+Robertson, James. 2002. “Eureka! Why Analysts Should Invent Requirements.” IEEE Software
+19(4):20–22.
+Robertson, James, and Suzanne Robertson. 1994. Complete Systems Analysis: The Workbook, the Textbook, the Answers. New York: Dorset House Publishing.
+Robertson, Suzanne, and James Robertson. 2013. Mastering the Requirements Process: Getting Requirements Right, 3rd ed. Upper Saddle River, NJ: Addison-Wesley.
+Rose-Coutré, Robert. 2007. “Capturing Implied Requirements.“ http://www.stickyminds.com/s
+.asp?F=S12998_ART_2.
+Ross, Ronald G. 1997. The Business Rule Book: Classifying, Defining, and Modeling Rules, Version
+4.0, 2nd ed. Houston: Business Rule Solutions, LLC.
+ 	. 2001. “The Business Rules Classification Scheme.” DataToKnowledge Newsletter 29(5).
+ 
+Ross, Ronald G., and Gladys S. W. Lam. 2011. Building Business Solutions: Business Analysis with Business Rules. Houston: Business Rule Solutions, LLC.
+Rothman, Johanna. 2000. Reflections Newsletter 3(1).
+Royce, Winston. 1970. “Managing the Development of Large Software Systems.“ In Proceedings of IEEE WESCON 26, 1–9.
+Rozanski, Nick, and Eoin Woods. 2005. Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. Upper Saddle River, NJ: Pearson Education, Inc.
+Rubin, Jeffrey, and Dana Chisnell. 2008. Handbook of Usability Testing: How to Plan, Design, and Conduct Effective Tests, 2nd ed. Indianapolis, IN: Wiley Publishing, Inc.
+Scalable Systems. 2008. “How Big is Your Data?“ http://www.scalable-systems.com/whitepaper/ Scalable_WhitePaper_Big_Data.pdf.
+Schneider, G. Michael, Johnny Martin, and W. T. Tsai. 1992. “An Experimental Study of Fault Detection in User Requirements Documents.” ACM Transactions on Software Engineering and Methodology 1(2):188–204.
+Schonberger, Richard. J. 2008. Best Practices in Lean Six Sigma Process Improvement: A Deeper Look. Hoboken, NJ: John Wiley & Sons, Inc.
+Schwaber, Ken. 2004. Agile Project Management with Scrum. Redmond, WA: Microsoft Press.
+Schwarz, Roger. 2002. The Skilled Facilitator: A Comprehensive Resource for Consultants, Facilitators, Managers, Trainers, and Coaches. San Francisco, CA: Jossey-Bass.
+Seilevel. 2011. “Seilevel Requirements Management Tool Evaluation Results.” http://www.seilevel
+.com/wp-content/uploads/2011/09/Seilevel-RequirementsManagementToolEvalResults2.xls.
+ 		. 2012. “Seilevel Project Assessment.” http://www.seilevel.com/wp-content/uploads/ Project_Assessments_Template.xls.
+Sharp, Alec, and Patrick McDermott. 2008. Workflow Modeling: Tools for Process Improvement
+and Application Development. Norwood, Massachusetts: Artec, Inc.
+Shehata, Mohammed S., Armin Eberlein, and H. James Hoover. 2002. ”Requirements Reuse and Feature Interaction Management.” In Proceedings of the 15th International Conference on Software & Systems Engineering and their Applications. Paris.
+Shull, F., V. Basili, B. Boehm., A. W. Brown, A. Costa, M. Lindvall, D. Port, I. Rus, R. Tesoriero, and
+M. Zelkowitz. 2002. “What We Have Learned About Fighting Defects.” In Proceedings of the Eighth IEEE Symposium on Software Metrics, 249–258. Ottawa, Canada. IEEE Computer Society Press.
+Sibbet, David. 1994. Effective Facilitation: Achieving Results with Groups. San Francisco, CA: The Grove Consultants International.
+ 
+Simmons, Erik. 2001. “From Requirements to Release Criteria: Specifying, Demonstrating, and Monitoring Product Quality.” In Proceedings of the 2001 Pacific Northwest Software Quality Conference, 155–165. Portland, OR: Pacific Northwest Software Quality Conference.
+Smith, Larry W. 2000. “Project Clarity Through Stakeholder Analysis.” CrossTalk 13(12):4–9.
+Sommerville, Ian, and Pete Sawyer. 1997. Requirements Engineering: A Good Practice Guide.
+Chichester, England: John Wiley & Sons Ltd.
+Sorensen, Reed. 1999. “CCB—An Acronym for ‘Chocolate Chip Brownies’? A Tutorial on Control Boards.” CrossTalk 12(3):3–6.
+The Standish Group. 2009. “Chaos Summary 2009.“ West Yarmouth, MA: The Standish Group International, Inc.
+Stevens, Richard, Peter Brook, Ken Jackson, and Stuart Arnold. 1998. Systems Engineering: Coping with Complexity. London: Prentice Hall.
+Taylor, James. 2012. “Decision Discovery for a Major Business Function.“ International Institute for Analytics Research Brief.
+ 		. 2013. “Using Decision Discovery to Manage Analytic Project Requirements.“ International Institute for Analytics Research Brief.
+Thayer, Richard H. 2002. “Software System Engineering: A Tutorial.” IEEE Computer 35(4):68–73.
+Thomas, Steven. 2008. “Agile Change Management.“ http://itsadeliverything.com/agile-change- management.
+Thompson, Bruce, and Karl Wiegers. 1995. “Creative Client/ Server for Evolving Enterprises.”
+Software Development 3(2):34–44.
+Van Veenendaal, Erik P. W. M. 1999. “Practical Quality Assurance for Embedded Software.“
+Software Quality Professional 1(3):7–18.
+Voas, Jeffrey. 1999. “Protecting Against What? The Achilles Heel of Information Assurance.”
+IEEE Software 16(1):28–29.
+Volere. 2013. “Requirements Tools.” http://www.volere.co.uk/tools.htm.
+von Halle, Barbara. 2002. Business Rules Applied: Building Better Systems Using the Business Rules Approach. New York: John Wiley & Sons, Inc.
+von Halle, Barbara, and Larry Goldberg. 2010. The Decision Model: A Business Logic Framework Linking Business and Technology. Boca Raton, FL: Auerbach Publications.
+Wallace, Dolores R., and Laura M. Ippolito. 1997. “Verifying and Validating Software Requirements Specifications.” In Software Requirements Engineering, 2nd ed., Richard
+H. Thayer and Merlin Dorfman, eds., 389–404. Los Alamitos, CA: IEEE Computer Society Press.
+Wasserman, Anthony I. 1985. “Extending State Transition Diagrams for the Specification of Human- Computer Interaction.” IEEE Transactions on Software Engineering SE-11(8):699–713.

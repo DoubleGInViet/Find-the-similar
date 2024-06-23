@@ -1,0 +1,508 @@
+﻿Th ere are times when it is necessary to be able to process fi les in both a sequential and random manner. One simple way to do this is to use a sequential fi le that contains a list of the keys 
+(the fi eld in which the fi le is to be kept in sorted order) and a random access fi le for the actual 
+objects. Th is minimizes the cost of additions and deletions to a sequential fi le while allowing the 
+random fi le to be processed sequentially by simply passing the key to the random fi le to retrieve 
+each object in sequential order. It also allows fast random processing to occur by using only 
+the random access fi le, thus optimizing the overall cost of fi le processing. However, if a fi le of 
+objects needs to be processed in both a random and sequential manner, the developer should 
+consider using a database (relational, object-relational, or object-oriented) instead.
+Th ere are many diff erent application types of fi les—e.g., master fi les, lookup fi les, transaction fi les, audit fi les, and history fi les. Master fi les store core information that is important to the 
+business and, more specifi cally, to the application, such as order information or customer mailing information. Th ey usually are kept for long periods of time, and new records are appended 
+to the end of the fi le as new orders or new customers are captured by the system. If changes need 
+to be made to existing records, programs must be written to update the old information.
+Lookup fi les contain static values, such as a list of valid ZIP codes or the names of the U.S. 
+states. Typically, the list is used for validation. For example, if a customer’s mailing address is 
+entered into a master fi le, the state name is validated against a lookup fi le that contains U.S. 
+states to make sure that the operator entered the value correctly.
+A transaction fi le holds information that can be used to update a master fi le. Th e transaction fi le can be destroyed aft er changes are added, or the fi le may be saved in case the transactions need to be accessed again in the future. Customer address changes, for one, would be 
+stored in a transaction fi le until a program is run that updates the customer address master 
+fi le with the new information.
+For control purposes, a company might need to store information about how data 
+change over time. For example, as human resources clerks change employee salaries in a 
+human resources system, the system should record the person who made the changes to the 
+salary amount, the date, and the actual change that was made. An audit fi le records before 
+and aft er images of data as they are altered so that an audit can be performed if the integrity 
+of the data is questioned.
+Sometimes fi les become so large that they are unwieldy, and much of the information 
+in the fi le is no longer used. Th e history fi le (or archive fi le) stores past transactions (e.g., old 
+customers, past orders) that are no longer needed by system users. Typically the fi le is stored 
+off -line, yet it can be accessed on an as-needed basis. Other fi les, such as master fi les, can then 
+be streamlined to include only active or very recent information.
+Relational Databases
+A relational database is the most popular kind of database for application development today. 
+A relational database is based on collections of tables with each table having a primary key—a 
+fi eld or fi elds whose values are unique for every row of the table. Th e tables are related to one 
+another by placing the primary key from one table into the related table as a foreign key (see 
+Figure 9-3). Most relational database management systems (RDBMS) support referential integrity, or the idea of ensuring that values linking the tables together through the primary and 
+foreign keys are valid and correctly synchronized. For example, if an order-entry clerk using 
+the tables in Figure 9-3 attempted to add order 254 for customer number 1111, he or she would 
+have made a mistake because no customer exists in the Customer table with that number. If the 
+RDBMS supported referential integrity, it would check the customer numbers in the Customer 
+table, discover that the number 1111 is invalid, and return an error to the entry clerk. Th e clerk 
+would then go back to the original order form and recheck the customer information. Tables have a set number of columns and a variable number of rows that contain 
+occurrences of data. Structured query language (SQL) is the standard language for accessing the data in the tables. SQL operates on complete tables, as opposed to the individual 
+rows in the tables. Th us, a query written in SQL is applied to all the rows in a table all at 
+once, which is diff erent from a lot of programming languages, which manipulate data row 
+by row. When queries must include information from more than one table, the tables fi rst 
+are joined based on their primary key and foreign key relationships and treated as if they 
+were one large table. Examples of RDBMS soft ware are Microsoft SQL Server, Oracle, DB2, 
+and MySQL.
+To use a RDBMS to store objects, objects must be converted so that they can be stored in 
+a table. From a design perspective, this entails mapping a UML class diagram to a relational 
+database schema.
+Object-Relational Databases
+Object-relational database management systems (ORDBMSs) are relational database management systems with extensions to handle the storage of objects in the relational table structure. 
+Th is is typically done through the use of user-defi ned types. For example, an attribute in a 
+table could have a data type of map, which would support storing a map. Th is is an example 
+of a complex data type. In pure RDBMSs, attributes are limited to simple or atomic data types, 
+such as integers, fl oats, or chars.
+ORDBMSs, because they are simply extensions to their RDBMS counterparts, also 
+have very good support for the typical data management operations that business has come 
+to expect from RDBMSs, including an easy-to-use query language (SQL), authorization, 
+concurrency-control, and recovery facilities. However, because SQL was designed to handle 
+only simple data types, it too has been extended to handle complex object data. Currently, 
+vendors deal with this issue in diff erent manners. For example, DB2, Informix, and Oracle 
+all have extensions that provide some level of support for objects.
+Many of the ORDBMSs on the market still do not support all of the object-oriented 
+features that can appear in an object-oriented design (e.g., inheritance). As described in 
+Chapter 8, one of the problems in supporting inheritance is that inheritance support is 
+language dependent. For example, the way Smalltalk supports inheritance is different 
+from C11’s’ approach, which is diff erent from Java’s approach. Th us, vendors currently 
+must support many different versions of inheritance, one for each object-oriented language, or decide on a specifi c version and force developers to map their object-oriented 
+design (and implementation) to their approach. Like RDBMSs, a mapping from a UML 
+class diagram to an object-relational database schema is required.
+Object-Oriented Databases
+Th e next type of database management system that we describe is the object-oriented database 
+management systems (OODBMS). Th ere have been two primary approaches to supporting 
+object persistence within the OODBMS community: adding persistence extensions to an 
+object-oriented programming language and creating an entirely separate database management system.
+With an OODBMS, collections of objects are associated with an extent. An extent is simply the set of instances associated with a particular class (i.e., it is the equivalent of a table in a 
+RDBMS). Technically speaking, each instance of a class has a unique identifi er assigned to it 
+by the OODBMS: the Object ID. However, from a practical point of view, it is still a good idea 
+to have a semantically meaningful primary key (even though from an OODBMS perspective 
+this is unnecessary). Referential integrity is still very important. In an OODBMS, from the 
+user’s perspective, it looks as if the object is contained within the other object. However, the 
+Object Persistence Formats  333
+OODBMS actually keeps track of these relationships through the use of the Object ID, and 
+therefore foreign keys are not technically necessary.6
+OODBMSs provide support for some form of inheritance. However, as already discussed, 
+inheritance tends to be language dependent. Currently, most OODBMSs are tied closely 
+to either a particular object-oriented programming language (OOPL) or a set of OOPLs. 
+Originally, most OODBMSs supported either Smalltalk or C11. Today, many of the commercially available OODBMSs provide support for C11, Java, and Smalltalk.
+OODBMSs also support the idea of repeating groups (fi elds) or multivalued attributes. 
+Th ese are supported through the use of attribute sets and relationships sets. RDBMSs do not 
+explicitly allow multivalued attributes or repeating groups. Th is is considered to be a violation of the fi rst normal form (discussed later in this chapter) for relational databases. Some 
+ORDBMSs do support repeating groups and multivalued attributes.
+Until recently, OODBMSs have mainly been used to support multimedia applications 
+or systems that involve complex data (e.g., graphics, video, sound). Application areas, such 
+as computer-aided design and manufacturing (CAD/CAM), fi nancial services, geographic 
+information systems, health care, telecommunications, and transportation, have been the 
+most receptive to OODBMSs. Th ey are also becoming popular technologies for supporting 
+electronic commerce, online catalogs, and large Web multimedia applications. Examples of 
+pure OODBMSs include Gemstone, Objectivity, db4o, and Versant.
+Although pure OODBMS exist, most organizations currently invest in ORDBMS 
+technology. Th e market for OODBMS is expected to grow, but its ORDBMS and RDBMS 
+counterparts dwarf it. One reason for this situation is that there are many more experienced 
+developers and tools in the RDBMS arena. Furthermore, relational users fi nd that using an 
+OODBMS comes with a fairly steep learning curve.
+NoSQL Data Stores7
+NoSQL data stores are the newest type of object persistence available. Depending on whom 
+you talk to, NoSQL either stands for No SQL or Not Only SQL. Regardless, the data stores 
+that are described as NoSQL typically do not support SQL. Currently, there is no standard 
+for NoSQL data stores. Most NoSQL data stores were created to address problems associated 
+with storing large amounts of distributed data in RDBMSs. NoSQL data stores tend to support 
+very fast queries. However, when it comes to updating, NoSQL data stores normally do not 
+support a locking mechanism, and consequently, all copies of a piece of data are not required 
+to be consistent at all times. Instead they tend to support an eventually consistent based 
+model. So it is technically possible to have diff erent values for diff erent copies of the same 
+object stored in diff erent locations in a distributed system. Depending on the application, this 
+could cause problems for decision makers. Th erefore, their applicability is limited and are 
+not applicable to most traditional business transaction processing systems. Some of the better 
+known NoSQL data stores include Google’s Big Table, Amazon’s Dynamo, Apache’s HBase, 
+Apache’s CouchDB, and Apache/Facebook’s Cassandra. Th ere are many diff erent types of 
+NoSQL data stores, including key-value stores, document stores, column-oriented stores, 
+and object databases. Besides object databases, which are either ORDBMSs or OODBMSs 
+(see previous sections), we describe each NoSQL data store type below.
+6 Depending on the storage and updating requirements, it usually is a good idea to use a foreign key in addition to 
+the Object ID. Th e Object ID has no semantic meaning. Th erefore, in the case of needing to rebuild relationships 
+between objects, Object IDs are diffi cult to validate. Foreign keys, by contrast, should have some meaning outside of 
+the DBMS.
+7 For a more complete description of NoSQL data stores see Pramod J. Sadalage and Martin Fowler, NoSQL Distilled: 
+A Brief Guide to the Emerging World of Polyglot Persistence (Upper Saddle River, NJ: Addison Wesley, 2013).
+334 Chapter 9 Data Management Layer Design
+Key-value data stores essentially provide a distributed index (primary key) to where a BLOB 
+(binary large object) is stored. A BLOB treats a set of attributes as one large object. A good 
+example of this type of NoSQL data store is Amazon’s Dynamo. Dynamo provides support 
+for many of the core services for Amazon. Obviously, as one of the largest e-commerce sites 
+in the world, Amazon needed a solution for object persistence that was scalable, distributable, 
+and reliable. Typical RDBMS-based solutions would not work for some of these applications. 
+Applications that typically use key-value data stores are Web-based shopping carts, product 
+catalogs, and bestseller lists. Th ese types of applications do not require updating the underlying 
+data. For example, you do not update the title of a book in your shopping cart when you are 
+making a purchase at Amazon. Given the scale and distributed nature of this type of system, 
+there are bound to be many failures across the system. Being fault tolerant and temporarily sacrifi cing some consistency across all copies of an object is a reasonable trade-off .
+Document data stores, as the name suggests, are built around the idea of documents. Th e 
+idea of document databases has been around for a long time. One of the early systems that 
+used this approach was Lotus Notes. Th ese types of stores are considered to be schema free. 
+By that we mean there is no detailed design of the database. A good example of an application that would benefi t from this type of approach is a business card database. In a relational 
+database, multiple tables would need to be designed. In a document data store, the design 
+is done more in a “just in time” manner. As new business cards are input into the system, 
+attributes not previously included are simply added to the evolving design. Previously entered 
+business cards would simply not have those attributes associated with them. One major difference between key-value data stores and document data stores is that the “document” has 
+structure and can be easily searched based on the non-key attributes contained in the document, whereas the key-value data store simply treats the “value” as one big monolithic object. 
+Apache’s CouchDB is a good example of this type of data store.
+Columnar data stores organize the data into columns instead of rows. However, 
+there seems to be some confusion as to what this actually implies. In the fi rst approach 
+to columnar data stores, the rows represent the attributes and the columns represent the 
+objects. In contrast, relational databases represent attributes in columns and represent 
+objects in rows. Th is type of columnar data store is very eff ective in business intelligence, 
+data mining, and data warehousing applications where the data are fairly static and many 
+computations are performed over a single or a small subset of the available attributes. In 
+comparison to a relational database where you would have to select a set of attributes from 
+all rows, with this type of data store, you would simply have to select a set of rows. Th is 
+should be a lot faster than with a relational database. A few good examples of this type of 
+columnar data store include Oracle’s Retail Predictive Application Server, HP’s Vertica, 
+and SAP’s Sybase IQ. Th e second approach to columnar data stores, which includes 
+Apache’s HBase, Apache/Facebook’s Cassandra, and Google’s BigTable, is designed to 
+handle very large data sets (petabytes of data) that can be accessed as if the data are stored 
+in columns. However, in this case, the data are actually stored in a three-dimensional map 
+composed of object ID, attribute name, timestamp, and value instead of using columns 
+and rows. Th is approach is highly scalable and distributable. Th ese types of data stores 
+support social applications such as Twitter and Facebook and support search applications 
+such as Google Maps, Earth, and Analytics.
+Given the popularity of social computing, business intelligence, data mining, data warehousing, e-commerce, and their need for highly scalable, distributable, and reliable data storage, NoSQL data stores are an area that should be considered as part of an object persistence 
+solution. However, given the overall diversity and complexity of NoSQL data stores and their 
+limited applicability to traditional business applications, we do not consider them any further 
+in this text.
+Object Persistence Formats  335
+Selecting an Object Persistence Format
+Each of the fi le and database storage formats that have been presented has its strengths and 
+weaknesses, and no one format is inherently better than the others. In fact, sometimes a project team chooses multiple formats (e.g., a relational database for one, a fi le for another, and 
+an object-oriented database for a third). Th us, it is important to understand the strengths and 
+weaknesses of each format and when to use each one. Figure 9-4 presents a summary of the 
+characteristics of each and the characteristics that can help identify when each type of format 
+is more appropriate.
+Major Strengths and Weaknesses  Th e major strengths of fi les include the following: Some 
+support for sequential and random access fi les is normally part of an OOPL, fi les can be 
+designed to be very effi cient, and they are a good alternative for temporary or short-term 
+storage. However, all fi le manipulation must be done through the OOPL. Files do not have 
+any form of access control beyond that of the underlying operating system. Finally, in most 
+cases, if fi les are used for permanent storage, redundant data most likely will result. Th is can 
+cause many update anomalies.
+FIGURE 9-4  Comparison of Object Persistence Formats
+ Sequential and Object Relational Object-Oriented 
+Random Access Files Relational DBMS DBMS DBMS NoSQL data store
+Major 
+Strengths
+ 
+Major 
+Weaknesses
+Data Types 
+Supported
+Types of 
+Application 
+Systems 
+Supported
+Existing 
+Storage 
+Formats
+Future 
+Needs
+Usually part of an 
+object-oriented 
+programming 
+language
+Files can be 
+designed for fast 
+performance
+Good for short-term 
+data storage
+Redundant data
+Data must be updated 
+using programs, i.e., 
+no manipulation or 
+query language
+No access control 
+Simple and Complex
+Transaction processing
+Organization 
+dependent
+Poor future 
+prospects
+Leader in the 
+database market
+Can handle diverse 
+data needs
+Cannot handle 
+complex data
+No support for 
+object orientation
+Impedance mismatch 
+between tables and 
+objects
+Simple
+Transaction 
+processing and 
+decision making
+Organization 
+dependent
+Good future 
+prospects
+Able to handle 
+complex data
+Direct support for 
+object orientation
+Technology is still 
+maturing
+Skills are hard to fi nd
+Simple and Complex
+Transaction 
+processing and 
+decision making
+Organization 
+dependent
+Good future 
+prospects
+Able to handle 
+complex data
+Technology is still 
+maturing
+Skills are hard 
+to fi nd
+Simple and Complex
+Primarily decision 
+making
+Organization 
+dependent
+Good future 
+prospects
+Based on established, 
+proven technology, 
+e.g., SQL
+Able to handle 
+complex data
+Limited support for 
+object orientation
+Impedance mismatch 
+between tables and 
+objects
+Simple and Complex
+Transaction processing 
+and decision making
+Organization 
+dependent
+Good future 
+prospects
+336 Chapter 9 Data Management Layer Design
+RDBMSs bring with them proven commercial technology. They are the leaders in the 
+DBMS market. Furthermore, they can handle very diverse data needs. However, they cannot handle complex data types, such as images. Therefore, all objects must be converted 
+to a form that can be stored in tables composed of atomic or simple data. They provide 
+no support for object orientation. This lack of support causes an impedance mismatch 
+between the objects contained in the OOPL and the data stored in the tables. An impedance mismatch refers to the amount of work done by both the developer and DBMS and 
+the potential information loss that can occur when converting objects to a form that can 
+be stored in tables.
+Because ORDBMSs are typically object-oriented extensions to RDBMSs, they inherit the 
+strengths of RDBMSs. Th ey are based on established technologies, such as SQL, and unlike 
+their predecessors, they can handle complex data types. However, they provide only limited 
+support for object orientation. Th e level of support varies among the vendors; therefore, 
+ORDBMSs also suff er from the impedance mismatch problem.
+OODBMSs support complex data types and have the advantage of directly supporting object orientation. Th erefore, they do not suff er from the impedance mismatch that 
+the previous DBMSs do. However, the OODBMS community is still maturing. Th erefore, 
+this technology might still be too risky for some fi rms. Th e other major problems with 
+OODBMS are the lack of skilled labor and the perceived steep learning curve of the RDBMS 
+community. NoSQL data stores support complex data types. However, they can suff er from 
+some forms of impedance mismatch. Th e primary problems with NoSQL data stores are 
+their lack of maturity and the lack of skilled labor who knows how to eff ectively use them.
+Data Types Supported Th e fi rst issue is the type of data that will need to be stored in the 
+system. Most applications need to store simple data types, such as text, dates, and numbers. 
+All fi les and DBMSs are equipped to handle this kind of data. Th e best choice for simple 
+data storage, however, is usually the RDBMS because the technology has matured over time 
+and has continuously improved to handle simple data very eff ectively.
+Increasingly, applications are incorporating complex data, such as video, images, or audio. 
+ORDBMSs, OODBMSs, or NoSQL data stores are best able to handle data of this type. Complex 
+data stored as objects can be manipulated much faster than with other storage formats.
+Type of Application System Th ere are many diff erent kinds of application systems that 
+can be developed. Transaction-processing systems are designed to accept and process many 
+simultaneous requests (e.g., order entry, distribution, payroll). In transaction-processing 
+systems, the data are continuously updated by a large number of users, and the queries that 
+these systems require typically are predefi ned or targeted at a small subset of records (e.g., 
+List the orders that were backordered today or What products did customer #1234 order on 
+May 12, 2001?).
+Another set of application systems is the set designed to support decision making, such 
+as decision support systems (DSS), management information systems (MIS), executive information systems (EIS), and expert systems (ES). Th ese decision-making support systems are 
+built to support users who need to examine large amounts of read-only historical data. Th e 
+questions that they ask are oft en ad hoc, and include hundreds or thousands of records at a 
+time (e.g., List all customers in the West region who purchased a product costing more than 
+$500 at least three times, or What products had increased sales in the summer months that 
+have not been classifi ed as summer merchandise?).
+Transaction-processing systems and DSSs thus have very diff erent data storage needs. 
+Transaction-processing systems need data storage formats that are tuned for a lot of data 
+updates and fast retrieval of predefi ned, specifi c questions. Files, relational databases, 
+Mapping Problem Domain Objects to Object Persistence Formats  337
+object-relational databases, and object-oriented databases can all support these kinds of 
+requirements. By contrast, systems to support decision making are usually only reading 
+data (not updating it), oft en in ad hoc ways. Th e best choices for these systems usually are 
+RDBMSs because these formats can be confi gured specially for needs that may be unclear 
+and less apt to change the data. However, depending on the type of data needed to support 
+the decision-making application, RDBMSs may not be appropriate. In that case, ORDBMS, 
+OODBMS, or a NoSQL data store may be the better solution.
+Existing Storage Formats The storage format should be selected primarily on the basis 
+of the kind of data and application system being developed. However, project teams 
+should consider the existing storage formats in the organization when making design 
+decisions. In this way, they can better understand the technical skills that already exist 
+and how steep the learning curve will be when the storage format is adopted. For example, a company that is familiar with RDBMS will have little problem adopting a relational 
+database for the project, whereas an OODBMS or a NoSQL data store might require 
+substantial developer training. 
+Future Needs Not only should a project team consider the storage technology within the 
+company, but it should also be aware of current trends and technologies that are being used by 
+other organizations. A large number of installations of a specifi c type of storage format suggest 
+that skills and products are available to support the format. Th erefore, the selection of that format is safe. For example, it would probably be easier and less expensive to fi nd RDBMS expertise when implementing a system than to fi nd help with an OODBMS or a NoSQL data store.
+Other Miscellaneous Criteria Other criteria that should be considered include cost, 
+licensing issues, concurrency control, ease of use, security and access controls, version 
+management, storage management, lock management, query management, language 
+bindings, and APIs. We also should consider performance issues, such as cache management, insertion, deletion, retrieval, and updating of complex objects. Finally, the level of 
+support for object orientation (such as objects, single inheritance, multiple inheritance, 
+polymorphism, encapsulation and information hiding, methods, multivalued attributes, 
+repeating groups) is critical.
+MAPPING PROBLEM DOMAIN OBJECTS TO OBJECT 
+PERSISTENCE FORMATS
+Th ere are many diff erent formats from which to choose to support object persistence. Each 
+of the formats can have some conversion requirements. Regardless of the object persistence 
+format chosen, we suggest supporting primary keys and foreign keys by adding them to the 
+problem domain classes at this point. However, this does imply that some additional processing will be required. Th e developer has to set the value for the foreign key when adding 
+the relationship to an object. From a practical perspective, fi le formats are used mostly for 
+temporary storage. Th us, we do not consider them further.
+We also recommend that data management functionality specifi cs, such as retrieval and 
+updating of data from the object storage, be included only in classes contained in the data management layer. Th is will ensure that the data management classes are dependent on the problem 
+domain classes and not vice versa. Th is allows the design of problem domain classes to be independent of any specifi c object persistence environment, thus increasing their portability and their 
+potential for reuse. Like our previous recommendation, this also implies additional processing.
+338 Chapter 9 Data Management Layer Design
+Mapping Problem Domain Objects to an OODBMS Format
+If we support object persistence with an OODBMS, the mappings between the problem domain 
+objects and the OODBMS tend to be fairly straightforward. As a starting point, we suggest that 
+each concrete problem domain class should have a corresponding object persistence class in 
+the OODBMS. Th ere will also be a data access and manipulation (DAM) class (described later 
+in this chapter) that contains the functionality required to manage the interaction between the 
+object persistence class and the problem domain layer. For example, using the appointment 
+system example from the previous chapters, the Patient class is associated with an OODBMS 
+class (see Figure 9-5). Th e Patient class essentially will be unchanged from analysis. Th e 
+Patient-OODBMS class will be a new class that is dependent on the Patient class, whereas the 
+Patient-DAM class will be a new class that depends on both the Patient class and the PatientOODBMS class. Th e Patient-DAM class must be able to read from and write to the OODBMS. 
+Otherwise, it will not be able to store and retrieve instances of the Patient class. Even though 
+this does add overhead to the installation of the system, it allows the problem domain class 
+to be independent of the OODBMS being used. If at a later time another OODBMS or object 
+persistence format is adopted, only the DAM classes will have to be modifi ed. Th is approach 
+increases both the portability and the potential for reuse of the problem domain classes.
+Even though we are implementing the DAM layer using an OODBMS, a mapping from 
+the problem domain layer to the OODBMS classes in the data access and management layer 
+may be required. If multiple inheritance is used in the problem domain but not supported by 
+the OODBMS, then the multiple inheritance must be factored out of the OODBMS classes. 
+For each case of multiple inheritance (i.e., more than one superclass), the following rules can 
+be used to factor out the multiple inheritance eff ects in the design of the OODBMS classes.8
+PD Layer
+DM Layer
+Patient Appointment
+Patient-OODBMS Appointment-OODBMS
+Patient-DAM Appointment-DAM
+FIGURE 9-5
+Appointment 
+System ProblemDomain and DM 
+Layers
+8 Th e rules presented in this section are based on material in Ali Bahrami, Object-Oriented Systems Development Using 
+the Unifi ed Modeling Language (New York: McGraw-Hill, 1999); Michael Blaha and William Premerlani, ObjectOriented Modeling and Design for Database Applications (Upper Saddle River, NJ: Prentice Hall, 1998); Akmal B. 
+Chaudri and Roberto Zicari, Succeeding with Object Databases: A Practical Look at Today’s Implementations with Java 
+and XML (New York: Wiley, 2001); Peter Coad and Edward Yourdon, Object-Oriented Design (Upper Saddle River, NJ: 
+Yourdon Press, 1991); Paul R. Read, Jr., Developing Applications with Java and UML (Boston: Addison-Wesley, 2002).
+Mapping Problem Domain Objects to Object Persistence Formats  339
+Rule 1a: Add a column(s) to the OODBMS class(es) that represents the subclass(es) 
+that will contain an Object ID of the instance stored in the OODBMS class that 
+represents the “additional” superclass(es). Th is is similar in concept to a foreign 
+key in an RDBMS. Th e multiplicity of this new association from the subclass 
+to the “superclass” should be 1..1. Add a column(s) to the OODBMS class(es) 
+that represents the superclass(es) that will contain an Object ID of the instance 
+stored in the OODBMS class that represents the subclass(es). If the superclasses 
+are concrete, that is, they can be instantiated themselves, then the multiplicity 
+from the superclass to the subclass is 0..1, otherwise, it is 1..1. An exclusive-or 
+(XOR) constraint must be added between the associations. Do this for each 
+“additional” superclass.
+or
+Rule 1b: Flatten the inheritance hierarchy of the OODBMS classes by copying the 
+attributes and methods of the additional OODBMS superclass(es) down to 
+all of the OODBMS subclasses and remove the additional superclass from the 
+design.9
+Th ese multiple inheritance rules are very similar to those described in Chapter 8. 
+Figure 9-6 demonstrates the application of these rules. Th e right side of the fi gure portrays 
+the same problem domain classes that were in Chapter 8: Airplane, Car, Boat, FlyingCar, 
+and AmphibiousCar. FlyingCar inherits from both Airplane and Car, and AmphibiousCar 
+inherits from both Car and Boat. Figure 9-6a portrays the mapping of multiple inheritance 
+relationships into a single inheritance-based OODBMS using Rule 1a. Assuming that Car is 
+concrete, we apply Rule 1a to the Problem Domain classes, and we end up with the OODBMS 
+classes on the left side of Part a, where we have:
+■ Added a column (attribute) to FlyingCar-OODBMS that represents an association 
+with Car-OODBMS;
+■ Added a column (attribute) to AmphibiousCar-OODBMS that represents an 
+ association with Car-OODBMS;
+■ Added a pair of columns (attributes) to Car-OODBMS that represents an 
+association with FlyingCar-OODBMS and AmphibiousCar-OODBMS and for 
+ completeness sake;
+■ Added associations between AmphibiousCar-OODBMS and Car-OODBMS 
+and FlyingCar-OODBMS and Car-OODBMS that have the correct multiplicities 
+and the XOR constraint explicitly shown.
+We also display the dependency relationships from the OODBMS classes to the problem 
+domain classes. Furthermore, we illustrate the fact that the association between FlyingCarOODBMS and Car-OODBMS and the association between AmphibiousCar-OODBMS and 
+Car-OODBMS are based on the original factored-out inheritance relationships in the problem 
+domain classes by showing dependency relationships from the associations to the inheritance 
+relationships.
+On the other hand, if we apply Rule 1b to map the Problem Domain classes to a singleinheritance-based OODBMS, we end up with the mapping in Figure 9-6b, where all the attributes of Car have been copied into the FlyingCar-OODBMS and AmphibiousCar-OODBMS 
+classes. In this latter case, you may have to deal with the eff ects of inheritance confl icts (see 
+Chapter 8).
+9 It is also a good idea to document this modifi cation in the design so that in the future, modifi cations to the desiTh e advantage of Rule 1a is that all problem domain classes identifi ed during analysis are 
+preserved in the database. Th is allows maximum fl exibility of maintenance of the design of the 
+data management layer. However, Rule 1a increases the amount of message passing required 
+in the system, and it has added processing requirements involving the XOR constraint, thus 
+reducing the overall effi ciency of the design. Our recommendation is to limit Rule 1a to be 
+applied only when dealing with “extra” superclasses that are concrete because they have an 
+independent existence in the problem domain. Use Rule 1b when they are abstract because 
+they do not have an independent existence from the subclass.
+In either case, additional processing will be required. In the fi rst case, cascading of deletes 
+will work, not only from the individual object to all its elements but also from the superclass 
+instances to all the subclass instances. In the second case, there will be a lot of copying and 
+pasting of the structure of the superclass to the subclasses. In the case that a modifi cation of 
+the structure of the superclass is required, the modifi cation must be cascaded to all of the subclasses. However, multiple inheritance is rare in most business problems. In most situations, 
+the preceding rules will never be necessary.
+When instantiating problem domain objects from OODBMS objects, additional processing will also be required. Th e additional processing will be in the retrieval of the OODBMS 
+objects and taking their elements to create a problem domain object. Also, when storing the 
+problem domain object, the conversion to a set of OODBMS objects is required. Basically 
+speaking, any time that an interaction takes place between the OODBMS and the system, if 
+multiple inheritance is involved and the OODBMS supports only single inheritance, a conversion between the two formats will be required.
+Mapping Problem Domain Objects to an ORDBMS Format
+If we support object persistence with an ORDBMS, then the mapping from the problem 
+domain objects to the data management objects is much more involved. Depending on 
+the level of support for object orientation, diff erent mapping rules are necessary. For our 
+purposes, we assume that the ORDBMS supports Object IDs, multivalued attributes, and 
+stored procedures. However, we assume that the ORDBMS does not provide any support 
+for inheritance. Based on these assumptions, Figure 9-7 lists a set of rules that can be used to 
+design the mapping from the Problem Domain objects to the tables of the ORDBMS-based 
+data management layer.
+First, all concrete Problem Domain classes must be mapped to the tables in the ORDBMS. 
+For example in Figure 9-8, the Patient class has been mapped to Patient-ORDBMS table. 
+Notice that the Participant class has also been mapped to an ORDBMS table. Even though 
+the Participant class is abstract, this mapping was done because in the complete class diagram 
+(see Figure 7-15), the Participant class had multiple direct subclasses (Employee and Patient).
+Second, single-valued attributes should be mapped to columns in the ORDBMS tables. 
+Again, referring to Figure 9-8, we see that the amount attribute of the Patient class has been 
+included in the Patient Table class.
+Th ird, depending on the level of support of stored procedures, the methods and derived 
+attributes should be mapped either to stored procedures or program modules.
+Fourth, single-valued (one-to-one) aggregation and association relationships should be 
+mapped to a column that can store an Object ID. Th is should be done for both sides of the 
+relationship.
+Fift h, multivalued attributes should be mapped to columns that can contain a set of 
+values. For example in Figure 9-8, the insurance carrier attribute in the Patient class may 
+contain multiple values because a patient may have more than one insurance carrier. Th us 
+in the Patient table, a multiplicity has been added to the insurance carrier attribute to portray this fact.
+342 Chapter 9 Data Management Layer Design
+Rule 1: Map all concrete Problem Domain classes to the ORDBMS tables. Also, if an abstract problem domain class has multiple 
+direct subclasses, map the abstract class to an ORDBMS table.
+Rule 2: Map single-valued attributes to columns of the ORDBMS tables.
+Rule 3: Map methods and derived attributes to stored procedures or to program modules.

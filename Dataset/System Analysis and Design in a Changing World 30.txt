@@ -1,0 +1,693 @@
+﻿this when checking out online. The customer service representative might do this 
+when talking to a customer on the phone. The store sales representative might 
+do this when dealing with the customer in a store. Only a member of management can process an account adjustment. The other use cases are included only 
+for the customer.
+There are many ways to organize use case diagrams for communicating with 
+users, stakeholders, and project team members. One way is to show all use cases 
+invoked by a particular actor (i.e., from the user’s viewpoint). This approach is 
+often used during requirements definition because the systems analyst may be 
+working with a particular user and identifying all the functions that user performs with the system. Figure 3-13 illustrates this viewpoint, showing all the 
+use cases involving the customer for the Sales subsystem. Figure 3-14 shows use 
+cases involving the customer service representative and the store sales representative for the Sales subsystem. Analysts can expand this approach to include all 
+the use cases invoked by any department, regardless of the subsystem, or all use 
+cases important to a specific stakeholder.
+❚ «includes» Relationships
+Frequently during the development of a use case diagram, it becomes apparent that 
+one use case might use the services of another use case. For example, in the Sales 
+subsystem use case diagram shown in Figure 3-14, the customer might search 
+Search for item
+Sales Subsystem
+Actor: Customer
+Fill reserve cart
+Empty reserve
+cart
+Empty shopping
+cart
+View product
+comments and
+ratings
+View accessory
+combinations
+Check out shopping
+cart
+Fill shopping cart
+Convert reserve
+cart
+Customer
+Figure 3-13 All use cases 
+involving the customer actor for 
+the Sales subsystem
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+86 PART 2 ■ Systems Analysis Activities
+for an item, view product comments and ratings, and view accessory combinations before beginning to fill the shopping cart. However, while filling the shopping cart, the customer might also search for an item, view product comments, 
+and view accessories. Therefore, one use case uses, or “includes,” another use 
+case. Figure 3-15 shows a use case diagram emphasizing this aspect of use cases. 
+Customer
+Search for item
+Fill shopping cart
+View product
+comments and
+ratings
+View accessory
+combinations
+Sales Subsystem
+Fill Shopping Cart <<includes>> Relationships
+«includes»
+«includes»
+«includes»
+Figure 3-15 A use case diagram 
+of the Fill shopping cart «includes» 
+relationships
+Sales Subsystem
+Actors: Service Representative and Store Representative
+Customer service
+representative
+Store sales
+representative
+View product
+comments and
+ratings
+View accessory
+combinations
+Create phone sale
+Search for item
+Create store sale
+Figure 3-14 Use cases involving the customer service representative and store sales representative for the Sales subsystem© Cengage Learning®
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 87
+Fill shopping cart also includes Search for item, View product comments and 
+ratings, and View accessory combinations. Thus, the Customer can view comments initially, and also while carrying out the Fill shopping cart use case. The 
+relationship between these use cases is denoted by the dashed connecting line 
+with the arrow that points to the use case that is included. The relationship is 
+read Fill shopping cart includes Search for item. Sometimes, this relationship is 
+referred to as the «includes» relationship or the «uses» relationship. Note that 
+the word includes is enclosed within guillemets in the diagram; this is the way to 
+refer to a stereotype in UML. It means that the relationship between one use case 
+and another use case is a stereotypical «includes» relationship.
+■ Developing a Use Case Diagram
+Analysts create a variety of use case diagrams to communicate with users, 
+stakeholders, management, and team members. The steps to develop use case 
+diagrams are:
+1. Identify all the stakeholders and users who would benefit by having a use 
+case diagram.
+2. Determine what each stakeholder or user needs to review in a use case diagram. Typically, a use case diagram might be produced for each subsystem, 
+for each type of user, for use cases with the «includes» relationship, and for 
+use cases that are of interest to specific stakeholders.
+3. For each potential communication need, select the use cases and actors to 
+show and draw the use case diagram. There are many software packages 
+that can be used to draw use case diagrams.
+4. Carefully name each use case diagram and then note how and when the 
+diagram should be used to review use cases with stakeholders and users.
+«includes» relationship a relationship 
+between use cases in which one use case 
+is stereotypically included within the other 
+use case
+chapter Summary
+This chapter is the first of three chapters that present 
+techniques for modeling a system’s functional requirements. A key early step in the modeling process is to 
+identify and list the user stories or use cases that define the functional requirements for the system. User 
+stories are written by end users and stakeholders during requirements meetings with the developers. They 
+are used with most highly Agile development methodologies. Use cases are very similar to user stories, 
+but they are often modeled in more detail than user 
+stories and are the responsibility of the developers. Use 
+cases can be identified by using the user goal technique 
+and the event decomposition technique. The user goal 
+technique initially identifies types of system end users, called actors. Then, users are asked to list specific 
+user goals they have when using the system to support 
+their work. The event decomposition technique initially identifies events that require a response from the 
+system. An event is something that can be described, 
+something that occurs at a specific time and place, and 
+something worth remembering. External events occur 
+outside the system—usually triggered by someone who 
+interacts with the system. Temporal events occur at a 
+defined point in time, such as the end of a work day or 
+the end of every month. State or internal events occur 
+based on an internal system change. For each event, 
+a use case is identified and named. The event decomposition technique helps ensure that each use case is 
+identified at the elementary business process (EBP) 
+level of detail. Each use case identified by the analyst 
+is further documented by a brief use case description 
+and by identifying the actors. UML use case diagrams 
+are drawn to document use cases and their actors. 
+Many different use case diagrams are drawn based on 
+the need to review use cases with various stakeholders, 
+users, and team members.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+88 PART 2 ■ Systems Analysis Activities
+event
+event decomposition technique
+external event
+«includes» relationship
+perfect technology assumption
+state event
+system controls
+temporal event
+use case
+use case diagram
+user goal technique
+user story
+acceptance criteria
+actor
+automation boundary
+brief use case description
+elementary business 
+process (EBP)
+Key Terms
+1. What are the five activities of systems analysis, 
+and which activity is discussed beginning with 
+this chapter?
+2. What is a user story? What is a use case?
+3. What are the two techniques used to identify 
+use cases?
+4. Describe the user goal technique for identifying 
+use cases.
+5. What are some examples of users with different 
+functional roles and at different operational levels?
+6. What are some examples of use case names that 
+correspond to your goals as a student going 
+through the college registration process? Be sure 
+to use the verb-noun naming convention.
+7. What is the overarching objective of asking users 
+about their specific goals?
+8. How many types of users can have the same user 
+goals for using the system?
+9. Describe the event decomposition technique for 
+identifying use cases.
+10. Why is the event decomposition technique 
+considered more comprehensive than the user 
+goal technique?
+11. What is an elementary business process (EBP)?
+12. Explain how the event decomposition technique 
+helps identify use cases at the right level of analysis.
+13. What is an event?
+14. What are the three types of events?
+15. Define an external event and give an example 
+that applies to a checking account system.
+16. Define a temporal event and give an example 
+that applies to a checking account system.
+17. What are system controls, and why are they 
+not considered part of the users’ functional 
+requirements?
+18. What is the perfect technology assumption?
+19. What are three examples of events that involve 
+system controls that should not be included initially because of the perfect technology assumption?
+20. What is a brief use case description?
+21. What is UML?
+22. What is the purpose of UML use case 
+diagrams?
+23. What is another name for “actor” in UML, and 
+how is it represented on a use case diagram?
+24. What is the automation boundary on a use case 
+diagram, and how is it represented?
+25. How many actors can be related to a use case on 
+a use case diagram?
+26. Why might a systems analyst draw many different use case diagrams when reviewing use cases 
+with end users?
+27. What is the «includes» relationship between two 
+use cases?
+Review Questions
+Problems and Exercises
+1. Consider the situation where a student 
+organization is exploring its requirements for 
+a system that manages its membership and 
+finances. Based on what you know about student organizations, write user stories using the 
+standard template for the following potential 
+users: membership director, finance director, 
+faculty advisor. Add acceptance criteria for each 
+user story based on how you imagine the system 
+might work.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 89
+2. Review the external event checklist in Figure 3-4 
+and then think about a university course registration system. What is an example of an event of 
+each type in the checklist? Name each event by 
+using the guidelines for naming an external event.
+3. Review the temporal event checklist in Figure 3-5. 
+Would a student grade report be an internal or 
+external output? Would a class list for the instructor be an internal or external output? What are 
+some other internal and external outputs for a 
+course registration system? Using the guidelines 
+for naming temporal events, what would you 
+name the events that trigger these outputs?
+4. Consider the following sequence of actions taken 
+by a customer at a bank. Which action is the 
+event the analyst should define for a bank account transaction processing system? (1) Kevin 
+gets a check from Grandma for his birthday. 
+(2) Kevin wants a car. (3) Kevin decides to save 
+his money. (4) Kevin goes to the bank. (5) Kevin 
+waits in line. (6) Kevin makes a deposit in his savings account. (7) Kevin grabs the deposit receipt. 
+(8) Kevin asks for a brochure on auto loans.
+5. Consider the perfect technology assumption, 
+which states that use cases should be included 
+during analysis only if the system would be 
+required to respond under perfect conditions. 
+Could any of the use cases listed for the RMO 
+CSMS be eliminated based on this assumption? 
+Explain. Why are such use cases as Log on to the 
+system and Back up the database required only 
+under imperfect conditions?
+6. Visit some Web sites of car manufacturers, such 
+as Honda, BMW, Toyota, and Acura. Many of 
+these sites have a use case that is typically named 
+Build and price a car. As a potential customer, 
+you can select a car model, select features and 
+options, and get the car’s suggested price and list 
+of specifications. Write a brief use case description for this use case (see Figure 3-9).
+7. Again looking at a Web site for one of the car 
+manufacturers, consider yourself a potential 
+buyer and then identify all the use cases included 
+on the site that correspond to your goals.
+8. Set up a meeting with a librarian. During your 
+meeting, ask the librarian to describe the situations that the book checkout system needs to 
+respond to. List these external events. Now ask 
+about points in time, or deadlines, that require 
+the system to produce a statement, notice, report, 
+or other output. List these temporal events. Does 
+it seem natural for the librarian to describe the 
+system in this way? List each event and then 
+name the resulting use case.
+9. Again considering the library, ask some students 
+what their goals are in using the library system. 
+Also ask some library employees about their 
+goals in using the system. Name these goals as use 
+cases (verb-noun) and discuss whether student 
+users have different goals than employee users.
+10. Visit a restaurant or the college food service to 
+talk to a server (or talk with a friend who is a 
+food server). Ask about the external events and 
+temporal events, as you did in exercise 8. What 
+are the events and resulting use cases for order 
+processing at a restaurant?
+11. Review the procedures for course registration 
+at your university and then talk with the staff 
+in advising, in registration, and in your major 
+department. Think about the sequence that goes 
+on over an entire semester. What are the events 
+that students trigger? What are the events that 
+your own department triggers? What are the 
+temporal events that result in information going 
+to students? What are the temporal events that 
+result in information going to instructors or 
+departments? List all the events and the resulting 
+use cases that should be included in the system.
+12. Refer to the RMO CSMS Order Fulfillment subsystem shown in Figure 3-10. Draw a use case diagram 
+that shows all actors and all use cases. Use a drawing tool such as Microsoft Visio if it is available.
+13. Again for the Order Fulfillment subsystem, draw 
+a use case diagram showing just the use cases 
+for the Shipping Department in preparation for 
+a meeting with them about the system requirements. Use a drawing tool such as Microsoft 
+Visio if it is available.
+14. Refer to the RMO CSMS Marketing subsystem 
+shown in Figure 3-10. Draw a use case diagram 
+that shows all actors and all use cases. Use a drawing tool such as Microsoft Visio if it is available.
+15. Refer to the RMO CSMS Reporting subsystem 
+shown in Figure 3-10. These reports were identified by asking users about temporal events, 
+meaning points in time that require the system 
+to produce information of value. In most actual 
+systems today, an actor is assigned responsibility for producing the reports or other outputs 
+when they are due. Recall that the actor is part 
+of the system—the manual, nonautomated 
+part. Thus, this is one way the “system” can be 
+responsible for producing an output at a point 
+in time. In the future, more outputs will be produced automatically. Draw a use case diagram 
+that shows the use cases and actors, as shown in 
+Figure 3-10. Use a drawing tool such as Microsoft Visio if it is available.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+90 PART 2 ■ Systems Analysis Activities
+The State Patrol Ticket-Processing 
+System
+The purpose of the State Patrol ticket-processing system is 
+to record moving violations, keep records of the fines paid by 
+drivers when they plead guilty or are found guilty of moving 
+violations, and notify the court that a warrant for arrest should 
+be issued when such fines are not paid in a timely manner. 
+A separate State Patrol system records accidents and the 
+verification of financial responsibility (insurance). But a third 
+system uses ticket and accident records to produce driving 
+record reports for insurance companies. Finally, a fourth system issues, renews, or suspends driver’s licenses. These 
+four systems are obviously integrated, in that they share access to the same database; otherwise, they are operated 
+separately by different departments of the State Patrol.
+When an officer gives a ticket to a driver, a copy of 
+the ticket is turned in and entered into the system. A new 
+ticket record is created, and relationships to the correct 
+driver, officer, and court are established in the database. 
+If the driver pleads guilty, he or she mails in the fine in a 
+preprinted envelope with the ticket number on it. In some 
+cases, the driver claims innocence and wants a court date. 
+When the envelope is returned without a check and the trial 
+request box has an “X” in it, the system does the following: 
+notes the plea on the ticket record; looks up driver, ticket, 
+and officer information; and sends a ticket details report 
+to the appropriate court. A trial date questionnaire form is 
+also produced at the same time and is mailed to the driver. 
+The instructions on the questionnaire tell the driver to fill in 
+convenient dates and mail the questionnaire directly to the 
+court. Upon receiving this information, the court schedules 
+a trial date and notifies the driver of the date and time.
+When the trial is completed, the court sends the 
+verdict to the ticketing system. The verdict and trial date 
+are recorded for the ticket. If the verdict is innocent, the 
+system that produces driving record reports for insurance 
+companies will ignore the ticket. If the verdict is guilty, 
+the court gives the driver another envelope with the ticket 
+number on it for mailing in the fine.
+If the driver fails to pay the fine within the required 
+period, the ticket-processing system produces a warrant 
+request notice and sends it to the court. This happens if 
+the driver does not return the original envelope within two 
+weeks, or does not return the court-supplied envelope 
+within two weeks of the trial date. What happens next is 
+in the hands of the court. Sometimes, the court requests 
+that the driver’s license be suspended, and the system that 
+processes driver’s licenses handles the suspension.
+1. To what events must the ticket-processing system 
+respond? List each event, the type of event, the 
+resulting use case, and the actor(s). Think carefully 
+about who the actors are. Does the officer directly 
+enter the ticket into the system? Or does a state patrol clerk do it when the paper ticket is received from 
+the officer? The existing system uses paper forms, so 
+for now assume the state patrol clerk enters all of the 
+information. A new system would use the same use 
+cases, but opportunities for efficiency and accuracy 
+would lead to changes in who the actors are.
+2. Write a brief use case description for each use case.
+3. Draw a use case diagram for the ticket-processing 
+system assuming the actors are based on your 
+answers in question 1 (the existing system as 
+described).
+CASE STUDY
+Community Board of Realtors®
+One of the functions of the Board of Realtors introduced in Chapter 2 is to provide a Multiple Listing 
+Service (MLS) system that supplies information that 
+local real estate agents use to help them sell houses to 
+their customers. Agents list houses for sale (listings) by 
+contracting with homeowners. The agent works for 
+a real estate office, which sends information on the 
+listing to the MLS. Therefore, any agent in the community can get information on the listing.
+The MLS systems include lots of information on 
+a listing. It is now common to include dozens of photos, video tours, Google map information, prior sales, 
+and so forth. For now, let’s keep it simple and assume 
+a listing includes the address, year built, square feet, 
+Running Case Studies
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 91
+number of bedrooms, number of bathrooms, owner 
+name, owner phone number, asking price, and status 
+code. An agent will directly request information from 
+the MLS system on listings that match customer requirements. Information is provided on the house, on 
+the agent who listed the house, and on the real estate 
+office for which the agent works. This information is 
+needed because an agent might want to call the listing 
+agent to ask additional questions or call the homeowner 
+directly to make an appointment to show the house. 
+Although it seems dated, once each week, the MLS 
+produces a listing booklet that contains information 
+on all listings. These booklets are sent to some real estate agents because many think they are easier to flip 
+through and write on. Sometimes, agents and owners 
+decide to change information about a listing, such as reducing the price, correcting previous information on the 
+house, or indicating that the house is sold. The agent 
+updates the information directly on the MLS system.
+1. To what events must the MLS system respond 
+based on the description above? List each event, 
+the type of event, and the resulting use case. Be 
+sure to consider all the use cases that would be 
+needed to maintain the data in the MLS system.
+2. Draw a use case diagram based on the use cases 
+you identified in question 1. Include appropriate 
+actors based on the case description.
+The Spring Breaks ‘R’ Us Travel Service
+Spring Breaks ‘R’ Us (SBRU), introduced in Chapter 2, 
+includes many use cases that make up the functional 
+requirements. Consider the following description of the 
+Booking subsystem. A few weeks before Thanksgiving 
+break, it is time to open the system to new bookings. 
+Students usually want to browse through the resorts 
+and do some planning. When a student or group of 
+students wants to book a trip, the system allows it. 
+Sometimes, a student needs to be added or dropped 
+from the group or a group changes size and needs a 
+different type of room. One month before the actual 
+trip, it is time for the system to send out final payment 
+requirement notices. Students cancel the booking or 
+they pay their final bills. Students often want to look 
+up their booking status and check on resort details. 
+When they arrive at the resort, they need to check in; 
+and when they leave, they need to check out.
+1. Using the event decomposition technique for 
+each event you identify in the description here, 
+name the event, state the type of event, and 
+name the resulting use case. Draw a use case 
+diagram for these use cases.
+2. Consider the new Social Networking subsystem 
+that SBRU is researching that was described 
+in Chapter 2. Think in terms of the user goal 
+technique to identify as many use cases as you 
+can think of that you would like to have in the 
+system. SBRU is guessing you might want to 
+join, send messages, and so forth, but there must 
+be many interesting and useful things the system 
+could do before, during, and after the trip. Draw 
+a use case diagram for these use cases.
+On the Spot Courier Services
+Recall the On the Spot courier service introduced 
+in Chapter 2. The details of the package pickup and 
+delivery process are described here.
+When Bill got an order, only on his phone at first, 
+he recorded when he received the call and when the 
+shipment would be ready for pickup. Sometimes, customers wanted immediate pickup; sometimes, they 
+were calling to schedule a later time in the day for 
+pickup.
+Once he arrived at the pickup location, Bill 
+collected the packages. It was not uncommon for 
+the customer to have several packages for delivery. 
+In addition to the name and address of the delivery 
+location, he also recorded the time of pickup. He 
+noted the desired delivery time, the location of the 
+delivery, and the weight of the package to determine 
+the courier cost. When he picked up the package, he 
+printed out a label with his portable printer that he 
+kept in the delivery van.
+At first, Bill required customers to pay at the time 
+of pickup, but he soon discovered that there were some 
+regular customers who preferred to receive a monthly 
+bill for all their shipments. He wanted to be able to accommodate those customers. Bills were due and payable upon receipt.
+To help keep track of all the packages, Bill decided that he needed to scan each package as it was 
+sorted in the warehouse. This would enable him to 
+keep good control of his packages and avoid loss or 
+delays.
+The delivery of a package was fairly simple. Upon 
+delivery, he would record information about when the 
+delivery was made and who received it. Because some 
+of the packages were valuable, it was necessary in 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+92 PART 2 ■ Systems Analysis Activities
+those instances to have someone sign for the package 
+upon delivery.
+1. From this description as well as the information 
+from Chapter 2, identify all the actors who will 
+be using the system.
+2. Using the actors who you identified in question 1, 
+develop a list of use cases based on the user goal 
+technique. Draw a use case diagram for these 
+use cases.
+3. Using the event decomposition technique for 
+each event you identify in the description 
+here, name the event, state the type of event, 
+and name the resulting use case. Draw a use 
+case diagram for these use cases.
+Sandia Medical Devices
+Recall the Sandia Medical Devices Real-Time 
+Glucose Monitoring (RTGM) system introduced in 
+Chapter 2. As the project began, interviews with patients and physicians about potential RTGM capabilities and interaction modes identified several areas 
+of concern that will need to be incorporated into the 
+system requirements and design. The relevant patient 
+concerns include:
+■ Viewing and interpreting data and trends. 
+Patients want to be able to view more than their 
+current glucose level. They would like to see 
+glucose levels over various time periods, with a 
+specific focus on time periods during which their 
+glucose was within and outside of acceptable 
+ranges. A graphical view of the data is preferred, 
+although some patients also want to be able to 
+see actual numbers.
+■ Entering additional data. Some patients want 
+to be able to enter text notes or voice messages 
+to supplement glucose level data. For example, 
+patients who see a high glucose alert might 
+record voice messages describing how they feel 
+or what they had recently eaten. Some patients 
+thought that sharing such information with 
+their health-care providers might be valuable, 
+but others only wanted such information for 
+themselves.
+Physicians expressed these concerns:
+■ They do not want to be the “first line of 
+response” to all alerts. They prefer that nurses 
+or physician assistants be charged with that 
+role and that physicians be notified only when 
+frontline personnel determine that an emergency 
+situation exists.
+■ They want to be able to monitor and view past 
+patient data and trends in much the same way as 
+described for patients.
+■ They want all their actions to be logged and for 
+patient-specific responses to be stored as part of 
+the patient’s electronic medical record.
+Perform the following tasks by using the information here as well as the system description in 
+Chapter 2:
+1. Identify all the actors who will use RTGM.
+2. Using the actors who you identified in question 1, 
+develop a list of use cases based on the user goal 
+technique. Draw a use case diagram for these use 
+cases.
+3. Using the event decomposition technique for 
+each event you identified in the description, name 
+the event, state the type of event, and name the 
+resulting use case. Draw a use case diagram for 
+these use cases.
+Classic and more recent texts include the following:
+Grady Booch, Ivar Jacobson, and James 
+Rumbaugh, The Unified Modeling Language 
+User Guide. Addison-Wesley, 1999.
+Mike Cohn, User Stories Applied. Addison-Wesley, 
+2004.
+Craig Larman, Applying UML and Patterns (3rd ed.). 
+Prentice Hall, 2005.
+Stephen McMenamin and John Palmer, Essential 
+Systems Analysis. Prentice Hall, 1984.
+Ed Yourdon, Modern Structured Analysis. Prentice 
+Hall, 1989Recall that Waiters on Call has been working with Sam 
+Wells on the requirements for its meal-delivery system. 
+Sue and Tom Bickford want a new system that will automate and improve their specialty business of providing 
+customer-ordered, home-delivered meals prepared by a 
+variety of local restaurants. Sam did a great job of identifying the use cases required for the delivery service, 
+which impressed the Bickfords. And while working on 
+the use cases, he continued to note all the business 
+terms and concepts that the Bickfords used as they 
+described their operations. He followed up with questions about the types of things they work with each day, 
+which they answered.
+“Based on what you’ve told me,” Sam said, 
+“I assume you will need the system to store information about the following types of things, which 
+we call data entities or domain classes: restaurants, 
+menu items, customers, and orders. I also think you’re 
+going to need to store information about the following 
+types of things: drivers, addresses, routes, and order 
+payments.”
+The Bickfords readily agreed and added that it was 
+important to know what route a restaurant was on and 
+how far it might be to the customer’s address. They 
+wanted drivers to be assigned to a route based on the 
+distances from place to place.
+“Yes, we need to decide how things need to be 
+associated in the system,” Sam agreed. “Can you tell 
+me if drivers pick up orders from several restaurants 
+when they go out? Can you tell me how many items are 
+usually included in one order? Do you note pickup times 
+and delivery times? Do you need to plan the route so 
+that hot dishes are delivered first?”
+The Bickfords were further reassured that they had 
+picked an analyst who was aware of the needs of their 
+business.
+problem domain the specific area 
+(domain) of the user’s business need that is 
+within the scope of the new system
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 95
+■ The Brainstorming Technique
+As with use cases, an analyst should ask the users to discuss the types of things 
+they work with routinely. The analyst can ask about several types of things to 
+help identify them. Different types of things are important to different users, 
+so it is important to involve all types of users to help identify problem domain 
+things. The brainstorming technique is used to identify problem domain 
+classes where developers work with users to identify different types of things 
+that they use in their work.
+Figure 4-1 shows some types of things to consider that can be used to systematically help users do brainstorming. Tangible things are often the most obvious, 
+such as an airplane, a book, or a vehicle. In the Ridgeline Mountain Outfitters case, 
+a product in the warehouse and a vehicle in the fleet are tangible things of importance. Another common type of thing in an information system is a role played by 
+a person, such as an employee, a customer, a doctor, or a patient. The role of customer is obviously a very important one in the Ridgeline Mountain Outfitters case. 
+Many things in the problem domain can fit into more than one type. For example, 
+a vehicle might be thought of as a device and also a tangible thing. Either way, the 
+important point is to identify potential things in the problem domain.
+Other types of things can include organizational units, such as a division, department, or workgroup. Similarly, a site or location, such as a warehouse, a store, or a 
+branch office, might be an important thing in a system. Finally, information about 
+an incident or an interaction can be a thing—information about an order, a service 
+call, a contract, or an airplane flight. A sale, a shipment, and a return are all important incidents in the RMO case. Sometimes, these incidents are thought of as associations between things. For example, a sale is an association between a customer and 
+an item of inventory. Initially, the analyst might simply list all these as things and 
+then make adjustments as required by different approaches to analysis and design.
+The analyst identifies these types of things by thinking about each use case, 
+talking to users, and asking questions. For example, for each use case, what 
+types of things are affected that the system needs to know about and store information about? The types of things shown in Figure 4-1 can be used to systematically brainstorm about what types of things might be involved in each use case. 
+When a customer wants to buy from the Web site, the system needs to store 
+information about the customer, the items ordered, the details about the sale 
+itself—such as the date and payment terms—and the location of the items to 
+brainstorming technique a technique 
+used to identify problem domain classes in 
+which developers work with users to identify 
+classes by thinking about different types of 
+things they use in their work
+Figure 4-1 Types of things to use for the brainstorming technique
+sensor
+timer
+controller
+assembly line
+production machine
+sorter
+printer
+inventory bin
+Devices
+warehouse
+branch office
+factory
+retail store
+desktop
+Sites/
+locations
+flight
+service call
+logon
+logoff
+contract
+purchase
+order
+payment
+Incidents,
+events, or
+interactions
+airplane
+book
+vehicle
+document
+worksheet
+Tangible
+things
+employee
+customer
+doctor
+patient
+end user
+system
+administrator
+Roles
+played
+Things
+division
+department
+section
+task force
+workgroup
+Organizational
+units
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require

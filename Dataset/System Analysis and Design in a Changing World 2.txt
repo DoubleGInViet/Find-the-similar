@@ -1,0 +1,566 @@
+﻿prompted for the serial number of the new vehicle. 
+Th is serial number is used to retrieve the new vehicle 
+record for the vehicle from system storage. If a record 
+cannot be found, the serial number is probably inva lid. Th e vehicle serial number is then used to retrieve 
+the option records that describe the dealer-installed 
+options that were added to the vehicle at the custom er’s request. Th ere may be zero or more options. Th e 
+cost of the option specifi ed on the option record(s) is 
+totaled. Th en, the dealer cost is calculated using the 
+vehicle’s base cost, freight charge, and total option 
+cost. Th e completed new vehicle record is passed back 
+to the calling module.
+ a. Update the structural model (CRC cards and class 
+diagram) with this additional information.
+ b. For each class in the structural model, using OCL, 
+create a set of invariants for attributes and relation ships and add them to the CRC cards for the classes.
+ c. Choose one of the classes in the structural model. 
+Create a contract for each method in that class. Be 
+sure to use OCL to specify the preconditions and 
+the postconditions. Be as complete as possible.
+ d. Create a method specifi cation for each method 
+in the class you chose for question b. Use both 
+Structured English and activity diagrams for the 
+algorithm specifi cation.
+A project team designs the data management layer of a system using a four-step process: 
+selecting the format of the storage, mapping the problem domain classes to the selected 
+format, optimizing the storage to perform effi ciently, and then designing the necessary data 
+access and manipulation classes. Th is chapter describes the diff erent ways objects can be 
+stored and several important characteristics that should be considered when choosing among 
+object persistence formats. It describes a problem domain class to object persistence format 
+mapping process for the most important object persistence formats. Because the most pop ular storage format today is the relational database, the chapter focuses on the optimization 
+of relational databases from both storage and access perspectives. We describe the eff ect that 
+nonfunctional requirements have on the data-management layer. Th e chapter fi nally describes 
+how to design data access and manipulation classes and describes how to ensure the fi delity 
+of the data management layer.
+OBJECTIVES
+■ Become familiar with several object persistence formats.
+■ Be able to map problem domain objects to diff erent object persistence formats.
+■ Be able to apply the steps of normalization to a relational database.
+■ Be able to optimize a relational database for object storage and access.
+■ Become familiar with indexes for relational databases.
+■ Be able to estimate the size of a relational database.
+■ Understand the aff ect of nonfunctional requirements on the data management layer.
+■ Be able to design the data access and manipulation classes.
+INTRODUCTION
+Applications are of little use without the data that they support. How useful is a multimedia 
+application that can’t support images or sound? Why would someone log into a system to fi nd 
+information if it took him or her less time to locate the information manually? One of the 
+leading complaints by end users is that the fi nal system is too slow, so to avoid such complaints 
+project team members must allow time during design to carefully make sure that the fi le or 
+database performs as fast as possible. At the same time, the team must keep hardware costs 
+down by minimizing the storage space that the application will require. Th e goals of maxi mizing access to the objects and minimizing the amount of space taken to store objects can 
+confl ict, and designing object persistence effi ciency usually requires trade-off s.
+Th e design of the data management layer addresses these concerns. It includes both the 
+design of data access and manipulation classes and the actual data storage. Th e design of the data 
+access and manipulation classes should ensure the independence of the problem domain classes 
+from the data storage format. As such, the data access and manipulation classes handle all com munication with the database. In this manner, the problem domain is decoupled from the object 
+storage, allowing the object storage to be changed without aff ecting the problem domain classes. in the class you chose for question b. Use both 
+Structured English and activity diagrams for the 
+algorithm specifi cation.
+3. You have been working with the Holiday Travel 
+Vehicle problem for quite a while. You should go back 
+and refresh your memory about the problem before 
+attempting to solve this situation. Refer back to your 
+solutions Minicase 4 in Chapter 7.
+ In the new system for Holiday Travel Vehicles, 
+the system users follow a two-stage process to record 
+complete information on all of the vehicles sold. 
+When an RV or trailer fi rst arrives at the company 
+from the manufacturer, a clerk from the inventory 
+department creates a new vehicle record for it in 
+the computer system. Th e data entered at this time 
+include basic descriptive information on the vehicle 
+such as manufacturer, name, model, year, base cost, 
+and freight charges. When the vehicle is sold, the new 
+vehicle record is updated to refl ect the fi nal sales terms 
+and the dealer-installed options added to the vehicle. 
+Th is information is entered into the system at the 
+time of sale when the salesperson completes the sales 
+invoice.
+ When it is time for the clerk to fi nalize the new 
+vehicle record, the clerk selects a menu option from 
+the system, which is called Finalize New Vehi cle Record. Th e tasks involved in this process are 
+described below.
+ When the user selects Finalize New Vehicle Record 
+from the system menu, the user is immediately Th e data storage component manages how data are stored and handled by the programs 
+that run the system. Th e data storage component is composed of a set of object persistence 
+classes. Eff ective object persistence design decreases the chances of ending up with ineffi cient 
+systems, long system response times, and users who cannot get to the information that they 
+need in the way that they need it—all of which can aff ect the success of the project. From a 
+practical perspective, there are fi ve basic types of formats that can be used to store objects for 
+application systems: fi les (sequential and random), object-oriented databases, object-relational 
+databases, relational databases, or NoSQL datastores.1 Each type has certain characteristics 
+that make it more appropriate for some types of systems over others. Once the object persistence format is selected to support the system, the problem domain objects need to drive the 
+design of the actual object storage. Th en the object storage needs to be designed to optimize 
+its processing effi ciency. 
+OBJECT PERSISTENCE FORMATS
+Each of the object persistence types is described in this section. Files are electronic lists of data 
+that have been optimized to perform a particular transaction. For example, Figure 9-1 shows a 
+customer order fi le with information about customers’ orders, in the form in which it is used, 
+so that the information can be accessed and processed quickly by the system.
+A database is a collection of groupings of information, each of which is related to each 
+other in some way (e.g., through common fi elds). Logical groupings of information could 
+include such categories as customer data, information about an order, product information, 
+and so on. A database management system (DBMS) is soft ware that creates and manipulates 
+these databases (see Figure 9-2 for a relational database example). Such end-user DBMSs as 
+Microsoft Access support small-scale databases that are used to enhance personal productivity, whereas enterprise DBMSs, such as DB2, Versant, and Oracle, can manage huge volumes 
+of data and support applications that run an entire company. An end-user DBMS is significantly less expensive and easier for novice users to use than its enterprise counterpart, but 
+it does not have the features or capabilities that are necessary to support mission-critical or 
+large-scale systems.
+Sequential and Random Access Files
+From a practical perspective, most object-oriented programming languages support sequential and random access fi les as part of the language.2 In this section, we describe what sequential access and random access fi les are.3 We also describe how sequential access and random 
+access fi les are used to support an application. For example, they can be used to support 
+master fi les, look-up fi les, transaction fi les, audit fi les, and history fi les.
+Sequential access fi les allow only sequential fi le operations to be performed (e.g., read, 
+write, and search). Sequential access fi les are very effi cient for sequential operations that 
+process all of the objects consecutively, such as report writing. However, for random operations, such as fi nding or updating a specifi c object, they are very ineffi cient. On the average, 
+50 percent of the contents of a sequential access fi le will have to be searched before fi nding 
+the specifi c object of interest in the fi le. Th ey come in two fl avors: ordered and unordered.
+1 Th ere are other types of fi les, such as relative, indexed sequential, and multi-indexed sequential, and databases, such 
+as hierarchical, network, and multidimensional. However, these formats typically are not used for object persistence.
+2 For example, see the FileInputStream, FileOutputStream, and RandomAccessFile classes in the java.io package.
+3 For a more complete coverage of issues related to the design of fi les, see Owen Hanson, Design of Computer Data 
+Files (Rockville, MD: Computer Science Press, 1982).
+328 Chapter 9 Data Management Layer Design
+ 234 11/23/00 2242 DeBerry Ann $ 90.00 $5.85 $ 95.85 Y MC
+ 235 11/23/00 9500 Chin April $ 12.00 $0.60 $ 12.60 Y VISA
+ 236 11/23/00 1556 Fracken Chris $ 50.00 $2.50 $ 52.50 N VISA
+ 237 11/23/00 2242 DeBerry Ann $ 75.00 $4.88 $ 79.88 Y AMEX
+ 238 11/23/00 2242 DeBerry Ann $ 60.00 $3.90 $ 63.90 Y MC
+ 239 11/23/00 1035 Black John $ 90.00 $4.50 $ 94.50 Y AMEX
+ 240 11/23/00 9501 Kaplan Bruce $ 50.00 $2.50 $ 52.50 N VISA
+ 241 11/23/00 1123 Williams Mary $120.00 $9.60 $129.60 N MC
+ 242 11/24/00 9500 Chin April $ 60.00 $3.00 $ 63.00 Y VISA
+ 243 11/24/00 4254 Bailey Ryan $ 90.00 $4.50 $ 94.50 Y VISA
+ 244 11/24/00 9500 Chin April $ 24.00 $1.20 $ 25.20 Y VISA
+ 245 11/24/00 2242 DeBerry Ann $ 12.00 $0.78 $ 12.78 Y AMEX
+ 246 11/24/00 4254 Bailey Ryan $ 20.00 $1.00 $ 21.00 Y MC
+ 247 11/24/00 2241 Jones Chris $ 50.00 $2.50 $ 52.50 N VISA
+ 248 11/24/00 4254 Bailey Ryan $ 12.00 $0.60 $ 12.60 Y AMEX
+ 249 11/24/00 5927 Lee Diane $ 50.00 $2.50 $ 52.50 N AMEX
+ 250 11/24/00 2242 DeBerry Ann $ 12.00 $0.78 $ 12.78 Y MC
+ 251 11/24/00 9500 Chin April $ 15.00 $0.75 $ 15.75 Y MC
+ 252 11/24/00 2242 DeBerry Ann $132.00 $8.58 $140.58 Y MC
+ 253 11/24/00 2242 DeBerry Ann $ 72.00 $4.68 $ 76.68 Y AMEX
+ Order Cust Last First Prior Payment
+ Number Date ID Name Name Amount Tax Total Customer Type
+FIGURE 9-1  Customer Order File
+An unordered sequential access fi le is basically an electronic list of information stored on 
+disk. Unordered fi les are organized serially (i.e., the order of the fi le is the order in which the 
+objects are written to the fi le). Typically, new objects simply are added to the fi le’s end.
+Ordered sequential access fi les are placed into a specifi c sorted order (e.g., in ascending 
+order by customer number). Th ere is overhead associated with keeping fi les in a particular 
+sorted order. Th e fi le designer can keep the fi le in sorted order by always creating a new fi le 
+each time a delete or addition occurs, or he or she can keep track of the sorted order via the use 
+of a pointer, which is information about the location of the related record. A pointer is placed at 
+the end of each record, and it “points” to the next record in a series or set. Th e underlying data/
+fi le structure in this case is the linked list4 data structure demonstrated in the previous chapter.
+Random access fi les allow only random or direct fi le operations to be performed. Th is 
+type of fi le is optimized for random operations, such as fi nding and updating a specifi c object. 
+Random access fi les typically have a faster response time to fi nd and update operations than 
+any other type of fi le. However, because they do not support sequential processing, applications such as report writing are very ineffi cient. Th e various methods to implement random 
+access fi les are beyond the scope of this book.5
+4 For more information on various data structures, see Ellis Horowitz and Sartaj Sahni, Fundamentals of Data Structures (Rockville, MD: Computer Science Press, 1982); Michael T. Goodrich and Roberto Tamassia, Data Structures 
+and Algorithms in Java (New York: Wiley, 1998).
+5 For a more-detailed look at the underlying data and fi le structures of the diff erent types of fi les, see Mary E. S. 
+Loomis, Data Management and File Structures, 2nd Ed. (Englewood Cliff s, NJ: Prentice Hall, 1989); Michael J Th ere are times when it is necessary to be able to process fi les in both a sequential and random manner. One simple way to do this is to use a sequential fi le that contains a list of the keys 
+(the fi eld in which the fi le is to be kept in sorted order) and a random access fi le for the actual 
+objects. Th is minimizes the cost of additions and deletions to a sequential fi le while allowing the 
+random fi le to be processed sequentially by simply passing the key to the random fi le to retrieve 
+each object in sequential order. It also allows fast random processing to occur by using only 
+the random access fi le, thus optimizing the overall cost of fi le processing. However, if a fi le of 
+objects needs to be processed in both a random and sequential manner, the developer should 
+consider using a database (relational, object-relational, or object-oriented) instead.
+Th ere are many diff erent application types of fi les—e.g., master fi les, lookup fi les, transaction fi les, audit fi les, and history fi les. Master fi les store core information that is important to the 
+business and, more specifi cally, to the application, such as order information or customer mailing information. Th ey usually are kept for long periods of time, and new records are appended 
+to the end of the fi le as new orders or new customers are captured by the system. If changes need 
+to be made to existing records, programs must be written to update the old information.
+Lookup fi les contain static values, such as a list of valid ZIP codes or the names of the U.S. 
+states. Typically, the list is used for validation. For example, if a customer’s mailing address is 
+entered into a master fi le, the state name is validated against a lookup fi le that contains U.S. 
+states to make sure that the operator entered the value correctly.
+A transaction fi le holds information that can be used to update a master fi le. Th e transaction fi le can be destroyed aft er changes are added, or the fi le may be saved in case the transactions need to be accessed again in the future. Customer address changes, for one, would be 
+stored in a transaction fi le until a program is run that updates the customer address master 
+fi le with the new information.
+For control purposes, a company might need to store information about how data 
+change over time. For example, as human resources clerks change employee salaries in a 
+human resources system, the system should record the person who made the changes to the 
+salary amount, the date, and the actual change that was made. An audit fi le records before 
+and aft er images of data as they are altered so that an audit can be performed if the integrity 
+of the data is questioned.
+Sometimes fi les become so large that they are unwieldy, and much of the information 
+in the fi le is no longer used. Th e history fi le (or archive fi le) stores past transactions (e.g., old 
+customers, past orders) that are no longer needed by system users. Typically the fi le is stored 
+off -line, yet it can be accessed on an as-needed basis. Other fi les, such as master fi les, can then 
+be streamlined to include only active or very recent information.
+Relational Databases
+A relational database is the most popular kind of database for application development today. 
+A relational database is based on collections of tables with each table having a primary key—a 
+fi eld or fi elds whose values are unique for every row of the table. Th e tables are related to one 
+another by placing the primary key from one table into the related table as a foreign key (see 
+Figure 9-3). Most relational database management systems (RDBMS) support referential integrity, or the idea of ensuring that values linking the tables together through the primary and 
+foreign keys are valid and correctly synchronized. For example, if an order-entry clerk using 
+the tables in Figure 9-3 attempted to add order 254 for customer number 1111, he or she would 
+have made a mistake because no customer exists in the Customer table with that number. If the 
+RDBMS supported referential integrity, it would check the customer numbers in the Customer 
+table, discover that the number 1111 is invalid, and return an error to the entry clerk. Th e clerk 
+would then go back to the original order form and recheck the customer information. 
+FIGURE 9-3  Relational Database
+ Cust Last First Prior
+ ID Name Name Customer
+ 2242 DeBerry Ann Y
+ 9500 Chin April Y
+ 1556 Fracken Chris N
+ 1035 Black John Y
+ 9501 Kaplan Bruce N
+ 1123 Williams Mary N
+ 4254 Bailey Ryan Y
+ 2241 Jones Chris N
+ 5927 Lee Diane N
+Customer
+ Payment Payment
+ Type Desc
+ MC Mastercard
+ VISA Visa
+ AMEX American Express
+Payment Type
+Referential Integrity:
+■ All payment type values in 
+Order must exist first in 
+the Payment Type table
+■ All Cust ID values in order 
+must exist first in the 
+Customer table
+ Order Cust Payment
+Number Date ID Amount Tax Total Type
+ 234 11/23/00 2242 $ 90.00 $5.85 $ 95.85 MC
+ 235 11/23/00 9500 $ 12.00 $0.60 $ 12.60 VISA
+ 236 11/23/00 1556 $ 50.00 $2.50 $ 52.50 VISA
+ 237 11/23/00 2242 $ 75.00 $4.88 $ 79.88 AMEX
+ 238 11/23/00 2242 $ 60.00 $3.90 $ 63.90 MC
+ 239 11/23/00 1035 $ 90.00 $4.50 $ 94.50 AMEX
+ 240 11/23/00 9501 $ 50.00 $2.50 $ 52.50 VISA
+ 241 11/23/00 1123 $ 120.00 $9.60 $ 129.60 MC
+ 242 11/24/00 9500 $ 60.00 $3.00 $ 63.00 VISA
+ 243 11/24/00 4254 $ 90.00 $4.50 $ 94.50 VISA
+ 244 11/24/00 9500 $ 24.00 $1.20 $ 25.20 VISA
+ 245 11/24/00 2242 $ 12.00 $0.78 $ 12.78 AMEX
+ 246 11/24/00 4254 $ 20.00 $1.00 $ 21.00 MC
+ 247 11/24/00 2241 $ 50.00 $2.50 $ 52.50 VISA
+ 248 11/24/00 4254 $ 12.00 $0.60 $ 12.60 AMEX
+ 249 11/24/00 5927 $ 50.00 $2.50 $ 52.50 AMEX
+ 250 11/24/00 2242 $ 12.00 $0.78 $ 12.78 MC
+ 251 11/24/00 9500 $ 15.00 $0.75 $ 15.75 MC
+ 252 11/24/00 2242 $ 132.00 $8.58 $ 140.58 MC
+ 253 11/24/00 2242 $ 72.00 $4.68 $ 76.68 AMEX
+Order
+Cust ID is a foreign key in Order
+Payment type is a foreign key in Order
+Order Number ID is
+the primary key of
+the Order table
+Cust ID is the primary key
+of Customer table.
+Payment type is the primary key
+of the Payment Type table
+331
+332 Chapter 9 Data Management Layer Design
+Tables have a set number of columns and a variable number of rows that contain 
+occurrences of data. Structured query language (SQL) is the standard language for accessing the data in the tables. SQL operates on complete tables, as opposed to the individual 
+rows in the tables. Th us, a query written in SQL is applied to all the rows in a table all at 
+once, which is diff erent from a lot of programming languages, which manipulate data row 
+by row. When queries must include information from more than one table, the tables fi rst 
+are joined based on their primary key and foreign key relationships and treated as if they 
+were one large table. Examples of RDBMS soft ware are Microsoft SQL Server, Oracle, DB2, 
+and MySQL.
+To use a RDBMS to store objects, objects must be converted so that they can be stored in 
+a table. From a design perspective, this entails mapping a UML class diagram to a relational 
+database schema.
+Object-Relational Databases
+Object-relational database management systems (ORDBMSs) are relational database management systems with extensions to handle the storage of objects in the relational table structure. 
+Th is is typically done through the use of user-defi ned types. For example, an attribute in a 
+table could have a data type of map, which would support storing a map. Th is is an example 
+of a complex data type. In pure RDBMSs, attributes are limited to simple or atomic data types, 
+such as integers, fl oats, or chars.
+ORDBMSs, because they are simply extensions to their RDBMS counterparts, also 
+have very good support for the typical data management operations that business has come 
+to expect from RDBMSs, including an easy-to-use query language (SQL), authorization, 
+concurrency-control, and recovery facilities. However, because SQL was designed to handle 
+only simple data types, it too has been extended to handle complex object data. Currently, 
+vendors deal with this issue in diff erent manners. For example, DB2, Informix, and Oracle 
+all have extensions that provide some level of support for objects.
+Many of the ORDBMSs on the market still do not support all of the object-oriented 
+features that can appear in an object-oriented design (e.g., inheritance). As described in 
+Chapter 8, one of the problems in supporting inheritance is that inheritance support is 
+language dependent. For example, the way Smalltalk supports inheritance is different 
+from C11’s’ approach, which is diff erent from Java’s approach. Th us, vendors currently 
+must support many different versions of inheritance, one for each object-oriented language, or decide on a specifi c version and force developers to map their object-oriented 
+design (and implementation) to their approach. Like RDBMSs, a mapping from a UML 
+class diagram to an object-relational database schema is required.
+Object-Oriented Databases
+Th e next type of database management system that we describe is the object-oriented database 
+management systems (OODBMS). Th ere have been two primary approaches to supporting 
+object persistence within the OODBMS community: adding persistence extensions to an 
+object-oriented programming language and creating an entirely separate database management system.
+With an OODBMS, collections of objects are associated with an extent. An extent is simply the set of instances associated with a particular class (i.e., it is the equivalent of a table in a 
+RDBMS). Technically speaking, each instance of a class has a unique identifi er assigned to it 
+by the OODBMS: the Object ID. However, from a practical point of view, it is still a good idea 
+to have a semantically meaningful primary key (even though from an OODBMS perspective 
+this is unnecessary). Referential integrity is still very important. In an OODBMS, from the 
+user’s perspective, it looks as if the object is contained within the other object. However, the 
+Object Persistence Formats  333
+OODBMS actually keeps track of these relationships through the use of the Object ID, and 
+therefore foreign keys are not technically necessary.6
+OODBMSs provide support for some form of inheritance. However, as already discussed, 
+inheritance tends to be language dependent. Currently, most OODBMSs are tied closely 
+to either a particular object-oriented programming language (OOPL) or a set of OOPLs. 
+Originally, most OODBMSs supported either Smalltalk or C11. Today, many of the commercially available OODBMSs provide support for C11, Java, and Smalltalk.
+OODBMSs also support the idea of repeating groups (fi elds) or multivalued attributes. 
+Th ese are supported through the use of attribute sets and relationships sets. RDBMSs do not 
+explicitly allow multivalued attributes or repeating groups. Th is is considered to be a violation of the fi rst normal form (discussed later in this chapter) for relational databases. Some 
+ORDBMSs do support repeating groups and multivalued attributes.
+Until recently, OODBMSs have mainly been used to support multimedia applications 
+or systems that involve complex data (e.g., graphics, video, sound). Application areas, such 
+as computer-aided design and manufacturing (CAD/CAM), fi nancial services, geographic 
+information systems, health care, telecommunications, and transportation, have been the 
+most receptive to OODBMSs. Th ey are also becoming popular technologies for supporting 
+electronic commerce, online catalogs, and large Web multimedia applications. Examples of 
+pure OODBMSs include Gemstone, Objectivity, db4o, and Versant.
+Although pure OODBMS exist, most organizations currently invest in ORDBMS 
+technology. Th e market for OODBMS is expected to grow, but its ORDBMS and RDBMS 
+counterparts dwarf it. One reason for this situation is that there are many more experienced 
+developers and tools in the RDBMS arena. Furthermore, relational users fi nd that using an 
+OODBMS comes with a fairly steep learning curve.
+NoSQL Data Stores7
+NoSQL data stores are the newest type of object persistence available. Depending on whom 
+you talk to, NoSQL either stands for No SQL or Not Only SQL. Regardless, the data stores 
+that are described as NoSQL typically do not support SQL. Currently, there is no standard 
+for NoSQL data stores. Most NoSQL data stores were created to address problems associated 
+with storing large amounts of distributed data in RDBMSs. NoSQL data stores tend to support 
+very fast queries. However, when it comes to updating, NoSQL data stores normally do not 
+support a locking mechanism, and consequently, all copies of a piece of data are not required 
+to be consistent at all times. Instead they tend to support an eventually consistent based 
+model. So it is technically possible to have diff erent values for diff erent copies of the same 
+object stored in diff erent locations in a distributed system. Depending on the application, this 
+could cause problems for decision makers. Th erefore, their applicability is limited and are 
+not applicable to most traditional business transaction processing systems. Some of the better 
+known NoSQL data stores include Google’s Big Table, Amazon’s Dynamo, Apache’s HBase, 
+Apache’s CouchDB, and Apache/Facebook’s Cassandra. Th ere are many diff erent types of 
+NoSQL data stores, including key-value stores, document stores, column-oriented stores, 
+and object databases. Besides object databases, which are either ORDBMSs or OODBMSs 
+(see previous sections), we describe each NoSQL data store type below.
+6 Depending on the storage and updating requirements, it usually is a good idea to use a foreign key in addition to 
+the Object ID. Th e Object ID has no semantic meaning. Th erefore, in the case of needing to rebuild relationships 
+between objects, Object IDs are diffi cult to validate. Foreign keys, by contrast, should have some meaning outside of 
+the DBMS.
+7 For a more complete description of NoSQL data stores see Pramod J. Sadalage and Martin Fowler, NoSQL Distilled: 
+A Brief Guide to the Emerging World of Polyglot Persistence (Upper Saddle River, NJ: Addison Wesley, 2013).
+334 Chapter 9 Data Management Layer Design
+Key-value data stores essentially provide a distributed index (primary key) to where a BLOB 
+(binary large object) is stored. A BLOB treats a set of attributes as one large object. A good 
+example of this type of NoSQL data store is Amazon’s Dynamo. Dynamo provides support 
+for many of the core services for Amazon. Obviously, as one of the largest e-commerce sites 
+in the world, Amazon needed a solution for object persistence that was scalable, distributable, 
+and reliable. Typical RDBMS-based solutions would not work for some of these applications. 
+Applications that typically use key-value data stores are Web-based shopping carts, product 
+catalogs, and bestseller lists. Th ese types of applications do not require updating the underlying 
+data. For example, you do not update the title of a book in your shopping cart when you are 
+making a purchase at Amazon. Given the scale and distributed nature of this type of system, 
+there are bound to be many failures across the system. Being fault tolerant and temporarily sacrifi cing some consistency across all copies of an object is a reasonable trade-off .
+Document data stores, as the name suggests, are built around the idea of documents. Th e 
+idea of document databases has been around for a long time. One of the early systems that 
+used this approach was Lotus Notes. Th ese types of stores are considered to be schema free. 
+By that we mean there is no detailed design of the database. A good example of an application that would benefi t from this type of approach is a business card database. In a relational 
+database, multiple tables would need to be designed. In a document data store, the design 
+is done more in a “just in time” manner. As new business cards are input into the system, 
+attributes not previously included are simply added to the evolving design. Previously entered 
+business cards would simply not have those attributes associated with them. One major difference between key-value data stores and document data stores is that the “document” has 
+structure and can be easily searched based on the non-key attributes contained in the document, whereas the key-value data store simply treats the “value” as one big monolithic object. 
+Apache’s CouchDB is a good example of this type of data store.
+Columnar data stores organize the data into columns instead of rows. However, 
+there seems to be some confusion as to what this actually implies. In the fi rst approach 
+to columnar data stores, the rows represent the attributes and the columns represent the 
+objects. In contrast, relational databases represent attributes in columns and represent 
+objects in rows. Th is type of columnar data store is very eff ective in business intelligence, 
+data mining, and data warehousing applications where the data are fairly static and many 
+computations are performed over a single or a small subset of the available attributes. In 
+comparison to a relational database where you would have to select a set of attributes from 
+all rows, with this type of data store, you would simply have to select a set of rows. Th is 
+should be a lot faster than with a relational database. A few good examples of this type of 
+columnar data store include Oracle’s Retail Predictive Application Server, HP’s Vertica, 
+and SAP’s Sybase IQ. Th e second approach to columnar data stores, which includes 
+Apache’s HBase, Apache/Facebook’s Cassandra, and Google’s BigTable, is designed to 
+handle very large data sets (petabytes of data) that can be accessed as if the data are stored 
+in columns. However, in this case, the data are actually stored in a three-dimensional map 
+composed of object ID, attribute name, timestamp, and value instead of using columns 
+and rows. Th is approach is highly scalable and distributable. Th ese types of data stores 
+support social applications such as Twitter and Facebook and support search applications 
+such as Google Maps, Earth, and Analytics.
+Given the popularity of social computing, business intelligence, data mining, data warehousing, e-commerce, and their need for highly scalable, distributable, and reliable data storage, NoSQL data stores are an area that should be considered as part of an object persistence 
+solution. However, given the overall diversity and complexity of NoSQL data stores and their 
+limited applicability to traditional business applications, we do not consider them any further 
+in this text.
+Object Persistence Formats  335
+Selecting an Object Persistence Format
+Each of the fi le and database storage formats that have been presented has its strengths and 
+weaknesses, and no one format is inherently better than the others. In fact, sometimes a project team chooses multiple formats (e.g., a relational database for one, a fi le for another, and 
+an object-oriented database for a third). Th us, it is important to understand the strengths and 
+weaknesses of each format and when to use each one. Figure 9-4 presents a summary of the 
+characteristics of each and the characteristics that can help identify when each type of format 
+is more appropriate.
+Major Strengths and Weaknesses  Th e major strengths of fi les include the following: Some 
+support for sequential and random access fi les is normally part of an OOPL, fi les can be 
+designed to be very effi cient, and they are a good alternative for temporary or short-term 
+storage. However, all fi le manipulation must be done through the OOPL. Files do not have 
+any form of access control beyond that of the underlying operating system. Finally, in most 
+cases, if fi les are used for permanent storage, redundant data most likely will result. Th is can 
+cause many update anomalies.
+FIGURE 9-4  Comparison of Object Persistence Formats
+ Sequential and Object Relational Object-Oriented 
+Random Access Files Relational DBMS DBMS DBMS NoSQL data store
+Major 
+Strengths
+ 
+Major 
+Weaknesses
+Data Types 
+Supported
+Types of 
+Application 
+Systems 
+Supported
+Existing 
+Storage 
+Formats
+Future 
+Needs
+Usually part of an 
+object-oriented 
+programming 
+language
+Files can be 
+designed for fast 
+performance
+Good for short-term 
+data storage
+Redundant data
+Data must be updated 
+using programs, i.e., 
+no manipulation or 
+query language
+No access control 
+Simple and Complex
+Transaction processing
+Organization 
+dependent
+Poor future 
+prospects
+Leader in the 
+database market
+Can handle diverse 
+data needs
+Cannot handle 
+complex data
+No support for 
+object orientation
+Impedance mismatch 
+between tables and 
+objects
+Simple
+Transaction 
+processing and 
+decision making
+Organization 
+dependent
+Good future 
+prospects
+Able to handle 
+complex data
+Direct support for 
+object orientation
+Technology is still 
+maturing
+Skills are hard to fi nd
+Simple and Complex
+Transaction 
+processing and 
+decision making
+Organization 
+dependent
+Good future 
+prospects
+Able to handle 
+complex data
+Technology is still 
+maturing
+Skills are hard 
+to fi nd
+Simple and Complex
+Primarily decision 
+making
+Organization 
+dependent
+Good future 
+prospects
+Based on established, 
+proven technology, 
+e.g., SQL
+Able to handle 
+complex data
+Limited support for 
+object orientation
+Impedance mismatch 
+between tables and 
+objects
+Simple and Complex
+Transaction processing 
+and decision making
+Organization 
+dependent
+Good future 
+prospects
+336 Chapter 9 Data Management Layer Design
+RDBMSs bring with them proven commercial technology. They are the leaders in the 
+DBMS market. Furthermore, they can handle very diverse data needs. However, they cannot handle complex data types, such as images. Therefore, all objects must be converted 
+to a form that can be stored in tables composed of atomic or simple data. They provide 
+no support for object orientation. This lack of support causes an impedance mismatch 
+between the objects contained in the OOPL and the data stored in the tables. An impedance mismatch refers to the amount of work done by both the developer and DBMS and 
+the potential information loss that can occur when converting objects to a form that can 
+be stored in tables.
+Because ORDBMSs are typically object-oriented extensions to RDBMSs, they inherit the 
+strengths of RDBMSs. Th ey are based on established technologies, such as SQL, and unlike 
+their predecessors, they can handle complex data types. However, they provide only limited 
+support for object orientation. Th e level of support varies among the vendors; therefore, 
+ORDBMSs also suff er from the impedance mismatch problem.
+OODBMSs support complex data types and have the advantage of directly supporting object orientation. Th erefore, they do not suff er from the impedance mismatch that 
+the previous DBMSs do. However, the OODBMS community is still maturing. Th erefore, 
+this technology might still be too risky for some fi rms. Th e other major problems with 
+OODBMS are the lack of skilled labor and the perceived steep learning curve of the RDBMS 
+community. NoSQL data stores support complex data types. However, they can suff er from 
+some forms of impedance mismatch. Th e primary problems with NoSQL data stores are 
+their lack of maturity and the lack of skilled labor who knows how to eff ectively use them.
+Data Types Supported Th e fi rst issue is the type of data that will need to be stored in the 
+system. Most applications need to store simple data types, such as text, dates, and numbers. 
+All fi les and DBMSs are equipped to handle this kind of data. Th e best choice for simple 
+data storage, however, is usually the RDBMS because the technology has matured over time 
+and has continuously improved to handle simple data very eff ectively.
+Increasingly, applications are incorporating complex data, such as video, images, or audio. 
+ORDBMSs, OODBMSs, or NoSQL data stores are best able to handle data of this type. Complex 
+data stored as objects can be manipulated much faster than with other storage formats.
+Type of Application System Th ere are many diff erent kinds of application systems that 
+can be developed. Transaction-processing systems are designed to accept and process many 
+simultaneous requests (e.g., order entry, distribution, payroll). In transaction-processing 
+systems, the data are continuously updated by a large number of users, and the queries that 
+these systems require typically are predefi ned or targeted at a small subset of records (e.g., 
+List the orders that were backordered today or What products did customer #1234 order on 
+May 12, 2001?).
+Another set of application systems is the set designed to support decision making, such 
+as decision support systems (DSS), management information systems (MIS), executive information systems (EIS), and expert systems (ES). Th ese decision-making support systems are 
+built to support users who need to examine large amounts of read-only historical data. Th e 
+questions that they ask are oft en ad hoc, and include hundreds or thousands of records at a 
+time (e.g., List all customers in the West region who purchased a product costing more than 
+$500 at least three times, or What products had increased sales in the summer months that 
+have not been classifi ed as summer merchandise?).
+Transaction-processing systems and DSSs thus have very diff erent data storage needs. 
+Transaction-processing systems need data storage formats that are tuned for a lot of data 
+updates and fast retrieval of predefi ned, specifi c questions. Files, relational databases,

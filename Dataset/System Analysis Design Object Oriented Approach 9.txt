@@ -1,0 +1,1187 @@
+﻿Index
+
+
+
+
+
+
+ 
+A
+acceptance criteria, defined, 597
+acceptance criteria, defining, 53, 347–349, 420
+acceptance tests, 330, 347, 348–349
+agile projects, 146–147, 153, 161
+defined, 597
+project planning and, 377–379 quality attributes, 293–294
+requirements and, 519
+action enablers, 171–172
+action plan, process improvement, 527–528
+active voice, 210
+activity diagrams, 153, 225, 243, 423, 597
+actor, 144, 145, 147–148, 597
+agile development
+acceptance criteria, 348
+acceptance tests, 377, 386
+adapting requirements practices for, 390–391
+backlog, 387, 489
+business analyst role, 71–72
+change management, 389, 488–490
+customer involvement, 386
+defined, 597
+documentation, 386
+epics, user stories, and features, 388–389 estimating effort, project planning, 370–371 evolutionary prototypes, 299–300, 309
+modeling on, 243–244
+overview of, 381–383, 385, 387–388
+priorities, setting of, 314, 387
+product backlog, 387, 489
+product owner, 63, 71–72, 115–116, 386, 391, 601
+quality attributes, 293–294
+reaching agreement on requirements, 41 requirements management, 468–470
+requirements specification, 199–201, 386
+ 
+use cases, 152–153
+user representation, 115–116
+user stories, 145–147
+vision and scope in, 98–99
+agreement, reaching on requirements, 38–41 allocation, requirements, 51, 373, 440–441, 532
+alternative flows, use case, 152–153, 155–156, 597
+ambiguity, avoiding, 205, 213–216
+analysis models, 199. See also models
+analysis, requirements. See also models; also priorities, setting of
+defined, 597
+good practices, 50–51
+overview of, 15–16
+risk factors, 544
+troubleshooting problems, 567–569 analyst. See business analyst (BA) application, 4
+application analyst. See business analyst (BA) architecture, 373–374
+architecture diagram, real-time projects, 445–446 defined, 597
+embedded and real-time systems projects, 440–441 requirements and, 373–374
+assessment, current requirements practice, 551–557 assets, requirements engineering process, 530–533 assumption, defined, 597
+assumptions, business requirements, 88, 577
+assumed requirements, 140–141
+assumptions, SRS document, 194, 586 atomic business rules, 174–175
+attributes, requirement, 462–463. See also quality attributes
+defined, 601
+requirements management tools and, 507 augmentability requirements. See modifiability requirements author, inspection team role, 334, 336–338
+availability requirements, 267–269, 274–275, 594
+ 
+
+
+ 
+BA
+B
+BA. See business analyst (BA) backlog, 387, 460, 468–470, 489, 597
+baseline, requirements, 39–41, 53, 185, 458, 459–460,
+461–462, 463, 465, 597. See also change management
+Beatty, Joy, 225, 322, 495
+Beizer, Boris, 379
+best practices. See good practices
+big data, 433, 597
+Bill of Responsibilities for Software Customers,
+Requirements, 30, 33–36
+Bill of Rights for Software Customers, Requirements,
+30–33
+boundary values, ambiguity around, 215
+Box, George E. P., 7 BPMN, 422
+Brooks, Frederick, 18
+Brosseau, Jim, 264
+Brown, Nanette, 41
+Burgess, Rebecca, 338
+burndown chart, 466, 469–470
+business analyst (BA). See also elicitation, requirements development; also good practices; also project planning
+agile projects, 71–72
+background of, 68–71
+collaborative teams, creating, 72–73 decision makers, identifying, 38 defined, 598
+knowledge and training, 54–55, 68–71
+overview, 61
+professional organizations for, xxv
+reaching agreement on requirements, 38–41 roles and responsibilities, 12–13, 62–64, 459
+skills required, 65–67
+software requirements specification (SRS), 9
+stakeholder analysis, 26–29
+transitioning to agile projects, 390–391 business analytics projects
+data needs, specifying, 432–435
+data transformation analyses, 435–436 data, management of, 434–435 evolving nature of, 436–437 information use requirements, 431–432 overview, 427–429
+prioritizing work, 430–431
+requirement elicitation, overview, 429–430
+ 
+
+
+business analytics system, defined, 598 business case document, 81. See also vision and
+scope document business context, 90–92 business events
+as scoping tool, 96
+defined, 240
+event-response tables, 240–242
+identifying, 48–49
+business intelligence. See business analytics projects
+business interests, 80
+business objectives, 77–79
+defined, 84–85, 598
+business objectives model, defined, 598
+example, 86
+business opportunity, 83
+business process automation projects, 421–426 business process, defined, 168
+business process analysis (BPA), 422 business process improvement (BPI), 422 business process management (BPM), 422
+business process model and notation (BPMN), 422 business process reengineering (BPR), 422
+good requirements practices, 426 modeling, 422–424
+overview, 421
+performance metrics, modeling, 424–426 business process flows, 225, 423, 425
+business reporting. See business analytics projects business requirements. See also vision and scope
+document
+agile projects, scope and vision, 98–99 assumptions, and dependencies, 88 business context, 90–92
+business objectives, 84–85
+business opportunity, 83
+business requirements section, vision and scope document, 83–88
+business risks, 88
+conflicting, 80–81
+defined, 7–8, 78, 598
+identifying and defining requirements, 78–81 judging completion with, 99
+overview, 77
+scope and limitations, 88–90
+scope management, 97–98
+scope representation techniques, 92–96 success metrics, 85–86
+vision and scope document, overview, 81–88
+ 
+
+
+communication
+
+ 
+vision and scope document, sample, 576–580 vision statement, 87–88
+vs. business rules, 168
+business requirements document (BRD). See software
+requirements specification (SRS) business risks, 88, 577
+business rules
+action enablers, 171–172 atomic business rules, 174–175 computations, 173–174
+constraints, 170–173
+customer input, 136
+defined, 7, 10, 169, 598
+discovering, 177–178
+documenting, 175–177
+enhancement and replacement projects, 395 facts, 170
+good practices, 52
+importance of, 167–169
+inferences, 173
+packaged solution projects, 407 requirements and, 178–180
+safety requirements and, 276–277
+sample, 595
+taxonomy of, 169
+use cases and, 156–157
+business systems analyst. See business analyst (BA)
+
+C
+cardinality, 247, 598
+cause-and-effect diagram, 525–526 change control. See change management change control board (CCB)
+charter for, 481
+defined, 598
+good practices, 53
+overview of, 480–482, 533
+change management
+agile projects, 389, 488–490
+change control board, overview of, 480–482 change control policies, 474
+change control process, 474–479, 533
+change impact analysis, 484–488, 494, 533
+customer rights and responsibilities, 32, 36
+frequency of changes, 483 good practices, 53–54
+impact analysis, 53, 484–488, 494, 533 measuring change activity, 483–484 origin of changes, 483–484
+ 
+outsourced projects, 419
+overview, 471–472
+requirements and, 519
+scope management, 97–98, 472–473
+tools for, 482, 506–510
+troubleshooting problems, 572–574
+change request, 474, 476–484
+characteristics of excellent requirements, 203–207 charter, project, 81. See also vision and scope document checklists
+change impact analysis, 485–486
+defects, for requirements reviews, 338–339
+defined, 530
+Chen, Anthony, 225, 322, 495
+Chen, Peter, 246
+class diagrams, 225, 243, 248, 598
+class, defined, 598
+classifying business rules, 169–174
+classifying customer input, 135–138
+cloud solutions. See packaged solution projects coding, project planning for, 373–377
+Cohn, Mike, 388
+collaborative teams. See also communication; also elicitation, requirements development
+agile projects, 386
+business analyst role, 72–73
+customers and development, 29–30, 31, 35, 36–37
+outsourced projects, 415–416, 418–419
+workshops, 122–125
+commercial off-the-shelf (COTS) products, defined,
+598. See also packaged solution projects commitment, to process change, 521–522 communication. See also customers; also
+documenting requirements
+adoption of new systems, promoting, 401–402 assumed and implied requirements, 140–141 business analyst role, 62–66
+business analytics projects, 436–437
+business process automation projects, 423–424 change control policies, 474
+collaborative culture, creating, 36–37 conflicting requirements, resolution of, 116–117 elicitation activities, follow-up, 134–135 outsourced projects, 415–419
+pathways for requirements, 108–109 product champions, 109–114 project planning estimates, 366–369
+reaching agreement on requirements, 38–41 requirements development tools, 505–506 requirements management tools, 506–510
+ 
+
+
+communications interfaces
+
+ 
+communication. See also customers; also documenting requirements, continued
+software requirement specification (SRS), good
+practices, 185–186
+tracking requirements status, 464–466 troubleshooting problems, 564
+user representatives, 108–109
+writing style, requirement documentation, 208–211
+communications interfaces, 197
+communication protocols, requirements for, 271–272
+completeness
+of requirement sets, 206
+of requirement statements, 204 composition, data element, 249–250 computations, business rules, 173–174 configuration requirements, COTS, 411 conflict management, 125
+conflicts
+resolving between stakeholder groups, 116–117 resolving between user classes, 103, 117
+consistent requirements, 206
+Constantine, Larry, 235
+constraints
+business rules, 170–173
+customer input, 137
+defined, 7, 10, 91, 598
+design and implementation, 193, 586 quality attributes and, 291–292
+real-time and embedded projects, 453 construction, requirements and, 519 context diagrams
+data flow diagrams and, 227–230 defined, 598
+enhancement and replacement projects, 395, 400–401
+real-time projects, 442
+scope representation techniques, 92–93 system external interfaces, 225
+correct requirements, 204
+cost. See also priorities, setting of change impact analysis, 484–488 feasibility analysis, 50
+of correcting defects, 19–20
+outsourced projects, 416, 418–419
+prioritizing requirements and, 315, 317, 322–326
+quality attribute requirements, 268, 288–290 requirement reuse, benefits of, 351–352 requirements management, 463
+ 
+requirements tools, 504–505, 511
+tracking effort, 467–468
+COTS (commercial off-the-shelf) products.
+See packaged solution projects defined, 598
+cross-functional diagrams. See swimlane diagrams
+CRUD matrix, 251–252, 598
+cultural differences, outsourced projects, 418–419 culture, organizational
+creating respect for requirements, 36–37 process improvement fundamentals, 522–524 requirements tools and, 513
+resistance to change, 521–522
+current practices, assessing, 526–527, 551–557 customer input, classifying, 135–138 customers. See also communication; also
+stakeholders; also users
+agile projects, 386
+collaborative culture, creating, 36–37 customer input, classifying, 135–138 decision makers, identifying, 38 defining, 27–29, 598
+expectation gap, 26–27
+reaching agreement on requirements, 38–41
+relationships with, overview, 25–26
+Requirements Bill of Responsibilities for, 30, 33–36 Requirements Bill of Rights for, 30–33 stakeholders and, 27–29
+cyclomatic complexity, 286
+
+D
+DAR (display-action-response) models, 375–377 dashboard reporting, 257–258, 431–432, 598
+data analysis, requirements, 251–252. See also data requirements
+business analytics projects, 432–435 defining, business analytic projects, 435–436 enhancement and replacement projects, 400 packaged solution projects, 407
+data definitions, models for, 225 data dictionaries, 248–251
+business analytics projects, 433 defined, 598
+good practices, 50
+sample, 589
+SRS document, 195
+use cases and, 164
+ 
+
+
+documenting requirements
+
+ 
+data field definitions, 226
+data flow diagrams (DFD), 226–230 defined, 598
+enhancement and replacement projects, 400–401
+uses for, 225
+data modeling, 245–248
+enhancement and replacement projects, 395 data object relationships, models for, 225
+data requirements. See also business analytics
+projects
+COTS implementation, 412
+customer input, 137
+dashboard reporting, 257–258
+data analysis, overview, 251–252
+data dictionary, overview of, 248–251 data integrity requirements, 270–271
+management and use requirements, 434–435 modeling data relationships, 245–248 overview, 245
+packaged solution projects, 412
+sample, 589–592
+security requirements, 277–279
+specifying reports, 252–256
+SRS document, 195
+Davis, Alan, 315
+decision makers, identifying, 38 decision rule, 38, 598
+decision tables, 226, 239–240, 598
+decision trees, 51, 226, 239–240, 599
+defect checklist for requirements reviews, 338–339 defects, cost of correcting, 19–20
+degree of freedom, defined, 91 delivery dates, 372
+dependencies, business requirements, 88, 577
+dependencies, SRS document, 194, 586
+dependency, defined, 599
+deployment considerations, vision and scope document, 92, 580
+deriving requirements
+from business rules, 178–180
+from models, 223
+from nonfunctional requirements, 290 from system requirements, 440–441 from use cases, 160, 162
+design, requirements and, 373–377
+detail, level of requirements, 211–212, 386 development life cycle, good practices, 56 DFD. See data flow diagrams
+ 
+dialog maps
+defined, 599
+enhancement and replacement projects, 395, 400–401
+good practices, 51
+overview of, 235–238
+testing and, 344–346
+wireframes, 299
+disfavored user classes, 103–104
+display-action-response (DAR) model, 375–377 document analysis, 128–129, 177
+document, use of term, 8
+documentation. See also data dictionary; also vision and scope document
+agile projects, 386 business analyst task, 64
+business rules, documenting, 175–177 document analysis, good practices, 49 elicitation activities, follow-up, 134–135 elicitation activities, notes from, 133 enhancement and replacement projects,
+395, 398–401
+interface specifications, 446–447
+outsourced projects, requirements details, 416–417 project risks, 539–541
+requirement patterns, 358–359 requirements engineering process assets,
+530–533
+requirements process and, 518–520
+requirements repositories, 359–360, 362–364
+requirements reuse, 354–355 requirements, good practices, 51–52 templates, requirements documents, 51 user documentation, 519–520
+documenting requirements. See also models
+agile projects, 199–201
+ambiguity, avoiding, 213–216
+before and after examples, 217–220 characteristics of excellent requirements, 204–207 labeling requirements, 186–188
+level of detail, 211–212 overview, 181–183
+representation techniques, 212–213
+software requirements specification (SRS),
+183–190
+SRS template, 190–199
+system or user perspective, 207–208
+use case template, 150
+ 
+
+
+documents, limitations of
+
+ 
+documenting requirements. See also models, continued vision and scope document template, 81–92 writing style, 208–211
+documents, limitations of, 1–2, 503–504
+driver, defined, 91
+Dyché, Jill, 433
+
+E
+ecosystem maps, 50, 94, 225, 395, 599
+educating stakeholders and developers, 44, 55, 58
+efficiency requirements, 281–282, 450
+effort estimates, 370–372, 467–468. See also project
+planning
+electronic prototypes, 301–303
+elicitation, requirements, 16, 119–142. See also use cases; also user stories
+assumed and implied requirements, 140–141
+availability requirements, 268–269 business analytics projects, 429–430 business process automation, 422–424 business rules, discovering, 177 cautions about, 139–140
+completion of process, 138–139 customer input, classifying, 135–138 defined, 599
+document analysis, 128–129
+efficiency requirements, 282
+focus groups, 124–125
+follow-up activities, 134–135
+framework for, 45–47
+good practices, 44, 48–49
+installability requirements, 270
+interoperability requirements, 272
+interviews, 121–122
+missing requirements, identifying, 141–142, 222,
+225, 227, 236, 238, 346
+observations, 125–126
+overview, 119–121
+performance requirements, 266
+planning for, 129–130
+portability requirements, 284
+preparing for, 130–132
+quality attributes, 263–266
+questionnaires, 127
+reliability requirements, 274–275
+reporting requirements, 253–254
+reusability requirements, 284–285
+ 
+risk factors, 543–544
+robustness requirements, 275
+safety requirements, 277
+scalability requirements, 285 scope creep, managing, 473 security requirements, 277–279 system interface analysis, 127–128 tips for performing, 132–134 tools for, 505
+troubleshooting problems, 565–566
+usability requirements, 280 user interface analysis, 128 verifiability requirements, 287
+workshops, 122–125
+embedded systems projects defined, 599
+interfaces, 446–447
+modeling, 441–446
+overview, 439, 453–454
+quality attributes, 449–453
+system requirements, architecture, and
+allocation, 440–441
+timing requirements, 447–449 end users. See users
+enhancement projects
+adoption of new system, 401–402 iteration and, 402–403
+lack of existing documentation, 398–401 overview of, 393–394
+prioritizing using business objectives, 396–397 requirements techniques, 394–395
+entity, 246–247, 251–252, 599
+entity-relationship diagrams business analytics projects, 433 defined, 599
+enhancement and replacement projects, 400–401
+good practices, 51
+modeling data relationships, 225, 245–248
+entry criteria
+for change control, 475, 478
+for inspections, 335
+environment, real-time systems, 449–453
+epics, 388–389, 599
+error handling, real-time systems, 450–452 estimation. See also project planning
+project size and effort, 370–372
+requirements effort, 366–369
+evaluating packaged solutions, 408–410
+evaluating process improvement efforts, 529–530
+ 
+
+
+functional requirements
+
+ 
+events
+as scoping tool, 96
+defined, 599
+event list, 96
+event-response tables, 9, 226, 240–242, 443–444,
+599. See also user requirements
+identifying, good practices, 48–49
+evolutionary prototypes, 298–300, 342, 599. See also
+prototypes
+excellent requirements, characteristics of, 203–207 exception handling, 152–153, 275
+exceptions, use cases, 147, 151, 152–153, 159
+exception, defined, 599
+execution time, 447
+exit criteria
+for change control, 475, 479
+for inspections, 338
+expectation gap, 26–27, 102, 295
+extend relationship, use cases, 155–156, 599
+extensibility requirements. See modifiability
+requirements
+extension requirements, COTS, 412
+external entities, 92–93, 227–228, 271–272, 599
+external events, 48–49, 92–93
+external interface requirements
+customer input, 137
+defined, 7, 599
+SRS document, 196–197
+SRS document, sample, 592–593
+Extreme Programming. See agile development
+
+F
+facilitation
+business analyst skills, 66
+completing elicitation sessions, 138–139 elicitation activities, cautions about, 139–140 elicitation activities, follow-up, 134–135 elicitation activities, performing, 132–134 focus groups, 124–125
+preparing for elicitation, 130–132 workshops, 122–125
+facilitator, defined, 599 facts, business rules, 170 Fagan, Michael, 333 fault
+detection, 451
+logging, 451
+prevention, 451
+ 
+recovery, 451
+tolerance, 275–276, 450–452 fault tree analysis, 452
+favored user classes, 103, 117
+feasibility analysis, 50
+feasible requirements, 204
+Feature Driven Development. See agile development feature trees, 11, 95–96, 395, 599
+features
+agile projects, 388–389
+defined, 7, 11, 599
+enhancement and replacement projects, 395–397 example, 95, 578
+gap analysis, 396–397
+packaged solution projects, 406–410 prioritizing, 50
+requirements reuse, 356–358
+risk management, 544
+SRS document, 194
+SRS document, sample, 586–588 vision and scope document, 89–90
+finding missing requirements, 141–142, 222, 225, 227,
+236, 238, 346
+fishbone diagram, 525–526
+fit criteria, 267, 330
+flexibility requirements. See modifiability
+requirements
+flow diagrams, business process, 225, 423, 425
+flowcharts, 153, 225, 226, 230, 236, 425, 599
+flows, data, 92–93, 226–229
+focus groups, 48, 108–109, 124–125 formal reviews. See inspections function point, 370, 599
+functional requirements
+architecture design, project planning and, 373–374 business analytic projects, 435–436
+business rules and, 180 customer input, 136
+defined, 7, 9, 599
+deriving, from business rules, 178–180
+deriving, from models, 223
+deriving, from nonfunctional requirements, 290 deriving, from system requirements, 440–441 deriving, from use cases, 160, 162
+enhancement and replacement projects, 396–397 missing, 141–142, 222, 225, 227, 236, 238, 346
+prioritizing, 50, 315, 318, 319, 324 requirement levels and types, 7–13 reusing, 356–358
+specification of, 209–219
+ 
+
+
+functional specification
+
+ 
+functional requirements, continued
+use cases and, 160, 161–163
+writing, 209–219
+functional specification. See software requirements
+specification (SRS)
+
+G
+gap analysis, 396–397, 412, 599
+Gause, Donald, 105
+Gilb, Tom, 187, 287, 600
+glossary
+good practices, 55, 199
+reuse of, 353, 356, 364
+goals, business. See business objectives
+goals, requirements process improvement, 533–535 gold plating, 21, 600
+good practices
+ambiguous terms, avoiding, 213–216 analysis, 50–51
+application of, 57–58
+elicitation, 48–49
+inspections, 333, 339–342
+knowledge, 54–55
+overview, 43–45
+project management, 56–57
+project planning, 379–380
+prototypes, 310
+reporting specifications, 254–255
+requirement statements, documenting, 204–207
+requirements development process framework,
+45–47
+requirements management, 53–54
+requirements reuse, 360–364
+specification, 51–52
+validation, 52–53
+writing style, requirements documentation, 208–211
+Gottesdiener, Ellen, 72, 105, 122–123 government regulations. See business rules Graham, Dorothy, 377
+green-field project, 393, 600
+
+H
+hard real-time systems, 439. See also real-time
+systems projects hardware interfaces, 197
+hardware requirements, 441
+ 
+Hardy, Terry, 452
+hazard analysis, 452
+Herrmann, Debra, 452
+hierarchical textual tags, 179, 187–188, 288, 587–588
+high-resolution prototypes, 226 history of requirements changes, 54 Hoffman, Cecilie, 338
+horizontal prototype, 297–298, 600. See also
+prototypes
+hundred-dollar approach, prioritization, 321–322
+
+I
+identifiers, SRS documents, 186–188
+IIBA (International Institute for Business Analysis), xxv impact analysis, requirements changes, 53, 484–488,
+494, 533
+implied requirements, 140
+in-or-out prioritization, 318
+include relationships, use cases, 155–156, 600 incompleteness, in requirements documents,
+188–189, 216–217
+inferences, business rules, 173
+initial release, scope of, 89–90
+inspections, 52, 332–342, 600. See also peer reviews
+installability requirements, 269–270 integration requirements, COTS, 412 integrity requirements, 270–271, 408 interfaces
+analyzing, good practices, 51 architecture diagrams, 445–446
+customer input, 137
+dialog maps, 235–238
+embedded projects, 446–447, 453
+enhancement and replacement projects, 400–401 external interface requirements, 7, 10, 196–197,
+592–593, 599
+functional requirements, defined, 10 interface specification document, 447 mock-ups, 297–298
+models for, 225–226
+prototypes, 50, 299
+real-time projects, 446–447, 453
+SRS document, 189–190, 196–197
+SRS document, sample, 592–593 system interface analysis, 127–128 user interface analysis, 128
+internationalization requirements, 198interoperability requirements, 271–272, 408
+interviews
+elicitation of requirements, 49, 121–122
+skills required, 65
+Ishikawa diagram, 525–526
+issue, requirements, defined, 600 issue tracking, 54, 466–467
+IT business analyst. See business analyst (BA)
+iteration,
+agile projects, 21, 56, 370, 371, 385–389,
+468–470, 489
+defined, 600
+design, 374
+requirements development, 13, 17
+specifying requirements for, 46, 47
+
+J
+Joint Application Design (JAD), 49
+
+K
+Kanban. See agile development
+key performance indicator model (KPIM), 397, 423–426 key performance indicators (KPIs), 425, 533–535 knowledge, business analyst role, 68–71
+knowledge, good practices around, 54–55 Koopman, Philip, 448, 452
+Kudish, Joseph, 442–443
+
+L
+labeling requirements, 186–188
+latency, 447
+Lauesen, Soren, 267
+Lavi, Johan, 442–443
+Lawrence, Brian, 6
+lean software development. See agile development learning curve, process improvement efforts, 529–530 Leffingwell, Dean, 348
+legacy systems. See also enhancement projects; also replacement projects
+business rules and, 177 requirements reuse, 357–358
+levels and types of requirements, 7–13 Leveson, Nancy, 452
+life cycles, development, 46–47, 330. See also agile development; also waterfall development
+listening skills, 65
+localization requirements, 10, 198
+ 
+Lockwood, Lucy, 235
+logging, faults, 451–452
+logical data model, 195
+low-fidelity prototypes, 301–303
+low-resolution prototypes, 226
+
+M
+maintainability requirements, 267, 282, 283 management, project. See project management management, requirements. See requirements
+management
+management commitment to excellent requirements, signs of 521–522
+market requirements document (MRD), 81. See also
+vision and scope document
+Martin, James, 247
+mean time between failures (MTBF), 267, 274 mean time to repair (MTTR), 267
+measuring
+change activity, 483–484
+requirements management effort, 467–468 metadata, 433
+metrics
+business performance, 424–426
+key performance indicators, 425, 533–535
+process improvement, 533–535
+project size, 370
+requirements change activity, 483–484 requirements process improvements, 533–535 success, 78, 85–86
+Miller, Roxanne, 266–267
+minimum marketable feature (MMF), 389
+missing requirements, identifying, 141–142, 222, 225,
+227, 236, 238, 346
+mitigation, risk, 539, 541–542
+mock-ups, 300, 342, 600. See also prototypes models
+agile projects, 243–244 business analyst role, 67 business analytics projects, 433
+business objectives models, 86, 598 business process automation, 422–424
+business process model and notation (BPMN), 422 business rules, discovering, 177
+context diagrams, 92–93, 598
+customer comments, use of, 223–224
+DAR (display-action-response) model, 375–377 data flow diagrams, 226–230, 598
+data relationship modeling, 245–248
+ 
+
+
+moderator, inspection team role
+
+ 
+models, continued
+decision tables and decision trees, 239–240,
+598–599
+dialog maps, 235–238, 599
+ecosystem maps, 95, 599
+embedded projects, 441–446
+enhancement and replacement projects, 395, 400–401
+entity-relationship diagrams, 245–248, 599
+event-response tables, 240–242, 599
+feature trees, 95–96, 599
+good practices, 51
+missing requirements, identifying, 141–142, 222,
+225, 227, 236, 238, 346
+outsourced projects, 417–418
+overview of, 222–223
+real-time projects, 441–446
+requirements elicitation, 122, 131–132 scope representation techniques, 92–96 selection of appropriate, 225–226 simulations, good practices, 53
+SRS document, 199
+state tables, 232–234, 602
+state-transition diagrams, 232–234, 602
+swimlane diagrams, 230–231, 602 tools for drawing, 506
+UML diagrams, 243
+moderator, inspection team role, 334, 336, 338
+modifiability requirements, 282–283, 408
+modifiable requirements, 206
+MoSCoW prioritization, 320–321
+
+N
+NAH (not applicable here), 362
+navigation map, 235. See also dialog maps
+necessary requirements, 204 negative requirements, clarifying, 216 NIH (not invented here), 362
+nonfunctional requirements, 261–294. See also constraints; also external interface requirements; also quality attributes
+agile projects, 293–294
+COTS projects, 208
+defined, 7, 10–11, 600 packaged solution projects, 208
+real-time and embedded systems, 449–453 requirement levels and types, 7–13 requirements traceability, 497–498
+ 
+risk management, 543 specifications, good practices, 52
+non-human users, 104
+normal flow, use cases, 152–153, 155–156, 600
+numbering requirements, SRS documents, 186–188
+
+O
+object state models, 226 objectives, business
+business objectives model, 86, 598 business objectives, defined, 598 completion decisions and, 99 success metrics, 85–86
+vision and scope document, 84–87
+observational skills, 66
+observations, requirements elicitation, 125–126 on-site customer, 25, 115–116
+operating environment, SRS document, 193 operational profile, 287, 409, 600 organization chart analysis, 105 organizational culture
+creating respect for requirements, 36–37 process improvement fundamentals, 522–524 requirements tools and, 513
+resistance to change, 521–522 organizational policies. See business rules out-of-scope requirements, 78, 90, 97 outsourced projects
+acceptance criteria, 420
+acquirer-supplier interactions, 418–419
+change management, 419
+level of requirements detail, 416–417 overview of, 415–416
+
+P
+packaged solution projects common challenges, 413–414
+configuration requirements, 412
+costs, 406, 408–409
+evaluating candidates, 408–409
+extension requirements, 412
+identifying requirements, 406–410
+implementation requirements, 411–413
+integration requirements, 412
+overview, 405–406
+solution selection, 406, 408–409
+ 
+
+
+project requirements, vs. product requirements
+
+ 
+pairwise comparisons for prioritization, 264–265, 318
+paper prototypes, 301–303, 600
+parking lots, 123
+passaround review, 332–333
+peer reviews. See also inspections
+challenges, 340–342
+defect checklist for requirements, 338–339
+defined, 600
+during elicitation, 160–161
+good practices, 52
+outsourced projects, 418
+review process, 332–338
+tips for performing, 339–340 performance. See also quality attributes
+efficiency requirements, 281–282 enhancement and replacement projects, 397 packaged solution projects, 408
+real-time and embedded systems, 449–453 requirements, 266, 272–273, 408, 449, 593
+SRS document, 197–198
+timing requirements, real-time systems, 447–449 personas, user, 107–108
+pilot, defined, 600
+pilots, process improvement, 526, 528–529
+plan, defined, 530
+Planguage, 226, 266–267, 287–288
+defined, 600
+policies, company. See business rules
+policy, defined, 530
+portability requirements, 283–284
+postconditions, use cases, 151, 156, 158–159
+defined, 600
+preconditions, use cases, 151, 156, 158–159, 600 predictability, timing requirements, 448 primary actor, 148
+primitive data elements, 250. See also data dictionary priorities, setting of
+agile projects, 387
+business analytics projects, 430–431 enhancement and replacement projects,
+396–397
+importance of, 313–315
+prioritization, defined, 600
+project, 91–92
+quality attributes, 263–267
+Quality Function Deployment (QFD), 322 requirements prioritization procedure,
+322–327, 532
+risk factors, 544
+strategies and techniques for, 315–322
+ 
+prioritization. See priorities, setting of
+priority, as a requirement attribute, 319, 462 problem reports as source of requirements, 49 procedure, defined, 530, 600
+process assets, 530–533, 600 process description, defined, 531 process flows, 225, 423, 425, 600
+process improvement action plan, 527–528 process improvement. See requirements process
+improvement
+process, defined, 600
+product backlog, 387, 406, 468–470, 597
+product champions, 109–114, 117, 601 product features. See features product line, 352, 356–357
+product owner, 63, 71–72, 115–116, 386, 391, 601
+product requirements vs. project requirements, 14–15
+product vision, 78–79, 87–88, 577, 603
+product, defined, 4, 600
+product-centric strategy, 16
+project charter, 81. See also vision and scope document
+project management. See also good practices; also
+project planning; also risk management collaborative teams, creating, 72–73
+good practices for, 56–57 outsourced projects, 418–419
+reaching agreement on requirements, 38–41 requirement process improvement and, 518–520 stakeholder analysis, 27–29
+project manager, as business analyst, 70 project planning. See also project management
+designing and coding, 373–377
+estimating project size and effort, 370–372 estimating requirements effort, 366–369 good practices, 56–57, 379–380
+outsourced projects, 418–419
+overview of, 365–366
+requirements and, 519
+requirements effort, estimating, 366–369
+risk management, 543, 545 scheduling, requirements and, 372 scope creep, managing, 472–473 testing, 377–379
+tracking effort, 467–468
+tracking requirements status, 464–466
+project priorities, 91–92. See also priorities, setting of
+project requirements, vs. product requirements, 14–15
+ 
+
+
+project scope
+
+ 
+project scope. See also change management; also project planning; also vision and scope document
+agile projects, change management, 389 assumed and implied requirements, 140–141 change control policies, 474
+completion decisions, 99
+defined, 79, 602
+defining for project, 13, 139–140 elicitation, good practices, 48–49 enhancement and replacement projects,
+396–397
+estimating effort, 370–372
+good practices, 53–54
+identifying and defining requirements, 78–81 outsourced projects, 419
+packaged solution projects, 406–410 product vision and, 78–80
+project management good practices, 56–57 requirements baseline, 459–460
+requirements elicitation, 122–123
+scope creep, 20–21, 472–473, 602
+scope management, 97–98
+scope representation techniques, 92–96 troubleshooting change management
+problems, 572–574
+vision and scope document, overview, 81–83
+vision and scope document, sample, 576–580 project tracking, requirements and, 519
+proof-of-concept prototypes, 297–298, 300, 342, 601
+prototypes
+dashboard reporting, 258
+defined, 601
+electronic prototype, 302–303
+enhancement and replacement projects, 395 evaluating, 306–307
+evolutionary prototype, 599, 299–300
+good practices, 50, 310
+horizontal prototype, defined, 297, 600
+mock-up, 297–298, 600
+outsourced projects, 417–418
+overview of, 295–297
+paper prototype, 301–302, 600
+proof-of-concept, 298, 601
+real-time projects, 446
+reporting specifications, 255 requirement validation and, 342 risks of, 307–310
+throwaway prototype, 298–299, 602–603
+ 
+tools for creating, 505
+user interfaces, 189–190, 226
+vertical prototype, defined, 298, 603
+working with, 303–306
+Pugh, Ken, 348
+
+Q
+QFD. See quality function deployment
+quality assurance. See also testing nonfunctional requirements, defined, 10 requirements reuse, 364
+software requirements specification (SRS), 9 quality attributes. See also performance
+agile projects, 293–294
+availability, 267–269, 594
+constraints on, 291–292
+customer input, 137
+defined, 7, 10, 261–263, 601
+defining, overview, 267
+efficiency, 281–282, 450
+embedded systems, 449–453
+enhancement and replacement projects, 395 identifying and prioritizing, 263–267 implementation of, 290–291
+installability, 269–270
+integrity, 270–271, 408
+interoperability, 271–272, 408
+modifiability, 282–283, 408
+overview of, 261–263
+packaged solution projects, 408 performance, 266, 272–273, 408, 449, 593
+Planguage, 287–288
+prioritizing, 264–265
+real-time systems, 449–453
+reliability, 274–275, 450
+requirements traceability, 497–498
+reusability, 284–285
+robustness, 275–276, 450, 594
+safety, 276–277, 452, 593
+scalability, 285–286
+security, 277–279, 408, 452–453, 593
+SRS document, 197–198
+SRS document, sample, 593–594
+timing requirements, real-time systems,
+447–449
+trade-offs, 288–290
+usability, 279–281, 453, 593
+verifiability, 286–287, 453, 593
+ 
+
+
+requirements management
+
+ 
+Quality Function Deployment (QFD), 322
+quality of service requirements. See quality attributes
+questionnaires, good practices, 49, 127
+
+R
+rank ordering, prioritization, 318 Rational Unified Process, 47
+rationale, as a requirements attribute, 462, 463 reader, inspection team role, 335, 337
+real-time systems projects defined, 601
+interfaces, 446–447
+modeling, 441–446
+overview, 439, 453–454
+quality attributes, 449–453
+system requirements, architecture, and
+allocation, 440–441
+timing requirements, 447–449 recorder, inspection team role, 335 recoverability, 275–276
+reengineering project. See replacement projects regulations, government. See business rules relationship, 247
+reliability requirements, 274–275, 450
+repeating group, data elements, 251. See also data dictionary
+replacement projects
+adoption of new system, 401–402 iteration and, 402–403
+lack of existing documentation, 398–401 overview of, 393–394
+prioritizing using business objectives, 396–397 requirements techniques, 394–395
+reports. See also business analytics projects business analytics projects, 431–432 dashboard reporting, 257–258
+enhancement and replacement projects, 395
+report layouts, 225
+specifications for, 252–256
+SRS document, 195, 591
+representation techniques, 212–213
+requirement, defined, 5–6, 601
+requirement attributes, 462–463, 51, 54, 601 requirement pattern, defined, 601 requirements allocation procedure, 532, 601
+requirements analysis. See analysis, requirements requirements analyst. See business analyst (BA) Requirements Bill of Responsibilities for customers,
+30, 33–36
+ 
+Requirements Bill of Rights for customers, 30–33
+requirements development. See also analysis, requirements; also elicitation, requirements; also specification, requirements; also validation, requirements
+common problems, 19–22
+defined, 15, 601
+overview, 15–17
+process assets for, 531–532
+process framework for, 45–47
+requirements management, boundary between, 18 tools for, 503–506
+requirements document. See software requirements
+specification (SRS)
+requirements elicitation. See elicitation, requirements requirements engineer. See business analyst (BA) requirements engineering
+common problems, 19–22
+defined, 15, 601
+framework for, 45–47
+process assets for, 530–533 requirements development, 15
+requirements management, 17–19
+subdisciplines of, 15
+tools for, 503–514 requirements levels and types, 7–13
+requirements management. See also change management; also tracing, requirements
+agile projects, 468–470
+baselining, 459–460
+common problems, 19–22
+defined, 17–18, 458, 601
+good practices, 53–54
+measuring effort, 467–468
+overview, 15, 17–19, 46–47, 470
+process assets for, 531–533
+process overview, 457–459
+product backlog, 387
+project planning estimates, 366–372 requirements attributes, 462–463
+requirements development, boundary between, 18 requirements repositories, 359–360
+resolving issues, 466–467
+risk factors, 546
+tools for, 503–510
+tools, selecting and using, 510–513
+tracking status, 464–466
+troubleshooting problems, 571
+version control, 460–462
+ 
+
+
+requirements manager
+
+ 
+requirements manager. See business analyst (BA) requirements mapping matrix, 495 requirements practices self-assessment, 551–557 requirements prioritization procedure, 532 requirements process improvement
+action planning for, 527–528
+assessment of current practices, 526–527, 551–557
+fundamentals of, 522–524
+learning curve, 529–530 management commitment to, 522 metrics for, 533–535
+overview, 517–520
+process assets, 530–533
+process improvement cycle, 526–530 resistance to change, 521–522
+road map for, 535
+root cause analysis, 524–526 requirements review checklist, 338–339, 532 requirements specification.  See specification,
+requirements; also software requirements
+specification (SRS)
+requirements status tracking procedure, 532
+requirements traceability matrix, 54, 495–498, 601.
+See also tracing, requirements requirements tracing. See tracing, requirements requirements validation. See validation, requirements requirements, characteristics of excellent, 203–207 requirements, reuse of
+benefits of, 351–352
+common scenarios for, 356–358
+defined, 602
+dimensions of, 352–355
+good practices for, 360–364
+quality attributes, reusability, 284–285
+requirement patterns, 358–359
+tools for, 359–360, 508
+tracing requirements, 495
+types of information to reuse, 355–356 requirements, troubleshooting problems with
+analysis issues, 567–569
+barriers to solution implementation, 560 change management issues, 572–574 communication issues, 564
+elicitation issues, 565–566
+overview, 559
+planning issues, 562–564
+process issues, 561–562
+product issues, 562
+requirements management issues, 571
+signs of problems, 559–560
+ 
+specification issues, 569–570
+validation issues, 570–571
+response time, 266, 287–288
+retrospective, 337, 601
+reusability requirements, 284–285 reuse. See requirements, reuse of
+reviewing requirements. See peer reviews
+rework, 19, 521, 534
+risk, 537, 602
+risk management
+documenting project risks, 539–541 overview, 537–539, 546
+planning for, 542
+requirements analysis, 544
+requirements elicitation, 543–544
+requirements management, 546
+requirements specification, 545
+requirements validation, 545
+risk assessment, 539
+risk avoidance, 539
+risk mitigation, 539, 541–542
+risks, business, 88, 577
+risks, technical, and requirements prioritization,
+322–323, 325–326
+road map, for process improvement, 535
+Robertson, James, 267
+Robertson, Suzanne, 267
+robustness requirements, 275–276, 450–452, 594 roles and permissions matrix, 171–172
+root cause analysis, 524–526, 602
+Rothman, Johanna, 326
+Royce, Winston, 384
+
+S
+SaaS. See software as a service
+safety requirements, 276–277, 452, 593
+sample documents business rules, 595
+software requirements specification (SRS), 584–594
+use cases, 581–583
+vision and scope document, 576–580
+Sawyer, Pete, 6
+scalability requirements, 285–286, 290–291
+scenarios, 149, 602
+schedule. See project planning scope creep, 20–21, 472–473
+scope, project. See also change management; also product vision; also project planning; also vision and scope document
+ 
+
+
+stakeholders
+
+ 
+agile projects, change management, 389 change control policies, 474
+completion decisions, 99
+defined, 79, 602
+defining for project, 13, 139–140 elicitation, good practices, 48–49
+enhancement and replacement projects, 396–397 estimating effort, 370–372
+good practices, 53–54
+identifying and defining requirements, 78–81 outsourced projects, 419
+packaged solution projects, 406–410 project management good practices, 56–57 requirements baseline, 459–460
+requirements elicitation, 122–123 requirements process improvement, 519 risk management, 543–544
+scope creep, defined, 602
+scope management, 20–22, 97–98, 472–473
+scope representation techniques, 92–96
+vision and scope document, overview, 81–83, 532
+vision and scope document, sample, 576–580 Scrum. See agile development
+secondary actor, 148
+secondary scenarios, 152–153 security
+data integrity requirements, 270–271 packaged solution projects, 408
+real-time and embedded systems, 452–453 requirements for, 277–279, 408, 452–453, 593
+requirements reuse, 355–356
+SRS document, 198
+self-assessment, current requirements practices,
+551–557
+shall, as keyword in requirements, 9, 209
+sign-off, 39–41. See also baseline, requirements signal events
+defined, 241
+event-response tables, 240–242
+identifying, 48–49 simulations. See also prototypes
+good practices, 53
+mock-ups and proofs of concept, 297–298
+user interfaces, 189–190
+skill development, good practices, 54–55 SMART, 266, 347
+soft real-time systems, 439. See also real-time
+systems projects
+software as a service (SaaS) projects. See packaged
+solution projects
+ 
+software design, requirements and, 373–377 software development life cycle, defined, 602 software interfaces, SRS document, 197, 592–593.
+See also interfaces
+software process improvement. See requirements process improvement
+software requirements
+defined, 5–6
+deriving from system requirements, 440–441 levels and types, 7–13
+Software Requirements Bill of Responsibilities for customers, 30, 33–36
+Software Requirements Bill of Rights for customers, 30–33
+software requirements specification (SRS). See also
+documenting requirements
+audiences for, 184
+defined, 9, 183, 602
+labeling requirements, 186–188
+lack of, on enhancement and replacement
+projects, 398–401
+outsourced projects, 416–417
+overview, 13, 183–186, 532
+product vs. project requirements, 14–15 requirements baseline, 459–460 requirements traceability matrix, 495–498 sample document, 584–594
+template for, 190–199
+user classes, 106
+user interfaces and, 189–190, 196–197 solution ideas, customer input, 138 solution, defined, 602
+Sommerville, Ian, 6
+specification, requirements. See also software
+requirements specification (SRS) agile projects, 201–202
+defined, 602
+good practices summary chart, 44
+good practices, 51–52
+requirements development framework, 45–47 requirements development, 15, 17
+risk factors, 545
+troubleshooting problems, 569
+SRS. See software requirements specification (SRS) stakeholder, defined, 602
+stakeholders. See also customers; and also users business context, vision and scope document,
+90–92
+decision makers, identifying, 38 elicitation session, preparing for, 131
+ 
+
+
+standards, industry
+
+ 
+stakeholders. See also customers; also users,
+continued
+knowledge and training, good practices, 54–55
+list of potential, 28 overlooked, 22
+reaching agreement on requirements, 38–41
+Requirements Bill of Responsibilities for customers, 30, 33–36
+Requirements Bill of Rights for customers, 30–33 requirements process improvement, 520 resistance to change, 521–522
+stakeholder analysis, 27–29 standards, industry. See business rules state diagrams, 243
+state machine diagrams, 232–234, 602
+state tables, 226, 232–234, 602
+statechart diagrams, 443
+state-transition diagrams, 51, 226, 232–234,
+442–443, 594, 602
+status tracking, requirements, 457–459, 464–466,
+469–470, 532
+story points, 325, 370, 469
+storyboards, 226, 301–303
+straw man models, 122, 132
+structure, data, 250. See also data dictionary
+subject matter expert, 62, 70–71, 110, 602
+success metrics, 85–86, 577
+supportability requirements. See modifiability
+requirements surveys, good practices, 49 survivability, 275
+swimlane diagrams
+business process automation projects, 423 business process flow, 225
+defined, 230, 602
+enhancement and replacement projects, 400–401
+overview of, 230–231
+system external interfaces, 225 user task descriptions, 226
+system, defined, 9–10, 439, 602
+system analyst. See business analyst (BA) system interface analysis, 127–128, 225 system requirements
+allocation, 9–10, 440–441
+architecture design, project planning and, 373–374 defined, 7, 9–10, 602

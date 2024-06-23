@@ -1,0 +1,733 @@
+﻿Project management
+Project management 
+soft ware
+Project manager
+Project size
+Project sponsor
+Reporting structure
+Return on investment 
+(ROI)
+Risk assessment
+Risk management
+Risks
+Round-trip engineering
+Scope creep
+Simple actors
+Simple use case
+Special issues
+Staffi ng plan
+Stakeholder
+Stakeholder analysis
+Standards
+Strategic alignment
+System request
+System users
+Tangible benefi ts
+Tangible value
+Task
+Task dependency
+Technical complexity factor 
+(TCF)
+Technical factor value 
+(TFactor)
+Technical feasibility
+Technical lead
+Technical risk analysis
+Technical skills
+Timeboxing
+Trade-off s
+Unadjusted actor weight 
+total (UAW)
+Unadjusted use-case points 
+(UUCP)
+Unadjusted use-case weight 
+total (UUCW)
+Use case
+Use-case points
+Work breakdown structure 
+(WBS)
+Workplan
+QUESTIONS
+1. Give three examples of business needs for a system.
+2. What is the purpose of an approval committee? Who 
+is usually on this committee?
+3. Why should the system request be created by a busi ness person as opposed to an IS professional?
+4. What is the diff erence between intangible value and 
+tangible value? Give three examples of each.
+5. What are the purposes of the system request and the 
+feasibility analysis? How are they used in the project 
+selection process?
+6. Describe two special issues that may be important to 
+list on a system request.
+7. Describe the three techniques for feasibility analysis.
+8. Describe a risky project in terms of technical feasibil ity. Describe a project that would not be considered 
+risky.
+9. What are the steps for assessing economic feasibility? 
+Describe each step.
+10. List two intangible benefi ts. Describe how these bene fi ts can be quantifi ed.
+11. List two tangible benefi ts and two operational costs for 
+a system. How would you determine the values that 
+should be assigned to each item?
+12. Explain the net present value and return on invest ment for a cost–benefi t analysis. Why would these 
+calculations be used?
+13. What is the break-even point for the project? How is 
+it calculated?
+14. What is stakeholder analysis? Discuss three stakehold ers that would be relevant for most projects.
+15. Why do many projects end up having unreasonable 
+deadlines? How should a project manager react to 
+unreasonable demands?
+16. What are the trade-off s that project managers must 
+manage?
+17. Compare and contrast the Gantt chart with the net work diagram.
+18. Some companies hire consulting fi rms to develop the 
+initial project plans and manage the project but use 
+their own analysts and programmers to develop the 
+system. Why do you think some companies do this?
+19. What is a use-case point? For what is it used?
+20. What process do we use to estimate systems develop ment based on use cases?
+21. Name two ways to identify the tasks that need to be 
+accomplished over the course of a project.
+22. What are the problems associated with conventional 
+WBSs?
+23. What is an evolutionary WBS? How does it address 
+the problems associated with a conventional WBS?
+24. What is an iterative workplan?
+25. What is scope creep, and how can it be managed?
+Questions  81
+82 Chapter 2 Project Management
+EXERCISES
+A. Locate a news article in an IT trade magazine (e.g., 
+Computerworld) about an organization that is imple menting a new computer system. Describe the tangi ble and intangible value that the organization is likely 
+to realize from the new system.
+B. Car dealers have realized how profi table it can be to 
+sell automobiles using the Web. Pretend that you work 
+for a local car dealership that is part of a large chain 
+such as CarMax. Create a system request you might 
+use to develop a Web-based sales system. Remember 
+to list special issues that are relevant to the project.
+C. Suppose that you are interested in buying a new com puter. Create a cost–benefi t analysis that illustrates 
+the return on investment that you would receive 
+from making this purchase. Computer-related web sites (e.g., Apple, Dell, HP) should have real tangible 
+costs that you can include in your analysis. Project 
+your numbers out to include a three-year period and 
+provide the net present value of the fi nal total.
+D. Th e Amazon.com website originally sold books; then 
+the management of the company decided to extend 
+their Web-based system to include other products. 
+How would you have assessed the feasibility of this 
+venture when the idea fi rst came up? How risky would 
+you have considered the project that implemented this 
+idea? Why?
+E. Interview someone who works in a large organization 
+and ask him or her to describe the approval process 
+that exists for approving new development projects. 
+What do they think about the process? What are the 
+problems? What are the benefi ts?
+F. Visit a project management website, such as the Project 
+Management Institute (www.pmi.org). Most have links 
+to project management soft ware products, white papers, 
+and research. Examine some of the links for project 
+management to better understand a variety of Internet 
+sites that contain information related to this chapter.
+G. Select a specifi c project management topic such as 
+CASE, project management soft ware, or timeboxing 
+and search for information on that topic using the 
+Web. Any search engine (e.g., Bing, Google) can pro vide a starting point for your eff orts.
+H. Pretend that the career services offi ce at your univer sity wants to develop a system that collects student 
+résumés and makes them available to students and 
+recruiters over the Web. Students should be able to 
+input their résumé information into a standard résumé 
+template. Th e information then is presented in a 
+résumé format, and it also is placed in a database that 
+can be queried using an online search form. You have 
+been put in charge of the project. Develop a plan for 
+estimating the project. How long do you think it would 
+take for you and three other students to complete the 
+project? Provide support for the schedule that you 
+propose.
+I. Refer to the situation in exercise H. You have been 
+told that recruiting season begins a month from today 
+and that the new system must be used. How would 
+you approach this situation? Describe what you can 
+do as the project manager to make sure that your team 
+does not burn out from unreasonable deadlines and 
+commitments.
+J. Consider the system described in exercise H. Create 
+a workplan listing the tasks that will need to be com pleted to meet the project’s objectives. Create a Gantt 
+chart and a network diagram in a project management 
+tool (e.g., Microsoft Project) or using a spreadsheet 
+package to graphically show the high-level tasks of the 
+project.
+K. Suppose that you are in charge of the project that is 
+described in exercise H and the project will be staff ed 
+by members of your class. Do your classmates have 
+all the right skills to implement such a project? If not, 
+how will you go about making sure that the proper 
+skills are available to get the job done?
+L. Complete a use-case point worksheet to estimate the 
+eff ort to build the system described in exercises H, I, J, 
+and K. You will need to make assumptions regarding 
+the actors, the use cases, and the technical complexity 
+and environmental factors.
+26. What is timeboxing, and why is it used?
+27. Create a list of potential risks that could aff ect the 
+outcome of a project.
+28. Describe the diff erences between a technical lead and 
+a functional lead. How are they similar?
+29. Describe three technical skills and three interpersonal 
+skills that are very important to have on any project.
+30. What are the best ways to motivate a team? What are 
+the worst ways?
+31. List three techniques to reduce confl ict.
+32. Describe three types of standards and provide exam ples of each.
+33. What belongs in the project binder? How is the pro ject binder organized?
+M. Consider the application that is used at your school to 
+register for classes. Complete a use-case point work sheet to estimate the eff ort to build such an applica tion. You will need to make some assumptions about 
+the application’s interfaces and the various factors that 
+aff ect its complexity.
+N. Pretend that your instructor has asked you and two 
+friends to create a Web page to describe the course to 
+potential students and provide current class informa tion (e.g., syllabus, assignments, readings) to current 
+students. You have been assigned the role of leader, so 
+you will need to coordinate your activities and those 
+of your classmates until the project is completed. 
+Describe how you would apply the project manage ment techniques that you have learned in this chapter 
+in this situation. Include descriptions of how you 
+would create a workplan, staff the project, and coordi nate all activities—yours and those of your classmates.
+O. Select two project management soft ware packages 
+and research them using the Web or trade magazines. 
+Describe the features of the two packages. If you were 
+a project manager, which one would you use to help 
+support your job? Why?
+P. In 1997, Oxford Health Plans had a computer problem 
+that caused the company to overestimate revenue and 
+underestimate medical costs. Problems were caused 
+by the migration of its claims processing system from 
+the Pick operating system to a UNIX-based system 
+that uses Oracle database soft ware and hardware from 
+Pyramid Technology. As a result, Oxford’s stock price 
+plummeted, and fi xing the system became the number 
+one priority for the company. Suppose that you have 
+been placed in charge of managing the repair of the 
+claims processing system. Obviously, the project team 
+will not be in good spirits. How will you motivate 
+team members to meet the project’s objectives?
+MINICASES
+1. Th e Amberssen Specialty Company is a chain of twelve 
+retail stores that sell a variety of imported gift items, 
+gourmet chocolates, cheeses, and wines in the Toronto 
+area. Amberssen has an IS staff of three people who 
+have created a simple but eff ective information system 
+of networked point-of-sale registers at the stores and 
+a centralized accounting system at the company head quarters. Harry Hilman, the head of Amberssens IS 
+group, has just received the following memo from Bill 
+Amberssen, Sales Director (and son of Amberssen’s 
+founder).
+ Harry—it’s time Amberssen Specialty launched 
+itself on the Internet. Many of our competitors 
+are already there, selling to customers without the 
+expense of a retail storefront, and we should be 
+there too. I project that we could double or triple 
+our annual revenues by selling our products on 
+the Internet. I’d like to have this ready by Th anks giving, in time for the prime holiday gift -shopping 
+season. Bill
+ Aft er pondering this memo for several days, Harry 
+scheduled a meeting with Bill so that he could clarify 
+Bill’s vision of this venture. Using the standard con tent of a system request as your guide, prepare a list 
+of questions that Harry needs to have answered about 
+this project.
+2. Th e Decker Company maintains a fl eet of ten service 
+trucks and crews that provide a variety of plumbing, 
+heating, and cooling repair services to residential cus tomers. Currently, it takes on average about six hours 
+before a service team responds to a service request. 
+Each truck and crew averages twelve service calls per 
+week, and the average revenue earned per service call 
+is $150. Each truck is in service fi ft y weeks per year. 
+Owing to the diffi culty in scheduling and routing, 
+there is considerable slack time for each truck and 
+crew during a typical week.
+ In an eff ort to more effi ciently schedule the trucks 
+and crews and improve their productivity, Decker 
+management is evaluating the purchase of a prewritten 
+routing and scheduling soft ware package. Th e benefi ts 
+of the system will include reduced response time to 
+service requests and more productive service teams, 
+but management is having trouble quantifying these 
+benefi ts.
+ One approach is to make an estimate of how much 
+service response time will decrease with the new system, 
+which then can be used to project the increase in the 
+number of service calls made each week. For example, if 
+the system permits the average service response time to 
+fall to four hours, management believes that each truck 
+will be able to make sixteen service calls per week on 
+average—an increase of four calls per week. With each 
+truck making four additional calls per week and the 
+average revenue per call at $150, the revenue increase 
+per truck per week is $600 (4 3 $150). With ten trucks in 
+service fi ft y weeks per year, the average annual revenue 
+increase will be $300,000 ($600 3 10 3 50).
+Minicases  83
+ Decker Company management is unsure whether 
+the new system will enable response time to fall to four 
+hours on average or if it will be some other number. 
+Th erefore, management has developed the following 
+range of outcomes that may be possible outcomes of 
+the new system, along with probability estimates of 
+each outcome’s occurring.
+ New Response Time # Calls/Truck/Week Likelihood
+ 2 hours 20 20%
+ 3 hours 18 30%
+ 4 hours 16 50%
+ Given these fi gures, prepare a spreadsheet model that 
+computes the expected value of the annual revenues to 
+be produced by this new system.
+3. Emily Pemberton is an IS project manager facing a dif fi cult situation. Emily works for the First Trust Bank, 
+which has recently acquired the City National Bank. 
+Before the acquisition, First Trust and City National 
+were bitter rivals, fi ercely competing for market share 
+in the region. Following the acrimonious takeover, 
+numerous staff were laid off in many banking areas, 
+including IS. Key individuals were retained from both 
+banks’ IS areas, however, and were assigned to a new 
+consolidated IS department. Emily has been made pro ject manager for the fi rst signifi cant IS project since the 
+takeover, and she faces the task of integrating staff ers 
+from both banks on her team. Th e project they are 
+undertaking will be highly visible within the organi zation, and the time frame for the project is somewhat 
+demanding. Emily believes that the team can meet the 
+project goals successfully, but success will require that 
+the team become cohesive quickly and that potential 
+confl icts be avoided. What strategies do you suggest 
+that Emily implement in order to help ensure a suc cessfully functioning project team?
+4. Tom, Jan, and Julie are IS majors at Great State Uni versity. Th ese students have been assigned a class 
+project by one of their professors, requiring them 
+to develop a new Web-based system to collect and 
+update information on the IS program’s alumni. Th is 
+system will be used by the IS graduates to enter job 
+and address information as they graduate and then 
+make changes to that information as they change jobs 
+and/or addresses. Th eir professor also has a number 
+of queries that she is interested in being able to imple ment. Based on their preliminary discussions with 
+their professor, the students have determined that the 
+only actor is an IS graduate. Th ey identifi ed one sim ple use case, four average use cases, and two complex 
+use cases. You need to assign reasonable values to 
+each of the technical complexity and environmental 
+factors. Calculate the eff ort for this project.
+5. In looking for a capstone project for your fi nal MIS 
+course, you found a possible project. Th e master gar deners in Blint County have created a database of all 
+of the plants in their arboretum. Th e database is actu ally a spreadsheet created by one of the volunteers. 
+Along with providing a plant inventory, it is used to 
+print labels of all of the plants that the other master 
+gardeners grow for the annual plant. More than 
+5,000 plants are supplied each year by 100 garden ers from their home gardens. Because the type and 
+numbers of plants change each year and because the 
+members e-mail the information in varying formats, 
+label printing has become an onerous task. Pam, 
+who prints the labels each year, wants help in mak ing this task manageable. She provided an example 
+of a typical email as well as the type of information 
+she needs.
+E-mail
+Lilies—labels needed 32–
+Lilium lancifolium / lilium tigrinum 
+Tiger Lily perennial light shade 4’
+Ice plant (pink)—labels needed 3
+Delosperma cooperi Hardy Ice Plant succulent 
+full sun 2–5”
+Information for Labels
+Botanical Name
+Common Name
+Plant Type
+Light Requirement
+Height and Width
+In order to have this accepted as your project, you 
+need to form a team with the necessary skills and to 
+create a systems request. How would you approach 
+this project? What additional information do you 
+need from Pam in order to begin estimating the scope 
+of this project? Assuming that you have received this 
+information, create a systems request. Also create a 
+list of skills needed, the number of team members 
+required, and a project plan.
+84 Chapter 2 Project Management
+Analysis modeling answers the questions of who will use the system, 
+what the system will do, and where and when it will be used. During 
+analysis, detailed requirements are identifi ed and a system proposal 
+is created. Th e team then produces the functional model (use-case 
+diagram, activity diagrams, and use-case descriptions), structural 
+model (CRC cards and class diagram, and object diagrams), and 
+behavioral models (sequence diagrams, communication diagrams, 
+behavioral state machines, and a CRUDE matrix). 
+CHAPTER 3
+Requirements 
+Determination
+CHAPTER 4
+Business Process 
+and Functional 
+Modeling
+CHAPTER 5
+Structural 
+Modeling
+CHAPTER 6
+Behavioral 
+Modeling
+Requirements 
+Defi nition Proposal
+System
+Use-Case
+ Descriptions
+Object 
+Diagrams Matrix
+Crude 
+Diagrams
+Use-Case Activity
+Diagrams
+CRC Cards Class Diagrams Diagrams Sequence Communication Diagrams Behavioral State Machines
+PART ONE
+Analysis Modeling
+86
+One of the fi rst activities of an analyst is to determine the business requirements for a new 
+system. Th is chapter begins by presenting the requirements defi nition, a document that lists 
+the new system’s capabilities. It then describes how to analyze requirements using require ments analysis strategies and how to gather requirements using interviews, JAD sessions, 
+questionnaires, document analysis, and observation. Th e chapter also describes a set of alter native requirements-documentation techniques and describes the system proposal document 
+that pulls everything together.
+OBJECTIVES
+■ Understand how to create a requirements defi nition
+■ Become familiar with requirements-analysis techniques
+■ Understand when to use each requirements-analysis technique
+■ Understand how to gather requirements using interviews, JAD sessions, questionnaires, 
+document analysis, and observation
+■ Understand the use of concept maps, story cards, and task lists as requirements documentation techniques
+■ Understand when to use each requirements-gathering technique
+■ Be able to begin creating a system proposal
+INTRODUCTION
+Th e systems development process aids an organization in moving from the current system 
+(oft en called the as-is system) to the new system (oft en called the to-be system). Th e output of 
+planning, discussed in Chapter 2, is the system request, which provides general ideas for the 
+to-be system, defi nes the project’s scope, and provides the initial workplan. Analysis takes the 
+general ideas in the system request and refi nes them into a detailed requirements defi nition 
+(this chapter), functional models (Chapter 4), structural models (Chapter 5), and behavioral 
+models (Chapter 6) that together form the system proposal. Th e system proposal also includes 
+revised project management deliverables, such as the feasibility analysis and the workplan 
+(Chapter 2).
+Th e output of analysis, the system proposal, is presented to the approval committee, who 
+decides if the project is to continue. If approved, the system proposal moves into design, and 
+its elements (requirements defi nition and functional, structural, and behavioral models) are 
+used as inputs to the steps in design. Th is further refi nes them and defi nes in much more 
+detail how the system will be built.
+Th e line between analysis and design is very blurry. Th is is because the deliverables 
+created during analysis are really the fi rst step in the design of the new system. Many of 
+the major design decisions for the new system are found in the analysis deliverables. It is behind schedule, over budget, or both. Here we sum marize four classic mistakes in the planning and project 
+management aspects of the project and discuss how to 
+avoid them:
+ 1. Overly optimistic schedule: Wishful thinking can lead 
+to an overly optimistic schedule that causes analysis 
+and design to be cut short (missing key requirements) 
+and puts intense pressure on the programmers, who 
+produce poor code (full of bugs).
+ Solution: Don’t infl ate time estimates; instead, 
+explicitly schedule slack time at the end of each 
+phase to account for the variability in estimates.
+ 2. Failing to monitor the schedule: If the team does not 
+regularly report progress, no one knows if the project 
+is on schedule.
+ Solution: Require team members to report progress (or 
+the lack of progress) honestly every week. There is no 
+penalty for reporting a lack of progress, but there are 
+immediate sanctions for a misleading report.
+ 3. Failing to update the schedule: When a part of the 
+schedule falls behind (e.g., information gathering 
+uses all the slack in item 1 plus 2 weeks), a project 
+team often thinks it can make up the time later by 
+working faster. It can’t. This is an early warning that 
+the entire schedule is too optimistic.
+ Solution: Immediately revise the schedule and inform 
+the project sponsor of the new end date or use time boxing to reduce functionality or move it into future 
+versions.
+ 4. Adding people to a late project: When a project 
+misses a schedule, the temptation is to add more 
+people to speed it up. This makes the project take 
+longer because it increases coordination problems 
+and requires staff to take time to explain what has 
+already been done.
+ Solution: Revise the schedule, use timeboxing, throw 
+away bug-fi lled code, and add people only to work 
+on an isolated part of the project.
+Based upon Steve McConnell, Rapid Development (Redmond, WA: 
+Microsoft Press, 1996), pp. 29–50.
+PRACTICAL Avoiding Classic Planning Mistakes
+TIP
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Explain the ways that projects are identifi ed and initiated.
+ Explain why it is important to link the information system to business needs of the organization.
+ Describe the purpose of the systems request and explain the contents of its sections.
+ Create a systems request for a proposed project.
+ Discuss the purpose of the feasibility study.
+ Describe the issues that are considered when evaluating a project’s technical feasibility.
+ Develop an economic feasibility assessment for a project.
+ Understand and evaluate the organizational feasibility of a project.
+ Explain how projects are selected.
+ Describe a task.
+ Create a standard work breakdown structure, a Gantt Chart, and a Network Diagram.
+ Perform PERT analysis and identify the critical path.
+ Estimate the system development eff ort using use-case points.
+ Create an evolutionary work breakdown structure.
+ Describe how iterative and incremental development using timeboxing addresses scope management.
+ Describe the characteristics of a “jelled” team.
+ Describe issues relating to motivating soft ware developers.
+ Describe the importance of CASE tools, standards, and documentation managing soft ware development projects.
+KEY TERMS
+Actor
+Adjusted use-case 
+points (UCP)
+Application program 
+interface (API)
+Approval committee
+Average actors
+Average use case
+Break-even point
+Business need
+Business requirement
+Business value
+Cash fl ow method
+Champion
+Compatibility
+Complex actors
+Complex use case
+Computer-aided soft ware 
+engineering (CASE)
+CASE repository
+Cost–benefi t analysis
+Critical path method
+Critical task
+Development costs
+Documentation
+Economic feasibility
+Eff ort
+Emerging Technology
+Environmental factor (EF)
+Environmental factor value 
+(EFactor)
+Estimation
+80 Chapter 2 Project Management
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+In Chapter 2, we look more closely at the completed system request that Max Ross and 
+his team develop for the Integrated Health Clinic Delivery system, including the business 
+needs, business requirements, and business values and constraints. We will also examine 
+the feasibility analysis that accompanies and justifi es the system request. Finally, we will 
+examine how the project eff ort was estimated, see how the project will be staff ed and 
+managed, and look at the Evolutionary Work Breakdown Structure for Version 1 of the 
+Integrated Health Clinic Delivery System. 
+As we progress through the text, examining how Patterson navigates through the sys tems analysis and design and development processes will help us understand real-world 
+implementation of the concepts presented.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+Evolutionary WBS
+Familiarity with the 
+ functional area
+Familiarity with the 
+ technology
+Feasibility analysis
+Feasibility study
+First mover
+Functional lead
+Functionality
+Gantt chart
+Group cohesiveness
+Intangible benefi ts
+Intangible costs
+Intangible value
+Iterative workplan
+Interpersonal skills
+Methodology
+Milestone
+Motivation
+Net present value (NPV)
+Network Diagram
+Node
+Operational costs
+Organizational feasibility
+Organizational management
+Person-hours multiplier 
+(PHM)
+Program evaluation and 
+review technique (PERT)
+Portfolio management
+Project
+Project binder
+Project charter
+Project initiation request, the feasibility analysis, the original and later versions of the eff ort estimation, the 
+evolving workplan, and UML diagrams for the functional, structural, and behavioral models.
+A poor project management practice is waiting until the last minute to create documentation; 
+this typically leads to an undocumented system that no one understands. Good project teams learn 
+to document a system’s history as it evolves while the details are still fresh in their memory. In most 
+CASE tools that support object-oriented systems development, some of the documentation can be 
+automated. For example, if the programming language chosen to implement the system in is Java, 
+then it is possible to automatically create HTML manual pages that will describe the classes being 
+implemented. Th is is accomplished through the javadoc18 tool that is part of the Java development 
+environment. Other tools enable the developer to automatically generate HTML documentation 
+for the UML diagrams, e.g., umldoc, which is part of the Poseidon for UML CASE tool.19 Even 
+though virtually all developers hate creating documentation and documentation takes valuable 
+time, it is a good investment that will pay off in the long run.
+18 See Oracle, Javadoc Tool. Retrieved May 2014 from www.oracle.com. www.oracle.com/technetwork/java/javase/
+documentation/index-jsp-135444.html.
+19 See Gentleware, umldoc, an overview, retrieved May 2014 from /www.gentleware.com. www.gentleware.com/
+fi leadmin/media/viewlets/text/UMLdoc.viewlet/UMLdoc_viewlet_swf.html.
+Environment and Infrastructure Management  79
+As Seattle University’s David Umphress has pointed 
+out, watching most organizations develop systems is 
+like watching reruns of Gilligan’s Island. At the begin ning of each episode, someone comes up with a 
+cockamamie scheme to get off the island, and it seems 
+to work for a while, but something goes wrong and 
+the castaways fi nd themselves right back where they 
+started—stuck on the island. Similarly, most companies 
+start new projects with grand ideas that seem to work, 
+only to make a classic mistake and deliver the project All margins should be set to 1 inch.
+All deliverables should be added to the project binder and 
+ recorded in its table of contents.
+Coding standards All modules of code should include a header that lists the 
+ programmer, last date of update, and a short description of the 
+purpose of the code.
+ Indentation should be used to indicate loops, if-then-else 
+ statements, and case statements.
+ On average, every program should include one line of 
+ comments for every fi ve lines of code.
+Procedural standards Record actual task progress in the work plan every Monday
+ morning by 10 AM.
+ Report to project update meeting on Fridays at 3:30 PM.
+ All changes to a requirements document must be approved 
+ by the project manager.
+Specifi cation requirement standards Name of program to be created
+Description of the program’s purpose
+Special calculations that need to be computed
+ Business rules that must be incorporated into the program 
+ Pseudocode
+ Due date
+User interface design standards Labels will appear in boldface text, left-justifi ed, and followed by a colon.
+ The tab order of the screen will move from top left to bottom right.
+Accelerator keys will be provided for all updatable fi elds.
+Types of Standards Examples
+78 Chapter 2 Project Management
+that takes place—the history of the project. Th e good news is that Unifi ed Process has a set 
+of standard documentation that is expected. Th e documentation typically includes the system important to remember that the deliverables from analysis are really the fi rst step in the 
+design of the new system.
+In many ways, because it is here that the major elements of the system fi rst emerge, the 
+requirements-determination step is the single most critical step of the entire system development process. During requirements determination, the system is easy to change because 
+little work has been done yet. As the system moves through the system development process, 
+it becomes harder and harder to return to requirements determination and to make major 
+changes because of all of the rework that is involved. Several studies have shown that more 
+than half of all system failures are due to problems with the requirements.1 Th is is why the 
+iterative approaches of object-oriented methodologies are so eff ective—small batches of 
+requirements can be identifi ed and implemented in incremental stages, allowing the overall 
+system to evolve over time.
+REQUIREMENTS DETERMINATION
+Th e purpose of requirements determination is to turn the very high-level explanation of 
+the business requirements stated in the system request into a more precise list of requirements that can be used as inputs to the rest of analysis (creating functional, structural, and 
+behavioral models). Th is expansion of the requirements ultimately leads to the design of 
+the system.
+Defi ning a Requirement
+A requirement is simply a statement of what the system must do or what characteristic it 
+must have. During analysis, requirements are written from the perspective of the businessperson, and they focus on the “what” of the system. Because they focus on the needs 
+of the business user, they are usually called business requirements (and sometimes user 
+requirements). Later in design, business requirements evolve to become more technical, 
+and they describe how the system will be implemented. Requirements in design are written from the developer’s perspective, and they are usually called system requirements.
+We want to stress that there is no black-and-white line dividing a business requirement 
+and a system requirement—and some companies use the terms interchangeably. Th e important thing to remember is that a requirement is a statement of what the system must do, 
+and requirements will change over time as the project moves from inception to elaboration 
+to construction. Requirements evolve from detailed statements of the business capabilities 
+that a system should have to detailed statements of the technical way the capabilities will be 
+implemented in the new system.
+Requirements can be either functional or nonfunctional in nature. A functional requirement relates directly to a process a system has to perform or information it needs to contain. 
+For example, requirements stating that a system must have the ability to search for available 
+inventory or to report actual and budgeted expenses are functional requirements. Functional 
+requirements fl ow directly into the creation of functional, structural, and behavioral models 
+that represent the functionality of the evolving system (see Chapters 4, 5, and 6).
+Nonfunctional requirements refer to behavioral properties that the system must have, 
+such as performance and usability. Th e ability to access the system using a Web browser is 
+considered a nonfunctional requirement. Nonfunctional requirements can infl uence the rest 
+of analysis (functional, structural, and behavioral models) but oft en do so only indirectly; 
+nonfunctional requirements are used primarily in design when decisions are made about the 
+database, the user interface, the hardware and soft ware, and the system’s underlying physical 
+architecture.
+1 For example, see Th e Scope of Soft ware Development Project Failures (Dennis, MA: Th e Standish Group, 1995).
+88 Chapter 3 Requirements Determination
+Nonfunctional requirements describe a variety of characteristics regarding the system: 
+operational, performance, security, and cultural and political. Operational requirements 
+address issues related to the physical and technical requirements in which the system will 
+operate. Performance requirements address issues related to the speed, capacity, and reliability of the system. Security requirements deal with issues with regard to who has access 
+to the system and under what specifi c circumstances. Cultural and political requirements 
+deal with issues related to the cultural, political factors and legal requirements that aff ect the 
+system. Th ese characteristics do not describe business processes or information, but they 
+are very important in understanding what the fi nal system should be like. Nonfunctional 
+requirements primarily aff ect decisions that will be made during the design of a system. We 
+will return to this topic later in the book when we discuss design (see Chapters 9, 10, and 11).
+One area of information systems development that focused on diff erentiating functional 
+and nonfunctional requirements is soft ware quality. Th ere have been many diff erent models 
+proposed to measure the quality of soft ware. However, virtually all of them diff erentiate functional and nonfunctional requirements. From a quality perspective, functional quality is related 
+to the degree that the soft ware meets the functional requirements, i.e., how much of the actual 
+problem is solved by the soft ware solution provided. Whereas, the nonfunctional requirements 
+are associated with the effi ciency, maintainability, portability, reliability, reusability, testability, 
+and usability quality dimensions. As stated above, the nonfunctional related dimensions are 
+associated primarily with the actual detailed design and implementation of the system. 
+When considering ISO 9000 compliance, quality dimensions are further decomposed into 
+those that the user can see (external) and those that the user cannot see (internal). Th e external 
+nonfunctional dimensions include effi ciency, reliability, and usability, whereas the internal 
+nonfunctional dimensions include maintainability, portability, reusability, and testability. 
+From a user perspective, the external dimensions are more important. If the system is simply 
+too diffi cult to use, regardless how well the system solves the problem, the user will simply 
+not use the system. In other words, from a user’s perspective, for an information system to be 
+successful, the system must not only meet the functional specifi cation, but it must also meet 
+the external nonfunctional specifi cations. From a developer perspective, the internal dimensions are also important. For example, given that successful systems tend to be long-lived and 
+ multiplatform, both the maintainability and portability dimensions can have strategic implications for the system being developed. Also, given the agile development approaches being used 
+in industry today, the development of reusable and testable soft ware is crucial.
+Th ree additional topics that have infl uenced information system requirements are the 
+Sarbanes-Oxley Act, COBIT (Control OBjectives for Information and related Technology) 
+compliance and Capability Maturity Model compliance. Depending on the system being considered, these three topics could aff ect the defi nition of a system’s functional requirements, 
+nonfunctional requirements, or both. Th e Sarbanes-Oxley Act, for example, mandates additional functional and nonfunctional requirements. Th ese include additional security concerns 
+(nonfunctional) and specifi c information requirements that management must now provide 
+(functional). When developing fi nancial information systems, information system developers 
+should be sure to include Sarbanes-Oxley expertise in the development team. Moreover, a client 
+could insist on COBIT compliance or that a specifi c Capability Maturity Model level had been 
+reached in order for the fi rm to be considered as a possible vendor to supply the system under 
+consideration. Obviously, these types of requirements add to the nonfunctional requirements. 
+Further discussion of these topics is beyond the scope of this book.2
+2 A concise discussion of the Sarbanes-Oxley Act is presented in G. P. Lander, What is Sarbanes-Oxley? (New York: 
+McGraw-Hill, 2004). A good reference for Sarbanes-Oxley Act-based security requirements is D. C. Brewer, Security 
+Controls for Sarbanes-Oxley Section 404 IT Compliance: Authorization, Authentication, and Access (Indianapolis, IN: 
+Wiley, 2006). For detailed information on COBIT, see www.isaca.org; for ISO 9000, see www.iso.org; and for details 
+on the Capability Maturity Model, see www.sei.cmu.edu/cmmi/.
+Requirements Determination  89
+Another recent topic that infl uences requirements for some systems is globalization. For 
+example, a global information supply chain generates a large number of additional nonfunctional requirements. If the necessary operational environments do not exist for a mobile solution to be developed, it is important to adapt the solution to the local environment. Or, it may 
+not be reasonable to expect to deploy a high-technology-based solution in an area that does not 
+have the necessary power and communications infrastructure. In some cases, we may need to 
+consider supporting some parts of the global information supply chain with manual—rather 
+than automated—systems.
+Manual systems have an entirely diff erent set of requirements that create diff erent performance expectations and additional security concerns. Furthermore, cultural and political 
+concerns are potentially paramount. A simple example that aff ects the design of user interfaces is the proper use of color on forms (on a screen or paper). Diff erent cultures interpret 
+diff erent colors diff erently. In other words, in a global, multicultural business environment, 
+addressing cultural concerns goes well beyond simply having a multilingual user interface. 
+We must be able to adapt the global solution to the local realities. Friedman refers to these 
+concerns as glocalization.3 Otherwise, we will simply create another example of a failed information system development project.
+Requirements Defi nition
+Th e requirements defi nition report—usually just called the requirements defi nition—is a 
+straightforward text report that simply lists the functional and nonfunctional requirements 
+in an outline format. Figure 3-1 shows a sample requirements defi nition for an appointment 
+system for a typical doctor’s offi ce. Notice it contains both functional and nonfunctional 
+requirements. Th e functional requirements include managing appointments, producing 
+schedules, and recording the availability of the individual doctors. Th e nonfunctional requirements include items such as the expected amount of time that it takes to store a new appointment, the need to support wireless printing, and which types of employees have access to the 
+diff erent parts of the system.
+Th e requirements are numbered in a legal or outline format so that each requirement 
+is clearly identifi ed. Th e requirements are fi rst grouped into functional and nonfunctional 
+requirements; within each of those headings, they are further grouped by the type of nonfunctional requirement or by function.
+Sometimes business requirements are prioritized on the requirements defi nition. Th ey 
+can be ranked as having high, medium, or low importance in the new system, or they can 
+be labeled with the version of the system that will address the requirement (e.g., release 1, 
+release 2, release 3). Th is practice is particularly important when using object-oriented methodologies since they deliver systems in an incremental manner.
+Th e most obvious purpose of the requirements defi nition is to provide the information 
+needed by the other deliverables in analysis, which include functional, structural, and behavioral models, and to support activities in design. Th e most important purpose of the requirements defi nition, however, is to defi ne the scope of the system. Th e document describes to 
+the analysts exactly what the system needs to end up doing. When discrepancies arise, the 
+document serves as the place to go for clarifi cation.
+Determining Requirements
+Determining requirements for the requirements defi nition is both a business task and an 
+information technology task. In the early days of computing, there was a presumption that

@@ -1,0 +1,598 @@
+﻿project. Also, a variety of skills—technical, interpersonal, functional, project management, 
+and modeling—must be in place for the project to move ahead smoothly. IS professionals, 
+especially highly skilled individuals, are quite diffi cult to hire and retain.
+Th e risks associated with building a system from the ground up can be quite high, and 
+there is no guarantee that the project will succeed. Developers could be pulled away to work 
+on other projects, technical obstacles could cause unexpected delays, and the business users 
+could become impatient with a growing timeline.
+Packaged Soft ware
+Many business needs are not unique, and because it makes little sense to reinvent the wheel, 
+many organizations buy packaged soft ware that has already been written rather than develop ing their own custom solution. In fact, there are thousands of commercially available soft ware 
+programs that have already been written to serve a multitude of purposes. Th ink about your 
+own need for a word processor—did you ever consider writing your own word processing 
+soft ware? Th at would be very silly considering the number of good soft ware packages availa ble that are relatively inexpensive.
+Similarly, most companies have needs that can be met quite well by packaged soft -
+ware, such as payroll or accounts receivable. It can be much more effi cient to buy pro grams that have already been created, tested, and proven. Moreover, a packaged system 
+can be bought and installed in a relatively short time when compared with a custom 
+system. Plus, packaged systems incorporate the expertise and experience of the vendor 
+who created the soft ware.
+Packaged soft ware can range from reusable components to small, single-function 
+tools to huge, all-encompassing systems such as enterprise resource planning (ERP) appli cations that are installed to automate an entire business. Implementing ERP systems is a 
+process in which large organizations spend millions of dollars installing packages by com panies such as SAP or Oracle and then change their businesses accordingly. Installing ERP 
+soft ware is much more diffi cult than installing small application packages because benefi ts 
+can be harder to realize and problems are much more serious.
+However, there are problems related to packaged soft ware. For example, companies 
+buying packaged systems must accept the functionality that is provided by the system, and 
+rarely is there a perfect fi t. If the packaged system is large in scope, its implementation could 
+mean a substantial change in the way the company does business. Letting technology drive 
+the business can be dangerous.
+Most packaged applications allow customization, or the manipulation of system param eters to change the way certain features work. For example, the package might have a way to 
+accept information about your company or the company logo that would then appear on input 
+screens. Or an accounting soft ware package could off er a choice of various ways to handle cash 
+fl ow or inventory control so that it can support the accounting practices in diff erent organiza tions. If the amount of customization is not enough and the soft ware package has a few fea tures that don’t quite work the way the company needs it to work, the project team can create 
+workarounds.
+270 Chapter 7 Moving on to Design
+A workaround is a custom-built add-on program that interfaces with the packaged appli cation to handle special needs. It can be a nice way to create needed functionality that does not 
+exist in the soft ware package. But workarounds should be a last resort for several reasons. First, 
+workarounds are not supported by the vendor who supplied the packaged soft ware, so upgrades 
+to the main system might make the workaround ineff ective. Also, if problems arise, vendors 
+have a tendency to blame the workaround as the culprit and refuse to provide support.
+Although choosing a packaged soft ware system is simpler than custom development, it 
+too can benefi t from following a formal methodology, just as if a custom application were 
+being built.
+Systems integration refers to the process of building new systems by combining pack aged software, existing legacy systems, and new software written to integrate these. Many 
+consulting firms specialize in systems integration, so it is not uncommon for companies 
+to select the packaged software option and then outsource the integration of a variety of 
+packages to a consulting firm. (Outsourcing is discussed in the next section.)
+Th e key challenge in systems integration is fi nding ways to integrate the data produced by 
+the diff erent packages and legacy systems. Integration oft en hinges on taking data produced by 
+one package or system and reformatting it for use in another package or system. Th e project team 
+starts by examining the data produced by and needed by the diff erent packages or systems and 
+identifying the transformations that must occur to move the data from one to the other. In many 
+cases, this involves fooling the diff erent packages or systems into thinking that the data were 
+produced by an existing program module that the package or system expects to produce the data 
+rather than the new package or system that is being integrated.
+A third approach is through the use of an object wrapper.19 An object wrapper is essen tially an object that “wraps around” a legacy system, enabling an object-oriented system to 
+send messages to the legacy system. Eff ectively, object wrappers create an application pro gram interface (API) to the legacy system. Th e creation of an object wrapper protects the 
+corporation’s investment in the legacy system.
+Outsourcing
+Th e design choice that requires the least amount of in-house resources is outsourcing—
+hiring an external vendor, developer, or service provider to create the system. Outsourcing 
+has become quite popular in recent years. Some estimate that as many as 50 percent of 
+companies with IT budgets of more than $5 million are currently outsourcing or evaluat ing the approach.
+With outsourcing, the decision making and/or management control of a business 
+function is transferred to an outside supplier. Th is transfer requires two-way coordination, 
+exchange of information, and trust between the supplier and the business. From an IT per spective, IT outsourcing can include hiring consultants to solve a specifi c problem, hiring 
+contract programmers to implement a solution, hiring a fi rm to manage the IT function and 
+assets of a company, or actually outsourcing the entire IT function to a separate fi rm. Today, 
+through the use of application service providers (ASPs), Web services technology, and cloud 
+services, it is possible to use a pay-as-you-go approach for a soft ware package.20 Essentially, 
+IT outsourcing involves hiring a third party to perform some IT function that traditionally 
+would be performed in-house.
+Th ere can be great benefi t to having someone else develop a company’s system. Th e out side company may be more experienced in the technology or have more resources, such as 
+19 Ian Graham, Object-Oriented Methods: Principles & Practice, 3rd Ed. (Reading, MA: Addison-Wesley, 2001).
+20 For an economic explanation of how this could work, see H. Baetjer, Soft ware as Capital: An Economic Perspectivexperienced programmers. Many companies embark upon outsourcing deals to reduce costs, 
+whereas others see it as an opportunity to add value to the business.
+For whatever reason, outsourcing can be a good alternative for a new system. However, 
+it does not come without costs. If you decide to leave the creation of a new system in the 
+hands of someone else, you could compromise confi dential information or lose control 
+over future development. In-house professionals are not benefi ting from the skills that 
+could be learned from the project; instead, the expertise is transferred to the outside organization. Ultimately, important skills can walk right out the door at the end of the contract. 
+Furthermore, when off shore outsourcing is being considered, we must also be cognizant 
+of language issues, time-zone diff erences, and cultural diff erences (e.g., acceptable business 
+practices as understood in one country that may be unacceptable in another). All these 
+concerns, if not dealt with properly, can prevail over any advantage that outsourcing or off -
+shore outsourcing could realize.
+Most risks can be addressed if a company decides to outsource, but two are particularly important. First, the company must thoroughly assess the requirements for the 
+project—a company should never outsource what is not understood. If rigorous planning 
+and analysis has occurred, then the company should be well aware of its needs. Second, the 
+company should carefully choose a vendor, developer, or service with a proven track record 
+with the type of system and technology that its system needs.
+Th ree primary types of contracts can be drawn to control the outsourcing deal. A 
+time-and-arrangements contract is very fl exible because a company agrees to pay for whatever 
+time and expenses are needed to get the job done. Of course, this agreement could result in a 
+large bill that exceeds initial estimates. Th is works best when the company and the outsourcer 
+are unclear about what it is going to take to fi nish the job.
+A company will pay no more than expected with a fi xed-price contract because if the outsourcer exceeds the agreed-upon price, it will have to absorb the costs. Outsourcers are much 
+more careful about defi ning requirements clearly up front, and there is little fl exibility for change.
+Th e type of contract gaining in popularity is the value-added contract, whereby the outsourcer reaps some percentage of the completed system’s benefi ts. Th e company has very little 
+risk in this case, but it must expect to share the wealth once the system is in place.
+Creating fair contracts is an art because fl exibility must be carefully balanced with clearly 
+defi ned terms. Oft en, needs change over time. Th erefore, the contract should not be so specifi c and 
+rigid that alterations cannot be made. Th ink about how quickly mobile technology has changed. It 
+is diffi cult to foresee how a project might evolve over a long period of time. Short-term contracts 
+help leave room for reassessment if needs change or if relationships are not working out the way 
+both parties expected. In all cases, the relationship with the outsourcer should be viewed as a partnership where both parties benefi t and communicate openly.
+Managing the outsourcing relationship is a full-time job. Th us, someone needs to be assigned 
+full time to manage the outsourcer, and the level of that person should be appropriate for the size 
+of the job (a multimillion dollar outsourcing engagement should be handled by a high-level 
+executive). Th roughout the relationship, progress should be tracked and measured against predetermined goals. If a company does embark upon an outsourcing design strategy, it should be sure 
+to get adequate information. Many books have been written that provide much more detailed 
+information on the topic.21 Figure 7-23 summarizes some guidelines for outsourcing.
+21 For more information on outsourcing, we recommend M. Lacity and R. Hirschheim, Information Systems Outsourcing: Myths, Metaphors, and Realities (New York, NY: Wiley, 1993); L. Willcocks and G. Fitzgerald, A Business 
+Guide to Outsourcing Information Technology (London: Business Intelligence, 1994); E. Carmel, Off shoring Information Technology: Sourcing and Outsourcing to a Global Workforce (Cambridge, England: Cambridge University 
+Press, 2005); J. K. Halvey and B. M. Melby, Information Technology Outsourcing Transactions: Process, Strategies, and 
+Contracts, 2nd Ed. (Hoboken, NJ: Wiley, 2005); T. L. Friedman, Th e World Is Flat: A Brief History of the Twenty-First 
+Century, Updated and Expanded Edition (New York: Farrar, Straus, and Giroux, 2006).
+Design Strategies  271
+272 Chapter 7 Moving on to Design
+Selecting a Design Strategy
+Each of the design strategies just discussed has its strengths and weaknesses, and no one strategy is inherently better than the others. Th us, it is important to understand the strengths and 
+weaknesses of each strategy and when to use each. Figure 7-24 summarizes the characteristics 
+of each strategy.
+Business Need If the business need for the system is common and technical solutions 
+already exist that can meet the business need of the system, it makes little sense to build a 
+custom application. Packaged systems are good alternatives for common business needs. 
+A custom alternative should be explored when the business need is unique or has special 
+requirements. Usually, if the business need is not critical to the company, then outsourcing is 
+the best choice—someone outside of the organization can be responsible for the application 
+development.
+In-house Experience If in-house experience exists for all the functional and technical needs 
+of the system, it will be easier to build a custom application than if these skills do not exist. 
+A packaged system may be a better alternative for companies that do not have the technical 
+skills to build the desired system. For example, a project team that does not have mobile technology skills might want to consider outsourcing those aspects of the system.
+Project Skills Th e skills that are applied during projects are either technical (e.g., Java, SQL) 
+or functional (e.g., security), and diff erent design alternatives are more viable, depending on 
+• Keep the lines of communication open between you and your outsourcer.
+• Defi ne and stabilize requirements before signing a contact.
+• View the outsourcing relationship as a partnership.
+• Select the vendor, developer or service provider carefully.
+• Assign a person to managing the relationship.
+• Don’t outsource what you don’t understand.
+• Emphasize fl exible requirements, long-term relationships and short-term contracts.
+FIGURE 7-23
+Outsourcing 
+Guidelines
+Outsourcing
+Business Need The business need is unique. The business need is common. The business need is not 
+core to the business.
+In-house Experience In-house functional and In-house functional In-house functional or technical 
+technical experience exists. experience exists. experience does not exist.
+Project Skills There is a desire to The skills are not strategic. The decision to outsource is a 
+build in-house skills. strategic decision.
+Project Management The project has a highly The project has a project The project has a highly skilled 
+skilled project manager manager who can coordinate project manager at the level of 
+and a proven methodology. the vendor’s efforts. the organization that matches the
+scope of the outsourcing deal.
+Time frame The time frame is fl exible. The time frame is short. The time frame is short or fl exible.
+Use Custom Use a Packaged Use Outsourcing 
+Development When… System When… When…
+FIGURE 7-24  Selecting a Design Strategy
+Selecting an Acquisition Strategy  273
+how important the skills are to the company’s strategy. For example, if certain functional and 
+technical expertise that relates to mobile application development is important to an organization because it expects mobile to play an important role in its sales over time, then it makes 
+sense for the company to develop mobile applications in-house, using company employees 
+so that the skills can be developed and improved. On the other hand, some skills, such as 
+network security, may be beyond the technical expertise of employees or not of interest to the 
+company’s strategists—it is just an operational issue that needs to be addressed. In this case, 
+packaged systems or outsourcing should be considered so that internal employees can focus 
+on other business-critical applications and skills.
+Project Management Custom applications require excellent project management and 
+a proven methodology. So many things, such as funding obstacles, staffi ng holdups, and 
+overly demanding business users, can push a project off -track. Th erefore, the project team 
+should choose to develop a custom application only if it is certain that the underlying 
+ coordination and control mechanisms will be in place. Packaged and outsourcing alternatives 
+also need to be managed; however, they are more shielded from internal obstacles because the 
+external parties have their own objectives and priorities (e.g., it may be easier for an outside 
+contractor to say no to a user than it is for a person within the company). Typically, packaged 
+and outsourcing alternatives have their own methodologies, which can benefi t companies that 
+do not have an appropriate methodology to use.
+Time Frame When time is a factor, the project team should probably start looking for a 
+system that is already built and tested. In this way, the company will have a good idea of 
+how long the package will take to put in place and what the fi nal result will contain. Th e 
+time frame for custom applications is hard to pin down, especially when you consider how 
+many projects end up missing important deadlines. If a company must choose the custom 
+development alternative and the time frame is very short, it should consider using techniques 
+such as timeboxing to manage this problem. Th e time to produce a system using outsourcing 
+really depends on the system and the outsourcer’s resources. If a service provider has services in place that can be used to support the company’s needs, then a business need could 
+be implemented quickly. Otherwise, an outsourcing solution could take as long as a custom 
+development initiative.
+SELECTING AN ACQUISITION STRATEGY
+Once the project team has a good understanding of how well each design strategy fi ts with the 
+project’s needs, it must begin to understand exactly how to implement these strategies. For example, what tools and technology would be used if a custom alternative were selected? What vendors 
+make packaged systems that address the project’s needs? What service providers would be able to 
+build this system if the application were outsourced? Th is information can be obtained from people working in the IS department and from recommendations by business users. Alternatively, 
+the project team can contact other companies with similar needs and investigate the types of 
+systems that they have put in place. Vendors and consultants usually are willing to provide 
+information about various tools and solutions in the form of brochures, product demonstrations, 
+and information seminars. However, a company should be sure to validate the information it 
+receives from vendors and consultants. Aft er all, they are trying to make a sale. Th erefore, they 
+may stretch the capabilities of their tool by focusing on only the positive aspects of the tool while 
+omitting the tool’s drawbacks.
+It is likely that the project team will identify several ways that a system could be constructed aft er weighing the specifi c design options. For example, the project team might have 
+274 Chapter 7 Moving on to Design
+found three vendors that make packaged systems that potentially could meet the project’s 
+needs. Or the team may be debating over whether to develop a system using Java as a development tool and the database management system from Oracle or to outsource the development eff ort to a consulting fi rm such as Accenture or CGI. Each alternative has pros and cons 
+associated with it that need to be considered, and only one solution can be selected in the end.
+To aid in this decision, additional information should be collected. Project teams 
+employ several approaches to gather additional information that is needed. One helpful 
+tool is the request for proposal (RFP), a document that solicits a formal proposal from 
+a potential vendor, developer, or service provider. RFPs describe in detail the system or 
+service that is needed, and vendors respond by describing in detail how they could supply 
+those needs. 
+Although there is no standard way of writing an RFP, it should include certain key facts 
+that the vendor requires, such as a detailed description of needs, any special technical needs 
+or circumstances, evaluation criteria, procedures to follow, and a timetable. In a large project, 
+the RFP can be hundreds of pages long, since it is essential that all required project details 
+are included.
+Th e RFP is not just a way to gather information. Rather, it results in a vendor proposal 
+that is a binding off er to accomplish the tasks described in the RFP. Th e vendor proposal 
+includes a schedule and a price for which the work is to be performed. Once the winning 
+vendor proposal is chosen, a contract for the work is developed and signed by both parties.
+For smaller projects with smaller budgets, the request for information (RFI) may be 
+suffi cient. An RFI is a shorter, less detailed request that is sent to potential vendors to obtain 
+general information about their products and services. Sometimes, the RFI is used to determine which vendors have the capability to perform a service. It is oft en then followed up with 
+an RFP to the qualifi ed vendors.
+When a list of equipment is so complete that the vendor need only provide a price, without any analysis or description of what is needed, the request for quote (RFQ) may be used. 
+For example, if twenty long-range RFID tag readers are needed from the manufacturer on a 
+certain date at a certain location, the RFQ can be used. If an item is described, but a specifi c 
+manufacturer’s product is not named, then extensive testing will be required to verify fulfi llment of the specifi cations.
+Alternative Matrix
+An alternative matrix can be used to organize the pros and cons of the design alternatives 
+so that the best solution will be chosen in the end (see Figure 7-25). Th is matrix is created 
+using the same steps as the feasibility analysis, which was presented in Chapter 2. Th e only 
+diff erence is that the alternative matrix combines several feasibility analyses into one matrix 
+so that the alternatives can easily be compared. An alternative matrix is a grid that contains 
+the technical, budget, and organizational feasibilities for each system candidate, pros and cons 
+associated with adopting each solution, and other information that is helpful when making 
+comparisons. Sometimes weights are provided for diff erent parts of the matrix to show when 
+some criteria are more important to the fi nal decision.
+To create the alternative matrix, draw a grid with the alternatives across the top and different criteria (e.g., feasibilities, pros, cons, and other miscellaneous criteria) along the side. 
+Next, fi ll in the grid with detailed descriptions about each alternative. Th is becomes a useful 
+document for discussion because it clearly presents the alternatives being reviewed and comparable characteristics for each one.
+Sometimes, weights and scores are added to the alternative matrix to create a weighted 
+alternative matrix that communicates the project’s most important criteria and the alternatives 
+that best address them. A scorecard is built by adding a column labeled “weight” that includes 
+Selecting an Acquisition Strategy  275
+a number depicting how much each criterion matters to the fi nal decision. Typically, analysts 
+take 100 points and spread them out across the criteria appropriately. If fi ve criteria were used 
+and all mattered equally, then each criterion would receive a weight of 20. However, if costs 
+were the most important criterion for choosing an alternative, it might receive 60 points, and 
+the other four criteria might get only 10 points each.
+Th en, the analysts add to the matrix a column called “Score” that communicates how well 
+each alternative meets the criteria. Usually, number ranges like 1 to 5 or 1 to 10 are used to 
+rate the appropriateness of the alternatives by the criteria. So, for the cost criterion, the least 
+expensive alternative may receive a 5 on a 1-to-5 scale, whereas a costly alternative would 
+receive a 1. Weighted scores are computed with each criterion’s weight multiplied by the score 
+it was given for each alternative. Th en, the weighted scores are totaled for each alternative. 
+Th e highest weighted score achieves the best match for our criteria. When numbers are used 
+in the alternative matrix, project teams can make decisions quantitatively and on the basis of 
+hard numbers.
+It should be pointed out, however, that the score assigned to the criteria for each alternative 
+is nothing more than a subjective assignment. Consequently, it is entirely possible for an analyst 
+to skew the analysis according to his or her own biases. In other words, the weighted alternative 
+matrix can be made to support whichever alternative you prefer and yet retains the appearance 
+of an objective, rational analysis. To avoid the problem of a biased analysis, each analyst on the 
+team could develop ratings independently; then, the ratings could be compared and discrepancies resolved in an open team discussion.
+Th e fi nal step, of course, is to decide which solution to design and implement. Th e decision should be made by a combination of business users and technical professionals aft er 
+the issues involved with the diff erent alternatives are well understood. Once the decision is 
+fi nalized, design can continue as needed, based on the selected alternative.
+Technical 
+Issues:
+Criterion 1 20 5 100 3 60 3 60
+Criterion 2 10 3 30 3 30 5 50
+Criterion 3 10 2 20 1 10 3 30
+Economic
+Issues:
+Criterion 4 25 Supporting 3 75 Supporting 3 75 Supporting 5 125
+Criterion 5 10 Information 3 30 Information 1 10 Information 5 50
+Organizational
+Issues:
+Criterion 6 10 5 50 5 50 3 30
+Criterion 7 10 3 30 3 30 1 10
+Criterion 8 5 3 15 1 5 1 5
+TOTAL 100 350 270 360
+* This denotes how well the alternative meets the criteria. 1 = poor fi t; 5 = perfect fi t.
+Relative Alternative 1: Alternative 2: Alternative 3: 
+Evaluation Importance Custom Score Weighted Custom Score Weighted Packaged Score Weighted
+Criteria (Weight) Application (1–5)* Score Application (1–5)* Score Software (1–5)* Score
+ Using VB.NET Using Java Product ABC
+FIGURE 7-25  Sample Alternative Matrix Using Weights
+▲
+▲
+▲
+▲
+▲
+▲
+276 Chapter 7 Moving on to Design
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+Th e team had one major task to complete before moving into design. Aft er developing and 
+verifying the functional, structural, and behavioral models, they now had to validate that 
+the functional, structural, and behavioral models developed in analysis agreed with each 
+other. In other words, they needed to balance the functional, structural, and behavioral 
+models. As you will see, this activity revealed inconsistencies and uncovered new information about the system that they hope to implement. Aft er creating corrected iterations of 
+each of the three types of models, the team explored design alternatives and determined a 
+design strategy.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the purpose of balancing the analysis models.
+ Balance the functional models with the structural models.
+ Balance the functional models with the behavioral models.
+ Balance the structural models with the behavioral models.
+ Describe the purpose of the factoring, refi nement, and abstraction processes.
+ Describe the purpose of partitions and collaborations.
+ Name and describe the layers.
+ Explain the purpose of a package diagram.
+ Describe the diff erent elements of the package diagram.
+ Create a package diagram to model partitions and layers.
+ Verify and validate package diagrams using walkthroughs.
+ Describe the pros and cons of the three basic design strategies.
+ Describe the basis of selecting a design strategy.
+ Explain how and when to use RFPs, RFIs, and RFQs to gather information from vendors.
+ Describe how to use a weighted alternative matrix to select an acquisition strategy.
+KEY TERMS
+A-kind-of
+Abstract classes
+Abstraction
+Aggregation
+Alternative matrix
+Balancing the models
+Class
+Client
+Collaboration
+Concrete classes
+Contract
+Controller
+Custom development
+Customization
+Data management layer
+Dependency relationship
+Enterprise resource 
+systems (ERP)
+Factoring
+Fixed-price contract
+Foundation layer
+Generalization
+Has-parts
+Human–computer 
+interaction layer
+Layer
+Message
+Method
+Model
+Model-View-Controller 
+(MVC)
+Module
+Object wrapper
+Outsourcing
+Package
+Package diagram
+Packaged soft ware
+Partition
+Physical architecture 
+layer
+Problem domain layer
+Refi nement
+Request for information 
+(RFI)
+Request for proposals 
+(RFP)
+Server
+Smalltalk
+Systems integration
+Time-and-arrangements 
+contract
+Validation
+Value-added contract
+Verifi cation
+View
+Workaround
+Exercises  277
+QUESTIONS
+1. Explain the primary diff erence between an analysis 
+model and a design model.
+2. What is meant by balancing the models?
+3. What are the interrelationships among the functional, 
+structural, and behavioral models that need to be tested?
+4. What does factoring mean? How is it related to 
+abstraction and refi nement?
+5. What is a partition? How does a partition relate to a 
+collaboration?
+6. What is a layer? Name the diff erent layers.
+7. What is the purpose of the diff erent layers?
+8. Describe the diff erent types of classes that can appear 
+on each of the layers.
+9. What issues or questions arise on each of the diff erent 
+layers?
+10. What is a package? How are packages related to partitions and layers?
+11. What is a dependency relationship? How do you identify them?
+12. What are the fi ve steps for identifying packages and 
+creating package diagrams?
+13. What needs to be verifi ed and validated in package 
+diagrams?
+14. When drawing package diagrams, what guidelines 
+should you follow?
+15. What situations are most appropriate for a custom 
+development design strategy?
+16. What are some problems with using a packaged soft -
+ware approach to building a new system? How can 
+these problems be addressed?
+17. Why do companies invest in ERP systems?
+18. What are the pros and cons of using a workaround?
+19. When is outsourcing considered a good design strategy? When is it not appropriate?
+20. What is an object wrapper?
+21. What is systems integration? Explain the challenges. 
+22. What are the diff erences between the time-andarrangements, fi xed-price, and value-added contracts 
+for outsourcing?
+23. How are the alternative matrix and feasibility analysis 
+related?
+24. What is an RFP? How is this diff erent from an RFI?
+EXERCISES
+A. For the A Real Estate Inc. problem in Chapters 4 (exercises I, J, and K), 5 (exercises P and Q), and 6 (exercise D):
+ 1. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ 2. Using the communication diagrams and the CRUDE 
+matrix, create a package diagram of the problem 
+domain layer.
+ 3. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+ 4. Based on the analysis models that have been created 
+and your current understanding of the fi rm’s position, what design strategy would you recommend? 
+Why?
+B. For the A Video Store problem in Chapters 4 (exercises 
+L, M, and N), 5 (exercises R and S), and 6 (exercise E):
+ 1. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ 2. Using the communication diagrams and the CRUDE 
+matrix, create a package diagram of the problem 
+domain layer.
+ 3. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+ 4. Based on the analysis models that have been 
+ created and your current understanding of the 
+fi rm’s position, what design strategy would you 
+recommend? Why?
+C. For the health club membership problem in Chapters 4 (exercises O, P, and Q), 5 (exercises T and U), and 6 
+(exercise F):
+ 1. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ 2. Using the communication diagrams and the CRUDE 
+matrix, create a package diagram of the problem 
+domain layer.
+ 3. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+278 Chapter 7 Moving on to Design
+ 4. Based on the analysis models that have been created 
+and your current understanding of the fi rm’s position, what design strategy would you recommend? 
+Why?
+D. For the Picnics R Us problem in Chapters 4 (exercises 
+R, S, and T), 5 (exercises V and W), and 6 (exercise G):
+ 1. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ 2. Using the communication diagrams and the CRUDE 
+matrix, create a package diagram of the problem 
+domain layer.
+ 3. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+ 4. Based on the analysis models that have been created 
+and your current understanding of the fi rm’s position, what design strategy would you recommend? 
+Why?
+E. For the Of-the-Month-Club problem in Chapters 4 
+(exercises U, V, and W), 5 (exercises X and Y), and 6 
+(exercise H):
+ 1. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ 2. Using the communication diagrams and the CRUDE 
+matrix, create a package diagram of the problem 
+domain layer.
+3. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+4. Based on the analysis models that have been created 
+and your current understanding of the fi rm’s position, what design strategy would you recommend? 
+Why?
+F. Suppose you are leading a project that will implement 
+a new course-enrollment system for your university. You are thinking about either using a packaged 
+course-enrollment application or outsourcing the job 
+to an external consultant. Create an outline for an RFP 
+to which interested vendors and consultants could 
+respond.
+G. Suppose you and your friends are starting a small business painting houses in the summertime. You need to 
+buy a soft ware package that handles the fi nancial transactions of the business. Create an alternative matrix 
+that compares three packaged systems (e.g., Quicken, 
+MS Money, Quickbooks). Which alternative appears to 
+be the best choice?
+MINICASES
+1. Susan, president of MOTO, Inc., a human resources 
+management fi rm, is refl ecting on the client management soft ware system her organization purchased 
+four years ago. At that time, the fi rm had just gone 
+through a major growth spurt, and the mixture of 
+automated and manual procedures that had been 
+used to manage client accounts became unwieldy. 
+Susan and Nancy, her IS department head, researched 
+and selected the package that is currently used. Susan 
+had heard about the soft ware at a professional conference she attended, and, at least initially, it worked 
+fairly well for the fi rm. Some of their procedures had 
+to change to fi t the package, but they expected that 
+and were prepared for it.
+ Since that time, MOTO, Inc., has continued to grow, 
+not only through an expansion of the client base 
+but also through the acquisition of several smaller 
+ employment-related businesses. MOTO, Inc., is a 
+much diff erent business than it was four years ago. 
+Along with expanding to off er more diversifi ed human 
+resources management services, the fi rm’s support 
+staff has also expanded. Susan and Nancy are particularly proud of the IS department they have built up 
+over the years. Using strong ties with a local university, 
+an attractive compensation package, and a good working 
+environment, the IS department is well staff ed with 
+competent, innovative people, plus a steady stream 
+of college interns that keeps the department fresh 
+and lively. One of the IS teams pioneered the use of 
+the Internet to off er MOTO’s services to a whole new 
+market segment, an experiment that has proved very 
+successful.
+ It seems clear that a major change is needed in the 
+client-management soft ware, and Susan has already 
+begun to plan fi nancially to undertake such a project. 
+Th is soft ware is a central part of MOTO’s operations, 
+and Susan wants to be sure that a high-quality system 
+is obtained this time. She knows that the vendor of 
+their current system has made some revisions and 
+additions to its product line. A number of othersoft ware vendors also off er products that may be 
+suitable. Some of these vendors did not exist when the 
+purchase was made four years ago. Susan is also considering Nancy’s suggestion that the IS department 
+develop a custom soft ware application.
+ a. Outline the issues that Susan should consider that 
+would support the development of a custom soft -
+ware application in-house.
+ b. Outline the issues that Susan should consider 
+that would support the purchase of a software 
+package.
+ c. Within the context of a systems-development project, when should the decision of make-versus-buy 
+be made? How should Susan proceed? Explain 
+your answer.
+2. Refer to minicase 1 (West Star Marinas) in Chapter 5. 
+Aft er all the analysis models (both the as-is and to-be 
+models) for West Star Marinas were completed, the 
+director of operations fi nally understood why it was 
+important to understand the as-is system before delving into the development of the to-be system. However, you now tell him that the to-be models are only 
+the problem-domain portion of the design. He is now 
+very confused. Aft er explaining to him the advantages 
+of using a layered approach to developing the system, 
+he says, “I don’t care about reusability or maintenance. I only want the system to be implemented as 
+soon as possible. You IS types are always trying to pull 
+a fast one on the users. Just get the system completed.”
+ What is your response to the Director of Operations? 
+Do you jump into implementation as he seems to 
+want? What do you do next?
+3. Refer to the analysis models that you created for professional and scientifi c staff management (PSSM) for 
+minicase 2 in Chapter 4 and for minicase 1 in Chapter 6.
+ a. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ b. Using the communication diagrams and the 
+CRUDE matrix, create a package diagram of the 
+problem domain layer.
+ c. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+ d. Based on the analysis models that have been created and your current understanding of the fi rm’s 
+position, what design strategy would you recommend? Why?
+4. Refer to the analysis models that you created for 
+Holiday Travel Vehicles for minicase 2 in Chapter 5 
+and for minicase 2 in Chapter 6.
+ a. Perform a verifi cation and validation walkthrough 
+of the functional, structural, and behavioral models 
+to ensure that all between-model issues have been 
+resolved.
+ b. Using the communication diagrams and the 
+CRUDE matrix, create a package diagram of the 
+problem domain layer.
+ c. Perform a verifi cation and validation walkthrough 
+of the package diagram.
+ d. Based on the analysis models that have been
+created and your current understanding of the 
+fi rm’s position, what design strategy would you 
+recommend? Why

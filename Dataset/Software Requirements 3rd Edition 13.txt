@@ -1,0 +1,304 @@
+A helpful guideline is to write individually testable requirements. The count of testable requirements has even been proposed as a metric for software product size (Wilson 1995). If you can
+ 
+think of a small number of related test cases to verif it's probably at an appropriate granularity. If you e several requirements are combined and ought to
+ 
+uirement was correctly implemented,
+and diverse tests, perhaps
+.
+ 
+I've seen requirement statements in the same SRS that varied widely in their scope. For instance,
+the following two functions were split out as separate requirements:
+1.	The system shall interpret the keystroke combination Ctrl+S as File Save.
+2.	The system shall interpret the keystroke combination Ctrl+P as File Print.
+These requirements are very fine-grained. They will need few tests for verification of correct behavior. You can imagine a tediously long list of similar requirements, which would better be expressed in the form of a table that lists all the keystroke shortcuts and how the system interprets them.
+However, that same SRS also contained a functional requirement that seemed rather large in scope:
+The product shall respond to editing directives entered by voice.
+This single requirement-seemingly no larger or smaller than all the others in the SRS-stipulated the inclusion of a complex speech-recognition subsystem-virtually an entire product in its own right! Verifying this one requirement in the working system could require hundreds of tests. The requirement as stated here could be appropriate at the high level of abstraction found in a vision statement or a market requirements document, but the speech-recognition requirement clearly demands much more functionality detail.
+
+R
+confronting a dense mass of turgid text or a long list of similar-looking requirements. Consider the most effective way to communicate each requirement to the intended
+ 
+audience. Some alternati
+ 
+equirements that we're used to are	,
+d video clips.
+ 
+These won't suffice as substitutes for written requirements in many cases, but they serve as excellent supplemental information to enhance the reader's understanding.
+I once saw a set of requirements that fit the following pattern:
+The Text Editor shall be able to parse <format> documents that define <jurisdiction> laws.
+There were 3 possible values for <format> and 4 possible values for <jurisdiction>, for a total of 12 similar requirements. The SRS did indeed contain 12 such requirements, but one of the combinations was missing and another was duplicated. You can prevent such errors by representing these types of requirements in a table, which is more compact and less boring than a requirements list. The generic requirement could be stated as:
+Editor.DocFormat The Text Editor shall be able to parse documents in several formats that
+define laws in the jurisdictions shown in Table 11-1.
+ 
+TABLE 11-1 Requirements for parsing documents
+
+Jurisdiction	Tagged format	Untagged format	ASCII format
+Federal	.1	.2	.3
+State	.4	.5	.6
+Territorial	.7	N/A	.8
+International	.9	.10	.11
+The cells in the table contain only the suffix to append to the master requirement's identifier. For
+example, the third requirement in the top row expands to:
+Editor.DocFormat.3 The Text Editor shall be able to parse ASCII documents that define
+federal laws.
+If any of the combinations don't have a corresponding functional requirement for some logical reason, put N/A (not applicable) in that table cell. This is much clearer than omitting the irrelevant combination from the long list and then having a reader wonder why there is no requirement for parsing documents containing territorial laws in the untagged format. This technique also ensures completeness in the requirements set-if there's something in every cell, you know you haven't missed any.
+
+Avoi
+
+   
+
+ 
+
+ 
+n sources of requirements ambiguity.
+Fuzzy words Use terms consistently and as defined in the glossary. Watch out for synonyms and near-synonyms. I know of one project where four different terms were used to refer to the same item in a single requirements document. Pick a single term and use it consistently, placing synonyms in the glossary so people who are accustomed to calling the item by a different name see the connection.
+If you use a pronoun to refer to something mentioned earlier, make sure the antecedent is crystal clear. Adverbs introduce subjectivity and hence ambiguity. Avoid words like reasonably, appropriately, generally, approximately, usually, systematically, and quickly because the reader won't be sure how to interpret them.
+Ambiguous language leads to unverifiable requirements, so avoid using vague and subjective terms. Table 11-2 lists many such terms, along with suggestions for how to remove the ambiguity. Some of these words might be acceptable in business requirements, but not in user requirements or specific functional requirements that are attempting to describe the solution to be built.
+ 
+TABLE 11-2 Some ambiguous terms to avoid in requirements
+
+Ambiguous terms	Ways to improve them
+acceptable, adequate	Define what constitutes acceptability and how the system can judge this.
+and/or	Specify whether you mean "and," "or," or "any combination of" so the reader doesn't have to guess.
+as much as practicable	Don't leave it up to the developers to determine what's practicable. Make it a TBD and set a date to find out.
+at least, at a minimum, not more than, not to exceed	Specify the minimum and maximum acceptable values.
+best, greatest, most	State what level of achievement is desired and the minimum acceptable level of
+achievement.
+between, from X to Y	Define whether the end points are included in the range.
+depends on	Describe the nature of the dependency. Does another system provide input to this system, must other software be installed before your software can run, or does your system rely on another to perform some calculations or provide other services?
+efficient	Define how efficiently the system uses resources, how quickly it performs specific operations, or how quickly users can perform certain tasks with the system.
+fast, quick, rapid	Specify the minimum acceptable time in which the system performs some action.
+flexible, versatile	Describe the ways in which the system must be able to adapt to changing operating conditions, platforms, or business needs.
+i.e., e.g.	Many people are unclear about which of these means "that is" (i.e., meaning that the full list of items follows) and which means "for example" (e.g., meaning that just some examples follow). Use words in your native language, not confusing Latin abbreviations.
+improved, better, faster, superior, higher quality	Quantify how much better or faster constitutes adequate improvement in a specific functional area or quality aspect.
+including, including but not limited to, and so on, etc., such as, for instance	List all possible values or functions, not just examples, or refer the reader to the location of the full list. Otherwise, different readers might have different interpretations of what the whole set of items being referred to contains or where the list stops.
+in most cases, generally, usually, almost always	Clarify when the stated conditions or scenarios do not apply and what happens then. Describe how either the user or the system can distinguish one case from the other.
+match, equals, agree, the same	Define whether a text comparison is case sensitive and whether it means the phrase "contains," "starts with," or is "exact." For real numbers, specify the degree of precision in the comparison.
+maximize, minimize, optimize	State the maximum and minimum acceptable values of some parameter.
+normally, ideally	Identify abnormal or non-ideal conditions and describe how the system should behave in
+those situations.
+optionally	Clarify whether this means a developer choice, a system choice, or a user choice.
+probably, ought to, should	Will it or won't it?
+reasonable, when necessary, where appropriate, if possible, as applicable	Explain how either the developer or the user can make this judgment.
+robust	Define how the system is to handle exceptions and respond to unexpected operating conditions.
+ 
+Ambiguous terms	Ways to improve them
+seamless, transparent, graceful	What does "seamless" or "graceful" mean to the user? Translate the user's expectations into specific observable product characteristics.
+several, some, many, few, multiple, numerous	State how many, or provide the minimum and maximum bounds of a range.
+shouldn't, won't	Try to state requirements as positives, describing what the system will do.
+state-of-the-art	Define what this phrase means to the stakeholder.
+sufficient	Specify how much of something constitutes sufficiency.
+support, enable	Define exactly what functions the system will perform that constitute "supporting" some capability.
+user-friendly, simple, easy	Describe system characteristics that will satisfy the customer's usage needs and usability expectations.
+The A/B construct Many requirements specifications include expressions in the form "A/B," in which two related (or synonymous, or opposite) terms are combined with a slash. Such expressions frequently are ambiguous. Here's an example:
+The system shall provide automated information collection of license key data for a mass release
+from the Delivery/Fulfillment Team.
+This sentence could be interpreted in several ways:
+¦	The name of the team is Delivery/Fulfillment.
+¦	Delivery and fulfillment are synonyms.
+¦	Some projects call the group a Delivery Team; others call it a Fulfillment Team.
+¦	Either the Delivery Team or the Fulfillment Team can do a mass release, so the slash means "or."
+¦	The Delivery Team and the Fulfillment Team jointly do a mass release, so the slash means "and."
+Sometimes authors use the A/B construct because they aren't sure exactly what they have in mind. Unfortunately, this means that each reader gets to interpret the requirement to mean whatever he thinks it ought to mean. It's better to decide exactly what you intend to say and choose the right words.
+Boundary values Many ambiguities occur at the boundaries of numerical ranges in both
+requirements and business rules. Consider the following:
+Vacation requests of up to 5 days do not require approval. Vacation requests of 5 to 10 days require supervisor approval. Vacation requests of 10 days or longer require management approval.
+This phrasing makes it unclear as to which category vacation requests of exactly 5 days and exactly 10 days belong. It gets even more confusing if fractions are involved, like 5.5 days of vacation. The words "through," "inclusive," and "exclusive" make it totally clear whether the endpoints of the numerical range lie inside or outside the range:
+Vacation requests of 5 or fewer days do not require approval. Vacation requests of longer than 5 days through 10 days require supervisor approval. Vacation requests of longer than 10 days require management approval.
+ 
+Negative requirements People sometimes write requirements that say what the system will not do rather than what it will do. How do you implement a don't-do-this requirement? Double and triple negatives are particularly tricky to decipher. Try to rephrase negative requirements into a positive sense that clearly describes the restricting behavior. Here's an example:
+Prevent the user from activating the contract if the contract is not in balance.
+Consider rephrasing this double negative ("prevent" and "not in balance") as a positive statement:
+The system shall allow the user to activate the contract only if the contract is in balance.
+Instead of using negative requirements to indicate that certain functionality is out of scope, include the restriction in the Limitations and Exclusions section of the vision and scope document, as described in Chapter 5, "Establishing the business requirements." If a specific requirement was once in scope but then removed, you don't want to lose sight of it-it might come back someday. If you are maintaining requirements in a document, use strikethrough formatting to indicate a deleted requirement. The best way to handle such deleted requirements is with a requirements status
+attribute in a requirements management tool (see Chapter 27, "Requirements management practices," for more about requirements attributes and status tracking).
+
+Avoiding incompleteness
+We don't know of any way to be certain that you've found every requirement. Chapter 7, "Requirements elicitation," suggests several ways to identify missing requirements. Focusing elicitation on user tasks rather than system features can help avoid overlooking functionality. Also, using analysis models can help you spot missing requirements (see Chapter 12, "A picture is worth 1024 words").
+Symmetry Symmetrical operations are a common source of missing requirements. I once found the
+following requirement in an SRS I was reviewing:
+The user must be able to save the contract at any point during manual contract setup.
+Nowhere in the rest of the specification did I find a requirement to allow the user to retrieve an incomplete but saved contract to work on it further: perhaps a requirement was missing. Nor was it clear whether the system should validate the data entries in the incomplete contract before saving it. An implied requirement? Developers need to know.
+Complex logic Compound logical expressions often leave certain combinations of decision values undefined. Consider this requirement:
+If the Premium plan is not selected and proof of insurance is not provided, the customer should automatically default into the Basic plan.
+This requirement refers to two binary decisions, whose combinations lead to four possible outcomes. However, the specification only addressed this one combination. It didn't say what should happen if:
+¦	The Premium plan is selected and proof of insurance is not provided.
+ 
+¦	The Premium plan is selected and proof of insurance is provided.
+¦	The Premium plan is not selected and proof of insurance is provided.
+The reader is forced to conclude that the system doesn't take any action for those three other conditions. That might be correct, but it's better to make such conclusions explicit rather than implicit. Use decision tables or decision trees to represent complex logic and ensure that you have not missed any variants.
+Missing exceptions Each requirement that states how the system should work when everything is correct should also have accompanying requirements as necessary to describe how the system should respond when exceptions occur. Consider the following requirement:
+If the user is working in an existing file and chooses to save the file, the system shall save it with
+the same name.
+This requirement alone does not indicate what the system should do if it's unable to save the file with the same name. An appropriate second requirement to go with the first might be:
+If the system is unable to save a file using a specific name, the system shall give the user the
+option to save it with a different name or to cancel the save operation.
+
+Sample requirements, before and after
+This chapter opened with several characteristics of high-quality requirements. Requirements that don't exhibit these characteristics cause confusion, wasted effort, and rework later, so strive to correct any problems early. Following are several functional requirements adapted from real projects that
+are less than ideal. Examine each statement for those quality characteristics to see whether you can spot the problems. Verifiability is a good starting point. If you can't devise tests to tell whether the requirement was correctly implemented, it's probably ambiguous or lacks necessary information.
+For each example, we present some observations about the problems with these requirements and suggested improvements. Additional reviews would no doubt improve them further, but at some point you need to write software. More examples of rewriting poor requirements are available from Ivy Hooks and Kristin Farry (2001), Al Florence (2002), Ian Alexander and Richard Stevens (2002),
+and Karl Wiegers (2006). Note that pulling requirements out of context like this shows them at their worst. These might well make more sense in their original environment. We also assume that business analysts (and all other team members) come to work each day to do the best job they can, based on what they know at the moment, so we're not picking on the original authors here.
+ 
+Example 1
+What are the status messages? Under what conditions and in what fashion are they provided to the user? If displayed on the screen, how long do they remain visible? Is it okay if they just flash up for half a second? The timing interval is not clear, and the word "every" just muddles the issue. One way to evaluate a requirement is to see whether a ludicrous but legitimate interpretation is all right with the user. If not, the requirement needs more work. In this example, is the interval between status messages supposed to be at least 60 seconds, so providing a new message once per year is
+okay? Alternatively, if the intent is to have at most 60 seconds elapse between messages, would one millisecond be too short an interval? These extreme interpretations might be consistent with the original requirement, but they certainly aren't what the user had in mind. Because of these problems, this requirement is not verifiable.
+Here's one way to rewrite the preceding requirement to address those shortcomings, after we get
+some more information from the customer:
+1.	The Background Task Manager (BTM) shall display status messages in a designated area of the user interface.
+1.1.	The BTM shall update the messages every 60 plus or minus 5 seconds after background task processing begins.
+1.2.	The messages shall remain visible continuously during background processing.
+1.3.	The BTM shall display the percent of the background task that is completed.
+1.4.	The BTM shall display a "Done" message when the background task is completed.
+1.5.	The BTM shall display a message if the background task has stalled.
+Rewriting a flawed requirement often makes it longer because information was missing. Splitting this into multiple child requirements makes sense because each will demand separate tests. This also makes each one individually traceable. There would likely be additional status messages that the BTM might display. If those are documented someplace else, such as in an interface specification, incorporate that information here by reference instead of replicating it. Listing the messages in a table of conditions and corresponding messages would be more concise than writing numerous functional requirements.
+The revised requirements don't specify how the status messages will be displayed, just "in a designated area of the user interface." Such wording defers the placement of the messages to being a design issue, which is fine in many cases. If you specify the display location in the requirements,
+it becomes a design constraint placed on the developer. Unnecessarily constrained design options frustrate the programmers and can result in a suboptimal product design.
+Suppose, though, that we're adding this functionality to an existing application whose user interface already contains a status bar, where users are accustomed to seeing important messages. For consistency with the rest of the application it would make perfect sense to stipulate that the BTM's status messages shall appear in the status bar. That is, you might deliberately impose the design constraint for a very good reason.
+ 
+Example 2 Corporate project charge numbers should be validated online against the master corporate charge number list, if possible.
+The phrase "if possible" is ambiguous. Does it mean "if it's technically feasible" (a question for the developer) or "if the master charge number list can be accessed at run time"? If you aren't sure whether a requested capability can be delivered, use TBD to indicate that the issue is unresolved. After investigation, either the TBD goes away or the requirement goes away. This requirement doesn't specify what to do when the validation either passes or fails. Also, avoid imprecise words such as "should." Here's a revised version of this requirement:
+At the time the requester enters a charge number, the system shall display an error message if the charge number is not in the master corporate charge number list.
+A related requirement would address the exception condition of the master corporate charge number
+list not being available at the time the validation was attempted.
+Example 3 The device tester shall allow the user to easily connect additional components, including a pulse generator, a voltmeter, a capacitance meter, and custom probe cards.
+This requirement is for a product containing embedded software that's used to test several kinds of measurement devices. The word "easily" implies a usability requirement, but it is neither measurable nor verifiable. "Including" doesn't make it clear whether this is the complete list of external devices that must be connected to the tester. Perhaps there are many others that we don't know about.
+Consider the following alternative requirements, which contain some intentional design constraints:
+1.	The device tester shall incorporate a USB port to allow the user to connect any measurement device that has a USB connection.
+2.	The USB port shall be installed on the front panel to permit a trained operator to connect a measurement device in 10 seconds or less.
+A business analyst shouldn't rewrite requirements in a way that imposes design constraints on his own initiative. Instead, detect the flawed requirements and discuss them with the appropriate stakeholders so they can be clarified.
+Example 4 The system must check for inconsistencies in account data between the Active Account Log and the Account Manager archive. The logic that is used to generate these comparisons should be based on the logic in the existing consistency checker tool. In other words, the new code does not need to be developed from scratch. The developers should utilize the current consistency checker code as the foundation. However, additional logic must be added to identify which database is the authoritative source. The new functionality will include writing data to holding tables to indicate how/where to resolve inconsistencies. Additionally, the code should also check for exception scenarios against the security tools database. Automated email alerts should be sent to the Security Compliance Team whenever discrepancies are found.
+This is a good one for you to practice on. We'll point out some of the problems with this paragraph, and you might want to try rewriting it in an improved form, making some assumptions as necessary to fill in the gaps. Following are some issues you might want to correct.
+ 
+¦	There are numerous requirements in here that should be split out individually.
+¦	If the comparison logic is "based on" logic in the existing consistency checker tool, exactly what portion of the code can be reused and how does it need to be changed? What functions are different between the new system and the existing tool? What "additional logic" must be added? How exactly can the system determine "which database is the authoritative source"?
+¦	The new functionality "includes" writing data to holding tables; is that all, or is other functionality "included" that isn't explicitly stated?
+¦	Clarify what "how/where" means when resolving inconsistencies.
+¦	"Should" is used in several places.
+¦	What's the relationship between an "exception scenario" and a "discrepancy"? If they're synonyms, pick one term and stick with it. A glossary might clarify whether these are the same or how they are related.
+¦	What information should the system send to the Security Compliance Team when it detects a discrepancy?
+As we said earlier, you're never going to get perfect requirements. But an experienced BA can nearly always help make requirements better.
+
+ 
+C HA P T E R 1 2
+A picture is worth 1024 words
+
+The Chemical Tracking System (CTS) project team was holding its first detailed requirements review. The participants were Dave (project manager), Lori (business analyst), Helen (lead developer), Ramesh (test lead), Tim (product champion for the chemists), and Roxanne (product champion for the chemical stockroom staff). Tim began by saying, "I read the whole document. Most of the requirements seemed okay to me, but I had a hard time digesting the long lists of requirements in a few sections. I'm not sure whether we identified all the steps in the chemical request process."
+"It was hard for me to think of all the tests that I'll need to cover the status changes for a request," Ramesh added. "I found a bunch of requirements sprinkled throughout the document about the status changes, but I couldn't tell whether any were missing. A couple of requirements seemed to conflict."
+Roxanne had a similar problem. "I got confused when I read about the way I would actually request
+a chemical," she said. "I had trouble visualizing the sequence of steps I would go through."
+After the reviewers raised several other concerns, Lori concluded, "It looks like this document doesn't tell us everything we need to know about the system. I'll create some diagrams to help us visualize the requirements and see whether that clarifies these problem areas. Thanks for the feedback."
+As requirements authority Alan Davis pointed out, no single view of the requirements provides a complete understanding (Davis 1995). You need a combination of textual and visual requirements representations at different levels of abstraction to paint a full picture of the intended system.
+Requirements views can include functional requirements lists, tables, visual analysis models, user interface prototypes, acceptance tests, decision trees, decision tables, photographs, videos, and mathematical expressions (Wiegers 2006). Ideally, different people will create various requirements representations. The business analyst might write the functional requirements and draw some models, whereas the user interface designer builds a prototype and the test lead writes test cases. Comparing the requirements representations created through diverse thought processes and diverse notations reveals inconsistencies, ambiguities, assumptions, and omissions that are difficult to spot from any single view.
+ 
+
+bridge language and vocabulary barriers among team members.
+ 
+n. Pictures help
+
+ 
+ers. There are many
+ 
+different diagrams and modeling techniques to choose from to create visual representations of the requirements. This chapter introduces several requirements modeling techniques, with illustrations and pointers to other sources for further details.
+
+221
+ 
+Modeling the requirements
+Business analysts might hope to find one technique that pulls everything together into a holistic depiction of a system's requirements. Unfortunately, there is no such all-encompassing diagram. In fact, if you could model the entire system in a single diagram, that diagram would be just as unusable as a long list of requirements on its own. An early goal of structured systems analysis was to replace the classical functional specification with diagrams and notations that are more formal than narrative text. However, experience has shown that analysis models should augment-rather than replace-a requirements specification written in natural language. Developers and testers still benefit from the detail and precision that written requirements offer.
+Visual requirements models can help you identify missing, extraneous, and inconsistent requirements. Given the limitations of human short-term memory, analyzing a list of one thousand requirements for inconsistencies, duplication, and extraneous requirements is nearly impossible. By the time you reach the fifteenth requirement, you have likely forgotten the first few that you read. You're unlikely to find all of the errors simply by reviewing the textual requirements.
+Visual requirements models described in this book include:
+¦	(DFDs)
+¦	Process flow diagrams such as swimlane diagrams
+¦	State-transition diagrams (STDs) and state tables
+¦	Dialog maps
+¦
+
+¦	Event-response tables
+¦	Feature trees (discussed in Chapter 5, "Establishing the business requirements")
+¦	(discussed in Chapter 8, "Understanding user requirements")
+¦	discussed in Chapter 8)
+¦	Entity-relationship diagrams (ERDs) (discussed in Chapter 13, "Specifying data requirements")
+The notations presented here provide a common, industry-standard language for project participants to use. Inventing your own modeling notations presents more risk of misinterpretation than if you adopt standard notations.
+These models are useful for elaborating and exploring the requirements, as well as for designing software solutions. Whether you are using them for analysis or for design depends on the timing and the intent of the modeling. Used for requirements analysis, these diagrams let you model the problem
+ 
+domain or create conceptual representations of the new system. They depict the logical aspects of the problem domain's data components, transactions and transformations, real-world objects, and changes in system state. You can base the models on the textual requirements to represent them from different perspectives, or you can derive functional requirements from high-level models that are based on user input. During design, models represent how you intend to implement the system: the actual database to create, the object classes to instantiate, and the code modules to develop.
+Because analysis and design diagrams use the same notations, clearly identify each one you draw as
+being an analysis model (the concepts) or a design model (what you intend to build).
+The analysis modeling techniques described in this chapter are supported by a variety of commercial modeling tools, requirements management tools, and drawing tools such as Microsoft Visio. Specialized modeling tools provide several benefits over general-purpose drawing tools. First, they make it easy to improve the diagrams through iteration. You'll almost never get a model right the first time through, so iteration is a key to modeling success. Tools can also enforce the rules for each modeling method they support. They can identify syntax errors and inconsistencies that people who review the diagrams might not see. Requirements management tools that support modeling allow you to trace requirements to the models. Some tools link multiple diagrams together and to their related functional and data requirements. Using a tool with standard symbols can help you keep the models consistent with each other.
+We hear arguments against using requirements models that range from "Our system is too complex to model" to "We have a tight project schedule; there is no time to model the requirements." A model is simpler than the system you are modeling. If you cannot handle the complexity of the model, how will you be able to handle the complexity of the system? Creating most models doesn't require significantly more time than you would spend writing the requirements statements and analyzing them for issues. Any extra time spent using requirements analysis models should be more than made up for by catching requirements errors prior to building the system. Models, or portions of models, can sometimes be reused from one project to another, or at least serve as a straw-man starting point for requirements elicitation on a subsequent project.
+
+From voice of the customer to analysis models
+By listening carefully to how customers present their requirements, the business analyst can pick out keywords that translate into specific model elements. Table 12-1 suggests possible mappings from customers' word choices into model components, which are described later in this chapter. As you evolve customer input into written requirements and models, you should be able to link each model component to a specific user requirement.
+ 
+TABLE 12-1 Relating the customer's voice to analysis model components
+
+Type of word	Examples	Analysis model components
+Noun	People, organizations, software systems, data elements, or objects that exist	¦	External entities, data stores, or data flow (DFD)
+¦	Actors (use case diagram)
+¦	Entities or their attributes (ERD)
+¦	Lanes (swimlane diagram)
+¦	Objects with states (STD)
+Verb	Actions, things a user or system can do, or events that can take place	¦	Processes (DFD)
+¦	Process steps (swimlane diagram)
+¦	Use cases (use case diagram)
+¦	Relationships (ERD)
+¦	Transitions (STD)
+¦	Activities (activity diagram)
+¦	Events (event-response table)
+Conditional	Conditional logic statements, such as if/then	¦	Decisions (decision tree, decision table, or activity diagram)
+¦	Branching (swimlane diagram or activity diagram)
+Building on the Chemical Tracking System example, consider the following paragraph of user needs supplied by the product champion who represented the Chemist user class. Significant unique nouns are highlighted in bold, verbs are in italics, and conditional statements are in bold italics; look for these keywords in the analysis models shown later in this chapter. For the sake of illustration, some of the models show information that goes beyond that contained in the following paragraph, whereas other models depict just part of the information presented here:
+
+A chemist or a member of the chemical stockroom staff can place a request for one or more chemicals if the user is an authorized requester. The request can be fulfilled either by delivering a container of the chemical that is already in the chemical stockroom's inventory or by placing an order for a new container of the chemical with an outside vendor. If the chemical is hazardous, the chemical can be delivered only if the user is trained. The person placing the request must be able to search vendor catalogs online for specific chemicals while preparing his request. The system needs to track the status of every chemical request from the time it is prepared until the request is either fulfilled or canceled. It also needs to track the history of every chemical container from the time it is received at the
+company until it is fully consumed or disposed of.
+
+ 
+Selecting the right representations
+Rarely does a team need to create a complete set of analysis models for an entire system. Focus your modeling on the most complex and riskiest portions of the system and on those portions most subject to ambiguity or uncertainty. Safety-critical, security-critical, and mission-critical system elements are good candidates for modeling because the impact of defects in those areas is so severe. Also choose models to use together to help ensure all of the models are complete. For example, examining the data objects in a DFD can uncover missing entities in an ERD. Considering all the processes in a DFD might identify useful swimlane diagrams to create. There are suggestions throughout the rest of the chapter on which models complement each other well in this fashion.
+Table 12-2, adapted from Karl Wiegers' work (2006), suggests which representation techniques to use based on what type of information you are trying to show, analyze, or discover. Joy Beatty
+and Anthony Chen (2012) provide additional suggestions about what requirements models to create based on project phases, characteristics of the project, and the target audience(s) for the models. The rest of this chapter describes some of the most commonly used models from this table that are not covered elsewhere in the book.
+
+TABLE 12-2
+
+Information depicted	Representation techniques
+System external interfaces	¦	The context diagram and use case diagram	identify objects outside the
+	system that connect to it. The context diagram and data flow diagrams
+illustrate the system inputs and outputs at a high level of abstraction.
+The ecosystem map identifies possible systems that interact, but includes some that do not interface directly as well. Swimlane diagrams show what happens in the interactions between systems.
+¦	External interface details can be recorded in input and output file formats or report layouts. Products that include both software and hardware components often have interface specifications with data attribute definitions, perhaps in the form of an application programming interface or specific input and output signals for a hardware device.
+Business process flow	¦	A top-level data flow diagram represents how a business process handles data at a high level of abstraction. Swimlane diagrams show the roles that participate in executing the various steps in a business process flow.
+¦	Refined levels of data flow diagrams or swimlane diagrams can represent business process flows in considerable detail. Similarly, flowcharts and activity diagrams can be used at either high or low levels of abstraction, although most commonly they are used to define the details of a process.
+Data definitions and data object
+relationships	¦	The entity-relationship diagram shows the logical relationships between data objects (entities). Class diagrams show the logical connections between object classes and the data associated with them.
+¦	The data dictionary contains detailed definitions of data structures and individual data items. Complex data objects are progressively broken down into their constituent data elements.
+ 
+Information depicted	Representation techniques
+System and object states	¦	State-transition diagram	s and state tables represent a high-abstraction view
+	of the possible states of a system or object and the changes between states that can take place under certain circumstances. These models are helpful when multiple use cases can manipulate (and change the state of) certain objects.
+¦	Some analysts create an event-response table as a scoping tool, identifying external events that help define the product's scope boundary. You can also specify individual functional requirements with an event-response table by detailing how the system should behave in response to each combination of external event and system state.
+¦	Functional requirements provide the details that describe exactly what user
+and system behaviors lead to status changes.
+Complex logic	¦	A decision tree shows the possible outcomes from a set of related decisions or conditions. A decision table identifies the unique functional requirements associated with the various combinations of true and false outcomes for a series of decisions or conditions.
+User interfaces	¦	The dialog map provides a high-level view of a proposed or actual user interface, showing the various display elements and possible navigation pathways between them.
+¦	Storyboards and low-fidelity prototypes flesh out the dialog map by showing what each screen will contain without depicting precise details. Display- action-response models describe the display and behavior requirements of each screen.
+¦	Detailed screen layouts and high-fidelity prototypes show exactly how the display elements will look. Data field definitions and user interface control descriptions provide additional detail.
+User task descriptions	¦	User stories, scenarios, and use case specifications describe user tasks in
+various levels of detail.
+¦	Swimlane diagrams illustrate the business process or interplay between multiple actors and the system. Flowcharts and activity diagrams visually depict the flow of the use case dialog and branches into alternative flows and exceptions.
+¦	Functional requirements provide detailed descriptions of how the system and user will interact to achieve valuable outcomes. Test cases provide an alternative low-abstraction view, describing exactly what system behavior to expect under specific conditions of inputs, system state, and actions.
+Nonfunctional requirements (quality attributes, constraints)	¦	Quality attributes and constraints are usually written in the form of natural language text, but that often results in a lack of precision and completeness. Chapter 14, "Beyond functionality" describes a definitive technique for precisely specifying nonfunctional requirements called Planguage (Gilb 2005).
+
+Data flow diagram
+The data flow diagram is the basic tool of structured analysis (DeMarco 1979; Robertson and Robertson 1994). A DFD identifies the transformational processes of a system, the collections (stores) of data or physical materials that the system manipulates, and the flows of data or material between processes, stores, and the outside world.
+. This works well for transaction-processing systems and other function-intensive applications. Through the addition of control flow elements, the DFD technique has been extended to permit modeling of real-time systems (Hatley, Hruschka, and Pirbhai 2000).
+ 
+DFDs provide a big-picture view of how data moves through a system, which other models don't show well. Various people and systems execute processes that use, manipulate, and produce data, so any single use case or swimlane diagram can't show you the full life cycle of a piece of data.
+Also, multiple pieces of data might be pulled together and transformed by a process (for example, shopping cart contents plus shipping information plus billing information are transformed into an order object). Again, this is hard to show in other models. However, DFDs do not suffice as a sole modeling technique. The details about how the data is transformed are better shown by steps in a process using use cases or swimlane diagrams.
+Beatty and Chen (2012) suggest tips for creating DFDs and using DFDs for requirements analysis.
+This tool is often used when interviewing customers, because it's easy to scribble a DFD on a whiteboard while discussing how the user's business operates. DFDs can be used as a technique to identify missing data requirements. The data that flows between processes, data stores, and external entities should also be modeled in ERDs and described in the data dictionary. Also, a DFD
+gives context to the functional requirements regarding how the user performs specific tasks, such as requesting a chemical.
+Data flow diagrams can represent systems over a wide range of abstraction. High-level DFDs provide a holistic, bird's-eye view of the data and processing components in a multistep activity, which complements the precise, detailed view embodied in the functional requirements. The context diagram in Figure 5-6 in Chapter 5 represents the highest level of abstraction of the DFD. The context diagram represents the entire system as a single black-box process, depicted as a circle (a bubble). It also shows the external entities, or terminators, that connect to the system, and the data or material flows between the system and the external entities. Flows on a context diagram often represent complex data structures, which are defined in the data dictionary.
+You can elaborate the context diagram into a level 0 DFD (the highest level of a data flow model), which partitions the system into its major processes. Figure 12-1 shows a partial level 0 DFD for the Chemical Tracking System. This model uses the Yourdon-DeMarco DFD notation. There are alternative notations that use slightly different symbols.
+The single circle that represented the entire Chemical Tracking System on the context diagram has been subdivided into six major processes (the process bubbles). As with the context diagram, the
+external entities are shown in rectangles. All data flows (arrows) from the context diagram also appear on the level 0 DFD. In addition, the level 0 diagram contains several data stores, depicted as a pair of parallel horizontal lines, which are internal to the system and therefore do not appear on the context diagram. A flow from a bubble to a store indicates that data is being placed into the store, a flow out of the store shows a read operation, and a bidirectional arrow between a store and a bubble indicates an update operation.
+Each process that appears as a separate bubble on the level 0 diagram can be further expanded into a separate DFD to reveal more detail about its functioning. The BA continues this progressive refinement until the lowest-level diagrams contain only primitive process operations that can be clearly represented in narrative text, pseudocode, a swimlane diagram, or an activity diagram. The functional requirements will define precisely what happens within each primitive process. Each level of the DFD must be balanced and consistent with the level above it so that all the input and

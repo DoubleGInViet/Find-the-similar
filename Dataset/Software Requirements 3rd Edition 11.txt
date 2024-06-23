@@ -1,0 +1,370 @@
+<something happens>" is a clue that someone might be describing an action enabler. Following are some examples of action-enabling business rules for the Chemical Tracking System:
+¦	If the chemical stockroom has containers of a requested chemical in stock, then offer existing
+containers to the requester.
+¦	On the last day of a calendar quarter, generate the mandated OSHA and EPA reports on chemical handling and disposal for that quarter.
+¦	If the expiration date for a chemical container has been reached, then notify the person who
+currently possesses that container.
+Businesses often develop policies that are intended to enhance their commercial success. Consider how an online bookstore might use the following business rules to try to stimulate impulse purchases after a customer has asked to buy a specific product:
+¦	If the customer ordered a book by an author who has written multiple books, then offer the
+author's other books to the customer before completing the order.
+¦	After a customer places a book into the shopping cart, display related books that other
+customers also bought when they bought this one.
+
+FIGURE 9-2 Constraining business rules sometimes can be represented in a roles and permissions matrix.
+ 
+ 	 
+
+Inferences
+Sometimes called inferred knowledge or a derived fact, an inference creates a new fact from other facts. Inferences are often written in the "if/then" pattern also found in action-enabling business rules, but the "then" clause of an inference simply provides a piece of knowledge, not an action to be taken. Some examples of inferences are:
+¦	If a payment is not received within 30 calendar days after it is due, then the account is delinquent.
+¦	If the vendor cannot ship an ordered item within five days of receiving the order, then the item is considered back-ordered.
+¦	Chemicals with an LD50 toxicity lower than 5 mg/kg in mice are considered hazardous.
+
+Computations
+The fifth class of business rules defines computations that transform existing data into new data
+by using specific mathematical formulas or algorithms. Many computations follow rules that are external to the enterprise, such as income tax withholding formulas. Following are a few examples of computational business rules written in text form.
+¦	The domestic ground shipping charge for an order that weighs more than two pounds is
+$4.75 plus 12 cents per ounce or fraction thereof.
+¦	The
+s for the location to which the order is being
+shipped, plus the shipping charge, plus an optional insurance charge.
+ 
+¦	The unit price is reduced by 10 percent for orders of 6 to 10 units, by 20 percent for orders of 11 to 20 units, and by 30 percent for orders of more than 20 units.
+Representing the details of computations in natural language like this can be wordy and confusing.
+As an alternative, you could represent these in some symbolic form, such as a mathematical expression or in a table of rules that is clearer and easier to maintain. Table 9-2 represents the previous unit-price discount computation rule in a clearer fashion.
+TABLE 9-2 Using a table to represent computational business rules
+
+ID	Number of units purchased	Percent discount
+DISC-1	1 through 5	0
+DISC-2	6 through 10	10
+DISC-3	11 through 20	20
+DISC-4	More than 20	30
+
+
+Atomic business rules
+Suppose you walk up to your friendly local librarian with a question. "How long can I check out a DVD for?" you ask. The librarian replies, "You can check out a DVD or Blu-ray Disc for one week, and you may renew it up to two times for three days each, but only if another patron hasn't placed a hold on it." The librarian's answer is based on the library's business rules. However, her answer combines several rules into a single statement. Composite business rules like this can be hard to understand and maintain. It's also hard to confirm that all possible conditions are covered. If several
+functionality segments trace back to this complex rule, it can be time-consuming to find and modify the appropriate code when just one part of the rule changes in the future.
+A better strategy is to write your business rules at the atomic level, rather than combining multiple details into a single rule. This keeps your rules short and simple. It also facilitates reusing the rules, modifying them, and combining them in various ways. To write inferred knowledge and action-enabling business rules in an atomic way, don't use "or" logic on the left-hand side of an "if/then" construct, and avoid "and" logic on the right-hand side (von Halle 2002). You might break that complex library rule down into several atomic business rules, as shown in Table 9-3. (Chapter 10,
+"Documenting the requirements," describes the hierarchical labeling notation illustrated in Table 9-3.)
+These business rules are called atomic because they can't be decomposed further. You will likely end up with many atomic business rules, and your functional requirements will depend on various combinations of them.
+ 
+TABLE 9-3 Some atomic business rules for a library
+
+ID	Rule
+Video.Media.Types	DVD discs and Blu-ray Discs are video items.
+Video.Checkout.Duration	Video items may be checked out for one week at a time.
+Renewal.Video.Times	Video items may be renewed up to two times.
+Renewal.Video.Duration	Renewing a checked-out video item extends the due date by three
+days.
+Renewal.HeldItem	A patron may not renew an item that another patron has on hold.
+To illustrate how using atomic business rules facilitates maintenance, when the next generation video technology comes along, or the library purges all of its DVD discs, the library could just update the Video.Media.Types rule and none of the others are affected.
+
+Documenting business rules
+Because business rules can influence multiple applications, organizations should manage their rules as enterprise-level assets. A simple business rules catalog will suffice initially. If you're using a requirements management tool, you can store business rules as a requirement type, provided they are accessible to all of your software projects. Large organizations or those whose operations and information systems are heavily business-rule driven should establish a database of business rules.
+Commercial rule-management tools become valuable if your rules catalog outgrows a solution using a word processor, spreadsheet, Wiki, or other collaboration tool. Some business-rule management systems contain rules engines, which can automate the implementation of the rules in your applications. The Business Rules Group (2012) maintains a list of products for managing business rules. As you identify new rules while working on an application, add them to the catalog rather than embedding them in the documentation for that specific application or-worse-only in its code.
+Rules related to safety, security, finance, or regulatory compliance pose the greatest risk if they are not managed and enforced appropriately.
+
+As you gain experience with identifying and documenting business rules, you can apply structured templates for defining rules of different types (Ross 1997; von Halle 2002). These templates describe patterns of keywords and clauses that structure the rules in a consistent fashion. They also facilitate storing the rules in a database, a commercial business-rule management tool, or a business rules engine. Sets of related rules can also be represented by using tools such as decision trees and decision tables (particularly when complex logic is involved) and roles and permissions matrices. To begin, though, try the simple format illustrated in Table 9-4 (Kulak and Guiney 2004).
+ 
+TABLE 9-4 Some sample business rules catalog entries
+
+ID	Rule definition	Type of rule	Static or dynamic	Source
+ORDER-5	If the customer ordered a book by an author who has written multiple books, then offer the author's other books to the customer before completing the order.	Action enabler	Static	Marketing policy XX
+ACCESS-8	All website images must include alternative		Constraint	Static	ADA Standards for
+					
+	text to be used by electronic reading devices				Accessible Design
+	to meet accessibility requirements for visually				
+	impaired users.				
+				
+DISCOUNT-13	A discount is calculated based on the size of the current order, as defined in Table BR-060.	Computation	Dynamic	Corporate pricing policy XX
+Giving each business rule a unique identifier lets you link requirements back to a specific rule. For instance, some templates for use cases contain a field for business rules that influence the use case. Instead of including the rule definition in the use case description, simply enter the identifiers for the relevant rules. Each ID serves as a pointer to the master instance of the business rule. This way you don't have to worry about the use case specification becoming obsolete if the rule changes.
+The "Type of rule" column identifies each business rule as being a fact, constraint, action enabler, inference, or computation. The "Static or dynamic" column indicates how likely the rule is to change over time. This information is helpful to developers. If they know that certain rules are subject to periodic change, they can structure the software to make the affected functionality or data easy to update. Income tax calculations change at least every year. If the developer structures the income tax information into tables or a database, rather than hard-coding it into the software, it's a lot easier to update those values when necessary. It's safe to hard-code laws of nature, such as calculations based on the laws of thermodynamics; laws of humans are much more volatile.
+
+
+ 
+The final column in Table 9-4 identifies the source of each rule. Sources of business rules include corporate and management policies, subject matter experts and other individuals, and documents such as government laws and regulations. Knowing the source helps people know where to go if they need more information about the rule or need to learn about changes.
+
+
+
+ 
+Just as asking "What are your requirements?" doesn't help much when eliciting user requirements, asking users "What are your business rules?" doesn't get you very far. Sometimes you invent business rules as you go along, sometimes they come up during requirements discussions, and sometimes you need to hunt for them. Barbara von Halle (2002) describes a comprehensive process for discovering business rules. Following are several common places and ways to look for rules (Boyer and Mili 2011):
+¦	"Common knowledge" from the organization, often collected from individuals who have worked with the business for a long time and know the details of how it operates.
+¦	Legacy systems that embed business rules in their requirements and code. This requires reverse-engineering the rationale behind the requirements or code to understand the pertinent rules. This sometimes yields incomplete knowledge about the business rules.
+¦	Business process modeling, which leads the analyst to look for rules that can affect each
+process step: constraints, triggering events, computational rules, and relevant facts.
+¦	Analysis of existing documentation, including requirements specifications from earlier projects, regulations, industry standards, corporate policy documents, contracts, and business plans.
+¦	Analysis of data, such as the various states that a data object can have and the conditions under which a user or a system event can change the object's state. These authorizations could also be represented as a roles and permissions matrix like the one shown earlier in Figure 9-2 to provide information about rules regarding user privilege levels and security.
+¦	Compliance departments in companies building systems subject to regulation.
+Just because you found some business rules in these various sources doesn't mean they necessarily
+apply to your current project or that they are even still valid. Computational formulas implemented in the code of legacy applications could be obsolete. Be sure to confirm whether rules gleaned from older documents and applications need to be updated. Assess the scope of applicability of rules you discover. Are they local to the project, or do they span a business domain or the entire enterprise?
+Often, project stakeholders already know about business rules that will influence the application. Certain employees sometimes deal with particular types or classes of rules. If that's the case in your environment, find out who those people are and bring them into the discussion. The BA can glean business rules during elicitation activities that also define other requirements artifacts and models. During interviews and workshops, the BA can ask questions to probe around the rationale for the requirements and constraints that users present. These discussions frequently surface business rules
+ 
+as the underlying rationale. Figure 9-3 shows several potential origins of rules. It also suggests some questions a BA can ask when discussing various requirements issues with users.
+
+FIGURE 9-3 Discovering business rules by asking questions from different perspectives.
+
+
+Business rules and requirements
+After identifying and documenting business rules, determine which ones must be implemented in the software. Business rules and their corresponding functional requirements sometimes look a lot alike. However, the rules are external statements of policy that must be enforced in software, thereby driving system functionality. Every BA must decide which rules pertain to his application, which ones must be enforced in the software, and how to enforce them.
+Recall the constraint rule from the Chemical Tracking System requiring that training records be current before a user can request a hazardous chemical. The analyst would derive different functional requirements to comply with this rule depending on whether the training records database is accessible to the Chemical Tracking System. If it is, the system can look up the user's training record and decide whether to accept or reject the request. If the records aren't available online, though, the system might store the chemical request temporarily and send a message to the training coordinator, who could approve or reject the request. The rule is the same in either situation, but the software functionality-the actions to take when the business rule is encountered during execution-varies depending on the system's environment.
+ 
+As another illustration, consider the following rules:
+¦	Rule #1 (action enabler): "If the expiration date for a chemical container has been reached, then notify the person who currently possesses that container."
+¦	Rule #2 (fact): "A container of a chemical that can form explosive decomposition products expires one year after its manufacture date."
+Rule #1 serves as the origin for a system feature called "Notify chemical owner of expiration." Additional rules like #2 would help the system determine which containers will have expiration dates and thus require notifying their owners at the right time. For instance, an opened can of ether becomes unsafe because it can form explosive byproducts in the presence of oxygen. Based on such
+rules, it's clear that the Chemical Tracking System must monitor the status of chemical containers that have expiration dates and inform the right people to return the containers for safe disposal. The BA might derive some functional requirements for that feature such as the following:
+Expired.Notify.Before If the status of a chemical container that has an expiration date is not Disposed, the system shall notify the container's current owner one week before the date the container expires.
+Expired.Notify.Date If the status of a chemical container that has an expiration date is not Disposed, the system shall notify the container's current owner on the date the container expires.
+Expired.Notify.After If the status of a chemical container that has an expiration date is not Disposed, the system shall notify the container's current owner one week after the date the container expires.
+Expired.Notify.Manager If the status of a chemical container that has an expiration date is not Disposed, the system shall notify the manager of the container's current owner two weeks after the date the container expires.
+Whenever you encounter a set of very similar requirements like these, consider laying them out in the form of a table instead of a list (Wiegers 2006). This is more compact and easier to review, understand, and modify. It also provides a more concise way to label the requirements, because the table has to show just the suffixes to append to the parent requirement's label. Here's an alternative representation for the preceding four functional requirements:
+Expired.Notify If the status of a chemical container that has an expiration date is not Disposed, the system shall notify the individuals shown in the following table at the times indicated.
+
+Requirement ID	Who to notify	When to notify
+.Before	Container's current owner	One week before expiration date
+.Date	Container's current owner	On expiration date
+.After	Container's current owner	One week after expiration date
+.Manager	Manager of container's current owner	Two weeks after expiration date
+ 
+Tying everything together
+To prevent redundancy, don't duplicate rules from your business rules catalog in the requirements
+. Instead, refer back to specific rules as being the source of certain functionality or algorithms. You can define the links between a functional requirement and its parent business rules in several ways; following are three possibilities.
+¦	If you are using a requirements management tool, create a requirement attribute called "Origin" and indicate the rules as being the origin of derived functional requirements. (See Chapter 27, "Requirements management practices.")
+ 
+
+¦
+a requirements tr
+ 
+tween functional requirements and the connected business rules in or a requirements mapping matrix (Beatty and Chen 2012).
+ 
+This is easiest when the business rules are stored in the same repository as the requirements. (See Chapter 29, "Links in the requirements chain.")
+¦	If the business rules and requirements are stored in word processing or spreadsheet files, define hyperlinks from business rule ID references in the requirements back to the descriptions of the business rules stored elsewhere. Be aware that hyperlinks are prone to breaking if the location of the rules collection changes.
+These links keep the requirements current with rule changes because the requirements simply point to the master instance of the rule. If the rule changes, you can search for the linked rule ID to find requirements-or implemented functionality-you might need to change. Using link
+ed to follow the cross-referenced link to access the rule details. This is the trade-off that results when you elect not to duplicate information (Wiegers 2006).
+As with so many aspects of requirements engineering, there is no simple, perfect solution
+to managing business rules that works in all situations. But after you begin actively looking for, recording, and applying business rules, the rationale behind your application development choices will become clearer to all stakeholders.
+
+ 
+C HA P T E R 1 0
+Documenting the requirements
+
+At the launch of a large project to build a commercial software company's next-generation flagship product, a senior manager convened about 60 employees in a daylong off-site "voice-of-the-customer workshop." These employees worked with facilitators to generate ideas for the new product. The manager compiled the results of these brainstorming sessions into a 100-page document. He called this a requirements specification, but in fact it was nothing more than a pile of information.
+The information from the brain dump by all these smart people wasn't classified into various categories, organized logically, analyzed, or otherwise processed into anything that described a proposed software solution. Developers could not have gleaned what they needed to know about the new product from this massive collection of ideas. Certainly there were nuggets of valuable
+requirements buried among all the chaff. But simply collecting raw ideas and needs into a long list isn't an effective way to document and communicate software requirements.
+
+Clear and effective communication is the core principle of requirements development-communication
+from people with needs to people who can conceive solutions, then to people who can implement and
+verify those solutions. A skilled business analyst will choose the most effective way to communicate each
+type of requirements information to each audience.	
+
+contains
+the business requirements, and
+
+ 
+. Recording requirements in an organized fashion that key project stakeholders can review helps ensure that they know what they're agreeing to.
+This	. We will describe the SRS as
+being a document, but it doesn't have to be in the form of a traditional word-processing document.
+In fact, documents pose numerous limitations:
+¦	It's difficult to store descriptive attributes along with the requirements.
+¦	Change management is clumsy.
+¦	It's difficult to retain historical versions of the requirements.
+¦	It's not easy to subset out a portion of requirements that are allocated to a particular iteration
+or keep track of those that were once approved but then deferred or canceled.
+181
+ 
+¦	It's hard to trace requirements to other development artifacts.
+¦	Duplicating a requirement that logically fits in multiple places causes maintenance issues.
+As alternatives, you might store information in a spreadsheet (which has many of the same limitations as a document), a Wiki, a database, or a requirements management (RM) tool (see Chapter 30, "Tools for requirements engineering"). Think of these as different possible repositories or containers for requirements information. No matter what form of requirements repository you use, you still need the same kinds of information. The SRS template described here is a helpful reminder of information to collect and how you might organize it.
+Not everyone agrees that it's worth the time to document requirements. And on exploratory or highly volatile projects where you're not sure what solution you'll end up with, trying to keep up with changes in the requirements details adds little value. However, the cost of recording knowledge is small compared to the cost of acquiring that knowledge or regenerating it at some point in the future. The acts of specification and modeling help project participants think through and precisely state important things that a verbal discussion can leave ambiguous. If you are 100 percent certain that no stakeholders will ever need a specific piece of information beyond the duration of their own short-term memories, then you don't need to record it. Otherwise, store it in some kind of a group memory.
+You will never get perfect requirements.
+. Analysts quite naturally write requirements from their own point of view, but really they should write them to be most meaningful to those who have to understand the requirements and do work based on them. This is why it's important to have representatives of those audiences review the requirements to make sure they'll meet their needs.
+Progressive refinement of detail is a key principle for effective requirements development. On most projects it's neither realistic nor necessary to pin down every requirement detail early in the project. Instead, think in terms of layers. You need to learn just enough about the requirements to be able to roughly prioritize them and allocate them to
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+You can represent software requirements in several ways, including:
+¦	Well-structured and carefully written
+ 
+
+¦
+them, data
+ 
+that il
+ 
+
+ips, l
+ 
+
+ws, and the like.
+ 
+, system states and changes between
+ 
+¦	Formal specifications that define requirements by using mathematically precise specification languages.
+provide the greatest rigor and precision, but few software developers-and even fewer customers-are familiar with them. Most projects don't demand this level of formality, but I'd certainly hope that the designers of high-risk systems like nuclear power plant control systems
+ 
+use formal specification methods. S
+and other representation techniques (such a
+ 
+, a
+, ph
+ 
+
+s, and mathematical
+ 
+expressions), remains the most practical way for most software projects to document their requirements. The rest of this chapter addresses how you might organize the information in a software requirements specification. Chapter 11, "Writing excellent requirements," describes characteristics of high-quality requirements and offers many suggestions for how to write them.
+
+The software requirements specification
+The software requirements specification goes by many names in various organizations, although organizations do not use these terms in the same way. It is sometimes called a	s
+ 
+ 
+. Because "
+that's what we'll call it here (ISO/IEC/IEEE 2011).
+The
+ 
+,
+
+, its
+ 
+
+   
+
+ 
+
+ 
+ 
+
+not contain d
+ 
+. However, it should
+
+s. Even people working on agile projects need the kind of information
+ 
+found in a good SRS. They don't ordinarily collect all this information in a cohesive deliverable, but an SRS template provides a convenient reminder of what kinds of knowledge to explore. This chapter
+concludes with a section that describes how agile projects typically handle requirements specification.
+ 
+   
+
+¦	Customers, the marketing department, and sales staff need to know what product they can expect to be delivered.
+¦	Project managers base their estimates of schedule, effort, and resources on the requirements.
+¦	Software development teams need to know what to build.
+¦	Testers use it to develop requirements-based tests, test plans, and test procedures.
+ 
+
+¦
+to do.
+
+¦
+design.
+
+¦
+
+¦
+ 
+use it to understand what each part of the product is supposed
+
+base user manuals and help screens on the SRS and the user interface
+
+SRS and user documentation to develop educational materials. ensures that the requirements comply with applicable laws and regulations.
+ 
+¦	Subcontractors base their work on-and can be legally held to-the specified requirements.
+If a desired capability or quality doesn't appear somewhere in the requirements agreement, no one
+should expect it to appear in the product.
+
+ 
+
+At the other extreme, another company created just a single guiding document for each
+, which they called simply "The Spec." The Spec contained every piece of known information about the project: requirements, estimates, project plans, quality plans,
+. Change management and version control on such an all-inclusive
+document is a	e. Nor is the information level in such an all-inclusive document suitable
+for each audience for requirements information.
+A third company that began to adopt agile development practices stopped writing any
+formal documentation. Instead, they wrote u
+
+   
+
+ 
+
+ 
+
+and could be s
+ 
+ate approach. Although their projects weren't huge e team members wanted to subdivide the
+ 
+SRS into as many as 12 separate documents: one SRS for a batch process, one for the reporting engine, and one for each of 10 reports. A document explosion like this causes headaches because it's hard to keep changes to them synchronized and to make sure the right people get all the information they need efficiently.
+A better alternative for all of these situations is to store the requirements in a requirements management tool, as described in Chapter 30. An RM tool also helps greatly with the problem of whether to create a single SRS or multiple specifications for a project that plans multiple product releases or development iterations (Wiegers 2006). The SRS for any one portion of the product or for a given iteration then is just a report generated from the database contents based on certain query criteria.
+
+
+You
+. Incremental
+development is appropriate when you want to get some functionality into the users' hands quickly. Feedback from using the early increments will shape the rest of the project. However, every project should baseline an agreement for each set of requirements before the team implements them.
+. Working from an agreed-upon set of requirements minimizes miscommunication and unnecessary rework. See Chapter 2, "Requirements from the customer's perspective," and Chapter 27, "Requirements management practices," for more about baselining.
+It's important to organize and write the SRS so that the diverse stakeholders can understand it.
+Keep the following readability suggestions in mind:
+¦	Use an appropriate template to organize all the necessary information.
+¦	Label and style sections, subsections, and individual requirements consistently.
+ 
+¦	Use vis
+Remembe
+ 
+asis (bold, underline, italics, color, and fonts) consistently and judiciously.
+hlighting might not be visible to people with color blindness or when
+ 
+printed in grayscale.
+¦	Create a table of contents to help readers find the information they need.
+¦	Number all figures and tables, give them captions, and refer to them by number.
+¦	If you are storing requirements in a document, define your word processor's cross-reference facility rather than hard-coded page or section numbers to refer to other locations within a document.
+¦	If you are using documents, define hyperlinks to let the reader jump to related sections in the SRS or in other files.
+¦	If you are storing requirements in a tool, use links to let the reader navigate to related
+information.
+¦	Include visual representations of information when possible to facilitate understanding.
+¦	Enlist a skilled editor to make sure the document is coherent and uses a consistent vocabulary and layout.
+
+Labeling requirements
+Every requirement needs a unique and persistent identifier. This allows you to refer to specific requirements in a change request, modification history, cross-reference, or requirements traceability matrix. It also enables reusing the requirements in multiple projects. Uniquely identified requirements facilitate collaboration between team members when they're discussing requirements, as in a peer review meeting. Simple numbered or bulleted lists aren't adequate for these purposes. Let's look
+at the advantages and shortcomings of several requirements-labeling methods. Select whichever technique makes the most sense for your situation.
+
+ 
+Sequence number
+The simplest approach gives every requirement a unique sequence number, such as UC-9 or
+FR-26. Commercial requirements management tools assign such an identifier when a user adds a new requirement to the tool's database. The prefix indicates the requirement type, such as FR for functional requirement. A number is not reused if a requirement is deleted, so you don't have to
+worry about a reader confusing the original FR-26 with a new FR-26. This simple numbering approach doesn't provide any logical or hierarchical grouping of related requirements, the number doesn't imply any kind of ordering, and the labels give no clue as to what each requirement is about. It does make it easy to retain a unique identifier if you move requirements around in a document.
+
+Hierarchical numbering
+In the most commonly used convention, if the functional requirements appear in section 3.2 of your SRS, they will all have labels that begin with 3.2. More digits indicate a more detailed, lower-level requirement, so you know that 3.2.4.3 is a child requirement of 3.2.4. This method is simple, compact, and familiar. Your word processor can probably assign the numbers automatically. Requirements management tools generally also support hierarchical numbering.
+However, hierarchical numbering poses some problems. The labels can grow to many digits in even a medium-sized SRS. Numeric labels tell you nothing about the intent of a requirement. If you are using a word processor, typically this scheme does not generate persistent labels. If you insert a new requirement, the numbers of the following requirements in that section all will be incremented. Delete or move a requirement, and the numbers following it in that section will be decremented.
+Delete, insert, merge, or move whole sections, and a lot of labels change. These changes disrupt any references to those requirements elsewhere in the system.
+
+An improvement over hierarchical numbering is to number the major sections of the requirements hierarchically and then identify individual functional requirements in each section with a short text code followed by a sequence number. For example, the SRS might contain "Section 3.5-Editor Functions," and the requirements in that section could be labeled ED-1, ED-2, and so forth. This approach provides some hierarchy and organization while keeping the labels short, somewhat meaningful, and less positionally dependent. It doesn't totally solve the sequence number problem, though.
+
+Hierarchical textual tags
+Consultant Tom Gilb (1988) suggests a text-based hierarchical tagging scheme for labeling individual requirements. Consider this requirement: "The system shall ask the user to confirm any request to print more than 10 copies." This requirement might be tagged Print.ConfirmCopies. This indicates that it is part of the print function and relates to the number of copies to print. Hierarchical textual
+ 
+tags are structured, meaningful, and unaffected by adding, deleting, or moving other requirements. The sample SRS in Appendix C illustrates this labeling technique, as do other examples throughout the book. This method also is suitable for labeling business rules if you're maintaining them manually, rather than in a dedicated business rules repository or tool.
+Using hierarchical textual tags like this helps solve another problem. With any hierarchical organization you have parent-child relationships between requirements. If the parent is written as a functional requirement, the relationship between the children and the parent can be confusing.
+A good convention is to write the parent requirement to look like a title, a heading, or a feature name, rather than looking like a functional requirement in itself. The children requirements of that parent, in the aggregate, deliver the capability described in the parent. Following is an example that contains a heading and four functional requirements.
+
+The full unique ID of each requirement is built by appending each line's label to the parent labels above it. The Product statement is written as a heading, not as a discrete requirement. The first functional requirement is tagged Product.Cart. The full ID for the third requirement is Product.Discount.Error. This hierarchical scheme avoids the maintenance problems with the
+hierarchical numbering, but the tags are longer and you do have to think of meaningful names for them, perhaps building from the name of the relevant feature. It can be challenging to maintain uniqueness, especially if you have multiple people working on the set of requirements. You can simplify the scheme by combining the hierarchical naming technique with a sequence number suffix for small sets of requirements: Product.Cart.01, Product.Cart.02, and so on. Many schemes can work.
+
+Dealing with incompleteness
+Sometimes you know that you lack a piece of information about a specific requirement. Use the notation TBD (to be determined) to flag these knowledge gaps. Plan to resolve all TBDs before implementing a set of requirements. Any uncertainties that remain increase the risk of a developer or a tester making errors and having to perform rework. When the developer encounters a TBD, he might make his best guess-which won't always be correct-instead of tracking down the requirement's originator to resolve it. If you must proceed with construction of the next product increment while TBDs remain, either defer implementing the unresolved requirements or design those portions of the product to be easily modifiable when the open issues are resolved. Record
+TBDs and other requirements questions in an issues list. As the number of open issues dwindles, the requirements are stabilizing. Chapter 27 further describes managing and resolving open issues.
+ 
+ 
+
+User interfaces and the SRS
+Incorporating user interface designs in the SRS has both benefits and drawbacks. On the plus side, exploring possible user interfaces with paper prototypes, working mock-ups, wireframes, or simulation tools makes the requirements tangible to both users and developers. As discussed in Chapter 15, "Risk reduction through prototyping," these are powerful techniques for eliciting and validating requirements. If the product's users have expectations of how portions of the product
+might look and feel-and hence could be disappointed if their expectations weren't fulfilled-those expectations belong in the realm of requirements.
+On the negative side, screen images and user interface architectures describe solutions and might not truly be requirements. Including them in the SRS makes the document larger, and big requirements documents frighten some people. Delaying baselining of the SRS until the UI design is complete can slow down development and try the patience of people who are already concerned about spending too much time on requirements. Including UI design in the requirements can result in the visual design driving the requirements, which often leads to functional gaps. The people who write the requirements aren't necessarily well qualified for designing user interfaces. Additionally, after stakeholders see a user interface in an SRS (or anywhere else), they will not "unsee" it. Early
+visualization can clarify requirements, but it can also lead to resistance to improving the UI over time.
+Screen layouts don't replace written user and functional requirements. Don't expect developers to deduce the underlying functionality and data relationships from screen shots. One Internet development company repeatedly got in trouble because the team routinely went directly from signing a contract with a client into an eight-hour visual design workshop. They never sufficiently understood what a user would be able to do at each website they built, so they spent a lot of time fixing the sites after delivery.
+If you really do want to implement certain functionality with specific UI controls and screen layouts, it's both appropriate and important to include that information in the SRS as design constraints. Design constraints restrict the choices available to the user interface designer. Just make sure that you don't impose constraints unnecessarily, prematurely, or for the wrong reasons. If the SRS is specifying an enhancement to an existing system, it often makes sense to include screen displays exactly as they are to be implemented. The developers are already constrained by the current reality of the existing system, so it's possible to know up front just how the modified-and perhaps also the new-displays should look.
+A sensible balance is to include conceptual images-I call them sketches, no matter how  nicely drawn they are-of selected displays in the requirements without demanding that the implementation precisely follow those models. See Figure 10-1 for a sample webpage sketch. Incorporating such sketches in the SRS helpfully communicates another view of the requirements,

@@ -1,0 +1,493 @@
+﻿Th e objective of interface evaluation is to understand how to improve the interface design 
+before the system is complete. Most interface designers intentionally or unintentionally 
+design an interface that meets their personal preferences, which might or might not match 
+7 Verifying and validation approaches, in general, were described in Chapters 4 through 7. Also, further approaches 
+to testing the evolving system are described in Chapter 12. In this section, we describe approaches that have been 
+customized to the human–computer interaction layer.
+User Interface Design Process  381
+the preferences of the users. Th e key message, therefore, is to have as many people as possible 
+evaluate the interface, and the more users the better. Most experts recommend involving at 
+least ten potential users in the evaluation process.
+Many organizations save interface evaluation for the very last step in the systems 
+development before the system is installed. Ideally, however, interface evaluation should be 
+performed while the system is being designed—before it is built—so that any major design 
+problems can be identifi ed and corrected before the time and cost of programming have been 
+spent on a weak design. It is not uncommon for the system to undergo one or two major 
+changes aft er the users see the fi rst interface design prototype because they identify problems 
+that are overlooked by the project team.
+As with interface design prototyping, interface evaluation can take many diff erent forms, 
+each with diff erent costs and diff erent amounts of detail. Four common approaches are heuristic evaluation, walkthrough evaluation, interactive evaluation, and formal usability testing. 
+As with interface design prototyping, the diff erent parts of a system can be evaluated using 
+diff erent techniques.
+Heuristic Evaluation A heuristic evaluation examines the interface by comparing it to a set 
+of heuristics or principles for interface design. Th e project team develops a checklist of interface design principles—from the list at the start of this chapter, for example, as well as the list 
+of principles in the navigation, input, and output design sections later in this chapter. At least 
+three members of the project team then individually work through the interface design prototype, examining every interface to ensure that it satisfi es each design principle on a formal 
+checklist. Aft er each has gone through the prototype separately, they meet as a team to discuss 
+their evaluations and identify specifi c improvements that are required.
+Walkthrough Evaluation An interface design walkthrough evaluation is a meeting conducted with the users who ultimately have to operate the system. Th e project team presents 
+the prototype to the users and walks them through the various parts of the interface. Th e 
+project team shows the storyboard and windows layout diagrams or actually demonstrates 
+the user interface prototype and explains how the interface will be used. Th e users identify 
+improvements to each of the interfaces that are presented.
+Interactive Evaluation With an interactive evaluation, the users themselves actually work 
+with the user interface prototype in a one-person session with member(s) of the project team 
+(an interactive evaluation cannot be used with a storyboard or windows layout diagrams). As 
+the user works with the prototype (oft en by going through the use scenarios, using the real 
+use cases described later in this chapter, or just navigating at will through the system), he or 
+she tells the project team member(s) what he or she likes and doesn’t like and what additional 
+information or functionality is needed. As the user interacts with the prototype, team member(s) records the cases when he or she appears to be unsure of what to do, makes mistakes, or 
+misinterprets the meaning of an interface component. If the pattern of uncertainty, mistakes, 
+or misinterpretations reoccurs across several of the users participating in the evaluation, it is 
+a clear indication that those parts of the interface need improvement.
+Formal Usability Testing Formal usability testing is commonly done with commercial soft -
+ware products and products developed by large organizations that will be widely used through 
+the organization. As the name suggests, it is a very formal—almost scientifi c— process that can 
+be used only with language prototypes (and systems that have been completely built awaiting 
+installation or shipping).8 As with interactive evaluation, usability testing is done in one-person 
+8 A good source for usability testing is Jakob Nielsen and Robert Mack (eds.), Usability Inspection Methods (New York: 
+Wiley, 1994). See also www.useit.com/papers.
+382 Chapter 10 Human–Computer Interaction Layer Design
+sessions in which a user works directly with the soft ware. However, it is typically done in a 
+special lab equipped with video cameras and special soft ware that records every keystroke and 
+mouse operation so that they can be replayed to understand exactly what the user did.
+Th e user is given a specifi c set of tasks to accomplish (usually the use scenarios), and aft er 
+some initial instructions, the project team’s members are not permitted to interact with the 
+user to provide assistance. Th e user must work with the soft ware without help, which can be 
+hard on the users if they become confused with the system. It is critical that users understand 
+that the goal is to test the interface, not their abilities, and if they are unable to complete the 
+task, the interface—not the user—has failed the test.
+Formal usability testing is very expensive, because each one-user session can take one 
+to two days to analyze depending on the volume of detail collected in the computer logs and 
+videos. Sessions typically last one to two hours. Most usability testing involves fi ve to ten 
+users, because if there are fewer than fi ve users, the results depend too much on the specifi c 
+individual users who participated, and more than ten users are oft en too expensive to justify 
+(unless a large commercial soft ware developer is involved).
+Common Sense Approach to User Interface Design
+When you consider all of the above material, creating an eff ective user interface design 
+can be a daunting and very time-consuming task. An interesting book by Steve Krug,9 however, provides us with a set of guiding principles for Web usability. In this section, we adapt 
+his principles to general user interface design.
+First, the user should never have to think about how to navigate the user interface. As Krug 
+puts it, “Don’t make me think.” Cognitively speaking, any time the user has to stop and fi gure 
+out how to use the user interface, the creator of the user interface has failed. Th at might seem 
+a little harsh, but it is true. From the user’s perspective, the user interface is the system. If the 
+developers have done their homework, the user interface should be intuitive to use. From a 
+practical perspective, we should study how the user really uses the system. Based on Krug’s 
+observations of users, he found that users do not read Web pages; instead, they tend to scan 
+them. As a general user interface design guideline, we suggest that you make it easy for 
+users to identify the diff erent parts of the user interface so that they simply scan the screen 
+to see the section of the interface that is applicable to the problem that they are solving. 
+Given the user’s tendency to simply scan the user interface, Krug suggests that we should 
+consider studying billboards for inspiration. Billboards are designed to be “read” at 70 mph 
+as you drive down the highway. Obviously, the most relevant information must catch your 
+attention for the billboard advertisement to work. He suggests that we should use the set of 
+conventions with which we are familiar. For example, when looking at a newspaper you 
+know that it is organized into diff erent sections. In the case of the Wall Street Journal, you 
+know that the front page acts as an index into the rest of the paper. Consequently, we should 
+look for conventions that we can employ to aid the user.
+Second, he suggests that the number of clicks that a user must perform to complete the 
+task is somewhat irrelevant. Instead, building on his fi rst guiding principle, the important 
+thing is to design the user interface such that the choices (clicks) to be made are unambiguous. Making a lot of obvious choices is a lot quicker and easier than a few vague and ambiguous ones. Consequently, don’t worry about the number of screens that the user must work 
+through. However, like any other rule, this can be taken to an extreme. Too many clicks is 
+still too many clicks. Th e overall goal is to minimize the user’s eff ort. Simply focus on making 
+it easier for the user to complete the task.
+9 Steve Krug, Don’t Make Me Th ink: A Common Sense Approach to Web Usability, 2nd Ed. (Berkeley, CA: 2nd Ed. 
+New Riders, 2006).
+Navigation Design  383
+Th ird, minimize the number of words on the screen. Given that users scan the screen to 
+fi nd for what they are searching, make it easier by not cluttering the screen with lots of noise. 
+He suggests that in the case of Web interfaces, 50 percent to 75 percent of the words can be 
+eliminated without losing any information contained on the screen. Obviously, this may be 
+somewhat extreme, but it does suggest that following the KISS10 principle is critical when 
+designing eff ective user interfaces.
+NAVIGATION DESIGN
+Th e navigation component of the interface enables the user to enter commands to navigate 
+through the system and perform actions to enter and review information it contains. Th e 
+navigation component also presents messages to the user about the success or failure of his 
+or her actions. Th e goal of the navigation system is to make the system as simple as possible 
+to use. A good navigation component is one the user never really notices. It simply functions 
+the way the user expects, and thus the user gives it little thought. In other words, keep Krug’s 
+three guiding principles in mind as you work through the next three sections of the text.
+Basic Principles
+One of the hardest things about using a computer system is learning how to manipulate 
+the navigation controls to make the system do what you want. Analysts should assume that 
+users have not read the manual, have not attended training, and do not have external help 
+readily at hand. All controls should be clear and understandable and placed in an intuitive 
+location on the screen. Ideally, the controls should anticipate what the user will do and 
+simplify his or her eff orts. For example, many setup programs are designed so that for a 
+typical installation, the user can simply keep pressing the Next button.
+Prevent Mistakes Th e fi rst principle of designing navigation controls is to prevent the user 
+from making mistakes. A mistake costs time and causes frustration. Worse still, a series of 
+mistakes can cause the user to discard the system. Mistakes can be reduced by labeling commands and actions appropriately and by limiting choices. Too many choices can confuse the 
+user, particularly when the choices are similar and hard to describe in the short space available on the screen. When there are many similar choices on a menu, consider creating a second 
+menu level or a series of options for basic commands.
+Never display a command that cannot be used. Many Windows applications gray out 
+commands that cannot be used; they are displayed on pull-down menus in a very lightcolored font, but they cannot be selected. Th is shows that they are available but cannot be 
+used in the current context. It also keeps all menu items in the same place.
+When the user is about to perform a critical function that is diffi cult or impossible to 
+undo (e.g., deleting a fi le), it is important to confi rm the action with the user (and make sure 
+the selection was not made by mistake). Having the user respond to a confi rmation message, 
+which explains what the user has requested and asks the user to confi rm that this action is 
+correct, usually does this.
+Simplify Recovery from Mistakes No matter what the system designer does, users will 
+make mistakes. Th e system should make it as easy as possible to correct these errors. Ideally, 
+the system has an Undo button that makes mistakes easy to override; however, writing the 
+soft ware for such buttons can be very complicated.
+10 Keep it simple, stupid!
+384 Chapter 10 Human–Computer Interaction Layer Design
+Use Consistent Grammar Order One of the most fundamental decisions is the grammar 
+order. Most commands require the user to specify an object (e.g., fi le, record, word), and the 
+action to be performed on that object (e.g., copy, delete). Th e interface can require the user to 
+fi rst choose the object and then the action (an object–action order) or fi rst choose the action 
+and then the object (an action–object order). Most Windows applications use an object–action 
+grammar order (e.g., think about copying a block of text in your word processor).
+Th e grammar order should be consistent throughout the system, both at the data element 
+level and at the overall menu level. Experts debate about the advantages of one approach over 
+the other, but because most users are familiar with the object–action order, most systems 
+today are designed using that approach.
+Types of Navigation Controls
+Th ere are two traditional hardware devices that can be used to control the user interface: the 
+keyboard and a pointing device such as a mouse, trackball, or touch screen. Today, depending 
+on the hardware being used, voice recognition systems can also be used to control the user 
+interface. Th ere are three basic soft ware approaches for defi ning user commands: languages, 
+menus, and direct manipulation.
+Languages With a command language, the user enters commands using a special language developed for the computer system (e.g., UNIX and SQL both use command languages). Command 
+languages sometimes provide greater fl exibility than other approaches because the user can combine language elements in ways not predetermined by developers. However, they put a greater 
+burden on users because users must learn syntax and type commands rather than select from 
+a well-defi ned, limited number of choices. Systems today use command languages sparingly, 
+except in cases where there is an extremely large number of command combinations that make it 
+impractical to try to build all combinations into a menu (e.g., SQL queries for databases).
+Natural language interfaces are designed to understand the user’s own language (e.g., 
+English, French, Spanish). Th ese interfaces attempt to interpret what the user means, and 
+oft en they present back to the user a list of interpretations from which to choose. An example 
+of the use of natural language is Google’s search engine. Google’s search engine enables users 
+to use free-form text to search the Web for topics of interest.
+Menus Th e most common type of navigation system today is the menu. A menu presents a user 
+with a list of choices, each of which can be selected. Menus are easier to learn than languages 
+because a limited number of available commands are presented to the user in an organized fashion. Clicking on an item with a pointing device or pressing a key that matches the menu choice 
+(e.g., a function key) takes very little eff ort. Th erefore, menus are usually preferred to languages.
+Menus need to be designed with care because the submenus behind a main menu are 
+hidden from users until they click on the menu item. It is better to make menus broad and 
+shallow (i.e., each menu containing many items with only one or two layers of menus) rather 
+than narrow and deep (i.e., each menu containing only a few items, but each leading to three 
+or more layers of menus). A broad and shallow menu presents the user with the most information initially so that he or she can see many options and requires only a few mouse clicks or 
+keystrokes to perform an action. A narrow and deep menu makes users hunt for items hidden 
+behind menu items and requires many more clicks or keystrokes to perform an action.
+Research suggests that in an ideal world, any one menu should contain no more than 
+eight items, and it should take no more than two mouse clicks or keystrokes from any menu 
+to perform an action (or three from the main menu that starts a system).11 However, analysts 
+sometimes must break this guideline in the design of complex systems by grouping menu 
+11 Kent L. Norman, Th e Psychology of Menu Selection (Norwood NJ: Ablex Publishing Corp., 1991).
+Navigation Design  385
+items separated by a horizontal line. Oft en menu items have hot keys that enable experienced 
+users to quickly invoke a command with keystrokes in lieu of a menu choice (e.g., on a 
+Windows machine, across many applications, Ctrl-F tends to invoke the Find command; on 
+a Mac, you use Command-F instead).
+Menus should put together like items so that the user can intuitively guess what each 
+menu contains. Most designers recommend grouping menu items by interface objects 
+(e.g., customers, purchase orders, inventory) rather than by interface actions (e.g., new, 
+update, format), so that all actions pertaining to one object are in one menu, all actions 
+for another object are in a diff erent menu, and so on. However, this is highly dependent 
+on the specifi c interface. Some of the more common types of menus include menu bars,
+drop-down menus, pop-up menus, tab menus, toolbars, and image maps (see Figure 10-9).
+Direct Manipulation With direct manipulation, the user enters commands by working 
+directly with interface objects. For example, users can change the size of objects in Microsoft 
+PowerPoint by clicking on them and moving their sides, or they can move fi les in Windows 
+Explorer by dragging the fi lenames from one folder to another. Direct manipulation can be 
+simple, but it suff ers from two problems. First, users familiar with language- or menu-based 
+Type of Menu When to Use Notes
+Menu bar
+List of commands at the top of 
+the screen; always on-screen
+Main menu for system Use the same organization as the operating system and other 
+packages (e.g., File, Edit, View).
+Menu items are always one word, never two.
+Menu items lead to other menus rather than perform action.
+Never allow users to select actions they can’t perform 
+(instead, use grayed-out items).
+Drop-down menu
+Menu that drops down immediately below another menu; 
+disappears after one use
+Second-level menu, often from 
+menu bar
+Menu items are often multiple words.
+Avoid abbreviations.
+Menu items perform action or lead to another cascading 
+drop-down menu, pop-up menu, or tab menu.
+Pop-up menu
+Menu that pops up and fl oats 
+over the screen; disappears 
+after one use
+As a shortcut to commands for 
+experienced users
+Pop-up menus often (not always) are invoked by a right click 
+in Windows-based systems.
+These menus are often overlooked by novice users, so usually 
+they should duplicate functionality provided in other menus.
+Tab menu
+Multipage menu with one tab 
+for each page that pops up and 
+fl oats over the screen; remains 
+on-screen until closed
+When user needs to change several settings or perform several 
+related commands
+Menu items should be short to fi t on the tab label.
+Avoid more than one row of tabs, because clicking on a tab to 
+open it can change the order of the tabs and in virtually no 
+other case does selecting from a menu rearrange the menu 
+itself.
+Tool bar
+Menu of buttons (often with 
+icons) that remains on screen 
+until closed
+As a shortcut to commands for 
+experienced users
+All buttons on the same tool bar should be the same size.
+If the labels vary dramatically in size, then use two different 
+sizes (small and large).
+Buttons with icons should have a tool tip, an area that displays a text phrase explaining the button when the user 
+pauses the mouse over it.
+Image map
+Graphic image in which 
+certain areas are linked to 
+actions or other menus
+Only when the graphic image 
+adds meaning to the menu
+The image should convey meaning to show which parts 
+perform action when clicked.
+Tool tips can be helpful.
+FIGURE 10-9  Types of Menus
+386 Chapter 10 Human–Computer Interaction Layer Design
+interfaces don’t always expect it. Second, not all commands are intuitive. [How do you copy 
+(not move) fi les in Windows Explorer? On the Macintosh, why does moving a folder to the 
+trash delete the fi le if it is on the hard disk, but eject the DVD if the fi le is on a DVD?]
+Messages
+Messages are the way the system responds to a user and informs him or her of the status of the 
+interaction. Th ere are many diff erent types of messages, such as error messages, confi rmation 
+messages, acknowledgment messages, delay messages, and help messages (see Figure 10-10). In 
+general, messages should be clear, concise, and complete, which are sometimes confl icting 
+objectives. All messages should be grammatically correct and free of jargon and abbreviations (unless they are the users’ jargon and abbreviations). Avoid negatives because they can 
+be confusing (e.g., replace Are you sure you do not want to continue? with Do you want to 
+quit?). Likewise, avoid humor, because it wears off quickly aft er the same message appears 
+dozens of times.
+Messages should require the user to acknowledge them (by clicking, for example), rather 
+than being displayed for a few seconds and then disappearing. Th e exceptions are messages 
+that inform the user of delays in processing, which should disappear once the delay has 
+passed. In general, messages are text, but sometimes, standard icons are used. For example, 
+Windows displays an hourglass when the system is busy. All messages should be carefully 
+Type of Messages When to Use Notes
+Error message
+Informs the user that he or she 
+has attempted to do something 
+to which the system cannot 
+respond
+When the user does something 
+that is not permitted or not 
+possible
+Always explain the reason and suggest corrective action.
+Traditionally, error messages have been accompanied by a 
+beep, but many applications now omit it or permit users to 
+remove it.
+Confi rmation message
+Asks users to confi rm that they 
+really want to perform the 
+action they have selected
+When user selects a potentially 
+dangerous choice, such as 
+deleting a fi le
+Always explain the cause and suggest possible action.
+Often include several choices other than OK and cancel.
+Acknowledgment message 
+Informs the user that the system has accomplished what it 
+was asked to do
+Seldom or never. Users quickly 
+become annoyed with all the 
+unnecessary mouse clicks
+Acknowledgment messages are typically included because 
+novice users often like to be reassured that an action has 
+taken place.
+The best approach is to provide acknowledgment information without a separate message on which the user must 
+click. For example, if the user is viewing items in a list and 
+adds one, then the updated list on the screen showing the 
+added item is suffi cient acknowledgment.
+Delay message
+Informs the user that the 
+computer system is working 
+properly
+When an activity takes more 
+than seven seconds
+Should permit the user to cancel the operation in case he or 
+she does not want to wait for its completion.
+Should provide some indication of how long the delay 
+will last.
+Help message
+Provides additional information about the system and its 
+ components
+In all systems Help information is organized by table of contents and/or 
+keyword search.
+Context-sensitive help provides information that depends on 
+what the user was doing when help was requested.
+Help messages and online documentation are discussed in 
+Chapter 12.
+FIGURE 10-10  Types of Messages
+Input Design  387
+craft ed, but error and help messages require particular care. Messages (and especially error 
+messages) should always explain the problem in polite, succinct terms (e.g., what the user 
+did incorrectly) and explain corrective action as clearly and as explicitly as possible so that 
+the user knows exactly what needs to be done. In the case of complicated errors, the error 
+message should display what the user entered, suggest probable causes for the error, and propose possible user responses. When in doubt, provide either more information than the user 
+needs or the ability to get additional information. Error messages should provide a message 
+number. Message numbers are not intended for users, but their presence makes it simpler 
+for help desks and customer support lines to identify problems and help users because many 
+messages use similar wording.
+Navigation Design Documentation
+Th e design of the navigation for a system is done through the use of WNDs and real use cases. 
+Real use cases are derived from the essential use cases (see Chapter 4), use scenarios, and WNDs. 
+Recall that an essential use case is one that describes only the minimum essential issues necessary 
+to understand the required functionality. A real use case describes a specifi c set of steps that a user 
+performs to use a specifi c part of a system. Real use cases are implementation dependent (i.e., they 
+are detailed descriptions of how to use the system once it is implemented).
+To evolve an essential use case into a real use case, two changes must be made. First, the 
+use-case type must be changed from essential to real. Second, all events must be specifi ed 
+in terms of the actual user interface. And, given the peculiarities of diff erent platforms, e.g., 
+desktops, tablets, and smartphones, real-use cases will need to be developed for each platform on which the use case is being deployed. Th erefore, the normal fl ow of events, subfl ows, 
+and alternative/exceptional fl ows must be modifi ed. Th e normal fl ow of events, subfl ows, 
+and alternative/exceptional fl ows for the real use case associated with the storyboard user 
+interface prototype given in Figure 10-6 is shown in Figure 10-11. For example, step 2 of the 
+normal fl ow of events states that “Th e System provides the Sales Rep with the Main Menu 
+for the System,” which allows the Sales Rep to interact with the Maintain Client List aspect 
+of the system.
+INPUT DESIGN
+Inputs facilitate the entry of data into the computer system, whether highly structured data, 
+such as order information (e.g., item numbers, quantities, costs) or unstructured information 
+(e.g., comments). Input design means designing the screens used to enter the information as 
+well as any forms on which users write or type information (e.g., timecards, expense claims).
+Basic Principles
+Th e goal of the input mechanism is to simply and easily capture accurate information for the 
+system. Th e fundamental principles for input design refl ect the nature of the inputs (whether 
+batch or online) and ways to simplify their collection.
+Online versus Batch Processing Th ere are two general formats for entering inputs into a computer system: online processing and batch processing. With online processing (sometimes called 
+transaction processing), each input item (e.g., a customer order, a purchase order) is entered 
+into the system individually, usually at the same time as the event or transaction prompting the 
+input. For example, when you check a book out from the library, buy an item at the store, or 
+make an airline reservation, the computer system that supports that process uses online processing to immediately record the transaction in the appropriate database(s). Online processing 
+388 Chapter 10 Human–Computer Interaction Layer Design
+Use-Case Name: Maintain Client List ID: 12 Importance Level: High
+Primary Actor: Sales Rep Use-Case Type: Detail, Real
+Stakeholders and Interests: Sales Rep - wants to add, f ind, or list clients
+Brief Description: Th is use case describes how sales representatives can search and maintain the 
+ client list.
+Trigger: Patient calls and asks for a new appointment or asks to cancel or change an existing 
+ appointment.
+Type: External
+Relationships:
+Association: Sales Rep
+ Include:
+ Extend:
+ Generalization:
+Normal Flow of Events:
+ 1. Th e Sales Rep starts up the system.
+ 2. Th e System provides the Sales Rep with the Main Menu for the System.
+ 3. Th e System asks Sales Rep if he or she would like to Add a client. Find an existing Client, or to 
+ List all existing clients.
+ If the Sales Rep wants to add a client, he or she clicks on the Add Client Link and execute S-1: 
+ New Client.
+ If the Sales Rep wants to f ind a client, he or she clicks on the Find Client Link and execute S-2: 
+ Find Client.
+ If the Sales Rep wants to list all clients, he or she clicks on the List Client Link and execute S-3: 
+ List Clients.
+ 4. Th e System returns the Sales Rep to the Main Menu of the System.
+Subfl ows:
+ S-1: New Client
+ 1. Th e System asks the Sales Rep for relevant information.
+ 2. Th e Sales Rep types in the relevant information into the Form
+ 3. Th e Sales Rep submits the information to the System.
+ S-2: Find Client
+ 1. Th e System asks the Sales Rep for the search information.
+ 2. Th e Sales Rep types in the search information into the Form
+ 3. Th e Sales Rep submits the information to the System.
+ 4. If the System f inds a single Client that meets the search information,
+ the System produces a Client Information report and returns the Sales Rep to the Main 
+ Menu of the System
+ Else 
+ If the System f inds a list of Clients that meet the search information. Th e System executes 
+ S-3: List Clients.
+ S-3: List Clients
+ 1. If this Subf low is executed from Step 3
+ Th e System creates a List of All clients
+ Else
+ Th e System creates a List of clients that matched the S-2: Find Client search criteria.
+ 2. Th e Sales Rep selects a client.
+ 3. Th e System produces a Client Information report.
+Alternate/Exceptional Flows:
+ S-2 4a. Th e System produces an Error Message.
+FIGURE 10-11
+Real Use-Case 
+Example
+is most commonly used when it is important to have real-time information about the business 
+process. For example, when you reserve an airline seat, the seat is no longer available for someone else to use.
+With batch processing, all the inputs collected over some time period are gathered 
+together and entered into the system at one time in a batch. Some business processes 
+Input Design  389
+naturally generate information in batches. For example, most hourly payrolls are done 
+using batch processing because time cards are gathered together in batches and processed 
+at once. Batch processing is also used for transaction processing systems that do not 
+require real-time information. For example, most stores send sales information to district 
+offi ces so that new replacement inventory can be ordered. Th is information can be sent in 
+real time as it is captured in the store so that the district offi ces are aware within a second 
+or two that a product is sold. If stores do not need this up-to-the- second real-time data, 
+they will collect sales data throughout the day and transmit it every evening in a batch 
+to the district offi ce. Th is batching simplifi es the data communications process and oft en 
+saves in communications costs, but it does mean that inventories are not accurate in real 
+time but rather are accurate only at the end of the day aft er the batch has been processed.
+Capture Data at the Source Perhaps the most important principle of input design is to capture the data in an electronic format at its original source or as close to the original source as 
+possible. In the early days of computing, computer systems replaced traditional manual systems that operated on paper forms. As these business processes were automated, many of the 
+original paper forms remained, either because no one thought to replace them or because it 
+was too expensive to do so. Instead, the business process continued to contain manual forms 
+that were taken to the computer center in batches to be typed into the computer system by a 
+data entry operator.
+Many business processes still operate this way today. For example, most organizations 
+have expense claim forms that are completed by hand and submitted to an accounting 
+department, which approves them and enters them into the system in batches. Th ere are 
+three problems with this approach. First, it is expensive because it duplicates work (the 
+form is fi lled out twice, once by hand, once by keyboard).12 Second, it increases processing 
+time because the paper forms must be physically moved through the process. Th ird, it 
+increases the cost and probability of error, because it separates the entry from the processing of information; someone might misread the handwriting on the input form, data 
+may be entered incorrectly, or the original input could contain an error that invalidates 
+the information.
+Most transaction-processing systems today are designed to capture data at its source. 
+Source data automation refers to using special hardware devices to automatically capture data 
+without requiring anyone to type it. Stores commonly use bar-code readers that automatically 
+scan products and enter data directly into the computer system. No intermediate formats 
+such as paper forms are used. Similar technologies include optical character recognition,
+which can read printed numbers and text (e.g., on checks), magnetic stripe readers, which can 
+read information encoded on magnetic strip (e.g., credit cards), and smart cards, which contain microprocessors, memory chips, and batteries (much like credit card–sized calculators). 
+As well as reducing the time and cost of data entry, these systems reduce errors because they 
+are far less likely to capture data incorrectly. Today, portable computers and scanners allow 
+data to be captured at the source even in mobile settings (e.g., air courier deliveries, use of 
+rental cars).
+Th ese automatic systems are not capable of collecting a lot of information, so the nextbest option is to capture data immediately from the source using a trained entry operator. 
+Many airline and hotel reservations, loan applications, and catalog orders are recorded 
+directly into a computer system, while the customer provides the operator with answers to 
+12 Or, in the case of the University of Georgia, three times: fi rst by hand on an expense form, a second time when it is 
+typed onto a new form for the “offi cial” submission because the accounting department refuses handwritten forms, 
+and, fi nally, when it is typed into the accounting computer system.
+390 Chapter 10 Human–Computer Interaction Layer Design
+questions. Some systems eliminate the operator altogether and allow users to enter their own 
+data. For example, many universities no longer accept paper-based applications for admissions; all applications are typed by students into electronic forms.
+Th e forms for capturing information (on a screen, on paper, etc.) should support the data 
+source. Th at is, the order of the information on the form should match the natural fl ow of 
+information from the data source, and data-entry forms should match paper forms used to 
+initially capture the data.
+Minimize Keystrokes Another important principle is to minimize keystrokes. Keystrokes 
+cost time and money, whether they are performed by a customer, user, or trained data-entry 
+operator. Th e system should never ask for information that can be obtained in another way 
+(e.g., by retrieving it from a database or by performing a calculation). Likewise, a system 
+should not require a user to type information that can be selected from a list; selecting reduces 
+errors and speeds entry.
+In many cases, some fi elds have values that oft en recur. Th ese frequent values should 
+be used as the default value for the fi eld so that the user can simply accept the value and not 
+have to retype it time and time again. Examples of default values are the current date, the area 
+code held by the majority of a company’s customers, and a billing address, which is based on 
+the customer’s residence. Most systems permit changes to default values to handle data-entry 
+exceptions as they occur.

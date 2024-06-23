@@ -1,0 +1,779 @@
+﻿whether it is for an internal system used only by employees of the fi rm or an external system 
+that is used by customers, will most certainly cause a system to fail. Th is is especially true 
+when you consider mobile and social media sites.
+NONFUNCTIONAL REQUIREMENTS AND HUMAN–COMPUTER 
+INTERACTION LAYER DESIGN
+Th e human–computer interaction layer is heavily infl uenced by nonfunctional requirements. In this chapter, we dealt with issues such as layout of the user interface, awareness 
+of content, aesthetics, user experience, and consistency. We also have provided information on how to design the navigation, inputs, and outputs of the user interface. Finally, 
+we have considered mobile computing, social media, immersive and multidimensional 
+environments, and international and cultural issues in user-interface design. None of 
+these have anything to do with the functional requirements of the system. However, if 
+they are ignored, the system can be unusable. As with the data management layer, there 
+are four primary types of nonfunctional requirements that can be important in designing 
+the human–computer interaction layer: operational, performance, security, and cultural 
+and political requirements.
+Operational requirements, such as choice of hardware and soft ware platforms, infl uence 
+the design of the human–computer interaction layer. For example, something as simple as the 
+number of buttons on a mouse (one, two, three, or more) changes the interaction that the user 
+will experience. Other operational nonfunctional requirements that can infl uence the design 
+of the human–computer interaction layer include system integration and portability. In these 
+cases, a Web-based solution may be required, which can eff ect the design; not all features of 
+a user interface can be implemented effi ciently and eff ectively on the Web. Th is can require 
+additional user interface design. Obviously, the entire area of mobile computing can eff ect the 
+success or failure of the system.
+Performance requirements, over time, have become less of an issue for this layer. 
+However, speed requirements are still paramount, especially with mobile computing. Most 
+users do not care for hitting return or clicking the mouse and having to take a coff ee break 
+while they are waiting for the system to respond, so effi ciency issues must be still addressed. 
+Depending on the user interface toolkit used, diff erent user interface components may be 
+required. Furthermore, the interaction of the human–computer interaction layer with the 
+other layers must be considered. For example, if the system response is slow, incorporating 
+more-effi cient data structures with the problem domain layer, including indexes in the tables 
+with the data management layer, and/or replicating objects across the physical architecture 
+layer could be required.
+Security requirements aff ecting the human–computer interaction layer deal primarily 
+with the access controls implemented to protect the objects from unauthorized access. 
+Most of these controls are enforced through the DBMS on the data management layer and 
+the operating system on the physical architecture layer. However, the human–computer 
+interaction layer design must include appropriate log-on controls and the possibility of 
+encryption.
+In addition to the international and cultural issues described previously, unstated 
+norms eff ect the cultural and political requirements that can eff ect the design of the human–
+computer interaction layer. Unstated norm requirements include having the date displayed 
+in the appropriate format (MM/DD/YYYY versus DD/MM/YYYY). For a system to be truly 
+useful in a global environment, the user interface must be customizable to address local 
+cultural requirements.
+Key Terms  411
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the six basic principles of user interface design.
+ Apply the use-case driven process described to design a user interface.
+ Describe the purpose of use scenarios in user interface design.
+ Describe how to use windows navigation diagrams, windows layout diagrams, storyboards, and user interface 
+prototypes during the design of a user interface.
+ Describe the diff erence between essential and real use cases.
+ Describe the importance and use of interface standards in user interface design.
+ Describe the four common approaches used to evaluate user interfaces.
+ Discuss the relationship between user interface design and requirements determination.
+ Design effi cient and eff ective navigation controls that are easy to use, prevent users from making mistakes, support 
+obvious approaches for users to recover from mistakes, and use a consistent grammar order.
+ Design effi cient and eff ective input mechanisms that capture the necessary information for the system.
+ Design effi cient and eff ective output that supports the users in their tasks.
+ Describe the unique issues related to designing user interfaces for mobile computing platforms.
+ Describe the unique navigation controls, input mechanisms, and outputs that mobile computing platforms possess.
+ Describe the unique issues related to designing user interfaces for social applications.
+ Describe the unique issues related to designing user interfaces for immersive and multidimensional applications.
+ Discuss the international and cultural issues that can aff ect the design of the human–computer interaction layer.
+ Describe how nonfunctional requirements may influence the actual design of the human–computer 
+interaction layer.
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+Th e design of the human–computer interaction layer is particularly important because to the 
+user, the interface is the system. Th e challenge for the team was ensuring that the interface 
+will display accurately on devices of various sizes. Next, they developed the WND for the 
+Mobile Scheduling phase of the system and developed the design prototypes for the interface. 
+Aft er completing these tasks, the team developed the navigation documentation artifacts.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+KEY TERMS
+Acknowledgment 
+message
+Action-object order
+Aesthetics
+Augmented reality (AR) 
+Bar-code reader
+Batch processing
+Batch report
+Bias
+Button
+Check box
+Check digit check
+Cognitive map 
+Collaboration
+Collectivism
+Color
+Combo box
+Command language
+Completeness check
+Confi rmation message
+Consistency
+Consistency check
+Content awareness
+Context
+Cultural diff erences
+2D space
+Database check
+Data-entry operator
+Default value
+Delay message
+Density
+Detail report
+412 Chapter 10 Human–Computer Interaction Layer Design
+Direct manipulation
+Drill-down capability 
+Drop-down list box
+Drop-down menu
+Ease of learning
+Ease of use
+Edit check
+Error message
+Essential use case
+Exception report
+Femininity
+Field
+Field label
+Form
+Format check
+Gamifi cation 
+GPS
+Grammar order
+Graph
+Graphical user interface 
+(GUI)
+Haptic feedback
+Help message
+Heuristic evaluation
+High context
+Hot key
+Image map
+Immersion 
+Individualism
+Information load
+Input mechanism
+Interactive evaluation
+Interface action
+Interface design 
+prototype
+Interface evaluation
+Interface icon
+Interface metaphor
+Interface object
+Interface standards
+Interface template
+Layout
+Low context
+Magnetic stripe readers
+Masculinity
+Menu
+Menu bar
+Mobile device
+Monochronic time
+Multilingual requirements
+Multidimensional 
+ information visualization
+Natural language
+Navigation controls
+Navigation mechanism
+Nonimmersive 3D
+Number box
+Object-action order
+Object recognition
+Occlusion 
+Online processing
+On-screen list box
+Optical character 
+recognition
+Output mechanism
+Polychronic time
+Pop-up menu
+Power distance
+Pull
+Push
+Radio button
+Range check
+Real-time information
+Real-time report
+Real use case
+Report
+Screen
+Selection box
+Sequence diagrams
+Slider
+Smart card
+Smartphone
+Social media
+Source data automation
+Speed of messages
+State
+Stereotype
+Storyboard
+Summary report
+System interface
+Tab menu
+Tablet
+Text box
+Th ree-clicks rule
+Time
+Toolbar
+Touch screens
+Transaction processing
+Transition
+Turnaround document
+Uncertainty avoidance
+Usability testing
+Use case
+Use scenario
+User experience
+User interface
+User interface prototype
+Validation
+Virtual reality (VR)
+Wayfi nding
+Walkthrough evaluation
+White space
+Window
+Windows layout diagram
+Window navigation 
+diagram (WND)
+QUESTIONS
+ 1. Explain three important user interface design 
+ principles.
+ 2. What are three fundamental parts of most user interfaces?
+ 3. Why is content awareness important?
+ 4. What is white space, and why is it important?
+ 5. Under what circumstances should densities be low? 
+High?
+ 6. How can a system be designed to be used by both 
+experienced and fi rst-time users?
+ 7. Why is consistency in design important? Why can too 
+much consistency cause problems?
+ 8. How can diff erent parts of the interface be consistent?
+ 9. Describe the basic process of user interface design.
+ 10. What are use cases, and why are they important?
+ 11. What is a WND, and why is it used?
+12. Why are interface standards important?
+13. Explain the purpose and contents of interface metaphors, interface objects, interface actions, interface 
+icons, and interface templates.
+14. Why do we prototype the user interface design?
+15. Why is it important to perform an interface evaluation 
+before the system is built?
+16. Compare and contrast the four types of interface 
+ evaluation.
+17. Under what conditions is heuristic evaluation justifi ed?
+18. What are Krug’s three design principles?
+19. Describe three basic principles of navigation design.
+20. How can you prevent mistakes?
+21. Explain the diff erences between object-action order 
+and action-object order.
+Exercises  413
+22. Describe four types of navigation controls
+23. Why are menus the most commonly used navigation 
+control?
+24. Compare and contrast four types of menus.
+25. Under what circumstances would you use a dropdown menu versus a tab menu?
+26. Under what circumstances would you use an image 
+map versus a simple list menu?
+27. Describe fi ve types of messages.
+28. What are the key factors in designing an error message?
+29. What is context-sensitive help? Does your word processor have context-sensitive help?
+30. How do an essential use case and a real use case diff er?
+31. What is the relationship between essential use cases 
+and use scenarios?
+32. What is the relationship between real use cases and 
+use scenarios?
+33. Explain three principles in the design of inputs.
+34. Compare and contrast batch processing and online 
+processing. Describe one application that would 
+use batch processing and one that would use online 
+processing.
+35. Why is capturing data at the source important?
+36. Describe four devices that can be used for source data 
+automation.
+37. Describe fi ve types of inputs.
+38. Why is input validation important?
+39. Describe fi ve types of input validation methods.
+40. Explain three principles in the design of outputs.
+41. Describe fi ve types of outputs.
+42. What do you think are three common mistakes that 
+novice analysts make in navigation design?
+43. What do you think are three common mistakes that 
+novice analysts make in input design?
+44. What do you think are three common mistakes that 
+novice analysts make in output design?
+45. What are the six challenges you face when developing 
+mobile applications?
+46. What are the six suggestions to address the mobile 
+computing challenges?
+47. What are the unique navigation controls, input mechanisms, and outputs that mobile computing supports?
+48. With regard to social media, what is the diff erence 
+between “push” and “pull” approaches to interacting 
+with customers?
+49. Why is it important to keep your social media sites 
+synced?
+50. How can you keep your customers engaged with your 
+social media sites?
+51. Why do people play games?
+52. What is gamifi cation?
+53. What is occlusion? Why is it an issue when developing 
+multidimensional information visualizations? Augmented reality systems? Virtual reality systems?
+54. What is augmented reality?
+55. Name some of potential business applications of augmented reality.
+56. What is virtual reality?
+57. Name some of potential business applications of virtual reality.
+58. When developing a virtual reality system, what are 
+some of the issues that need to be addresses?
+59. What is a cognitive map? 
+60. What are some of the multilingual issues that you may 
+face when developing for a global audience?
+61. How important is the proper use of color when 
+developing websites for a global audience? Give some 
+examples of potential pitfalls that you could run into.
+62. Name the three cultural dimensions that are relevant 
+to user interface design identifi ed by Hall. Why are 
+they relevant?
+63. Name the four cultural dimensions that are relevant to 
+user interface design identifi ed by Hofstede. Why are 
+they relevant?
+64. What are some of the nonfunctional requirements 
+that can infl uence the design of the human–computer 
+interaction layer?
+EXERCISES
+A. Develop two use scenarios for a website that sells some 
+retail products (e.g., books, music, clothes).
+B. Create a storyboard for a website that sells some retail 
+products (e.g., books, music, clothes).
+C. Draw a WND for a website that sells some retail products (e.g., books, music, clothes).
+D. Create a windows layout diagram for the home page 
+of a website that sells some retail products (e.g., books, 
+music, clothes).
+E. Describe the primary components of the interface 
+standards for a website that sells some retail products 
+(metaphors, objects, actions, icons, and template).
+414 Chapter 10 Human–Computer Interaction Layer Design
+F. Using the Web, identify a set of games that are useful 
+in some aspect of business, e.g., advertising or training.
+G. Using the Web, identify a set of multidimensional 
+information visualizations that are used to support 
+business decision-making.
+H. Using the Web, fi nd businesses that are currently 
+using augmented and virtual reality systems.
+I. For the A Real Estate Inc. problem in Chapter 4 (exercises I, J, and K), Chapter 5 (exercises P and Q), Chapter 6 (exercise D), Chapter 7 (exercise A), Chapter 8 
+(exercise A), and Chapter 9 (exercise L):
+ 1. Develop two use scenarios.
+ 2. Draw a WND.
+ 3. Design a storyboard.
+J. Based on your solution to exercise I:
+ 1. Create windows layout diagrams for the interface 
+design.
+ 2. Develop a real use case.
+K. For the A Video Store problem in Chapter 4 (exercises 
+L, M, and N), Chapter 5 (exercises R and S), Chapter 6 
+(exercise E), Chapter 7 (exercise B), Chapter 8 (exercise B), and Chapter 9 (exercise M):
+ 1. Develop two use scenarios.
+ 2. Draw a WND.
+ 3. Design a storyboard.
+L. Based on your solution to exercise K:
+ 1. Create windows layout diagrams for the interface 
+design.
+ 2. Develop a real use case.
+M. For the gym membership problem in Chapter 4 
+ (exercises O, P, and Q), Chapter 5 (exercises T and U), 
+Chapter 6 (exercise F), Chapter 7 (exercise C), Chapter 8 
+(exercise C), and Chapter 9 (exercise N):
+ 1. Develop two use scenarios.
+ 2. Draw a WND.
+ 3. Design a storyboard.
+N. Based on your solution to exercise M:
+ 1. Create windows layout diagrams for the interface 
+design.
+ 2. Develop a real use case.
+O. For the Picnics R Us problem in Chapter 4 (exercises 
+R, S, and T), Chapter 5 (exercises V and W), Chapter 6 
+(exercise G), Chapter 7 (exercise D), Chapter 8 (exercise D), and Chapter 9 (exercise O):
+ 1. Develop two use scenarios.
+ 2. Draw a WND.
+ 3. Design a storyboard.
+P. Based on your solution to exercise O:
+ 1. Create windows layout diagrams for the interface 
+design.
+ 2. Develop a real use case.
+Q. For the Of-the-Month-Club problem in Chapter 4 
+(exercises U, V, and W), Chapter 5 (exercises X and 
+Y), Chapter 6 (exercise H), Chapter 7 (exercise E), 
+ Chapter 8 (exercise E), and Chapter 9 (exercise N):
+ 1. Develop two use scenarios.
+ 2. Draw a WND.
+ 3. Design a storyboard.
+R. Based on your solution to exercise Q:
+ 1. Create windows layout diagrams for the interface 
+design.
+ 2. Develop a real use case.
+S. Create a user interface design for a mobile solution 
+for the:
+ 1. A Real Estate Inc. problem.
+ 2. A Video Store problem.
+ 3. Gym membership problem.
+ 4. Picnics R Us problem.
+ 5. Of-the-Month-Club problem.
+T. How would your answers change to exercises I through 
+S if you were developing for a global marketplace?
+MINICASES
+1. Tots to Teens is a catalog retailer specializing in 
+children’s clothing. A project has been under way 
+to develop a new order entry system for the company’s catalog clerks. Th e old system had a character-based user interface that corresponded to the 
+system’s COBOL underpinnings. Th e new system will 
+feature a graphical user interface more in keeping with 
+up-to-date PC products in use today. Th e company 
+hopes that this new user interface will help reduce the 
+turnover it has experienced with its order entry clerks. 
+Many newly hired order entry staff found the old system very diffi cult to learn and were overwhelmed by 
+the numerous mysterious codes that had to be used to 
+communicate with the system.
+ A user interface walkthrough evaluation was 
+scheduled for today to give the user a fi rst look at 
+the new system’s interface. Th e project team was 
+careful to invite several key users from the order 
+Minicases  415
+entry department. In particular, Norma was included 
+because of her years of experience with the order 
+entry system. Norma was known to be an informal 
+leader in the department; her opinion infl uenced 
+many of her associates. Norma had let it be known 
+that she was less than thrilled with the ideas she had 
+heard for the new system. Owing to her experience 
+and good memory, Norma worked very eff ectively 
+with the character-based system and was able to 
+breeze through even the most convoluted transactions with ease. Norma had trouble suppressing a 
+sneer when she heard talk of such things as “icons” 
+and “buttons” in the new user interface.
+ Cindy was also invited to the walkthrough because 
+of her infl uence in the order entry department. Cindy 
+has been with the department for just one year, but 
+she quickly became known because of her successful 
+organization of a sick child daycare service for the 
+children of the department workers. Sick children are 
+the number-one cause of absenteeism in the department, and many of the workers could not aff ord to 
+miss workdays. Never one to keep quiet when a situation needed improvement, Cindy has been a vocal 
+supporter of the new system.
+ a. Drawing upon the design principles presented in 
+the text, describe the features of the user interface 
+that will be most important to experienced users 
+like Norma.
+ b. Drawing upon the design principles presented in 
+the text, describe the features of the user interface 
+that will be most important to novice users like 
+Cindy.
+2. Th e members of a systems development project team 
+have gone out for lunch together, and as oft en happens, the conversation turns to work. Th e team has 
+been working on the development of the user interface design, and so far, work has been progressing 
+smoothly. Th e team should be completing work on 
+the interface prototypes early next week. A combination of storyboards and language prototypes has 
+been used in this project. Th e storyboards depict the 
+overall structure and fl ow of the system, but the team 
+developed language prototypes of the actual screens 
+because they felt that seeing the actual screens would 
+be valuable for the users.
+ Chris (the youngest member of the project team): 
+I read an article last night about a really cool way to 
+evaluate a user interface design. It’s called usability testing, and it’s done by all the major software 
+vendors. I think we should use it to evaluate our 
+interface design.
+ Heather (systems analyst): I’ve heard of that, too, 
+but isn’t it really expensive?
+ Mark (project manager): I’m afraid it is expensive 
+and I’m not sure we can justify the expense for this 
+project.
+ Chris: But we really need to know that the interface 
+works. I thought this usability testing technique would 
+help us prove we have a good design.
+ Amy (systems analyst): It would, Chris, but there 
+are other ways too. I assumed we’d do a thorough 
+walkthrough with our users and present the interface 
+to them at a meeting. We can project each interface 
+screen so that the users can see it and give us their 
+reaction. Th is is probably the most effi cient way to get 
+the users’ response to our work.
+ Heather: Th at’s true, but I’d sure like to see the 
+users sit down and work with the system. I’ve always 
+learned a lot by watching what they do, seeing where 
+they get confused, and hearing their comments and 
+feedback.
+ Ryan (systems analyst): It seems to me that we’ve 
+put so much work into this interface design that all we 
+really need to do is review it ourselves. Let’s just make 
+a list of the design principles we’re most concerned 
+about and check it ourselves to make sure we’ve followed them consistently. If we have, we should be fi ne. 
+We want to get moving on the implementation, you 
+know.
+ Mark: Th ese are all good ideas. It seems like we’ve 
+all got a diff erent view of how to evaluate the interface 
+design. Let’s try to sort out the technique that’s best for 
+our project.
+ Develop a set of guidelines that can help a project 
+team like this one select the most appropriate interface 
+evaluation technique for their project.
+ 3. Th e menu structure for Holiday Travel Vehicle’s 
+ existing character-based system is shown here. Develop 
+and prototype a new interface design for the system’s 
+ functions using a graphical user interface. Also, develop 
+a set of real use cases for your new interface. Assume 
+the new system will need to include the same functions 
+as those shown in the menus provided. Include any 
+messages that will be produced as a user interacts with 
+your interface (error, confi rmation, status, etc.). Also, 
+prepare a written summary that describes how your 
+interface implements the principles of good interface 
+design as presented in the textbook.
+416 Chapter 10 Human–Computer Interaction Layer Design
+Holiday Travel Vehicles
+Main Menu
+1 Sales Invoice
+2 Vehicle Inventory
+3 Reports
+4 Sales Staff
+Type number of menu selection here:____
+Holiday Travel Vehicles
+Sales Invoice Menu
+1 Create Sales Invoice
+2 Change Sales Invoice
+3 Cancel Sales Invoice
+Type number of menu selection here:____
+Holiday Travel Vehicles
+Vehicle Inventory Menu
+1 Create Vehicle Inventory Record
+2 Change Vehicle Inventory Record
+3 Delete Vehicle Inventory Record
+Type number of menu selection here:____
+Holiday Travel Vehicles
+Reports Menu
+1 Commission Report
+2 RV Sales by Make Report
+3 Trailer Sales by Make Report
+4 Dealer Options Report
+Type number of menu selection here:____
+Holiday Travel Vehicles
+Sales Staff Maintenance Menu
+1 Add Salesperson Record
+2 Change Salesperson Record
+3 Delete Salesperson Record
+Type number of menu selection here:____
+4. One aspect of the new system under development at 
+Holiday Travel Vehicles will be the direct entry of the 
+sales invoice into the computer system by the salesperson as the purchase transaction is being completed. 
+In the current system, the salesperson fi lls out a paper 
+form (shown on the next page).
+ Design and prototype an input screen that will permit the salesperson to enter all the necessary information for the sales invoice. Th e following information 
+may be helpful in your design process. Assume that 
+Holiday Travel Vehicles sells recreational vehicles and 
+trailers from four diff erent manufacturers. Each manufacturer has a fi xed number of names and models of 
+RVs and trailers.
+ For the purposes of your prototype, use this format:
+ Mfg-A Name-1 Model-X
+ Mfg-A Name-1 Model-Y
+ Mfg-A Name-1 Model-Z
+ Mfg-B Name-1 Model-X
+ Mfg-B Name-1 Model-Y
+ Mfg-B Name-2 Model-X
+ Mfg-B Name-2 Model-Y
+ Mfg-B Name-2 Model-Z
+ Mfg-C Name-1 Model-X
+ Mfg-C Name-1 Model-Y
+ Mfg-C Name-1 Model-Z
+ Mfg-C Name-2 Model-X
+ Mfg-C Name-3 Model-X
+ Mfg-D Name-1 Model-X
+ Mfg-D Name-2 Model-X
+ Mfg-D Name-2 Model-Y
+ Also, assume there are ten diff erent dealer options that 
+could be installed on a vehicle at the customer’s request. 
+Th e company currently has ten salespeople on staff .
+Minicases  417
+5. Refer to the Professional and Scientifi c Staff Management (PSSM) Minicase in Chapters 4, 6, 7, 8, and 9.
+ a. Develop two use scenarios, draw a WND, and 
+design a storyboard.
+ b. Based on your answers to part a, create windows 
+layout diagrams for the user interface and develop 
+a set of real use cases for the user interface.
+ c. How would your user interface design have to be 
+modifi ed if you were to deploy it on a tablet? What 
+about a smartphone?
+ d. What, if any, social media sites should PSSM consider?
+ e. How would your answers change if you were developing the system for a global audience?
+Holiday Travel Vehicles
+Sales Invoice Invoice #: ____________
+ Invoice Date: _________
+ Customer Name: _____________________________________
+ Address: _____________________________________
+ City: _____________________________________
+ State: _____________________________________
+ Zip: _____________________________________
+ Phone: _____________________________________
+New RV/TRAILER 
+ (circle one) Name: _____________________________________
+ Model: _____________________________________
+Serial #: ______________________ Year: _________
+ Manufacturer: _____________________________________
+Trade-in RV/TRAILER 
+ (circle one) Name: _____________________________________
+ Model: _____________________________________
+ Year: _____________________________________
+ Manufacturer: _____________________________________
+Options: Code Description Price
+ Vehicle Base Cost: ________________ 
+ Trade-in Allowance: ________________ (Salesperson Name)
+ Total Options: ________________
+ Tax: ________________
+ License Fee: ________________ 
+ Final Cost: ________________ (Customer Signature)
+418
+CHAPTER 11
+Physical Architecture 
+Layer Design
+An important component of the design of an information system is the design of the 
+physical architecture layer, which describes the system’s hardware, soft ware, and network 
+environment. Th e physical architecture layer design fl ows primarily from the nonfunctional 
+requirements, such as operational, performance, security, cultural, and political requirements. Th e deliverable from the physical architecture layer design includes the architecture 
+and the hardware and soft ware specifi cation.
+OBJECTIVES
+■ Understand the diff erent physical architecture components.
+■ Understand server-based, client-based, and client–server physical architectures.
+■ Be familiar with cloud computing, ubiquitous computing and the Internet of things 
+(IoT), and Green IT.
+■ Be able to create a network model using a deployment diagram.
+■ Be familiar with how to create a hardware and soft ware specifi cation.
+■ Understand how operational, performance, security, cultural, and political requirements 
+aff ect the design of the physical architecture layer.
+INTRODUCTION
+In today’s environment, most information systems are spread across multiple computers. A 
+Web-based system, for example, runs in the browser on a desktop computer but interacts 
+with the Web server (and possibly other computers) over the Internet. A system that operates 
+completely inside a company’s network may have a Visual Basic program installed on one 
+computer but interact with a database server elsewhere on the network. Th erefore, an important step of design is the creation of the physical architecture layer design, the plan for how 
+the system will be distributed across the computers, and what hardware and soft ware will be 
+used for each computer.
+In many cases, systems are built to use the existing hardware and soft ware in the organization. Th erefore, the current architecture restricts the choice. Other factors such as corporate 
+standards, existing site-licensing agreements, and product–vendor relationships also can 
+mandate what architecture, hardware, and soft ware the project team must use. However, 
+many organizations now have a variety of infrastructures available or are openly looking for 
+pilot projects to test new architectures that enable a project team to select one on the basis of 
+other important factors.
+Elements of the Physical Architecture Layer  419
+Designing the physical architecture layer can be quite diffi cult; therefore, many organizations hire expert consultants or assign very experienced analysts to the task.1 In this chapter, 
+we examine the key factors in physical architecture layer design, but it is important to remember that it takes lots of experience to do it well. Th e nonfunctional requirements developed 
+during analysis (see Chapter 3) play a key role in physical architecture layer design. Th ese 
+requirements are reexamined and refi ned into more-detailed requirements that infl uence the 
+system’s architecture. 
+ELEMENTS OF THE PHYSICAL ARCHITECTURE LAYER
+Th e objective of designing the physical architecture layer is to determine what parts of the 
+application soft ware will be assigned to what hardware. Although there are numerous ways 
+the soft ware components can be placed on the hardware components, there are three principal application architectures in use today: server-based architectures, client-based architectures, and client–server architectures.
+Architectural Components
+Th e major architectural components of any system are the soft ware and the hardware. Th e 
+major soft ware components of the system being developed have to be identifi ed and then 
+allocated to the various hardware components on which the system will operate. Each of these 
+components can be combined in a variety of diff erent ways.
+All soft ware systems can be divided into four basic functions. Th e fi rst is data storage (associated with the object persistence located on the data management layer—see Chapter 9). Most 
+application programs require data to be stored and retrieved, whether the information is a small 
+fi le such as a memo produced by a word processor or a large database that stores an organization’s accounting records. Th ese are the data documented in the structural model (CRC cards 
+and class diagrams). Th e second function is data access logic (associated with the data access and 
+manipulation classes located on the data management layer—see Chapter 9), the processing 
+required to access data, which oft en means database queries in SQL (structured query language).
+Th e third function is the application logic (located on the problem domain layer—see Chapters 4 
+through 8), which can be simple or complex, depending on the application. Th is is the logic documented in the functional (activity diagrams and use cases) and behavioral models (sequence, 
+communication, and behavioral state machines). Th e fourth function is the presentation logic
+(located on the human–computer interaction layer—see Chapter 10), the presentation of information to the user, and the acceptance of the user’s commands (the user interface). Th ese four 
+functions (data storage, data access logic, application logic, and presentation logic) are the basic 
+building blocks of any application.
+Th e three primary hardware components of a system are client computers, servers, and the 
+network that connects them. Client computers are the input/output devices employed by the user 
+and are usually desktop or laptop computers, but they can also be handheld devices, cell phones, 
+special-purpose terminals, and so on. Servers are typically larger computers that are used to store 
+soft ware and hardware that can be accessed by anyone who has permission. Th e network that 
+connects the computers can vary in speed from a slow cell phone, to medium-speed always-on 
+frame relay networks, to fast always-on broadband connections such as cable modem, DSL, or 
+T1 circuits, to high-speed always-on ethernet, T3, or ATM circuits.2
+1 For more information on the physical architecture layer, see Irv Englander, Th e Architecture of Computer Hardware 
+and Systems Soft ware: An Information Technology Approach, 5th Ed. (Hoboken, NJ: Wiley, 2014); Kalani Kirk Hausman 
+and Susan L. Cook, IT Architecture for DummiesTM (Hoboken, NJ: Wiley, 2011).
+2 For more information on networks, see Alan Dennis, Networking in the Internet Age (New York: Wiley, 2002).
+420 Chapter 11 Physical Architecture Layer Design
+Server-Based Architectures
+Th e very fi rst computing architectures were server-based architectures, with the server performing all four functions. Th e clients enabled users to send and receive messages to and from 
+the server. Th e clients merely captured keystrokes and sent them to the server for processing 
+and accepted instructions from the server on what to display (see Figure 11-1).
+Th is very simple architecture oft en works very well. Application soft ware is developed 
+and stored on one computer, and all data are on the same computer. Th ere is one point of 
+control, because all messages fl ow through the one central server. Th e fundamental problem 
+with server-based networks is that the server must process all messages. As the demands for 
+more and more applications grow, many server computers become overloaded and unable 
+to quickly process all the users’ demands. Response time becomes slower, and network 
+managers are required to spend increasingly more money to upgrade the server computer. 
+Unfortunately, upgrades come in large increments and are expensive; it is diffi cult to upgrade 
+“a little.”
+Client-Based Architectures
+With client-based architectures, the clients are personal computers on a local area network 
+(LAN), and the server computer is a server on the same network. Th e application soft ware on 
+the client computers is responsible for the presentation logic, the application logic, and the 
+data access logic; the server simply stores the data (see Figure 11-2).
+FIGURE 11-1
+Server-Based 
+Architecture
+Server Host
+(mainframe computer) Client /(terminal)
+Presentation logic
+Application logic
+Data access logic
+Data storage
+FIGURE 11-2
+Client-Based 
+Architectures
+Client
+(microcomputer)
+Presentation logic
+Application logic
+Data access logic
+Server
+(microcomputer)
+Data storage
+Elements of the Physical Architecture Layer  421
+Th is simple architecture also oft en works well. However, as the demands for more and 
+more network applications grow, the network circuits can become overloaded. Th e fundamental problem in client-based networks is that all data on the server must travel to the 
+client for processing. For example, suppose the user wishes to display a list of all employees 
+with company life insurance. All the data in the database must travel from the server where 
+the database is stored over the network to the client, which then examines each record to see 
+whether it matches the data requested by the user. Th is can overload both the network and 
+the power of the client computers.
+Client–Server Architectures
+Most organizations today use client–server architectures, which attempt to balance the 
+processing between the client and the server by having both do some of the application 
+functions. In these architectures, the client is responsible for the presentation logic, whereas 
+the server is responsible for the data access logic and data storage. Th e application logic 
+may reside on either the client or the server or be split between both (see Figure 11-3). Th e 
+client shown in Figure 11-3 can be referred to as a thick, or fat, client if it contains the bulk 
+of application logic. A current practice is to create client–server architectures using thin clients because there is less overhead and maintenance in supporting thin-client applications. 
+For example, many Web-based systems are designed with the Web browser performing 
+presentation, with only minimal application logic using programming languages like Java 
+and the Web server having the application logic, data access logic, and data storage.
+Client–server architectures have four important benefi ts. First, they are scalable. Th at 
+means it is easy to increase or decrease the storage and processing capabilities of the servers. 
+If one server becomes overloaded, you simply add another server so that many servers are 
+used to perform the application logic, data access logic, or data storage. Th e cost to upgrade 
+is much more gradual, and you can upgrade in smaller steps rather than spending hundreds 
+of thousands to upgrade a mainframe server.
+Client–server architectures can support many diff erent types of clients and servers. It is 
+possible to connect computers that use diff erent operating systems so that users can choose 
+which type of computer they prefer (e.g., combining both Windows computers and Apple 
+Macintoshes on the same network). We are not locked into one vendor, as is oft en the case with 
+server-based networks. Middleware is a type of system soft ware designed to translate between 
+diff erent vendors’ soft ware. Middleware is installed on both the client computer and the server 
+computer. Th e client soft ware communicates with the middleware, which can reformat the 
+message into a standard language that can be understood by the middleware assisting the 
+server soft ware.
+For thin-client server architectures that use Internet standards, it is simple to clearly 
+separate the presentation logic, the application logic, and the data access logic and design sothat each is somewhat independent. For example, the presentation logic can be designed in 
+HTML or XML to specify how the page will appear on the screen (see Chapter 10). Simple 
+program statements are used to link parts of the interface to specifi c application logic modules that perform various functions. Th ese HTML or XML fi les defi ning the interface can be 
+changed without aff ecting the application logic. Likewise, it is possible to change the application logic without changing the presentation logic or the data, which are stored in databases 
+and accessed using SQL commands.
+Finally, because no single server computer supports all the applications, the network is 
+generally more reliable. Th ere is no central point of failure that will halt the entire network if 
+it fails, as there is in server-based computing. If any one server fails in a client–server environment, the network can continue to function using all the other servers (but, of course, any 
+applications that require the failed server will not work).
+Client–server architectures also have some critical limitations, the most important of 
+which is its complexity. All applications in client–server computing have two parts, the soft -
+ware on the client and the soft ware on the server. Writing this soft ware is more complicated 
+than writing the traditional all-in-one soft ware used in server-based architectures. Updating 
+the network with a new version of the soft ware is more complicated, too. In server-based 
+architectures, there is one place where application soft ware is stored; to update the soft ware, 
+we simply replace it there. With client–server architectures, we must update all clients and 
+all servers.
+Much of the debate about server-b

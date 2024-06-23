@@ -1,0 +1,607 @@
+﻿Use case name: Create customer account.
+Scenario: Create online customer account.
+Triggering event: New customer wants to set up account online.
+Brief description: Online customer creates customer account by entering basic information
+and then following up with one or more addresses and a credit or debit card.
+1. Customer indicates desire to
+ create customer account and
+ enters basic customer information.
+2. Customer enters one or more
+ addresses.
+3. Customer enters credit/debit card
+ information.
+1.1 System creates a new customer.
+1.2 System prompts for customer
+ addresses.
+2.1 System creates addresses.
+2.2 System prompts for credit/debit
+ card.
+3.1 System creates account.
+3.2 System verifies authorization
+ for credit/debit card.
+3.3 System associates customer,
+ address, and account.
+3.4 System returns valid customer
+ account details.
+Flow of activities: Actor System
+Actors: Customer.
+Related use cases: Might be invoked by the Check out shopping cart use case.
+Stakeholders: Accounting, Marketing, Sales.
+Preconditions: Customer Account subsystem must be available.
+Credit/debit authorization services must be available.
+Postconditions: Customer must be created and saved.
+One or more Addresses must be created and saved.
+Credit/debit card information must be validated.
+Account must be created and saved.
+Address and Account must be associated with Customer.
+Exception
+conditions:
+1.1 Basic customer data are incomplete.
+2.1 The address isn’t valid.
+3.2 Credit/debit information isn’t valid.
+Figure 5-2 Fully developed use case description for Create customer account
+© CengageLearning®
+scenarios or use case instances
+a unique set of internal activities within 
+a use case
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 135
+customer account by phone scenario. Each flow of activities is a valid sequence 
+for the Create customer account use case. Thus, a scenario is a unique set of internal activities within a use case and represents a unique path through the use case.
+In larger or more formal projects, a unique identifier can also be added for 
+the use case, with an extension identifying the particular scenario. Sometimes, 
+the name of the system developer who produced the form is added.
+The third compartment identifies the event that triggers the use case. The 
+fourth compartment is a brief description of the use case. Analysts may just 
+duplicate the brief description they constructed earlier here. The fifth compartment identifies the actor or actors. Implied in all use cases is a person who uses 
+the system called an actor. Actors are shown as stick figures on use case diagrams. An actor is always outside the automation boundary of the system but 
+may be part of the manual portion of the system. By defining actors that way—
+as those who interact with the automated part of the system—you can more precisely define the exact interactions to which the automated system must respond.
+The sixth compartment identifies other use cases and the way they are 
+related to this use case. These cross-references to other use cases help document 
+all aspects of the users’ requirements.
+The seventh compartment identifies stakeholders who are interested parties 
+other than specific actors. They might be users who don’t actually invoke the 
+use case but who have an interest in results produced from the use case. For 
+example, in Figure 5-2, the Accounting Department is interested in accurately 
+capturing billing and credit card information. Although no one in the Marketing Department actually creates new customer accounts, they do perform statistical analysis of the new customers and create marketing promotions. Thus, 
+marketers have an interest in the data that are captured and stored from the 
+Create customer account use case. The Sales Department is interested in having 
+an easy-to-use and attractive user interface to ensure sales aren’t lost because of 
+poor user experience. Considering all the stakeholders is important for system 
+developers so they ensure they have understood all requirements.
+The eighth and ninth compartments—preconditions and postconditions—
+provide critical information about the state of the system before and after the 
+use case executes. Preconditions identify what the state of the system must be 
+for the use case to begin, including what objects must already exist, what information must be available, and even the condition of the actor prior to beginning 
+the use case.
+Postconditions identify what must be true upon completion of the use 
+case. Most important, they indicate what new objects are created or updated 
+by the use case and how objects need to be associated. The postconditions are 
+important for two reasons. First, they form the basis for stating the expected 
+results for test cases that will be used for testing the use case after it is implemented. For example, in the Create customer account use case, it is important 
+to test that a customer record, address record, and account record were successfully added to the database. Second, the objects in postconditions indicate 
+which objects involved in the use case are important for design. You will see in 
+Chapters 12 and 13 that the design of a use case includes identifying and assigning responsibilities to objects that collaborate to complete the use case. In this 
+situation, a customer, one or more addresses, and an account object collaborate 
+to create a new customer account.
+The tenth compartment in the template describes the detailed flow of activities of the use case. In this instance, Figure 5-2 shows a two-column version, 
+identifying the steps performed by the actor and the responses required by the 
+system. The item numbers help identify the sequence of the steps. Alternative 
+activities and exception conditions are described in the eleventh compartment. 
+The numbering of exception conditions also helps tie the exceptions to specific 
+steps in the flow of activities.
+preconditions conditions that must be 
+true before a use case begins
+postconditions what must be true upon 
+the successful completion of a use case
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+136 PART 2 ■ Systems Analysis Activities
+Figure 5-3 shows the use case description for the RMO use case Ship items.
+The scenario for this description assumes they are shipping a new sale rather 
+than back-ordered items from a previous sale. Notice that the use case description minimizes the description of manual work that is done in conjunction with 
+shipping items. Some analysts put that detail in, but others don’t because the 
+emphasis is on the interaction with the automated part of the application. In this 
+use case, the preconditions show what existing objects must already exist before 
+the use case can execute. They can’t ship items that aren’t part of an existing 
+sale for a customer. The preconditions show that this use case will involve a 
+customer, sale, and sale items objects. The postconditions again indicate what 
+to look for when stating the expected results for a test case and show the objects 
+that will need to collaborate in the design. This use case will also involve a shipper, shipment, shipped items, and back-ordered items.
+Actors: Shipping clerk.
+Preconditions: Customer and address must exist.
+Sale must exist.
+Sale items must exist.
+1. Shipping requests sale and sale
+ item information.
+2. Shipping assigns shipper.
+3. For each available item, shipping
+ records item is shipped.
+4. For each unavailable item,
+ shipping records back order.
+5. Shipping requests shipping label
+ supplying package size and
+ weight.
+1.1 System looks up sale and
+ returns customer, address, sale,
+ and sales item information.
+2.1 System creates shipment and
+ associates it with the shipper.
+3.1 System updates sale item as
+ shipped and associates it with
+ shipment. 
+4.1 System updates sale item as
+ on back order.
+5.1 System produces shipping label
+ for shipment.
+5.2 System records shipment cost.
+Related use cases None.
+Stakeholders: Sales, Marketing, Shipping, warehouse manager.
+Triggering event: Shipping is notified of a new sale to be shipped. 
+Brief description: Shipping retrieves sale details, finds each item and records it is shipped,
+records which items are not available, and sends shipment. 
+Scenario: Ship items for a new sale.
+Use case name: Ship items.
+Flow of activities: Actor System
+Postconditions: Shipment is created and associated with shipper.
+Shipped sale items are updated as shipped and associated with the shipment.
+Unshipped items are marked as on back order.
+Shipping label is verified and produced.
+Exception
+conditions:
+2.1 Shipper is not available to that location, so select another.
+3.1 If order item is damaged, get new item and updated item quantity.
+3.1 If item bar code isn’t scanning, shipping must enter bar code manually.
+5.1 If printing label isn’t printing correctly, the label must be addressed
+ manually.
+Figure 5-3 Fully developed use case description for Ship items
+© CengageLearning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 137
+■ Activity Diagrams for Use Cases
+Another way to document a use case is with a UML activity diagram. In 
+Chapter 2, you learned about activity diagrams as a form of workflow diagram 
+that might cover several use cases. Activity diagrams are also used to document 
+the flow of activities for one use case.
+Figure 5-4 is an activity diagram that documents the flow of activities for 
+the Create customer account use case. Sometimes, an activity diagram can take 
+the place of the flow of activities section of a use case description, and sometimes, it is created to supplement the use case description. In this example, there 
+are two swimlanes: one for the customer and one for the system. The customer 
+has three activities, and the system has five activities.
+An example is shown in Figure 5-5 for the Ship items use case previously seen in Figure 5-3. One of the strengths of activity diagrams is that it 
+provides a more graphical view of the flow of activities. Figure 5-5 illustrates 
+both a repeating set of steps, that is for each SaleItem in the Sale, and a decision point to choose which set of steps to perform. Even though this flow is 
+described by the use case description, it is more evident in the activity diagram. Figure 5-5 illustrates a correct use of the beginning and ending synchronization bars and the decision diamond. Remember that synchronization 
+Customer System
+Request account
+Enter addresses
+Enter credit info
+Create customer
+Create addresses
+Create account
+Verify credit info
+Return account
+details
+Figure 5-4 Activity diagram for 
+Create customer account showing 
+alternate way to model the flow of 
+activities
+© CengageLearning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+138 PART 2 ■ Systems Analysis Activities
+bars can be used either for parallel concurrent paths, or for beginning and 
+ending loops. In this example, we see a loop and inside the loop a decision 
+point to initiate independent paths, which are later rejoined at the ending 
+synchronization bar.
+Activity diagrams are helpful when the flow of activities for a use case is 
+complex. The use case Fill shopping cart is complex in that three other use 
+cases might be invoked while adding items to the shopping cart. For example, 
+the actor might search for a product and then look at product reviews before 
+adding the item to the cart. Once an item is added, the actor might search for 
+and view available accessories and then add one or more to the cart. The activity diagram shown in Figure 5-6 shows the Fill shopping cart use case flow 
+of activities. The shaded ovals show the other use cases that are invoked while 
+filling the shopping cart. The activities of Fill shopping cart go in between the 
+other use cases. For example, after invoking Search for product and then Look 
+at product reviews, the actor might start Fill shopping cart to select options 
+and quantities and add it to the cart. Then the actor might switch to Search and 
+view accessories before continuing Fill shopping cart to add an accessory. The 
+activity diagram can be used to show a richer user experience in this way.
+Shipping clerk System
+Lookup Sale with
+SaleItems
+Assign shipper
+Mark as
+backordered
+No
+Foreach Saleitem
+Yes
+Mark as shipped
+Print shipping label
+Update all shipment &
+cost info
+Create shipment
+Link to Sale
+Link to Shipper
+Display Sale & SaleItems +
+Customer info
+Update status
+Link to shipment
+Update status
+Initiate backorder
+End foreach
+Available?
+Enter package weight and size
+Request shipping label
+Figure 5-5 Activity diagram for 
+Ship Items use case
+© CengageLearning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 139
+■ The System Sequence Diagram—Identifying 
+Inputs and Outputs
+In the object-oriented approach, the flow of information is achieved through 
+sending messages either to and from actors or back and forth between internal 
+objects. A system sequence diagram (SSD) is used to describe this flow of 
+information into and out of the automated portion of the system. Thus, an SSD 
+documents the inputs and the outputs and identifies the interaction between 
+actors and the system. It is an effective tool to help in the initial design of the 
+user interface by identifying the specific information that flows from the user 
+into the system and the information that flows out of the system back to the 
+user. An SSD is a special type of UML sequence diagram. You will learn more 
+about detailed sequence diagrams in Chapter 13.
+Customer System
+Search for product
+Search and view
+accessories
+Look at product
+reviews
+Select options
+and quantity
+Add to cart
+Add to cart
+Select accessory
+options and quantity
+Figure 5-6 Activity diagram for 
+Fill shopping cart showing richer 
+user experience
+© CengageLearning®
+system sequence diagram (SSD)
+a diagram showing the sequence of messages 
+between an actor and the automated part of 
+the system during a use case or scenario
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+140 PART 2 ■ Systems Analysis Activities
+■ SSD Notation
+Figure 5-7 shows a generic SSD with callouts annotating the diagram. As with 
+a use case diagram, the stick figure represents an actor—a person (or role) who 
+interacts with the system. In a use case diagram, the actor “uses” the system, 
+but the emphasis in an SSD is on how the actor “interacts” with the system by 
+entering input data and receiving output data. The box labeled :System is an 
+object that represents the entire automated system. In SSDs and all other interaction diagrams, analysts use object notation instead of class notation. In object 
+notation, a box refers to an individual object, not the class of all similar objects. 
+The notation is simply a rectangle with the name of the object underlined. The 
+colon before the underlined class name is a frequently used but optional part of 
+the object notation to indicate that the object is an unnamed object of the class. 
+In an SSD, the only object included is one representing the entire system: an 
+unnamed object of the System class.
+Underneath the actor and :System are vertical dashed lines called lifelines. 
+A lifeline, or object lifeline, is simply the extension of that object—either actor 
+or object—during the use case. The arrows between the lifelines represent the 
+messages that are sent by the actor. Each arrow has an origin and a destination. 
+The origin of the message is the actor or object that sends it, as indicated by the 
+lifeline at the arrow’s tail. Similarly, the destination actor or object of a message 
+is indicated by the lifeline that is touched by the arrowhead. The purpose of 
+lifelines is to indicate the sequence of the messages sent and received by the actor 
+and object. The sequence of messages is read from top to bottom in the diagram.
+A message is labeled to describe its purpose and any input data being sent. 
+The message name should follow the verb-noun syntax to make the purpose 
+clear. The syntax of the message label has several options; the simplest forms are 
+shown in Figure 5-7. Remember that the arrows are used to represent a message 
+and input data. But what is meant by the term message here? In a sequence diagram, a message is an action that is invoked on the destination object, much like 
+a command. Notice in Figure 5-7 that the input message is called inquireOnItem. 
+inquireOnItem (catalogID, prodID, size)
+item information
+:System
+The object lifeline; shows
+the“sequence” of messages,
+top to bottom
+Optional note to explain
+something in a diagram
+A returned value
+The actor
+interacting with
+the system
+An object
+(underlined)
+representing the
+automated system
+An input message
+item information:
+description, price, quantity
+Clerk
+Figure 5-7 Sample system 
+sequence diagram (SSD)
+© CengageLearning®
+lifeline, or object lifeline the vertical line 
+under an object on a sequence diagram to 
+show the passage of time for the object
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 141
+The clerk is sending a request (a message) to the system to find an item. The 
+input data that is sent with the message is contained within the parentheses, and 
+in this case, it is data to identify the particular item. The syntax is simply the 
+name of the message followed by the input parameters in parentheses. This form 
+of syntax is attached to a solid line with arrow.
+The returned value has a slightly different format and meaning. Notice that 
+the line with arrow is dashed. A dashed arrow indicates a response or an answer 
+(in programming, a return), and as shown in the figure, it immediately follows the 
+initiating message. The format of the label is also different. Because it is a response, 
+only the data that are sent on the response are noted. There is no message requesting a service—only the data being returned. In this case, a valid response might 
+be a list of all the information returned—for example, the description, price, and 
+quantity of an item. However, an abbreviated version is also satisfactory. In this 
+case, the information returned is named item information. Additional documentation is required to show the details. In Figure 5-7, this additional information is 
+shown as a note. A note can be added to any UML diagram to add explanations. 
+The details of item information could also be documented in supporting narratives or even simply referenced by the attributes in the Customer class.
+Frequently, the same message is sent multiple times in a loop, as shown in 
+Figure 5-8. For example, when an actor enters items on an order, the message 
+addItem (itemID, quantity)
+Repeat everything
+in the rectangle
+description, price, extendedPrice
+* [another item] description, price, extendedPrice
+:= addItem (itemID, quantity)
+(a) Detailed notation
+(b) Alternate notation
+Clerk
+Clerk
+Test condition for
+repeatability
+:System
+:System
+Loop
+[more items] 
+Figure 5-8 Repeating message in 
+(a) detailed loop frame notation and 
+(b) alternate notation
+© CengageLearning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+142 PART 2 ■ Systems Analysis Activities
+to add an item to an order may be sent multiple times. Figure 5-8(a) illustrates 
+the notation to show this repeating operation. The message and its return are 
+located inside a larger rectangle called a loop frame. In a smaller rectangle at 
+the top of the frame is the descriptive text to control the behavior of the messages within the larger rectangle. The condition loop for all items indicates 
+that the messages in the box repeat many times or are associated with many 
+instances.
+Figure 5-8(b) shows an alternate notation. Here, the square brackets 
+and text inside them are called a true/false condition for the messages. 
+The asterisk (*) preceding the true/false condition indicates that the message 
+repeats as long as the true/false condition evaluates to true. Analysts use this 
+abbreviated notation for several reasons. First, a message and the returned 
+data can be shown in one step. Note that the return data is identified as a 
+return value on the left side of an assignment operator—the := sign. This alternative simply shows a value that is returned. Second, the true/false condition is 
+placed on the message itself. Note that in this example, the true/false condition 
+is used for the control of the loop. True/false conditions are also used to evaluate any type of test that determines whether a message is sent. For example, 
+consider the true/false condition [credit card payment]. If it is true that the 
+thing being tested is a credit card payment, the message is sent to the system 
+to verify a credit card number. Finally, an asterisk is placed on the message 
+itself to indicate the message repeats. Thus, for simple repeating messages, 
+the alternate notation is shorter. However, if several messages are included 
+within the repeat or there are multiple messages—each with its own true/false 
+condition—the loop frame is more explicit and precise.
+Here is the complete notation for a message:
+[true/false condition] return-value := message-name (parameter-list)
+Any part of the message can be omitted. In brief, the notation components 
+do the following:
+■ An asterisk (*) indicates repeating or looping of the message.
+■ Brackets [ ] indicate a true/false condition. This is a test for that message 
+only. If it evaluates to true, the message is sent. If it evaluates to false, the 
+message isn’t sent.
+■ Message-name is the description of the requested service written as a 
+verb-noun.
+■ Parameter-list (with parentheses on initiating messages and without 
+parentheses on return messages) shows the data that are passed with the 
+message.
+■ Return-value on the same line as the message (requires :=) is used to 
+describe data being returned from the destination object to the source 
+object in response to the message.
+Sequence diagrams also use two addition frames to depict processing logic, 
+as shown in Figure 5-9. The opt frame in Figure 5-9(a) is used when a message 
+or a series of messages is optional or based on some true/false condition. The alt 
+frame is used with if-then-else logic, as shown in Figure 5-9(b). The alt frame in 
+this figure indicates that if an item is taxable, then add sales tax; otherwise, add 
+a tax exemption code for a sales tax exemption.
+■ Developing a System Sequence Diagram (SSD)
+An SSD is usually used in conjunction with the use case descriptions to help document the details of a single use case or scenario within a use case. To develop 
+an SSD, it is useful to have a detailed description of the use case—either in the 
+loop frame notation on a sequence 
+diagram showing repeating messages
+true/false condition part of a message 
+between objects that is evaluated prior 
+to transmission to determine whether the 
+message can be sent
+opt frame notation on a sequence diagram 
+showing optional messages
+alt frame notation on a sequence diagram 
+showing if-then-else logic
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 143
+fully developed form or as an activity diagram. These two models identify the 
+flow of activities within a use case, but they don’t explicitly identify the inputs 
+and outputs. An SSD will provide this explicit identification of inputs and outputs. One advantage of using activity diagrams is that it is easy to identify when 
+an input or output occurs. Inputs and outputs occur whenever an arrow in an 
+activity diagram goes from an external actor to the computer system.
+Recall the activity diagram for Create customer account shown in 
+Figure 5-4. There are two swimlanes: the customer and the computer system. In 
+this instance, the system boundary coincides with the vertical line between the 
+customer swimlane and the system swimlane.
+addAccessory (anAccessory)
+accessary details
+(a) Opt frame notation
+Opt
+Customer
+[accessory selected]
+addSalesTax (locationCode)
+tax exemption details
+(b) Alt frame notation
+Alt
+Sales clerk
+sales tax details
+addTaxExemptionCode (eCode)
+[taxable item]
+[else]
+:System
+:System
+Figure 5-9 Sequence diagram 
+notation for (a) opt frame and 
+(b) alt frame
+© CengageLearning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+144 PART 2 ■ Systems Analysis Activities
+The development of an SSD based on an activity diagram falls into four steps:
+1. Identify the input messages. In Figure 5-4, there are three locations with a 
+workflow arrow crossing the boundary line between the customer and the 
+system. At each location that the workflow crosses the automation boundary, input data are required; therefore, a message is needed.
+2. Describe the message from the external actor to the system by using the 
+message notation described earlier. In most cases, you will need a 
+message name that describes the service requested from the system and 
+the input parameters being passed. Figure 5-10—the SSD for the Create 
+customer account use case—illustrates the three messages based on 
+the activity diagram. Notice that the names of the messages reflect the 
+services that the actor is requesting of the system: createNewCustomer, 
+enterAddress, and enterCreditCard. Other names could also have 
+been used. For example, instead of enterAddress, the name could be 
+createAddress. The point to remember is that the message name 
+should describe the service requested from the system and should be 
+in verb-noun form.
+The other information required is the parameter list for each message. 
+Determining exactly which data items must be passed in is more difficult. 
+In fact, developers frequently find that determining the data parameters 
+requires several iterations before a correct, complete list is obtained. The 
+important principle for identifying data parameters is to base it on the class 
+diagram. In other words, the appropriate attributes from the classes are 
+listed as parameters. Looking at the attributes, along with an understanding of what the system needs to do, will help you find the right attributes. 
+With the first message just mentioned—createNewCustomer—the parameters should include basic information about the customer, such as name, 
+phone, and e-mail address. Note that when the system creates the customer, it assigns a new customerId and returns it with the other customer 
+information.
+In the second message—enterAddress—parameters are needed to 
+identify the full address. Usually, that would include street address, city, 
+state, and zip code. The SSD simplifies the message to show “address” as 
+the parameter.
+The third message—based on the activity diagram—enters the credit 
+card information. The parameter—cc-info—represents the account number, 
+expiration date, and security code.
+3. Identify and add any special conditions on the input messages, including 
+iteration and true/false conditions. In this instance, the enterAddress 
+message is repeated for each address needed for the customer. The asterisk 
+symbol in front of the message is shown.
+4. Identify and add the output return messages. Remember that there are two 
+options for showing return information: as a return value on the message 
+itself or as a separate return message with a dashed arrow. The activity 
+diagram can provide some clues about return messages, but there is no 
+standard rule that when a transition arrow in the workflow goes from the 
+system to an external actor that an output always occurs. In Figure 5-4, 
+there are three arrows from the System swimlane to the Customer swimlane. In Figure 5-10, these are shown as return data on the dashed line for 
+two returns and as a returned value on the same line as the message for 
+enterAddress. Note that they are each named with a noun that indicates 
+what is being returned. Sometimes, no output data are returned.
+Remember that the objective is discovery and understanding, so you should 
+be working closely with users to define exactly how the workflow proceeds and 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 145
+exactly what information needs to be passed in and provided as output. This is 
+an iterative process, and you will probably need to refine these diagrams several 
+times before they accurately reflect the needs of the users.
+Let us develop an SSD for the Ship items use case that is shown as a fully developed use case description in Figure 5-3 and as an activity diagram in Figure 5-5. 
+Note that the actor has five numbered steps in the flow of activities, so there will 
+be five input messages in the SSD shown in Figure 5-11: getNextSale, setShipper, recordShippedItem, initiateBackorder, and getShippingLabel. No parameter is 
+needed for getNextSale because the system will automatically return the information for the next sale to be shipped. The shipper is selected by the actor—probably 
+from a list on the form or page—so the parameter is shipperID.
+There is a loop frame that repeats for each sale item in the sale. Inside the 
+loop frame is an alt frame that tests the whether each sale item is available to 
+ship. If the item can be shipped, the recordShippedItem message is sent to the 
+system. If the item cannot be shipped because it is out of stock or perhaps damaged, the initiateBackorder message is sent to the system. Finally, the getShippingLabel message requires two parameters: the size of the package and the 
+weight. The system uses that information, along with the shipper and address, 
+to produce the shipping label and record the cost.
+These first sections of this chapter have explained the models that are used 
+in object-oriented development to specify the processing aspects of the new 
+system. The use case descriptions, as provided by written narratives or activity 
+diagrams, give the details of the internal steps within each use case. Precondition and postcondition statements help define the context for the use case—that 
+is, what must exist before and after processing. Finally, the SSD describes the 
+inputs and outputs that occur within a use case. Together, these models provide a 
+comprehensive description of the system-processing requirements and give thAnother important technique used to validate use cases is the CRUD technique, 
+which involves verifying that all of the needed use cases have been identified to 
+maintain the data represented by the domain model class diagram. CRUD is an 
+acronym for Create, Read or Report, Update, and Delete, and it is often introduced 
+with respect to database management. The analyst starts by looking at the types 
+of data stored by the system, which are modeled as domain classes, as described 
+in Chapter 4. In the RMO Tradeshow System discussed in Chapter 1, the types of 
+data included Supplier, Contact, Product, and ProductPicture. In the RMO CSMS, 
+the types of data include Customer, Sale, Inventory Item, Promotion, Shipment, 
+and many others. To validate and refine use cases, the analyst looks at each type 
+of data and verifies that use cases have been identified that create the data, read or 
+report on the data, update the data, and delete (or archive) the data.
+The CRUD technique is most useful when used as a cross-check along with 
+the user goal technique. Users will focus on their primary goals, and use cases 
+that update or archive data will often be overlooked. The CRUD technique 
+makes sure all possibilities are identified. Sometimes, domain classes are shared 
+by a set of integrated applications. For example, RMO has a supply chain management application that is responsible for managing inventory levels and adding products. The RMO CSMS will not need to create or delete products, but it 
+will need to look up and update product information. It is important to identify 
+Figure 5-11 SSD for the Ship 
+items use case
+[more sale items]
+[shipped item]
+[else]
+Shipping clerk getNextSale()
+customer, address, sale, and sale item info
+setShipper(shipperID)
+recordShippedItem(saleItem)
+shipping confirmation
+getShippingLabel(packageSize, weight)
+initiateBackorder(saleItem)
+backorder confirmation
+shipping label details
+:System
+Loop
+Alt
+© CengageLearning®
+CRUD technique an acronym for Create, 
+Read/Report, Update, and Delete; a technique 
+to validate or refine use cases
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 5 ■ Use Case Modeling 147
+the other application that is responsible for creating, updating, or deleting the 
+data to be clear about the scope of each system. Figure 5-12 shows an example 
+of potential use cases based on the CRUD technique for RMO Customer data.
+Note in Figure 5-12 that the analyst has not blindly added a use case to 
+create, read/report, update, and delete instances of a customer. The CRUD technique is best used to take already identified use cases and verify that there are 
+use cases for create, read, update, and delete as a cross-check. Create customer 
+account creates customer objects. A separate Create customer use case is not 
+needed. Update customer account is defined to archive a customer, so no separate Archive customer use case is required.
+Another use of the CRUD technique is to summarize all use cases and all 
+data entities/domain classes to show the connection between use cases and data. 
+In Figure 5-13, some of the use cases are matched with domain classes by including C, R, U, or D in the cell corresponding to the role of the use case in terms 
+of data. For example, the use case Create customer account actually creates 
+customer data and account data, so the C is included in those two cells. The use 
+case Process account adjustment reads information about the sale, reads information about the customer, updates the account, and creates an adjustment.
+Based on the information shown in Figure 5-13, there are insufficient use cases 
+to cover the Sale and the Adjustment domain classes. The Sale class will need to have 
+additional use cases to create, update, and delete Sale objects. In addition, the Adjustment class will require use cases to update, report, and delete Adjustment objects.
+The CRUD technique for validating and refining use cases includes these steps:
+1. Identify all the domain classes involved in the new system. Chapter 4 
+discussed these in more detail.
+2. For each type of data (domain class), verify that a use case has been identified that creates a new instance, updates existing instances, reads or reports 
+values of instances, and deletes (or archives) an instance.
+3. If a needed use case has been overlooked, add a new use case and then identify the stakeholders.
+4. With integrated applications, make sure it is clear which application is responsible for adding and maintaining the data and which system merely uses the data.

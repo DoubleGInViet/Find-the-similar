@@ -1,0 +1,471 @@
+﻿One of the rules of systems development is that the more programmers who are 
+involved in a project, the longer the system will take to build. Th is is because as the size of 
+the programming team increases, the need for coordination increases exponentially, and 
+the more coordination required, the less time programmers can spend actually writing 
+systems (see Chapter 2). Th e best size is the smallest possible programming team. When 
+projects are so complex that they require a large team, the best strategy is to try to break the 
+project into a series of smaller parts that can function as independently as possible.
+Coordinating Activities
+Coordination can be done through both high-tech and low-tech means. Th e simplest 
+approach is to have a weekly project meeting to discuss any changes to the system that have 
+arisen during the past week—or any issues that have come up. Remember, agile development 
+approaches such as Scrum encourage daily meetings (see Chapter 2). Regular meetings, even 
+if they are brief, encourage the widespread communication and discussion of issues before 
+they become problems.
+Another important way to improve coordination is to create and follow standards that 
+can range from formal rules for naming fi les, to forms that must be completed when goals 
+are reached, to programming guidelines (see Chapter 2). When a team forms standards and 
+then follows them, the project can be completed faster because task coordination is less 
+complex.
+Th e analysts also must put mechanisms in place to keep the programming eff ort well 
+organized. Many project teams set up three areas in which programmers can work: a development area, a testing area, and a production area. Th ese areas can be diff erent directories 
+on a server hard disk, diff erent servers, or diff erent physical locations, but the point is that 
+fi les, data, and programs are separated based on their status of completion. At fi rst, programmers access and build fi les within the development area and then copy them to the 
+testing area when the programmers are fi nished. If a program does not pass a test, it is sent 
+back to development. Once all programs are tested and ready to support the new system, 
+they are copied into the production area—the location where the fi nal system will reside.
+Keeping fi les and programs in diff erent places based on completion status helps manage change control, the action of coordinating a system as it changes through construction. 
+Another change control technique is keeping track of which programmer changes which 
+classes and packages by using a program log. Th e log is merely a form on which programmers 
+sign out classes and packages to write and sign in when they are completed. Both the programming areas and program log help the analysts understand exactly who has worked on 
+what and the system’s current status. Without these techniques, fi les can be put into production without the proper testing (e.g., two programmers can start working on the same class 
+or package at the same time).
+If a CASE tool is used during the construction step, it can be very helpful for change 
+control because many CASE tools are set up to track the status of programs and help manage 
+programmers as they work. In most cases, maintaining coordination is not conceptually complex. It just requires a lot of discipline and attention to tracking small details.
+Managing the Schedule
+Th e time estimates that were produced during project identifi cation and refi ned during analysis and design almost always need to be refi ned as the project progresses during construction 
+because it is virtually impossible to develop an exact assessment of the project’s schedule. As 
+we discussed in Chapter 2, a well-done set of time estimates usually has a 10 percent margin 
+of error by the time we reach the construction step. It is critical that the time estimates be 
+Managing Programming  459
+4 Based upon material from Steve McConnell, Rapid Development (Redmond, WA: Microsoft Press, 1996).
+revised as construction proceeds. If a program module takes longer to develop than expected, 
+then the prudent response is to move the expected completion date later by the same amount.
+One of the most common causes for schedule problems is scope creep. Scope creep 
+occurs when new requirements are added to the project aft er the system design was fi nalized 
+(see Chapter 2). If you recall, Scrum encourages adding new requirements to the product 
+backlog instead of letting the scope of the project change between sprints. Scope creep can 
+be very expensive because changes made late in system development can require much of the 
+completed system design (and even programs already written) to be redone. Any proposed 
+change during construction must require the approval of the project manager and should 
+only be done aft er a quick cost–benefi t analysis has been done.
+Another common cause is the unnoticed day-by-day slippages in the schedule. One package 
+is a day late here; another one is a day late there. Pretty soon these minor delays add up and the 
+project is noticeably behind schedule. Once again, the key to managing the programming eff ort 
+is to watch these minor slippages carefully and update the schedule accordingly.
+Typically, a project manager creates a risk assessment that tracks potential risks along 
+with an evaluation of their likelihood and potential impact. As the construction step moves 
+to a close, the list of risks changes as some items are removed and others surface. Th e best 
+project managers, however, work hard to keep risks from having an impact on the schedule 
+and costs associated with the project.
+In previous chapters, we discussed classic mistakes and 
+how to avoid them. Here, we summarize four classic 
+mistakes in implementation:4
+■ Research-oriented development: Using state-of-the-art 
+technology requires research-oriented development 
+that explores the new technology because “bleeding 
+edge” tools and techniques are not well understood, 
+are not well documented, and do not function exactly 
+as promised.
+Solution: If you use state-of-the-art technology, you 
+need to signifi cantly increase the project’s time and 
+cost estimates even if (some experts would say especially if) such technologies claim to reduce time and 
+effort.
+■ Using low-cost personnel: You get what you pay for. 
+The lowest-cost consultant or staff member is signifi -
+cantly less productive than the best staff. Several studies have shown that the best programmers produce 
+software six to eight times faster than the least productive (yet cost only 50 to 100 percent more).
+Solution: If cost is a critical issue, assign the best, most 
+expensive personnel; never assign entry-level personnel in an attempt to save costs.
+■ Lack of code control: On large projects, programmers 
+need to coordinate changes to the program source 
+code (so that two programmers don’t try to change the 
+same program at the same time and overwrite each 
+other’s changes). Although manual procedures appear 
+to work (e.g., sending e-mail notes to others when you 
+work on a program to tell them not to), mistakes are 
+inevitable.
+Solution: Use a source code library that requires 
+programmers to “check out” programs and prohibits 
+others from working on them at the same time.
+■ Inadequate testing: The number one reason for project 
+failure during implementation is ad hoc testing—where 
+programmers and analysts test the system without formal 
+test plans.
+Solution: Always allocate suffi cient time in the project 
+plan for formal testing.
+PRACTICAL 12-1 Avoiding Classic Implementation Mistakes
+TIP
+460 Chapter 12 Construction
+Cultural Issues
+One of the major issues facing information systems development organizations is the off shoring of the implementation aspects of information systems development. Confl icts caused by 
+diff erent national and organizational cultures are now becoming a real area of concern. With 
+the potential of cloud computing (see Chapter 11) potentially enabling even more outsourcing, the potential of cultural confl ict is even greater.
+A simple example that can demonstrate cultural diff erences with regard to student 
+learning is the idea of plagiarism. What exactly does plagiarism really imply? Diff erent 
+cultures have very diff erent views. In some cultures, one of the highest forms of respect is 
+simply to quote an expert. However, in these same cultures, there is no need to reference 
+the expert. Th e act of quoting the expert itself is the act of respect. In some cases, actually 
+referencing the expert through the use of quotation marks and a footnote may be viewed as 
+an insult to the expert and the reader because it is obvious to the reader that the writer did 
+not expect the reader to recognize the expert’s quote. Th is expectation was caused by either 
+the reader’s own ignorance or the expert’s lack of reputation. Either way, the writer would 
+be insulting someone through the use of quotation marks and footnotes. Th ese cultures tend 
+to be collectivist in nature (see Chapters 10 and 13). Consequently, since the collective owns 
+all ideas, there is no concept of theft of ideas. However, in the United States, the opposite is 
+true. If a writer does not use quotation marks and footnotes to appropriately give credit to the 
+source of the quote (or paraphrase), then the writer is guilty of theft .5 Obviously, in today’s 
+global world, plagiarism is not a simple issue.
+Another simple example of cultural diff erences, with regard to student learning, is the 
+idea of students working together to complete homework assignments. Even though we all 
+know that research has shown that students learn better in groups, in the United States, we 
+view students who turn in the same assignment as cheaters.6 In other cultures, individual performance is not as important as the performance of the group. Again, these cultures are collectivist in nature. Consequently, helping a fellow student to understand the assignment and 
+to perform better in the class would be the expectation. Furthermore, this attitude extends 
+to test taking. If a fellow student is struggling on a test and if you were from a collectivist 
+culture, it would be your duty to allow your fellow student to copy your answer. Obviously, 
+this is another example of a substantive cultural diff erence. From a business perspective, these 
+diff erent views of plagiarism and cheating could have serious implications for the protection 
+of intellectual property.
+As we stated previously, with off shore outsourcing, information systems development 
+teams can be geographically dispersed and multicultural in their membership. Given the 
+above issues and when we consider the cultural diff erences Hall and Hofstede identifi ed 
+(see Chapter 10), cultural issues add a new wrinkle in the management of developing a successful information system.7 From an information systems development perspective, context
+could infl uence the ability of a team member to see (or not see) potential creative solutions 
+that are out of the box or aff ect a team member’s ability (or inability) to understand the 
+entire problem under consideration. Furthermore, given this dimension, the level of detail in 
+5 A wonderful little book on plagiarism is Richard A. Posner, Th e Little Book of Plagiarism (New York: Pantheon 
+Books, 2007).
+6 In this case, the recent work of Roger Schank is very enlightening. For example, see Roger C. Schank, Making Minds 
+Less Well Educated than Our Own (Mahwah, NJ: Lawrence Erlbaum Associates, 2004).
+7 See Geert Hofstede, Culture’s Consequences: Comparing Values, Behaviors, Institutions and Organizations across 
+Nations, 2nd Ed. (Th ousand Oaks, CA: Sage, 2001); Geert Hofstede, Gert Jan Hofstede, and Michael Minkov, Cultures 
+and Organizations: Soft ware of the Mind, 3rd Ed. (New York, NY: McGraw-Hill, 2010); Edward T. Hall, Beyond Culture
+(New York: Anchor Books, 1981).
+Managing Programming  461
+direction could be varied between cultures. Hofstede’s individualism and collectivism dimension partially explains the results regarding plagiarism and cheating described above. Given 
+the importance that intellectual property plays in IT, this potentially could be a real problem 
+when off shoring development to a collectivist culture. Furthermore, Hall’s speed of messages
+and context dimensions could also aff ect the way this could be addressed. Depending on the 
+culture, too much detail could be insulting, but attempting to put this issue in to a contextual 
+frame that is culturally sensitive is diffi cult.
+When managing programmers in a multicultural setting, Hall’s time dimension must also 
+be considered. In monochronic time cultures, deadlines are critical. Th is is probably why timeboxing has been relatively successful as a method to control projects (see Chapter 2). However, 
+in a polychronic time culture, a deadline is nothing more than a suggestion. Obviously, when 
+managing programmers, understanding how the culture considers time is very important to 
+have both a successful product delivery and a successful development process.
+Hofstede’s other previously mentioned dimensions are power distance, uncertainty 
+avoidance, and masculinity versus femininity. Managing programmers in a culture with a 
+high power distance value is diff erent than with a culture with a low power distance. For 
+example, in the United States, programmers see themselves as equals to their managers. 
+In fact, in some fi rms, the president of the fi rm can be found “coding” solutions along 
+side of a brand new hire. Th is somewhat explains the growing popularity of agile methods 
+(see Chapter 1). In comparison, in a high power distance culture, the president of the fi rm 
+would never stoop to performing the same tasks as a new hire. It would be insulting to the 
+president and embarrassing to the new hire.
+With regard to uncertainty avoidance, the choice of systems development approach 
+could be aff ected. In a culture that prefers everything to be neat and ordered, a systems development methodology that is very rule-driven would be benefi cial. Also, development team 
+member professional certifi cation and team and fi rm ISO or CMMI certifi cations would lend 
+credibility to the team, whereas in a culture that willingly takes on risk, certifi cations might 
+not increase the perceived standing of the development team.
+When managing programmers in a masculine culture, it is critical to provide recognition to 
+the top-performing members of the development team and also to recognize the top-performing 
+teams. On the other hand, when considering a feminine culture, it is more important to ensure 
+that the workplace is a supportive, noncompetitive, and nurturing environment.
+Hofstede has identifi ed a fi ft h dimension, long-versus short-term orientation, which deals 
+with how the culture views the past and the future. In a long-term focused culture, team 
+development and a deep relationship with a client is very important, while in a culture that 
+emphasizes the short term, delivering a high-quality product on time is all that really matters.
+For years, project managers in the United States have had to bring together individuals 
+from very diff erent backgrounds. Moreover, there was always a common spoken and written language, English, and the melting pot idea that guaranteed some level of commonality 
+among the team members.8 However, in today’s “fl at world,” there is no longer any common 
+culture or common spoken and written language. From an information systems development perspective, the common languages tend to be UML, Java, SQL, C11, Objective-C, and 
+Visual Basic, not English. However, at this time, there is no common culture. Consequently, 
+understanding cultural issues will be extremely important for the near future to successfully 
+manage international and multicultural development teams.
+8 People who grew up in diff erent areas of the United States (e.g., New York City, Nashville, Minneapolis, Denver, and 
+Los Angeles) are, in a very real sense, culturally diff erent. For an interesting take on this, see Joel Garreau, Th e Nine 
+Nations of North America (New York NY: Avon Books, 1981). However, the prevalence of the Internet and cable TV 
+has created much more of a shared culture in the United States than in many other parts of the world. Obviously, the 
+Internet and cable TV also could aff ect the world in the long run.
+462 Chapter 12 Construction
+DEVELOPING DOCUMENTATION
+Developing documentation of the system must be done throughout system development. 
+In many ways, the documentation of a system is a system. So, developing documentation can follow a similar, but simpler, approach as soft ware development. In this case, 
+creating use cases and developing the user interfaces to the documentation make sense. 
+Th ere are two fundamentally diff erent types of documentation: system documentation 
+and user documentation. System documentation is intended to help programmers and 
+systems analysts understand the application soft ware and enable them to build it or 
+maintain it aft er the system is installed. System documentation is largely a by-product of 
+the systems analysis and design process and is created as the project unfolds. Each step 
+and phase produces documents that are essential in understanding how the system is or 
+is to be built, and these documents are stored in the project binder(s). In many objectoriented development environments, it is possible to somewhat automate the creation of 
+detailed documentation for classes and methods. For example, in Java, if the programmers 
+use javadoc-style comments, it is possible to create HTML pages that document a class and 
+its methods automatically by using the javadoc utility.9 Because most programmers look 
+on documentation with much distaste, anything that can make documentation easier to 
+create is useful.
+User documentation (such as user’s manuals, training manuals, and online help systems) is designed to help the user operate the system. Although most project teams expect 
+users to have received training and to have read the user’s manuals before operating the 
+system, unfortunately, this is not always the case. It is more common today—especially in 
+the case of commercial soft ware packages for microcomputers—for users to begin using the 
+soft ware without training or reading the user’s manuals. In this section, we focus on user 
+documentation.10
+User documentation is oft en left until the end of the project, which is a dangerous 
+strategy. Developing good documentation takes longer than many people expect because it 
+requires much more than simply writing a few pages. Producing documentation requires 
+designing the documents (whether on paper or online), writing the text, editing the documents, and testing them. For good-quality documentation, this process usually takes about 
+three hours per page (single-spaced) for paper-based documentation or two hours per screen 
+for online documentation. Th us “simple” documentation, such as a ten-page user’s manual 
+and a set of twenty help screens, takes seventy hours. Of course, lower-quality documentation 
+can be produced faster.
+Th e time required to develop and test user documentation should be built into the project plan. Most organizations plan for documentation development to start once the interface 
+design and program specifi cations are complete. Th e initial draft of documentation is usually 
+scheduled for completion immediately aft er the unit tests are complete. Th is reduces (but 
+doesn’t eliminate) the chance that the documentation will need to be changed due to soft ware 
+changes and still leaves enough time for the documentation to be tested and revised before 
+the acceptance tests are started.
+Although paper-based manuals are still important, online documentation is becoming 
+more pervasive. Paper-based documentation is simpler to use because it is more familiar to 
+users, especially novices who have less computer experience; online documentation requires 
+the users to learn one more set of commands. Paper-based documentation is also easier to 
+9 For those who have used Java, javadoc is how the JDK documentation from Sun is created.
+10 For more information on developing documentation, see Th omas T. Barker, Writing Soft ware Documentation
+(Boston: Allyn & Bacon, 1998).
+Developing Documentation  463
+fl ip through and gain a general understanding of its organization and topics and can be used 
+far away from the computer itself.
+Th ere are four key strengths of online documentation that all but guarantee it will 
+become the dominant form for the 21st century. Searching for information is oft en simpler 
+(provided the help search index is well designed) because the user can type in a variety of 
+keywords to view information almost instantaneously, rather than having to search through 
+the index or table of contents in a paper document. Th e same information can be presented 
+several times in many diff erent formats, so that the user can fi nd and read the information 
+in the most informative way (such redundancy is possible in paper documentation, but 
+the cost and intimidating size of the resulting manual make it impractical). Online documentation provides many new ways for the user to interact with the documentation that 
+is not possible in static paper documentation. For example, it is possible to use links or 
+“tool tips” (i.e., pop-up text; see Chapter 10) to explain unfamiliar terms, and one can write 
+“show-me” routines that demonstrate on the screen exactly what buttons to click and text to 
+type. Finally, online documentation is signifi cantly less expensive to distribute than paper 
+documentation.
+Types of Documentation
+Th ere are three fundamentally diff erent types of user documentation: reference documents, 
+procedures manuals, and tutorials. Reference documents (also called the help system) are 
+designed to be used when the user needs to learn how to perform a specifi c function (e.g., 
+updating a fi eld, adding a new record). Oft en people read reference information when they 
+have tried and failed to perform the function; writing reference documents requires special 
+care because the user is oft en impatient or frustrated when he or she begins to read them.
+Procedures manuals describe how to perform business tasks (e.g., printing a monthly 
+report, taking a customer order). Each item in the procedures manual typically guides the 
+user through a task that requires several functions or steps in the system. Th erefore, each 
+entry is typically much longer than an entry in a reference document.
+Tutorials—obviously—teach people how to use major components of a system 
+(e.g., an introduction to the basic operations of the system). Each entry in the tutorial is 
+typically longer still than the entries in procedures manuals, and the entries are usually 
+designed to be read in sequence (whereas entries in reference documents and procedures 
+manuals are designed to be read individually).
+Regardless of the type of user documentation, the overall process for developing it is 
+similar to the process of developing interfaces (see Chapter 10). Th e developer fi rst designs 
+the general structure for the documentation and then develops the individual components 
+within it.
+Designing Documentation Structure
+Th e general structure used in most online documentation, whether reference documents, 
+procedures manuals, or tutorials, is to develop a set of documentation navigation controls that 
+lead the user to documentation topics. Th e documentation topics are the material that user 
+wants to read, whereas the navigation controls are the way the user locates and accesses a 
+specifi c topic. As such, using storyboards, windows navigation diagrams, and windows layout 
+diagrams is useful (see Chapter 10).
+Designing the structure of the documentation begins by identifying the diff erent types of 
+topics and navigation controls that need to be included. Figure 12-1 shows a commonly used 
+structure for online reference documents (i.e., the help system). Th e documentation topics 
+generally come from three sources. Th e fi rst and most obvious source of topics is the set ofcommands and menus in the user interface. Th is set of topics is very useful if the user wants 
+to understand how a particular command or menu is used.
+However, the users oft en don’t know what commands to look for or where they are in 
+the system’s menu structure. Instead, users have tasks they want to perform, and rather than 
+thinking in terms of commands, they think in terms of their tasks. Th erefore, the second 
+Developing Documentation  465
+and oft en more useful set of topics focuses on how to perform certain tasks, usually those in 
+the use scenarios, WND, and the real use cases from the user interface design (see Chapter 
+10). Th ese topics walk the user through the set of steps (oft en involving several keystrokes or 
+mouse clicks) needed to perform some task.
+Th e third topic is defi nitions of important terms. Th ese terms are usually the use cases 
+and classes in the system, but sometimes they also include commands.
+Th ere are fi ve general types of navigation controls for topics, but not all systems use all 
+fi ve types (see Figure 12-1). Th e fi rst is the table of contents that organizes the information 
+in a logical form, as though the users were to read the reference documentation from start 
+to fi nish. Th e index provides access into the topics based on important keywords, in the 
+same way that the index at the back of a book helps us fi nd topics. Text search provides 
+the ability to search through the topics either for any text the user types or for words that 
+match a developer-specifi ed set of words that is much larger than the set of words in the 
+index. Unlike the index, text search typically provides no organization to the words (other 
+than alphabetical). Some systems provide the ability to use an intelligent agent to help in the 
+search. Th e fi fth and fi nal navigation controls to topics are the hyperlinks between topics that 
+enable the user to click and move among topics.
+Procedures manuals and tutorials are similar but oft en simpler in structure. Topics for 
+procedures manuals usually come from the use scenarios, WNDs, and the real use cases 
+developed during interface design and from other basic tasks the users must perform. Topics 
+for tutorials are usually organized around major sections of the system and the level of experience of the user. Most tutorials start with the basic, most commonly used commands and 
+then move into more complex and less commonly used commands.
+Writing Documentation Topics
+Th e general format for topics is fairly similar across application systems and operating 
+systems. Topics typically start with very clear titles, followed by some introductory text that 
+defi nes the topic and then by detailed, step-by-step instructions on how to perform what is 
+being described. Many topics include screen images to help the user fi nd items on the screen; 
+some also have tutorials and videos available online that demonstrate the functions of interest to the user. Most also include navigation controls to enable the movement among topics, 
+usually at the top of the window, plus links to other topics. Some also include links to related 
+topics that include options or other commands and tasks the user might want to perform in 
+concert with the topic being read.
+Writing the topic content can be challenging. It requires a good understanding of the 
+user (or more accurately the range of users) and a knowledge of what skills the users currently have and can be expected to import from other systems and tools they are using or 
+have used (including the system that the new system is replacing). Topics should always be 
+written from the viewpoint of the user and describe what the user wants to accomplish, not 
+what the system can do. Figure 12-2 provides some general guidelines to improve the quality 
+of documentation text.11
+Identifying Navigation Terms
+As we write the documentation topics, we also begin to identify the terms that will be 
+used to help users fi nd topics. Th e table of contents is usually the most straightforward, 
+because it is developed from the logical structure of the documentation topics, whether 
+11 One of the best books to explain the art of writing is William Strunk and E. B. White, Elements of Style, 4th Ed. 
+(Needham Heights, MA: Allyn & Bacon, 2000).
+466 Chapter 12 Construction
+Figure 12-2  Guidelines for Crafting Documentation Topics
+Guideline Before the Guideline After the Guideline
+Use the active voice: The active voice 
+creates more active and readable text by 
+putting the subject at the start of the 
+sentence, the verb in the middle, and the 
+object at the end.
+Finding albums is done using the album 
+title, the artist’s name, or a song title.
+You can fi nd an album by using the album 
+title, the artist’s name, or a song title.
+Use e-prime style: E-prime style creates 
+more active writing by omitting all forms 
+of the verb to be.
+The text you want to copy must be 
+selected before you click on the copy 
+button.
+Select the text you want to copy before 
+you click on the copy button.
+Use consistent terms: Always use the same 
+term to refer to the same items, rather 
+than switching among synonyms (e.g., 
+change, modify, update).
+Select the text you want to copy. Pressing 
+the copy button will copy the marked 
+text to the new location.
+Select the text you want to copy. Pressing 
+the copy button will copy the selected 
+text to the new location.
+Use simple language: Always use the 
+simplest language possible to accurately 
+convey the meaning. This does not mean 
+you should “dumb down” the text but 
+that you should avoid artifi cially infl ating 
+its complexity. Avoid separating subjects 
+and verbs and try to use the fewest words 
+possible. (When you encounter a complex piece of text, try eliminating words; 
+you may be surprised at how few words 
+are really needed to convey meaning.)
+The Georgia Statewide Academic and 
+Medical System (GSAMS) is a cooperative and collaborative distance learning 
+network in the state of Georgia. The 
+organization in Atlanta that administers 
+and manages the technical and overall 
+operations of the currently more than 
+300 interactive audio and video teleconferencing classrooms throughout Georgia 
+system is the Department of Administrative 
+Service (DOAS). (56 words)
+The Department of Administrative Service 
+(DOAS) in Atlanta manages the Georgia 
+Statewide Academic and Medical System 
+(GSAMS), a distance learning network 
+with more than 300 teleconferencing 
+classrooms throughout Georgia. (29 
+words)
+Use friendly language: Too often, documentation is cold and sterile because 
+it is written in a very formal manner. 
+Remember, you are writing for a person, 
+not a computer.
+Blank disks have been provided to you 
+by Operations. It is suggested that you 
+ensure your data are not lost by making 
+backup copies of all essential data.
+You should make a backup copy of all 
+data that are important to you. If you 
+need more diskettes, contact Operations.
+Use parallel grammatical structures: Parallel grammatical structures indicate the 
+similarity among items in list and help 
+the reader understand content.
+Opening fi les
+Saving a document
+How to delete fi les
+Opening a fi le
+Saving a fi le
+Deleting a fi le
+Use steps correctly: Novices often intersperse action and the results of action 
+when describing a step-by-step process. 
+Steps are always actions.
+1. Press the customer button.
+2. The customer dialogue box will
+ appear. 
+3. Type the customer ID and press the 
+submit button and the customer record 
+will appear.
+1. Press the customer button.
+2. Type the customer ID in the customer 
+dialogue box when it appears.
+3. Press the submit button to view the customer record for this customer.
+Use short paragraphs: Readers of documentation usually quickly scan text to fi nd the 
+information they need, so the text in the 
+middle of long paragraphs is often overlooked. Use separate paragraphs to help 
+readers fi nd information more quickly.
+Source: Based upon material from T. T. Barker, Writing Software Documentation (Boston: Allyn & Bacon, 1998).
+reference topics, procedure topics, or tutorial topics. Th e items for the index and search 
+engine require more care because they are developed from the major parts of the system 
+and the users’ business functions. Every time we write a topic, we must also list the terms 
+that will be used to fi nd the topic. Terms for the index and search engine can come from 
+four distinct sources.
+Designing Tests  467
+The first source for index terms is the set of the commands in the user interface, 
+such as open file, modify customer, and print open orders. All commands contain two 
+parts (action and object). It is important to develop the index for both parts because 
+users could search for information using either part. A user looking for more information 
+about saving files, for example, might search by using the term save or the term files.
+Th e second source is the set of major concepts in the system, which are oft en use cases 
+and classes. In the case of the Appointment system, for example, this might include appointment, symptoms, or patient.
+A third source is the set of business tasks the user performs, such as ordering replacement 
+units or making an appointment. Oft en these are contained in the command set, but sometimes they require several commands and use terms that do not always appear in the system. 
+Good sources for these terms are the use scenarios and real use cases developed during interface design (see Chapter 10).
+A fourth, oft en controversial, source is the set of synonyms for the three sets of 
+preceding items. Users sometimes don’t think in terms of the nicely defi ned terms used 
+by the system. Th ey might try to fi nd information on how to stop or quit rather than exit, 
+or erase rather than delete. Including synonyms in the index increases the complexity and 
+size of the documentation system but can greatly improve the usefulness of the system to 
+the users.
+DESIGNING TESTS
+In object-oriented systems, the temptation is to minimize testing. Aft er all, through the use 
+of patterns, frameworks, class libraries, and components, much of the system has been tested 
+previously. Th erefore, we should not have to test as much. Right? Wrong! Testing is more 
+critical to object-oriented systems than to systems developed in the past. Based on encapsulation (and information hiding), polymorphism (and dynamic binding), inheritance, reuse, 
+and the actual object-oriented products, thorough testing is much more diffi cult and critical. 
+Given the complexity of the development processes used and the global nature of information 
+systems development, testing becomes even more crucial. Th us, object-oriented testing must 
+be done systematically, and the results must be documented so that the project team knows 
+what has and has not been tested. Testing object-oriented systems is therefore very complex. 
+Consequently, a complete coverage of the topic is beyond the scope of this book.12
+Th e purpose of testing is not to demonstrate that the system is free of errors. It is not 
+possible to prove that a system is error free. Th e purpose of testing is to uncover diff erences 
+between what the system actually does and what the system should do. In other words, the 
+purpose of testing is to try and break the system. Th is is similar to theory testing. You cannot 
+prove a theory. If a test fails to fi nd problems with a theory, your confi dence in the theory is 
+increased. However, if a test succeeds in fi nding a problem, then the theory has been falsifi ed. 
+Soft ware testing is similar in that it can only show the existence of errors. So, the point of 
+testing is to uncover as many errors as feasible. It is simply not cost-eff ective to try to get every 
+error out of the soft ware. Except in simple examples, it is, in fact, impossible. Th ere are simply 
+too many combinations to check.
+12 For a good introduction to testing object-oriented soft ware, see John D. McGregor and David A. Sykes, A Practical Guide to Testing Object-Oriented Soft ware (Boston: Addison-Wesley, 2001). For a thorough coverage of testing 
+object-oriented soft ware, see Robert V. Binder, Testing Object-Oriented Systems: Models, Patterns, and Tools (Reading, 
+MA: Addison-Wesley, 1999), this book provides more than 1,000 pages of information with regard to how to test the 
+diff erent artifacts and processes included in object-oriented systems development. That aint mac girl that’s Icy on my lips
+

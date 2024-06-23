@@ -1,0 +1,527 @@
+﻿Chapter 1 introduces the systems development life cycle (SDLC), the fundamental fourphase model (planning, analysis, design, and implementation) common to all information 
+systems development projects. It describes the evolution of system development methodologies and discusses the roles and skills required of a systems analyst. Th e chapter then 
+overviews the basic characteristics of object-oriented systems and the fundamentals of 
+object-oriented systems analysis and design and closes with a description of the Unifi ed 
+Process and its extensions and the Unifi ed Modeling Language.
+OBJECTIVES
+■ Understand the fundamental systems development life cycle and its four phases
+■ Understand the evolution of systems development methodologies
+■ Be familiar with the diff erent roles played by and the skills of a systems analyst
+■ Be familiar with the basic characteristics of object-oriented systems
+■ Be familiar with the fundamental principles of object-oriented systems analysis 
+and design
+■ Be familiar with the Unifi ed Process, its extensions, and the Unifi ed Modeling 
+Language 
+INTRODUCTION
+The systems development life cycle (SDLC) is the process of understanding how an information system (IS) can support business needs by designing a system, building it, and 
+delivering it to users. If you have taken a programming class or have programmed on 
+your own, this probably sounds pretty simple. Unfortunately, it is not. A 1996 survey by 
+the Standish Group found that 42 percent of all corporate IS projects were abandoned 
+before completion. A similar study conducted in 1996 by the General Accounting Office 
+found 53 percent of all U.S. government IS projects were abandoned. Unfortunately, 
+many of the systems that are not abandoned are delivered to the users significantly late, 
+cost far more than planned, and have fewer features than originally planned. For example, IAG Consulting reports that 80 percent of the projects were over time, 72 percent 
+were over budget, and 55 percent contained less than the full functionality; Panorama 
+Consulting Solutions reports that 54 percent of the ERP projects were over time, 56 percent 
+were over budget, and 48 percent delivered less than 50 percent of the initial benefi ts; 
+and an IBM study reports that 59 percent of the projects missed one or more of on time, 
+within budget, and quality constraints.1 Although we would like to promote this book as 
+a silver bullet that will keep you from IS failures, we readily admit that a silver bullet that 
+guarantees IS development success simply does not exist. Instead, this book provides you 
+1
+CHAPTER 1
+Introduction to Systems 
+Analysis and Design
+2 Chapter 1 Introduction to Systems Analysis and Design
+with several fundamental concepts and many practical techniques that you can use to 
+improve the probability of success.
+Th e key person in the SDLC is the systems analyst, who analyzes the business situation, 
+identifi es opportunities for improvements, and designs an information system to implement 
+them. Being a systems analyst is one of the most interesting, exciting, and challenging jobs 
+around. Systems analysts work with a variety of people and learn how they conduct business. 
+Specifi cally, they work with a team of systems analysts, programmers, and others on a common mission. Systems analysts feel the satisfaction of seeing systems that they designed and 
+developed make a signifi cant business impact, knowing that they contributed unique skills to 
+make that happen.
+However, the primary objective of a systems analyst is not to create a wonderful system; instead, it is to create value for the organization, which for most companies means 
+increasing profi ts (government agencies and not-for-profi t organizations measure value 
+diff erently). Many failed systems have been abandoned because the analysts tried to build a 
+wonderful system without clearly understanding how the system would fi t with an organization’s goals, current business processes, and other information systems to provide value. 
+An investment in an information system is like any other investment. Th e goal is not to 
+acquire the tool, because the tool is simply a means to an end; the goal is to enable the 
+organization to perform work better so that it can earn greater profi ts or serve its constituents more eff ectively.
+Th is book introduces the fundamental skills a systems analyst needs. Th is pragmatic book 
+discusses best practices in systems development; it does not present a general survey of systems 
+development that covers everything about the topic. By defi nition, systems analysts do things 
+and challenge the current way that organizations work. To get the most out of this book, you 
+will need to actively apply to your own systems development project the ideas and concepts in 
+the examples. Th is book guides you through all the steps for delivering a successful information system. By the time you fi nish the book, you won’t be an expert analyst, but you will be 
+ready to start building systems for real.
+THE SYSTEMS DEVELOPMENT LIFE CYCLE
+In many ways, building an information system is similar to building a house. First, the house 
+(or the information system) starts with a basic idea. Second, this idea is transformed into a 
+simple drawing that is shown to the customer and refi ned (oft en through several drawings, 
+each improving on the last) until the customer agrees that the picture depicts what he or she 
+wants. Th ird, a set of blueprints is designed that presents much more detailed information about 
+the house (e.g., the type of water faucets or where the telephone jacks will be placed). Finally, 
+the house is built following the blueprints, oft en with some changes directed by the customer 
+as the house is erected.
+Th e SDLC has a similar set of four fundamental phases: planning, analysis, design, and 
+implementation. Diff erent projects might emphasize diff erent parts of the SDLC or approach the 
+SDLC phases in diff erent ways, but all projects have elements of these four phases. Each phase is 
+itself composed of a series of steps, which rely upon techniques that produce deliverables (specifi c 
+documents and fi les that provide understanding about the project).
+1 For more information on the problem, see Capers Jones, Patterns of Soft ware System Failure and Success (London: 
+International Th ompson Computer Press, 1996); KeithEllis, Business Analysis Benchmark: Th e Impact of Business 
+Requirements on the Success of Technology Projects (2008). Retrieved May 2014 from IAG Consulting, www.iag.biz; 
+H. H. Jorgensen, L. Owen, and A. Neus, Making Change Work (2008). Retrieved May 2014 from IBM, www.ibm.
+com; Panorama Consulting Solutions, 2012 ERP Report (2012). Retrieved May 2014 from Panorama- Consulting.com. 
+The Systems Development Life Cycle  3
+For example, in applying for admission to a university, all students go through the same 
+phases: information gathering, applying, and accepting. Each of these phases has steps; for 
+example, information gathering includes steps such as searching for schools, requesting information, and reading brochures. Students then use techniques (e.g., Internet searching) that 
+can be applied to steps (e.g., requesting information) to create deliverables (e.g., evaluations 
+of diff erent aspects of universities).
+In many projects, the SDLC phases and steps proceed in a logical path from start to fi nish. In other projects, the project teams move through the steps consecutively, incrementally, 
+iteratively, or in other patterns. In this section, we describe the phases, the actions, and some 
+of the techniques that are used to accomplish the steps at a very high level. 
+For now, there are two important points to understand about the SDLC. First, you should 
+get a general sense of the phases and steps through which IS projects move and some of the 
+techniques that produce certain deliverables. Second, it is important to understand that the 
+SDLC is a process of gradual refi nement. Th e deliverables produced in the analysis phase provide a general idea of the shape of the new system. Th ese deliverables are used as input to the 
+design phase, which then refi nes them to produce a set of deliverables that describes in much 
+more detailed terms exactly how the system will be built. Th ese deliverables, in turn, are used 
+in the implementation phase to produce the actual system. Each phase refi nes and elaborates 
+on the work done previously.
+Planning
+Th e planning phase is the fundamental process of understanding why an information system should be built and determining how the project team will go about building it. It has 
+two steps:
+1. During project initiation, the system’s business value to the organization is identifi ed: 
+How will it lower costs or increase revenues? Most ideas for new systems come from 
+outside the IS area (e.g., from the marketing department, accounting department) in 
+the form of a system request. A system request presents a brief summary of a business 
+need, and it explains how a system that supports the need will create business value. 
+Th e IS department works together with the person or department that generated the 
+request (called the project sponsor) to conduct a feasibility analysis.
+Th e system request and feasibility analysis are presented to an information systems approval committee (sometimes called a steering committee), which decides 
+whether the project should be undertaken.
+2. Once the project is approved, it enters project management. During project management, the project manager creates a workplan, staff s the project, and puts techniques in place to help the project team control and direct the project through 
+the entire SDLC. Th e deliverable for project management is a project plan, which 
+describes how the project team will go about developing the system.
+Analysis
+Th e analysis phase answers the questions of who will use the system, what the system will 
+do, and where and when it will be used. During this phase, the project team investigates any 
+current system(s), identifi es opportunities for improvement, and develops a concept for the 
+new system.
+Th is phase has three steps:
+1. An analysis strategy is developed to guide the project team’s eff orts. Such a strategy 
+usually includes an analysis of the current system (called the as-is system) and its 
+problems and then ways to design a new system (called the to-be system).
+4 Chapter 1 Introduction to Systems Analysis and Design
+2. Th e next step is requirements gathering (e.g., through interviews or questionnaires). 
+Th e analysis of this information—in conjunction with input from the project 
+sponsor and many other people—leads to the development of a concept for a new 
+ system. Th e system concept is then used as a basis to develop a set of business 
+analysis models, which describe how the business will operate if the new system 
+is developed. 
+3. Th e analyses, system concept, and models are combined into a document called 
+the system proposal, which is presented to the project sponsor and other key decision makers (e.g., members of the approval committee) who decide whether the 
+project should continue to move forward.
+Th e system proposal is the initial deliverable that describes what business requirements the 
+new system should meet. Because it is really the fi rst step in the design of the new system, 
+some experts argue that it is inappropriate to use the term “analysis” as the name for this 
+phase; some argue a better name would be “analysis and initial design.” Most organizations 
+continue to use the name analysis for this phase, however, so we use it in this book as well. Just 
+keep in mind that the deliverable from the analysis phase is both an analysis and a high-level 
+initial design for the new system.
+Design
+Th e design phase decides how the system will operate, in terms of the hardware, soft ware, 
+and network infrastructure; the user interface, forms, and reports; and the specifi c programs, 
+databases, and fi les that will be needed. Although most of the strategic decisions about the 
+system were made in the development of the system concept during the analysis phase, the 
+steps in the design phase determine exactly how the system will operate. Th e design phase 
+has four steps:
+1. Th e design strategy is fi rst developed. It clarifi es whether the system will be developed by the company’s own programmers, whether the system will be outsourced 
+to another fi rm (usually a consulting fi rm), or whether the company will buy an 
+existing soft ware package.
+2. Th is leads to the development of the basic architecture design for the system, which 
+describes the hardware, soft ware, and network infrastructure to be used. In most 
+cases, the system will add or change the infrastructure that already exists in the 
+organization. Th e interface design specifi es how the users will move through the system (e.g., navigation methods such as menus and on-screen buttons) and the forms 
+and reports that the system will use.
+3. Th e database and fi le specifi cations are developed. Th ese defi ne exactly what data 
+will be stored and where they will be stored.
+4. Th e analyst team develops the program design, which defi nes the programs that 
+need to be written and exactly what each program will do.
+Th is collection of deliverables (architecture design, interface design, database and fi le specifi cations, and program design) is the system specifi cation that is handed to the programming team 
+for implementation. At the end of the design phase, the feasibility analysis and project plan are 
+reexamined and revised, and another decision is made by the project sponsor and approval 
+committee about whether to terminate the project or continue.
+Implementation
+Th e fi nal phase in the SDLC is the implementation phase, during which the system is actually 
+built (or purchased, in the case of a packaged soft ware design). Th is is the phase that usually 
+Systems Development Methodologies  5
+2 Th e classic modern process-centered methodology is that by Edward Yourdon, Modern Structured Analysis 
+(Englewood Cliff s, NJ: Yourdon Press, 1989). An example of a data-centered methodology is information engineering; see James Martin, Information Engineering, vols. 1–3 (Englewood Cliff s, NJ: Prentice Hall, 1989). A widely 
+accepted standardized non–object-oriented methodology that balances processes and data is IDEF; see FIPS 183,
+Integration Defi nition for Function Modeling, Federal Information Processing Standards Publications, U.S. Department of Commerce, 1993.
+3 A good reference for comparing systems development methodologies is Steve McConnell, Rapid Development 
+(Redmond, WA: Microsoft Press, 1996).
+gets the most attention, because for most systems it is the longest and most expensive single 
+part of the development process. Th is phase has three steps:
+1. System construction is the fi rst step. Th e system is built and tested to ensure that it 
+performs as designed. Because the cost of bugs can be immense, testing is one of 
+the most critical steps in implementation. Most organizations give more time and 
+attention to testing than to writing the programs in the fi rst place.
+2. Th e system is installed. Installation is the process by which the old system is turned 
+off and the new one is turned on. One of the most important aspects of conversion 
+is the development of a training plan to teach users how to use the new system and 
+help manage the changes caused by the new system.
+3. Th e analyst team establishes a support plan for the system. Th is plan usually 
+includes a formal or informal post-implementation review as well as a systematic 
+way for identifying major and minor changes needed for the system.
+SYSTEMS DEVELOPMENT METHODOLOGIES
+A methodology is a formalized approach to implementing the SDLC (i.e., it is a list of steps 
+and deliverables). Th ere are many diff erent systems development methodologies, and each 
+one is unique, based on the order and focus it places on each SDLC phase. Some methodologies are formal standards used by government agencies, whereas others have been developed 
+by consulting fi rms to sell to clients. Many organizations have internal methodologies that 
+have been honed over the years, and they explain exactly how each phase of the SDLC is to 
+be performed in that company.
+Th ere are many ways to categorize methodologies. One way is by looking at whether 
+they focus on business processes or the data that support the business. A process-centered 
+methodology emphasizes process models as the core of the system concept. In Figure 1-1, for 
+example, process-centered methodologies would focus fi rst on defi ning the processes (e.g., 
+assemble sandwich ingredients). Data-centered methodologies emphasize data models as the 
+core of the system concept. In Figure 1-1, data-centered methodologies would focus fi rst on 
+defi ning the contents of the storage areas (e.g., refrigerator) and how the contents were organized.2 By contrast, object-oriented methodologies attempt to balance the focus between process 
+and data by incorporating both into one model. In Figure 1-1, these methodologies would 
+focus fi rst on defi ning the major elements of the system (e.g., sandwiches, lunches) and look 
+at the processes and data involved with each element.
+Another important factor in categorizing methodologies is the sequencing of the SDLC 
+phases and the amount of time and eff ort devoted to each.3 In the early days of computing, 
+programmers did not understand the need for formal and well-planned life-cycle methodologies. Th ey tended to move directly from a very simple planning phase right into the 
+construction step of the implementation phase—in other words, from a very fuzzy, not-wellthought-out system request into writing code. Th is is the same approach that you sometimes 
+use when writing programs for a programming class. It can work for small programs that 
+6 Chapter 1 Introduction to Systems Analysis and Design
+require only one programmer, but if the requirements are complex or unclear, you might 
+miss important aspects of the problem and have to start all over again, throwing away part of 
+the program (and the time and eff ort spent writing it). Th is approach also makes teamwork 
+diffi cult because members have little idea about what needs to be accomplished and how to 
+work together to produce a fi nal product. In this section, we describe three diff erent classes of 
+system development methodologies: structured design, rapid application development, and 
+agile development.
+Structured Design
+Th e fi rst category of systems development methodologies is called structured design.
+Th ese methodologies became dominant in the 1980s, replacing the previous ad hoc and 
+FIGURE 1-1  A Simple Behavioral Model for Making a Simple Lunch
+GetJelly
+GetPeanutButter
+GetCookies
+GetBread
+CreateSandwich
+GetMilk
+CreateLunch
+GetLunchBag
+PutLunchInBag
+aParent aRefrigerator aCupboard aSandwich aLunch aLunchBag
+Systems Development Methodologies  7
+undisciplined approach. Structured design methodologies adopt a formal step-by-step 
+approach to the SDLC that moves logically from one phase to the next. Numerous process-centered and data-centered methodologies follow the basic approach of the two structured design categories outlined next.
+Waterfall Development Th e original structured design methodology (still used today) is 
+waterfall development. With waterfall development-based methodologies, the analysts and 
+users proceed in sequence from one phase to the next (see Figure 1-2). Th e key deliverables 
+for each phase are typically very long (oft en hundreds of pages in length) and are presented to 
+the project sponsor for approval as the project moves from phase to phase. Once the sponsor 
+approves the work that was conducted for a phase, the phase ends and the next one begins. 
+Th is methodology is referred to as waterfall development because it moves forward from 
+phase to phase in the same manner as a waterfall. Although it is possible to go backward in 
+the SDLC (e.g., from design back to analysis), it is extremely diffi cult (imagine yourself as a 
+salmon trying to swim upstream against a waterfall, as shown in Figure 1-2).
+Structured design also introduced the use of formal modeling or diagramming techniques to describe the basic business processes and the data that support them. Traditional 
+structured design uses one set of diagrams to represent the processes and a separate set of 
+diagrams to represent data. Because two sets of diagrams are used, the systems analyst must 
+decide which set to develop fi rst and use as the core of the system: process-model diagrams 
+or data-model diagrams. 
+Th e two key advantages of the structured design waterfall approach are that it identifi es system requirements long before programming begins and it minimizes changes to the 
+requirements as the project proceeds. Th e two key disadvantages are that the design must 
+be completely specifi ed before programming begins and that a long time elapses between the 
+completion of the system proposal in the analysis phase and the delivery of the system (usually many months or years). If the project team misses important requirements, expensive 
+post-implementation programming may be needed (imagine yourself trying to design a car 
+on paper; how likely would you be to remember interior lights that come on when the doors 
+open or to specify the right number of valves on the engine?). A system can also require 
+signifi cant rework because the business environment has changed from the time when the 
+analysis phase occurred. 
+FIGURE 1-2
+A Waterfall 
+Development-Based 
+Methodology
+System
+Planning
+Analysis
+Design
+Implementation
+8 Chapter 1 Introduction to Systems Analysis and Design
+Parallel Development Parallel development methodology attempts to address the problem 
+of long delays between the analysis phase and the delivery of the system. Instead of doing 
+design and implementation in sequence, it performs a general design for the whole system 
+and then divides the project into a series of distinct subprojects that can be designed and 
+implemented in parallel. Once all subprojects are complete, the separate pieces are integrated 
+and the system is delivered (see Figure 1-3).
+Th e primary advantage of this methodology is that it can reduce the time to deliver a 
+system; thus, there is less chance of changes in the business environment causing rework. 
+However, sometimes the subprojects are not completely independent; design decisions 
+made in one subproject can aff ect another, and the end of the project can require signifi cant 
+integration eff orts.
+Rapid Application Development (RAD)
+A second category of methodologies includes rapid application development (RAD)-based 
+methodologies. Th ese are a newer class of systems development methodologies that emerged 
+in the 1990s. RAD-based methodologies attempt to address both weaknesses of structured 
+design methodologies by adjusting the SDLC phases to get some part of the system developed quickly and into the hands of the users. In this way, the users can better understand the 
+system and suggest revisions that bring the system closer to what is needed.4
+4 One of the best RAD books is Steve McConnell, Rapid Development (Redmond, WA: Microsoft Press, 1996).
+FIGURE 1-3  A Parallel Development-Based Methodology
+System
+Planning
+Analysis
+Design
+Implementation
+Design
+Integration
+Implementation
+Design
+Implementation
+Design
+Subproject 2
+Subproject 1
+Subproject 3
+Systems Development Methodologies  9
+Most RAD-based methodologies recommend that analysts use special techniques 
+and  computer tools to speed up the analysis, design, and implementation phases, such as 
+computer-aided soft ware engineering (CASE) tools, joint application design (JAD) sessions, 
+fourth-generation or visual programming languages that simplify and speed up programming, 
+and code generators that automatically produce programs from design specifi cations. Th e 
+combination of the changed SDLC phases and the use of these tools and techniques improves 
+the speed and quality of systems development. However, there is one possible subtle problem 
+with RAD-based methodologies: managing user expectations. Owing to the use of the tools and 
+techniques that can improve the speed and quality of systems development, user expectations 
+of what is possible can change dramatically. As a user better understands the information technology (IT), the systems requirements tend to expand. Th is was less of a problem when using 
+methodologies that spent a lot of time thoroughly documenting requirements. 
+Phased Development A phased development-based methodology breaks an overall system into a 
+series of versions that are developed sequentially. Th e analysis phase identifi es the overall system 
+concept, and the project team, users, and system sponsor then categorize the requirements into 
+a series of versions. Th e most important and fundamental requirements are bundled into the 
+fi rst version of the system. Th e analysis phase then leads into design and implementation—but 
+only with the set of requirements identifi ed for version 1 (see Figure 1-4).
+Once version 1 is implemented, work begins on version 2. Additional analysis is performed based on the previously identifi ed requirements and combined with new ideas and 
+issues that arose from the users’ experience with version 1. Version 2 then is designed and 
+implemented, and work immediately begins on the next version. Th is process continues until 
+the system is complete or is no longer in use.
+Phased development-based methodologies have the advantage of quickly getting a useful 
+system into the hands of the users. Although the system does not perform all the functions the 
+users need at fi rst, it does begin to provide business value sooner than if the system were delivered aft er completion, as is the case with the waterfall and parallel methodologies. Likewise, 
+because users begin to work with the system sooner, they are more likely to identify important 
+additional requirements sooner than with structured design situations.
+Th e major drawback to phased development is that users begin to work with systems that 
+are intentionally incomplete. It is critical to identify the most important and useful features 
+and include them in the fi rst version and to manage users’ expectations along the way.
+Prototyping A prototyping-based methodology performs the analysis, design, and implementation phases concurrently, and all three phases are performed repeatedly in a cycle until 
+the system is completed. With these methodologies, the basics of analysis and design are 
+performed, and work immediately begins on a system prototype, a quick-and-dirty program 
+that provides a minimal amount of features. Th e fi rst prototype is usually the fi rst part of the 
+system that is used. Th is is shown to the users and the project sponsor, who provide comments. Th ese comments are used to reanalyze, redesign, and reimplement a second prototype, 
+which provides a few more features. Th is process continues in a cycle until the analysts, users, 
+and sponsor agree that the prototype provides enough functionality to be installed and used in 
+the organization. Aft er the prototype (now called the “system”) is installed, refi nement occurs 
+until it is accepted as the new system (see Figure 1-5).
+Th e key advantage of a prototyping-based methodology is that it very quickly provides a 
+system with which the users can interact, even if it is not ready for widespread organizational 
+use at fi rst. Prototyping reassures the users that the project team is working on the system 
+(there are no long delays in which the users see little progress), and prototyping helps to more 
+quickly refi ne real requirements. 
+10 Chapter 1 Introduction to Systems Analysis and Design
+FIGURE 1-4  A Phased Development-Based Methodology
+System
+version 1
+Planning
+Analysis
+Analysis
+Implementation
+Design
+Analysis
+Implementation
+Design
+Analysis
+Implementation
+Design
+System
+version 2
+System
+version 3
+FIGURE 1-5
+A Prototyping-Based 
+Methodology
+System
+prototype
+System
+Planning
+Analysis
+Design
+Implementation
+Implementation
+Systems Development Methodologies  11
+Th e major problem with prototyping is that its fast-paced system releases challenge 
+attempts to conduct careful, methodical analysis. Oft en the prototype undergoes such significant changes that many initial design decisions become poor ones. Th is can cause problems 
+in the development of complex systems because fundamental issues and problems are not recognized until well into the development process. Imagine building a car and discovering late in 
+the prototyping process that you have to take the whole engine out to change the oil (because 
+no one thought about the need to change the oil until aft er it had been driven 10,000 miles).
+Throwaway Prototyping Th rowaway prototyping-based methodologies are similar to 
+ prototyping-based methodologies in that they include the development of prototypes; however, throwaway prototypes are done at a diff erent point in the SDLC. Th ese prototypes are 
+used for a very diff erent purpose than those previously discussed, and they have a very diff erent appearance (see Figure 1-6).
+Th e throwaway prototyping-based methodologies have a relatively thorough analysis phase that is used to gather information and to develop ideas for the system concept. 
+However, users might not completely understand many of the features they suggest, and there 
+may be challenging technical issues to be solved. Each of these issues is examined by analyzing, designing, and building a design prototype. A design prototype is not a working system; 
+it is a product that represents a part of the system that needs additional refi nement, and it 
+contains only enough detail to enable users to understand the issues under consideration. For 
+example, suppose users are not completely clear on how an order-entry system should work. 
+In this case, a series of mock-up screens appear to be a system, but they really do nothing. Or 
+suppose that the project team needs to develop a sophisticated graphics program in Java. Th e 
+team could write a portion of the program with pretend data to ensure that they could do a 
+full-blown program successfully.
+A system developed using this type of methodology relies on several design prototypes 
+during the analysis and design phases. Each of the prototypes is used to minimize the risk 
+associated with the system by confi rming that important issues are understood before the real 
+system is built. Once the issues are resolved, the project moves into design and implementation. At this point, the design prototypes are thrown away, which is an important diff erence 
+between these methodologies and prototyping methodologies, in which the prototypes evolve 
+into the fi nal system.
+FIGURE 1-6  A Throwaway Prototyping-Based Methodology
+Design
+prototype
+System
+Analysis
+Analysis
+Design
+Implementation
+Planning
+Implementation
+Design
+12 Chapter 1 Introduction to Systems Analysis and Design
+Th rowaway prototyping-based methodologies balance the benefi ts of well-thought-out 
+analysis and design phases with the advantages of using prototypes to refi ne key issues before 
+a system is built. It can take longer to deliver the fi nal system as compared to prototypingbased methodologies, but this type of methodology usually produces more stable and reliable 
+systems.
+Agile Development5
+A third category of systems development methodologies is still emerging today: agile development. All agile development methodologies are based on the agile manifesto and a set of 
+twelve principles. Th e emphasis of the manifesto is to focus the developers on the working 
+conditions of the developers, the working soft ware, the customers, and addressing changing 
+requirements instead of focusing on detailed systems development processes, tools, allinclusive documentation, legal contracts, and detailed plans. Th ese programming-centric 
+methodologies have few rules and practices, all of which are fairly easy to follow. Th ese methodologies are typically based only on the twelve principles of agile soft ware. Th ese principles 
+include the following:
+■ Soft ware is delivered early and continuously through the development process, satisfying the customer.
+■ Changing requirements are embraced regardless of when they occur in the development process.
+■ Working soft ware is delivered frequently to the customer.
+■ Customers and developers work together to solve the business problem.
+■ Motivated individuals create solutions; provide them the tools and environment they 
+need, and trust them to deliver.
+■ Face-to-face communication within the development team is the most effi cient and 
+eff ective method of gathering requirements.
+■ Th e primary measure of progress is working, executing soft ware.
+■ Both customers and developers should work at a pace that is sustainable. Th at is, the 
+level of work could be maintained indefi nitely without any worker burnout.
+■ Agility is heightened through attention to both technical excellence and good design.
+■ Simplicity, the avoidance of unnecessary work, is essential.
+■ Self-organizing teams develop the best architectures, requirements, and designs.
+■ Development teams regularly refl ect on how to improve their development 
+ processes.
+Based on these principles, agile methodologies focus on streamlining the system-development 
+process by eliminating much of the modeling and documentation overhead and the time 
+spent on those tasks. Instead, projects emphasize simple, iterative application development.6 
+All agile development methodologies follow a simple cycle through the traditional phases of 
+the systems development process (see Figure 1-7). Virtually all agile methodologies are used 
+in conjunction with object-oriented technologies.
+5 Th ree good sources of information on agile development and object-oriented systems are S. W. Ambler, Agile 
+Modeling: Eff ective Practices for Extreme Programming and the Unifi ed Process (New York: Wiley, 2002); C. Larman, 
+Agile & Iterative Development: A Manager’s Guide (Boston: Addison-Wesley, 2004); R. C. Martin, Agile Soft ware 
+Development: Principles, Patterns, and Practices (Upper Saddle River, NJ: Prentice Hall, 2003).
+6 See Agile Alliance, www.agilealliance.com.
+Systems Development Methodologies  13
+However, agile methodologies do have critics. One of the major criticisms deals with 
+today’s business environment, where much of the actual information systems development 
+is off shored, outsourced, and/or subcontracted. Given agile development methodologies 
+requiring co-location of the development team, this seems to be a very unrealistic assumption. A second major criticism is that if agile development is not carefully managed, and by 
+defi nition it is not, the development process can devolve into a prototyping approach that 
+essentially becomes a “programmers gone wild” environment where programmers attempt 
+to hack together solutions. A third major criticism, based on the lack of actual documentation created during the development of the soft ware, raises issues regarding the auditability 
+of the systems being created. Without suffi cient documentation, neither the system nor the 
+systems-development process can be assured. A fourth major criticism is based on whether 
+agile approaches can deliver large mission-critical systems.
+Even with these criticisms, given the potential for agile approaches to address the 
+application backlog and to provide timely solutions to many business problems, agile 
+approaches should be considered in some circumstances. Furthermore, many of the techniques encouraged by attending to the underlying purpose of the agile manifesto and the 
+set of twelve agile principles are very useful in object-oriented systems development. Two of 
+the more popular examples of agile development methodologies are extreme programming 
+(XP) and Scrum. 
+Extreme Programming7 Extreme programming (XP) is founded on four core values: communication, simplicity, feedback, and courage. Th ese four values provide a foundation that 
+XP developers use to create any system. First, the developers must provide rapid feedback 
+to the end users on a continuous basis. Second, XP requires developers to follow the KISS 
+principle.8 Th ird, developers must make incremental changes to grow the system, and they 
+must not only accept change, they must embrace change. Fourth, developers must have a 
+quality-fi rst mentality. XP also supports team members in developing their own skills. Th ree 
+of the key principles that XP uses to create successful systems are continuous testing, simple 
+coding performed by pairs of developers, and close interactions with end users to build systems very quickly.
+7 For more information, see K. Beck, eXtreme Programming Explained: Embrace Change (Reading, MA: AddisonWesley, 2000); C. Larman, Agile & Iterative Development: A Manager’s Guide (Boston: Addison-Wesley, 2004); M. 
+Lippert, S. Roock, and H. Wolf, eXtreme Programming in Action: Practical Experiences from Real World Projects (New 
+York: Wiley, 2002); www.extremeprogramming.org.
+8 Keep it simple, stupid.
+FIGURE 1-7
+Typical Agile 
+Development 
+Methodology
+Implementation
+Design
+Analysis
+System
+Planning
+14 Chapter 1 Introduction to Systems Analysis and Design
+Testing and effi cient coding practices are the core of XP. Code is tested each day and is 
+placed into an integrative testing environment. If bugs exist, the code is backed out until it 
+is completely free of errors. 
+An XP project begins with user stories that describe what the system needs to do. Th en, 
+programmers code in small, simple modules and test to meet those needs. Users are required 
+to be available to clear up questions and issues as they arise. Standards are very important 
+to minimize confusion, so XP teams use a common set of names, descriptions, and coding 
+practices. XP projects deliver results sooner than even the RAD approaches, and they rarely 
+get bogged down in gathering requirements for the system.
+XP adherents claim many strengths associated with developing soft ware using XP. 
+Programmers work closely with all stakeholders, and communication among all stakeholders is improved. Continuous testing of the evolving system is encouraged. Th e system is 
+developed in an evolutionary and incremental manner, which allows the requirements to 
+evolve as the stakeholders understand the potential that the technology has in providing a 
+solution to their problem. Estimation is task driven and is performed by the programmer 
+who will implement the solution for the task under consideration. Because all programming 
+is done in pairs, a shared responsibility for each soft ware component develops among the 
+programmers. Finally, the quality of the fi nal product increases during each iteration.
+For small projects with highly motivated, cohesive, stable, and experienced teams, XP 
+should work just fi ne. However, if the project is not small or the teams aren’t jelled,9 the success of an XP development eff ort is doubtful. Th is tends to throw into doubt the whole idea 
+of bringing outside contractors into an existing team environment using XP.10 Th e chance 
+of outsiders jelling with insiders might simply be too optimistic. XP requires a great deal of 
+discipline, otherwise projects will become unfocused and chaotic. XP is recommended only 
+for small groups of developers—no more than ten developers—and it is not advised for large 
+mission-critical applications. Owing to the lack of analysis and design documentation, there 
+is only code documentation associated with XP, so maintaining large systems built with XP 
+may be impossible. And because mission-critical business information systems tend to exist 
+for a long time, the utility of XP as a business information system development methodology 
+is in doubt. Finally, the methodology needs a lot of on-site user input, something to which 
+many business units cannot commit.11 However, some of the techniques associated with 
+XP are useful in object-oriented systems development. For example, user stories, pair programming, and continuous testing are invaluable tools from which object-oriented systems 
+development could benefi t.
+Scrum12 Scrum is a term that is well known to rugby fans. In rugby, a scrum is used to 
+restart a game. In a nutshell, the creators of the Scrum method believe that no matter how 
+much you plan, as soon as the soft ware begins to be developed, chaos breaks out and the 
+9 A jelled team is one that has low turnover, a strong sense of identity, a sense of eliteness, a feeling that they jointly 
+own the product being developed, and enjoyment in working together. For more information regarding jelled teams, 
+see T. DeMarco and T. Lister, Peopleware: Productive Projects and Teams (New York: Dorset/House, 1987).
+10 Considering the tendency for off shore outsourcing, this is a major obstacle for XP to overcome. For more information on off shore outsourcing, see P. Th ibodeau, “ITAA Panel Debates Outsourcing Pros, Cons,” Computerworld 
+Morning Update (September 25, 2003); S. W. Ambler, “Chicken Little Was Right,” Soft ware Development (October 
+2003).
+11 Many of the observations on the utility of XP as a development approach were based on conversations with Brian 
+Henderson-Sellers.
+12 For more information, see C. Larman, Agile & Iterative Development: A Manager’s Guide (Boston: AddisonWesley, 2004); K. Schwaber and M. Beedle, Agile Soft ware Development with Scrum (Upper Saddle River, NJ: 
+Prentice Hall, 2001); R. Wysocki, Eff ective Project Management: Traditional, Agile, Extreme, 5th Ed. (Indianapolis,

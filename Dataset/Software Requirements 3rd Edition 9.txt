@@ -1,0 +1,282 @@
+¦	Additional information of a historical, context-setting, or descriptive nature.
+¦	Extraneous information that does not add value.
+Elicitation participants won't simply tell you, "Here comes a business requirement." As an analyst, you need to determine what type of information each provided statement you hear represents. The following discussion suggests some phrases to listen for that will help you in this classification process.
+Business requirements Anything that describes the financial, marketplace, or other business benefit that either customers or the developing organization wish to gain from the product is a business requirement (see Chapter 5). Listen for statements about the value that buyers or users of the software will receive, such as these:
+¦	"Increase market share in region X by Y percent within Z months."
+¦	"Save $X per year on electricity now wasted by inefficient units."
+User requirements  General statements of user goals or business tasks that users need to perform
+are user requirements, most typically represented as	(see Chapter 8,
+"Understanding user requirements"). A user who says, "I need to <do something>" is probably
+describing a user requirement, as in the following examples:
+¦	"I need to print a mailing label for a package."
+¦	"As the lead machine operator, I need to calibrate the pump controller first thing every morning."
+Business rules When a customer says that only certain users can perform an activity under specific conditions, he might be presenting a business rule (see Chapter 9, "Playing by the rules"). These aren't software requirements as they stand, but you might derive some functional requirements to enforce the rules. Phrases such as "Must comply with . . . ," "If <some condition is true>, then <something happens>," or "Must be calculated according to . . . " suggest that the user is describing a business rule. Here are some examples:
+¦	"A new client must pay 30 percent of the estimated consulting fee and travel expenses in
+advance."
+¦	"Time-off approvals must comply with the company's HR vacation policy."
+Functional requirements Functional requirements describe the observable behaviors the system will exhibit under certain conditions and the actions the system will let users take. Here are some examples of functional requirements as you might hear them from users:
+¦	"If the pressure exceeds 40.0 psi, the high-pressure warning light should come on."
+¦	"The user must be able to sort the project list in forward and reverse alphabetical order."
+These statements illustrate how users typically present functional requirements, but they don't represent good ways to write functional requirements. The BA will need to craft these into more precise specifications. See Chapter 11, "Writing excellent requirements," for guidance on writing good functional requirements.
+ 
+Quality attributes Statements that describe how well the system does something are quality attributes (see Chapter 14, "Beyond functionality"). Listen for words that describe desirable system characteristics: fast, easy, user-friendly, reliable, secure. You'll need to work with the users to understand just what they mean by these ambiguous and subjective terms so that you can write clear, verifiable quality goals. The following examples suggest what quality attributes might sound like when described by users:
+¦	"The mobile software must respond quickly to touch commands."
+¦	"The shopping cart mechanism has to be simple to use so my new customers don't abandon the purchase."
+External interface requirements Requirements in this category describe the connections between your system and the rest of the universe. The SRS template in Chapter 10, "Documenting the requirements," includes sections for interfaces to users, hardware, and other software systems.
+Phrases such as "Must read signals from . . . ," "Must send messages to . . . ," "Must be able to read files in <format>," and "User interface elements must conform to <a standard>" indicate that the customer is describing an external interface requirement. Following are some examples:
+¦	"The manufacturing execution system must control the wafer sorter."
+¦	"The mobile app should send the check image to the bank after I photograph the check I'm depositing."
+Constraints Design and implementation constraints legitimately restrict the options available to the developer (see Chapter 14). Devices with embedded software often must respect physical constraints such as size, weight, and interface connections. Phrases that indicate that the customer is describing
+a design or implementation constraint include: "Must be written in <a specific programming language>," "Cannot exceed <some limit>," and "Must use <a specific user interface control>." The following are examples of constraints that a customer might present:
+¦	"Files submitted electronically cannot exceed 10 MB in size."
+¦	"The browser must use 256-bit encryption for all secure transactions."
+As with functional requirements, don't just transcribe the user's statement of a constraint. Ask why the constraint exists, confirm its validity, and record the rationale for including it as a requirement.
+Data requirements Customers are presenting a data requirement whenever they describe the format, data type, allowed values, or default value for a data element; the composition of a complex business data structure; or a report to be generated (see Chapter 13, "Specifying data requirements"). Some examples of data requirements are as follows:
+¦	"The ZIP code has five digits, followed by an optional hyphen and four digits that default to 0000."
+¦	"An order consists of the customer's identity, shipping information, and one or more products,
+each of which includes the product number, number of units, unit price, and total price."
+ 
+Solution ideas Many "requirements" from users are really solution ideas. Someone who describes a specific way to interact with the system to perform some action is suggesting a solution. The business analyst needs to probe below the surface of a solution idea to get to the real requirement. Repeatedly asking "why" the user needs it to work this way will likely reveal the true need (Wiegers 2006). For instance, passwords are just one of several possible ways to implement a security requirement. Two other examples of solution ideas are the following:
+¦	"Then I select the state where I want to send the package from a drop-down list."
+¦	"The phone has to allow the user to swipe with a finger to navigate between screens."
+In the first example, the phrase from a drop-down list indicates that this is a solution idea because it's describing a specific user interface control. The prudent BA will ask, "Why from a drop-down list?" If the user replies, "That just seemed like a good way to do it," then the real requirement is something like, "The system shall permit the user to specify the state where he wants to send the package." But maybe the user says, "We do the same thing in several other places and I want it to be consistent.
+Also, the drop-down list prevents the user from entering invalid data." These are legitimate reasons to specify a specific solution. Recognize, though, that embedding a solution in a requirement imposes a design constraint on that requirement: it limits the requirement to being implemented in only one way. This isn't necessarily wrong or bad; just make sure the constraint is there for a good reason.
+Classifying the customer input is just the beginning of the process to create requirements specifications. You still need to assemble the information into clearly stated and well-organized requirements collections. As you work through the information, craft clear individual requirements and store them in the appropriate sections of the team's document templates or repository.
+Make additional passes through this information to ensure that each statement demonstrates the characteristics of high-quality requirements as described in Chapter 11. As you process your elicitation notes, mark the items complete as you store them in the right place.
+
+How do you know when you're done?
+No simple signal will indicate when you've completed requirements elicitation. In fact, you'll never be entirely done, particularly if you are deliberately implementing a system incrementally, as on agile projects. As people muse in the shower each morning and talk with their colleagues, they'll generate ideas for additional requirements and want to change some of the ones they already have. The following cues suggest that you're reaching the point of diminishing returns on requirements elicitation, at least for now. Perhaps you are done if:
+¦	The users can't think of any more use cases or user stories. Users tend to identify user require- ments in sequence of decreasing importance.
+¦	Users propose new scenarios, but they don't lead to any new functional requirements. A "new" use case might really be an alternative flow for a use case you've already captured.
+¦	Users repeat issues they already covered in previous discussions.
+ 
+¦	Suggested new features, user requirements, or functional requirements are all deemed to be
+out of scope.
+¦	Proposed new requirements are all low priority.
+¦	The users are proposing capabilities that might be included "sometime in the lifetime of the product" rather than "in the specific product we're talking about right now."
+¦	Developers and testers who review the requirements for an area raise few questions.
+Amalgamating requirements input from numerous users is difficult without using a structured organizing scheme, such as use cases or the sections in an SRS template. Despite your best efforts to discover all the requirements, you won't, so expect to make changes as construction proceeds.
+Remember, your goal is to accumulate a shared understanding of requirements that is good enough
+to let construction of the next release or increment proceed at an acceptable level of risk.
+
+
+Some cautions about elicitation
+Skill in conducting elicitation discussions comes with experience and builds on training in interviewing, group facilitation, conflict resolution, and similar activities. However, a few cautions will decrease the learning curve.
+stakeholder representation Collecting input from too few representatives or hearing the voice of only the loudest, most opinionated customer is a problem. It can lead to overlooking requirements that are important to certain user classes or to including requirements that don't represent the needs of a majority of the users. The best balance involves a few product
+champions who can speak for their respective user classes, with each champion backed up by other
+representatives from the same user class.
+Define scope appropriately
+scope is improperly defined, being either too large or too small. If the scope is too large, you'll accumulate more requirements than are needed to deliver adequate business and customer value, and the elicitation process will drag on. If the project is scoped too small, customers will present needs that are clearly important yet just as clearly lie beyond the limited scope currently established for the project. The current scope could be too small to yield a satisfactory product. Eliciting user requirements therefore can lead to modifying the product vision or the project scope.
+Avoid the requirements-versus-design argument  It's often stated that requirements are about
+what the system has to do, whereas how the solution will be implemented is the realm of design. Although attractively concise, this is an oversimplification. Requirements elicitation should indeed focus on the what, but there's a gray area-not a sharp line-between analysis and design (Wiegers 2006). Hypothetical hows help to clarify and refine the understanding of what users need. Analysis models, screen sketches, and prototypes help to make the needs expressed during elicitation more tangible and to reveal errors and omissions. Make it clear to users that these screens and prototypes are illustrative only, not necessarily the ultimate solution.
+ 
+Research within reason   The need to do exploratory research sometimes disrupts elicitation. An idea or a suggestion arises, but extensive research is required to assess whether it should even be considered for the product. Treat these explorations of feasibility or value as project tasks in their own right. Prototyping is one way to explore such issues. If your project requires extensive research, use an incremental development approach to explore the requirements in small, low-risk portions.
+
+Assumed and implied requirements
+You will never document 100 percent of the requirements for a system. But the requirements you don't specify pose a risk that the project might deliver a solution different from what stakeholders expect. Two likely culprits behind missed expectations are assumed and implied requirements:
+¦		are those that people expect without having explicitly expressed them. What you assume as being obvious might not be the same as assumptions that various developers make.
+¦	are necessary because of another requirement but aren't explicitly
+stated. Developers can't implement functionality they don't know about.
+To reduce these risks, try to identify knowledge gaps waiting to be filled with implied and assumed requirements. Ask, "What are we assuming?" during elicitation sessions to try to surface those hidden thoughts. If you come across an assumption during requirements discussions, record it and confirm its validity. People often assume that things have to be the way they've always been because they're so familiar with an existing system or business process. If you're developing a replacement system, review the previous system's features to determine whether they're truly required in the replacement.
+To identify implied requirements, study the results of initial elicitation sessions to identify areas of incompleteness. Does a vague, high-level requirement need to be fleshed out so the stakeholders all understand it? Is a requirement that might be part of a logical set (say, saving an incomplete
+web form) lacking its counterpart (retrieving a saved form for further work)? You might need to
+re-interview some of the same stakeholders to have them look for missing requirements (Rose-Coutré 2007). Also, think of new stakeholders who know the topic and can spot gaps.
+Read between the lines to identify features or characteristics the customers expect to be included without having said so. Ask context-free questions, high-level and open-ended questions that elicit information about global characteristics of both the business problem and the potential solution (Gause and Weinberg 1989). The customer's response to questions such as "What kind of precision is required in the product?" or "Can you help me understand why you don't agree with Miguel's reply?" can lead to insights that questions with standard yes/no or A/B/C answers do not.
+ 
+ 	 
+
+
+Finding missing requirements
+Missing requirements constitute a common type of requirement defect. Missing requirements are hard to spot because they're invisible! The following techniques will help you detect previously undiscovered requirements:
+¦		into enough detail to reveal exactly what is being requested. A vague, high-level requirement that leaves much to the reader's interpretation will lead to a gap between what the requester has in mind and what the developer builds.
+¦	Ensure that all user classes have provided input. Make sure that each user requirement has at least one identified user class who will receive value from the requirement.
+¦	Trace system requirements, user requirements, event-response lists, and business rules to their corresponding functional requirements to make sure that all the necessary functionality was derived.
+¦	Check boundary values for missing requirements. Suppose that one requirement states, "If the price of the order is less than $100, the shipping charge is $5.95" and another says, "If the price of the order is more than $100, the shipping charge is 6 percent of the total order price."
+But what's the shipping charge for an order with a price of exactly $100? It's not specified, so a requirement is missing, or at least poorly written.
+¦	Represent requirements information in more than one way. It's difficult to read a mass of text and notice the item that's absent. Some analysis models visually represent requirements at a high level of abstraction-the forest, not the trees. You might study a model and realize that there should be an arrow from one box to another; that missing arrow represents a missing requirement. Analysis models are described in Chapter 12, "A picture is worth 1024 words."
+ 
+¦	Sets of requirements with complex Boolean logic (ANDs, ORs, and NOTs) often are incomplete. If a combination of logical conditions has no corresponding functional requirement, the developer has to deduce what the system should do or chase down an answer. "Else" conditions frequently are overlooked. Represent complex logic by using decision tables or decision trees to cover all the possible situations, as described in Chapter 12.
+¦	Create a checklist of common functional areas to consider for your projects. Examples include error logging, backup and restore, access security, reporting, printing, preview capabilities, and configuring user preferences. Periodically compare this list with the functions you've already specified to look for gaps.
+¦	A data model can reveal missing functionality. All data entities that the system will manipulate must have corresponding functionality to create them, read them from an external source, update current values, and/or delete them. The acronym CRUD is often used to refer to these four common operations. Make sure you can identify functionality in your application to perform these operations on all of your entities that need them (see Chapter 13).
+You'll likely never discover all of the requirements for your product, but nearly every software team can do a better job of requirements elicitation by applying the practices described in this chapter.
+
+ 
+C HA P T E R 8
+Understanding user requirements
+
+The Chemical Tracking System (CTS) project was holding its first requirements elicitation workshop to learn what chemists would need to do with the system. The participants included a business analyst, Lori; the product champion for the chemists, Tim; two other chemist representatives, Sandy and Peter; and the lead developer, Ravi.
+"Tim, Sandy, and Peter have identified 14 use cases that chemists would need to perform using the Chemical Tracking System," Lori told the group. "You said the use case called 'Request a Chemical' is top priority and Tim already wrote a brief description for it, so let's begin there. Tim, how do you visualize the process to request a chemical with the system?"
+"First," said Tim, "you should know that only people who have been authorized by their lab managers
+are allowed to request chemicals."
+"Okay, that sounds like a business rule," Lori replied. "I'll start a list of business rules because we'll probably find others. It looks like we'll have to verify that the user is on the approved list." Lori then guided the group through a discussion of how they envisioned creating a request for a new chemical. She used flipcharts and sticky notes to collect information about preconditions, postconditions, and the interactions between the user and the system. Lori asked how a session would be different if the user
+
+ 
+ 
+
+A
+
+features to implement i
+customers. In most cases, though, you're better off taking a to requirements elicitation. Focusing on u
+ 
+oved on to the next use case.
+
+. They focus on defining the
+
+c approach
+lps reveal
+ 
+functionality, avoids implementing features that no one will use, and assists with prioritization.
+are found in the second level of requirements that you saw in Figure 1-1 in Chapter 1, "The essential software requirement." They lie betwee
+ 
+
+implement. This chapter addresses t
+user requirements:	.
+ 
+elopers must s for exploring
+ 
+
+
+
+143
+ 
+Analysts have long employed usage scenarios to elicit user requirements (Alexander and Maiden 2004). The usage-centered perspective was formalized into the use case approach to requirements modeling (Jacobson et al. 1992; Cockburn 2001; Kulak and Guiney 2004). More recently, proponents of agile development introduced the concept of a "user story," a concise statement that articulates a user need and serves as a starting point for conversations to flesh out the details (Cohn 2004).
+Both use	shift from the
+elicitation to discussing what users need to accomplish, in contrast to asking users what they want the system to do. The intent of this approach is to describe tasks that users will need to perform with the system, or user-system interactions that will result in a valuable outcome for some stakeholder. That understanding leads the BA to derive the necessary functionality that must be implemented to enable those usage scenarios. It also leads to tests to verify whether the functionality was implemented correctly. Usage-centric elicitation strategies will bring you closer to understanding the user's requirements on many classes of projects than any other technique we have used.
+work well	,
+
+ 
+
+ 
+
+ 
+.
+
+er of the car has just one goal-to wash the car-with perhaps a few options: underbody spray, sealer wax, polish. However, the car wash has a lot going on. It has a drive mechanism to move your car; numerous motors, pumps, valves, switches, dials, and lights; and timers or sensors to control the activation of these physical components.
+You also have to worry about diagnostic functionality, such as notifying the operator when a tank of liquid is nearly empty, as well as fault detection and safety requirements. What happens if the drive mechanism fails while a car is in the tunnel, or if the motor on a blower fails? A requirements technique often used for real-time systems is to list the external events to which the system must react and the corresponding system responses. See Chapter 12, "A picture is worth 1024 words," for more about event analysis.
+
+Use cases and user stories
+A use case describes a sequence of interactions between a system and an external actor that results in the actor being able to achieve some outcome of value. The names of use cases are always written in the form of a verb followed by an object. Select strong, descriptive names to make it evident from the name that the use case will deliver something valuable for some user. Table 8-1 lists some sample use cases from a variety of applications.
+ 
+TABLE 8-1 Sample use cases from various applications
+
+Application	Sample use case
+	Chemical tracking system		Request a Chemical
+Print Material Safety Data Sheet Change a Chemical Request Check Status of an Order
+Generate Quarterly Chemical-Usage Reports
+	
+Airport check-in kiosk	Check in for a Flight Print Boarding Passes Change Seats
+Check Luggage Purchase an Upgrade
+Accounting system	Create an Invoice
+Reconcile an Account Statement Enter a Credit Card Transaction Print Tax Forms for Vendors Search for a Specific Transaction
+Online bookstore	Update Customer Profile
+Search for an Item Buy an Item
+Track a Shipped Package Cancel an Unshipped Order
+As used on agile development projects, a	is a "short, simple description of a feature told
+from the perspective of the person who desires the new capability, usually a user or customer of the system" (Cohn 2010). User stories often are written according to the following template, although other styles also are used:
+
+Using this template provides an advantage over the even shorter use case name because, although they both state the user's goal, the user story also identifies the user class and the rationale behind the request for that system capability. These are valuable additions. The user class-which need not be a human being-in a user story corresponds to the primary actor in a use case (described later in this chapter). The rationale could be provided in the brief description of the use case. Table 8-2 shows how we could state some of the use cases from Table 8-1 in the form of user stories.
+TABLE 8-2 Some sample use cases and corresponding user stories
+
+Application	Sample use case	Corresponding user story
+Chemical tracking system	Request a Chemical	As a chemist, I want to request a chemical so that I can
+perform experiments.
+Airport check-in kiosk	Check in for a Flight	As a traveler, I want to check in for a flight so that I can fly to my destination.
+Accounting system	Create an Invoice	As a small business owner, I want to create an invoice
+so that I can bill a customer.
+Online bookstore	Update Customer Profile	As a customer, I want to update my customer profile so that future purchases are billed to a new credit card number.
+ 
+At this level, use cases look much like user stories. Both are focused on understanding what different types of users need to accomplish through interactions with a software system. However, the two processes move in different directions from these similar starting points, as illustrated
+in Figure 8-1. Both approaches can also produce other deliverables, such as visual analysis models, but Figure 8-1 illustrates the core distinction.
+
+FIGURE 8-1 How user requirements lead to functional requirements and tests with the use case approach and the user story approach.
+
+With use cases, the next step is for th
+. The BA structures
+the information collected according to a use case template; you'll see an example later in the chapter. The template contains numerous spaces in which to store information that can provide a rich understanding of the use case, its variants, and related information. It's not necessary to fully complete the template if the developers can get the information they need from a briefer
+specification, but referring to the template during elicitation will help the participants discover all the pertinent information. From the use case specification, the BA can derive the functional requirements that developers must implement, and a tester can identify tests to judge whether the use case was properly implemented. Developers might implement an entire use case in a single release or iteration. Alternatively, they might implement just a portion of a particular use case initially, either for size or priority reasons, and then implement additional parts in future releases.
+As employed on agile projects, a user story serves as a placeholder for future conversations that need to take place on a just-in-time basis among developers, customer representatives, and a business analyst (if one is working on the project). Those conversations reveal the additional
+information that developers must know to be able to implement the story. Refining the user stories through conversations leads to a collection of smaller, focused stories that describe individual chunks of system functionality. User stories that are too large to implement in one agile development iteration (called epics) are split into smaller stories that can be implemented within a single iteration. See Chapter 20, "Agile projects," for more about epics and user stories.
+Rather than specifying functional requirements, agile teams typically elaborate a refined user story into a set of acceptance tests that collectively describe the story's "conditions of satisfaction." Thinking about tests at this early stage is an excellent idea for all projects, regardless of their development
+ 
+approach. Test thinking helps you identify variations of the basic user story (or use case), exception conditions that must be handled, and nonfunctional requirements such as performance and security considerations. If the developer implements the necessary code to satisfy the acceptance tests-and hence to meet conditions of satisfaction-the user story is considered to be correctly implemented.
+User stories provide a concise statement of a user's needs. Use cases dive further into describing how the user imagines interacting with the system to accomplish his objective. The use case should not get into design specifics, just into the user's mental image about the interaction. User stories offer the advantage of simplicity and conciseness, but there is a tradeoff. Use cases provide project participants with a structure and context that a collection of user stories lacks. They provide an organized way for the BA to lead elicitation discussions beyond simply collecting a list of things that users need to achieve with the system as a starting point for planning and discussion.
+Not everyone is convinced that user stories are an adequate requirements solution for large or more demanding projects (Gilb and Gilb 2011). You can examine each element of a use case
+(flows, preconditions, postconditions, and so on) to look for pertinent functional and nonfunctional requirements and to derive tests. This helps you avoid overlooking any requirements that developers must implement to let users perform the use case. But user stories do not replicate that structure and rigor, so it's easier for the team to miss some acceptance tests. A BA or developer must have
+experience in effective user story development to avoid overlooking relevant functionality. A use-case analysis might reveal that several use cases involve similar exceptions (or other commonalities) that could perhaps be implemented as a single consistent error-handling strategy within the application. Such commonalities are more difficult to discern with a collection of user stories.
+For more information about how to elicit and apply user stories when exploring user requirements, see Cohn (2004), Cohn (2010), or Leffingwell (2011). The rest of this chapter will focus on the use case technique, pointing out similarities and contrasts with the user story approach where appropriate.
+
+The use case approach
+As mentioned earlier, a use case describes a sequence of interactions between a system and an external actor that results in some outcome that provides value to the actor. An actor is a person (or sometimes another software system or a hardware device) that interacts with the system to perform a use case. For example, the Chemical Tracking System's "Request a Chemical" use case involves an actor named Requester. There is no CTS user class named Requester. Both chemists and members of the chemical stockroom staff may request chemicals, so members of either user class may perform the Requester role. Following are some questions you might ask to help user representatives identify actors:
+¦	Who (or what) is notified when something occurs within the system?
+¦	Who (or what) provides information or services to the system?
+¦	Who (or what) helps the system respond to and complete a task?
+ 
+ 
+
+Use case diagrams provide a high-level visual representation of the user requirements. Figure 8-2 shows a partial use case diagram for the CTS, using the Unified Modeling Language (UML) notation (Booch, Rumbaugh, and Jacobson 1999; Podeswa 2010). The box frame represents the system boundary. Arrows from each actor (stick figure) connect to the use cases (ovals) with which the actor interacts. An arrow from an actor to a use case indicates that he is the primary actor for the use case. The primary actor initiates the use case and derives the main value from it. An arrow goes from a use case to a secondary actor, who participates somehow in the successful execution of the use case. Other software systems often serve as secondary actors, contributing behind the scenes to the use case execution. The Training Database is just such a secondary actor in Figure 8-2. This system gets involved when a Requester is requesting a hazardous chemical that requires the Requester to have been trained in how to safely handle such dangerous materials.
+Compare this use case diagram to the context diagram shown earlier in Figure 5-6 in Chapter 5, "Establishing the business requirements." Both define the scope boundary between objects that lie outside the system and things inside the system. In the use case diagram, the box separates some internal aspects of the system-use cases-from the external actors. The context diagram also depicts objects that lie outside the system, but it provides no visibility into the system internals. The arrows in a context diagram indicate the flow of data, control signals, or physical materials (if you defined the "system" to include manual processes) across the system boundary. In contrast, the arrows in a use case diagram simply indicate the connections between actors and use cases in which they participate; they do not represent a flow of any kind. As with all forms of requirements representations, all readers of the models you create must have a consistent understanding of the notations used.
+ 
+ 
+
+FIGURE 8-2 Partial use case diagram for the Chemical Tracking System.
+
+
+A use case describes a discrete, standalone activity that an actor can perform to achieve some outcome
+of value. A use case might encompass a number of related activities having a common goal. A scenario
+. When exploring user requirements, you can begin with a general use case statement and develop more specific usage scenarios, or you can generalize from a specific scenario example to the broader use case.
+Figure 8-3 shows a comprehensive use case template filled in with an example drawn from the Chemical Tracking System. Appendix C shows more sample use cases written according to this template. As with all templates, you don't complete this from top to bottom, and you don't
+necessarily need all of the template information for every use case. The template is simply a structure in which to store the information you encounter during a use case discussion in an organized
+and consistent fashion. The template reminds you of all the information you should contemplate regarding each use case. If information that belongs in the template already exists somewhere else, simply point to it to include that information by reference. For instance, don't incorporate the actual text of each business rule that affects the use case in the template; just list the identifiers for the relevant business rules so the reader can find that information when necessary.
+ 
+ 
+
+FIGURE 8-3 Partial specification of the Chemical Tracking System's "Request a Chemical" use case.
+
+The essential elements of a use case are the following:
+¦	A unique identifier and a succinct name that states the user goal
+¦	A brief textual description that describes the purpose of the use case
+¦	A trigger condition that initiates execution of the use case
+¦	Zero or more preconditions that must be satisfied before the use case can begin
+¦	One or more postconditions that describe the state of the system after the use case is
+successfully completed
+¦	A numbered list of steps that shows the sequence of interactions between the actor and the
+system-a dialog-that leads from the preconditions to the postconditions
+ 
+ 
+
+Preconditions and postconditions
+Preconditions define prerequisites that must be met before the system can begin executing the use case. The system should be able to test all preconditions to see if it's possible to proceed with the use case. Preconditions could describe the system state (for a use case to withdraw cash from an automated teller machine, the ATM must contain money), but they don't describe the user's intent ("I need some cash").
+When the system detects the trigger event that indicates that a user wants to execute a particular
+use case, the system says to itself (though not necessarily to the user!), "Hold on a moment while I check these preconditions." The trigger event itself is not one of the preconditions. If the preconditions are all satisfied, the system can begin executing the use case; otherwise, it cannot. Checking preconditions can prevent some errors that might otherwise take place if the system knows at the outset that it can't successfully complete the use case but proceeds anyway. If the
+ATM is empty, it shouldn't let a user even begin a withdrawal transaction. This is a way to make your applications more robust. Users aren't likely to be aware of all of a use case's preconditions, so the BA might need to get some input from other sources.
+Postconditions describe the state of the system after the use case executed successfully.
+Postconditions can describe:
+¦	Something observable to the user (the system displayed an account balance).
+¦	Physical outcomes (the ATM has dispensed money and printed a receipt).
+¦	Internal system state changes (the account has been debited by the amount of a cash withdrawal, plus any transaction fees).
+Many postconditions are evident to the user, because they reflect the outcome that delivers user value: "I've got my cash!" However, no user will ever tell a BA that the system should reduce its record of the amount of cash remaining in the ATM by the amount the user just withdrew. Users neither know nor care about such internal housekeeping details. But developers and testers need to know about them, which means that the BA needs to discover those-perhaps by working with a subject matter expert-and record them as additional postconditions.
+ 
+Normal flows, alternative flows, and exceptions
+One scenario is identified as the normal flow of events for the use case. It's also called the main flow, basic flow, normal course, primary scenario, main success scenario, sunny-day scenario, and happy path. The normal flow for the "Request a Chemical" use case is to request a chemical that's available in the chemical stockroom. As Figure 8-3 illustrates, the normal flow is written as a numbered list of steps, indicating which entity-the system or a specific actor-performs each step.
+Other success scenarios within the use case are called alternative flows or secondary scenarios. Alternative flows deliver the same business outcome (sometimes with variations) as the normal flow but represent less common or lower-priority variations in the specifics of the task or how it is
+accomplished. The normal flow can branch off into an alternative flow at some decision point in the dialog sequence; it might (or might not) rejoin the normal flow later. The steps in the normal flow indicate where the user can branch into an alternative flow. A user who says, "The default should
+be. . ." is describing the normal flow of the use case. A statement such as "The user should also be able to request a chemical from a vendor" suggests an alternative flow, shown as 4.1 in Figure 8-3, which branches from step 4 in the normal flow.
+Recall that user stories are concise statements of user needs, in contrast to the richer description that a use case provides. In the agile world, a user story sometimes covers the same scope as an entire use case, but in other cases a user story represents just a single scenario or alternative flow. If an agile development team were discussing requirements for the CTS, they might come up with
+such as the following:
+
+As a chemist, I want to request a chemical so that I can perform experiments.
+As a chemist, I want to request a chemical from the Chemical Stockroom so that I can use it immediately.
+As a chemist, I want to request a chemical from a vendor because I don't trust the purity of any of the samples available in the Chemical Stockroom.
+The first of these three stories corresponds to the use case as a whole. The second and third user stories represent the normal flow of the use case and the first alternative flow, from Figure 8-3.
+Conditions that have the potential to prevent a use case from succeeding are called exceptions. Exceptions describe anticipated error conditions that could occur during execution of the use case and how they are to be handled. In some cases, the user can recover from an exception, perhaps by re-entering some data that was incorrect. In other situations, though, the use case must terminate without reaching its success conditions. One exception for the "Request a Chemical" use case
+is "Chemical Is Not Commercially Available," labeled as 4.1.E1 in Figure 8-3. If you don't specify
+exception handling during requirements elicitation, there are two possible outcomes:
+ 
+¦	Each developer will make his best guess at how to deal with the exceptions he sees, leading to inconsistent error handling throughout the application and less robust software.
+¦	The system will fail when a user hits the error condition because no one thought about it.
+It's a safe bet that system crashes aren't on the user's list of requirements.
+Some error conditions could affect multiple use cases or multiple steps in a use case's normal flow. Examples are a loss of network connectivity, a database failure partway through an operation, or a physical device failure such as a paper jam. Treat these as additional functional requirements to be implemented, instead of repeating them as exceptions for all the potentially affected use cases. The goal is not to force-fit all known functionality into a use case. You're employing usage-centric elicitation to try to discover as much of the essential system functionality as you can.
+You won't necessarily implement every alternative flow that you identify for a use case. You might defer some to later iterations or releases. However, you must implement the exceptions that can prevent the flows that you do implement from succeeding. Experienced programmers know that handling exceptions represents a lot of the coding effort. Overlooked exceptions are a common source of missing requirements. Specifying exception conditions during requirements elicitation helps teams build robust products. The steps in the normal flow indicate where known exceptions could take place, pointing to the section in the use case template for how the system should handle the exception.
+Agile projects employing the user story approach address exceptions through the acceptance tests they create for each story. The third user story above pertained to requesting a chemical from a vendor. Conversations about this story might raise questions such as, "What if the chemical you want is not commercially available from any vendor?" This could lead to an acceptance test like, "If the chemical isn't found in any available vendor catalogs, show a message to that effect." As with any good testing approach, the set of acceptance tests for a user story must cover both expected behavior and things that could go wrong.
+Although many use cases can be described in simple prose, a flowchart or a UML activity diagram is a useful way to visually represent the logic flow in a complex use case, as illustrated in Figure 8-4. Flowcharts and activity diagrams show the decision points and conditions that cause a branch from the normal flow into an alternative flow.
+In the example in Figure 8-3, the actor's ultimate goal-to request a chemical-is the same in both situations. Therefore, requesting a chemical from the stockroom or from a vendor are two scenarios within the same use case, not separate use cases. Some of the steps in an alternative flow will be the same as those in the normal flow, but certain unique actions are needed to accomplish the alternative path. This alternative flow might allow the user to search vendor catalogs for a desired chemical, then rejoin the normal flow and continue with the requesting process back at step 4.

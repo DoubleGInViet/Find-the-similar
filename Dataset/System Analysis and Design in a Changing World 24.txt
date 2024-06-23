@@ -1,0 +1,576 @@
+﻿Design
+Chapter 2: Investigating System Requirements
+Chapter 3: Identifying User Stories and Use Cases
+Chapter 4: Domain Modeling
+Chapter 5: Use Case Modeling
+Online Chapter B: The Traditional Approach to Requirements
+Chapter 6: Foundations for Systems Design
+Chapter 8: Designing the User Interface
+Chapter 10: Approaches to System Development
+Chapter 11: Project Planning and Project Management
+Online Chapter C: Project Management Techniques
+Chapter 14: Deploying the New System
+■ Available Support
+Systems Analysis and Design in a Changing World, Seventh Edition, includes 
+teaching tools to support instructors in the classroom. The ancillary materials 
+that accompany the textbook include an Instructor’s Manual, solutions, test 
+banks and test engine, PowerPoint presentations, and figure files. Please contact 
+your Cengage Course Technology sales representative to request the Teaching 
+Tools CD-ROM if you haven’t already received it. Or go to the Web page for 
+this book at login.cengage.com to download all these items.
+■ The Instructor’s Manual
+The Instructor’s Manual includes suggestions and strategies for using the text, 
+including course outlines for instructors that emphasize the traditional struc tured approach or the object-oriented approach. The manual is also helpful for 
+those teaching graduate courses on analysis and design.
+■ Solutions
+We provide instructors with answers to review questions and suggested solutions 
+to chapter exercises and cases. Detailed traditional and UML object-oriented 
+models are included for all exercises and cases that ask for modeling solutions.
+■ ExamView
+This objective-based test generator lets the instructor create paper, LAN, or 
+Web-based tests from test banks designed specifically for this Course Technol ogy text. Instructors can use the QuickTest Wizard to create tests in fewer than 
+five minutes by taking advantage of Course Technology’s question banks or in structors can create customized exams.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+xxvi PREFACE
+■ Plug and Play!
+Jump-start your course with customizable, text-specific content within your 
+Course Management System!
+■ Jump-start—Instructors simply load a WebTutor cartridge or e-Pack into 
+their Course Management System.
+■ Content—Students have access to text-specific content, media assets, quiz zing, Web links, discussion topics, interactive games and exercises, and 
+more.
+■ Customizable—Instructors can easily blend, add, edit, reorganize, or delete 
+content.
+Whether you want to Web-enable your class or put an entire course online, 
+WebTutor delivers! Visit academic.cengage.com/webtutor to learn more.
+❚ Product Description
+WebTutor and WebTutor Toolbox products are Course Cartridges and e-Packs 
+that provide content natively on a Course Management System (WebCT, Black Board, Angel, D2L, and eCollege). The purpose of the product is to provide elec tronic solutions in an easy-to-use format with little up-front costs to instructors.
+■ For more information on how to bring WebTutor to your course, instruc tors should contact their Cengage Learning sales representative.
+■ PowerPoint Presentations
+Microsoft PowerPoint slides are included for each chapter. Instructors might use 
+the slides in a variety of ways, such as teaching aids during classroom presen tations or as printed handouts for classroom distribution. Instructors can add 
+their own slides for additional topics they introduce to the class.
+■ Figure Files
+Figure files allow instructors to create their own presentations by using figures 
+taken directly from this text.
+■ Credits and Acknowledgments
+We have been very gratified as authors to receive so many supportive and en thusiastic comments about Systems Analysis and Design in a Changing World.
+Students and instructors in the United States and Canada have found our text 
+to be the most up-to-date and flexible book available. The book has also been 
+translated into many languages and is now used productively in Europe, Austra lia, New Zealand, India, China, and elsewhere. We truly thank everyone who 
+has been involved in all the editions of our textbook, particularly Lori Bradshaw 
+who managed the development of the seventh edition.
+We also want to thank all the reviewers who worked so hard for us—
+beginning with an initial proposal and continuing throughout the completion 
+of all seven editions of this text. We were lucky enough to have reviewers with 
+broad perspectives, in-depth knowledge, and diverse preferences. We listened 
+very carefully, and the text is much better as a result of their input. Reviewers 
+for the various editions include:
+Rob Anson, Boise State University
+Marsha Baddeley, Niagara College
+Teri Barnes, DeVry Institute—Phoenix
+Robert Beatty, University of Wisconsin—Milwaukee
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+PREFACE xxvii
+James Buck, Gateway Technical College
+Anthony Cameron, Fayetteville Technical Community College
+Genard Catalano, Columbia College
+Paul H. Cheney, University of Central Florida
+Kim Church, Oklahoma State University
+Jung Choi, Wright State University
+Jon D. Clark, Colorado State University
+Mohammad Dadashzadeh, Oakland University
+Lawrence E. Domine, Milwaukee Area Technical College
+Gary Garrison, Belmont University
+Cheryl Grimmett, Wallace State Community College
+Jeff Hedrington, University of Phoenix
+Janet Helwig, Dominican University
+Susantha Herath, St. Cloud State University
+Barbara Hewitt, Texas A&M University
+Ellen D. Hoadley, Loyola College in Maryland
+Jon Jasperson, Texas A&M University
+Norman Jobes, Conestoga College—Waterloo, Ontario
+Gerald Karush, Southern New Hampshire University
+Robert Keim, Arizona State University
+Michael Kelly, Community College of Rhode Island
+Rajiv Kishore, The State University of New York—Buffalo
+Rebecca Koop, Wright State University
+Hsiang-Jui Kung, Georgia Southern University
+James E. LaBarre, University of Wisconsin—Eau Claire
+Ingyu Lee, Troy University
+Terrence Linkletter, Central Washington University
+Tsun-Yin Law, Seneca College
+David Little, High Point University
+George M. Marakas, Indiana University
+Roger McHaney, Kansas State University
+Cindi A. Nadelman, New England College
+Bruce Neubauer, Pittsburgh State University
+Michael Nicholas, Davenport University—Grand Rapids
+Mary Prescott, University of South Florida
+Alex Ramirez, Carleton University
+Eliot Rich, The State University of New York—Albany
+Robert Saldarini, Bergen Community College
+Laurie Schatzberg, University of New Mexico
+Deborah Stockbridge, Quincy College
+Jean Smith, Technical College of the Lowcountry
+Peter Tarasewich, Northeastern University
+Craig VanLengen, Northern Arizona University
+Bruce Vanstone, Bond University
+Haibo Wang, Texas A&M University Chapter 8: Designing the User Interface
+Chapter 9: Designing the Database
+Chapter 10: Approaches to System Development
+Chapter 11: Project Planning and Project Management
+Chapter 12: Object-Oriented Design: Fundamentals
+Chapter 13: Object-Oriented Design: Use Case Realization
+Chapter 14: Deploying the New System
+■ Traditional Analysis and Design Course
+A traditional systems analysis and design course provides coverage of activities 
+and tasks by using structured analysis, user and system interface design, database 
+design, controls and security, and implementation and testing. It is usually as sumed that the project will use custom development, including Web development. 
+The course emphasizes the SDLC, project management, information gathering, 
+and management reporting. One-semester courses are usually limited to complet ing some prototypes of the user interface to give students closure. Sometimes, 
+this course is spread over two semesters, with some implementation of an actual 
+system in the second semester for a more complete development experience.
+For this approach to the analysis and design course, a reasonable outline 
+would omit chapters and sections detailing object orientation but include the 
+online chapters on the role of the systems analyst and on traditional structured 
+analysis. However, object-oriented concepts are introduced throughout the text, 
+so students will still be familiar with them. Additionally, because of the amount 
+of material to cover, the online chapter detailing project management, financial 
+feasibility, and scheduling might be omitted.
+A suggested outline for a course emphasizing the traditional structured ap proach is:
+Online Chapter A: The Role of the Systems Analyst
+Chapter 1: From Beginning to End: An Overview of Systems Analysis and 
+Design
+Chapter 2: Investigating System Requirements
+Chapter 3: Identifying User Stories and Use Cases
+Chapter 4: Domain Modeling
+Online Chapter B: The Traditional Approach to Requirements
+Chapter 6: Foundations for Systems Design
+Chapter 8: Designing the User Interface
+Chapter 9: Designing the Database
+Chapter 10: Approaches to System Development
+Chapter 11: Project Planning and Project Management
+Chapter 14: Deploying the New System
+■ In-Depth Analysis and Project Management
+Some courses cover object-oriented systems analysis methods in more depth 
+and briefly survey structured analysis—with not much about object-oriented 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+PREFACE xxv
+design—while emphasizing project management. Sometimes, these courses are 
+graduate courses; sometimes, they assume design and implementation are cov ered in more technical courses. In some cases, it might be assumed that packages 
+are likely solutions rather than custom development, so defining requirements 
+and managing the process are more important than design activities. The online 
+chapters covering the role of the systems analyst, the traditional approach to 
+structured analysis, and project management would be included.
+A suggested outline for a course emphasizing object-oriented analysis, with 
+in-depth coverage of project management, is:
+Online Chapter A: The Role of the Systems Analyst
+Chapter 1: From Beginning to End: An Overview of Systems Analysis and
+Terence M. Waterman, Golden Gate University important chapter.
+■ Part 5: Advanced Design and Deployment Concepts
+Part 5 goes into more depth with respect to systems design, specifically object oriented software design, and other important issues related to effective and suc cessful system development and deployment.
+Chapters 12 and 13 explain in detail the models, skills, and techniques used 
+to design software systems. As mentioned earlier, systems design is a fairly com plex activity, especially if it is done correctly. The objective of these two chapters 
+is to teach the student the various techniques—from simple to complex—that 
+can be used to effectively design software systems.
+Chapter 14 describes the final elements in system development: final testing, 
+deployment, maintenance, and version control.
+■ Designing Your Analysis and Design Course
+There are many approaches to teaching analysis and design courses, and the 
+objectives of the course differ considerably from college to college. In some ac ademic information systems departments, the analysis and design course is a 
+capstone course in which students apply the material learned in prior database, 
+networking, and programming courses to a real analysis and design project. In 
+other information systems departments, analysis and design is used as an intro duction to the field of system development and is taken prior to more specialized 
+courses. Some information systems departments offer a two-course sequence 
+emphasizing analysis in the first semester and design and implementation in the 
+second semester. Some information systems departments have only one course 
+that covers analysis and design.
+The design of the analysis and design course is complicated even more by 
+the choice of emphasizing some traditional and some object-oriented content—
+again, depending on local curriculum priorities. Additionally, the more iterative 
+approach to development in general has made choices about sequencing the anal ysis and design topics more difficult. For example, with iterative development, a 
+two-course sequence can’t be divided into analysis and then design as easily.
+The objectives, course content, assignments, and projects have many varia tions. What we offer below are some suggestions for using this textbook in vari ous approaches to the course.
+■ UML and Object-Oriented Analysis and Design Course
+This is the course we designed the printed textbook to support, so all the printed 
+chapters but none of the online chapters are included. Note that object-oriented 
+design is included in detail. The course covers object-oriented analysis and de sign, user and system interface design, database design, controls and security, 
+and implementation and testing. It is usually assumed that the projects will use 
+custom development, including Web development. The course emphasizes itera tive development with three-layer architecture, project management, informa tion gathering, and management reporting. One-semester courses are usually 
+limited to completing some prototypes of the user interface to give students 
+closure. Sometimes, this course is spread over two semesters, with some imple mentation of an actual system in the second semester for a more complete devel opment experience. Iterative development is emphasized.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+xxiv PREFACE
+A suggested outline for a course emphasizing object-oriented development is:
+Online Chapter A: The Role of the Systems Analyst (optional)
+Chapter 1: From Beginning to End: An Overview of Systems Analysis and 
+Design
+Chapter 2: Investigating System Requirements
+Chapter 3: Identifying User Stories and Use Cases
+Chapter 4: Domain Modeling
+Chapter 5: Use Case Modeling
+Chapter 6: Foundations for Systems Design
+Chapter 7: Defining the System Architecture You have grown up in a world of ubiquitous computing, where computers are 
+everywhere and are increasingly characterized by mobility, communication, and 
+connectivity. You use smartphones, laptops, notepads, and wearable devices 
+throughout the day. Some of you have already developed your own application 
+software or have friends who have written applications for these devices. Some 
+of you have taken programming classes; others have taught yourself how to 
+write computer application programs. In one way or another, you are certainly 
+interested in building computer applications and information systems.
+Although you are most likely more familiar with your mobile devices, there 
+is much more to building information systems than just that. Information systems exist to support all aspects of business organizations and have done so for 
+centuries. The ancient Mesopotamians conducted business and had accounting 
+information systems 3,000 years ago—using clay tablet technology. Electronic 
+computers have been a part of these information systems only for the last 
+50 years. The technology changes, but information systems have a long history.
+An information system is a set of interrelated components that collect, 
+process, store, and provide as output the information needed to complete business tasks. The information system always includes people who operate the system and carry out some of the work. In Mesopotamia, people did just about all 
+of the work required. Now, of course, electronic computing devices do most of 
+the work, although not all. If you are at the library typing in some search terms 
+using the online catalog, you are part of the information system—the part that 
+supplies the input and consumes the output. If you are using your bank’s online 
+information system, you are part of the information system—the part that selects which account to use to pay a specific bill.
+More recently, another term has been used to refer to an information 
+system—a computer application. A computer application is a computer software program that executes on a computing device to carry out a specific function or set of related functions. Sometimes, computer application is shortened 
+to app (such as an iPhone app or an Android app). Many people use the terms 
+information system and computer application interchangeably, but remember 
+that an information system includes people and their manual procedures and an 
+application usually refers just to the software.
+Consider the information system your university or college uses to support 
+students. It is an elaborate system that likely integrates admissions, financial 
+aid, course scheduling, and even individual course support. You probably access 
+this information system through the network using a desktop workstation at 
+home or in a computer lab, a wireless notebook computer, an iPad or tablet, an 
+iPhone or an Android phone, and even a wearable device such as a smartwatch 
+or Google Glass. There might be an app that connects to the system seamlessly 
+from your device, or you might connect through a browser on your desktop, 
+notebook, or other devices. Figure 1-1 shows a variety of devices all connecting 
+to the same University Student Support System.
+Each information system (or app) was conceived and built to satisfy some 
+need. When the information system is completed, it is used productively to satisfy that need. Our purpose here is to describe the process by which an information system is created from perceived need through actual use. As noted in this 
+chapter’s title, systems analysis and systems design are key components of this 
+process.
+Systems analysis consists of those activities that enable a person to understand and specify what the new system should accomplish. The operative words 
+here are understanding and specifying. Systems analysis is more than a brief 
+information system a set of interrelated 
+components that collect, process, store, and 
+provide as output the information needed to 
+complete business tasks
+computer application or app a computer 
+software program that executes on a computing device to carry out a specific function or 
+set of related functions
+systems analysis those system 
+development activities that enable a person 
+to understand and specify what the new 
+system should accomplish
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 5
+statement of the problem. For example, a customer management system must 
+track customers, register products, monitor warranties, and track service levels, 
+among many other functions—all of which have many details. Systems analysis 
+describes in detail what a system must do to satisfy the need or solve the problem.
+Systems design consists of those activities that enable a person to describe 
+in detail how the information system will actually be implemented to provide 
+the needed solution. In other words, systems design describes how the system 
+will actually work. It specifies in detail all the components of the solution system and how they work together. See Figure 1-2 to help distinguish between 
+analysis and design.
+Systems analysis and design plays an integral role in the development of information systems. To illustrate, consider an analogous situation: the art and 
+University
+Student
+Support
+System
+Database
+Figure 1-1 A variety of devices all 
+connected to the same information 
+system
+Systems analysis
+What is required for the new
+system to solve the problem
+System design
+How the system will operate
+to solve the problem
+Figure 1-2 Systems analysis 
+versus systems design
+systems design those system 
+development activities that enable a person 
+to describe in detail how the resulting information system will actually be implemented
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+6 PART 1 ■ Introduction to System Development
+science of creating a new building. In this scenario, there is the owner of the land 
+who has the vision, the builder who will construct the building, and the architect who serves as the bridge between the owner and the builder. The architect 
+helps the owner develop the vision, but must also communicate the building’s 
+specifications to the builder. In doing so, the architect uses various tools to 
+first capture the vision from the owner and to then provide the builder with 
+instructions—including line drawings, blueprints, to-scale models, detail specifications, and even on-site inspection reports.
+Just as a builder doesn’t start construction without plans, programmers 
+don’t just sit down and start writing program code. They need someone (maybe 
+themselves) to function like an architect—planning, capturing the vision, understanding details, specifying needs—before designing and writing the code 
+that satisfies the vision. Usually, we call this person a systems analyst. In situations where you are the programmer as well as the analyst (often called a 
+programmer-analyst), it might be possible to keep track of the details without 
+many formal notes. However, in today’s world, with system development teams 
+often distributed worldwide, you might only be responsible for part of the programming, with the rest handled by team members in different locations. In a 
+distributed team situation or with a complicated project, it is much more important to create formal requirements documents that capture each components’ 
+specifications.
+In a nutshell, systems analysis and design provides the tools and techniques 
+you need as an information system developer to complete the development 
+process:
+1. Understand the need (business need).
+2. Capture the vision.
+3. Define a solution.
+4. Communicate the vision and the solution.
+5. Build the solution or direct others in building the solution.
+6. Confirm that the solution meets the need.
+7. Launch the solution application.
+You’re getting the
+tools and techniques
+needed as an information
+system developer
+…to understand the
+business need, capture
+the vision, dene a solution, 
+communicate the vision and 
+solution…
+…then build the solution
+and direct others to help,
+conrm the solution
+meets the need, and
+launch the solution as an
+information system application.
+What am I getting
+out of this?
+Figure 1-3 What analysis and 
+design provides for the system 
+developer
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 7
+■ The System Development Life Cycle (SDLC)
+Initial development of a new information system is usually done as a project. 
+A project is a planned undertaking that has a beginning and an end and produces some end result. This means that the activities required to develop a new 
+system are identified, planned, organized, and monitored. Some projects are 
+very formal, whereas others are informal, usually depending on the project size.
+To manage a project with analysis, design, and other development activities, you need a project management framework to guide and coordinate the 
+work of the project team. The system development life cycle (SDLC) is a 
+framework that identifies all the activities required to research, build, deploy, 
+and often maintain an information system. Normally, the SDLC includes all activities needed for the planning, systems analysis, systems design, programming, 
+testing, and user training stages of information systems development, as well as 
+other project management activities that are required to successfully deploy the 
+new information system.
+There are many approaches to the SDLC, including variations specific to certain types of projects. However, every SDLC includes some core processes that 
+are always required, though many different names are used. Here are the six core 
+processes required in the development of any information system (see Figure 1-4):
+■ Identify the problem or need and obtain approval to proceed with the project.
+■ Plan and monitor the project—what to do, how to do it, and who does it.
+■ Discover and understand the details of the problem or the need—what is 
+required?
+■ Design the system components that solve the problem or satisfy the need—
+how will it actually work?
+■ Build, test, and integrate system components—lots of programming and 
+component integration.
+■ Complete system tests and then deploy the solution—the need now is 
+satisfied.
+As previously stated, most information systems you will develop are conceived and built to solve complex organizational problems, which are usually 
+very complex, thus making it difficult to plan and manage a system development 
+project. Fortunately, there are many ways to implement the six core processes of 
+the SDLC to handle each project’s complexity. An information systems development methodology is a set of comprehensive guidelines for carrying out all 
+of the activities of each core process of the SDLC. An overall system development process is a more recent term for methodology. Each development 
+project a planned undertaking that has 
+a beginning and an end and produces some 
+end result
+system development life cycle (SDLC)
+a framework that identifies all the activities 
+required to research, build, deploy, and often 
+maintain an information system
+Core
+processes
+Identify the problem and obtain
+approval.
+Plan and monitor the project.
+Discover and understand details.
+Design system components.
+Build, test, and integrate system
+components.
+Complete system tests and deploy
+the solution.
+Figure 1-4 Six core processes of 
+the SDLC
+system development process or
+methodology a set of comprehensive 
+guidelines for carrying out all of the activities 
+of each core process of the SDLC
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+8 PART 1 ■ Introduction to System Development
+methodology prescribes a way of carrying out the development project, and every organization develops its own system development methodology over time 
+to suit its needs.
+During the last 15 years, information system research efforts have resulted 
+in many new information systems development methodologies/processes to improve the chance of project success. These are all based on what is called Agile 
+development. The basic philosophy of Agile development is that neither team 
+members nor the users completely understand the problems and complexities 
+of a new system, so the project plan and the execution of the project must be 
+responsive to unanticipated issues. The plan must be agile and flexible. It must 
+have procedures in place to allow for, anticipate, and even embrace changes and 
+new requirements that come up during the development process. The six core 
+processes are still involved in Agile development, but they are carried out iteratively, as explained next.
+■ Iterative Development
+Iterative development is an approach to system development in which the system is “grown” in an almost organic fashion. Core components are developed 
+first and then additional components are added. It is called iterative because the 
+six core development processes are repeated for each component. In other words, 
+there is one big project, which consists of a series of mini-projects, and the information system is grown piece by piece during these mini-projects. Iterative 
+development makes Agile development possible, although Agile development includes additional techniques that help with project flexibility, too.
+Figure 1-5 illustrates how an iterative project might be managed. Across 
+the figure, you see six iterations as columns. Each iteration involves all six core 
+processes, shown as rows in the table. At the end of each iteration, a working 
+part of the system is completed and evaluated. An iteration lasts a fixed period 
+of time, usually two to four weeks. The rounded mounds inside the graph represent the relative amount of effort for that core process during that iteration. 
+For example, in Figure 1–5, Iteration 1 appears to primarily focus on identifying the problem and planning the project. Lesser amounts of discovery, design, 
+and build/test may also be done. For this iteration, nothing is done with regard 
+to deploying the system. In Iteration 2, there is less effort for identifying the 
+problem and planning the project and more effort for discovery, design, and 
+build/test. By Iteration 3, build/test gets the most effort, but all six core processes are still involved, including the beginnings of completing and deploying 
+the system.
+Agile development an information system 
+development process that emphasizes flexibility and rapid response to anticipate new and 
+changing requirements during development
+Core
+processes 1 2 3 4 5 6
+Identify the problem and obtain
+approval.
+Plan and monitor the project.
+Discover and understand details.
+Design system components.
+Build, test, and integrate system
+components.
+Complete system tests and
+deploy the solution.
+Iterations Figure 1-5The six core processes 
+of the SDLC showing iterations
+Iterative development an approach to 
+system development in which the system is 
+“grown” piece by piece through multiple miniprojects called iterations
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 9
+There are several benefits to iterative development. For one, portions of the 
+system can sometimes be deployed sooner. If there are core functions that provide basic support for users, these can be deployed in an early iteration. Second, 
+by taking a small portion and developing it first, the most difficult problems can 
+be identified and addressed early in the project. Many of today’s systems are so 
+large and complex that even with a formal process it is impossible to remember 
+and understand everything. By focusing on only a small portion at a time, the 
+requirements are fewer and easier to solve. Finally, developing a system in iterations makes the entire development process more flexible and able to address 
+new requirements and issues that come up throughout the project.
+A key element of iterative development is dividing system components into 
+pieces that can be completed in two to four weeks. During one iteration, all the 
+core development processes are involved, including programming and systemwide testing, so the result is a working part of the system, even though it may 
+only have a portion of the functionality that is ultimately required. Developers 
+choose components for each iteration based on priority, either the components 
+most needed or riskiest to implement.
+To better illustrate these concepts, we will walk through a complete example in the next sections concerning Ridgeline Mountain Outfitters (RMO). 
+These sections use a fairly small information system to demonstrate all six core 
+processes (as much as is feasible in a textbook, anyway). The example completes 
+one iteration in detail, but the project actually requires multiple iterations. By 
+going all the way through a very simple project, you will more easily understand 
+the complex concepts provided in the rest of the text.
+■ Introduction to Ridgeline Mountain 
+Outfitters (RMO)
+Ridgeline Mountain Outfitters (RMO) is a large retail company that specializes in clothing and related accessories for all types of outdoor and sporting 
+activities. The mountain and western regions of the United States and Canada 
+witnessed tremendous growth in recreation activities in recent years, including 
+skiing, snowboarding, mountain biking, water skiing, jet skiing, river running, 
+sailing, jogging, hiking, ATVing, cycling, camping, mountain climbing, and 
+rappelling. With the increased interest in outdoor sports, the market for winter 
+and summer sports clothing and accessories exploded, so RMO continually expanded its line of sportswear to respond to this market.
+The company’s growth charted an interesting history of mail-order, brickand-mortar, and online sales. RMO got its start by selling to clothing stores in 
+the Park City, Utah, area. In the late 1980s and early 1990s, it began selling 
+directly to customers using catalogs with mail-in and telephone-order options. It 
+opened its first store in 1994. After the Winter Olympics in Park City in 2002, 
+business exploded and RMO quickly expanded to 10 retail outlets throughout 
+the West and added Internet sales. Last year, retail store revenue was $67 million, telephone- and mail-order revenues were $10 million, and Internet sales 
+were $200 million. Most sales continue to be in the West, although the market in 
+several areas of the eastern United States and Canada is growing. By the Winter 
+Olympics in Vancouver, British Columbia, in 2008, RMO’s growth and profits 
+resulted mainly from online sales and service, as with most specialty retailers; 
+however, the brick-and-mortar and mail-order business remained important, 
+too. After the Winter Olympics in Sochi in 2014, RMO negotiated with several 
+Utah Olympic Medal Winners for endorsements. This provided additional interest throughout the West and instigated another period of rapid growth.
+Figure 1-6 shows a sample of the catalog that RMO still mails out. Although 
+mail-order and telephone sales are modest, receiving the catalog encourages 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+10 PART 1 ■ Introduction to System Development
+2016 WINTER CATALOG
+2016 WINTER CATALOG
+Figure 1-6 RMO winter catalog
+Figure 1-7 RMO online ordering 
+home page
+customers to go online to make purchases, so RMO continues to produce and mail 
+abbreviated versions. Figure 1-7 shows the RMO online ordering home page.
+RMO produces its own line of outdoor clothing and sportswear. However, 
+to offer a complete range of clothing in its retail outlets, it also sells brands of 
+clothing sourced from other vendors. Furthermore, most accessories sold are 
+sourced through vendors.
+■ Trade Shows
+To keep its product line innovative and responsive to consumer demand, RMO’s 
+purchasing agents attend apparel and accessory trade shows around the world 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 11
+where vendors exhibit their merchandise. RMO is good at anticipating trends 
+and profiting from interesting vendor specials. Furthermore, its agents are always watching for new products and accessories to expand RMO’s product line 
+appropriately.
+At the trade shows, RMO purchasing agents frequently find products they 
+want to add to the spring, summer, or winter apparel offering. In the past, when 
+RMO purchasing agents wanted to place an order with a vendor, they would 
+exchange contact information with the vendor at the trade show and would then 
+follow up via e-mails and phone calls to create a purchase order. In the current 
+24/7 business climate, this business process was just too slow. RMO needed 
+to speed things up to keep ahead of the competition, take advantage of vendor 
+deals at the trade shows, and be more responsive to customer demands.
+To solve this problem, RMO initiated an information system project to 
+develop a system for collecting and tracking information about suppliers and 
+about products added to its merchandise offerings. The Tradeshow System needs 
+to take advantage of the latest in wireless devices and data capturing technology 
+to allow purchasing agents to research and complete purchase orders on the spot 
+at the trade shows. RMO decided to use an agile, iterative project management 
+approach to get the small system completed as fast as possible with maximum 
+flexibility.
+■ Developing RMO’s Tradeshow System
+We will organize our sample project—the RMO Tradeshow System—into several iterations. Our plan for the first iteration is to have it finished in just six 
+days. Our primary objective is to introduce you to the concepts and techniques 
+of the six core processes. To do this, we may go a little deeper into a core process 
+than we might usually do on the first iteration of a real project. Additionally, the 
+iteration will appear to be managed much more formally than might be the case 
+in the real world for such a small project. The second and subsequent iterations 
+will not be described in any detail, but the complete Tradeshow System project 
+will need several more iterations for a finished product.
+Most new information system applications require a project with several 
+iterations. In the first iteration, there are usually three major objectives. The first 
+objective is to get project approval. The second objective is to get a clear picture of the system’s overall vision—the overall functions and data requirements. 
+The third objective is to determine the detail specifications and develop a solution for one portion of the system (i.e., actually analyze, design, build, and test 
+one part of the system). The second and third iterations would continue to work 
+on the additional portions of the system based on the system vision.
+In our project, we will touch on all these objectives within the first iteration. 
+We will show an example of a System Vision Document and then develop one 
+portion of the overall system. It should be noted that the division of this project 
+into days and daily activities is somewhat arbitrary. The following organization 
+is quite workable, but it is not the only way to organize the project.
+■ Initial Project Activities
+Before the project actually begins, the head of RMO’s Purchasing Department 
+works with a systems analyst to identify and document the specific business 
+need and to define the project objectives. RMO’s management then reviews the 
+primary project objectives and provides budget approval. Every organization has 
+to give budget approval before a project can start. Some organizations have a 
+formal process to get a project approved; other organizations have a less-formal 
+process. Although these activities are part of Core Process 1 of the SDLC, they

@@ -1,0 +1,854 @@
+﻿classifying projects.) A good project portfolio has the most appropriate mix of projects for the 
+organization’s needs. Th e committee acts as portfolio manager with the goal of maximizing 
+the cost–benefi t performance and other important factors of the projects in their portfolio. 
+For example, an organization might want to keep high-risk projects to less than 20 percent of 
+its total project portfolio.
+Th e approval committee must be selective about where to allocate resources. Th is 
+involves trade-off s in which the organization must give up something in return for something 
+else to keep its portfolio well balanced. If there are three potentially high-payoff projects, yet 
+all have very high risk, then perhaps only one of the projects will be selected. Also, there are 
+times when a system at the project level makes good business sense, but it does not make 
+sense at the organization level. Th us, a project may show a very strong ROI and support 
+important business needs for a part of the company, but it is not selected. Th is could happen 
+for many reasons—because there is no money in the budget for another system, the organization is about to go through some kind of change (e.g., a merger), projects that meet the 
+same business requirements already are under way, or the system does not align well with the 
+current or future corporate strategy.
+TRADITIONAL PROJECT MANAGEMENT TOOLS
+Before we get to actually creating a workplan that is suitable to manage and control an 
+object-oriented systems development project, we need to introduce a set of project management tools that have been used to successfully manage traditional soft ware development 
+projects (and many other types of projects): a work-breakdown structure, a Gantt chart, and 
+a network diagram. To begin with, we must fi rst understand what a task is. A task is a unit 
+of work that will be performed by a member or members of the development team, such as 
+feasibility analysis. Each task is described by information such as its name, start and completion dates, person assigned to complete the task, deliverables, completion status, priority, 
+resources needed, estimated time to complete the task, and the actual time it took to complete 
+the task (see Figure 2-11). Th e fi rst thing a project manager must do is to identify the tasks 
+that need to be accomplished and determine how long each task will take. Tasks and their 
+identifi cation and documentation are the basis of all three of these tools. Once the tasks have 
+been identifi ed and documented, they are organized within a work breakdown structure that 
+is used to drive the creation of Gantt charts and network diagrams that can be used to graphically portray a traditional workplan. Th ese techniques help a project manager understand and 
+manage the project’s progress over time.
+Name of the task Perform economic feasibility
+Start date Jan 05, 2015
+Completion date Jan 19, 2015
+Person assigned to the task Project sponsor: Mary Smith
+Deliverable(s) Cost-benefi t analysis
+Completion status Open
+Priority High
+Resources that are needed Spreadsheet software
+Estimated time 16 hours
+Actual time 14.5 hours
+ Workplan Information Example
+FIGURE 2-11
+Task Information
+54 Chapter 2 Project Management
+Work Breakdown Structures
+A project manager can use a structured, top-down approach whereby high-level tasks are fi rst 
+defi ned and then broken down into subtasks. For example, Figure 2-12 shows a list of highlevel tasks needed to implement a new IT training class. Some of the main steps in the process 
+include identifying vendors, creating and administering a survey, and building new classrooms. Each step is then broken down in turn and numbered in a hierarchical fashion. Th ere 
+are eight subtasks (i.e., 7.1–7.8) for creating and administering a survey, and there are three 
+subtasks (7.2.1–7.2.3) that make up the review initial survey task. A list of tasks hierarchically 
+numbered in this way is called a work breakdown structure (WBS). Th e number of tasks and 
+level of detail depend on the complexity and size of the project. At a minimum, the WBS must 
+include the duration of the task, the current status of the task (i.e., open, complete), and the 
+task dependencies, which occur when one task cannot be performed until another task is completed. For example, Figure 2-12 shows that incorporating changes to the survey (task 7.4) 
+takes a week to perform, but it cannot occur until aft er the survey is reviewed (task 7.2) and 
+pilot tested (task 7.3). Key milestones, or important dates, are also identifi ed on the workplan.
+Th ere are two basic approaches to organizing a traditional WBS: by development phase 
+or by product. For example, if a fi rm decided that it needed to develop a website, the fi rm 
+could create a WBS based on the inception, elaboration, construction, and transition 
+phases of the Unifi ed Process. In this case, a typical task that would take place during inception would be feasibility analysis. Th is task would be broken down into the diff erent types of 
+feasibility analysis: technical, economic, and organizational. Each of these would be further 
+broken down into a set of subtasks. Alternatively, the fi rm could organize the workplan 
+along the lines of the diff erent products to be developed. For example, in the case of a website, the products could include applets, application servers, database servers, the various sets 
+of Web pages to be designed, a site map, and so on. Th en these would be further decomposed 
+ 1 Identify vendors 2 Complete
+ 2 Review training materials 6 1 Complete
+ 3 Compare vendors 2 2 In Progress
+ 4 Negotiate with vendors 3 3 Open
+ 5 Develop communications information 4 1 In Progress
+ 6 Disseminate information 2 5 Open
+ 7 Create and administer survey 4 6 Open
+ 7.1 Create initial survey 1 Open
+ 7.2 Review initial survey 1 7.1 Open
+ 7.2.1 Review by Director of IT Training 1 Open
+ 7.2.2 Review by Project Sponsor 1 Open
+ 7.2.3 Review by Representative Trainee 1 Open
+ 7.3 Pilot test initial survey 1 7.1 Open
+ 7.4 Incorporate survey changes 1 7.2, 7.3 Open
+ 7.5 Create distribution list 0.5 Open
+ 7.6 Send survey to distribution list 0.5 7.4, 7.5 Open
+ 7.7 Send follow-up message 0.5 7.6 Open
+ 7.8 Collect completed surveys 1 7.6 Open
+ 8 Analyze results and choose vendor 2 4, 7 Open
+ 9 Build new classrooms 11 1 In Progress
+10 Develop course options 3 8, 9 Open
+ Task Duration 
+ Number Task Name (in weeks) Dependency Status
+FIGURE 2-12
+Work Breakdown 
+ Structure
+Traditional Project Management Tools  55
+into the diff erent tasks associated with the phases of the development process. Either way, 
+once the overall structure is determined, tasks are identifi ed and included in the WBS. We 
+return to the topic of WBSs and their use in iterative planning later in this chapter.
+Gantt Chart
+A Gantt chart is a horizontal bar chart that shows the same task information as the 
+project WBS but in a graphical way. Sometimes a picture really is worth a thousand words, 
+and the Gantt chart can communicate the high-level status of a project much faster and 
+easier than the WBS. Creating a Gantt chart is simple and can be done using a spreadsheet 
+package, graphics soft ware, or a project management package.
+First, tasks are listed as rows in the chart, and time is listed across the top in increments 
+based on the needs of the projects (see Figure 2-13). A short project may be divided into 
+ID
+1
+2
+3
+4
+5
+Identify
+vendors
+Review
+training
+materials
+Compare
+vendors
+Negotiate
+with
+vendors
+Develop
+communications
+information
+Disseminate
+information
+Create and
+administer
+survey
+Analyze results
+and choose
+Build new
+classroom
+Develop 
+course
+options
+Budget
+Meeting
+Software 
+Installation
+6
+7
+8
+9
+10
+11
+12
+2 wks Wed 
+1/1/15
+Wed 
+1/1/15
+Wed 
+2/12/15
+Wed 
+2/26/15
+Wed 
+1/15/15
+Wed 
+2/12/15
+Wed 
+2/26/15
+Wed 
+3/26/15
+Wed 
+1/15/15
+Wed 
+4/9/15
+Wed 
+1/15/15
+Tue
+4/1/15
+6 wks
+Barbara
+Barbara
+Barbara
+Alan
+Alan
+Alan
+Alan
+Alan
+David
+D
+2 wks
+3 wks
+4 wks
+2 wks
+4 wks
+2 wks
+11 wks
+3 wks
+2 
+3
+1
+5
+6
+4, 7
+1
+8, 9
+1 day
+1 day
+Task
+Name Duration Start
+Tue 
+1/14/15
+Tue 
+2/11/15
+Tue 
+2/25/15
+Tue 
+3/8/15
+Tue 
+2/11/15
+Tue 
+2/25/15
+Tue 
+3/25/15
+Tue 
+4/8/15
+Tue 
+4/1/15
+Tue 
+4/29/15
+Wed 
+1/15/15
+Tue
+4/1/15
+Finish 12/29 1/5 1/12
+1/15
+4/1
+1/19 1/26 2/2 2/9 2/16 2/23 3/2 3/9 3/16 3/23 3/30 4/6 4/13 4/20 4/27 Prede
+January February March April M
+FIGURE 2-13 Gantt Chart
+56 Chapter 2 Project Management
+hours or days, whereas a medium-sized project may be represented using weeks or months. 
+Horizontal bars are drawn to represent the duration of each task; the bar’s beginning and 
+end mark exactly when the task will begin and end. As people work on tasks, the appropriate 
+bars are fi lled in proportionately to how much of the task is fi nished. Too many tasks on a 
+Gantt chart can become confusing, so it’s best to limit the number of tasks to around twenty 
+or thirty. If there are more tasks, break them down into subtasks and create Gantt charts for 
+each level of detail.
+Th ere are many things a project manager can see quickly by looking at a Gantt chart. In 
+addition to seeing how long tasks are and how far along they are, the project manager also can 
+tell which tasks are sequential, which tasks occur at the same time, and which tasks overlap 
+in some way. He or she can get a quick view of tasks that are ahead of schedule and behind 
+schedule by drawing a vertical line on today’s date. If a bar is not fi lled in and is to the left of 
+the line, that task is behind schedule.
+Th ere are a few special notations that can be placed on a Gantt chart. Project milestones are shown using upside-down triangles or diamonds. Arrows are drawn between 
+the task bars to show task dependencies. Sometimes, the names of people assigned to each 
+task are listed next to the task bars to show what human resources have been allocated to 
+the tasks.
+Network Diagram
+A second graphical way to look at project workplan information is the network diagram that 
+lays out the project tasks in a fl owchart (see Figure 2-14). 
+Program Evaluation and Review Technique (PERT) is a network analysis technique that 
+can be used when the individual task time estimates are fairly uncertain. Instead of simply 
+putting a point estimate for the duration estimate, PERT uses three time estimates: optimistic, 
+Software installation
+12
+Tue 4/1/15
+1 day Tue
+Tue 4/1/15
+Budget meeting
+11
+Wed 1/15/15
+1 day Wed
+Wed 1/15/15
+Identify vendors
+1
+Wed 1/1/15
+2 wks Tue
+Tue 1/14/15
+Build new classroom
+9
+Wed 1/15/15
+11 wks Tue
+Tue 4/1/15
+Compare vendors
+3
+Wed 2/12/15
+2 wks Tue
+Tue 2/25/15
+Negotiate with vendors
+4
+Wed 2/26/15
+3 wks Tue
+Tue 3/18/15
+Review training materials
+2
+Wed 1/1/15
+6 wks Tue
+Tue 2/11/15
+Develop communications
+Information
+5
+Wed 1/15/15
+4 wks Tue
+Tue 2/11/15
+Disseminate information
+6
+Wed 2/12/15
+2 wks Tue
+Tue 2/25/15
+Create and administer
+survey
+7
+Wed 2/26/15
+4 wks Tue
+Tue 3/25/15
+Analyze results and
+choose vendor
+8
+Wed 3/26/15
+2 wks Tue
+Tue 4/8/15
+Develop course options
+10
+Wed 4/9/15
+3 wks Tue
+Tue 4/29/15
+FIGURE 2-14 Network Diagram
+Traditional Project Management Tools  57
+most likely, and a pessimistic. It then combines the three estimates into a single weighted 
+average estimate using the following formula:
+PERT weighted average 5
+optimistic estimate 1 (4 * most likely estimate)
+1 pessimistic estimate
+6
+Th e network diagram is drawn as a node-and-arc type of graph that shows time estimates in 
+the nodes and task dependencies on the arcs. Each node represents an individual task, and a 
+line connecting two nodes represents the dependency between two tasks. Partially completed 
+tasks are usually displayed with a diagonal line through the node, and completed tasks contain crossed lines.
+Network diagrams are the best way to communicate task dependencies because they lay 
+out the tasks in the order in which they need to be completed. Th e critical path method (CPM) 
+simply allows the identifi cation of the critical path in the network. Th e critical path is the longest 
+path from the project inception to completion. Th e critical path shows all the tasks that must be 
+completed on schedule for a project as a whole to fi nish on schedule. If any tasks on the critical 
+path take longer than expected, the entire project will fall behind. Each task on the critical path 
+is a critical task, and they are usually depicted in a unique way; in Figure 2-14 they are shown 
+with double borders (see tasks 5, 6, 7, 8, and 10). CPM can be used with or without PERT.
+PROJECT EFFORT ESTIMATION
+Th e science (or art) of project management is in making trade-off s among three important concepts: the functionality of the system, the time to complete the project (when the project will be 
+fi nished), and the cost of the project. Th ink of these three things as interdependent levers that 
+the project manager controls throughout the development of the system. Whenever one lever is 
+pulled, the other two levers are aff ected in some way. For example, if a project manager needs to 
+readjust a deadline to an earlier date, then the only solutions are to decrease the functionality of 
+the system or to increase costs by adding more people or having them work overtime. Oft en, a 
+project manager has to work with the project sponsor to change the goals of the project, such as 
+developing a system with less functionality or extending the deadline for the fi nal system, so that 
+the project has reasonable goals that can be met. In the beginning of the project, the manager 
+needs to estimate each of these levers and then continuously assess how to roll out the project 
+in a way that meets the organization’s needs. Estimation is the process of assigning projected 
+values for time and eff ort. Th e estimates developed at the start of a project are usually based on a 
+range of possible values and gradually become more specifi c as the project moves forward. Th at 
+is, the range of values for the inception phase will be much greater than for the transition phase.
+Th e numbers used to calculate these estimates can be taken from projects with similar 
+tasks and technologies or provided by experienced developers. Generally speaking, the numbers should be conservative. A good practice is to keep track of the actual values for time and 
+eff ort during the development process so that numbers can be refi ned along the way and the 
+next project can benefi t from real data. 
+Th ere are a variety of ways to estimate the time required to build a system. Because the 
+Unifi ed Process is use-case driven, we use an approach that is based on use cases: use-case 
+points.4 Use-case points, originally developed by Gustav Karner of Objectory AB,5 are based 
+4 Th e material in this section is based on descriptions of use-case points contained in Raul R. Reed, Jr., Developing 
+Applications with Java and UML (Reading, MA: Addison-Wesley, 2002); Geri Schneider and Jason P. Winters, Applying Use Cases: A Practical Guide (Reading, MA: Addison-Wesley, 1998); Kirsten Ribu, “Estimating Object-Oriented 
+Soft ware Projects with Use Cases” (Master’s thesis, University of Oslo, 2001).
+5 Objectory AB was acquired by Rational in 1995 and Rational is now part of IBM.
+58 Chapter 2 Project Management
+on unique features of use cases and object orientation. From a practical point of view, to 
+estimate eff ort using use-case points, the use cases and the use-case diagram must have 
+been created.6
+Use-case models have two primary constructs: actors and use cases. An actor represents a role that a user of the system plays, not a specifi c user. For example, a role could be 
+secretary or manager. Actors can also represent other systems that will interact with the 
+system under development. For use-case point estimation purposes, actors can be classifi ed 
+as simple, average, or complex. Simple actors are separate systems with which the current 
+system must communicate through a well-defi ned application program interface (API). 
+Average actors are separate systems that interact with the current system using standard 
+communication protocols, such as TCP/IP, FTP, or HTTP, or an external database that 
+can be accessed using standard SQL. Complex actors are typically end users communicating with the system. Once all of the actors have been categorized as being simple, 
+average, or complex, the project manager counts the number of actors in each category 
+and enters the values into the unadjusted actor-weighting table contained in the use-case 
+point– estimation worksheet (see Figure 2-15). Th e project manager then computes the 
+Unadjusted Actor Weight Total (UAW). Th is is computed by summing the individual 
+results that were computed by multiplying the weighting factor by the number of actors 
+of each type. For example, if we assume that the use-case diagram has zero simple, zero 
+average, and four complex actors that interact with the system being developed, the UAW 
+will equal 12 (see Figure 2-16).
+A use case represents a major business process that the system will perform that benefi ts 
+the actor(s) in some manner. Depending on the number of unique transactions that the use 
+case must address, a use case can be categorized as being simple, average, or complex. A use 
+case is classifi ed as simple if it supports one to three transactions, as average if it supports four 
+to seven transactions, or as complex if it supports more than seven transactions. Once all of 
+the use cases have been successfully categorized, the project manager enters the number of 
+each type of use case into the unadjusted use-case weighting table contained in the use-case 
+point–estimation worksheet (see Figure 2-15). By multiplying by the appropriate weights and 
+summing the results, we get the value for the unadjusted use-case weight total (UUCW). For 
+example, if we assume that we have three simple use cases, four average use cases, and one 
+complex use case, the value for the unadjusted use-case weight total is 70 (see Figure 2-16). 
+Next, the project manager computes the value of the unadjusted use-case points (UUCP) by 
+simply summing the unadjusted actor weight total and the unadjusted use-case weight total. 
+In this case the value of the UUCP equals 82 (see Figure 2-16).
+Use-case point-based estimation also has a set of factors that are used to adjust the 
+use-case point value. In this case, there are two sets of factors: technical complexity factors 
+(TCFs) and environmental factors (EFs). Th ere are thirteen separate technical factors and 
+eight separate environmental factors. Th e purpose of these factors is to allow the project 
+as a whole to be evaluated for the complexity of the system being developed and the experience levels of the development staff , respectively. Obviously, these types of factors can 
+aff ect the eff ort that a team requires to develop a system. Each of these factors is assigned 
+a value between 0 and 5, 0 indicating that the factor is irrelevant to the system under consideration and 5 indicating that the factor is essential for the system to be successful. Th e 
+assigned values are then multiplied by their respective weights. Th ese weighted values are 
+then summed up to create a technical factor value (TFactor) and an environmental factor 
+value (EFactor) (see Figure 2-15).
+6 We cover the details of use-case modeling in Chapter 4.
+Project Effort Estimation  59
+FIGURE 2-15 Use-Case Point–Estimation Worksheet
+Unadjusted Actor Weighting Table:
+ Actor Type Description Weighting Factor Number Result
+Simple External System with well-defi ned API 1 
+Average External System using a protocol-based 2 
+interface, e.g., HTTP, TCT/IP, or a database
+Complex Human 3 
+Unadjusted Actor Weight Total (UAW)
+Unadjusted Use Case Weighting Table:
+ Use-Case Type Description Weighting Factor Number Result
+Simple 1–3 transactions 5 
+Average 4–7 transactions 10 
+Complex >7 transactions 15 
+Unadjusted Use-Case Weight Total (UUCW)
+Unadjusted Use Case Points (UUCP) 5 UAW 1 UUCW
+Technical Complexity Factors:
+ Factor Number Description Weight Assigned Value (0–5) Weighted Value Notes
+T1 Distributed system 2.0 
+T2 Response time or throughput 1.0 
+ performance objectives
+T3 End-user online effi ciency 1.0 
+T4 Complex internal processing 1.0 
+T5 Reusability of code 1.0 
+T6 Ease of installation 0.5 
+T7 Ease of use 0.5 
+T8 Portability 2.0 
+T9 Ease of change 1.0 
+T10 Concurrency 1.0 
+T11 Special security objectives included 1.0 
+T12 Direct access for third parties 1.0 
+T13 Special user training required 1.0 
+Technical Factor Value (TFactor)
+Technical Complexity Factor (TCF) 5 0.6 1 (0.01 * TFactor)
+Environmental Factors:
+ Factor Number Description Weight Assigned Value (0–5) Weighted Value Notes
+E1 Familiarity with system 1.5 
+development process being used
+E2 Application experience 0.5 
+E3 Object-oriented experience 1.0 
+E4 Lead analyst capability 0.5 
+E5 Motivation 1.0 
+E6 Requirements stability 2.0 
+E7 Part time staff –1.0 
+E8 Diffi culty of programming language –1.0 
+Environmental Factor Value (EFactor)
+Environmental Factor (EF) 5 1.4 1 (20.03 * EFactor)
+Adjusted Use Case Points (UCP) 5 UUCP * TCF * ECF
+Effort in Person Hours 5 UCP * PHM
+TEMPLATE
+can be found at
+www.wiley.com
+/college/dennis
+60 Chapter 2 Project Management
+FIGURE 2-16 Use-Case Point Estimation for the Appointment System
+Unadjusted Actor Weighting Table:
+ Actor Type Description Weighting Factor Number Result
+Simple External system with well-defi ned API 1 0 0
+Average External system using a protocol-based 2 0 0
+interface, e.g., HTTP, TCT/IP, or a database
+Complex Human 3 4 12
+Unadjusted Actor Weight Total (UAW) 12
+Unadjusted Use-Case Weighting Table:
+ Use Case Type Description Weighting Factor Number Result
+Simple 1–3 transactions 5 3 15
+Average 4–7 transactions 10 4 40
+Complex >7 transactions 15 1 15
+Unadjusted Use Case Weight Total (UUCW) 70
+Unadjusted Use-Case Points (UUCP) 5 UAW 1 UUCW 82 5 12 1 70
+Technical Complexity Factors:
+ Factor Number Description Weight Assigned Value (0–5) Weighted Value Notes
+T1 Distributed system 2.0 0 0 
+T2 Response time or throughput 1.0 5 5 
+ performance objectives
+T3 End-user online effi ciency 1.0 3 3
+T4 Complex internal processing 1.0 1 1
+T5 Reusability of code 1.0 1 1
+T6 Ease of installation 0.5 2 1
+T7 Ease of use 0.5 4 2
+T8 Portability 2.0 0 0
+T9 Ease of change 1.0 2 2
+T10 Concurrency 1.0 0 0
+T11 Special security objectives included 1.0 0 0
+T12 Direct access for third parties 1.0 0 0
+T13 Special user training required 1.0 0 0
+Technical Factor Value (TFactor) 15
+Technical Complexity Factor (TCF) 5 0.6 1 (0.01 * TFactor) 0.75 5 0.6 1 (0.01 * 15)
+Environmental Factors:
+ Factor Number Description Weight Assigned Value (0–5) Weighted Value Notes
+E1 Familiarity with system 1.5 4 6
+development process being used
+E2 Application experience 0.5 4 2
+E3 Object-oriented experience 1.0 4 4
+E4 Lead analyst capability 0.5 5 2.5
+E5 Motivation 1.0 5 5
+E6 Requirements stability 2.0 5 10
+E7 Part-time staff –1.0 0 0
+E8 Diffi culty of programming language –1.0 4 –4.0
+Environmental Factor Value (EFactor) 25.5
+Environmental Factor (EF) 5 1.4 1 (20.03 * EFactor) 0.635 5 1.4 1 (20.03 * 25.5)
+Adjusted Use Case Points (UCP) 5 UUCP * TCF * ECF 33.3375 5 70 * 0.75 * 0.635
+Effort in person-hours 5 UCP * PHM 666.75 5 20 * 33.3375
+Project Effort Estimation  61
+Th e technical factors include the following (see Figure 2-15):
+■ Whether the system is going to be a distributed system
+■ Th e importance of response time
+■ Th e effi ciency level of the end user using the system
+■ Th e complexity of the internal processing of the system
+■ Th e importance of code reuse
+■ How easy the installation process has to be
+■ Th e importance of the ease of using the system
+■ How important it is for the system to be able to be ported to another platform
+■ Whether system maintenance is important
+■ Whether the system is going to have to handle parallel and concurrent 
+processing
+■ Th e level of special security required
+■ Th e level of system access by third parties
+■ Whether special end user training is to be required.
+Assuming the values for the technical factors are T1 (0), T2 (5), T3 (3), T4 (1), T5 (1), 
+T6 (2), T7 (4), T8 (0), T9 (2), T10 (0), T11 (0), T12 (0), and T13 (0), respectively, the 
+technical factor value (TFactor) is computed as the weighted sum of the individual technical 
+factors. In this case TFactor equals 15 (see Figure 2-16). Plugging this value into the technical 
+complexity factor (TCF) equation (0.6 1 (.01 * TFactor)) of the use-case point worksheet gives 
+a value of .75 for the TCF of the system (see Figures 2-15 and 2-16).
+Th e environmental factors include the following (see Figure 2-15):
+■ Th e level of experience the development staff has with the development process 
+being used
+■ Th e application being developed
+■ Th e level of object-oriented experience
+■ Th e level of capability of the lead analyst
+■ Th e level of motivation of the development team to deliver the system
+■ Th e stability of the requirements
+■ Whether part-time staff have to be included as part of the development team
+■ Th e diffi culty of the programming language being used to implement the system
+Assuming the values for the environmental factors were E1 (4), E2 (4), E3 (4), E4 (5), E5 (5), 
+E6 (5), E7 (0), and E8 (4) gives an environmental factor value (EFactor) of 25.5 (see Figure 
+2-16). Like the TFactor, Efactor is simply the sum of the weighted values. Using the environmental factor (EF) equation (1.4 1 (20.03 * EFactor)) of the use-case point worksheet 
+produces a value of .635 for the EF of the system (see Figures 2-15 and 2-16). Plugging the 
+TCF and EF values, along with the UUCP value computed earlier, into the adjusted use-case 
+points equation (UUCP * TCF * EF) of the worksheet yields a value of 33.3375 adjusted usecase points (UCP) (see Figure 2-16).
+Now that we know the estimated size of the system by means of the value of the adjusted 
+use-case points, we are ready to estimate the eff ort required to build the system. In Karner’s 
+original work, he suggested simply multiplying the number of use-case points by 20 to 
+estimate the number of person-hours required to build the system. However, based on 
+additional experiences using use-case points, a decision rule to determine the value of the 
+62 Chapter 2 Project Management
+person-hours multiplier (PHM) has been created that suggests using either 20 or 28, based on 
+the values assigned to the individual environmental factors. Th e decision rule is:
+If the sum of (number of Efactors E1 through E6 assigned value , 3) and
+ (number of Efactors E7 and E8 assigned value . 3) 
+ < 2
+ PHM 5 20
+Else If the sum of (number of Efactors E1 through E6 assigned value , 3) and
+ (number of Efactors E7 and E8 assigned value . 3) 
+ 5 3 or 4
+ PHM 5 28
+Else
+ Rethink project; it has too high of a risk for failure
+Based on these rules, because none of Efactors E1 through E6 have a value less than 3 
+and only Efactor E8 has a value greater than 3, the sum of the number EFactors is 1. Th us, the 
+system should use a PHM of 20. Plugging the values for UCP (33.3375) and PHM (20) into 
+the eff ort equation (UCP * PHM) gives an estimated number of person-hours of 666.75 hours 
+(see Figures 2-15 and 2-16).
+CREATING AND MANAGING THE WORKPLAN
+Once a project manager has a general idea of the functionality and eff ort for the project, he 
+or she creates a workplan, which is a dynamic schedule that records and keeps track of all the 
+tasks that need to be accomplished over the course of the project. Th e workplan lists each 
+task, along with important information about it, such as when it needs to be completed, the 
+person assigned to do the work, and any deliverables that will result. Th e level of detail and 
+the amount of information captured by the workplan depend on the needs of the project, and 
+the detail usually increases as the project progresses.
+Th e overall objectives for the system should be listed on the system request, and it is the 
+project manager’s job to identify all the tasks that need to be accomplished to meet those 
+objectives. Th is sounds like a daunting task. How can someone know everything that needs 
+to be done to build a system that has never been built before?
+One approach for identifying tasks is to get a list of tasks that has already been developed and to modify it. Th ere are standard lists of tasks, or methodologies, that are available 
+for use as a starting point. As we stated in Chapter 1, a methodology is a formalized approach 
+to implementing a systems development process (i.e., it is a list of steps and deliverables). 
+A project manager can take an existing methodology, select the steps and deliverables that 
+apply to the current project, and add them to the workplan. If an existing methodology is not 
+available within the organization, methodologies can be purchased from consultants or vendors, or books such as this textbook can serve as a guide. Because most organizations have a 
+methodology they use for projects, using an existing methodology is the most popular way to 
+create a workplan. In our case, because we are using a Unifi ed Process-based methodology, 
+we can use the phases, workfl ows, and iterations as a starting point to create an evolutionary 
+work breakdown structure and an iterative workplan.
+Evolutionary Work Breakdown Structures and Iterative Workplans7
+Because object-oriented systems approaches to systems analysis and design support incremental and iterative development, any project planning approach for object-oriented systems 
+7 Th is material in this section is based on Walker Royce, Soft ware Project Management: A Unifi ed Framework (Reading, MA: Addison-Wesley, 1998).
+Creating and Managing the Workplan  63
+development also requires an incremental and iterative process. In the description of the enhanced 
+Unifi ed Process in Chapter 1, the development process was organized around iterations, phases, 
+and workfl ows. In many ways, a workplan for an incremental and iterative development process 
+is organized in a similar manner. For each iteration, there are diff erent tasks executed on each 
+workfl ow. Th is section describes an incremental and iterative process using evolutionary WBSs 
+for project planning that can be used with object-oriented systems development.
+Evolutionary WBSs allow the analyst to develop an iterative workplan. First, evolutionary 
+WBSs are organized in a standard manner across all projects: by workfl ows, phases, and then 
+the specifi c tasks that are accomplished during an individual iteration. Second, evolutionary 
+WBSs are created in an incremental and iterative manner. Th is encourages a more realistic 
+view of both cost and schedule estimation. Th ird, because the structure of an evolutionary 
+WBS is not tied to any specifi c project, evolutionary WBSs enable the comparison of the 
+current project to earlier projects. Th is supports learning from past successes and failures.
+In the case of the enhanced Unifi ed Process, the workfl ows are the major points listed 
+in the WBS. Next, each workfl ow is decomposed along the phases of the enhanced Unifi ed 
+Process. Aft er that, each phase is decomposed along the tasks that are to be completed to create the deliverables associated with an individual iteration contained in each phase (see Figure 
+1-16). Th e template for the fi rst two levels of an evolutionary WBS for the enhanced Unifi ed 
+Process would look like Figure 2-17.
+As each iteration through the development process is completed, additional iterations and 
+tasks are added to the WBS (i.e., the WBS evolves along with the evolving information system).8 
+ I. Business Modeling
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ II. Requirements
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+III. Analysis
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+IV. Design
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ V. Implementation
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ VI. Test
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ VII. Deployment
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+VIII. Confi guration and
+ Change Management
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ IX. Project Management
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ X. Environment
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ XI. Operations and Support
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+XII. Infrastructure Management
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+FIGURE 2-17
+Evolutionary WBS 
+Template for the 
+Enhanced Unifi ed 
+Process
+8 Good sources that help explain this approach are Phillippe Krutchen, “Planning an Iterative Project,” Th e Rational 
+Edge (October 2002); Eric Lopes Cordoza and D. J. de Villiers, “Project Planning Best Practices,” Th e Rational Edge
+(August 2003).
+64 Chapter 2 Project Management
+For example, typical activities for the inception phase of the project management workfl ow 
+would include identifying the project, performing the feasibility analysis, selecting the project, 
+and estimating the eff ort. Th e inception phase of the requirements workfl ow would include 
+determining the requirements gathering and analysis techniques, identifying functional and 
+nonfunctional requirements, interviewing stakeholders, developing a vision document, and 
+developing use cases. Probably no tasks are associated with the inception phase of the operations 
+and support workfl ow. A sample evolutionary WBS for planning the inception phase of the 
+enhanced Unifi ed Process, based on Figures 1-16 and 2-17, is shown in Figure 2-18. Notice the 
+last two tasks for the project management workfl ow are “create workplan for fi rst iteration of 
+the elaboration phase” and “assess the inception phase”; the last two things to do are to plan for 
+the next iteration in the development of the evolving system and to assess the current iteration. 
+As the project moves through later phases, each workfl ow has tasks added to its iterations. For 
+example, the analysis workfl ow will have the creation of the functional, structural, and behavioral models during the elaboration phase. Finally, when an iteration includes a lot of complex 
+tasks, traditional tools, such as Gantt charts and network diagrams, can be used to detail the 
+workplan for that specifi c iteration.
+FIGURE 2-18
+Evolutionary 
+WBS for a Single 
+ Iteration-Based 
+Inception Phase
+ Duration Dependency
+I. Business Modeling
+ a. Inception
+ 1. Understand current business situation 0.50 days
+ 2. Uncover business process problems 0.25 days
+ 3. Identify potential projects 0.25 days
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+II. Requirements
+ a. Inception
+ 1. Identify appropriate requirements-analysis technique 0.25 days
+ 2. Identify appropriate requirements-gathering techniques 0.25 days
+ 3. Identify functional and nonfunctional requirements II.a.1, II.a.2
+ A. Perform JAD sessions 3 days
+ B. Perform document analysis 5 days II.a.3.A
+ C. Conduct interviews II.a.3.A
+ 1. Interview project sponsor 0.5 days
+ 2. Interview inventory system contact 0.5 days
+ 3. Interview special order system contact 0.5 days
+ 4. Interview ISP contact 0.5 days
+ 5. Interview CD Selection Web contact 0.5 days
+ 6. Interview other personnel 1 day
+ D. Observe retail store processes 0.5 days II.a.3.A
+ 4. Analyze current systems 4 days II.a.1, II.a.2
+ 5. Create requirements defi nition II.a.3, II.a.4
+ A. Determine requirements to track 1 day
+ B. Compile requirements as they are elicited 5 days II.a.5.A
+ C. Review requirements with sponsor 2 days II.a.5.B
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+Creating and Managing the Workplan  65
+FIGURE 2-18
+Continued
+ Duration Dependency
+ III. Analysis
+ a. Inception
+ 1. Identify business processes 3 days
+ 2. Identify use cases 3 days III.a.1
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ IV. Design
+ a. Inception
+ 1. Identify potential classes 3 days III.a
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ V. Implementation
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ VI. Test
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ VII. Deployment
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+VIII. Confi guration and Change Management
+ a. Inception
+ 1. Identify necessary access controls for developed artifacts 0.25 days
+ 2. Identify version control mechanisms for developed artifacts 0.25 days
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ IX. Project Management
+ a. Inception
+ 1. Create workplan for the inception phase 1 day
+ 2. Create system request 1 day
+ 3. Perform feasibility analysis IX.a.2
+ A. Perform technical feasibility analysis 1 day
+ B. Perform economic feasibility analysis 2 days
+ C. Perform organizational feasibility analysis 2 days
+66 Chapter 2 Project Management
+ Duration Dependency
+ 4. Identify project effort 0.50 days IX.a.3
+ 5. Identify staffi ng requirements 0.50 days IX.a.4
+ 6. Compute cost estimate 0.50 days IX.a.5
+ 7. Create workplan for fi rst iteration of the 
+elaboration phase 1 day IX.a.1
+ 8. Assess inception phase 1 day I.a, II.a, III.a
+IV.a, V.a, VI.a
+ VII.a, VIII.a,
+IX.a, X.a, XI.a
+ XII.a
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ X. Environment
+ a. Inception
+ 1. Acquire and install CASE tool 0.25 days
+ 2. Acquire and install programming environment 0.25 days
+ 3. Acquire and install confi guration and change 
+management tools 0.25 days
+ 4. Acquire and install project management tools 0.25 days
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+ XI. Operations and Support
+ a. Inception
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production
+XII. Infrastructure Management
+ a. Inception
+ 1. Identify appropriate standards and enterprise models 0.25 days
+ 2. Identify reuse opportunities, such as patterns,
+frameworks, and libraries 0.50 days
+ 3. Identify similar past projects 0.25 days
+ b. Elaboration
+ c. Construction
+ d. Transition
+ e. Production FIGURE 2-18
+Continued
+Managing Scope
+An analyst may assume that a project will be safe from scheduling problems because he or she 
+carefully estimated and planned the project up front. However, the most common reason for 
+schedule and cost overruns—scope creep—occurs aft er the project is under way. Scope creep 
+happens when new requirements are added to the project aft er the original project scope was 
+defi ned and frozen. It can happen for many reasons: Users might suddenly understand the

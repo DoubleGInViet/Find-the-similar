@@ -1,0 +1,513 @@
+﻿e fi rst element of design is the basic layout of the screen, form, or report. Most soft ware 
+designed for personal computers follows the standard Windows or Macintosh approach 
+for screen design. Th e screen is divided into three boxes. Th e top box is the navigation 
+area, through which the user issues commands to navigate through the system. Th e bottom box is the status area, which displays information about what the user is doing. Th e 
+ middle—and largest—box is used to display reports and present forms for data entry.
+Th is use of multiple layout areas also applies to inputs and outputs. Data areas on reports 
+and forms are oft en subdivided into subareas, each of which is used for a diff erent type of 
+information. Th ese areas are almost always rectangular, although sometimes space constraints 
+require odd shapes. Nonetheless, the margins on the edges of the screen should be consistent. 
+Each of the areas within the report or form is designed to hold diff erent information. For example, on an order form (or order report), one part may be used for customer information (e.g., 
+name, address), one part for information about the order in general (e.g., date, payment information), and one part for the order details (e.g., how many units of which items at what price 
+each). Each area is self-contained so that information in one area does not run into another.
+Th e areas and information within areas should have a natural intuitive fl ow to minimize 
+the users’ movement from one area to the next. People in Westernized nations (e.g., United 
+States, Canada, Mexico) tend to read left -to-right, top-to-bottom, so related information 
+should be placed so that it is used in this order (e.g., address lines, followed by city, state or 
+province, and then ZIP code or postal code). Sometimes the sequence is in chronological 
+order, or from the general to the specifi c, or from most frequently to least frequently used. 
+In any event, before the areas are placed on a form or report, the analyst should have a clear 
+understanding of what arrangement makes the most sense for how the form or report will 
+be used. Th e fl ow between sections should also be consistent, whether horizontal or vertical. 
+Ideally, the areas will remain consistent in size, shape, and placement for the forms used to 
+enter information (whether paper or on screen) and the reports used to present it.
+Content Awareness
+Content awareness refers to the ability of an interface to make the user aware of the information it contains with the least amount of eff ort on the user’s part. All parts of the interface, 
+Layout The interface should be a series of areas on the screen that are used 
+ consistently for different purposes—for example, a top area for commands and 
+navigation, a middle area for information to be input or output, and a bottom 
+area for status information.
+Content Awareness Users should always be aware of where they are in the system and what 
+ information is being displayed.
+Aesthetics Interfaces should be functional and inviting to users through careful use of 
+ white space, colors, and fonts. There is often a trade-off between including 
+enough white space to make the interface look pleasing without losing so much 
+space that important information does not fi t on the screen.
+User Experience Although ease of use and ease of learning often lead to similar design decisions,
+ sometimes there is a trade-off between the two. Novice or infrequent users of 
+software prefer ease of learning, whereas frequent users prefer ease of use.
+Consistency Consistency in interface design enables users to predict what will happen 
+ before they perform a function. It is one of the most important elements in ease 
+of learning, ease of use, and aesthetics.
+Minimal User Effort The interface should be simple to use. Most designers plan on having no 
+ more than three mouse clicks from the starting menu until users perform work.
+Principle Description
+FIGURE 10-1
+Principles of User 
+Interface Design
+370 Chapter 10 Human–Computer Interaction Layer Design
+whether navigation, input, or output, should provide as much content awareness as possible, but it is particularly important for forms or reports that are used quickly or irregularly. 
+Content awareness applies to the interface in general. All interfaces should have titles (on the 
+screen frame, for example). Menus should show where the user is and, if possible, where the 
+user came from to get there.
+Content awareness also applies to the areas within forms and reports. All areas should be 
+clear and well-defi ned so that it is diffi cult for the user to become confused about the information in any area. Th en users can quickly locate the part of the form or report that is likely 
+to contain the information they need. Sometimes the areas are marked by lines, colors, or 
+headings; in other cases, the areas are only implied.
+Content awareness also applies to the fi elds within each area. Fields are the individual 
+elements of data that are input or output. Th e fi eld labels that identify the fi elds on the 
+interface should be short and specifi c—objectives that oft en confl ict. Th ere should be no 
+uncertainty about the format of information within fi elds, whether for entry or display. 
+For example, a date of 10/5/15 is diff erent depending on whether you are in the United 
+States (October 5, 2015) or in Canada (May 10, 2015). Any fi elds for which there is the 
+possibility of uncertainty or multiple interpretations should provide explicit explanations.
+Content awareness also applies to the information that a form or report contains. In general, 
+all forms and reports should contain a preparation date (i.e., the date printed or the date completed) so that the age of information is obvious. Likewise, all printed forms and soft ware should 
+provide version numbers so that users, analysts, and programmers can identify outdated materials.
+Aesthetics
+Aesthetics refers to designing interfaces that are pleasing to the eye. Interfaces do not have to 
+be works of art, but they do need to be functional and inviting to use. In most cases, less is 
+more, meaning that a simple, minimalist design is the best.
+Space is usually at a premium on forms and reports, and oft en there is the temp tation 
+to squeeze as much information as possible onto a page or a screen. Unfortunately, this can 
+make a form or report so unpleasant that users do not want to use it. In general, all forms 
+and reports need a minimum amount of white space that is intentionally left blank.
+In general, novice or infrequent users of an interface, whether on a screen or on paper, 
+prefer interfaces with low density, oft en one with a density of less than 50 percent (i.e., less than 
+50 percent of the interface occupied by information). More-experienced users prefer higher 
+densities, sometimes approaching 90 percent occupied, because they know where information 
+is located and high densities reduce the amount of physical movement through the interface.
+Th e design of text is equally important. As a general rule, all text should be in the same font 
+and about the same size. Fonts should be no smaller than 8 points, but 10 points is oft en preferred, particularly if the interface will be used by older people. Changes in font and size are used 
+to indicate changes in the type of information that is presented (e.g., headings, status indicators). 
+In general, italics and underlining should be avoided because they make text harder to read.
+Serif fonts (i.e., those having letters with serifs, or tails, such as Times Roman) are the most 
+readable for printed reports, particularly for small letters. Sans serif fonts (i.e., those without 
+serifs, such as Helvetica or Arial) are the most readable for computer screens and are oft en used 
+for headings in printed reports. Never use all capital letters, except possibly for titles.
+Color and patterns should be used carefully and sparingly and only when they serve a 
+purpose. (About 10 percent of men are color blind, so the improper use of color can impair 
+their ability to read color text.) A quick trip around the Web will demonstrate the problems caused by indiscriminate use of colors and patterns. Remember, the goal is pleasant 
+ readability, not art; color and patterns should be used to strengthen the message, not overwhelm it. Color is best used to separate and categorize items, such as showing the diff erence 
+Principles for User Interface Design  371
+between headings and regular text, or to highlight important information. Th erefore, colors 
+with high contrast should be used (e.g., black and white). In general, black text on a white 
+background is the most readable, and blue on red is the least readable. Also, when it comes 
+to the proper use of color, cultural issues come into play. We discuss this later in the chapter.
+User Experience
+User experience can essentially be broken down into two levels: those with experience and 
+those without. Interfaces should be designed for both types of users. Novice users usually are 
+most concerned with ease of learning—how quickly they can learn new systems. Expert users 
+are usually most concerned with ease of use—how quickly they can use the system once they 
+have learned how to use it. Oft en these two are complementary and lead to similar design 
+decisions, but sometimes there are trade-off s. Novices, for example, oft en prefer menus that 
+show all available system functions, because these promote ease of learning. Experts, on 
+the other hand, sometimes prefer fewer menus organized around the most commonly used 
+functions.
+Systems that will end up being used by many people on a daily basis are more likely to 
+have a majority of expert users (e.g., order-entry systems). Although interfaces should try to 
+balance ease of use and ease of learning, these types of systems should put more emphasis on 
+ease of use rather than ease of learning. Users should be able to access the commonly used 
+functions quickly, with few keystrokes or a small number of menu selections.
+In many other systems (e.g., decision-support systems), most people remain occasional 
+users for the lifetime of the system. In this case, greater emphasis may be placed on ease of 
+learning rather than ease of use.
+Ease of use and ease of learning oft en go hand-in-hand—but sometimes they don’t. 
+Research shows that expert and novice users have diff erent requirements and behavior patterns in some cases. For example, novices virtually never look at the bottom area of a screen 
+that presents status information, whereas experts refer to the status bar when they need 
+information. Most systems should be designed to support frequent users, except for systems 
+designed to be used infrequently or when many new users or occasional users are expected. 
+Likewise, systems that contain functionality that is used only occasionally must contain a 
+highly intuitive interface or an interface that contains clear, explicit guidance regarding its 
+use. Th e balance of quick access to commonly used and well-known functions and guidance 
+through new and less-well-known functions is challenging to the interface designer, and this 
+balance oft en requires elegant solutions.
+Consistency
+Consistency in design is probably the single most important factor in making a system simple to 
+use because it enables users to predict what will happen. When interfaces are consistent, users 
+can interact with one part of the system and then know how to interact with the rest, aside from 
+elements unique to those parts. Consistency usually refers to the interface within one computer 
+system, so that all parts of the same system work in the same way. Ideally, the system should 
+also be consistent with other computer systems in the organization and with commercial 
+soft ware that is used. Many soft ware development tools support consistent system interfaces 
+by providing standard interface objects (e.g., list boxes, pull-down menus, and radio buttons).
+Consistency occurs at many diff erent levels. Consistency in the navigation controls conveys how actions in the system should be performed. For example, using the same icon or 
+command to change an item clearly communicates how changes are made throughout the 
+system. Consistency in terminology is also important. Th is refers to using the same words 
+for elements on forms and reports (e.g., not customer in one place and client in another). 
+We also believe that consistency in report and form design is important, although a study 
+372 Chapter 10 Human–Computer Interaction Layer Design
+suggests that being too consistent can cause problems.4 When reports and forms are very 
+similar except for very minor changes in titles, users sometimes mistakenly use the wrong 
+form and either enter incorrect data or misinterpret its information. Th e implication for 
+design is to make the reports and forms similar but give them some distinctive elements 
+(e.g., color, size of titles) that enable users to immediately detect diff erences.
+Minimizing User Eff ort
+Interfaces should be designed to minimize the amount of eff ort needed to accomplish tasks. 
+Th is means using the fewest possible mouse clicks or keystrokes to move from one part of the 
+system to another. Most interface designers follow the three-clicks rule: Users should be able 
+to go from the start or main menu of a system to the information or action they want in no 
+more than three mouse clicks or three keystrokes. However, with regard to this point, you 
+need to be aware of Krug’s principles (discussed later).
+USER INTERFACE DESIGN PROCESS
+User interface design is a use-case driven, incremental, and iterative process. Analysts oft en 
+move back and forth between the diff erent parts (navigation, input, and output) of the user interface, rather than proceeding sequentially from one part to another part. Given that the design 
+process is use case driven, the analysts begin the user interface design process by examining the 
+use cases (see Chapter 4) and their associated sequence diagrams (see Chapter 6) developed in 
+analysis. Analysts then typically set down with users to develop use scenarios that describe commonly employed patterns of actions the users will perform so that the interface enables users 
+to quickly and smoothly perform these scenarios. In some cases, additional requirements are 
+uncovered. Depending on the importance of the newly uncovered requirements, this can cause 
+the problem domain layer to be modifi ed, which in turn can cause the data management layer 
+to be modifi ed. However, many times, these new requirements can be delayed until the next 
+iteration of the system. With agile approaches, user interface design and requirements modeling is so intertwined that new requirements are uncovered on a regular basis. Consequently, 
+depending on the stability of the modeling of the problem domain, user interface design could 
+occur concurrently with functional modeling. Even though functional and behavioral modeling 
+is associated with the analysis workfl ow and user interface design is associated with the design 
+workfl ow, the level of activity associated with the two workfl ows overlaps (see Figures 1-15 and 
+1-16). As such, performing user interface design along side of functional and behavioral modeling is compatible with both the Unifi ed Process and the Enhanced Unifi ed Process. 
+Once a basic set of use scenarios have been developed, the actual user interface is designed. 
+As we stated earlier, all GUI-based user interfaces comprise three parts: navigation, input, and 
+output. To some degree, all three parts tend to be designed together. Consequently, the user 
+interface design process tends to follow a prototyping style of development (see Chapter 1) 
+wherein the analyst and user will incrementally build a design by iterating across all three parts 
+of the user interface using diff erent design tools. For example, when designing the structure 
+of the navigation, a windows navigation diagram (WND) is very useful; when designing the 
+layout of the user interface, a windows layout diagram is very useful; and when attempting to 
+try and tie the navigation, input, and output designs together, storyboards, and user interface 
+prototypes are very useful. Another useful idea when developing a user interface is to have a 
+set of accepted interface standards that can be used across multiple applications. For example, 
+a standard set of menus, icons, and user interface templates simplify the entire design of the 
+human computer interaction layer. Once the basic design has been completed for a specifi c 
+use case, then the essential use case developed in functional modeling should be converted to 
+4 John Satzinger and Lorne Olfman, “User Interface Consistency Across End-User Application: Th e Eff ects of Mental 
+Models,” Journal of Management Information Systems (Spring 1998): 167–193.
+User Interface Design Process  373
+a real use case that, along with the other tools used to design the interface, can be used as a 
+basis for documentation, training, and testing. Finally, the individual interfaces are subjected 
+to interface evaluation to determine if they are satisfactory and how they can be improved.
+Interface evaluations almost always identify improvements, so the interface design process is repeated in a cyclical process until no new improvements are identifi ed. In practice, 
+most analysts interact closely with the users during the interface design process so that users 
+have many chances to see the interface as it evolves, rather than waiting for one overall interface evaluation at the end of the interface design process. It is better for all concerned (both 
+analysts and users) if changes are identifi ed sooner rather than later. For example, if the interface structure or standards need improvements, it is better to identify changes before most of 
+the screens that use the standards have been designed.5
+Use Scenario Development
+A use scenario is an outline of the steps that the users perform to accomplish some part of their 
+work. A use scenario is one path through an essential use case. For example, Figure 10-2 shows 
+Appointment System
+Patient
+New Patient
+Old Patient
+Update Patient
+Information
+Make Old Patient
+ Appt
+Make New Patient
+ Appt
+Make Payment
+Arrangements Create New Patient
+Manage
+Appointments
+<<extend>>
+<<include>>
+*
+*
+*
+*
+<<include>>
+<<extend>>
+Produce Schedules
+Management
+Doctor
+Record
+Availability
+Manage
+Schedule
+<<include>>
+<<include>>
+*
+*
+*
+*
+FIGURE 10-2  Appointment System Use-Case Diagram (see Figures 4-21 and 7-11)
+5 A good source for more information on user interface evaluation is Deborah Hix and H. Rex Hartson, Developing 
+User Interfaces, Ensuring Usability Th rough Product & Process (New York: Wiley, 1993).
+374 Chapter 10 Human–Computer Interaction Layer Design
+the use-case diagram for the Appointment System. Th is fi gure shows that the Create New Patient 
+use case is distinct from the Make Payment Arrangements use case. We model these two use 
+cases separately because they represent separate processes that are used by the Make New Patient 
+Appt use case.
+Th e use-case diagram was designed to model all possible uses of the system—its 
+ complete functionality or all possible paths through the use case at a fairly high level of 
+abstraction. In one use scenario, a patient makes a request with the receptionist regarding 
+an appointment with the doctor. Th e receptionist looks up the patient and checks to see 
+if the patient has any bills to be paid. Th e receptionist then asks the patient whether he 
+or she wants to set up a new appointment, cancel an existing appointment, or change an 
+existing appointment. If the patient wants to make a new appointment, the receptionist 
+asks the patient for some suggested appointment times, which the receptionist matches 
+against potential times available. Th e receptionist fi nally creates a new appointment (see 
+Figures 6-1 and 6-10).
+In another use scenario, a patient simply wants to cancel an appointment. In this case, 
+the receptionist looks up the patient and checks to see if the patient has any bills to be paid. 
+Th e receptionist then asks the patient for the time of the appointment to be canceled. Finally, 
+the receptionist deletes the appointment.
+Use scenarios are presented in a simple narrative description that is tied to the essential 
+use cases developed during analysis (see Chapter 4). Figure 10-3 shows the two use scenarios 
+just described. Th e key point with using use cases for interface design is not to document all 
+possible use scenarios within a use case. Th e goal is to document two or three of the most 
+common use scenarios so that the interface can be designed to enable the most common uses 
+to be performed simply and easily.
+Use scenario: Existing Patient Cancels
+Appointment
+1. Patient requests appointment (1) and gives
+ the receptionist his or her name and address (2). 
+2. The receptionist looks up the patient (3)
+ and determines whether the patient has
+ changed any information (3 & 4).
+3. The receptionist then asks the patient
+ whether he or she is going to set up a new
+ appointment, change an appointment, or
+ delete an appointment (5).
+4. The receptionist asks the patient for the
+ appointment time to be canceled (S-2, 1).
+5. The receptionist finds and deletes the
+ appointment (S-2, 2). 
+6. The receptionist informs the patient that
+ his or her appointment time was canceled (6). 
+Use scenario: Existing Patient Makes
+New Appointment
+1. Patient requests appointment (1) and gives
+ the receptionist his or her name and address (2).
+The numbers in parentheses refer to specific events in the essential use case.
+2. The receptionist looks up the patient (3)
+ and determines whether the patient has
+ changed any information (3 & 4). 
+3. The receptionist then asks the patient
+ whether he or she is going to set up a new
+ appointment, change an appointment, or
+ delete an appointment (5).
+4. The receptionist asks the patient for a list
+ of potential appointment times (S-1, 1).
+5. The receptionist matches the potential
+ appointment times with the available
+ times and schedules the appointment 
+ (S-1, 2). 
+6. The receptionist informs the patient of
+ his or her appointment time (6).
+FIGURE 10-3  Use Scenarios
+User Interface Design Process  375
+Navigation Structure Design
+Th e navigation structure defi nes the basic components of the interface and how they work 
+together to provide functionality to users. A windows navigation diagram (WND)6 is used to 
+show how all the screens, forms, and reports used by the system are related and how the user 
+moves from one to another. Most systems have several WNDs, one for each major part of 
+the system.
+A WND is very similar to a behavioral state machine (see Chapter 6), in that they both 
+model state changes. A behavioral state machine typically models the state changes of an 
+object, whereas a WND models the state changes of the user interface. In a WND, each state 
+of the user interface is represented as a box. A box typically corresponds to a user interface 
+component, such as a window, form, button, or report. For example, in Figure 10-4, there are 
+fi ve separate states: Client Menu, Find Client Form, Add Client Form, Client List, and Client 
+Information Report.
+Transitions are modeled as either a single-headed or double-headed arrow. A singleheaded arrow indicates that a return to the calling state is not required, whereas a doubleheaded arrow represents a required return. For example in Figure 10-4, the transition from 
+the Client Menu state to the Find Client Form state does not require a return. Th e arrows are 
+labeled with the action that causes the user interface to move from one state to another. For 
+example, in Figure 10-4, to move from the Client Menu state to the Find Client Form state, 
+the user must click the Find Client Button on the Client Menu.
+Th e last item to be described in a WND is the stereotype. A stereotype is modeled as a 
+text item enclosed within guillemets or angle brackets (<< >>). Th e stereotype represents the 
+type of user interface component of a box on the diagram. For example, the Client Menu is a 
+window, whereas Find Client Form is a form.
+Th e basic navigation structure of an interface follows the basic structure of the business 
+process itself, as defi ned in the use cases and behavioral model. Th e analyst starts with the 
+essential use cases and develops the fundamental fl ow of control of the system as it moves 
+from object to object. Th e analyst then examines the use scenarios to see how well the WND 
+6 A WND is based on the behavioral state machine and object diagrams [see Meilir Page-Jones, Fundamentals of 
+Object-Oriented Design in UML (New York: Dorset House, 2000)].
+Click Find Client
+Button
+Click Find
+Client Button
+Click Find
+Client Button
+Click List
+Clients
+Button
+<<report>>
+Client Information Report
+<<Hyperlink report>>
+Client List
+Click Add Client
+Button
+<<form>>
+Add Client
+Form
+<<button>>
+Add Client
+<<form>>
+Find Client
+Form
+<<button>>
+Find Client
+<<Window>>
+Client Menu
+<<button>>
+Add Client
+<<button>>
+Find Client
+<<button>>
+List Clients
+Click
+Hyperlink
+FIGURE 10-4  Sample WND
+376 Chapter 10 Human–Computer Interaction Layer Design
+supports them. Quite oft en, the use scenarios identify paths through the WND that are more 
+complicated than they should be. Th e analyst then reworks the WND to simplify the ability of 
+the interface to support the use scenarios, sometimes by making major changes to the menu 
+structure, sometimes by adding shortcuts.
+Interface Standards Design
+Interface standards are the basic design elements that are common across the individual 
+screens, forms, and reports within the system. Depending on the application, there may be 
+several sets of interface standards for diff erent parts of the system (e.g., one for Web screens, 
+one for mobile screens, one for paper reports, one for input forms). For example, the part 
+of the system used by data entry operators might mirror other data entry applications in the 
+company, whereas a Web interface for displaying information from the same system might 
+adhere to some standardized Web format. Likewise, each individual interface might not 
+contain all of the elements in the standards (e.g., a report screen might not have an edit capability), and they might contain additional characteristics beyond the standard ones, but the 
+standards serve as the touchstone that ensures the interfaces are consistent across the system. 
+Th e following sections discuss some of the main areas in which interface standards should be 
+considered: metaphors, objects, actions, icons, and templates.
+Interface Metaphor First of all, the analysts must develop the fundamental interface 
+ metaphor(s) that defi nes how the interface will work. An interface metaphor is a concept 
+from the real world that is used as a model for the computer system. Th e metaphor helps the 
+user understand the system and enables the user to predict what features the interface might 
+provide, even without actually using the system. Sometimes systems have one metaphor, 
+whereas in other cases there are several metaphors in diff erent parts of the system.
+Oft en, the metaphor is explicit. Quicken, for example, uses a checkbook metaphor for 
+its interface, even to the point of having the users type information into an on-screen form 
+that looks like a real check. In other cases, the metaphor is implicit or unstated, but it is there, 
+nonetheless. Many Windows systems use the paper form or table as a metaphor.
+In some cases, the metaphor is so obvious that it requires no thought. For example, most 
+online stores use a shopping cart metaphor to temporarily store the items that the customer 
+is considering purchasing. In other cases, a metaphor is hard to identify. In general, it is 
+better not to force a metaphor that really doesn’t fi t a system, because an ill-fi tting metaphor will confuse users by promoting incorrect assumptions.
+Interface Templates An interface template defi nes the general appearance of all screens in 
+the information system and the paper-based forms and reports that are used. Th e template 
+design, for example, specifi es the basic layout of the screens (e.g., where the navigation 
+area(s), status area, and form/report area(s) will be placed) and the color scheme(s) that 
+will be applied. It defi nes whether windows will replace one another on the screen or will 
+cascade over the top of each other. Th e template defi nes a standard placement and order 
+for common interface actions (e.g., File Edit View rather than File View Edit). In short, 
+the template draws together the other major interface design elements: metaphors, objects, 
+actions, and icons.
+Interface Objects Th e template specifi es the names that the interface will use for the major 
+interface objects, the fundamental building blocks of the system, such as the classes. In many 
+cases, the object names are straightforward, such as calling the shopping cart the “shopping 
+cart.” In other cases, it is not so simple. For example, Amazon.com sells much more than 
+books. In some cases, the user might not know whether he or she is looking for a book, 
+User Interface Design Process  377
+CD, DVD, or Kindle download. In those cases, the user can use a catchall search item: All 
+Departments. In the case that the user knows the type of item that he or she wants to buy, 
+the user can limit the search by specifying more-specifi c types of search items, such as Apps 
+for Android, Books, Kindle Store, or Music. Obviously, the object names should be easily 
+understood and help promote the interface metaphor.
+In general, in cases of disagreements between the users and the analysts over names, 
+whether for objects or actions (discussed later), the users should win. A more understandable 
+name always beats a more precise or more accurate one.
+Interface Actions Th e template also specifi es the navigation and command language style 
+(e.g., menus) and grammar (e.g., object-action order; see the navigation design section later 
+in this chapter). It gives names to the most commonly used interface actions in the navigation 
+design (e.g., buy versus purchase or modify versus change).
+Interface Icons Th e interface objects and actions and their status (e.g., deleted or overdrawn) 
+may be represented by interface icons. Icons are pictures that appear on command buttons as 
+well as in reports and forms to highlight important information. Icon design is very challenging 
+because it means developing a simple picture less than half the size of a postage stamp that needs 
+to convey an oft en-complex meaning. Th e simplest and best approach is to simply adopt icons 
+developed by others (e.g., a blank page to indicate create a new fi le, a diskette to indicate save). 
+Th is has the advantage of quick icon development, and the icons might already be well understood by users because they have seen them in other soft ware.
+Commands are actions that are especially diffi cult to represent with icons because they are 
+in motion, not static. Many icons have become well known from widespread use, but icons are 
+not as well understood as fi rst believed. Use of icons can sometimes cause more confusion than 
+insight. Icon meanings become clearer with use, but sometimes a picture is not worth even one 
+word; when in doubt, use a word, not a picture.
+Interface Design Prototyping
+An interface design prototype is a mock-up or a simulation of a computer screen, form, or 
+report. A prototype is prepared for each interface in the system to show the users and the 
+programmers how the system will perform. In the “old days,” an interface design prototype 
+was usually specifi ed on a paper form that showed what would be displayed on each part of 
+the screen. Paper forms are still used today, but more and more interface design prototypes 
+are being built using computer tools instead of paper. Th e four most common approaches 
+to interface design prototyping are storyboards, windows layout diagrams, and language 
+prototypes.
+Windows Layout Diagram A windows layout diagram is simply a picture that resembles the 
+actual user interface that the user will gradually receive. Typically, it is created using a tool such 
+as Microsoft ’s Visio. Using this type of tool, the designer can quickly drag and drop the user 
+interface components onto the canvas to lay out the design of the user interface. For example, 
+Figure 10-5 portrays a simple windows layout diagram. Even though there is no executable 
+capability associated with a windows layout diagram, it does allow the user to quickly get a feel 
+for the look of the user interface that will be delivered. 
+Storyboard At its simplest, an interface design prototype is a paper-based storyboard. Th e 
+storyboard shows hand-drawn pictures of what the screens will look like and how they fl ow 
+from one screen to another, in the same way a storyboard for a cartoon shows how the action 
+will fl ow from one scene to the next (see Figure 10-6). Storyboards are the simplest technique 
+378 Chapter 10 Human–Computer Interaction Layer Design
+because all they require is paper (oft en a fl ip chart) and a pen—and someone with some artistic 
+ability. Storyboards also combine both the navigation information of the windows navigation 
+diagram and to some degree the layout information of the windows layout diagram. However, 
+with today’s graphics tools, the designer can work eff ectively with a set of users to design both 
+FIGURE 10-5
+Sample Windows 
+Layout Diagram
+Add a Client
+First Name: ____________ Last Name: ____________
+Address: _______________________________
+ _______________________________
+City: __________________________________
+State: ________ Zip Code: ________
+Client Menu
+Add Client
+Find Client
+List Clients
+Client Information
+First Name: Pat Last Name: Smith
+Address: 1234 Anywhere St.
+ Apt 56
+City: Somethingville
+State: CA Zip Code: 90211
+Find a Client
+(Type in information to search on)
+First Name: ____________ Last Name: ____________
+Address: _______________________________
+ _______________________________
+City: __________________________________
+State: ________ Zip Code: ________
+Client List
+(Click on a client for more information)
+Adams, Clare
+Adams, John
+Baker, Robin
+FIGURE 10-6  Sample Storyboard
+User Interface Design Process  379
+the look and feel of the evolving system without having to actually implement anything, by combining the windows layout diagrams with the windows navigation diagram into a single better 
+storyboard type of diagram (see Figure 10-7).
+User Interface Prototypes With today’s programming environments, such as Visual Studio 
+and NetBeans, it is fairly easy to develop executable prototypes (see Figure 10-8) of the user 
+interface that would allow the user to be able to interact with the user interface by clicking 
+on buttons and entering pretend data into forms (but because there is no system behind 
+the pages, the data are never processed). Th e diff erent parts of the user interface are linked 
+together so that as the user clicks on buttons, the requested part of the system appears. Th ese 
+executable prototypes take longer to develop than windows navigation diagrams, windows 
+layout diagrams, and storyboards but have the distinct advantage of showing exactly what 
+the screens will look like. Th e user does not have to guess about the shape or position of the 
+elements on the screen. However, one of the potential issues that can arise when developing 
+user interface prototypes is that the user’s expectations of when the systems will be completed can become unrealistic. To actually connect the prototype up to the problem domain 
+such that the system actually works is not a trivial problem. So, user expectations need to be 
+carefully managed. Otherwise, a system that meets all of its specifi cations could end up being 
+considered a failure.
+Selecting the Appropriate Techniques Projects oft en use a combination of diff erent interface design prototyping techniques for diff erent parts of the system. Storyboarding is the 
+fastest and least expensive but provides the least amount of detail. Windows layout diagrams 
+provide more of a feel that the user will experience, while remaining fairly inexpensive 
+to develop. User interface prototypes are the slowest, most expensive, and most detailed 
+approach. Th erefore, storyboarding is used for parts of the system in which the interface 
+is well understood and when more-expensive prototypes are thought to be unnecessary. 
+However, in most cases it is probably worth the additional cost of developing windows layout diagrams in addition to storyboards. User interface prototypes are used for parts of the 
+system that are critical, yet not well understood

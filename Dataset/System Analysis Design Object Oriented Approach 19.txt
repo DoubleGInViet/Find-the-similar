@@ -1,0 +1,562 @@
+﻿Can you explain that in a bit more detail?
+FIGURE 3-4
+Three Types of 
+ Questions
+Types of Questions Examples
+98 Chapter 3 Requirements Determination
+Requirements-Gathering Techniques  99
+It is important to prepare for the interview in the same way that you would prepare to give 
+a presentation. Th e interviewer should have a general interview plan listing the questions to 
+be asked in the appropriate order, should anticipate possible answers and provide follow-up 
+with them, and should identify segues between related topics. Th e interviewer should con fi rm the areas in which the interviewee has knowledge so as not to ask questions that the 
+interviewee cannot answer. Review the topic areas, the questions, and the interview plan, 
+and clearly decide which have the greatest priority in case time runs short.
+In general, structured interviews with closed-ended questions take more time to prepare 
+than unstructured interviews. Some beginning analysts prefer unstructured interviews, think ing that they can wing it. Th is is very dangerous and oft en counterproductive, because any 
+information not gathered in the fi rst interview will require follow-up eff orts, and most users 
+do not like to be interviewed repeatedly about the same issues.
+Th e interviewer should be sure to prepare the interviewee as well. When the interview 
+is scheduled, the interviewee should be told the reason for the interview and the areas that 
+will be discussed far enough in advance so that he or she has time to think about the issues 
+and organize his or her thoughts. Th is is particularly important when the interviewer is 
+an outsider to the organization and for lower-level employees, who oft en are not asked for 
+their opinions and who may be uncertain about why they are being interviewed.
+Th e fi rst goal is to build rapport with the interviewee, so that he or she trusts the inter viewer and is willing to tell the whole truth, not just give the answers that he or she thinks 
+are wanted. Th e interviewer should appear to be a professional and unbiased, independent 
+seeker of information. Th e interview should start with an explanation of why the inter viewer is there and why he or she has chosen to interview the person; then the interviewer 
+should move into the planned interview questions.
+It is critical to carefully record all the information that the interviewee provides. In our 
+experience, the best approach is to take careful notes—write down everything the interviewee 
+says, even if it does not appear immediately relevant. Th e interviewer shouldn’t be afraid to ask 
+the person to slow down or to pause while writing, because this is a clear indication that the 
+interviewee’s information is important. One potentially controversial issue is whether or not 
+to tape-record an interview. Recording ensures that the interviewer does not miss important 
+3. Prepare for the 
+Interview
+4. Conduct the 
+Interview
+FIGURE 3-5 Top-Down and Bottom-Up Questioning Strategies
+High-level:
+Very general
+Top-Down
+Bottom-Up
+Medium-level:
+Moderately specific
+Low-level:
+Very specific
+How 
+can order 
+processing 
+be improved?
+How can we reduce 
+the number of times that 
+customers return items 
+they’ve ordered?
+How can we reduce the number of 
+errors in order processing (e.g., shipping 
+the wrong products)?
+points, but it can be intimidating for the interviewee. Most organizations have policies or 
+generally accepted practices about the recording of interviews, so they should be determined 
+before an interview. If the interviewer is worried about missing information and cannot tape 
+the interview, then he or she can bring along a second person to take detailed notes.
+As the interview progresses, it is important to understand the issues that are discussed. 
+If the interviewer does not understand something, he or she should ask for clarifi cation. 
+Th e interviewer should not be afraid to ask dumb questions, because the only thing worse 
+than appearing dumb is to be dumb by not understanding something. If the interviewer 
+doesn’t understand something during the interview, he or she certainly won’t understand it 
+aft erwards. Jargon should be recognized and defi ned; any jargon not understood should be 
+ clarifi ed. One good strategy to increase understanding during an interview is to periodically 
+summarize the key points that the interviewee is communicating. Th is avoids misunder standings and also demonstrates that the interviewer is listening.
+Finally, facts should be separated from opinion. Th e interviewee may say, for example, 
+We process too many credit card requests. Th is is an opinion, and it is useful to follow this 
+up with a probing question requesting support for the statement (e.g., Oh, how many do you 
+process in a day?). It is helpful to check the facts because any diff erences between the facts 
+and the interviewee’s opinions can point out key areas for improvement. Suppose the inter viewee complains about a high or increasing number of errors, but the logs show that errors 
+have been decreasing. Th is suggests that errors are viewed as a very important problem that 
+should be addressed by the new system, even if they are declining.
+As the interview draws to a close, the interviewee should have time to ask questions or 
+provide information that he or she thinks is important but was not part of the interview plan. 
+In most cases, the interviewee has no additional concerns or information, but in some cases 
+this leads to unanticipated, but important, information. Likewise, it can be useful to ask the 
+interviewee if there are other people who should be interviewed. Th e interview should end on 
+time (if necessary, some topics can be omitted or another interview can be scheduled).
+As a last step in the interview, the interviewer should briefl y explain what will happen. 
+Th e interviewer shouldn’t prematurely promise certain features in the new system or a spe cifi c delivery date, but he or she should reassure the interviewee that his or her time was well 
+spent and very helpful to the project.
+Aft er the interview is over, the analyst needs to prepare an interview report that describes the 
+information from the interview (Figure 3-6). Th e report contains interview notes, information 
+that was collected over the course of the interview and is summarized in a useful format. In 
+general, the interview report should be written within forty-eight hours of the interview, 
+because the longer the interviewer waits, the more likely he or she is to forget information.
+Oft en, the interview report is sent to the interviewee with a request to read it and inform 
+the analyst of clarifi cations or updates. Th e interviewee needs to be convinced that the inter viewer genuinely wants his or her corrections to the report. Usually there are few changes, but 
+the need for any signifi cant changes suggests that a second interview will be required. Never 
+distribute someone’s information without prior approval.
+Joint Application Development (JAD)
+JAD is an information-gathering technique that allows the project team, users, and management 
+to work together to identify requirements for the system. IBM developed the JAD technique in 
+the late 1970s, and it is oft en the most useful method for collecting information from users.9
+9 More information on JAD can be found in J. Wood and D. Silver, Joint Application Development (New York: 
+Wiley, 1989); Alan Cline, “Joint Application Development for Requirements Collection and Management,” http://
+www.carolla.com/wp-jad.htm.
+5. Post-Interview 
+Follow-up
+100 Chapter 3 Requirements Determination
+Requirements-Gathering Techniques  101
+Capers Jones claims that JAD can reduce scope creep by 50 percent and prevent the system’s 
+requirements from being too specifi c or too vague, both of which cause trouble during later stages 
+of the development process.10
+JAD is a structured process in which ten to twenty users meet together under the direc tion of a facilitator skilled in JAD techniques. Th e facilitator sets the meeting agenda and 
+guides the discussion but does not join in the discussion as a participant. He or she does not 
+provide ideas or opinions on the topics under discussion so as to remain neutral during the 
+session. Th e facilitator must be an expert in both group-process techniques and systems analysis and design techniques. One or two scribes assist the facilitator by recording notes, 
+making copies, and so on. Oft en the scribes use computers and CASE tools to record infor mation as the JAD session proceedings.
+Th e JAD group meets for several hours, several days, or several weeks until all the issues 
+have been discussed and the needed information is collected. Most JAD sessions take place 
+in a specially prepared meeting room, away from the participants’ offi ces so that they are not 
+interrupted. Th e meeting room is usually arranged in a U-shape so that all participants can 
+easily see each other. At the front of the room (the open part of the U), are a whiteboard, fl ip 
+chart, and/or overhead projector for use by the facilitator leading the discussion.
+FIGURE 3-6 Interview Report
+Interview Notes Approved by: Linda Estey
+Person Interviewed: Linda Estey, 
+ Director, Human Resources
+Interviewer: Barbara Wixom
+Purpose of Interview:
+• Understand reports produced for Human Resources by the current system
+• Determine information requirements for future system
+Summary of Interview:
+• Sample reports of all current HR reports are attached to this report. The information that is not 
+used and missing information are noted on the reports.
+• Two biggest problems with the current system are:
+ 1. The data are too old (the HR Department needs information within two days of month end; 
+currently, information is provided to them after a three-week delay)
+ 2. The data are of poor quality (often reports must be reconciled with departmental HR 
+database)
+• The most common data errors found in the current system include incorrect job level information and 
+missing salary information.
+Open Items:
+• Get current employee roster report from Mary Skudrna (extension 4355).
+• Verify calculations used to determine vacation time with Mary Skudrna.
+• Schedule interview with Jim Wack (extension 2337) regarding the reasons for data quality 
+problems.
+Detailed Notes: See attached transcript.
+10 See Kevin Strehlo, “Catching up with the Jones and ‘Requirement’ Creep,” Infoworld (July 29, 1996); Kevin Strehlo, 
+“Th e Makings of a Happy Customer: Specifying Project X,” Infoworld (November 11, 1996).
+JAD suff ers from the traditional problems associated with groups: Sometimes people 
+are reluctant to challenge the opinions of others (particularly their boss), a few people oft en 
+dominate the discussion, and not everyone participates. In a fi ft een-member group, for exam ple, if everyone participates equally, then each person can talk for only four minutes each 
+hour and must listen for the remaining fi ft y-six minutes—not a very effi cient way to collect 
+information.
+A new form of JAD called electronic JAD, or e-JAD, attempts to overcome these prob lems by using groupware. In an e-JAD meeting room, each participant uses special soft ware 
+on a networked computer to send anonymous ideas and opinions to everyone else. In this 
+way, all participants can contribute at the same time without fear of reprisal from people 
+with diff ering opinions. Initial research suggests that e-JAD can reduce the time required 
+to run JAD sessions by 50 to 80 percent.11 A good JAD approach follows a set of fi ve steps.
+JAD participants are selected in the same way as are interview participants, based on the 
+information they can contribute in order to provide a broad mix of organizational levels and 
+to build political support for the new system. Th e need for all JAD participants to be away 
+from their offi ce at the same time can be a major problem. Th e offi ce might need to be closed 
+or operate with a skeleton staff until the JAD sessions are complete.
+11 For more information on e-JAD, see A. R. Dennis, G. S. Hayes, and R. M. Daniels, “Business Process Modeling 
+with Groupware,” Journal of Management Information Systems 15, no. 4 (1999): 115–142.
+1. Select Participants
+102 Chapter 3 Requirements Determination
+Interpersonal skills are skills that enable you to develop 
+rapport with others, and they are very important for 
+interviewing. They help you to communicate with others 
+effectively. Some people develop good interpersonal 
+skills at an early age; they simply seem to know how to 
+communicate and interact with others. Other people are 
+less lucky and need to work hard to develop their skills.
+Interpersonal skills, like most skills, can be learned. 
+Here are some tips:
+ • Don’t worry, be happy. Happy people radiate con fi dence and project their feelings on others. Try inter viewing someone while smiling and then interviewing 
+someone else while frowning and see what happens.
+ • Pay attention. Pay attention to what the other person 
+is saying (which is harder than you might think). See 
+how many times you catch yourself with your mind 
+on something other than the conversation at hand.
+ • Summarize key points. At the end of each major 
+theme or idea that someone explains, repeat the key 
+points back to the speaker (e.g., Let me make sure I 
+understand. The key issues are. . . .”). This demon strates that you consider the information important, 
+and it also forces you to pay attention (you can’t 
+repeat what you didn’t hear).
+ • Be succinct. When you speak, be succinct. The goal 
+in interviewing (and in much of life) is to learn, not to 
+impress. The more you speak, the less time you give 
+to others.
+ • Be honest. Answer all questions truthfully, and if you 
+don’t know the answer, say so.
+ • Watch body language (yours and theirs). The way a 
+person sits or stands conveys much information. In 
+general, a person who is interested in what you are 
+saying sits or leans forward, makes eye contact, and 
+often touches his or her face. A person leaning away 
+from you or with an arm over the back of a chair is 
+uninterested. Crossed arms indicate defensiveness or 
+uncertainty, and steepling (sitting with hands raised 
+in front of the body with fi ngertips touching) indi cates a feeling of superiority.
+PRACTICAL 3-1 Developing Interpersonal Skills
+TIP
+Requirements-Gathering Techniques  103
+Ideally, the participants who are released from regular duties to attend the JAD sessions 
+should be the very best people in that business unit. However, without strong management 
+support, JAD sessions can fail because those selected to attend the JAD session are people who 
+are less likely to be missed (i.e., the least competent people).
+Th e facilitator should be someone who is an expert in JAD or e-JAD techniques and, 
+ideally, someone who has experience with the business under discussion. In many cases, the 
+JAD facilitator is a consultant external to the organization because the organization might not 
+have a recurring need for JAD or e-JAD expertise. Developing and maintaining this expertise 
+in-house can be expensive.
+JAD sessions can run from as little as half a day to several weeks, depending upon the size and 
+scope of the project. In our experience, most JAD sessions tend to last fi ve to ten days, spread 
+over a three-week period. Most e-JAD sessions tend to last one to four days in a one-week 
+period. JAD and e-JAD sessions usually go beyond collecting information and move into anal ysis. For example, the users and the analysts collectively can create analysis deliverables, such as 
+the functional models or the requirements defi nition.
+JAD sessions usually are designed and structured using the same principles as inter views. Most JAD sessions are designed to collect specifi c information from users, and this 
+requires developing a set of questions before the meeting. One diff erence between JAD 
+and interviewing is that all JAD sessions are structured—they must be carefully planned. 
+In general, closed-ended questions are seldom used because they do not spark the open 
+and frank discussion that is typical of JAD. In our experience, it is better to proceed top 
+down in JAD sessions when gathering information. Typically thirty minutes is allocated to 
+each separate agenda item, and frequent breaks are scheduled throughout the day because 
+participants tire easily.
+As with interviewing, it is important to prepare the analysts and participants for a JAD 
+session. Because the sessions can go beyond the depth of a typical interview and are usually 
+conducted off -site, participants may be more concerned about how to prepare. It is impor tant that the participants understand what is expected of them. If the goal of the JAD session, 
+for example, is to develop an understanding of the current system, then participants can 
+bring procedure manuals and documents with them. If the goal is to identify improvements 
+for a system, then before they come to the JAD session they can think about how they would 
+improve the system.
+Most JAD sessions follow a formal agenda, and most have formal ground rules that defi ne appro priate behavior. Common ground rules include following the schedule, respecting others’ opin ions, accepting disagreement, and ensuring that only one person talks at a time.
+Th e role of a JAD facilitator can be challenging. Many participants come to a JAD session 
+with strong feelings about the system to be discussed. Channeling these feelings so that the ses sion moves forward in a positive direction and getting participants to recognize and accept—but 
+not necessarily agree on—opinions and situations diff erent from their own requires signifi cant 
+expertise in systems analysis and design, JAD, and interpersonal skills. Few systems analysts 
+attempt to facilitate JAD sessions without being trained in JAD techniques, and most apprentice 
+with a skilled JAD facilitator before they attempt to lead their fi rst session.
+Th e JAD facilitator performs three key functions. First, he or she ensures that the group 
+sticks to the agenda. Th e only reason to digress from the agenda is when it becomes clear to 
+the facilitator, project leader, and project sponsor that the JAD session has produced some 
+new information that is unexpected and requires the JAD session (and perhaps the project) 
+to move in a new direction. When participants attempt to divert the discussion away from the 
+4. Conducting 
+a JAD Session
+2. Design a JAD 
+Session
+3. Preparing for a 
+JAD Session
+agenda, the facilitator must be fi rm but polite in leading discussion back to the agenda and 
+getting the group back on track.
+Second, the facilitator must help the group understand the technical terms and jargon 
+that surround the system-development process and help the participants understand the 
+specifi c analysis techniques used. Participants are experts in their area, or their part of 
+the business, but they are not experts in systems analysis. Th e facilitator must, therefore, 
+minimize the learning required and teach participants how to eff ectively provide the right 
+information.
+Th ird, the facilitator records the group’s input on a public display area, which can be a 
+whiteboard, fl ip chart, or computer display. He or she structures the information that the 
+group provides and helps the group recognize key issues and important solutions. Th e facil itator must remain neutral at all times and simply help the group through the process. Th e 
+moment the facilitator off ers an opinion on an issue, the group will see him or her not as a 
+neutral party but rather as someone who could be attempting to sway the group into some 
+predetermined solution.
+However, this does not mean that the facilitator should not try to help the group resolve 
+issues. For example, if two items appear to be the same to the facilitator, the facilitator should 
+not say, “I think these may be similar.” Instead, the facilitator should ask, “Are these similar?” 
+If the group decides they are, the facilitator can combine them and move on. However, if 
+the group decides they are not similar (despite what the facilitator believes), the facilitator 
+should accept the decision and move on. Th e group is always right, and the facilitator has 
+no opinion.
+As with interviews, a JAD post-session report is prepared and circulated among session 
+attendees. Th e post-session report is essentially the same as the interview report in Figure 3-6. 
+Because the JAD sessions are longer and provide more information, it usually takes a week or 
+two aft er the JAD session before the report is complete.
+Questionnaires
+A questionnaire is a set of written questions used to obtain information from individ uals. Questionnaires are oft en used when there is a large number of people from whom 
+information and opinions are needed. In our experience, questionnaires are a common 
+technique with systems intended for use outside the organization (e.g., by customers or 
+vendors) or for systems with business users spread across many geographic locations. 
+Most people automatically think of paper when they think of questionnaires, but today 
+more questionnaires are being distributed in electronic form, either via e-mail or on the 
+Web. Electronic distribution can save a signifi cant amount of money as compared to dis tributing paper questionnaires. A good process to use when using questionnaires follows 
+four steps.
+As with interviews and JAD sessions, the fi rst step is to identify the individuals to whom the 
+questionnaire will be sent. However, it is not usual to select every person who could provide 
+useful information. Th e standard approach is to select a sample, or subset, of people who 
+are representative of an entire group. Sampling guidelines are discussed in most statistics 
+books, and most business schools include courses that cover the topic, so we do not discuss it 
+here. Th e important point in selecting a sample, however, is to realize that not everyone who 
+receives a questionnaire will actually complete it. On average, only 30 to 50 percent of paper 
+and e-mail questionnaires are returned. Response rates for Web-based questionnaires tend to 
+be signifi cantly lower (oft en only 5 to 30 percent).
+104 Chapter 3 Requirements Determination
+1. Select Participants
+5. Post-JAD Follow-up
+Requirements-Gathering Techniques  105
+Managing Problems in JAD Sessions
+I have run more than a hundred JAD sessions and have 
+learned several standard “facilitator tricks.” Here are some 
+common problems and some ways to deal with them.
+ • Domination. The facilitator should ensure that no one 
+person dominates the group discussion. The only way 
+to deal with someone who dominates is head on. Dur ing a break, approach the person, thank him or her for 
+his or her insightful comments, and ask the person to 
+help you make sure that others also participate.
+ • Noncontributors. Drawing out people who have par ticipated very little is challenging because you want 
+to bring them into the conversation so that they will 
+contribute again. The best approach is to ask a direct 
+factual question that you are certain they can answer. 
+And it helps to ask the question in a long way to give 
+them time to think. For example, “Pat, I know you’ve 
+worked shipping orders a long time. You’ve probably 
+been in the shipping department longer than anyone 
+else. Could you help us understand exactly what hap pens when an order is received in shipping?”
+ • Side discussions. Sometimes participants engage in 
+side conversations and fail to pay attention to the 
+group. The easiest solution is simply to walk close 
+to the people and continue to facilitate right in front 
+of them. Few people will continue a side conversion 
+when you are two feet from them and the entire 
+group’s attention is on you and them.
+ • Agenda merry-go-round. The merry-go-round occurs 
+when a group member keeps returning to the same 
+issue every few minutes and won’t let go. One solu tion is to let the person have fi ve minutes to ramble 
+on about the issue while you carefully write down 
+every point on a fl ip chart or computer fi le. This fl ip 
+chart or fi le is then posted conspicuously on the 
+wall. When the person brings up the issue again, you 
+interrupt them, walk to the paper and ask them what 
+to add. If they mention something already on the list, 
+you quickly interrupt, point out that it is there, and 
+ask what other information to add. Don’t let them 
+repeat the same point, but write any new information.
+ • Violent agreement. Some of the worst disagreements 
+occur when participants really agree on the issues 
+but don’t realize that they agree because they are 
+using different terms. An example is arguing whether 
+a glass is half empty or half full; they agree on the 
+facts but can’t agree on the words. In this case, the 
+facilitator has to translate the terms into different 
+words and fi nd common ground so the parties rec ognize that they really agree.
+ • Unresolved confl ict. In some cases, participants 
+don’t agree and can’t understand how to determine 
+what alternatives are better. You can help by structur ing the issue. Ask for criteria by which the group will 
+identify a good alternative (e.g., “Suppose this idea 
+really did improve customer service. How would I 
+recognize the improved customer service?”). Then 
+once you have a list of criteria, ask the group to 
+assess the alternatives using them.
+ • True confl ict. Sometimes, despite every attempt, par ticipants just can’t agree on an issue. The solution is 
+to postpone the discussion and move on. Document 
+the issue as an open issue and list it prominently on 
+a fl ip chart. Have the group return to the issue hours 
+later. Often the issue will have resolved itself by then 
+and you haven’t wasted time on it. If the issue cannot 
+be resolved later, move it to the list of issues to be 
+decided by the project sponsor or some other more 
+senior member of management.
+ • Humor. Humor is one of the most powerful tools a 
+facilitator has and thus must be used judiciously. The 
+best JAD humor is always in context; never tell jokes 
+but take the opportunity to fi nd the humor in the 
+situation.
+Alan Dennis
+PRACTICAL
+TIP
+Because the information on a questionnaire cannot be immediately clarifi ed for a confused 
+respondent, developing good questions is critical for questionnaires. Questions on question naires must be very clearly written and leave little room for misunderstanding, so closed-ended 
+questions tend to be most commonly used. Questions must clearly enable the analyst to sep arate facts from opinions. Opinion questions oft en ask respondents the extent to which they 
+agree or disagree (e.g., Are network problems common?), whereas factual questions seek more 
+2. Designing a 
+Questionnaire
+precise values (e.g., How oft en does a network problem occur: once an hour, once a day, once 
+a week?). See Figure 3-7 for guidelines on questionnaire design.
+Perhaps the most obvious issue—but one that is sometimes overlooked—is to have a 
+clear understanding of how the information collected from the questionnaire will be analyzed 
+and used. Th is issue must be addressed before the questionnaire is distributed, because it is 
+too late aft erward.
+Questions should be relatively consistent in style, so that the respondent does not have to 
+read instructions for each question before answering it. It is generally good practice to group 
+related questions together to make them simpler to answer. Some experts suggest that ques tionnaires should start with questions important to respondents, so that the questionnaire 
+immediately grabs their interest and induces them to answer it. Perhaps the most important 
+step is to have several colleagues review the questionnaire and then pretest it with a few people 
+drawn from the groups to whom it will be sent. It is surprising how oft en seemingly simple 
+questions can be misunderstood.
+Th e key issue in administering the questionnaire is getting participants to complete the 
+questionnaire and send it back. Dozens of marketing research books have been written about 
+ways to improve response rates. Commonly used techniques include clearly explaining why 
+the questionnaire is being conducted and why the respondent has been selected, stating a date 
+by which the questionnaire is to be returned, off ering an inducement to complete the ques tionnaire (e.g., a free pen), and off ering to supply a summary of the questionnaire responses. 
+Systems analysts have additional techniques to improve response rates inside the organiza tion, such as personally handing out the questionnaire and personally contacting those who 
+have not returned them aft er a week or two, as well as requesting the respondents’ supervisors 
+to administer the questionnaires in a group meeting.
+It is helpful to process the returned questionnaires and develop a questionnaire report soon aft er 
+the questionnaire deadline. Th is ensures that the analysis process proceeds in a timely fashion and 
+that respondents who requested copies of the results receive them promptly.
+Document Analysis
+Project teams oft en use document analysis to understand the as-is system. Under ideal cir cumstances, the project team that developed the existing system will have produced docu mentation that was then updated by all subsequent projects. In this case, the project team can 
+start by reviewing the documentation and examining the system itself.
+Unfortunately, many systems are not well documented because project teams fail to 
+document their projects along the way, and when the projects are over, there is no time to 
+go back and document. Th erefore, there might not be much technical documentation about 
+the current systems available, or it might not contain updated information about recent sys tem changes. However, many helpful documents do exist in an organization: paper reports, 
+3. Administering 
+the Questionnaire
+4. Questionnaire 
+Follow-up
+106 Chapter 3 Requirements Determination
+• Begin with nonthreatening and interesting questions.
+• Group items into logically coherent sections.
+• Do not put important items at the very end of the questionnaire.
+• Do not crowd a page with too many items.
+• Avoid abbreviations.
+• Avoid biased or suggestive items or terms.
+• Number questions to avoid confusion.
+• Pretest the questionnaire to identify confusing questions.
+• Provide anonymity to respondents. Breadth of Information Breadth of information refers to the range of information and information sources that can be easily collected using the chosen technique. Questionnaires and 
+document analysis are both easily capable of soliciting a wide range of information from a large 
+number of information sources. In contrast, interviews and observation require the analyst to 
+visit each information source individually and, therefore, take more time. JAD sessions are in 
+the middle because many information sources are brought together at the same time.
+Integration of Information One of the most challenging aspects of requirements gathering is integrating the information from diff erent sources. Simply put, diff erent people can 
+provide confl icting information. Combining this information and attempting to resolve 
+diff erences in opinions or facts is usually very time consuming because it means contacting 
+each information source in turn, explaining the discrepancy, and attempting to refi ne the 
+information. In many cases, the individual wrongly perceives that the analyst is challenging 
+his or her information, when in fact it is another user in the organization who is doing so. 
+Th is can make the user defensive and make it hard to resolve the diff erences.
+All techniques suff er integration problems to some degree, but JAD sessions are designed 
+to improve integration because all information is integrated when it is collected, not aft erward. If two users provide confl icting information, the confl ict becomes immediately obvious, as does the source of the confl ict. Th e immediate integration of information is the single 
+most important benefi t of JAD that distinguishes it from other techniques, and this is why 
+most organizations use JAD for important projects.
+User Involvement User involvement refers to the amount of time and energy the intended 
+users of the new system must devote to the analysis process. It is generally agreed that as users 
+become more involved in the analysis process, the chance of success increases. However, user 
+involvement can have a signifi cant cost, and not all users are willing to contribute valuable 
+time and energy. Questionnaires, document analysis, and observation place the least burden 
+on users, whereas JAD sessions require the greatest eff ort.
+Cost Cost is always an important consideration. In general, questionnaires, document 
+analysis, and observation are low-cost techniques (although observation can be quite time 
+consuming). Th e low cost does not imply that they are more or less eff ective than the other 
+techniques. Interviews and JAD sessions generally have moderate costs. In general, JAD sessions are much more expensive initially, because they require many users to be absent from 
+their offi ces for signifi cant periods of time, and they oft en involve highly paid consultants. 
+However, JAD sessions signifi cantly reduce the time spent in information integration and 
+thus can cost less in the long term.
+Combining Techniques In practice, requirements gathering combines a series of diff erent techniques. Most analysts start by using interviews with senior manager(s) to gain an understanding 
+of the project and the big-picture issues. From these interviews, it becomes clear whether large 
+or small changes are anticipated. Th ese interviews are oft en followed with analysis of documents 
+Requirements-Gathering Techniques  109
+12 See B. Henderson-Sellers, A. Simons, and H. Younessi, Th e OPEN Toolbox of Techniques (Harlow, England: 
+Addison-Wesley, 1998).
+13 For more information on concept mapping, see J. D. Novak and D. B. Gowin, Learning How to Learn (Cambridge, 
+UK: Cambridge University Press, 1984); J. D. Novak, Learning, Creating, and Using Knowledge: Concept MapsTM as 
+Facilitative Tools in Schools and Corporations (Mahwah, NJ: Lawrence Erlbaum Associates, Publishers, 1998). Also, a 
+free concept mapping tool is available from the Institute of Human and Machine Cognition at cmap.ihmc.us.
+110 Chapter 3 Requirements Determination
+and policies to gain some understanding of the as-is system. Usually interviews come next to 
+gather the rest of the information needed for the as-is picture.
+In our experience, identifying improvements is most commonly done using JAD sessions 
+because the JAD session enables the users and key stakeholders to work together through an 
+analysis technique and come to a shared understanding of the possibilities for the to-be system. Occasionally, these JAD sessions are followed by questionnaires sent to a much wider set 
+of users or potential users to see whether the opinions of those who participated in the JAD 
+sessions are widely shared.
+Developing the concept for the to-be system is oft en done through interviews with senior 
+managers, followed by JAD sessions with users of all levels to make sure that the key needs of 
+the new system are well understood.
+ALTERNATIVE REQUIREMENTS DOCUMENTATION TECHNIQUES
+Some other very useful requirements-gathering and documentation techniques include 
+throwaway prototyping, use cases, role-playing CRC cards with use-case-based scenarios, 
+concept mapping, and recording user stories on story cards and task lists. Th rowaway prototyping was described in Chapter 1. In essence, throwaway prototypes are created to better 
+understand some aspect of the new system. In many cases, they are used to test out some 
+technical aspect of a nonfunctional requirement, such as connecting a client workstation to a 
+server. If you have never done this before, it will be a lot easier to develop a very small example 
+system to test out the necessary design of the connection from the client workstation to the 
+server instead of trying to do it the fi rst time with the full-blown system. Th rowaway prototyping is very useful in designing user interfaces (see Chapter 10).
+Use cases, as described in Chapter 1, are the fundamental approach that the Unifi ed Process 
+and Unifi ed Modeling Language (UML) use to document and gather functional requirements. 
+We describe them in Chapter 4. Role-playing CRC cards with use-case-based scenarios are 
+very useful when creating functional (see Chapter 4), structural (see Chapter 5), and behavioral 
+(see Chapter 6) models. We describe this approach in Chapter 5. Th e remainder of this section 
+describes the use of concept mapping recording user stories on story cards and task lists.
+Concept Maps
+Concept maps represent meaningful relationships between concepts. Th ey are useful for 
+focusing individuals on the small number of key ideas on which they should concentrate. 
+A concept map is essentially a node-and-arc representation, where the nodes represent the 
+individual requirements and the arcs represent the relationships among the requirements. 
+Each arc is labeled with a relationship name. Concept maps also have been recommended as 
+a possible technique to support modeling requirements for object-oriented systems development and knowledge-management systems.12 Concept mapping is an educational psychology 
+technique that has been used in schools, corporations, and health care agencies to facilitate 
+learning, understanding, and knowledge creation.13 Th e advantage of the concept-mapping 
+approach to representing requirements over the typical textual approach (see Figure 3-1) is 
+that a concept map is not limited to a hierarchical representation. Concept maps allow the relationships among the functional and nonfunctional requirements to be explicitly represented. 
+Figure 3-10 shows a concept map that portrays the information contained in the requirements 
+Requirements
+Cultural and
+Political
+Requirements
+Nonfunctional
+Requirements Security Requirements
+Operational Requirements
+Performance
+Requirements
+Backup Schedule
+Daily
+Support Wireless
+Printing
+Store New
+Appointment
+in 2 Seconds or Less Retrieve Daily
+Appointment
+Schedule in 2
+Seconds or Less
+Operate in Windows
+Environment Make Appointment Cancel Appointment
+Print Schedule
+Update
+Schedule
+Check Schedule
+Change Appointment
+Manage Appointments Produce Schedule
+Functional
+Requirements
+Record Doctor
+Availability
+Only Managers Can
+Produce Schedule
+Only Doctors Set
+Availability impacts
+impacts
+impacts
+impacts
+impacts
+impacts
+include
+include
+include
+include
+include
+include
+include
+include include
+FIGURE 3-10 Sample Requirements Concept Map
+111
+defi nition shown in Figure 3-1. By using a concept map to represent the requirements instead 
+of the textual approach, the relationship between the functional and nonfunctional requirements can be made explicit. For example, the two security requirements Only Doctors Set 
+Availability and Only Managers Can Produce Schedule are explicitly linked to the Record 
+Doctor Availability and Produce Schedule functional requirements, respectively. Th is is very 
+diffi cult to represent in a text-only version of the requirements defi nition. Also, by having 
+the user and analyst focus on the graphical layout of the map, additional requirements can 
+be discovered. One obvious issue with this approach is that if the number of requirements 
+becomes many and the relationships between them become complex, then the number of 
+nodes and arcs will become so intertwined that the advantage of being able to explicitly see the 
+relationships will be lost. However, by combining both text and concept-map representations, 
+it is possible to leverage the strength of both textual and graphical representations to more 
+completely represent the requirements.
+User Stories
+User stories, along with their associated story cards and task lists, are associated with the 
+agile development approaches. User stories have been shown to be very useful in gathering 
+requirements in a nonthreatening manner that respects the user’s point of view. Th ey are 
+typically captured using story cards (index cards) and are recorded on a task list (or from a 
+Scrum perspective, on the product backlog). Both story cards and task lists are considered 

@@ -1,0 +1,757 @@
+﻿Rule 4: Map single-valued aggregation and association relationships to a column that can store an Object ID. Do this for both sides 
+of the relationship.
+Rule 5: Map multivalued attributes to a column that can contain a set of values.
+Rule 6: Map repeating groups of attributes to a new table and create a one-to-many association from the original table to the 
+new one.
+Rule 7: Map multivalued aggregation and association relationships to a column that can store a set of Object IDs. Do this for both 
+sides of the relationship.
+Rule 8: For aggregation and association relationships of mixed type (one-to-many or many-to-one), on the single-valued side (1..1 
+or 0..1) of the relationship, add a column that can store a set of Object IDs. The values contained in this new column will be the 
+Object IDs from the instances of the class on the multivalued side. On the multivalued side (1..* or 0..*), add a column that can 
+store a single Object ID that will contain the value of the instance of the class on the single-valued side.
+For generalization/inheritance relationships:
+Rule 9a: Add a column(s) to the table(s) that represents the subclass(es) that will contain an Object ID of the instance stored in the 
+table that represents the superclass. This is similar in concept to a foreign key in an RDBMS. The multiplicity of this new associa tion from the subclass to the “superclass” should be 1..1. Add a column(s) to the table(s) that represents the superclass(es) that will 
+contain an Object ID of the instance stored in the table that represents the subclass(es). If the superclasses are concrete, that is, they 
+can be instantiated themselves, then the multiplicity from the superclass to the subclass is 0..1, otherwise, it is 1..1. An exclusive-or 
+(XOR) constraint must be added between the associations. Do this for each superclass.
+or
+Rule 9b: Flatten the inheritance hierarchy by copying the superclass attributes down to all of the subclasses and remove the super class from the design.*
+*It is also a good idea to document this modifi cation in the design so that in the future, modifi cations to the design can be maintained easily.
+FIGURE 9-7  Schema for Mapping Problem Domain Objects to ORDBMS
+Th e sixth mapping rule addresses repeating groups of attributes in a problem domain 
+object. In this case, the repeating group of attributes should be used to create a new table in 
+the ORDBMS. It can imply a missing class in the problem domain layer. Normally, when 
+a set of attributes repeats together as a group, it implies a new class. Finally, we must create a 
+one-to-many association from the original table to the new one.
+Th e seventh rule supports mapping multivalued (many-to-many) aggregation and 
+association relationships to columns that can store a set of Object IDs. Basically, this is a 
+combination of the fourth and fi ft h rules. Like the fourth rule, this should be done for both 
+sides of the relationships. For example in Figure 9-8, the Symptom table has a multivalued 
+attribute (Patients) that can contain multiple Object IDs to Patient Table objects, and 
+Patient table has a multivalued attribute (Symptoms) that can contain multiple Object IDs 
+to Symptom Table objects.
+Th e eighth rule combines the intentions of Rules 4 and 7. In this case, the rule maps 
+one-to-many and many-to-one relationships. On the single-valued side (1..1 or 0..1) of the 
+relationship, a column that can store a set of Object IDs from the table on the multivalued side 
+(1..* or 0..*) of the relationship should be added. On the multivalued side, a column should 
+be added to the table that can store an Object ID from an instance stored in the table on the 
+single-valued side of the relationship. For example, in Figure 9-8, the Patient table has a mul tivalued attribute (Appts) that can contain multiple Object IDs to Appointment Table objects, 
+whereas the Appointment table has a single-valued attribute (Patient) that can contain an 
+Object ID to a Patient Table object.
+Th e ninth, and fi nal, rule deals with the lack of support for generalization and inher itance. In this case, there are two diff erent approaches. Th ese approaches are virtuall dentical to the rules described with the preceding OODBMS object persistence formats. For 
+example in Figure 9-8, the Patient table contains an attribute (Participant) that can contain 
+an Object ID for a Participant Table object, and the Participant table contains an attribute 
+(SubClassObjects) that contains an Object ID for an object, in this case, stored in the Patient 
+table. In the other case, the inheritance hierarchy is fl attened.
+Of course, additional processing is required any time an interaction takes place between 
+the database and the system. Every time an object must be created or retrieved from the 
+344 Chapter 9 Data Management Layer Design
+database, updated, or deleted, the ORDBMS object(s) must be converted to the problem 
+domain object, or vice versa. Th e only other choice is to modify the problem domain 
+objects. However, such a modifi cation can cause problems between the problem domain 
+layer and the physical architecture and human–computer interface layers. Generally speaking, the cost of conversion between the ORDBMS and the problem domain layer should 
+be more than off set by the savings in development time associated with the interaction 
+between the problem domain and physical architecture and human–computer interaction 
+layers and the ease of maintenance of a semantically clean problem domain layer.
+Mapping Problem Domain Objects to a RDBMS Format
+If we support object persistence with an RDBMS, then the mapping from the problem 
+domain objects to the RDBMS tables is similar to the mapping to an ORDBMS. However, the 
+assumptions made for an ORDBMS are no longer valid. Figure 9-9 lists a set of rules that can 
+be used to design the mapping from the problem domain objects to the RDBMS-based data 
+management layer tables.
+Th e fi rst four rules are basically the same set of rules used to map problem domain 
+objects to ORDBMS-based data management objects. First, all concrete problem domain 
+classes must be mapped to tables in the RDBMS. Second, single-valued attributes should be 
+mapped to columns in the RDBMS table. Th ird, methods should be mapped to either stored 
+procedures or program modules, depending on the complexity of the method. Fourth, single-valued (one-to-one) aggregation and association relationships are mapped to columns 
+that can store the foreign keys of the related tables. Th is should be done for both sides of the 
+relationship. For example in Figure 9-10, we needed to include tables in the RDBMS for the 
+Participant, Patient, Symptom, and Appointment classes.
+Rule 1: Map all concrete-problem domain classes to the RDBMS tables. Also, if an abstract Problem Domain class has multiple 
+direct subclasses, map the abstract class to a RDBMS table.
+Rule 2: Map single-valued attributes to columns of the tables.
+Rule 3: Map methods to stored procedures or to program modules.
+Rule 4: Map single-valued aggregation and association relationships to a column that can store the key of the related table, i.e., add
+a foreign key to the table. Do this for both sides of the relationship.
+Rule 5: Map multivalued attributes and repeating groups to new tables and create a one-to-many association from the original table 
+to the new ones.
+Rule 6: Map multivalued aggregation and association relationships to a new associative table that relates the two original tables 
+together. Copy the primary key from both original tables to the new associative table, i.e., add foreign keys to the table.
+Rule 7: For aggregation and association relationships of mixed type, copy the primary key from the single-valued side (1..1 or 0..1) 
+of the relationship to a new column in the table on the multivalued side (1..* or 0..*) of the relationship that can store the key of the 
+related table, i.e., add a foreign key to the table on the multivalued side of the relationship.
+For generalization/inheritance relationships:
+Rule 8a: Ensure that the primary key of the subclass instance is the same as the primary key of the superclass. The multiplicity of this
+new association from the subclass to the “superclass” should be 1..1. If the superclasses are concrete, that is, they can be instantiated themselves, then the multiplicity from the superclass to the subclass is 0..1, otherwise, it is 1..1. Furthermore, an 
+exclusive-or (XOR) constraint must be added between the associations. Do this for each superclass.
+or
+Rule 8b: Flatten the inheritance hierarchy by copying the superclass attributes down to all of the subclasses and remove the 
+superclass from the design.*
+* It is also a good idea to document this modifi cation in the design so that in the future, modifi cations to the design can be 
+maintained easily.
+FIGURE 9-9  Schema for Mapping Problem Domain Objects to RDBMS
+Mapping Problem Domain Objects to Object Persistence Formats  345
+RDBMS Tables Problem Domain Classes
+Participant Table
+-lastname[1..1]
+-firstname[1..1]
+-address[1..1]
+-phone[1..1]
+-birthdate[1..1]
+-participantNumber[1..1]
+Patient Table
+-amount[1..1]
+-participantNumber[1..1]
+-primaryInsuranceCarrier[0..1]
+Symptom Table
+-name[1..1]
+Suffer Table
+-participantNumber[1..1]
+-name[1..1]
+Insurance Carrier Table
+-name[1..1]
+-participantNumber[1..1]
+Appointment Table
+-time[1..1]
+-date[1..1]
+-reason[1..1]
+-participantNumber[1..1]
+1..1
+1..1
+1..1
+1..1
+1..1
+1..1
+0..*
+0..* 0..*
+0..*
+1..*
+0..*
+1
+1
+1..*
+0..*
++ primary
+insurance
+carrier
+suffers
+schedules
+Appointment
+-time
+-date
+-reason
+Patient +cancel without notice()
+-amount
+-insurance carrier
++make appointment()
++calculate last visit()
++change status()
++provides medical history()
+Participant
+-lastname
+-firstname
+-address
+-phone
+-birthdate
+-/ age
+Symptom
+-name
+FIGURE 9-10  Example of Mapping Problem Domain Objects to RDBMS Schema
+346 Chapter 9 Data Management Layer Design
+Th e fi fth rule addresses multivalued attributes and repeating groups of attributes in a 
+problem domain object. In these cases, the attributes should be used to create new tables 
+in the RDBMS. As in the ORDBMS mappings, repeating groups of attributes can imply 
+missing classes in the Problem Domain layer. In that case, a new problem domain class 
+may be required. Finally, we should create a one-to-many or zero-to-many association 
+from the original table to the new one. For example, in Figure 9-10, we needed to create a 
+new table for insurance carrier because it was possible for a patient to have more than one 
+insurance carrier.
+Th e sixth rule supports mapping multivalued (many-to-many) aggregation and association relationships to a new table that relates the two original tables. In this case, the new 
+table should contain foreign keys back to the original tables. For example, in Figure 9-10, we 
+needed to create a new table that represents the suff er association between the Patient and 
+Symptom problem domain classes.
+Th e seventh rule addresses one-to-many and many-to-one relationships. With these 
+types of relationships, the multivalued side (0..* or 1..*) should be mapped to a column 
+in its table that can store a foreign key back to the single-valued side (0..1 or 1..1). It is 
+possible that we have already taken care of this situation because we earlier recommended 
+inclusion of both primary and foreign key attributes in the problem domain classes. In the 
+case of Figure 9-10, we had already added the primary key from the Patient class to the 
+Appointment class as a foreign key (see participantNumber). However, in the case of the 
+refl exive relationship, primary insurance carrier, associated with the Patient class, we need 
+to add a new attribute (primaryInsuranceCarrier) to be able to store the relationship.
+Th e eighth, and fi nal, rule deals with the lack of support for generalization and inheritance. As in the case of an ORDBMS, there are two diff erent approaches. Th ese approaches 
+are virtually identical to the rules described with OODBMS and ORDBMS object persistence 
+formats given earlier. Th e fi rst approach is to add a column to each table that represents a 
+subclass for each of the concrete superclasses of the subclass. Essentially, this ensures that 
+the primary key of the subclass is the same as the primary key for the superclass. If we had 
+previously added the primary and foreign keys to the problem domain objects, as we recommended, then we do not have to do anything else. Th e primary keys of the tables will be used 
+to rejoin the instances stored in the tables that represent each of the pieces of the problem 
+domain object. Conversely, the inheritance hierarchy can be fl attened and the rules (Rules 1 
+through 7) can be reapplied.
+As in the case of the ORDBMS approach, additional processing will be required any time 
+that an interaction takes place between the database and the system. Every time an object 
+must be created, retrieved from the database, updated, or deleted, the mapping between the 
+problem domain and the RDBMS must be used to convert between the two diff erent formats. 
+In this case, a great deal of additional processing will be required.
+OPTIMIZING RDBMS-BASED OBJECT STORAGE
+Once the object persistence format is selected, the second step is to optimize the object persistence for processing effi ciency. Th e methods of optimization vary based on the format that 
+you select; however, the basic concepts remain the same. Once you understand how to optimize a particular type of object persistence, you will have some idea as to how to approach the 
+optimization of other formats. Th is section focuses on the optimization of the most popular 
+storage format: relational databases.
+Th ere are two primary dimensions in which to optimize a relational database: for storage 
+effi ciency and for speed of access. Unfortunately, these two goals oft en confl ict because the 
+Optimizing RDBMS-Based Object Storage  347
+best design for access speed may take up a great deal of storage space as compared to other, 
+less-speedy designs. Ultimately, the project team will go through a series of trade-off s until the 
+ideal balance is reached.
+Optimizing Storage Effi ciency
+Th e most effi cient tables in a relational database in terms of storage space have no redundant 
+data and very few null values. Th e presence of null values suggests that space is being wasted 
+(and more data to store means higher data storage hardware costs). For example, the table 
+in Figure 9-11 repeats customer information, such as name and state, each time a customer 
+places an order, and it contains many null values in the product-related columns. Th ese nulls 
+occur whenever a customer places an order for fewer than three items (the maximum number 
+on an order).
+In addition to wasting space, redundancy and null values also allow more room for error 
+and increase the likelihood that problems will arise with the integrity of the data. What if 
+customer 1035 moved from Maryland to Georgia? In the case of Figure 9-11, a program must 
+be written to ensure that all instances of that customer are updated to show Georgia as the 
+new state of residence. If some of the instances are overlooked, then the table will contain an 
+update anomaly, whereby some of the records contain the correctly updated value for state 
+and other records contain the old information.
+Nulls threaten data integrity because they are diffi cult to interpret. A blank value in the 
+Order table’s product fi elds could mean the customer did not want more than one or two 
+products on his or her order, the operator forgot to enter in all three products on the order, 
+or the customer canceled part of the order and the products were deleted by the operator. It 
+is impossible to be sure of the actual meaning of the nulls.
+For both these reasons—wasted storage space and data integrity threats—project teams 
+should remove redundancy and nulls from the table. During design, the class diagram is 
+used to examine the design of the RDBMS tables (e.g., see Figure 9-10) and to optimize it 
+for storage effi ciency. If you follow the modeling instructions and guidelines that were presented in Chapter 5, you will have little trouble creating a design that is highly optimized in 
+this way because a well-formed logical data model does not contain redundancy or many 
+null values.
+Sometimes, however, a project team needs to start with a model that was poorly constructed or with one that was created for fi les or a nonrelational type of format. In these cases, 
+the project team should follow a series of steps that serve to check the model for storage 
+effi ciency. Th ese steps make up a process called normalization.10 Normalization is a process 
+whereby a series of rules are applied to the RDBMS tables to assess the effi ciency of the tables 
+(see Figure 9-12). Th ese rules help analysts identify tables that are not represented correctly. 
+Here, we describe three normalization rules that are applied regularly in practice. Figure 9-11 
+shows a model in 0 Normal Form, which is an unnormalized model before the normalization 
+rules have been applied.
+A model is in fi rst normal form (1NF) if it does not lead to multivalued fi elds, fi elds 
+that allow a set of values to be stored, or repeating fi elds, which are fi elds that repeat within 
+a table to capture multiple values. Th e rule for 1NF says that all tables must contain the 
+same number of columns (i.e., fi elds) and that all the columns must contain a single value. 
+Notice that the model in Figure 9-11 violates 1NF because it causes product number, 
+10 Normalization also can be performed on the problem domain layer (see Chapter 8). However, the normalization 
+process should be used on the problem domain layer only to uncover missing classes. Otherwise, optimizations that 
+have nothing to do with the semantics of the problem domain can creep into the problem domain layer.
+Redundant Data Null Cells
+Sample Records:
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+-State : String
+-Tax Rate : float
+-Product 1 Number : unsigned long
+-Product 1 Desc. : String
+-Product 1 Price : double
+-Product 1 Qty. : unsigned long
+-Product 2 Number : unsigned long
+-Product 2 Desc. : String
+-Product 2 Price : double
+-Product 2 Qty. : unsigned long
+-Product 3 Number : unsigned long
+-Product 3 Desc. : String
+-Product 3 Price : double
+-Product 3 Qty. : unsigned long
+ Order Cust Last First Tax Prod. 1 Prod. 1 Prod. 1 Prod. 1 Prod. 2 Prod. 2 Prod. 2 Prod. 2 Prod. 3 Prod. 3 Prod. 3 Prod. 3 
+Number Date ID Name Name State Rate Number Desc. Price Qty. Number Desc. Price Qty. Number Desc. Price Qty.
+ 239 11/23/00 1035 Black John MD 0.05 555 Cheese Tray $45.00 2
+ 260 11/24/00 1035 Black John MD 0.05 444 Wine Gift Pack $60.00 1
+ 273 11/27/00 1035 Black John MD 0.05 222 Bottle Opener $12.00 1
+ 241 11/23/00 1123 Williams Mary CA 0.08 444 Wine Gift Pack $60.00 2
+ 262 11/24/00 1123 Williams Mary CA 0.08 222 Bottle Opener $12.00 2
+ 287 11/27/00 1123 Williams Mary CA 0.08 222 Bottle Opener $12.00 2
+ 290 11/30/00 1123 Williams Mary CA 0.08 555 Cheese Tray $45.00 3
+ 234 11/23/00 2242 DeBerry Ann DC 0.065 555 Cheese Tray $45.00 2
+ 237 11/23/00 2242 DeBerry Ann DC 0.065 111 Wine Guide $15.00 1 444 Wine Gift Pack $60.00 1
+ 238 11/23/00 2242 DeBerry Ann DC 0.065 444 Wine Gift Pack $60.00 1
+ 245 11/24/00 2242 DeBerry Ann DC 0.065 222 Bottle Opener $12.00 1
+ 250 11/24/00 2242 DeBerry Ann DC 0.065 222 Bottle Opener $12.00 1
+ 252 11/24/00 2242 DeBerry Ann DC 0.065 222 Bottle Opener $12.00 1 444 Wine Gift Pack $60.00 2
+ 253 11/24/00 2242 DeBerry Ann DC 0.065 222 Bottle Opener $12.00 1 444 Wine Gift Pack $60.00 1
+ 297 11/30/00 2242 DeBerry Ann DC 0.065 333 Jams & Jellies $20.00 2
+ 243 11/24/00 4254 Bailey Ryan MD 0.05 555 Cheese Tray $45.00 2
+ 246 11/24/00 4254 Bailey Ryan MD 0.05 333 Jams & Jellies $20.00 3
+ 248 11/24/00 4254 Bailey Ryan MD 0.05 222 Bottle Opener $12.00 1 333 Jams & Jellies $20.00 2 111 Wine Guide $15.00 1 
+ 235 11/23/00 9500 Chin April KS 0.05 222 Bottle Opener $12.00 1
+ 242 11/23/00 9500 Chin April KS 0.05 333 Jams & Jellies $20.00 3
+ 244 11/24/00 9500 Chin April KS 0.05 222 Bottle Opener $12.00 2
+ 251 11/24/00 9500 Chin April KS 0.05 111 Wine Guide $15.00 2
+FIGURE 9-11  Optimizing Storage
+348
+description, price, and quantity to repeat three times for each order in the table. Th e resulting table has many records that contain nulls in the product-related columns, and orders 
+are limited to three products because there is no room to store information for more.
+A much more effi cient design (and one that conforms to 1NF) leads to a separate 
+table to hold the repeating information; to do this, we create a separate table on the model 
+to capture product order information. A zero-to-many relationship would then exist 
+between the two tables. As shown in Figure 9-13, the new design eliminates nulls from 
+the Order table and supports an unlimited number of products that can be associated 
+with an order.
+Second normal form (2NF) requires fi rst that the data model is in 1NF and second that the 
+data model leads to tables containing fi elds that depend on a whole primary key. Th is means 
+that the primary key value for each record can determine the value for all the other fi elds in 
+the record. Sometimes fi elds depend on only part of the primary key (i.e., partial dependency), 
+and these fi elds belong in another table.
+For example, in the new Product Order table that was created in Figure 9-13, the primary 
+key is a combination of the order number and product number, but the product description 
+and price attributes are dependent only upon product number. In other words, by knowing 
+product number, we can identify the product description and price. However, knowledge of 
+the order number and product number is required to identify the quantity. To rectify this 
+violation of 2NF, a table is created to store product information, and the description and 
+price attributes are moved into the new table. Now, product description is stored only once 
+for each instance of a product number as opposed to many times (every time a product is 
+placed on an order).
+Do any tables have repeating fields? Do some
+records have a different number of columns
+from other records?
+Yes: Remove the repeating fields. Add a new
+table that contains the fields that repeat.
+No: The data model is in 1NF
+0 Normal Form
+Is the primary key made up of more than one
+field? If so, do any fields depend on only a part
+of the primary key?
+Yes: Remove the partial dependency. Add a 
+new table that contains the fields that are
+partially dependent.
+No: The data model is in 2NF
+Do any fields depend on another nonprimary
+key field?
+Yes: Remove the transitive dependency. 
+Add a new table that contains the fields
+that are transitively dependent.
+No: The data model is in 3NF
+Third Normal Form
+Second Normal Form
+First Normal Form
+FIGURE 9-12
+The Steps of 
+Normalization
+Optimizing RDBMS-Based Object Storage  349
+350 Chapter 9 Data Management Layer Design
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+-State : String
+-Tax Rate : float
+Product Order
+-Order Number : unsigned long
+-Product Number : String
+-Product Desc : String
+-Product Price : double
+-Product Qty : unsigned long
+Revised Model:
+0..* 1..*
+Note: Order Number will serve as part 
+of the primary key of Product Order
+Note: Product Number will serve as part 
+of the primary key of Product Order
+Note: Order Number also will serve as a 
+foreign key in Product Order
+Note: Order Number will serve as part 
+of the primary key of Order
+Note: Cust ID also will serve as part of 
+the primary key of Order
+(a)
+Sample Records:
+Order Table
+Order 248 has 3 products
+Order 237 has 2 products
+ Order Cust Last First Tax 
+ Number Date ID Name Name State Rate
+ 239 11/23/00 1035 Black John MD 0.05
+ 260 11/24/00 1035 Black John MD 0.05 
+ 273 11/27/00 1035 Black John MD 0.05
+ 241 11/23/00 1123 Williams Mary CA 0.08
+ 262 11/24/00 1123 Williams Mary CA 0.08
+ 287 11/27/00 1123 Williams Mary CA 0.08
+ 290 11/30/00 1123 Williams Mary CA 0.08
+ 234 11/23/00 2242 DeBerry Ann DC 0.065
+ 237 11/23/00 2242 DeBerry Ann DC 0.065
+ 238 11/23/00 2242 DeBerry Ann DC 0.065
+ 245 11/24/00 2242 DeBerry Ann DC 0.065
+ 250 11/24/00 2242 DeBerry Ann DC 0.065
+ 252 11/24/00 2242 DeBerry Ann DC 0.065
+ 253 11/24/00 2242 DeBerry Ann DC 0.065
+ 297 11/30/00 2242 DeBerry Ann DC 0.065
+ 243 11/24/00 4254 Bailey Ryan MD 0.05
+ 246 11/24/00 4254 Bailey Ryan MD 0.05
+ 248 11/24/00 4254 Bailey Ryan MD 0.05
+ 235 11/23/00 9500 Chin April KS 0.05
+ 242 11/23/00 9500 Chin April KS 0.05
+ 244 11/24/00 9500 Chin April KS 0.05
+ 251 11/24/00 9500 Chin April KS 0.05
+Product Order Table
+ Order Product Product Product Product 
+ Number Number Desc Price Qty
+ 239 555 Cheese Tray $45.00 2
+ 260 444 Wine Gift Pack $60.00 1
+ 273 222 Bottle Opener $12.00 1
+ 241 444 Wine Gift Pack $60.00 2
+ 262 222 Bottle Opener $12.00 2
+ 287 222 Bottle Opener $12.00 2
+ 290 555 Cheese Tray $45.00 3
+ 234 555 Cheese Tray $45.00 2
+ 237 111 Wine Guide $15.00 1
+ 237 444 Wine Gift Pack $60.00 1
+ 238 444 Wine Gift Pack $60.00 1
+ 245 222 Bottle Opener $12.00 1
+ 250 222 Bottle Opener $12.00 1
+ 252 222 Bottle Opener $12.00 1
+ 252 444 Wine Gift Pack $60.00 2
+ 253 222 Bottle Opener $12.00 1
+ 253 444 Wine Gift Pack $60.00 1
+ 297 333 Jams & Jellies $20.00 2
+ 243 555 Cheese Tray $45.00 2
+ 246 333 Jams & Jellies $20.00 3
+ 248 222 Bottle Opener $12.00 1
+ 248 333 Jams & Jellies $20.00 2
+ 248 111 Wine Guide $15.00 1
+ 235 222 Bottle Opener $12.00 1
+ 242 333 Jams & Jellies $20.00 3
+ 244 222 Bottle Opener $12.00 2
+ 251 111 Wine Guide $15.00 2
+(b)
+FIGURE 9-13  1NF: Remove Repeating Fields
+A second violation of 2NF occurs in the Order table: customer fi rst name and last name 
+depend only upon the customer ID, not the whole key (Cust ID and Order number). As a result, 
+every time the customer ID appears in the Order table, the names also appear. A much more 
+economical way of storing the data is to create a Customer table with the Customer ID as the 
+primary key and the other customer-related fi elds (i.e., last name and fi rst name) listed only 
+once within the appropriate record. Figure 9-14 illustrates how the model would look when 
+placed in 2NF.
+Th ird normal form (3NF) occurs when a model is in both 1NF and 2NF and, in the resulting tables, none of the fi elds depend on nonprimary key fi elds (i.e., transitive dependency). 
+Figure 9-14 contains a violation of 3NF: Th e tax rate on the order depends upon the state to 
+which the order is being sent. Th e solution involves creating another table that contains state 
+abbreviations serving as the primary key and the tax rate as a regular fi eld. Figure 9-15 presents 
+the end results of applying the steps of normalization to the original model from Figure 9-11.
+Optimizing Data Access Speed
+Aft er you have optimized the design of the object storage for effi ciency, the end result is that 
+data are spread out across a number of tables. When data from multiple tables need to be 
+accessed or queried, the tables must be fi rst joined. For example, before a user can print out 
+a list of the customer names associated with orders, fi rst the Customer and Order tables need 
+to be joined, based on the customer number fi eld (see Figure 9-15). Only then can both the 
+order and customer information be included in the query’s output. Joins can take a lot of 
+time, especially if the tables are large or if many tables are involved.
+Consider a system that stores information about 10,000 diff erent products, 25,000 customers, and 100,000 orders, each averaging three products per order. If an analyst wanted 
+to investigate whether there were regional diff erences in music preferences, he or she would 
+need to combine all the tables to be able to look at products that have been ordered while 
+knowing the state of the customers placing the orders. A query of this information would 
+result in a huge table with 300,000 rows (i.e., the number of products that have been ordered) 
+and 11 columns (the total number of columns from all of the tables combined).
+Th e project team can use several techniques to try to speed up access to the data, including denormalization, clustering, and indexing.
+Denormalization Aft er the object storage is optimized, the project team may decide that 
+increased data retrieval speed is more important than storage effi ciency or data update speed 
+and elect to denormalize or add redundancy back into the design. Denormalization reduces 
+the number of joins that need to be performed in a query, thus speeding up access. Figure 9-16 
+shows a denormalized model for customer orders. Th e customer last name was added back 
+into the Order table because the project team learned during analysis that queries about orders 
+usually require the customer last name fi eld. Instead of joining the Order table repeatedly to 
+the Customer table, the system now needs to access only the Order table because it contains all 
+of the relevant information needed to solve the music preference question posed above.
+Denormalization is ideal in situations in which information is queried frequently but 
+updated rarely. However, due to the additional storage required and the potential update 
+anomalies, denormalization should be applied sparingly. Th ere are three cases in which you 
+may rely upon denormalization to reduce joins and improve performance. First, denormalization can be applied in the case of look-up tables, which are tables that contain descriptions of 
+values (e.g., a table of product descriptions or a table of payment types). Because descriptions 
+of codes rarely change, it may be more effi cient to include the description along with its respective code in the main table to eliminate the need to join the look-up table each time a query is 
+performed (see Figure 9-17a).
+Optimizing RDBMS-Based Object Storage  351
+352 Chapter 9 Data Management Layer Design
+Customer
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-State : String
+-Tax Rate : float
+Product Order
+-Order Number : unsigned long
+-Product Number : unsigned long
+-Qty : unsigned long
+Product
+-Product Number : unsigned long
+-Product Desc : String
+1..1 0..* -Price : double
+0..* 1..*
+Sample Records:
+Customer Table
+ Cust Last First 
+ ID Name Name
+ 1035 Black John
+ 1123 Williams Mary
+ 2242 DeBerry Ann
+ 4254 Bailey Ryan
+ 9500 Chin April
+Product Table
+ Product Product Product 
+Number Desc Price
+ 111 Wine Guide $15.00
+ 222 Bottle Opener $12.00
+ 333 Jams & Jellies $20.00
+ 444 Wine Gift Pack $60.00
+ 555 Cheese Tray $45.00
+Product Order Table
+ Order Product Product 
+Number Number Qty
+ 239 555 2
+ 260 444 1
+ 273 222 1
+ 241 444 2
+ 262 222 2
+ 287 222 2
+ 290 555 3
+ 234 555 2
+ 237 111 1
+ 237 444 1
+ 238 444 1
+ 245 222 1
+ 250 222 1
+ 252 222 1
+ 252 444 2
+ 253 222 1
+ 253 444 1
+ 297 333 2
+ 243 555 2
+ 246 333 3
+ 248 222 1
+ 248 333 2
+ 248 111 1
+ 235 222 1
+ 242 333 3
+ 244 222 2
+ 251 111 2
+Order Table
+ Order Cust 
+Number Date ID State
+ 239 11/23/00 1035 MD
+ 260 11/24/00 1035 MD
+ 273 11/27/00 1035 MD
+ 241 11/23/00 1123 CA
+ 262 11/24/00 1123 CA
+ 287 11/27/00 1123 CA
+ 290 11/30/00 1123 CA
+ 234 11/23/00 2242 DC
+ 237 11/23/00 2242 DC
+ 238 11/23/00 2242 DC
+ 245 11/24/00 2242 DC
+ 250 11/24/00 2242 DC
+ 252 11/24/00 2242 DC
+ 253 11/24/00 2242 DC
+ 297 11/30/00 2242 DC
+ 243 11/24/00 4254 MD
+ 246 11/24/00 4254 MD
+ 248 11/24/00 4254 MD
+ 235 11/23/00 9500 KS
+ 242 11/23/00 9500 KS
+ 244 11/24/00 9500 KS
+ 251 11/24/00 9500 KS
+Note: Order Number will 
+serve as part of the 
+primary key of Product
+Order.
+Note: Order Number also 
+will serve as a foreign key 
+in Product Order.
+Note: Product Number
+will serve as part of the 
+primary key in Product
+Order.
+Note: Product Number
+also will serve as a foreign
+key in Product Order.
+Note: Product Number will 
+serve as part of the primary 
+key of Product Order.
+Note: Order Number will serve 
+as the primary key of Order.
+Note: Cust ID will serve as a 
+foreign key in Order.
+Note: Cust ID will serve 
+as the primary key of 
+Customer.
+Product Desc and Price 
+was moved to the Product
+table to eliminate
+redundancy
+Last Name and First 
+Name was moved 
+to the Customer
+table to eliminate
+redundancy
+Tax
+Rate
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.08
+0.08
+0.08
+0.08
+0.065
+0.065
+0.065
+0.065
+0.065
+0.065
+0.065
+0.065
+FIGURE 9-14  2NF Partial Dependencies Removed
+Customer
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+State
+-State : String
+-Tax Rate : float
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-State : String
+Product Order
+-Order Number : unsigned long
+-Product Number : unsigned long
+-Qty : unsigned long
+Product
+-Product Number : unsigned long (idl)
+-Product Desc : String
+1..1 -Price : double
+0..*
+1..1
+0..*
+0..* 1..*
+FIGURE 9-15  3NF Normalized Field
+Second, one-to-one relationships are good candidates for denormalization. Although logically two tables should be separated, from a practical standpoint the information from both 
+tables may regularly be accessed together. Th ink about an order and its shipping information. 
+Logically, it might make sense to separate the attributes related to shipping into a separate 
+table, but as a result the queries regarding shipping will probably always need a join to the 
+Order table. If the project team fi nds that certain shipping information, such as state and shipping method, is needed when orders are accessed, they may decide to combine the tables or 
+include some shipping attributes in the Order table (see Figure 9-17b).
+Th ird, at times it is more effi cient to include a parent entity’s attributes in its child entity on 
+the physical data model. For example, consider the Customer and Order tables in Figure 9-16, 
+which share a one-to-many relationship, with Customer as the parent and Order as the child. 
+FIGURE 9-16
+Denormalized 
+Physical Data Model
+Customer
+-Cust ID (PK) : unsigned long
+-Last Name : String
+-First Name : String
+Order
+-Order Number (PK) : unsigned long
+-Date : Date
+-State (FK) : String
+-Cust ID (FK) : unsigned long
+-Customer Last Name : String
+1..1 1..*
+Last name is now in both classes
+Optimizing RDBMS-Based Object Storage  353
+354 Chapter 9 Data Management Layer Design
+If queries regarding orders continuously require customer information, the most popular customer fi elds can be placed in Order to reduce the required joins to the Customer table, as was 
+done with Customer Last Name.
+Clustering Speed of access also is infl uenced by the way that the data are retrieved. Th ink 
+about shopping in a grocery store. If you have a list of items to buy but you are unfamiliar 
+with the store’s layout, you need to walk down every aisle to make sure that you don’t miss 
+anything from your list. Likewise, if records are arranged in no particular order (or in an 
+order that is irrelevant to your data needs), then any query of the records results in a table 
+scan in which the DBMS has to access every row in the table before retrieving the result set. 
+Table scans are the most ineffi cient of data retrieval methods.
+One way to improve access speed is to reduce the number of times that the storage 
+medium needs to be accessed during a transaction. One method is to cluster records together 
+physically so that similar records are stored close together. With intrafi le clustering, like 
+records in the table are stored together in some way, such as in order by primary key or, in 
+the case of a grocery store, by item type. Th us, whenever a query looks for records, it can go 
+directly to the right spot on the disk (or other storage medium) because it knows in what 
+order the records are stored, just as we can walk directly to the bread aisle to pick up a loaf 
+of bread. Interfi le clustering combines records from more than one table that typically are 
+Shipment
+-Shipment ID (PK) : unsigned long
+-Shipment Street Address : String
+-Shipment City : String
+-Shipment State : String
+-Shipment Zip Code : String
+-Shipment Method : String
+Order
+-Order: Number (PK) : unsigned long
+-Date : Date
+-State (FK) : String
+-Cust ID (FK) : unsigned long
+-Customer Last Name : String
+-Payment Type (FK) : unsigned long
+-Payment Description : String
+-Shipment ID (FK) : unsigned long
+-Shipment State : String
+-Shipment Method : String
+Order
+-Order : Number (PK) : unsigned long
+-Date : Date
+-State (FK) : String
+-Cust ID (FK) : unsigned long
+-Customer Last Name : String
+-Payment Type (FK) : unsigned long
+-Payment Description : String
+1..1 1..1
+1..1 0..*
+Notice that the payment description field
+appears in both Payment Type and Order.
+(a)
+Notice that the shipment state and shipment method
+are included in both Shipment and Order.
+(b)
+Payment Type
+-Payment Type (PK) : String
+-Payment Description : String
+FIGURE 9-17
+Denormalization 
+Situations (FK, foreign 
+key; PK, primary key)
+retrieved together. For example, if customer information is usually accessed with the related 
+order information, then the records from the two tables may be physically stored in a way 
+that preserves the customer-order relationship. Returning to the grocery store scenario, an 
+interfi le cluster would be similar to storing peanut butter, jelly, and bread next to each other 
+in the same aisle because they are usually purchased together, not because they are similar 
+types of items. Of course, each table can have only one clustering strategy because the records 
+can be arranged physically in only one way.
+Indexing A familiar time saver is an index located in the back of a textbook, which points 
+directly to the page or pages that contain a topic of interest. Th ink of how long it would take 
+to fi nd all the times that relational database appears in this textbook without the index to rely 
+on! An index in data storage is like an index in the back of a textbook; it is a minitable that 
+contains values from one or more columns in a table and the location of the values within the 
+table. Instead of paging through the entire textbook, we can move directly to the right pages 
+and get the information we need. Indexes are one of the most important ways to improve 
+database performance. Whenever there are performance problems, the fi rst place to look is 
+an index.
+A query can use an index to fi nd the locations of only those records that are included in 
+the query answer, and a table can have an unlimited number of indexes. Figure 9-18 shows 
+an index that orders records by payment type. A query that searches for all the customers 
+who used American Express can use this index to fi nd the locations of the records that contain American Express as the payment type without having to scan the entire Order table

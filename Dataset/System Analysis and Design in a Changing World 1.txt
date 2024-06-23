@@ -1,0 +1,804 @@
+﻿Front:
+Class Name: Order ID: 2
+Calculate tax
+Calculate subtotal
+Calculate shipping
+Calculate total
+Responsibilities
+Description: An Individual who needs to receive or has Associated Use Cases: 3
+received medical attention
+Type: Concrete, Domain
+Collaborators
+(a)
+Back:
+Attributes: 
+Relationships: 
+Generalization (a-kind-of):
+Aggregation (has-parts):
+Other Associations: Customer {1..1} State {1..1}Product {1..*}
+(b)
+Order Number (1..1) (unsigned long)
+Date (1..1) (Date)
+Sub Total (0..1) (double) {Sub Total = ProductOrder. sum(GetExtension())}
+Tax (0..1) (double) (Tax = State.GetTaxRate() * Sub Total)
+Shipping (0..1) (double)
+Total (0..1) (double)
+Customer (1..1) (Customer)
+Cust ID (1..1) (unsigned long) {Cust ID = Customer. GetCustID()}
+State (1..1) (State)
+StateName (1..1) (String) {State Name = State. GetState()}
+FIGURE 8-19 
+Invariants on a 
+CRC Card
+308 Chapter 8 Class and Method Design
+have a detailed algorithmic description of how the method is to work. Detailed algorithmic 
+descriptions typically are documented in a method specifi cation (as described later in this 
+chapter). In other words, a contract is composed of the information required for the developer of a client object to know what messages can be sent to the server objects and what the 
+client can expect in return. Figure 8-22 shows a sample format for a contract.
+Because each contract is associated with a specifi c method and a specifi c class, the contract must document them. Th e ID number of the contract is used to provide a unique identifi er for every contract. Th e Clients (Consumers) element of a contract is a list of classes and 
+Order
+-Order Number[1..1] : unsigned long
+-Date[1..1] : Date
+-SubTotal[0..1] : double
+-Tax[0..1] : double
+-Shipping[0..1] : double
+-Total[0..1] : double
+-Customer[1..1] : Customer
+-Cust ID[1..1] : unsigned long
+-State[1..1] : State
+-StateName[1..1] : String
+Product
+-Product Number 
+-Product Desc 
+-Price
+Customer
+-Cust ID 
+-Last Name 
+-First Name 1..1
+1..1
+0..*
+0..* 1..*
+0..*
+State
+-State 
+-TaxRate 
+<<invariant>>
+{Cust ID = Customer.GetCustID()}
+<<invariant>>
+{State Name = State.GetState()}
+<<invariant>>
+{Tax =State.GetTaxRate()*SubTotal}
+<<invariant>>
+{Sub Total = Product Order.sum(GetExtension())}
+Product Order
+Order 
+Product 
+Qty
+Extension
+FIGURE 8-20 Invariants on a Class Diagram
+Order class invariants:
+Cust ID 5 Customer.GetCustID()
+State Name 5 Sate.GetState()
+Sub Total 5 ProductOrder.sum(GetExtension())
+Tax 5 State.GetTaxRate() * Sub Total1 FIGURE 8-21
+Invariants in a Text File
+Constraints and Contracts  309
+methods that send a message to this specifi c method. Th is list is determined by reviewing the 
+sequence diagrams associated with the server class. Th e Associated Use Cases element is a list 
+of use cases in which this method is used to realize the implementation of the use case. Th e 
+use cases listed here can be found by reviewing the server class’s CRC card and the associated 
+sequence diagrams.
+Th e Description of Responsibilities provides an informal description of what the 
+method is to perform, not how it is to do it. Th e arguments received are the data types of the 
+parameters passed to the method, and the value returned is the data type of the value that 
+the method returns to its clients. Together with the method name, they form the signature 
+of the method.
+Th e precondition and postcondition elements are where the pre- and postconditions for 
+the method are recorded. Recall that pre- and postconditions can be written in a natural language, a semiformal language, or a formal language. As with invariants, we recommend that 
+you use UML’s Object Constraint Language.35
+Example In this example, we return to the order example shown in Figures 8-15, 8-19, 
+8-20, and 8-21. In this case, we limit the discussion to the design of the addOrder method 
+for the Customer class. Th e fi rst decision we must make is how to specify the design of the 
+relationship from Customer to Order. By reviewing Figures 8-15, 8-19, and 8-20, we see that 
+the relationship has a multiplicity of 0..* which means that an instance of customer may exist 
+without having any orders or an instance of customer could have many orders. As shown 
+35 See Warmer and Kleppe, Th e Object Constraint Language: Precise Modeling with UML.
+Method Name: Class Name: 
+Clients (Consumers): 
+ID: 
+Associated Use Cases: 
+Type of Value Returned: 
+Description of Responsibilities: 
+Arguments Received: 
+Pre-Conditions: 
+Post-Conditions: 
+FIGURE 8-22
+Sample Contract Form
+310 Chapter 8 Class and Method Design
+in Figure 8-15c, the relationship has been converted to an attribute that can contain many 
+instances of the Order class.
+However, an important question that would not typically come up during analysis is 
+whether the order objects should be kept in sorted order or not. Another question that is 
+necessary to have answered for design purposes is how many orders could be expected by 
+a customer. Th e answers to these two questions will determine how we should organize 
+the orders from the customer object’s perspective. If the number of orders is going to be 
+ relatively small and the orders don’t have to be kept in sorted order, then using a built-in 
+programming language construct such as a vector is suffi cient. However, if the number of 
+orders is going to be large or the orders must be kept in sorted order, then some form of a 
+sorted data structure, such as a linked list, is necessary. For example purposes, we assume 
+that a customer’s orders will need to be kept in sorted order and that there will be a large 
+number of them. Th erefore, instead of using a vector to contain the orders, we use a sorted 
+singly linked list.
+To keep the design of the Customer class as close to the problem domain representation 
+as possible, the design of the Customer class is based on the Iterator pattern in Figure 8-13. 
+For simplicity purposes, we assume that an order is created before it is associated with the 
+specifi c customer. Otherwise, given the additional constraints of the instance of State class and 
+the instance of the Product Order class existing before an instance of Order can be created 
+would also have to be taken into consideration. Th is assumption allows us to ignore the fact 
+that an instance of State can have many orders, an instance of Order can have many instances 
+of Product Order associated with it, and an instance of Product can have many instances of 
+Product Order associated with it, which would require us to design many additional containers 
+(vectors or other data structures).
+Based on all of the above, a new class diagram fragment was created that represents 
+a linked list-based relationship between instances of the Customer class and instances of 
+the Order class (see Figure 8-23). By carefully comparing Figures 8-15 and 8-23, we see 
+that the Iterator pattern idea has been included between the Customer and Order classes. 
+Th e domain of the Orders relationship-based attribute of the Customer class has been 
+replaced with OrderList to show that the list of orders will be contained in a list data structure. Figure 8-24 portrays an object diagram-based representation of how the relationship 
+between a customer instance and a set of order instances is stored in a sorted singly linked 
+list data structure. In this case, we see that a Customer object has an OrderList object associated with it, each OrderList object could have N OrderNode objects, and each OrderNode 
+object will have an Order object. We see that each Order object is associated with a single 
+Customer object. By comparing Figures 8-15 and 8-24, we see that the intention of the multiplicity constraints of the Orders attribute of Customer, where a customer can have many 
+orders, and the multiplicity constraints of the Customer attribute of Orders is being modeled correctly. Finally, notice that one of the operations contained in the OrderList class 
+is a private method. We will return to this specifi c point in the next section that addresses 
+method specifi cation.
+Using Figures 8-22, 8-23, and 8-24, contracts for the addOrder method of the Customer 
+class and the insertOrder method for the OrderList class can be specifi ed (see Figure 8-25). 
+In the case of the addOrder method of the Customer class, we see that only instances of the 
+Order class use the method (see Clients section), that the method only implements part of 
+the logic that supports the addCustomerOrder use case (see Associated Use Cases section), 
+and that the contract includes a short description of the methods responsibilities. We also 
+see that the method receives a single argument of type Order and that it does not return anything (void). Finally, we see that both a precondition and a postcondition were specifi ed. Th e 
+precondition simply states that the new Order object cannot be included in the current list 
+-Order Number[1..1] : unsigned long
+-Date[1..1] : Date
+-SubTotal[0..1] : double
+-Tax[0..1] : double
+-Shipping[0..1] : double
+-Total[0..1] : double
+-Customer[1..1] : Customer
+-State[1..1] : State
+-Product Orders[1..*] : Product Order
+Order
+-Cust ID[1..1] : unsigned long
+-Last Name[1..1] : String
+-First Name[1..1] : String
+-Orders[1..1] : OrderList
+-createOrderList() : OrderList
++addOrder(in anOrder : Order) : void
+Customer
+-FirstNode[0..1] : OrderNode
+-CurrentNode[0..1] : OrderNode
+-LastNode[0..1] : OrderNode
++advance() : void
++begOfList?() : boolean
++endOfList?() : boolean
++emptyList?() : boolean
++resetList() : void
++getCurrentOrderNode() : OrderNode
+-middleListInsert(in newOrderNode : OrderNode) : void
++insertOrder(in anOrder : Order) : void
+OrderList
+-NextNode[0..1] : OrderNode
+-Order[1..1] : Order
++OrderNode(in anOrder : Order)
++getOrder() : Order
++getNextOrderNode() : OrderNode
++setNextOrderNode(in anOrderNode : OrderNode) : void
+OrderNode
+FIGURE 8-23  Class Diagram Fragment of the Customer to Order Relationship Modeled as a Sorted Singly Linked List
+311
+312 Chapter 8 Class and Method Design
+FIGURE 8-24  Object Diagram of the Customer to Order Relationship Modeled as a Sorted Singly 
+Linked List
+OrderList OrderNode1
+OrderNode2
+OrderNode3
+Order1
+Order2
+Order3
+OrderNodeN OrderN
+Customer
+of Orders; that is, the order cannot have previously been associated with this customer. Th e 
+postcondition, on the other hand, specifi es that the new list of orders must be equal to the old 
+list of orders (@pre) plus the new order object (including).
+Th e contract for the insertOrder method for the OrderList class is somewhat simpler 
+than the addOrder method’s contract. From a practical perspective, the insertOrder method 
+implements part of the addOrder method’s logic. Specifi cally speaking, it implements that 
+actual insertion of the new order object into the specifi c data structure chosen to manage 
+the list of Order objects associated with the specifi c Customer object. Consequently, because 
+we already have specifi ed the precondition and postcondition for the addOrder method, we 
+do not have to further specify the same constraints for the insertOrder method. However, 
+this does implicitly increase the dependence of the Customer objects on the implementation 
+chosen for the list of customer orders. Th is is a good example of moving from the problem 
+domain to the solution domain. While we were focusing on the problem domain during 
+analysis, the actual implementation of the list of orders was never considered. However, 
+because we now are designing the implementation of the relationship between the Customer 
+objects and the Order objects, we have had to move away from the language of the end user 
+and toward the language of the programmer. During design, the focus moves toward optimizing the code to run faster on the computer and not worrying about the end user’s ability 
+to understand the inner workings of the system; from an end user’s perspective, the system 
+should become more of a black box with which they interact. As we move farther into the 
+detailed design of the implementation of the problem domain classes, some solution domain 
+classes, such as the approach to implement relationships, will creep into the specifi cation of 
+Constraints and Contracts  313
+Method Name: Class Name: ID: 
+Associated Use Cases: 
+Clients (consumers): 
+Type of Value Returned: 
+Description of Responsibilities: 
+Arguments Received: 
+Pre-Conditions: 
+Post-Conditions: 
+addOrder Customer 36
+Order
+addCustomerOrder
+anOrder:Order
+void
+not orders.includes(anOrder)
+Orders = Orders@pre.including(anOrder)
+Implement the necessary behavior to add a new order to an existing customer keeping
+the orders in sorted order by the order’s order number.
+Method Name: Class Name: ID: 
+Associated Use Cases: 
+Type of Value Returned: 
+Description of Responsibilities: 
+Arguments Received: 
+Pre-Conditions: 
+Post-Conditions: 
+insertOrder OrderList 123
+Customer
+addCustomerOrder
+anOrder:Order
+void
+None.
+None.
+Implement inserting an Order object into an OrderNode object and manage the
+insertion of the OrderNode object into the current location in the sorted singly
+linked list of orders.
+Clients (consumers): 
+FIGURE 8-25
+Sample Contract for the 
+addOrder Method of 
+the Customer Class and 
+the insertOrder Method 
+of the OrderList Class
+314 Chapter 8 Class and Method Design
+the problem domain layer. In this particular example, the OrderList and OrderNode classes 
+also could be used to implement the relationships from State objects to Order objects, from 
+Order Objects to Product Order objects, and from Product objects to Product Order objects 
+(see Figure 8-15). Given our simple example, one can clearly see that specifying the design 
+of the problem domain layer could include many additional solution domain classes to be 
+specifi ed on the problem domain layer.
+METHOD SPECIFICATION
+Once the analyst has communicated the big picture of how the system needs to be put 
+together, he or she needs to describe the individual classes and methods in enough detail so 
+that programmers can take over and begin writing code. Methods on the CRC cards, class 
+diagram, and contracts are described using method specifi cations. Method specifi cations are 
+written documents that include explicit instructions on how to write the code to implement 
+the method. Typically, project team members write a specifi cation for each method and then 
+pass them all along to programmers who write the code during implementation of the project. 
+Specifi cations need to be very clear and easy to understand, or programmers will be slowed 
+down trying to decipher vague or incomplete instructions.
+Th ere is no formal syntax for a method specifi cation, so every organization uses its 
+own format, oft en using a form like the one in Figure 8-26. Typical method specifi cation 
+forms contain four components that convey the information that programmers will need 
+for writing the appropriate code: general information, events, message passing, and algorithm specifi cation.
+General Information
+Th e top of the form in Figure 8-26 contains general information, such as the name of the 
+method, name of the class in which this implementation of the method will reside, ID number, Contract ID (which identifi es the contract associated with this method implementation), 
+programmer assigned, the date due, and the target programming language. Th is information 
+is used to help manage the programming eff ort.
+Events
+Th e second section of the form is used to list the events that trigger the method. An event 
+is a thing that happens or takes place. Clicking the mouse generates a mouse event, pressing a key generates a keystroke event—in fact, almost everything the user does generates 
+an event.
+In the past, programmers used procedural programming languages that contained 
+instructions that were implemented in a predefi ned order, as determined by the computer 
+system, and users were not allowed to deviate from the order. Many programs today are 
+event driven (e.g., programs written in languages such as Visual Basic, Objective C, C11, or 
+Java), and event-driven programs include methods that are executed in response to an event 
+initiated by the user, system, or another method. Aft er initialization, the system waits for an 
+event to occur. When it does, a method is fi red that carries out the appropriate task, and then 
+the system waits once again.
+We have found that many programmers still use method specifi cations when programming in event-driven languages, and they include the event section on the form to capture 
+when the method will be invoked. Other programmers have switched to other design tools 
+that capture event-driven programming instructions, such as the behavioral state machine 
+described in Chapter 6.
+Method Specifi cation  315
+Method Name: 
+Contract ID: 
+Class Name: 
+❏ Visual Basic ❏ Smalltalk ❏ C++ ❏ Java
+ID: 
+Programmer: Date Due:
+Programming Language: 
+Triggers/Events: 
+Algorithm Specification:
+Misc. Notes:
+Data Type: Notes:
+Arguments Received: 
+Data Type: Notes:
+Arguments Returned: 
+ClassName.MethodName: Data Type: Notes:
+Messages Sent & Arguments Passed: 
+FIGURE 8-26
+Method Specifi cation 
+Form
+Message Passing
+Th e next sections of the method specifi cation describe the message passing to and from the 
+method, which are identifi ed on the sequence and collaboration diagrams. Programmers 
+need to understand what arguments are being passed into, passed from, and returned by the 
+method because the arguments ultimately translate into attributes and data structures within 
+the actual method.
+316 Chapter 8 Class and Method Design
+Algorithm Specifi cations
+Algorithm specifi cations can be written in Structured English or some type of formal language.36 Structured English is simply a formal way of writing instructions that describe the 
+steps of a process. Because it is the fi rst step toward the implementation of the method, it 
+looks much like a simple programming language. Structured English uses short sentences 
+that clearly describe exactly what work is performed on what data. Th ere are many versions 
+of Structured English because there are no formal standards; each organization has its own 
+type of Structured English. Figure 8-27 shows some examples of commonly used Structured 
+English statements.
+Action statements are simple statements that perform some action. An If statement 
+controls actions that are performed under different conditions, and a For statement 
+(or a While statement) performs some actions until some condition is reached. A Case 
+statement is an advanced form of an If statement that has several mutually exclusive 
+branches.
+If the algorithm of a method is complex, a tool that can be useful for algorithm specification is UML’s activity diagram (see Figure 8-28 and Chapter 4). Recall that activity 
+diagrams can be used to specify any type of process. Obviously, an algorithm specification 
+represents a process. However, owing to the nature of object orientation, processes tend 
+to be highly distributed over many little methods over many objects. Needing to use an 
+ activity diagram to specify the algorithm of a method can, in fact, hint at a problem in 
+the design. For example, the method should be further decomposed or there could be 
+ missing classes.
+The last section of the method specification provides space for other information 
+that needs to be communicated to the programmer, such as calculations, special business 
+rules, calls to subroutines or libraries, and other relevant issues. This also can point out 
+36 For our purposes, Structured English will suffi ce. However, there has been some work with the Catalysis, Fusion, 
+and Syntropy methodologies to include formal languages, such as VDM and Z, into specifying object- oriented systems.
+ Profi ts 5 Revenues – Expenses
+Action Statement Generate Inventory-Report
+IF Customer Not in the Customer Object Store
+THEN Add Customer record to Customer Object Store
+If Statement ELSE Add Current-Sale to Customer’s Total-Sales
+ Update Customer record in Customer Object Store
+FOR all Customers in Customer Object Store DO
+For Statement Generate a new line in the Customer-Report
+ Add Customer’s Total-Sales to Report-Total
+ CASE
+ IF Income < 10,000: Marginal-tax-rate = 10 percent
+ IF Income < 20,000: Marginal-tax-rate = 20 percent
+Case Statement IF Income < 30,000: Marginal-tax-rate = 31 percent
+ IF Income < 40,000: Marginal-tax-rate = 35 percent
+ ELSE Marginal-Tax-Rate = 38 percent
+ ENDCASE
+ Common Statements Example
+FIGURE 8-27
+Structured English
+Activity
+Action
+A decision node:
+■ Is used to represent a test condition to ensure that the control flow or object flow
+ only goes down one path.
+■ Is labeled with the decision criteria to continue down the specific path.
+An object flow:
+■ Shows the flow of an object from one activity (or action) to another activity
+ (or action).
+A control flow:
+■ Shows the sequence of execution.
+A final-activity node:
+■ Is used to stop all control flows and object flows in an activity (or action).
+A merge node:
+■ Is used to bring back together different decision paths that were created using a
+ decision node.
+An initial node:
+■ Portrays the beginning of a set of actions or activities.
+A final-flow node:
+■ Is used to stop a specific control flow or object flow.
+Class Name
+[Decision
+Criteria]
+[Decision
+Criteria]
+An action:
+■ Is a simple, nondecomposable piece of behavior.
+■ Is labeled by its name.
+An activity:
+■ Is used to represent a set of actions.
+■ Is labeled by its name.
+An object node:
+■ Is used to represent an object that is connected to a set of object flows. 
+■ Is labeled by its class name.
+A Swimlane:
+ Is used to break up an activity diagram into rows and columns to assign the 
+ individual activities (or actions) to the individuals or objects that are responsible
+ for executing the activity (or action). 
+ Is labeled with the name of the individual or object responsible.
+A Fork node:
+ Is used to split behavior into a set of parallel or concurrent flows of activities
+ (or actions).
+A Join node:
+ Is used to bring back together a set of parallel or concurrent flows of activities
+ (or actions).
+Swimlane
+FIGURE 8-28  Syntax for an Activity Diagram (Figure 4-7)
+317
+318 Chapter 8 Class and Method Design
+Method Name: 
+Contract ID: 
+Class Name: 
+❏ Visual Basic ❏ Smalltalk ❏ C++ ❏ Java
+ID: 
+Programmer: Date Due:
+Programming Language: 
+Triggers/Events: 
+Algorithm Specification:
+Misc. Notes:
+Data Type: Notes:
+Arguments Received: 
+Data Type: Notes: Arguments Returned: 
+ClassName.MethodName: Data Type: Notes:
+Messages Sent & Arguments Passed: 
+insertOrder
+Order
+void
+None.
+OrderNode.new() Order
+OrderNode.getOrder()
+Order.getOrderNumber()
+OrderNode.setNextNode() OrderNode
+self.middleListInsert() OrderNode
+See Figures 8-30 and 8-31.
+The new customer’s new order.
+Customer places an order
+123 J. Doe 1/1/12
+OrderList 100
+FIGURE 8-29  Method Specifi cation for the insertOrder Method
+changes or improvements that will be made to any of the other design documentation 
+based on problems that the analyst detected during the specification process.37
+Example
+Th is example continues the addition of a new order for a customer described in the 
+ previous section (see Figure 8-29). Even though in most cases, because there are libraries 
+37 Remember that the development process is very incremental and iterative. Th erefore, changes could be cascaded back 
+to any point in the development process (e.g., to use-case descriptions, use-case diagrams, CRC cards, class diagrams, 
+object diagrams, sequence diagrams, communication diagrams, behavioral state machines, and package diagrams).
+Verifying and Validating Class and Method Design  319
+of data structure classes available that you could simply reuse and therefore would not 
+need to specify the algorithm to insert into a sorted singly linked list, we use it as an example 
+of how method specifi cation can be accomplished. Th e general information section of the 
+specifi cation documents the method’s name, its class, its unique ID number, the ID number of its associated contract, the programmer assigned, the date that its implementation 
+is due, and the programming language to be used. Second, the trigger/event that caused 
+this method to be executed is identifi ed. Th ird, the data type of the argument passed to this 
+method is documented (Order). Fourth, owing to the overall complexity of inserting a new 
+node into the list, we have factored out one specifi c aspect of the algorithm into a separate 
+private method (middleListInsert()) and we have specifi ed that this method will be sending 
+messages to instances of the OrderNode class and the Order class. Fift h, we specify the type 
+of return value that insertOrder will produce. In this case, the insertOrder method will not 
+return anything (void). Finally, we specify the actual algorithm. In this example, for the sake 
+of completeness, we provide both a Structured English–based (see Figure 8-30) and an activity diagram–based algorithm specifi cation (see Figure 8-31). Previously, we stated that we had 
+factored out the logic of inserting into the middle of the list into a separate private method: 
+middleList Insert(). Figure 8-32 shows the logic of this method. Imagine collapsing this logic 
+back into the logic of the insertOrder method, i.e., replace the middleListInsert(newOrderNode) activity in Figure 8-31 with the contents of Figure 8-32. Obviously, the insertOrder 
+method would be more complex.
+VERIFYING AND VALIDATING CLASS AND METHOD DESIGN
+Like all of the previous problem domain models, the constraints, contracts, and method specifi cations need to be verifi ed and validated. Given that we are primarily dealing with the problem domain in this chapter, the constraints and contracts were derived from the functional 
+requirements and the problem domain representations. However, they are applicable to the 
+other layers. In that case, they would be derived from the solution domain representations 
+associated with the data management (Chapter 9), human–computer interaction (Chapter 
+10), and system architecture (Chapter 11) layers. Given all of the issues described earlier with 
+the design criteria (coupling, cohesion, and connascence), additional specifi cations, reuse 
+opportunities, design restructuring and optimization, and mapping to implementation languages, it is likely that many modifi cations have taken place to the analysis representations of 
+the problem domain. Consequently, virtually everything must be re-verifi ed and re-validated. 
+First, we recommend that a walkthrough of all of the evolved problem domain representations be performed. Th at is, all functional models (Chapter 4) must be consistent; all structural 
+Create new OrderNode with the new Order
+IF emptyList?()
+ FirstNode 5 LastNode 5 CurrentNode 5 newOrderNode
+ELSE IF newOrderNode.getOrder().getOrderNumber() , FirstNode.getOrder().getOrderNumber()
+ newOrderNode.setNextNode(FirstNode)
+ FirstNode 5 newOrderNode
+ELSE IF newOrderNode.getOrder().getOrderNumber() . LastNode.getOrder().getOrderNumber()
+ LastNode.setNextNode(newOrderNode)
+ LastNode 5 newOrderNode
+ELSE 
+ middleListInsert(newOrderNode)
+FIGURE 8-30
+Structured Englishbased Algorithm 
+Specifi cation for the 
+insertOrder Method
+320
+Create new OrderNode
+[emptyList?()]
+FirstNode = LastNode = CurrentNode = newOrderNode
+[newOrderNode.getOrder().getOrderNumber()
+< FirstNode.getOrder().getOrderNumber()]
+[newOrderNode.getOrder().getOrderNumber()
+> LastNode.getOrder().getOrderNumber()]
+newOrderNode.setNextNode(FirstNode)
+FirstNode = newOrderNode
+LastNode = newOrderNode
+middleListInsert(newOrderNode) LastNode.setNextNode(newOrderNode)
+FIGURE 8-31  Activity Diagram-based Algorithm Specifi cation for the insertOrder Method
+Verifying and Validating Class and Method Design  321
+models (Chapter 5) must be consistent; all behavioral models (Chapter 6) must be consistent; 
+and the functional, structural, and behavioral models must be balanced (Chapter 7). 
+Second, all constraints, contracts, and method specifi cations must be tested. Th e best way 
+to do this is to role-play the system using the diff erent scenarios of the use cases. In this case, 
+we must enforce the invariants on the evolved CRC cards (see Figure 8-19), the pre- and postconditions on the contract forms (see Figures 8-22 and 8-25), and the design of each method 
+specifi ed with the method specifi cation forms (see Figures 8-26 and 8-29) and algorithm 
+specifi cations (see Figures 8-30, 8-31, and 8-32).
+Given the amount of verifying and validating the fi delity of all of the models that we 
+have performed on the evolving system, it might seem like overkill to perform the above 
+again. However, given the pure volume of changes that can take place during design, it is 
+crucial to thoroughly test the models again before the system is implemented. In fact, testing 
+is so important to the agile development approaches, testing forms the virtual backbone of 
+those methodologies. Without thorough testing, there is no guarantee that the system being 
+implemented will address the problem being solved. Once the system has been implementedAPPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+In this installment of the Patterson Superstore case, Ruby and her team have shift ed their 
+focus from capturing the requirements, behavior, and structure of the evolving system to 
+the design of the individual classes and method for the system. First, they had to return 
+once more to the functional, structural, and behavior models to ensure that the classes 
+defi ned in analysis (the problem domain layer) are both suffi cient and necessary. In evaluating these models, they checked for coupling, cohesion, and connascence. Th ey then 
+moved to designing the contracts and method specifi cations. 
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+Describe the basic characteristics of object orientation.
+Describe the problems that can arise when using polymorphism and inheritance.
+Describe the diff erent types of inheritance confl icts.
+Describe the diff erent types of coupling and why coupling should be minimized.
+Describe the law of Demeter.
+Describe the diff erent types of cohesion and why cohesion should be maximized.
+Describe connascence.
+Identify opportunities for reuse through the use of patterns, frameworks, class libraries, and components.
+Optimize a design.
+Map the problem domain classes to a single-inheritance language.
+Map the problem domain classes to an object-based language.
+Understand the diffi culties in implementing an object-oriented design in a traditional programming language.
+Use the OCL to defi ne precondition, postcondition, and invariant constraints.
+Create contracts to specify the interaction between client and server objects.
+Specify methods using the method specifi cation form.
+Specify the logic of a method using Structured English and activity diagrams.
+Understand how to verify and validate both the design of the classes and the design of their methods.
+KEY TERMS
+Active value
+Activity diagram
+API (application program 
+interface)
+Attribute
+Behavior
+Class
+Class cohesion
+Class library
+Client
+Cohesion
+Component
+Connascence
+Constraint
+Consumer
+Contract
+Coupling
+Derived attribute
+Design pattern
+Dynamic binding
+Encapsulation
+Event
+Event driven
+Exceptions
+Factoring
+Fan-out
+Framework
+Generalization/specialization 
+cohesion
+Heteronyms
+Homographs
+Homonyms
+Ideal class cohesion
+Information hiding
+Inheritance
+Inheritance confl ict
+Inheritance coupling
+Instance
+Interaction coupling
+Invariant
+Law of Demeter
+Message
+Method
+Method cohesion
+Method specifi cation
+Multiple inheritance
+Normalization
+Object
+Object-based language
+Object constraint language 
+(OCL)
+Operations
+Exercises  323
+EXERCISES
+A. For the A Real Estate Inc. problem in Chapters 4 (exercises I, J, and K), 5 (exercises P and Q), 6 (exercise D), 
+and 7 (exercise A):
+1. Choose one of the classes and create a set of 
+ invariants for attributes and relationships and add 
+them to the CRC card for the class.
+2. Choose one of the methods in the class that you chose 
+and create a contract and a method specifi cation for 
+it. Use OCL to specify any pre- or postcondition and 
+use both Structured English and an activity diagram to 
+specify the algorithm.
+Patterns
+Polymorphism
+Postcondition
+Precondition
+Redefi nition
+Server
+Signature
+Single inheritance
+State
+Structured English
+Supplier
+Synonyms
+Trigger
+Visibility
+QUESTIONS
+1. What are the basic characteristics of object-oriented 
+systems?
+ 2. What is dynamic binding?
+3. Defi ne polymorphism. Give one example of a good 
+use of polymorphism and one example of a bad use of 
+polymorphism.
+4. What is an inheritance confl ict? How does an inheritance confl ict aff ect the design?
+5. Why is cancellation of methods a bad thing?
+6. Give the guidelines to avoid problems with inheritance confl icts.
+7. Why is it important to know which object-oriented 
+programming language is going to be used to implement the system?
+8. What additional types of inheritance confl icts are 
+there when using multiple inheritance?
+9. What is the law of Demeter?
+10. What are the six types of interaction coupling? Give 
+one example of good interaction coupling and one 
+example of bad interaction coupling.
+11. What are the seven types of method cohesion? Give 
+one example of good method cohesion and one 
+ example of bad method cohesion.
+12. What are the four types of class cohesion? Give one 
+example of each type.
+13. What are the fi ve types of connascence described in 
+your text? Give one example of each type.
+14. When designing a specifi c class, what types of additional specifi cation for a class could be necessary?
+15. What are exceptions?
+16. What are constraints? What are the three diff erent 
+types of constraints?
+17. What are patterns, frameworks, class libraries, and 
+components? How are they used to enhance the 
+ evolving design of the system?
+18. How are factoring and normalization used in designing an object system?
+19. What are the diff erent ways to optimize an object 
+system?
+20. What is the typical downside of system optimization?
+21. What is the purpose of a contract? How are contracts 
+used?
+22. What is the Object Constraint Language? What is its 
+purpose?
+23. What is the Structured English? What is its purpose?
+24. What is an invariant? How are invariants modeled in 
+a design of a class? Give an example of an invariant for 
+an hourly employee class using the Object Constraint 
+Language.
+25. Create a contract for a compute pay method associated with an hourly employee class. Specify the 
+preconditions and postconditions using the Object 
+Constraint Language.
+26. How do you specify a method’s algorithm? Give an 
+example of an algorithm specifi cation for a compute 
+pay method associated with an hourly employee class 
+using Structured English.
+27. How do you specify a method’s algorithm? Give an 
+example of an algorithm specifi cation for a compute 
+pay method associated with an hourly employee class 
+using an activity diagram.
+ 28. How are methods specifi ed? Give an example of a 
+method specifi cation for a compute pay method associated with an hourly employee class.
+324 Chapter 8 Class and Method Design
+MINICASES
+1. Your boss has been in the soft ware development 
+fi eld for thirty years. He has always prided himself 
+on his ability to adapt his skills from one approach 
+to developing soft ware to the next approach. For 
+example, he had no problem learning structured 
+analysis and design in the early 1980s and information 
+B. For the A Video Store problem in Chapters 4 (exercises 
+L, M, N K), 5 (exercises R and S), 6 (exercise E), and 7 
+(exercise B):
+1. Choose one of the classes and create a set of invariants for attributes and relationships and add them to 
+the CRC card for the class.
+2. Choose one of the methods in the class that you 
+chose and create a contract and a method specifi cation for it. Use OCL to specify any pre- or 
+ postcondition and use both Structured English and 
+an activity diagram to specify the algorithm.
+C. For the gym membership problem in Chapters 4 
+(exercises O, P, and Q), 5 (exercises T and U), 6 
+(exercise F), and 7 (exercise C):
+1. Choose one of the classes and create a set of invariants for attributes and relationships and add them to 
+the CRC card for the class.
+ 2. Choose one of the methods in the class that you 
+chose and create a contract and a method specification for it. Use OCL to specify any pre- or 
+postcondition and use both Structured English 
+and an activity diagram to specify the algorithm.
+D. For the Picnics R Us problem in Chapters 4 (exercises R, 
+S, and T), 5 (exercises V and W), 6 (exercise G), and 7 
+(exercise D):
+1. Choose one of the classes and create a set of invariants for attributes and relationships and add them to 
+the CRC card for the class.
+2. Choose one of the methods in the class that you 
+chose and create a contract and a method specifi -
+cation for it. Use OCL to specify any pre- or postcondition and use both Structured English and an 
+activity diagram to specify the algorithm.
+E. For the Of-the-Month-Club problem in Chapters 4 
+(exercises U, V, and W), 5 (exercises X and Y), 6 
+(exercise H), and 7 (exercise E):
+1. Choose one of the classes and create a set of invariants for attributes and relationships and add them to 
+the CRC card for the class.
+2. Choose one of the methods in the class that you chose 
+and create a contract and a method specifi cation for 
+it. Use OCL to specify any pre- or postcondition and 
+use both Structured English and an activity diagram 
+to specify the algorithm.
+F. Describe the diff erence in meaning between the following two class diagrams. Which is a better model? Why?
+Name-Address
+Employee
+Person Person
+Employee
+Name-Address
+0..* 1..1
+G. From a cohesion, coupling, and connascence perspective, is the following class diagram a good model? Why 
+or why not?
+Customer
+Credit Customer Cash Customer Check Customer
+Person
+H. From a cohesion, coupling, and connascence perspective, are the following class diagrams good models? 
+Why or why not?
+Car
+Car-Person
+Person Robot
+Robot-Employee
+Employee
+I. Create a set of inheritance confl icts for the two inheritance structures in the class diagrams of exercise H.
+Minicases  325
+engineering in the early 1990s. He even understands 
+the advantage of rapid application development. But 
+the other day, when you and he were talking about 
+the advantages of object-oriented approaches, he 
+became totally confused. He thought that characteristics such as polymorphism and inheritance were 
+an advantage for object-oriented systems. However, 
+when you explained the problems with inheritance 
+confl icts, redefi nition capabilities, and the need for 
+semantic consistency across diff erent implementations of methods, he was ready to simply give up. To 
+make matters worse, you then went on to explain the 
+importance of contracts in controlling the development of the system. At this point in the conservation, 
+he basically threw in the towel. As he walked off , you 
+heard him say something like “I guess it’s true, it’s too 
+hard to teach an old dog new tricks.”
+ Being a loyal employee and friend, you decided 
+to write a short tutorial to give your boss on objectoriented systems development. As a fi rst step, create a 
+detailed outline for the tutorial. As a subtle example, 
+use good design criteria, such as coupling and cohesion, in the design of your tutorial outline.
+2. You have been working with the professional and scientifi c management (PSSM) problem for quite a while. 
+You should go back and refresh your memory about 
+the problem before attempting to solve this situation. 
+Refer back to your solutions to Minicase 3 in Chapter 7.
+ a. For each class in the structural model, using OCL, 
+create a set of invariants for attributes and relationships and add them to the CRC cards for the classes.
+ b. Choose one of the classes in the structural model. 
+Create a contract for each method in that class. Be 
+sure to use OCL to specify the preconditions and 
+the postconditions. Be as complete as possible.
+ c. Create a method specifi cation for each method 

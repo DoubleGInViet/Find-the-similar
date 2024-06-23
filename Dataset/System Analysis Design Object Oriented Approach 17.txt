@@ -1,0 +1,459 @@
+﻿potential of the new system and realize new functionality that would be useful; developers 
+might discover interesting capabilities to which they become very attached; a senior manager 
+might decide to let this system support a new strategy that was developed at a recent board 
+meeting.
+Fortunately, using an iterative and incremental development process allows the team to 
+deal with changing requirements in an eff ective way. However, the more extensive the change 
+becomes, the greater the impact on cost and schedule. Th e keys are to identify the requirements as well as possible in the beginning of the project and to apply analysis techniques 
+eff ectively. For example, if needs are fuzzy at the project’s onset, a combination of intensive 
+meetings with the users and prototyping would allow users to “experience” the requirements 
+and better visualize how the system could support their needs. 
+Of course, some requirements may be missed no matter what precautions are taken. 
+However, the project manager should allow only absolutely necessary requirements to be 
+added aft er the project begins. Even at that point, members of the project team should carefully assess the ramifi cations of the addition and present the assessment to the users. Any 
+change that is implemented should be carefully tracked so that an audit trail exists to measure 
+the change’s impact.
+Sometimes changes cannot be incorporated into the present system even though they 
+truly would be benefi cial. In this case, these additions should be recorded as future enhancements to the system. Th e project manager can off er to provide functionality in future releases 
+of the system, thus getting around telling someone “no.”
+A couple of useful agile techniques to manage the scope of the project while attempting 
+to satisfy the client are daily scrum meetings and the product backlog used with Scrum. 
+Essentially a daily scrum meeting is a very short, typically fi ft een minutes, meeting that keeps 
+the development team up to date as to the current status of the evolving system. Th e content 
+of the meeting typically only covers what has been accomplished since the previous meeting, 
+what will be accomplished before the next meeting, and what obstacles could come up that 
+could prevent progress from being made. Also, new requested features could be brought 
+up. However, all proposed additional features are simply added to the product backlog that 
+could be considered during the next iteration or timebox (sprint in Scrum’s nomenclature). 
+Th e product backlog is essentially a prioritized list of the functional requirements that will 
+be completed during the current iteration. In Scrum, only the client is allowed to modify the 
+product backlog. In this manner, the development team always has a list of the current set of 
+critical requirements. As long as the project is relatively small, this approach to scope management is very eff ective. 
+Timeboxing
+Another approach to scope management is a technique called timeboxing. Up until now, we 
+have described task-oriented projects. In other words, we have described projects that have a 
+schedule driven by the tasks that need to be accomplished, so the greater number of tasks and 
+requirements, the longer the project will take. Some companies have little patience for development projects that take a long time, and these companies take a time-oriented approach 
+that places meeting a deadline above delivering functionality.
+Th ink about the use of word processing soft ware. For 80 percent of the time, only 20 percent 
+of the features, such as the spelling checker, boldfacing, and cutting and pasting, are used. Other 
+features, such as document merging and creating mailing labels, may be nice to have, but they 
+are not a part of day-to-day needs. Th e same goes for other soft ware applications; most users 
+rely on only a small subset of their capabilities. Ironically, most developers agree that typically 
+75 percent of a system can be provided relatively quickly, with the remaining 25 percent of the 
+functionality demanding most of the time.
+68 Chapter 2 Project Management
+To resolve this incongruency, the technique of timeboxing has become quite popular, 
+especially when using RAD and agile methodologies. Th is technique sets a fi xed deadline for 
+a project and delivers the system by that deadline no matter what, even if functionality needs 
+to be reduced. Timeboxing ensures that project teams don’t get hung up on the fi nal fi nishing 
+touches that can drag out indefi nitely, and it satisfi es the business by providing a product 
+within a relatively short time frame.
+Several steps are involved in implementing timeboxing on a project. First, set the date of 
+delivery for the proposed goals. Th e deadline should not be impossible to meet, so it is best 
+to let the project team determine a realistic due date. If you recall from Chapter 1, the Scrum 
+agile methodology sets all of its timeboxes (sprint) to thirty working days. Next, build the core 
+of the system to be delivered; you will fi nd that timeboxing helps create a sense of urgency and 
+helps keep the focus on the most important features. Because the schedule is absolutely fi xed, 
+functionality that cannot be completed needs to be postponed. It helps if the team prioritizes 
+a list of features beforehand to keep track of what functionality the users absolutely need. 
+Quality cannot be compromised, regardless of other constraints, so it is important that the 
+time allocated to activities is not shortened unless the requirements are changed (e.g., don’t 
+reduce the time allocated to testing without reducing features). At the end of the time period, 
+a high-quality system is delivered, but it is likely that future iterations will be needed to make 
+changes and enhancements. In that case, the timeboxing approach can be used once again.
+Refi ning Estimates
+Th e estimates that are produced during inception need to be refi ned as the project progresses. 
+Th is does not mean that estimates were poorly done at the start of the project; rather, it is 
+virtually impossible to develop an exact assessment of the project’s schedule at the beginning 
+of the development process. A project manager should expect to be satisfi ed with broad 
+ranges of estimates that become more and more specifi c as the project’s product becomes 
+better defi ned.
+During planning, when a system is fi rst requested, the project sponsor and project 
+manager attempt to predict how long the development process will take, how much it will 
+cost, and what it will ultimately do when it is delivered (i.e., its functionality). However, the 
+estimates are based on very little knowledge of the system. As the system moves into the 
+elaboration, more information is gathered, the system concept is developed, and the estimates 
+become even more accurate and precise. As the system moves closer to completion, the accuracy and precision increase, until it is delivered.
+According to one of the leading experts in soft ware development,9 a well-done project 
+plan (prepared at the end of inception) has a 100 percent margin of error for project cost and 
+a 25 percent margin of error for schedule time. In other words, if a carefully done project plan 
+estimates that a project will cost $100,000 and take twenty weeks, the project will actually cost 
+between $0 and $200,000 and take between fi ft een and twenty-fi ve weeks.
+What happens if you overshoot an estimate (e.g., analysis ends up lasting two weeks 
+longer than expected)? Th ere are a number of ways to adjust future estimates. If the project 
+team fi nishes a step ahead of schedule, most project managers shift the deadlines sooner by 
+the same amount but do not adjust the promised completion date. Th e challenge, however, 
+occurs when the project team is late in meeting a scheduled date. Th ree possible responses to 
+missed schedule dates are presented in Figure 2-19. If, early in the project, an estimate proves 
+to be too optimistic, planners should not expect to make up for lost time—very few projects 
+9 Barry W. Boehm et al., “Cost Models for Future Soft ware Life Cycle Processes: COCOMO 2.0,” in J. D. Arthur and 
+S. M. Henry (eds.), Annals of Soft ware Engineering: Special Volume on Soft ware Process and Product Measurement 
+(Amsterdam: J. C. Baltzer AG Science Publishers, 1995).
+Creating and Managing the Workplan  69
+end up doing this. Instead, they should change future estimates to include an increase similar 
+to the one that was experienced. For example, if the fi rst phase was completed 10 percent over 
+schedule, planners should increase the rest of their estimates by 10 percent.
+Managing Risk
+One fi nal facet of project management is risk management, the process of assessing and 
+addressing the risks that are associated with developing a project. Many things can cause 
+risks: weak personnel, scope creep, poor design, and overly optimistic estimates. Th e project 
+team must be aware of potential risks so that problems can be avoided or controlled well 
+ahead of time.
+Typically, project teams create a risk assessment, or a document that tracks potential risks 
+along with an evaluation of the likelihood of each risk and its potential impact on the project 
+(Figure 2-20). A paragraph or two is also included to explain potential ways that the risk can 
+be addressed. Th ere are many options: Th e risk could be publicized, avoided, or even eliminated by dealing with its root cause. For example, imagine that a project team plans to use 
+new technology but its members have identifi ed a risk in the fact that its members do not have 
+the right technical skills. Th ey believe that tasks may take much longer to perform because of 
+a high learning curve. One plan of attack could be to eliminate the root cause of the risk—the 
+lack of technical experience by team members—by fi nding the time and resources needed to 
+provide proper training to the team.
+Most project managers keep abreast of potential risks, even prioritizing them according 
+to their magnitude and importance. Over time, the list of risks will change as some items are 
+removed and others surface. Th e best project managers, however, work hard to keep risks 
+from having an impact on the schedule and costs associated with the project.
+If you assume the rest of the project is Do not change schedule. High risk
+simpler than the part that was late 
+and is also simpler than believed 
+when the original schedule estimates 
+were made, you can make up lost time.
+If you assume the rest of the project is Increase the entire schedule by the Moderate risk
+simpler than the part that was late total amount of time that you are 
+and is no more complex than the behind (e.g., if you missed the 
+original estimate assumed, you can’t scheduled date by two weeks, move 
+make up the lost time, but you will the rest of the schedule dates to two 
+not lose time on the rest of the weeks later). If you included padded
+project. time at the end of the project in the 
+original schedule, you might not have 
+to change the promised system 
+delivery date; you’ll just use up the 
+ padded time.
+If you assume that the rest of the Increase the entire schedule by the Low risk
+project is as complex as the part percentage of weeks that you are
+that was late (your original estimates behind (e.g., if you are two weeks 
+were too optimistic), then all the late on part of the project that was 
+scheduled dates in the future supposed to take eight weeks, you 
+underestimate the real time required need to increase all remaining 
+by the same percentage as the part time estimates by 25 percent). If 
+that was late. this moves the new delivery date 
+beyond what is acceptable to the 
+project sponsor, the scope of the 
+project must be reduced.
+Assumptions Actions Level of Risk
+FIGURE 2-19
+Possible Actions 
+When a Schedule 
+Date Is Missed
+70 Chapter 2 Project Management
+STAFFING THE PROJECT
+Staffi ng the project includes determining how many people should be assigned to the project, 
+matching people’s skills with the needs of the project, motivating them to meet the project’s 
+objectives, and minimizing the confl ict that will occur over time. Th e deliverables for this part 
+of project management are a staffi ng plan, which describes the number and kinds of people 
+who will work on the project, the overall reporting structure, and the project charter, which 
+describes the project’s objectives and rules. However, before describing the development of a 
+staffi ng plan, how to motivate people, and how to handle confl ict, we describe a set of characteristics of jelled teams.
+Characteristics of a Jelled Team10
+Th e idea of a jelled team has existed for a long time. Most (if not all) student groups are not
+representative of the idea of a jelled team, and you may have never had the opportunity to 
+appreciate the eff ectiveness of a true team. In fact, DeMarco and Lister point out that teams 
+are not created; they are grown. Typically, in class projects, students are assigned or asked to 
+form a group, which makes the ability to grow a team very limited. However, growing development teams is crucial in information systems development. Th e whole set of agile soft ware 
+development approaches hinges on growing jelled teams. Otherwise, agile development 
+approaches would totally fail.
+According to DeMarco and Lister,11 “[a] jelled team is a group of people so strongly knit 
+that the whole is greater than the sum of the parts. Th e production of such a team is greater 
+than that of the same people working in unjelled form.” Th ey go on to state that a jelled “team 
+can become almost unstoppable, a juggernaut for success.” When is the last time that you 
+worked with a group on a class project that could be described “a juggernaut for success”? 
+Demarco and Lister identify fi ve characteristics of a jelled team.
+10 Th e material in the section is based on T. DeMarco and T. Lister, Peopleware: Productive Projects and Teams, 
+2nd Ed. (New York: Dorset House, 1999); P. Lencioni, Th e Five Dysfunctions of a Team: A Leadership Fable (San 
+Francisco: Jossey-Bass, 2002).
+11 T. DeMarco and T. Lister, Peopleware: Productive Projects and Teams, 2nd Ed., p. 123.
+Risk Assessment
+RISK 1: The development of this system likely will be slowed 
+considerably because project team members have not 
+programmed in Java prior to this project.
+Likelihood of risk: High probability of risk.
+Potential impact on the project: This risk will probably increase the time to complete 
+programming tasks by 50 percent.
+Ways to address this risk:
+It is very important that time and resources are allocated to up-front training in Java for the 
+programmers who are used for this project. Adequate training will reduce the initial learning curve 
+for Java when programming begins. Additionally, outside Java expertise should be brought in for at 
+least some part of the early programming tasks. This person should be used to provide experiential 
+knowledge to the project team so that Java-related issues (of which novice Java programmers would 
+be unaware) are overcome.
+RISK 2: …
+FIGURE 2-20
+Sample Risk 
+Assessment
+Staffi ng the Project  71
+First, jelled teams have a very low turnover during a project. Typically, members of 
+a jelled team feel a responsibility to the other team members. Th is responsibility is felt so 
+intensely that for a member to leave the team, the member would feel that they were letting 
+the team down and that they were breaking a bond of trust. 
+Second, jelled teams have a strong sense of identity. In many classes, when you are part of 
+a group, the group chooses some cute name to identify the group and diff erentiate it from the 
+other groups. However, in this case, it is not simply the choosing of a name. It is instead evolving every member into something that only exists within the team. Th is can be seen when 
+members of the team tend to do non–work-related activities together, e.g., do lunch together 
+as a team or form a basketball team composed of only members of the development team.
+Th ird, the strong sense of identity tends to lead the team into feeling a sense of eliteness. 
+Th e members of a jelled development team almost have a swagger about the way they relate 
+to nonteam employees. Good examples that come to mind that possess this sense of eliteness 
+outside of the scope of information systems development teams are certain sports teams, 
+U.S. Navy Seal teams, or big city police force SWAT teams. In all three examples, each team 
+member is highly competent in his or her specialty area, and each other team member knows 
+(not thinks) that he or she can depend on the team members performing his or her individual 
+jobs with a very high-level of skill.
+Fourth, during the development process, jelled teams feel that the team owns the information system being developed and not any one individual member. In many ways, you could 
+almost say that jelled teams are a little communistic in nature. By this we mean that the individual contributions to the eff ort are not important to a true team. Th e only things that matter are 
+the output of the team. However, this is not to imply that a member who does not deliver his or 
+her fair share will not go unpunished. In a jelled team, any member who is not producing is actually breaking his or her bond of trust with the other team members (see the fi rst characteristic).
+Th e fi nal characteristic of a jelled team is that team members really enjoy (have fun) 
+doing their work. Th e members actually like to go to work and be with their team members. 
+Much of this can be attributed to the level of challenge they receive. If the project is challenging and the members of the team are going to learn something from completing the project, 
+the members of a jelled team will enjoy tackling the project.
+When a team jells, they will avoid the fi ve dysfunctions of a team defi ned by Lencioni. 
+Lack of trust is the primary cause of a team becoming dysfunctional. Lencioni describes four 
+other causes of a team becoming dysfunctional that can come from the lack of trust. First, 
+dysfunctional teams fear confl ict, whereas members of a jelled team never fear confl ict.12
+Going to a member of a jelled team and admitting that you do not know how to do something 
+is no big deal. In fact, it provides a method for the team member to help out, which would 
+increase the level of trust between the two members. Second, dysfunctional teams do not have 
+a commitment to the team from the individual members. Instead, they tend to focus on their 
+individual performance instead of the team’s performance. Th is can even be to the detriment 
+of the development team. Obviously, this is not an issue for jelled teams. Th ird, dysfunctional 
+teams try to avoid accountability. With jelled teams, accountability is not an issue. Members 
+of a jelled team feel a high level of responsibility to the other team members. No team member ever wants to let down the team. Furthermore, owing to the bond that holds jelled teams 
+together, no member has any problem with holding other members accountable for their performance (or lack of performance). Fourth, dysfunctional teams do not pay attention to the 
+team’s results. Again, in this case, the cause of this dysfunction is that the individual members 
+only focus on their individual goals. From a team management perspective, the team leader 
+should focus on getting the goals of the team aligned; a jelled team will attain the goals.
+12 When confl ict occurs, it is necessary to address it in an eff ective manner. We discuss how to handle confl ict later 
+in the chapter.
+72 Chapter 2 Project Management
+Staffi ng Plan
+Th e fi rst step to staffi ng is determining the average number of staff needed for the project. 
+To calculate this fi gure, divide the total person-months of eff ort by the optimal schedule. 
+So to complete a forty-person-month project in ten months, a team should have an average 
+of four full-time staff members, although this may change over time as diff erent specialists 
+enter and leave the team (e.g., business analysts, programmers, technical writers).
+Many times, the temptation is to assign more staff to a project to shorten the project’s 
+length, but this is not a wise move. Adding staff resources does not translate into increased 
+productivity; staff size and productivity share a disproportionate relationship, mainly because 
+it is more diffi cult to coordinate a large number of staff members. Th e more a team grows, 
+the more diffi cult it becomes to manage. Imagine how easy it is to work on a two-person 
+project team: Th e team members share a single line of communication. But adding two people increases the number of communication lines to six, and greater increases lead to more 
+dramatic gains in communication complexity. Figure 2-21 illustrates the impact of adding 
+team members to a project team.
+One way to reduce effi ciency losses on teams is to understand the complexity that is created in numbers and to build in a reporting structure that tempers its eff ects. Th e general rule 
+Two-person team Four-person team
+Six-person team Eight-person team
+FIGURE 2-21
+Increasing Complexity with Larger 
+Teams
+Staffi ng the Project  73
+is to keep team sizes to fewer than eight to ten people; therefore, if more people are needed, 
+create sub-teams. In this way, the project manager can keep the communication eff ective 
+within small teams, which, in turn, communicate to a contact at a higher level in the project.
+Aft er the project manager understands how many people are needed for the project, 
+he or she creates a staffi ng plan that lists the roles and the proposed reporting structure that 
+are required for the project. Typically, a project has one project manager who oversees the 
+overall progress of the development eff ort, with the core of the team comprising the various 
+types of analysts described in Chapter 1. A functional lead is usually assigned to manage 
+a group of analysts, and a technical lead oversees the progress of a group of programmers and 
+more technical staff members.
+Th ere are many structures for project teams; Figure 2-22 illustrates one possible confi guration of a project team. Aft er the roles are defi ned and the structure is in place, the project 
+manager needs to think about which people can fi ll each role. Oft en, one person fi lls more 
+than one role on a project team.
+When you make assignments, remember that people have technical skills and interpersonal skills, and both are important on a project. Technical skills are useful when working 
+with technical tasks (e.g., programming in Java) and in trying to understand the various 
+roles that technology plays in the particular project (e.g., how a Web server should be confi gured on the basis of a projected number of hits from customers). Interpersonal skills, 
+on the other hand, include interpersonal and communication abilities that are used when 
+dealing with business users, senior management executives, and other members of the 
+project team. Th ey are particularly critical when performing the requirements- gathering 
+activities and when addressing organizational feasibility issues. Each project requires 
+unique technical and interpersonal skills. 
+Ideally, project roles are fi lled with people who have the right skills for the job. However, 
+the people who fi t the roles best might not be available; they may be working on other projects, 
+or they might not exist in the company. Th erefore, assigning project team members really is 
+a combination of fi nding people with the appropriate skill sets and fi nding people who are 
+available. When the skills of the available project team members do not match what is actually 
+required by the project, the project manager has several options to improve the situation. First, 
+people can be pulled off other projects, and resources can be shuffl ed around. Th is is the most 
+disruptive approach from the organization’s perspective. Another approach is to use outside 
+help—such as a consultant or contractor—to train team members and start them off on the 
+right foot. Mentoring may also be an option; a project team member can be sent to work on 
+another similar project so that he or she can return with skills to apply to the current job.
+Functional
+lead
+Project 
+manager
+Analyst Analyst Analyst Programmer Programmer
+Technical
+lead
+FIGURE 2-22
+Possible Reporting 
+Structure
+74 Chapter 2 Project Management
+Motivation
+Assigning people to tasks isn’t enough; project managers need to motivate the people to 
+ensure a project’s success. Motivation has been found to be the number one infl uence on 
+people’s performance,13 but determining how to motivate the team can be quite diffi cult. You 
+might think that good project managers motivate their staff by rewarding them with money 
+and bonuses, but most project managers agree that this is the last thing that should be done. 
+Th e more oft en managers reward team members with money, the more they expect it—and 
+most times monetary motivation won’t work. Pink14 has suggested a set of principles to follow 
+to motivate individuals in twenty-fi rst century fi rms. In this section, we adapt his suggestions 
+to information systems development teams.
+Pink suggests considering using some form of the 20 percent time rule to motivate 
+individuals. Th is rule suggests that 20 percent of an employee’s time should be spent on 
+some idea in which he or she believes. Th e project does not have to be related to the project 
+at hand. On the surface, this sounds like a colossal waste of time, but this idea should not be 
+discarded. Google’s Gmail and Google News were developed using the 20 percent time rule. 
+If 20 percent sounds too high, Pink suggests that you consider 10 percent to begin with.
+He recommends that fi rms should be willing to fund small “Now Th at” awards. Th ese awards 
+are given as small signs of appreciation for doing a great job. However, these awards are not given 
+by a manager to an employee but from an employee to a peer of the employee. Th e awards are 
+monetary, but they are very small, typically $50. As such, they really are not relevant from a monetary perspective. However, they are very relevant because they are given by one of the employee’s 
+colleagues to show that some action that the employee did was appreciated.
+Pink endorses the idea of applying Robert Reich’s (President’s Clinton’s Secretary of 
+Labor) pronoun test. If an employee (or team member) refers to the fi rm (the team) as “they,” 
+then there is the real possibility that the employee feels disengaged or possibly alienated. On 
+the other hand, when employees refer to the fi rm as “we,” they obviously feel like they are 
+part of the organization. From a team perspective, this could be an indication that the team 
+has begun to jell.
+Pink suggests that management should periodically consider giving each employee a day 
+on which he or she can work on anything he or she wants. In some ways, this is related to 
+the 20 percent rule. It does not necessarily require one day a week (20 percent), but it does 
+require some deliverable. Th e deliverable can be a new utility program that could be used by 
+lots of diff erent projects, it could be a new prototype of a new soft ware product, or it could 
+be an improvement for a business process that is used internally. Th e goal is to provide team 
+members with the ability to focus on interesting and challenging problems that might (or 
+might not) provide results to the fi rm’s bottom line. Regardless, it demonstrates an amount 
+of trust and respect that the fi rm has for its employees.
+He recommends that managers remove the issue of compensation from the motivation 
+equation. By this, he means that all employees should be paid a suffi cient amount so that compensation awards are not an issue. Technical employees on project teams are much more motivated by recognition, achievement, the work itself, responsibility, advancement, and the chance 
+to learn new skills.15 Simplistic fi nancial awards, such as raises that are perceived as being unjust, 
+can actually demotivate the overall team and lower overall performance.
+13 Barry W. Boehm, Soft ware Engineering Economics (Englewood Cliff s, NJ: Prentice Hall, 1981). One of the best 
+books on managing project teams is that by Tom DeMarco and Timothy Lister, Peopleware: Productive Projects and 
+Teams (New York: Dorset House, 1987).
+14 D. H. Pink, Drive: Th e Surprising Truth About What Motivates Us (New York, NY: Riverhead Books, 2009).
+15 F. H. Hertzberg, “One More Time: How Do You Motivate Employees?” Harvard Business Review (January–
+February 1968).
+Staffi ng the Project  75
+He advocates that twenty-fi rst century bosses (team leaders) need to be willing to give up 
+control. Many of the agile development approaches make similar suggestions. Appelo16 suggests 
+that an open door policy that is supported by a team leader actually can be self-defeating. In the 
+case of soft ware development teams, an open door policy implies that the team leader has a door 
+that can be left open, whereas the poor individual team member does not have an offi ce with a 
+door. In this case, Appelo suggests that the team leader move from the offi ce with a door to the 
+same shared space in which the team resides. One of Pink’s other ideas is for the team leader to 
+not use controlling language such as telling the team member that he or she “must” do something. Instead, the team leader should ask the team member to “consider” or “think about” the 
+idea. In some ways, a true team leader should never receive credit for any ideas associated with 
+the team. Instead, a team leader should make suggestions and encourage the team members 
+to consider ideas and, most importantly, let the team member and the team receive the credit.
+Pink provides evidence that intrinsic motivation is very important for twenty-fi rst century 
+knowledge workers. Pink suggests that intrinsically motivating individuals requires providing 
+them with a degree of autonomy, supporting them in such a way that they can master their area 
+of expertise, and encouraging them to pursue projects with a purpose. Providing team members 
+with autonomy relates to the jelled team concept of trust. Team leaders need to trust the team 
+members to deliver the soft ware for which they are responsible. Supporting team members so that 
+they can master their area of expertise can be as simple as providing support to attend conferences, seminars, and training sessions that deal with the member’s area of expertise. It also could 
+imply providing the team member with a high-end development environment. For example, 
+when building information visualization and virtual reality applications, special hardware and 
+soft ware environments can make it much easier to master the technology to develop the application. Finally, today it is very important for team members to feel that what they are doing can 
+make a diff erence. A team leader should encourage the team members to tackle problems that 
+can impact people’s lives. Th is can easily be accomplished through the use of the 20 percent rule.
+Handling Confl ict
+Th e third component of staffi ng is organizing the project to minimize confl ict among group 
+members. Group cohesiveness (the attraction that members feel to the group and to other 
+members) contributes more to productivity than do project members’ individual capabilities or experiences.17 Clearly defi ning the roles on the project and holding team members 
+accountable for their tasks are a good way to begin mitigating potential confl ict on a project. 
+Some project managers develop a project charter, which lists the project’s norms and ground 
+rules. For example, the charter may describe when the project team should be at work, when 
+staff meetings will be held, how the group will communicate with each other, and what are 
+the procedures for updating the workplan as tasks are completed. Figure 2-23 lists additional 
+techniques that can be used at the start of a project to keep confl ict to a minimum.
+ENVIRONMENT AND INFRASTRUCTURE MANAGEMENT
+Th e environment and infrastructure management workfl ows support the development 
+team throughout the development process. Th e environment workfl ow primarily deals with 
+choosing the correct set of tools that will be used throughout the development process and 
+16 J. Appelo, Management 3.0: Leading Agile Developers, Developing Agile Leaders (Upper Saddle River, NJ: 
+ Addison-Wesley, 2011).
+17 B. Lakhanpal, “Understanding the Factors Infl uencing the Performance of Soft ware Development Groups: An 
+Exploratory Group-Level Analysis,” Information and Soft ware Technology 35, no. 8 (1993): 468–473.
+76 Chapter 2 Project Management
+identifying the appropriate set of standards to be followed during the development process. 
+Infrastructure management workfl ow deals with choosing the appropriate level and type of 
+documentation that will be created during the development process. Other activities associated with the infrastructure management workfl ow include developing, modifying, and 
+reusing predefi ned components, frameworks, libraries, and patterns. Th e topic of reuse is 
+discussed in later chapters (see Chapters 5 and 8).
+CASE Tools
+Computer-aided soft ware engineering (CASE) is a category of soft ware that automates all or 
+part of the development process. Some CASE soft ware packages are used primarily to support 
+the analysis workfl ow to create integrated diagrams of the system and to store information 
+regarding the system components, whereas others support the design workfl ow that can be 
+used to generate code for database tables and system functionality. Other CASE tools contain 
+functionality that supports tasks throughout the system-development process. CASE comes 
+in a wide assortment of fl avors in terms of complexity and functionality, and many good 
+tools are available in the marketplace to support object-oriented systems development (e.g., 
+ArgoUml, Enterprise Architect, Poseidon, Visual Paradigm, and IBM’s Rational Rose).
+Th e benefi ts of using CASE are numerous. With CASE tools, tasks can be completed 
+and altered faster, development documentation is centralized, and information is illustrated 
+through diagrams, which are typically easier to understand. Potentially, CASE can reduce 
+maintenance costs, improve soft ware quality, and enforce discipline. Some project teams 
+even use CASE to assess the magnitude of changes to the project. Many modern CASE tools 
+that support object-oriented systems development support a development technique known 
+as round-trip engineering. Round-trip engineering supports not only code generation but also 
+the reverse engineering of UML diagrams from code. In this way, the system can evolve via 
+diagrams and via code in a round-trip manner.
+Of course, like anything else, CASE should not be considered a silver bullet for project 
+development. Th e advanced CASE tools are complex applications that require signifi cant 
+training and experience to achieve real benefi ts. Our experience has shown that CASE is a 
+helpful way to support the communication and sharing of project diagrams and technical 
+specifi cations as long as it is used by trained developers who have applied CASE on past projects. All CASE tools use a CASE repository to store diagrams, models, and I/O designs and to 
+ensure consistency across iterations.
+Standards
+Project team members need to work together, and most project management soft ware and 
+CASE tools support them by providing access privileges to everyone working on the system. 
+However, without set procedures, collaboration can result in confusion. To make matters worse, 
+• Clearly defi ne plans for the project.
+• Make sure that the team understands how the project is important to the organization.
+• Develop detailed operating procedures and communicate these to the team members.
+• Develop a project charter.
+• Develop schedule commitments ahead of time.
+• Forecast other priorities and their possible impact on the project.
+Source: H. J. Thamhain and D. L. Wilemon, “Confl ict Management in Project Life Cycles,” Sloan Management Review (Spring 1975).
+FIGURE 2-23
+Confl ict-Avoidance 
+Strategies
+Environment and Infrastructure Management  77
+people sometimes are reassigned in the middle of a project. It is important that their project 
+knowledge does not leave with them and that their replacements can get up to speed quickly.
+One way to make certain that everyone is performing tasks in the same way and following 
+the same procedures is to create standards that the project team must follow. Standards can 
+include formal rules for naming fi les, forms that must be completed when goals are reached, 
+and programming guidelines. Figure 2-24 shows some examples of the types of standards that 
+a project can create. When a team forms standards and then follows them, the project can be 
+completed faster because task coordination becomes less complex.
+Standards work best when they are created at the beginning of each major phase of the 
+project and communicated clearly to the entire project team. As the team moves forward, new 
+standards are added when necessary. Some standards (e.g., fi le naming conventions, status 
+reporting) are applied during the entire development process, whereas others (e.g., programming guidelines) are appropriate only for certain tasks.
+Documentation
+Finally, during the inception phase of the infrastructure workfl ow, project teams establish 
+good documentation standards that include detailed information about the tasks of the Unifi ed 
+Process. Typically, the standards for the required documentation are set by the development 
+organization. Th e development team only needs to ascertain which documentation standards 
+are appropriate for the current systems development project. Oft en, the documentation is 
+stored in a project binder(s) that contains all the deliverables and all the internal communication 
+FIGURE 2-24
+A Sampling of 
+ Project Standards
+Documentation standards The date and project name should appear as a header on 
+ all documentation.

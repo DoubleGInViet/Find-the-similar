@@ -1,0 +1,687 @@
+﻿Name If a method refers to an attribute, it is tied to the name of the attribute. If the 
+attribute’s name changes, the content of the method will have to change.
+Type or Class If a class has an attribute of type A, it is tied to the type of the attribute. 
+If the type of the attribute changes, the attribute declaration will have to 
+change.
+Convention A class has an attribute in which a range of values has a semantic meaning 
+(e.g., account numbers whose values range from 1000 to 1999 are assets). 
+If the range would change, then every method that used the attribute would 
+have to be modifi ed.
+Algorithm Two different methods of a class are dependent on the same algorithm to 
+execute correctly (e.g., insert an element into an array and fi nd an element 
+in the same array). If the underlying algorithm would change, then the insert 
+and fi nd methods would also have to change.
+Position The order of the code in a method or the order of the arguments to a 
+method is critical for the method to execute correctly. If either is wrong, 
+then the method will, at least, not function correctly.
+Based upon material from Meilir Page-Jones, “Comparing Techniques by Means of Encapsulation 
+and Connascence” and Meilir Page-Jones, Fundamentals of Object-Oriented Design in UML. FIGURE 8-12
+Types of Connascence
+Type Description
+OBJECT DESIGN ACTIVITIES
+Th e design activities for classes and methods are really an extension of the analysis and evolution activities presented previously (see Chapters 4 through 7). In this case, we expand the 
+descriptions of the partitions, layers, and classes. Practically speaking, the expanded descriptions are created through the activities that take place during the detailed design of the classes 
+and methods. Th e activities used to design classes and methods include additional specifi cation of the current model, identifying opportunities for reuse, restructuring the design, optimizing the design, and, fi nally, mapping the problem-domain classes to an implementation 
+language. Of course, any changes made to a class on one layer can cause the classes on the 
+other layers that are coupled to it to be modifi ed as well. 
+Adding Specifi cations
+At this point in the development of the system, it is crucial to review the current set of 
+functional, structural, and behavioral models. First, we should ensure that the classes on the 
+problem-domain layer are both necessary and suffi cient to solve the underlying problem. 
+To do this, we need to be sure that there are no missing attributes or methods and no extra 
+or unused attributes or methods in each class. Furthermore, are there any missing or extra 
+classes? If we have done our job well during analysis, there will be few, if any, attributes, 
+methods, or classes to add to the models. And it is unlikely that we have any extra attributes, 
+methods, or classes to delete from the models. However, we still need to ensure that we have 
+factored, abstracted, and refi ned the evolving models and created the relevant partitions and 
+collaborations (see Chapter 7). 
+Second, we need to fi nalize the visibility (hidden or visible) of the attributes and methods 
+in each class. Depending on the object-oriented programming language used, this could be 
+predetermined. [For example, in Smalltalk, attributes are hidden and methods are visible. 
+Other languages allow the programmer to set the visibility of each attribute or method. For 
+example, in C11 and Java, you can set the visibility to private (hidden), public (visible), or 
+294 Chapter 8 Class and Method Design
+protected (visible to subclasses, but not to other classes).]22 By default, most object-oriented 
+analysis and design approaches assume Smalltalk’s approach.
+Th ird, we need to decide on the signature of every method in every class. Th e signature
+of a method comprises three parts: the name of the method, the parameters or arguments 
+that must be passed to the method, including their object type, and the type of value that the 
+method will return to the calling method. Th e signature of a method is related to the method’s 
+contract.23
+Fourth, we need to defi ne any constraints that must be preserved by the objects (e.g., an 
+attribute of an object that can have values only in a certain range). Th ere are three diff erent 
+types of constraints: preconditions, postconditions, and invariants.24 Th ese are captured in 
+the form of contracts and assertions added to the CRC cards and class diagrams. We also 
+must decide how to handle a violation of a constraint. Should the system simply abort? Should 
+the system automatically undo the change that caused the violation? Should the system let the 
+end user determine the approach to correct the violation? In other words, the designer must 
+design the errors that the system is expected to handle. It is best not to leave these types of 
+design decisions for the programmer to solve. Violations of a constraint are known as exceptions in languages such as C11 and Java.
+Even though we have described these activities in the context of the problem-domain 
+layer, they are also applicable to the other layers: data management (Chapter 9), human– 
+computer interaction (Chapter 10), and physical architecture (Chapter 11).
+Identifying Opportunities for Reuse
+Previously, we looked at possibly employing reuse in our models in analysis through the use 
+of patterns (see Chapter 5). In design, in addition to using analysis patterns, there are opportunities for using design patterns, frameworks, libraries, and components. Th e opportunities 
+vary depending on which layer is being reviewed. For example, it is doubtful that a class 
+library will be of much help on the problem-domain layer, but a class library could be of great 
+help on the foundation layer. 
+Like analysis patterns, design patterns are simply useful grouping of collaborating classes 
+that provide a solution to a commonly occurring problem. Th e primary diff erence between 
+analysis and design patterns is that design patterns are useful in solving “a general design 
+problem in a particular context,”25 whereas analysis patterns tended to aid in fi lling out a 
+ problem-domain representation. For example, a useful design pattern is the Whole-Part pattern (see Figure 8-13a). Th e Whole-Part pattern explicitly supports the Aggregation and Composition relationships within the UML. Another useful design pattern is the Iterator pattern 
+(see Figure 8-13b). Th e primary purpose of the Iterator pattern is to provide the designer with 
+a standard approach to support traversing diff erent types of collections. By using this pattern, 
+regardless of the collection type (ConcreteAggregate), the designer knows that the collection 
+will need to create an iterator (ConcreteIterator) that customizes the standard operations used 
+to traverse the collection: fi rst(), next(), isDone(), and currentItem(). Given the number of collections typically found in business applications, this pattern is one of the more useful ones. For 
+example in Figure 8-14a, we replicate a portion of both the Appointment and Library problems 
+discussed in previous chapters, and in Figure 8-14b we show how the Iterator pattern can be 
+22 It is also possible to control visibility through packages and friends (see Footnote 21).
+23 Contracts were introduced in Chapter 5, and they are described in detail later in this chapter.
+24 Constraints are described in more detail later in this chapter.
+25 Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, Design Patterns: Elements of Reusable ObjectOriented Soft ware (Reading, MA: Addison-Wesley, 1995).
+Object Design Activities  295
+(a)
+(b)
+(c)
+calls service
+combines
+Client Whole
+Part1
++serviceA1() 
++serviceA2()
++serviceN1() 
++serviceN2()
+PartN +doTask() +service1() 
++service2()
+sendMsg
+receiveMsg
+receiveMsg
+Receiver
+Peer1
++service()
++receive() 
++unmarshal()
++receiveMsg()
+Receiver Forwarder
+InterProcessCommunication
+InterProcessCommunication
+sendMsg
++marshal() 
++deliver()
++sendMsg()
++receive() 
++unmarshal()
++receiveMsg()
+Forwarder
++marshal() 
++deliver()
++sendMsg()
+Peer2
++service() 1
+1
+1
+1
+<<interface>>
+Aggregate
++first() : Object +createlterator(): <unspecified>
++next() : Object
++isDone() : <unspecified>
++currentltem() : Object
+<<interface>>
+lterator
+ Concretelterator ConcreteAggregate
+Iterator createlterator()
+{ return new Concretelterator(this); }
+Client
+FIGURE 8-13  Sample Design Patterns
+Source: Based upon material from F. Buschmann, R. Meunier, H. Rohnert, P. Sommerlad, and M. Stal, Pattern-Oriented Software Architecture: A System of 
+Patterns (Chichester, UK: Wiley, 1996); E. Gamma, R. Helm, R. Johnson, and J. Vlissides, Design Patterns: Elements of Reusable Object-Oriented Software
+(Reading, MA: Addison-Wesley, 1995).
+296 Chapter 8 Class and Method Design
+Check Out Trans Transaction Line Item
+Transaction Line Item
+1..1 1..*
+1..*
+Patient
+-amount
+-insurance carrier
++make appointment()
++calculate last visit()
++change status()
++provides medical history()
+0..*
+1..1 0..*
+1..1
+1..1
+Appointment
+-time
+-date
+-reason
++cancel without notice()
+has
++ primary
+ insurance
+ carrier
+schedules
+(a)
+(b)
+Transaction Line Item 1..* 1..1
+1..* 1..1
+Appointment
+-time
+-date
+-reason
++cancel without notice()
+<<interface>>
+Aggregate
++createlterator() : Iterator
+<<interface>>
+Iterator
++first() : Object
++next() : Object
++isDone() : boolean
++currentItem() : Object
+Transaction Line Item
+<<interface>>
+Iterator
++first() : Object
++next() : Object
++isDone() : boolean
++currentItem() : Object
+Client
+Client
+<<interface>>
+Aggregate
++createlterator() : Iterator
+Check Out Trans
+FIGURE 8-14  Iterator Design Pattern Applied to Library and Appointment Problems
+Object Design Activities  297
+applied to those sections of their evolving designs. Finally, some of the design patterns support 
+diff erent physical architectures (see Chapter 11). For example, the Forwarder-Receiver pattern 
+(see Figure 8-13c) supports a peer-to-peer architecture. Many design patterns are available in 
+C11 or Java source code.
+A framework is composed of a set of implemented classes that can be used as a basis for 
+implementing an application. Most frameworks allow us to create subclasses to inherit from 
+classes in the framework. Th ere are object-persistence frameworks that can be purchased and 
+used to add persistence to the problem-domain classes, which would be helpful on the data 
+management layer. Of course, when inheriting from classes in a framework, we are creating 
+a dependency (i.e., increasing the inheritance coupling from the subclass to the superclass). 
+Th erefore, if we use a framework and the vendor makes changes to the framework, we will 
+have to at least recompile the system when we upgrade to the new version of the framework.
+A class library is similar to a framework in that it typically has a set of implemented 
+classes that were designed for reuse. However, frameworks tend to be more domain specifi c. In fact, frameworks may be built using a class library. A typical class library could be 
+purchased to support numerical or statistical processing, fi le management (data management layer), or user interface development (human–computer interaction layer). In some 
+cases, instances of classes contained in the class library can be created, and in other cases, 
+classes in the class library can be extended by creating subclasses based on them. As with 
+frameworks, if we use inheritance to reuse the classes in the class library, we will run into 
+all the issues dealing with inheritance coupling and connascence. If we directly instantiate 
+classes in the class library, we will create a dependency between our object and the library 
+object based on the signatures of the methods in the library object. Th is increases the 
+interaction coupling between the class library object and our object.
+A component is a self-contained, encapsulated piece of soft ware that can be plugged 
+into a system to provide a specifi c set of required functionalities. Today, there are many 
+components available for purchase. A component has a well-defi ned API (application program interface). An API is essentially a set of method interfaces to the objects contained in 
+the component. Th e internal workings of the component are hidden behind the API. Components can be implemented using class libraries and frameworks. However, components 
+also can be used to implement frameworks. Unless the API changes between versions of 
+the component, upgrading to a new version normally requires only linking the component 
+back into the application. As such, recompilation typically is not required.
+Which of these approaches should we use? It depends on what we are trying to build. 
+In general, frameworks are used mostly to aid in developing objects on the physical architecture, human–computer interaction, or data management layers; components are used 
+primarily to simplify the development of objects on the problem-domain and human–
+computer interaction layers; and class libraries are used to develop frameworks and components and to support the foundation layer. Whichever of these reuse approaches you 
+use, you must remember that reuse brings many potential benefi ts and possible problems. 
+For example, the soft ware has previously been verifi ed and validated, which should reduce 
+the amount of testing required for our system. However as stated before, if the soft ware on 
+which we are basing our system changes, then most likely, we will also have to change our 
+system. Furthermore, if the soft ware is from a third-party fi rm, we are creating a dependency from our fi rm (or our client’s fi rm) to the third-party vendor. Consequently, we need 
+to have some confi dence that the vendor will be in business for a while.
+Restructuring the Design
+Once the individual classes and methods have been specifi ed and the class libraries, frameworks, and components have been incorporated into the evolving design, we should use 
+298 Chapter 8 Class and Method Design
+factoring to restructure the design. Factoring (Chapter 7) is the process of separating out 
+aspects of a method or class into a new method or class to simplify the overall design. For 
+example, when reviewing a set of classes on a particular layer, we might discover that a subset 
+of them shares a similar defi nition. In that case, it may be useful to factor out the similarities 
+and create a new class. Based on the issues related to cohesion, coupling, and connascence, 
+the new class may be related to the old classes via inheritance (generalization) or through an 
+aggregation or association relationship.
+Another process that is useful for restructuring the evolving design is normalization. 
+Normalization is described in Chapter 9 in relation to relational databases. However, normalization can be useful at times to identify potential classes that are missing from the design. Also 
+related to normalization is the requirement to implement the actual association and aggregation 
+relationships as attributes. Virtually no object-oriented programming language diff erentiates 
+between attributes and association and aggregation relationships. Th erefore, all association and 
+aggregation relationships must be converted to attributes in the classes. For example in Figure 
+8-15a, the Customer and State classes are associated with the Order class. Furthermore, the 
+Product-Order association class is associated with both the Order and Product classes. One of 
+the fi rst things that must be done is to convert the Product Order Association class to a normal 
+class. Notice the multiplicity values for the new associations between the Order and the Product 
+Order classes and the Product Order and Product classes (see Figure 8-15b). Next, we need to 
+convert all associations to attributes that represent the relationships between the aff ected classes. 
+In this case, the Customer class must have an Orders attribute added to represent the set of 
+orders that an instance of the Customer class may possess; the Order class must add attributes to 
+reference instances of the Customer, State, and Product Order classes; the State class must have 
+an attribute added to it to reference all of the instances of the Order class that is associated with 
+that particular state; the new Product Order class must have attributes that allow an instance of 
+the Product Order class to reference which instance of the Order class and which instance of the 
+Product class is relevant to it; and, fi nally, the Product class must add an attribute that references 
+the relevant instances of the Product Order class (see Figure 8-15c). As you can see, even in this 
+very small example, many changes need to be made to ready the design for implementation.
+Finally, all inheritance relationships should be challenged to ensure that they support only a generalization/specialization (a-kind-of) semantics. Otherwise, all the problems mentioned previously with inheritance coupling, class cohesion, and generalization/
+specialization cohesion will come to pass.
+Optimizing the Design26
+Up until now, we have focused our energy on developing an understandable design. With 
+all the classes, patterns, collaborations, partitions, and layers designed and with all the class 
+libraries, frameworks, and components included in the design, understandability has been 
+our primary focus. However, increasing the understandability of a design typically creates 
+an ineffi cient design. Conversely, focusing on effi ciency issues will deliver a design that is 
+more diffi cult to understand. A good practical design manages the inevitable trade-off s that 
+must occur.27
+26 Th e material contained in this section is based on James Rumbaugh, Michael Blaha, William Premerlani, Frederick 
+Eddy, and William Lorensen, Object-Oriented Modeling and Design (Englewood Cliff s, NJ: Prentice Hall, 1991); 
+Bernd Brugge and Allen H. Dutoit, Object-Oriented Soft ware Engineering: Conquering Complex and Changing 
+ Systems (Englewood Cliff s, NJ: Prentice Hall, 2000).
+27 Th e optimizations described here are only suggestions. In all cases, the decision to implement one or more 
+of these optimizations really depends on the problem domain of the system and the environment on which the 
+system will reside, i.e., the data management layer (see Chapter 9), the human–computer interaction layer (see 
+ Chapter 10), and the physical architecture layer (see Chapter 11).
+FIGURE 8-15  Converting Associations to Attributes 299
+(a)
+-Order Number[1..1] : unsigned long
+-Date[1..1] : Date
+-Sub Total[0..1] : double
+-Tax[0..1] : double
+-Shipping[0..1] : double
+-Total[0..1] : double
+1..1
+1..1
+0..*
+0..* 1..*
+0..*
+Order
+Customer
+State
+-Cust ID[1..1] 
+-Last Name[1..1] 
+-First Name[1..1] 
+Product
+-Product Number[1..1] : 
+ unsigned long(idl) 
+-Product Desc[1..1] : String 
+-Price[..] : double
+-State[1..1] : String 
+-TaxRate[1..1] : float 
+(b)
+-Order Number[1..1] : unsigned long
+-Date[1..1] : Date
+-Sub Total[0..1] : double
+-Tax[0..1] : double
+-Shipping[0..1] : double
+-Total[0..1] : double
+Product Order Customer
+-Cust ID[1..1] 
+-Last Name[1..1] 
+-First Name[1..1] 
+Product
+-Product Number[1..1] : 
+ unsigned long(idl) 
+-Product Desc[1..1] : String 
+-Price[..] : double
+1..1
+1..1 0..*
+0..*
+1..1
+0..*
+State
+-State[1..1] : String 
+-TaxRate[1..1] : float 
+1..1
+1..*
+Order
+-Qty[1..1] : Integer
+-Extension[1..1] : Decimal
+Product Order
+-Qty[1..1] : unsigned long 
+-Extension[1..1] : double
+(c)
+State
+-State[1..1] : String 
+-TaxRate[1..1] : float
+-Orders[0..*] : Order 
+-Order Number[1..1] : unsigned long
+-Date[1..1] : Date
+-Sub Total[0..1] : double
+-Tax[0..1] : double
+-Shipping[0..1] : double
+-Total[0..1] : double
+-Customer{1..1] : Customer
+-State{1..] : State
+-Product Orders[1..*] : Product Order 
+Order Product Order
+-Qty[1..1] : Integer
+-Extension[1..1] : Decimal
+-Order[1..1] : Order
+-Product[1..1] : Product
+-Cust ID[1..1] : 
+ unsigned long 
+-Last Name[1..1] : String 
+-First Name[1..1] : String
+-Orders[0..*] : Order 
+Customer
+-Product Number[1..1] : 
+ unsigned long(idl) 
+-Product Desc[1..1] : String 
+-Price[1..1] : double
+-Product Orders[0..*] : 
+ Product order
+Product
+300 Chapter 8 Class and Method Design
+Th e fi rst optimization to consider is to review the access paths between objects. In some 
+cases, a message from one object to another has a long path to traverse (i.e., it goes through 
+many objects). If the path is long and the message is sent frequently, a redundant path should 
+be considered. Adding an attribute to the calling object that will store a direct connection to 
+the object at the end of the path can accomplish this.
+A second optimization is to review each attribute of each class. It should be determined 
+which methods use the attributes and which objects use the methods. If the only methods 
+that use an attribute are read and update methods and only instances of a single class send 
+messages to read and update the attribute, then the attribute may belong with the calling class 
+instead of the called class. Moving the attribute to the calling class will substantially speed up 
+the system.
+A third optimization is to review the direct and indirect fan-out of each method. Fan-out
+refers to the number of messages sent by a method. Th e direct fan-out is the number of messages 
+sent by the method itself, whereas the indirect fan-out also includes the number of messages 
+sent by the methods called by the other methods in a message tree. If the fan-out of a method is 
+high relative to the other methods in the system, the method should be optimized. One way to 
+do this is to consider adding an index to the attributes used to send the messages to the objects 
+in the message tree.
+A fourth optimization is to look at the execution order of the statements in oft en-used 
+methods. In some cases, it is possible to rearrange some of the statements to be more effi cient. 
+For example, if based on the objects in the system, it is known that a search routine can be 
+narrowed by searching on one attribute before another one, then the search algorithm should 
+be optimized by forcing it to always search in a predefi ned order.
+A fi ft h optimization is to avoid recomputation by creating a derived attribute (or active 
+value) (e.g., a total that stores the value of the computation). Th is is also known as caching 
+computational results, and it can be accomplished by adding a trigger to the attributes contained in the computation (i.e., attributes on which the derived attribute is dependent). Th is 
+would require a recomputation to take place only when one of the attributes that go into the 
+computation is changed. Another approach is to simply mark the derived attribute for recomputation and delay the recomputation until the next time the derived attribute is accessed. 
+Th is last approach delays the recomputation as long as possible. In this manner, a computation does not occur unless it must occur. Otherwise, every time a derived attribute needs to 
+be accessed, a computation will be required.
+A sixth optimization that should be considered deals with objects that participate in a oneto-one association; that is, they both must exist for either to exist. In this case, it might make 
+sense, for effi ciency purposes, to collapse the two defi ning classes into a single class. However, 
+this optimization might need to be reconsidered when storing the “fatter” object in a database. 
+Depending on the type of object persistence used (see Chapter 9), it can actually be more effi -
+cient to keep the two classes separate. Alternatively, it could make more sense for the two classes 
+to be combined on the problem-domain layer but kept separate on the data management layer.
+Mapping Problem-Domain Classes to Implementation Languages28
+Up until this point, it has been assumed that the classes and methods in the models would 
+be implemented directly in an object-oriented programming language. However, now it is 
+important to map the current design to the capabilities of the programming language used. 
+For example, if we have used multiple inheritance in our design but we are implementing 
+in a language that supports only single inheritance, then the multiple inheritance must be 
+factored out of the design. If the implementation is to be done in an object-based language, 
+28 Th e mapping rules presented in this section are based on material in Coad and Yourdon, Object-Oriented Design.
+Object Design Activities  301
+one that does not support inheritance,29 or a non–object-based language, such as C, we must 
+map the problem-domain objects to programming constructs that can be implemented 
+using the chosen implementation environment.
+Implementing Problem Domain Classes in a Single-Inheritance Language Th e only 
+issue associated with implementing problem-domain objects is the factoring out of any multiple 
+inheritance—i.e., the use of more than one superclass—used in the evolving design. For example, 
+if you were to implement the solution in Java, Smalltalk, or Visual Basic.net, you must factor out 
+any multiple inheritance. Th e easiest way to do this is to use the following rule:
+RULE 1a: Convert the additional inheritance relationships to association relationships. 
+Th e multiplicity of the new association from the subclass to the superclass 
+should be 1..1. If the additional superclasses are concrete, that is, they can be 
+instantiated themselves, then the multiplicity from the superclass to the subclass is 0..1. Otherwise, it is 1..1. Furthermore, an exclusive-or (XOR) constraint 
+must be added between the associations. Finally, you must add appropriate 
+methods to ensure that all information is still available to the original class.
+or
+RULE 1b: Flatten the inheritance hierarchy by copying the attributes and methods of 
+the additional superclass(es) down to all of the subclasses and remove the 
+additional superclass from the design.30
+Figure 8-16 demonstrates the application of these rules. Figure 8-16a portrays a simple 
+example of multiple inheritance where Flying Car inherits from both Airplane and Car, and 
+Amphibious Car inherits from both Car and Boat. Assuming that Car is concrete, we apply 
+Rule 1a to part a, and we end up with the diagram in part b, where we have added the association between Flying Car and Car and the association between Amphibious Car and Boat. Th e 
+multiplicities have been added correctly, and the XOR constraint has been applied. If we apply 
+Rule 1b to part a, we end up with the diagram in part c, where all the attributes of Car have 
+been copied down into Flying Car and Amphibious Car. In this latter case, you might have to 
+deal with the eff ects of inheritance confl icts (see earlier in the chapter).
+Th e advantage of Rule 1a is that all problem-domain classes identifi ed during analysis 
+are preserved. Th is allows maximum fl exibility of maintenance of the design of the problem 
+domain layer. However, Rule 1a increases the amount of message passing required in the system, and it has added processing requirements involving the XOR constraint, thus reducing 
+the overall effi ciency of the design. Accordingly, our recommendation is to limit Rule 1a to 
+be applied only when dealing with “extra” superclasses that are concrete because they have an 
+independent existence in the problem domain. Use Rule 1b when they are abstract because 
+they do not have an independent existence from the subclass.
+Implementing Problem Domain Objects in an Object-Based Language If we are going to 
+implement our solution in an object-based language (i.e., a language that supports the creation 
+of objects but does not support implementation inheritance), we must factor out all uses of 
+inheritance from the problem-domain class design. Applying the preceding rule to all superclasses enables us to restructure our design without any inheritance.
+Figure 8-17 demonstrates the application of the preceding rules. Figure 8-17a shows 
+the same simple example of multiple inheritance portrayed in Figure 8-16, where Flying Car 
+29 In this case, we are talking about implementation inheritance, not the interface inheritance. Interface inheritance 
+supported by Visual Basic and Java supports only inheriting the requirements to implement certain methods, not any 
+implementation. Java and Visual Basic.net also support single inheritance as described in this text.
+30 It is also a good idea to document this modifi cation in the design so that in the future, modifi cations to the design 
+can be maintained easily.
+302 Chapter 8 Class and Method Design
+Flying Car
+-mfg
+-yr
+Airplane
+-EngineType
+-Fuel Type
+Car
+-NumberOfDoors
+-RegNo
+-attribute1 
+-attribute2
+Amphibious Car
+-mfg
+-yr
+Boat
+-Weight
+-Length
+(a)
+(b)
+(c)
+{XOR}
+0..* 0..*
+1..1 1..1
+Flying Car
+-mfg
+-yr
+Flying Car
+-mfg
+-yr
+Airplane
+Airplane
+-EngineType
+-Fuel Type
+Car
+-NumberOfDoors
+-RegNo
+-NumberOfDoors
+-RegNo
+-NumberOfDoors
+-RegNo
+Amphibious Car
+-mfg
+-yr
+Boat
+-Weight
+-Length
+Boat
+-Weight
+-Length
+Amphibious Car
+-mfg
+-yr
+-EngineType
+-Fuel Type
+FIGURE 8-16  Factoring Out Multiple-Inheritance Effect for a Single-Inheritance Language
+Object Design Activities  303
+-attribute1 
+-attribute2
+Amphibious Car
+-Weight
+-Length
+(a)
+(b)
+(c)
+{XOR}
+0..*
+0..1
+0..*
+1..1 0..1
+0..1
+0..1
+1..1
+Flying Car
+-mfg
+-yr
+Airplane
+-EngineType
+-Fuel Type
+Car
+-NumberOfDoors
+-RegNo
+Amphibious Car
+-mfg
+-yr
+Boat
+-Weight
+-Length
+Airplane
+-EngineType
+-Fuel Type
+Car
+-NumberOfDoors
+-RegNo
+Boat
+Flying Car
+-mfg
+-yr
+Flying Car
+-EngineType
+-FuelType
+-mfg
+-yr
+-NumberOfDoors
+-RegNo
+Amphibious Car
+-Weight
+-Length
+-mfg
+-yr
+-NumberOfDoors
+-RegNo
+-mfg
+-yr
+FIGURE 8-17  Factoring Out Multiple Inheritance Effect for an Object-Based Language
+inherits from both Airplane and Car, and Amphibious Car inherits from both Car and Boat. 
+Assuming that Airplane, Car, and Boat are concrete, we apply Rule 1a to part a and we end up 
+with the diagram in part b, where we have added the associations, the multiplicities, and the 
+XOR constraint. If we apply Rule 1b to part a, we end up with the diagram in part c, where all 
+the attributes of the superclasses have been copied down into Flying Car and Amphibious Car. 
+In this latter case, you might have to deal with the eff ects of inheritance confl icts.
+304 Chapter 8 Class and Method Design
+Implementing Problem-Domain Objects in a Traditional Language From a practical 
+perspective, we are much better off implementing an object-oriented design in an objectoriented programming language, such as C11, Java, Objective-C, or Visual Basic.net. Practically speaking, the gulf between an object-oriented design and a traditional programming 
+language is simply too great for mere mortals to be able to cross. Th e best advice that we can 
+give about implementing an object-oriented design in a traditional programming language is 
+to run away as fast and as far as possible from the project. However, if we are brave (foolish?) 
+enough to attempt this, we must realize that in addition to factoring out inheritance from 
+the design, we have to factor out all uses of polymorphism, dynamic binding, encapsulation, 
+and information hiding. Th is is quite a bit of additional work to be accomplished. Th e way 
+we factor these object-oriented features out of the detailed design of the system tends to be 
+language dependent. Th is is beyond the scope of this text.
+CONSTRAINTS AND CONTRACTS
+Contracts were introduced in Chapter 5 in association with collaborations. A contract formalizes the interactions between the client and server objects, where a client (consumer) object is 
+an instance of a class that sends a message to a server (supplier) object that executes one of its 
+methods in response to the request. Contracts are modeled on the legal notion of a contract, 
+where both parties, client and server objects, have obligations and rights. Practically speaking, a 
+contract is a set of constraints and guarantees. If the constraints are met, then the server object 
+guarantees certain behavior.31 Constraints can be written in a natural language (e.g., English), 
+a semiformal language (e.g., Structured English32), or a formal language (e.g., UML’s Object 
+Constraint Language). Given the need for precise, unambiguous specifi cation of constraints, 
+we recommend using UML’s Object Constraint Language.
+Th e Object Constraint Language (OCL)33 is a complete language designed to specify constraints. In this section, we provide a short overview of some of the more useful constructs 
+contained in the language (see Figure 8-18). Essentially, all OCL expressions are simply a 
+declarative statement that evaluates to either being true or false. If the expression evaluates 
+to true, then the constraint has been satisfi ed. For example, if a customer had to have a less 
+than a one hundred dollar balance owed to be allowed to place another credit order, the OCL 
+expression would be:
+balance owed ,5 100.00
+OCL also has the ability to traverse relationships between objects, e.g., if the amount on a 
+purchase order is required to be the sum of the values of the individual purchase order lines, 
+this can be modeled as:
+amount 5 OrderLine.sum(getPrice())
+OCL also provides the ability to model more-complex constraints with a set of logical operators: and, or, xor, and not. For example, if customers were to be given a discount only if they 
+were a senior citizen or a “prime” customer, OCL could be used to model the constraint as:
+age . 65 or customerType 5 “prime”
+31 Th e idea of using contracts in design evolved from the “Design by Contract” technique developed by Bertrand 
+Meyer. See Bertrand Meyer, Object-Oriented Soft ware Construction (Englewood Cliff s, NJ: Prentice Hall, 1988).
+32 We describe Structured English with Method Specifi cation later in this chapter.
+33 For a complete description of the object constraint language, see Jos Warmer and Anneke Kleppe, Th e Object 
+Constraint Language: Precise Modeling with UML (Reading, MA: Addison-Wesley, 1999).
+Constraints and Contracts  305
+OCL provides many other constructs that can be used to build unique constraints. Th ese 
+include math-oriented operators, string operators, and relationship traversal operators. For 
+example, if the printed name on a customer order should be the concatenation of the customer’s fi rst name and last name, then OCL could represent this constraint as:
+printedName 5 fi rstName.concat(lastName)
+We already have seen an example of the ‘.’ operator being used to traverse a relationship from 
+Order to OrderLine above. Th e ‘::’ operator allows the modeling of traversing inheritance 
+relationships.
+OCL also provides a set of operations that are used to support constraints over a collection 
+of objects. For example, we demonstrated the use of the sum() operator above where we wanted 
+to guarantee that the amount was equal to the summation of all of the prices of the items in the 
+collection. Th e size operation returns the number of items in the collection. Th e count operation 
+returns the number of occurrences in the collection of the specifi c object passed as its argument. 
+Th e includes operation tests whether the object passed to it is already included in the collection. 
+Th e isEmpty operation determines whether the collection is empty or not. Th e select operation 
+provides support to model the identifi cation of a subset of the collection based on the expression 
+that is passed as its argument. Obviously, OCL provides a rich set of operators and operations inTypes of Constraints
+Th ree diff erent types of constraints are typically captured in object-oriented design: preconditions, postconditions, and invariants.
+Contracts are used primarily to establish the preconditions and postconditions for a 
+method to be able to execute properly. A precondition is a constraint that must be met for 
+a method to execute. For example, the parameters passed to a method must be valid for the 
+method to execute. Otherwise, an exception should be raised. A postcondition is a constraint 
+that must be met aft er the method executes, or the eff ect of the method execution must be 
+undone. For example, the method cannot make any of the attributes of the object take on 
+an invalid value. In this case, an exception should be raised, and the eff ect of the method’s 
+execution should be undone.
+Whereas preconditions and postconditions model the constraints on an individual 
+method, invariants model constraints that must always be true for all instances of a class. 
+Examples of invariants include domains or types of attributes, multiplicity of attributes, and 
+the valid values of attributes. Th is includes the attributes that model association and aggregation relationships. For example, if an association relationship is required, an invariant should 
+be created that will enforce it to have a valid value for the instance to exist. Invariants are 
+normally attached to the class. We can attach invariants to the CRC cards or class diagram by 
+adding a set of assertions to them.
+In Figure 8-19, the back of the CRC card constrains the attributes of an Order to specifi c 
+types. For example, Order Number must be an unsigned long, and Customer must be an 
+instance of the Customer class. Furthermore, additional invariants were added to four of the 
+attributes. For example, Cust ID must not only be an unsigned long, but it also must have one 
+and only one value [i.e., a multiplicity of (1..1)], and it must have the same value as the result 
+of the GetCustID() message sent to the instance of Customer stored in the Customer attribute. Also shown is the constraint for an instance to exist, an instance of the Customer class, 
+an instance of the State class, and at least one instance of the Product class must be associated 
+with the Order object (see the Relationships section of the CRC card where the multiplicities 
+are 1..1, 1..1, and 1..*, respectively). Figure 8-20 portrays the same set of invariants on a class 
+diagram. However, if all invariants are placed on a class diagram, the diagram becomes very 
+diffi cult to understand. Consequently, we recommend either extending the CRC card to document the invariants instead of attaching them all to the class diagram or creating a separate 
+text document that contains them (see Figure 8-21).
+Elements of a Contract
+Contracts document the message passing that takes place between objects. Technically speaking, a contract should be created for each message sent and received by each object, one for 
+each interaction. However, there would be quite a bit of duplication if this were done. In 
+practice, a contract is created for each method that can receive messages from other objects 
+(i.e., one for each visible method).
+A contract should contain the information necessary for a programmer to understand 
+what a method is to do (i.e., they are declarative in nature). Th is information includes the 
+method name, class name, ID number, client objects, associated use cases, description, arguments received, type of data returned, and the pre- and postconditions.34 Contracts do not 
+34 Currently, there is no standard format for a contract. Th e contract in Figure 8-22 is based on material contained in 
+Ian Graham, Migrating to Object Technology (Reading, MA: Addison-Wesley, 1995); Craig Larman, Applying UML 
+and Patterns: An Introduction to Object-Oriented Analysis and Design (Englewood Cliff s, NJ: Prentice Hall, 1998); 
+Meyer, Object-Oriented Soft ware Construction; R. Wirfs-Brock, B. Wilkerson, and L. Wiener, Designing Object

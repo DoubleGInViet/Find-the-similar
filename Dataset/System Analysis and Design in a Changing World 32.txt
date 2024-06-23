@@ -1,0 +1,854 @@
+﻿Note that in Figure 4-20 that the class name Sale is in italic; that is because 
+it is an abstract class. An abstract class is a class that only exists so subclasses 
+can inherit from it. There is never an actual object simply called a Sale. Each 
+sale must be one of the three subclasses. A concrete class is a class that does 
+have actual objects. Sometimes, a superclass is abstract; sometimes, it is concrete depending on the intention of the analyst.
+Figure 4-21 shows an extension of the bank with multiple branches example 
+to indicate that there are two types of accounts: a SavingsAccount and a CheckingAccount. The abstract class Account is in italic, indicating it is an abstract 
+TelephoneSale
+clerkID
+lengthOfCall
+OnlineSale
+timeOnSite
+chatUse
+InStoreSale
+storeID
+registerID
+clerkID
+Sale
+saleDateTime
+priorityCode
+S&H
+tax
+totalAmt
+mountainBucks
+Figure 4-20 Generalization/
+specialization relationships 
+(inheritance) for sales
+© Cengage Learning®
+abstract class a class that only exists in a 
+model so subclasses can inherit from it
+concrete class a class that allows individual objects or instances to exist
+accountID {key}
+dateOpened
+balance
+Account
+interestRate
+SavingsAccount
+checkStyle
+minimumBalance
+CheckingAccount
+transID {key}
+transDate
+transType
+transAmount
+Transaction
+branchID {key}
+managerName
+branchLocation
+mainPhone
+Branch
+custNumber {key}
+fullName
+billAddress
+homePhone
+officePhone
+Customer
+1 1..*
+1..*
+1
+0..* 1
+Figure 4-21 An expanded 
+domain model class diagram for the 
+bank, with subclasses for types of 
+accounts
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+110 PART 2 ■ Systems Analysis Activities
+class. Rather than including an attribute for account type, the subclasses represent different types of accounts. Each subclass has its own special attributes that 
+do not apply to the other subclasses. A SavingsAccount has four attributes, and 
+a CheckingAccount has five attributes. Note that each subclass also inherits an 
+association with a Customer, optionally a Branch, and one or more Transactions.
+❚ Whole-Part Relationships
+Another way that people structure information about things is by defining them 
+in terms of their parts. For example, learning about a computer system might 
+involve recognizing that the computer is actually a collection of parts: processor, 
+main memory, keyboard, disk storage, and monitor. A keyboard is not a special 
+type of computer; it is part of a computer, but it is also something separate. 
+Whole-part relationships are used to show an association between one class 
+and other classes that are parts of that class.
+There are two types of whole-part relationships: aggregation and composition. Aggregation refers to a type of whole-part relationship between the 
+aggregate (whole) and its components (parts), where the parts can exist separately. Figure 4-22 demonstrates the concept of aggregation in a computer system, with the UML diamond symbol representing aggregation. Composition
+refers to whole-part relationships that are even stronger, where the parts, once 
+associated, can no longer exist separately. The UML diamond symbol is filled in 
+solid to represent composition. For example, think of a house that is made up 
+of bathrooms, bedrooms, stairwell, and so forth. The bathrooms or bedrooms 
+whole-part relationships relationships 
+between classes in which one class is a part 
+or a component portion of another class
+aggregation a type of whole-part relationship in which the component parts also exist 
+as individual objects apart from the aggregate
+composition a type of whole-part relationship in which the component parts cannot 
+exist as individual objects apart from the total 
+composition
+Figure 4-22 Whole-part (aggregation) relationships between a computer and its parts
+Monitor
+Storage
+InputDevice
+MainMemory
+Processor
+Computer
+1..*
+1..1 1..1
+1..*
+1..1 1..1
+1..*
+1..* 1..*
+1..1
+Processor,
+MainMemory,
+InputDevice, Storage,
+and Monitor are parts
+of a Computer
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 111
+never exist apart from the house; therefore, this whole-part relationship is a 
+composition and uses solid diamond connectors.
+Whole-part relationships—aggregation and composition—mainly allow the 
+analyst to express subtle distinctions about associations among classes. As with 
+any association relationship, multiplicity can apply, such as when a computer 
+has one or more storage devices.
+The UML class diagram examples you have seen so far are domain model 
+class diagrams. The design class diagram is a refinement of the class diagram 
+and is used to represent software classes in the new system. You will learn about 
+the process of converting the domain model class diagram to a design class diagram in Chapter 12.
+■ The Ridgeline Mountain Outfitters Domain 
+Model Class Diagram
+The RMO CSMS involves many domain classes and many complex association 
+and generalization/specialization relationships. A domain model class diagram 
+for an information system evolves as the project proceeds; and unlike the use 
+case diagrams, where many diagrams are created, there is eventually only one 
+domain model class diagram. Also, unlike the use case diagram, the domain 
+model class diagram is not produced just for presentations. The process of developing and refining the domain model class diagram is how the analyst explores 
+and learns about the problem domain. Therefore, the information depicted in 
+the domain model class diagram is very detailed and rich in specific meaning.
+The Ridgeline Mountain Outfitters domain model class diagram is a variation of the customer, order, and order item example shown in Figure 4-12. Most 
+of the domain classes are from the list of nouns developed in Figure 4-2. Because 
+the model is fairly complex, an analyst might start by focusing on one subsystem 
+at a time to reduce the complexity. Eventually, all subsystems can be combined 
+into one domain model.
+❚ The RMO Sales Subsystem
+Figure 4-23 shows a domain model class diagram for the RMO CSMS Sales 
+subsystem. The Sales subsystem mainly involves the customer, sale, sales items, 
+products, promotions, and accessories. That is a good starting point, but there 
+are also additional domain classes. Additionally, recall that the association relationships are just as important as the classes, so these must be identified. There 
+are also special types of sales and a shopping cart.
+In Figure 4-23, each customer can be associated with one or more sales. 
+Note that there are three special types of sales shown in the inheritance relationships (in-store sale, online sale, and telephone sale), as discussed in the last 
+section. Therefore, the scope of the Sales subsystem includes in-store, online, 
+and telephone sales processes. A customer can also be associated with an online 
+shopping cart (OnLineCart) for any online sale. There are two special types 
+of carts: the active cart and the on-reserve cart. The minimum multiplicity 
+between customer and cart is zero, meaning there might not be a shopping cart 
+involved—for example, in an in-store or telephone sale. There can be a maximum of two carts for a customer at any one time: an active cart and an onreserve cart. The on-reserve cart can be remembered from session to session. 
+Each sale and each cart is associated with one customer, so the subclasses inherit 
+the association, just as they inherit the attributes of Sale.
+Note that an individual sale is associated with one or more sale items. In the 
+online cart, it is associated with one or more cart items. With an online sale, the 
+sale is created from the cart when the customer checks out. Sale items are created from each cart item. Finally, a sales transaction is created and associated 
+with the sale.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+112 PART 2 ■ Systems Analysis Activities
+A sale can have one or more sale items, but what is each item? An association between each sale item and an inventory item answers the question. Each 
+sale item is for a specific inventory item, meaning a specific size and color of the 
+item, such as a shirt or coat. An inventory item has an attribute for the quantity 
+on hand of that size and color. Because there are many colors and sizes (each 
+with its own quantity), each inventory item is associated with a product item 
+Figure 4-23 RMO Sales subsystem domain model class diagram
+elapsedTime
+ActiveCart
+holdForDays
+OnReserveCart
+storeID
+registerID
+clerkID
+InStoreSale
+timeOnSite
+chatUse
+OnlineSale
+clerkID
+lengthOfCall
+TelephoneSale
+quantity
+soldPrice
+shipStatus
+backOrderStatus
+SaleItem
+saleDateTime
+priorityCode
+S&H
+tax
+totalAmt 
+mountainBucks
+Sale
+date
+transactionType
+amount
+paymentMethod
+SaleTrans
+season
+year
+description
+startDate
+endDate
+Promotion
+date
+rating
+comment
+ProductComment
+size
+color
+options
+quantityOnHand
+averageCost
+reorderQuantity
+InventoryItem
+name
+mobilePhone
+homePhone
+emailAddress
+status
+Customer
+gender
+description
+supplier
+manufacturer
+picture
+ProductItem
+startDateTime
+noOfItems
+valueOfItems
+status
+OnLineCart
+1
+1
+0..2
+1..*
+1..*
+1..* 1
+1..*
+1
+1 0..*
+1
+0..*
+0..*
+1
+0..*
+0..*
+0..* 1..*
+0..*
+1
+0..*
+1
+1
+PromoOffering
+regularPrice
+promoPrice
+category
+description
+AccessoryPackage
+quantity
+currentPrice
+CartItem
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 113
+that describes the item generally (gender, description, supplier, manufacturer, 
+and picture). Each product item is associated with many inventory items, and 
+each inventory item is associated with many sale items.
+A product item can be part of many promotions, and a promotion can 
+include many product items, making a many-to-many association. An association class is added to store information about the price of each item in each 
+promotion. Each product item might have many accessories, and an accessory 
+might apply to many product items. Here, there is no defined association class 
+for the many-to-many association. Note that this association might also be modeled as a unary (recursive) association. Finally, each product item can have many 
+customer comments, which are reviewed during a sale.
+❚ The RMO Customer Account Subsystem
+The Customer Account subsystem domain model class diagram is shown in 
+Figure 4-24. Note that there are some classes repeated here that are also on 
+the Sales subsystem domain model class diagram. For example, Customer is 
+important to both subsystems. Note that Sale and SaleTrans are also included 
+here. To make account adjustments and report on all payments and returns 
+Figure 4-24 RMO Customer Account subsystem domain in model class diagram
+number
+street
+city
+state
+zipcode
+Address
+saleDateTime
+priorityCode
+S&H
+tax
+totalAmt
+mountainBucks
+Sale
+amtRMOCredits
+amtPartnerCredits
+CustPartnerCredit
+name
+address
+contactPerson
+telephone
+agreementDescription
+PromoPartner
+date
+transactionType
+amount
+paymentMethod
+SaleTrans
+customer1
+customer2
+status
+dateLinkedUp
+FriendLink
+name
+mobilePhone
+homePhone
+emailAddress
+status
+Customer
+date
+messageText
+Message
+typeOfAccount
+creditCardNo
+Account
+1 1..*
+0..*
+1..*
+1
+0..*
+0..* 0..*
+1..*
+0..*
+To
+1
+0..*
+From
+1
+1..*
+0..1
+1..* 1..*
+0..1
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+114 PART 2 ■ Systems Analysis Activities
+for a customer, all sales and sales transactions need to be referenced. Repeating domain classes in several subsystems does not mean there is redundancy. In 
+complex domain models, it is easier to do the modeling and analysis in separate 
+diagrams before merging them all together. Sometimes, the project team divides 
+the work by subsystem, so each would work on a separate diagram being sure to 
+coordinate with each other.
+The Customer Account subsystem includes messages, partner credits, and 
+friend links. The FriendLink class is an association class, but unlike other examples, it is attached to a unary association between customers. Each customer can 
+be linked to many other customers, shown by the association line at the top of the 
+Customer class. For each link, the status and dateLinkedUp is stored. The Message class is handled differently. Each customer can send many messages, each to 
+many other customers. Similarly, each customer can receive many messages.
+❚ The Complete RMO Domain Model Class Diagram
+The analysts at RMO may continue to model each subsystem separately. The 
+exercises at the end of this chapter ask you to create those other subsystem diagrams. The final domain model class diagram for the RMO CSMS is shown in 
+Figure 4-25. Classes not shown before include Shipper, Shipment, ReturnItem, 
+and Suggestion. You should spend some time to understand all of the classes and 
+associations in this model. Real-world domain model class diagrams are often 
+much more complex than this example.
+■ The State Machine Diagram—Identifying 
+Object Behavior
+Sometimes, it is important for a computer system to maintain information about 
+the status of problem domain objects. For example, a customer might want to know 
+whether a particular sale has been shipped or a manager might want to know if a 
+customer sale has been paid for. Thus, the system needs to be able to track the status of customer sales. When defining requirements, analysts need to identify and 
+document which domain objects require status checking and which business rules 
+determine valid status conditions. Referring back to RMO, an example of a business rule is that a customer sale shouldn’t be shipped until it has been paid for.
+The status condition for a real-world object is often referred to as the state
+of the object. Defined precisely, a state of an object is a condition that occurs 
+during its life when it satisfies some criterion, performs some action, or waits for 
+an event. For real-world objects, we mean the same thing whether we refer to 
+the status condition of an object or talk about its state.
+The naming convention for status conditions helps identify valid states. 
+A state might have a name of a simple condition, such as On or In repair. Other 
+states are more active, with names consisting of gerunds or verb phrases, such as 
+Being shipped or Working. For example, a specific Sale object comes into existence when a customer buys something. Right after it is created, the object might 
+be in a state called Adding new sale items, then a state called Waiting for items 
+to be shipped, and finally, when all items have been shipped, a state called Completed. If you find yourself trying to use a noun to name a state, you probably have 
+an incorrect idea about states or object classes. The name of a state should not be 
+a noun (which is an object); it should be something that describes the object.
+States are described as semipermanent conditions because external events 
+can interrupt a state and cause the object to go to a new state. An object remains 
+in a state until some event causes it to move, or transition, to another state. 
+A transition, then, is the movement of an object from one state to another state. 
+Transitioning is the mechanism that causes an object to leave a state and change 
+to a new state. States are semipermanent because transitions interrupt them and 
+state a condition during an object’s life 
+when it satisfies some criterion, performs 
+some action, or waits for an event
+transition the movement of an object from 
+one state to another state
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 115
+Figure 4-25 Complete RMO CSMS domain model class diagram
+elapsedTime
+ActiveCart
+holdForDays
+OnReserveCart
+storeID
+registerID
+clerkID
+InStoreSale
+timeOnSite
+chatUse
+OnlineSale
+clerkID
+lengthOfCall
+TelephoneSale
+category
+description
+AccessoryPackage
+quantity
+soldPrice
+shipStatus
+backOrderStatus
+SaleItem
+trackingNo
+dateTimeSent
+dateTimeArrive
+cost
+Shipment
+name
+address
+contactName
+telephone
+Shipper
+quantity
+price
+reason
+condition
+ReturnItem
+saleDateTime
+priorityCode
+S&H
+tax
+totalAmt 
+mountainBucks
+Sale
+date
+transactionType
+amount
+paymentMethod
+SaleTrans
+season
+year
+description
+startDate
+endDate
+Promotion
+date
+rating
+comment
+ProductComment
+size
+color
+options
+quantityOnHand
+averageCost
+reorderQuantity
+InventoryItem
+name
+mobilePhone
+homePhone
+emailAddress
+status
+Customer
+number
+street
+city
+state
+zipcode
+Address
+regularPrice
+promoPrice
+PromoOffering
+gender
+description
+supplier
+manufacturer
+picture
+ProductItem
+quantity
+currentPrice
+CartItem
+date
+messageText
+Message
+typeOfAccount
+creditCardNo
+Account
+date
+suggestionText
+Suggestion
+amtRMOCredits
+amtPartnerCredits
+CustPartnerCredit
+startDateTime
+noOfItems
+valueOfItems
+status
+OnLineCart
+customer1
+customer2
+status
+dateLinkedUp
+FriendLink
+1
+0..1
+1
+1
+0..*
+0..* 0..*
+1
+1..*
+1
+0..*
+1..*
+0..*
+To From
+1..*
+1..*
+0..1
+0..2
+1..*
+1..*
+1..* 1
+1..*
+1
+1 0..*
+1
+0..*
+0..*
+1
+0..*
+0..*
+0..* 1..*
+0..*
+1
+0..*
+0..1
+1..*
+1
+1
+1 0..*
+0..* 1
+0..* 0..*
+name
+address
+contactPerson
+telephone
+agreementDescription
+PromoPartner
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+116 PART 2 ■ Systems Analysis Activities
+cause them to end. Generally, transitions are short in duration—compared with 
+states—and they cannot be interrupted. The combination of states and transitions between states provides the mechanisms that analysts use to capture business rules. In the previous RMO example, you would say that a customer sale 
+must be in a Paid for state before it can transition to a Shipped state.
+The UML diagram that is used to describe the behavior of an object is 
+called a state machine diagram. Sometimes these diagrams are also called 
+state-transition diagrams because they describe the states and the transitions of 
+the object. This section introduces state machines.
+A state machine diagram describes the behavior, or the possible behavior, of the objects in one particular object class. This is an important concept 
+to understand—that a state machine diagram applies to only one single class, 
+and that it can be used to describe the behavior of all objects within that class. 
+Earlier in the chapter, you learned how to create a UML class diagram. A class 
+diagram describes the static characteristics of objects and their associations. 
+A state machine describes the dynamic behavior of objects.
+A state machine diagram can be developed for any problem domain classes 
+that have complex behavior or status conditions that need to be tracked. However, not all classes will require a state machine diagram. If an object in the 
+problem domain class doesn’t have status conditions that must control the 
+processing for that object, a state machine diagram probably is not necessary. 
+For example, in the RMO class diagram, a class such as Sale may need a state 
+machine diagram. However, a class such as SaleTransaction probably does not. 
+A sale transaction is created when the payment is made and then just sits there; 
+it doesn’t need to track other conditions.
+A state machine diagram is composed of rounded rectangles representing the 
+states of an object and arrows representing the transitions. Figure 4-26 illustrates a simple state machine diagram for a printer. Because it is a little easier to 
+learn about state machine diagrams by using tangible items, let’s start with a few 
+examples of computer hardware. The starting point of a state machine diagram is 
+a black dot, which is called a pseudostate. The first shape after the black dot is 
+the first state of the printer. In this case, the printer begins in the Off state.
+As shown in Figure 4-26, the arrow leaving the Off state is called a transition. 
+The firing of the transition causes the object to leave the Off state and make a 
+transition to the On state. After a transition begins, it runs to completion by taking 
+the object to the new state, called the destination state. A transition begins with 
+an arrow from an origin state—the state prior to the transition—to a destination 
+state, and it is labeled with a string to describe the components of the transition.
+Off On onButtonPushed [safety cover closed] / run start-up
+A State indicates a state of
+being of the object. Name it
+as a condition or a verb
+phrase. 
+The beginning pseudostate
+denotes the start of the state
+machine behavior for this object.
+offButtonPushed
+A Transition moves the object from the
+origin state to the destination state.
+Transition-name can have a trigger,
+a guard, and an action-expression.
+Figure 4-26 Simple state 
+machine diagram for a printer
+© Cengage Learning®
+state machine diagram a diagram 
+showing the life of an object in states and 
+transitions
+pseudostate the starting point of a state 
+machine diagram, indicated by a black dot
+destination state for a particular transition, the state to which an object moves after 
+the completion of a transition
+origin state for a particular transition, the 
+original state of an object from which the 
+transition occurs
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 117
+The transition label consists of the following syntax with three components:
+transition-name (parameters, …) [guard-condition] / action-expression
+In Figure 4-26, the transition-name is onButtonPushed. The transition is like 
+a trigger that fires or an event that occurs. The name should reflect the action of 
+a triggering event. In Figure 4-26, no parameters are being sent to the printer so 
+the parentheses are left off. The guard-condition is [Safety cover closed]. For the 
+transition to fire, the guard must be true. The forward slash divides the firing 
+mechanism from the actions or processes. Action-expressions indicate some 
+process that must occur before the transition is completed and the object arrives 
+in the destination state. In this case, the printer will run a start-up procedure 
+before it goes into the On state.
+The guard-condition is a qualifier or test on the transition, and it is simply 
+a true/false condition that must be satisfied before the transition can fire. For a 
+transition to fire, first the trigger must occur and then the guard must evaluate 
+to true. Sometimes, a transition has only a guard-condition and no triggering 
+event. In that case, the trigger is considered to be constantly firing, and whenever the guard becomes true, the transition occurs.
+Any of the three components—transition-name, guard-condition, or actionexpression—may be empty. If either the transition-name or the guard-condition 
+is empty, it automatically evaluates to true. Either of them may also be complex, 
+with AND and OR connectives.
+■ Concurrency and Concurrent States
+Sometimes an object will be in two states at the same time. For example, when 
+the printer is in the On state, it can also be either Printing or Idle. There are several ways to express this concurrent condition. This section explains the basic 
+approach to modeling concurrent behavior. There are more sophisticated techniques that are available; however, the basic approach is usually sufficient for 
+business modeling.
+This condition of being in more than one state at a time is called concurrency, 
+or concurrent states. For example, the printer can be in the On state and the 
+Idle state at the same time. Hence, On and Idle would be concurrent states. 
+Another concept that is important is the idea of a path for the object. A path
+is a sequential set of connected states and transitions. In Figure 4-26, there is 
+only one path. It is the path from the beginning state, to the On state then to 
+the Off state, and finally looping back to the On state. Sometimes within a state 
+machine diagram there will be states that are exactly concurrent states. However, when there are several states in a path that are parallel to another state, we 
+say that those are concurrent paths. Figure 4-27 illustrates the example we 
+have been describing.
+action-expressions descriptions of the 
+activities performed as part of a transition
+guard-condition a true/false test to see 
+whether a transition can fire
+concurrency or concurrent states
+the condition of being in more than one state 
+at a time
+path a sequential set of connected states 
+and transitions
+concurrent paths when one or more 
+states in a path are parallel to one or more 
+states in another path 
+printcompleted
+printRequest (doc)
+Off
+On
+onButtonPushed [safety
+cover closed] / run startup
+offButtonPushed
+Idle Printing
+Figure 4-27 State 
+machine diagram with 
+concurrent paths
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+118 PART 2 ■ Systems Analysis Activities
+The notation used in Figure 4-27 is similar to the notation that you used 
+with activity diagrams in Chapter 2. When a state has two transitions that exit 
+that state, it is considered an OR condition. In other words, the path for the 
+object follows only one of the transitions. To show parallel paths with the object 
+following both paths, that is, an AND condition, a synchronization bar is used.
+In Figure 4-27, the path with the Idle and Printing states is parallel with the 
+path with the On state. In other words, the printer will be in either the Idle or 
+Printing states whenever it is in the On state. Notice that the printRequest (doc)
+transition does have an argument being sent with the transition. The printer will 
+cycle between the Idle state and the Printing state whenever it is in the On state. 
+When the offButtonPushed transition fires, the printer exits both the On state 
+and either the Idle or Printing state, whichever is active. Now that you know the 
+basic notation of state machine diagrams, you will learn how to develop a state 
+machine diagram.
+■ Rules for Developing State Machine Diagrams
+State machine diagram development follows a set of rules. Usually, the primary 
+challenge in building a state machine diagram is to identify the right states for 
+the object. It might be helpful to pretend that you are the object itself. It is easy to 
+pretend to be a customer, but it’s a little more difficult to say “I am an order” or “I 
+am a shipment. How do I come into existence? What states am I in?” However, if 
+you can begin to think this way, it will help you develop state machine diagrams.
+A good approach is to remember that developing state machine diagrams is 
+an iterative behavior—more so than developing any other type of diagram. Analysts seldom get a state machine diagram right the first time. They always draw 
+it and then refine it again and again.
+Finally, don’t forget to ask about an exception condition—especially when 
+you see the words verify or check. Usually, there will be two transitions out of 
+states that verify something: one for acceptance and one for rejection.
+Here is a list of steps that will help you get started in developing state 
+machine diagrams:
+1. Review the class diagram and select the classes that might require state 
+machine diagrams. Only include those classes that have multiple status 
+conditions that are important for the system to track. Then, begin with the 
+classes that appear to have the simplest state machine diagrams, such as the 
+SaleItem class for RMO.
+2. For each selected class in the group, make a list of all the status conditions you can identify. At this point, simply brainstorm. Remember that 
+these states must reflect the states for the real-world objects that will be 
+represented in software. Sometimes, it is helpful to think of the physical 
+object, identify states of the physical object, and then translate those that 
+are appropriate into corresponding system states or status conditions. It 
+is also helpful to think of the life of the object. Think of activities done to 
+the object or by the object. Often, the object will be in a particular state as 
+these actions are occurring.
+3. Begin building state machine diagram fragments by identifying the transitions that cause an object to leave the identified state. For example, if a sale 
+is in a state of Ready to be shipped, a transition such as beginShipping will 
+cause the sale to leave that state.
+4. Sequence these state-transition fragments in the correct order. Then, aggregate these combinations into larger fragments. As the fragments are being 
+aggregated into larger paths, it is natural to begin to look for a natural life 
+cycle for the object.
+5. Review the paths and look for independent, concurrent paths. When an 
+item can be in two states concurrently, there are probably one or more 
+concurrent paths.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 119
+6. Look for additional transitions. Often, during a first iteration, several of the 
+possible combinations of state-transition-state are missed. One method to 
+identify them is to take every paired combination of states and ask whether 
+there is a valid transition between the states. Test for transitions in both directions.
+7. Expand each transition with the appropriate message event, guardcondition, and action-expression. Include with each state appropriate 
+action-expressions.
+8. Review and test each state machine diagram. Review each of your state 
+machine diagrams to make sure the names of the states describe the object’s 
+status condition, to make sure you have identified all the transitions, to check 
+for all concurrent paths, and to ensure you have the exception conditions.
+■ Developing RMO State Machine Diagrams
+Let us practice these steps by developing two state machine diagrams for RMO. 
+The first step is to review the domain class diagram and then select the classes 
+that may have status conditions that need to be tracked. In this case, we select 
+the SaleItem and the InventoryItem classes. Other classes that are candidates for 
+state machine diagrams are: Sale, to track when it is completed; Shipment, to 
+track arrivals at the customer location; and possibly Customer, to track active 
+and inactive customers.
+❚ Developing the SaleItem State Machine Diagram
+The first step in developing the SaleItem state machine diagram is to identify the 
+possible status conditions that might be of interest. Some necessary status conditions are Ready to be shipped, On back order, and Shipped. An interesting question comes to mind at this point: Can a sale item be partially shipped? In other 
+words, if the customer bought 10 of a single item but there are only five in inventory, should RMO ship those five and put the other five on back order? You 
+should see the ramifications of this decision. The system and the database would 
+need to be designed to track and monitor detailed information to support this 
+capability. The domain class diagram for RMO indicates that a SaleItem can be 
+associated with either zero (not yet shipped) shipments or one (totally shipped) 
+shipment. Based on the current specification, the definition doesn’t allow partial 
+shipments of SaleItems.
+This is just another example of the benefit of building models. Had we not 
+been developing the state machine diagram model, this question might never 
+have been asked. The development of detailed models and diagrams is one of the 
+most important activities that a system developer can perform. It forces analysts 
+to ask fundamental questions. Sometimes, new system developers think that 
+model development is a waste of time, especially for small systems. However, 
+truly understanding the users’ needs before writing the program always saves 
+time in the long run.
+The second step is to identify exit transitions for each of the status conditions. 
+Figure 4-28 is a table showing the states that have been defined and the exit transitions for each of those states. One additional state has been added to the list—
+Open—which covers the condition that occurs when an item has been added to 
+the sale but the sale isn’t complete or paid for, so the item isn’t ready for shippinghe third step is to combine the state-transition pairs into fragments 
+and to build a state machine diagram with the states in the correct sequence. 
+Figure 4-29 illustrates the partially completed state machine diagram. The flow 
+from beginning to end for the SaleItem object is quite obvious. However, at least 
+one transition seems to be missing. There should be some path to allow entry 
+into the On back order state so we recognize that this first-cut state machine 
+diagram needs some refinement. We will fix that in a moment.
+The fourth step is to look for concurrent paths. In this case, it doesn’t appear 
+that a SaleItem object can be in any two of the identified states at the same time. 
+Of course, because we chose to begin with a simple state machine diagram, that 
+was expected.
+The fifth step is to look for additional transitions. This step is where we 
+flesh out other necessary transitions. The first addition is to have a transition 
+from Open to On back order. To continue, examine every pair of states to see 
+whether there are other possible combinations. In particular, look for backward 
+transitions. In this situation, we will not define any backward transitions.
+The sixth step is to complete all the transitions with correct names, guardconditions, and action-expressions. Two new transition-names are added. The 
+first is the transition from the beginning black dot to the Open state. That 
+transition causes the creation—or, in system terms, the instantiation—of a new 
+SaleItem object. It is given the same name as the message into the system that 
+adds it: addItem. The final transition is the one that causes the order item to 
+be removed from the system. This transition goes from the Shipped state to a 
+final circled black dot, which is a final pseudostate. On the assumption that 
+it is archived to a backup tape when it is deleted from the active system, that 
+transition is named archive. The seventh step—reviewing and testing the state 
+machine diagram—is the quality-review step. Figure 4-30 illustrates the final 
+state machine diagram for SaleItem.
+On back order itemArrived
+Open Ready to ship
+saleComplete
+Shipped
+shipItem
+Figure 4-29 Partial state machine 
+diagram for SaleItem object
+© Cengage Learning®
+Figure 4-30 Final state machine diagram for SaleItem object
+On back order
+itemArrives
+saleComplete shipItem
+Ready to ship
+addItem
+orderItem
+archive Open Shipped
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 121
+❚ Developing the InventoryItem State Machine Diagram
+An InventoryItem will have a slightly more complex state machine. In this example, you will discover the need to have some concurrent paths defined. As before, 
+start by thinking of the various status conditions that are important and their associated end or exit conditions. As you think about an inventory item, recognize that 
+important status conditions are associated with the level of inventory. An item can 
+be at a normal inventory level, a low inventory level, or completely out of stock. In 
+addition, an inventory item can be on order or have an order outstanding. It could 
+also not have any orders outstanding. As you think about it, notice that it appears 
+these two sets of status are independent of each other. First, identify all of these 
+states and their exit transitions. Figure 4-31 documents our thinking.
+In the third and fourth steps, you combine these states and transitions into 
+fragments and connect them together to give the first-cut state machine diagram. In the fifth step, you see if these state-transition fragments are really concurrent paths. In this situation, there are two concurrent paths. Figure 4-32
+shows these steps.
+There are a few things you need to consider with this first-cut state machine. 
+Let’s look at the various transitions and consider each transition along with its 
+origin state and destination state. The top path appears to be okay—cycling 
+between Not on order and On order. In the bottom path, however, there are 
+transitions that have the same name. How do you ensure that the correct transitions fire and the correct states are used?
+First consider the reduceInventory transition. The InventoryItem will 
+receive this message every time an item is sold. However, it only wants to take 
+the transition from one state to another if it is at the reorder point, or if it is the 
+last item in stock. Let’s add guards to define those conditions. You also want to 
+initiate a reorder process when the InventoryItem goes to a Low stock or a Zero 
+stock state. Let’s add those action expressions.
+Next consider the restock transition. It is correct. Depending on what state 
+the InventoryItem is in, the correct transition will fire and move to the Normal

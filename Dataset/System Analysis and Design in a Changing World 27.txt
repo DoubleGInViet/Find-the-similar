@@ -1,0 +1,600 @@
+﻿stakeholders, executive stakeholders, or both; nor is it known exactly how those 
+stakeholders will interact with the system. Ensuring adequate input from this 
+new group of stakeholders begins with defining precisely who they are.
+RMO is a privately held company; John and Liz Blankens are the owners, 
+and they hold two senior management positions. This is significant because the 
+key operational systems of any publicly traded company “inherit” many external stakeholders due to the flow of information from those systems to the organization’s financial reports. RMO is audited by an external accounting firm, 
+primarily to ensure access to bank loans and other private financing.
+As owners and senior managers, John and Liz are the primary clients, but so 
+are other senior executives who form a collaborative decision-making body. In 
+addition, existing technical and support staff are key stakeholders. Figure 2-5 summarizes the internal managerial stakeholders in the form of an organization chart.
+Figur e 2-5 RMO management 
+stakeholders involved in the CSMS 
+project
+Jason Nadold
+Manager
+Warehousing/Shipping
+John Blankens
+President CEO
+William Mcdougal
+VP Marketing
+and Sales
+Genny Monson
+AVP Retail
+Sales
+Brian Haddock
+Director of
+Operations
+Karen Hansen
+Director of
+New Design
+Henry Manwaring
+Director of U.S.
+Purchasing
+Nathan Brunner
+AVP
+Production
+Maryann Whitehead
+Director of International
+Purchasing
+Elizabeth Blankens
+VP Merchandising
+and Distribution
+Joann White
+VP Finance and
+Systems
+April Sterling
+AVP Accounting 
+and Finance
+Joe Jones
+AVP
+Marketing/Advertising
+Robert Schneider
+Director of
+Catalog Sales
+Christine Roundy
+Manager of Telephone
+Sales
+Mac Preston 
+Chief Information
+Officer
+John Macmurty
+Director of System
+Development
+Ann Hamilton
+Director of System
+Support
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+50 PART 2 ■ Systems Analysis Activities
+■ Information-Gathering Techniques
+There are many ways that information about the system requirements can be 
+collected. RMO often uses these standard information-gathering techniques:
+■ Interviewing users and other stakeholders
+■ Distributing and collecting questionnaires
+■ Reviewing inputs, outputs, and documentation
+■ Observing and documenting business procedures
+■ Researching vendor solutions
+■ Collecting active user comments and suggestions
+All these methods have proven to be effective, although some are more efficient than others. In most cases, analysts combine methods to increase their effectiveness and efficiency and to provide a comprehensive fact-finding approach.
+■ Interview Users and Other Stakeholders
+Interviewing users and other stakeholders is an effective way to understand 
+business functions and business rules. Unfortunately, it is also the most timeconsuming and resource-expensive option. In this method, systems analysts do 
+the following:
+■ Prepare detailed questions
+■ Meet with individuals or groups of users
+■ Obtain and discuss answers to the questions
+■ Document the answers
+■ Follow up as needed in future meetings or interviews
+Obviously, this process may take some time, so it usually requires multiple 
+sessions with each of the users or user groups.
+❚ Question Themes
+Whether in informal meetings, formal interviews, or as part of a questionnaire 
+or survey, analysts ask questions. But which questions should analysts ask? 
+Figure 2-6 shows three major themes that guide the analysts when they are asking questions to define system requirements; it also shows sample questions that 
+arise from those themes.
+What Are the Business Processes? The analyst must obtain a comprehensive list 
+of all the business processes. In most cases, the users provide answers in terms 
+of the current system, so the analyst must carefully discern which of those functions are fundamental and which may possibly be eliminated with an improved 
+system. For example, salesclerks might indicate that the first task they perform 
+when a customer places an order is to check the customer’s credit history. In the 
+new system, salesclerks might never need to perform that function; the system 
+might perform the check automatically. The function remains a system requirement, but the method of carrying out the function and its timing is changed.
+Theme Questions to users 
+What are the business operations and processes? What do you do?
+What information is needed to perform those
+operations?
+How should those operations be performed? How do you do it?
+What steps do you follow?
+How could they be done differently?
+What information do you use?
+What inputs do you use?
+What outputs do you produce?
+Figur e 2-6 Themes for informationgathering questions
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 51
+How Are the Business Processes Performed? Determining how business processes are performed begins with the current system but gradually moves to the 
+new system. The goal is to define how the new system should support the function rather than how it supports it now. The analyst must be able to help the 
+user visualize new and more efficient approaches to performing the business 
+processes made possible by new technology or processes.
+What Information Is Required? Some information inputs are formal; others are 
+informal. When questioning the user, the analyst should specifically ask about 
+exceptions or unusual situations in order to identify additional (nonroutine) information requirements. In this theme and the previous one, detail is the watchword. An analyst must understand the nitty-gritty detail to develop a correct 
+solution.
+❚ Question Types
+Questions can be roughly divided into two types:
+■ open-ended questions—such as “How do you do this function?”—
+encourage discussion and explanation.
+■ closed-ended questions—such as “How many forms a day do you 
+process?”—are used to get specific facts.
+Generally, open-ended questions help to start a discussion and enable a large 
+number of requirements to be uncovered fairly quickly. Note that all the questions in the previous section are open ended. A discussion that starts with openended questions usually shifts gradually to closed-ended questions that elicit or 
+confirm specific details of a business process.
+❚ Focus of Questions—Current System or New?
+A significant question that faces all analysts is how much effort to expend studying and documenting the existing system (if one exists). Excess attention to an 
+existing system can consume considerable time and can result in simply updating that system with newer technology. As a result, no matter how inefficient 
+the current system is, system developers simply reimplement the procedures that 
+are already in place. On the other hand, if a new system inherits many or all of 
+the requirements of an existing system, then an analyst risks missing important 
+requirements through insufficient study of the existing system.
+To minimize both risks, analysts must balance the review of current business functions with discovery of new system requirements. It is still critical to 
+have a complete, correct set of system requirements, but in today’s fast-paced 
+world, there is no time or money to review all the old systems and document all 
+the inefficient procedures. In fact, in today’s development environment, one of 
+the most valuable capabilities that a good system developer can bring is a new 
+perspective to the problem.
+❚ Interview Preparation, Conduct, and Follow-Up
+Figure 2-7 is a sample checklist that summarizes the major points to be covered; 
+it is useful in preparing for, conducting, and following up an interview.
+Preparing for the Interview Every successful interview requires preparation. 
+The first and most important step in preparing for an interview is to establish 
+its objective. In other words, you must determine what you want to accomplish 
+with this interview. Write down the objective so it is firmly established in your 
+mind. The second step is to determine which stakeholders should be interviewed. 
+A small number of interviewees is generally best when the objective is narrow or 
+of a fact-finding nature. Larger groups are better if the objective is more open 
+ended, such as when generating and evaluating new ideas. However, it can be 
+open-ended questions questions that 
+encourage discussion or explanation
+closed-ended questions questions that 
+elicit specific facts
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+52 PART 2 ■ Systems Analysis Activities
+difficult to manage a large group meeting well enough to ensure high-quality input from all participants. If possible, have at least two analysts involved in every 
+interview, and have them compare notes afterward to ensure accuracy.
+The next step is to prepare detailed questions to be used in the interview. 
+Write down a list of specific questions, and prepare notes based on the forms or 
+reports received earlier. Usually, you should prepare a list of questions that are 
+consistent with the objective of the interview. Open-ended questions and closedended questions are both appropriate. Generally, open-ended questions help get 
+the discussion started and encourage the user to explain all the details of the 
+business process and the rules.
+The last step is to make the final interview arrangements and then communicate those arrangements to all participants. A specific time and location 
+should be established. If possible, a quiet location should be chosen to avoid 
+interruptions. Each participant should know the objective of the meeting and, 
+when appropriate, should have a chance to preview the questions or materials to 
+be used. Interviews consume a substantial amount of time, and they can be made 
+more efficient if each participant knows beforehand what is to be accomplished.
+Conducting the Interview The usual rules of workplace meetings apply during stakeholder interviews: Plan ahead, arrive early, and ensure that the room 
+is prepared and that needed resources are available. Limit the time of the interview for the benefit of the analyst(s) and stakeholder(s); stakeholders have 
+other responsibilities, and the analysts can absorb only so much information at 
+one time. It is better to have several shorter interviews than one long interview. 
+A series of interviews provides an opportunity to absorb the material and then 
+return for clarification later if needed.
+Look for exception and error conditions. Look for opportunities to ask 
+“what if” questions. “What if it doesn’t arrive? What if the signature is missing? What if the balance is incorrect? What if two orders are exactly the same?” 
+The essence of good systems analysis is understanding all the “what ifs.” Make 
+a conscious effort to identify all the exception conditions and then ask about 
+them. More than any other skill, the ability to think of the exceptions will 
+help you discover the detailed business rules. It is a hard skill to teach from a 
+Establish the objective for the interview.
+Determine correct user(s) to be involved.
+Determine project team members to participate.
+Build a list of questions and issues to be discussed.
+Review related documents and materials.
+Set the time and location.
+Inform all participants of objective, time, and locations.
+Checklist for Conducting an Interview
+Before
+During
+Review notes for accuracy, completeness, and understanding.
+Transfer information to appropriate models and documents.
+Identify areas needing further clarication.
+Thank the participants.
+Follow up on open and unanswered questions.
+Arrive on time.
+Look for exception and error conditions.
+Probe for details.
+Take thorough notes.
+Identify and document unanswered items or open questions.
+After
+Figur e 2-7 Sample checklist to 
+prepare for user interviews
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 53
+textbook; experience will hone this skill. You will teach yourself this skill by 
+conscientiously practicing it.
+Probe for details. In addition to looking for exception conditions, the analyst must probe to ensure a complete understanding of all procedures and rules. 
+One of the most difficult skills to learn as a new systems analyst is how to get 
+enough details. Frequently, it is easy to get a general overview of how a process works; but do not be afraid to ask detailed questions until you thoroughly 
+understand how the process works and what information is used. You cannot do 
+effective systems analysis by glossing over the details.
+Take careful notes. It is a good idea to take handwritten notes. Usually, 
+tape recorders make users nervous. However, taking notes signals that you think 
+the information you are obtaining is important, and the user is complimented. 
+If two analysts conduct each interview, they can compare notes later. Identify 
+and document in your notes any unanswered questions or outstanding issues 
+that were not resolved. A good set of notes provides the basis for building the 
+analysis models and for establishing a basis for the next interview session.
+Figure 2-8 is a sample agenda for an interview session. Obviously, you do 
+not need to conform exactly to a particular agenda. However, as with the interview checklist shown in Figure 2-7, this figure will help prod your memory on 
+issues and items that should be discussed in an interview. Make a copy and use 
+it. As you develop your own style, you can modify the checklist to the way you 
+like to work.
+Discussion and Interview Agenda
+Setting
+Objective of Interview
+Determine processing rules for sales commission rates
+Date,Time, and Location 
+April 21, 2016, at 9:00 a.m. in William McDougal’s office
+User Participants (names and titles/positions)
+William McDougal, vice president of marketing and sales, and
+several of his staff
+Project Team Participants
+Mary Ellen Green and Jim Williams
+Interview/Discussion
+1. Who is eligible for sales commissions?
+2. What is the basis for commissions? What rates are paid?
+3. How is commission for returns handled?
+4. Are there special incentives? Contests? Programs based on time?
+5. Is there a variable scale for commissions? Are there quotas?
+6. What are the exceptions?
+Follow-Up
+Important decisions or answers to questions
+See attached write-up on commission policies
+Open items not resolved with assignments for solution
+See Item numbers 2 and 3 on open items list
+Date and time of next meeting or follow-up session
+April 28, 2016, at 9:00 a.m.
+Figure 2-8 Sample interview 
+session agenda with follow-up 
+information
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+54 PART 2 ■ Systems Analysis Activities
+Following up the Interview Follow-up is an important part of each interview. 
+The first task is to absorb, understand, and document the information that was 
+obtained. Generally, analysts document the details of the interview by constructing models of the business processes and writing textual descriptions of 
+nonfunctional requirements. These tasks should be completed as soon after the 
+interview as possible and the results distributed to the interview participants for 
+validation. If the modeling methods are complex or unfamiliar to the users, the 
+analyst should schedule follow-up meetings to explain and verify the models, as 
+described in the last section of this chapter.
+During the interview, you probably asked some “what if” questions that 
+the users could not answer. They are usually policy questions raised by the new 
+system that management has not considered before. It is extremely important 
+that these questions not get lost or forgotten. Figure 2-9 shows a sample table 
+for tracking outstanding or unresolved issues for RMO. The table includes questions posed by users or analysts and responsibilities assigned for resolving the 
+issues. If several teams are working, a combined list can be maintained. Other 
+columns that might be added to the list are an explanation of the problem’s resolution and the date resolved.
+Finally, make a list of new questions based on areas that need further elaboration or that are missing information. This list will prepare you for the next 
+interview.
+■ Distribute and Collect Questionnaires
+Questionnaires enable analysts to collect information from a large number of 
+stakeholders. Even if the stakeholders are widely distributed geographically, they 
+can still help define requirements through questionnaires. Questionnaires are 
+often used to obtain preliminary insight into stakeholder information needs, 
+which helps to determine areas that need further research using other methods.
+Figure 2-10 is a sample questionnaire showing three types of questions. 
+The first part has closed-ended questions to determine quantitative information. 
+The second part consists of opinion questions in which respondents are asked 
+whether they agree or disagree with the statement. Both types of questions are 
+useful for tabulating and determining quantitative averages. The third part 
+requests an explanation of a procedure or problem. Questions such as these are 
+good as a preliminary investigation to help direct further fact-finding activities.
+Questionnaires are not well suited to helping you learn about processes, 
+workflows, or techniques. Open-ended questions such as “How do you do 
+this process?” are best answered by using interviews or observation. Although 
+a questionnaire can contain a very limited number of open-ended questions, 
+stakeholders frequently do not return questionnaires that contain many openended questions.
+ID Issue title Date identified Target
+end date 
+Responsible
+project person User contact Comments
+1 Partial
+shipments 
+6-12-2016 7-15-2016 Jim Williams Jason Nadold Ship partials or wait
+for full shipment? 
+2 Returns and
+commissions
+7-01-2016 9-01-2016 Jim Williams William
+McDougal
+Are commissions
+recouped on
+returns?
+3 Extra
+commissions
+7-01-2016 8-01-2016 Mary Ellen Green William
+McDougal
+How to handle commissions on special
+promotions? 
+Figur e 2-9 Sample open-items list
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 55
+■ Review Inputs, Outputs, and Procedures
+There are two sources of information about inputs, outputs, and procedures. 
+One source is external to the organization—industry-wide professional organizations and other companies. It may not be easy to obtain information from 
+other companies, but they are a potential source of important information. 
+Sometimes, industry journals and magazines report the findings of “best practices” studies. The project team would be negligent in its duties if its members 
+were not familiar with best practice information.
+The second source of inputs, outputs, and procedures includes existing business documents and procedure descriptions within the organization. Reviewing 
+RMO Questionnaire
+This questionnaire is being sent to all telephone-order sales personnel. As you know, RMO is developing a new
+customer support system for order taking and customer service.
+The purpose of this questionnaire is to obtain preliminary information to assist in defining the requirements for
+the new system. Follow-up discussions will be held to permit everybody to elaborate on the system requirements.
+Part I. Answer these questions based on a typical four-hour shift.
+1. How many phone calls do you receive?_______________________________________________________
+2. How many phone calls are necessary to place an order for a product?_______________________________
+3. How many phone calls are for information about RMO products, that is, questions only?_________________
+4. Estimate how many times during a shift customers request items that are out of stock.__________________
+5. Of those out-of-stock requests, what percentage of the time does the customer desire to put the item
+ on back order?______________%
+6. How many times does a customer try to order from an expired catalog?______________________________
+7. How many times does a customer cancel an order in the middle of the conversation?___________________
+8. How many times does an order get denied due to bad credit?______________________________________
+Part II. Circle the appropriate number on the scale from 1 to 7 based on how strongly you
+agree or disagree with the statement.
+Question Strongly Agree Strongly Disagree
+It would help me do my job better to have longer 1234567
+descriptions of products available while talking
+to a customer.
+It would help me do my job better if I had the 1234567
+past purchase history of the customer available.
+I could provide better service to the customer if I 1234567
+had information about accessories that were
+appropriate for the items ordered.
+The computer response time is slow and causes 1234567
+difficulties in responding to customer requests.
+Part III. Please enter your opinions and comments.
+Please briefly identify the problems with the current system that you would like to see resolved in a new system.
+_________________________________________________________________________________________
+_________________________________________________________________________________________
+_________________________________________________________________________________________
+Figure 2-10 Sample questionnaire
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+56 PART 2 ■ Systems Analysis Activities
+internal documents and procedures serves two purposes. First, it is a good way 
+to get a preliminary understanding of the processes. Second, existing inputs, 
+outputs, and documents can serve as visual aids for the interview and as the 
+working documents for discussion (see Figure 2-11). Discussion can focus on a 
+specific input or output, its objective, its distribution, and its information content. The discussion should also include specific business events that initiate 
+the use of an input or generation of an output. Several different business events 
+might require the same form, and specific information about the event and the 
+business process is critical. It is always helpful to have screens and forms that 
+have been filled out with real information to ensure that the analyst obtains a 
+correct understanding of the data content.
+Reviewing the documentation of existing procedures helps identify business rules that may not come up in the interviews. Analyzing formal procedure 
+documentation also helps reveal discrepancies and redundancies in the business 
+processes. However, procedure documents frequently are not kept up to date, 
+and they commonly include errors. To ensure that the assumptions and business 
+rules that derive from the existing documentation are correct, analysts should 
+review them with the users.
+■ Observe and Document Business Processes
+Firsthand experience is invaluable to understand exactly what occurs within 
+business processes. More than any other activity, observing a business process in 
+action will help you understand the business functions. However, while observing existing processes, you must also be able to visualize the new system’s associated business processes. That is, as you observe the current business processes 
+to understand the fundamental business needs, you should never forget that the 
+processes could and often should change to be made more efficient. Do not get 
+locked into believing there is only one way of performing the process.
+Ridgeline Mountain Outfitters—Customer Order Form
+Name and address of person placing order.
+(Please verify your mailing address and make correction below.)
+Order Date
+Description
+Name
+Address Apt. No
+City State Zip
+Phone: Day ( ) Evening ( )
+Item No. Style Color Size
+Sleeve
+Length Qty Monogram Style
+Price
+Each Total
+Method of Payment
+Check/Money Order Gift Certificate(s) AMOUNT ENCLOSED $ 
+Account Number
+American Express MasterCard VISA
+Signature
+Other
+Expiration Date
+MO YR
+Delivery Phone ( )
+MERCHANDISE TOTAL 
+Regular FedEx shipping $4.50 per U.S. delivery address
+(Items are sent within 24 hours for delivery in 2 to 4 days)
+Please add $4.50 per each additional U.S. delivery address 
+FedEx Standard Overnight Service
+Any additional freight charges
+International Shipping (see shipping information on back)
+Gift Order or Ship To: (Use only if different from address at left.)
+Name
+Address Apt. No
+City State Zip
+Gift Card Message
+Gift Address for this Shipment Only Permanent Change of Address
+Figure 2-11 RMO mail-order form used as a visual aid during an interview
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 57
+You can observe a business process in many ways, ranging from a quick 
+walk-through of an office or plant to doing the work yourself. A quick walkthrough gives a general understanding of the layout of the office, the need 
+for and use of computer equipment, and the general workflow. Spending several hours observing users at their jobs helps you understand the details of 
+using the computer system and carrying out business functions. Being trained 
+as a user and actually doing the job enables you to discover the difficulties of 
+learning new procedures, the importance of a system that is easy to use, and 
+the stumbling blocks and bottlenecks of existing procedures and information 
+sources.
+It is not necessary to observe all processes at the same level of detail. A quick 
+walk-through may be sufficient for one process, whereas a process that is critical 
+or more difficult to understand might require an extended observation period. 
+If you remember that the objective is a complete understanding of the business 
+processes and rules, you can assess where to spend your time to gain that understanding. As with interviewing, it is usually better if two analysts combine their 
+efforts in observing procedures.
+Observation often makes the users nervous, so you need to be as unobtrusive 
+as possible. You can put users at ease in several ways, such as by working alongside a user or observing several users at once. Common sense and sensitivity to 
+the needs and feelings of the users will usually result in a positive experience.
+■ Research Vendor Solutions
+Many of the problems and opportunities that companies want to address with 
+new information systems have already been solved by other companies. In addition, consulting firms often have experience with the same problems, and software firms may have packaged solutions for a particular business need. Taking 
+advantage of existing knowledge or solutions can avoid costly mistakes and save 
+time and money.
+There are three positive contributions and one danger in exploring existing 
+solutions. First, researching existing solutions will frequently help users generate 
+new ideas for how to better perform their business functions. Seeing how someone else solved a problem and applying that idea to the culture and structure of 
+the existing organization will often provide viable alternative solutions for business needs.
+Second, some of these solutions are excellent and state of the art. Without 
+including this research, the development team may create a system that is obsolete even before it is designed. Companies need solutions that not only solve 
+basic business problems, but that are up to date with competitive practices.
+Third, it is often cheaper and less risky to buy a solution rather than to build 
+it. If the solution meets the needs of the company and can be purchased, then 
+that is usually a safer, quicker, and less-expensive route.
+The danger in exploring existing solutions is that the users and even the 
+systems analysts may want to buy one of the alternatives immediately. But if 
+a solution, such as a packaged software system, is purchased too early in the 
+process, the company’s needs may not be thoroughly investigated. Too many 
+companies have purchased systems only to find out later that they only support 
+half the functions that were needed. Do not rush into a purchase decision until 
+requirements are fully defined and all viable alternatives have been thoroughly 
+investigated.
+■ Collect Active User Comments and Suggestions
+As discussed in Chapter 1 and earlier in this chapter, system development normally proceeds with analysis, design, and other activities spread across multiple iterations. Portions of the system are constructed and tested during each 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+58 PART 2 ■ Systems Analysis Activities
+iteration. Users and other stakeholders perform the initial testing of system 
+functions during the iteration in which those functions are implemented. They 
+also test and use those same functions during later iterations.
+User feedback from initial and later testing is a valuable source of requirements information. Yet, interviews, discussions, and model reviews are an 
+imperfect way of eliciting complete and accurate requirements. The phrase “I’ll 
+know it when I see it” applies well to requirements definition. Users often cannot completely or accurately state their requirements until they can interact with 
+a live system that implements those requirements. Based on those interactions, 
+users can develop concrete suggestions for improvement and identify missing or 
+poorly implemented requirements.
+■ Models and Modeling
+Modeling is an important part of systems analysis and design. You saw many 
+different models in Chapter 1 for the Tradeshow System. Analysts build models to describe system requirements and use those models to communicate with 
+users and designers. By developing a model and reviewing it with a user, an analyst demonstrates an understanding of the user’s requirements. If the user spots 
+errors or omissions, they are incorporated into the model before it becomes the 
+basis for subsequent design and implementation activities. Figure 2-12 summarizes the key reasons for building and using models.
+Designers construct high-level and detailed models to describe system 
+components and their interactions. Design models serve as a scratch pad for 
+evaluating design alternatives and as a way to communicate the final design to 
+programmers, vendors, and others who will build, acquire, and assemble components to create the final system. In general, models built during one SDLC 
+activity are “consumed” during other activities.
+A model is a representation or abstraction of some aspect of the system 
+being built. There are dozens of different models that an analyst or designer 
+might develop and use (see Figure 2-13). Although this book emphasizes models and techniques for creating models, it is important to remember that system 
+projects vary in the number of models required and in their formality. Smaller, 
+simpler system projects will not need models showing every system detail, particularly when the project team has experience with the type of system being 
+built. Sometimes, the key models are created informally in a few hours. Although 
+models are often created by using specialized software tools, useful and important models are sometimes drawn quickly over lunch on a paper napkin or in 
+an airport waiting room on the back of an envelope! As with any development 
+activity, an iterative approach is used for creating models. The first draft of a 
+model has some, but not all details worked out. The next iteration might fill in 
+more details or correct previous misconceptions.
+Learning from the modeling process
+Reducing complexity by abstraction
+Remembering all the details
+Communicating with other development team members
+Communicating with a variety of users and stakeholders
+Documenting what was done for future maintenance/enhancement
+Figur e 2-12 Reasons for 
+modeling
+model representation or abstraction of 
+some aspect of a system
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 59
+Analysis and design models can be grouped into three generic types:
+■ Textual models. Analysts use such textual models as memos, reports, 
+narratives, and lists to describe requirements that are detailed and are difficult to represent in other ways. The event list and use case descriptions (see 
+icons shown in Figure 2-13) are two examples of textual models. Narrative 
+description is often the best way to initially record information gathered 
+verbally from stakeholders, such as during an interview.
+■ Graphical models. Graphical models make it easier to understand complex relationships that are difficult to follow when described as a list or 
+narrative. Recall the old saying that a picture is worth a thousand words. 
+In system development, a carefully constructed graphical model might be 
+worth a million words! Some graphical models actually look similar to a 
+real-world part of the system, such as a screen design or a report layout 
+design. However, the graphical models developed during analysis activities 
+typically represent more abstract things, such as external agents, processes, 
+data, objects, messages, and connections.
+■ Mathematical models. Mathematical models are one or more formulas 
+that describe technical aspects of a system. Analysts often use mathematical models to represent functional requirements for scientific and engineering applications and occasionally use them to describe business system 
+requirements in areas such as accounting and inventory control. Analysts 
+and designers use mathematical models to describe nonfunctional requirements and operational parameters such as network throughput or database 
+query response time.
+Many graphical models used in system development are drawn according to the notation specified by the Unified Modeling Language (UML). In 
+Figure 2-13, the use case diagram, class diagram, activity diagram, sequence 
+diagram, communication diagram, and state machine diagram are UML graphical models. UML is the standard set of model constructs and notations defined 
+by the Object Management Group (OMG), a standards organization for system development. By using UML, analysts and end users are able to depict and 
+1 buy new car
+2 sell car
+3 get car serviced
+4 make payment
+5 trade in car
+Event list Use case
+description
+Use case
+diagram
+Sequence
+diagram
+Communication
+diagram
+State machine
+diagram
+Class diagram
+Activity
+diagram
+Figur e 2-13 Some analysis and 
+design models
+textual models text-based system models 
+such as memos, reports, narratives, and lists
+graphical models system models that use 
+pictures and other graphical elements to create a diagram
+mathematical models system models 
+that describes requirements numerically or as 
+mathematical expressions
+Unified Modeling Language (UML)
+a standard set of information system model 
+constructs and notations defined by the 
+Object Management Group
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+60 PART 2 ■ Systems Analysis Activities
+understand a variety of specific diagrams used in a system development project. 
+Prior to UML, there was no standard, so diagrams could be confusing, and they 
+varied from company to company (and from book to book).
+In later chapters, you will learn how to develop many of these analysis and 
+design models. The first UML diagram covered in detail is the activity diagram.
+■ Documenting Workflows with Activity Diagrams
+As you gather information about business processes, you will need to document 
+your results as a workflow. A workflow is the sequence of work steps that complete one business transaction or customer request. Workflows may be simple or 
+complex. Complex workflows can be composed of dozens or hundreds of work 
+steps and may include participants from different parts of an organization.
+One effective way to capture this information is with a UML activity diagram. An activity diagram describes the various user (or system) activities, the 
+person or component that completes each activity, and the sequential flow of 
+these activities.
+Figure 2-14 shows the basic symbols used in an activity diagram. The flattened ovals represent the individual activities in a workflow. The connecting 

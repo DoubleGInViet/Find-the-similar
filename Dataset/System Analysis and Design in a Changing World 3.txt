@@ -1,0 +1,570 @@
+﻿object-relational databases, and object-oriented databases can all support these kinds of 
+requirements. By contrast, systems to support decision making are usually only reading 
+data (not updating it), oft en in ad hoc ways. Th e best choices for these systems usually are 
+RDBMSs because these formats can be confi gured specially for needs that may be unclear 
+and less apt to change the data. However, depending on the type of data needed to support 
+the decision-making application, RDBMSs may not be appropriate. In that case, ORDBMS, 
+OODBMS, or a NoSQL data store may be the better solution.
+Existing Storage Formats The storage format should be selected primarily on the basis 
+of the kind of data and application system being developed. However, project teams 
+should consider the existing storage formats in the organization when making design 
+decisions. In this way, they can better understand the technical skills that already exist 
+and how steep the learning curve will be when the storage format is adopted. For example, a company that is familiar with RDBMS will have little problem adopting a relational 
+database for the project, whereas an OODBMS or a NoSQL data store might require 
+substantial developer training. 
+Future Needs Not only should a project team consider the storage technology within the 
+company, but it should also be aware of current trends and technologies that are being used by 
+other organizations. A large number of installations of a specifi c type of storage format suggest 
+that skills and products are available to support the format. Th erefore, the selection of that format is safe. For example, it would probably be easier and less expensive to fi nd RDBMS expertise when implementing a system than to fi nd help with an OODBMS or a NoSQL data store.
+Other Miscellaneous Criteria Other criteria that should be considered include cost, 
+licensing issues, concurrency control, ease of use, security and access controls, version 
+management, storage management, lock management, query management, language 
+bindings, and APIs. We also should consider performance issues, such as cache management, insertion, deletion, retrieval, and updating of complex objects. Finally, the level of 
+support for object orientation (such as objects, single inheritance, multiple inheritance, 
+polymorphism, encapsulation and information hiding, methods, multivalued attributes, 
+repeating groups) is critical.
+MAPPING PROBLEM DOMAIN OBJECTS TO OBJECT 
+PERSISTENCE FORMATS
+Th ere are many diff erent formats from which to choose to support object persistence. Each 
+of the formats can have some conversion requirements. Regardless of the object persistence 
+format chosen, we suggest supporting primary keys and foreign keys by adding them to the 
+problem domain classes at this point. However, this does imply that some additional processing will be required. Th e developer has to set the value for the foreign key when adding 
+the relationship to an object. From a practical perspective, fi le formats are used mostly for 
+temporary storage. Th us, we do not consider them further.
+We also recommend that data management functionality specifi cs, such as retrieval and 
+updating of data from the object storage, be included only in classes contained in the data management layer. Th is will ensure that the data management classes are dependent on the problem 
+domain classes and not vice versa. Th is allows the design of problem domain classes to be independent of any specifi c object persistence environment, thus increasing their portability and their 
+potential for reuse. Like our previous recommendation, this also implies additional processing.
+338 Chapter 9 Data Management Layer Design
+Mapping Problem Domain Objects to an OODBMS Format
+If we support object persistence with an OODBMS, the mappings between the problem domain 
+objects and the OODBMS tend to be fairly straightforward. As a starting point, we suggest that 
+each concrete problem domain class should have a corresponding object persistence class in 
+the OODBMS. Th ere will also be a data access and manipulation (DAM) class (described later 
+in this chapter) that contains the functionality required to manage the interaction between the 
+object persistence class and the problem domain layer. For example, using the appointment 
+system example from the previous chapters, the Patient class is associated with an OODBMS 
+class (see Figure 9-5). Th e Patient class essentially will be unchanged from analysis. Th e 
+Patient-OODBMS class will be a new class that is dependent on the Patient class, whereas the 
+Patient-DAM class will be a new class that depends on both the Patient class and the PatientOODBMS class. Th e Patient-DAM class must be able to read from and write to the OODBMS. 
+Otherwise, it will not be able to store and retrieve instances of the Patient class. Even though 
+this does add overhead to the installation of the system, it allows the problem domain class 
+to be independent of the OODBMS being used. If at a later time another OODBMS or object 
+persistence format is adopted, only the DAM classes will have to be modifi ed. Th is approach 
+increases both the portability and the potential for reuse of the problem domain classes.
+Even though we are implementing the DAM layer using an OODBMS, a mapping from 
+the problem domain layer to the OODBMS classes in the data access and management layer 
+may be required. If multiple inheritance is used in the problem domain but not supported by 
+the OODBMS, then the multiple inheritance must be factored out of the OODBMS classes. 
+For each case of multiple inheritance (i.e., more than one superclass), the following rules can 
+be used to factor out the multiple inheritance eff ects in the design of the OODBMS classes.8
+PD Layer
+DM Layer
+Patient Appointment
+Patient-OODBMS Appointment-OODBMS
+Patient-DAM Appointment-DAM
+FIGURE 9-5
+Appointment 
+System ProblemDomain and DM 
+Layers
+8 Th e rules presented in this section are based on material in Ali Bahrami, Object-Oriented Systems Development Using 
+the Unifi ed Modeling Language (New York: McGraw-Hill, 1999); Michael Blaha and William Premerlani, ObjectOriented Modeling and Design for Database Applications (Upper Saddle River, NJ: Prentice Hall, 1998); Akmal B. 
+Chaudri and Roberto Zicari, Succeeding with Object Databases: A Practical Look at Today’s Implementations with Java 
+and XML (New York: Wiley, 2001); Peter Coad and Edward Yourdon, Object-Oriented Design (Upper Saddle River, NJ: 
+Yourdon Press, 1991); Paul R. Read, Jr., Developing Applications with Java and UML (Boston: Addison-Wesley, 2002).
+Mapping Problem Domain Objects to Object Persistence Formats  339
+Rule 1a: Add a column(s) to the OODBMS class(es) that represents the subclass(es) 
+that will contain an Object ID of the instance stored in the OODBMS class that 
+represents the “additional” superclass(es). Th is is similar in concept to a foreign 
+key in an RDBMS. Th e multiplicity of this new association from the subclass 
+to the “superclass” should be 1..1. Add a column(s) to the OODBMS class(es) 
+that represents the superclass(es) that will contain an Object ID of the instance 
+stored in the OODBMS class that represents the subclass(es). If the superclasses 
+are concrete, that is, they can be instantiated themselves, then the multiplicity 
+from the superclass to the subclass is 0..1, otherwise, it is 1..1. An exclusive-or 
+(XOR) constraint must be added between the associations. Do this for each 
+“additional” superclass.
+or
+Rule 1b: Flatten the inheritance hierarchy of the OODBMS classes by copying the 
+attributes and methods of the additional OODBMS superclass(es) down to 
+all of the OODBMS subclasses and remove the additional superclass from the 
+design.9
+Th ese multiple inheritance rules are very similar to those described in Chapter 8. 
+Figure 9-6 demonstrates the application of these rules. Th e right side of the fi gure portrays 
+the same problem domain classes that were in Chapter 8: Airplane, Car, Boat, FlyingCar, 
+and AmphibiousCar. FlyingCar inherits from both Airplane and Car, and AmphibiousCar 
+inherits from both Car and Boat. Figure 9-6a portrays the mapping of multiple inheritance 
+relationships into a single inheritance-based OODBMS using Rule 1a. Assuming that Car is 
+concrete, we apply Rule 1a to the Problem Domain classes, and we end up with the OODBMS 
+classes on the left side of Part a, where we have:
+■ Added a column (attribute) to FlyingCar-OODBMS that represents an association 
+with Car-OODBMS;
+■ Added a column (attribute) to AmphibiousCar-OODBMS that represents an 
+ association with Car-OODBMS;
+■ Added a pair of columns (attributes) to Car-OODBMS that represents an 
+association with FlyingCar-OODBMS and AmphibiousCar-OODBMS and for 
+ completeness sake;
+■ Added associations between AmphibiousCar-OODBMS and Car-OODBMS 
+and FlyingCar-OODBMS and Car-OODBMS that have the correct multiplicities 
+and the XOR constraint explicitly shown.
+We also display the dependency relationships from the OODBMS classes to the problem 
+domain classes. Furthermore, we illustrate the fact that the association between FlyingCarOODBMS and Car-OODBMS and the association between AmphibiousCar-OODBMS and 
+Car-OODBMS are based on the original factored-out inheritance relationships in the problem 
+domain classes by showing dependency relationships from the associations to the inheritance 
+relationships.
+On the other hand, if we apply Rule 1b to map the Problem Domain classes to a singleinheritance-based OODBMS, we end up with the mapping in Figure 9-6b, where all the attributes of Car have been copied into the FlyingCar-OODBMS and AmphibiousCar-OODBMS 
+classes. In this latter case, you may have to deal with the eff ects of inheritance confl icts (see 
+Chapter 8).
+9 It is also a good idea to document this modifi cation in the design so that in the future, modifi cations to the design 
+can be easily maintained.
+Boat-OODBMS
+-weight
+-length
+OODBMS Classes Problem Domain Classes
+AmphibiousCar-OODBMS
+-mfg
+-yr
+-Car-OODBMS
+Boat-OODBMS
+-weight
+-length
+FlyingCar-OODBMS
+-mfg
+-yr
+-Car-OODBMS
+Car-OODBMS
+-numberofDoors
+-regNo
+-FlyingCar-OODBMS
+-AmphibiousCar-OODBMS
+AmphibiousCar-OODBMS
+-numberOfDoors
+-regNo
+-mfg
+-yr
+Airplane-OODBMS
+-engineType
+-fuelType
+FlyingCar-OODBMS
+-numberOfDoors
+-regNo
+-mfg
+-yr
+0..*
+1..1
+1..1
+0..*
+(a)
+(b)
+Airplane-OODBMS
+-EngineType
+-FuelType
+Airplane
+-EngineType
+-FuelType
+{XOR}
+FlyingCar
+-mfg
+-yr
+Airplane
+-engineType
+-fuelType
+Flying Car
+-mfg
+-yr
+AmphibiousCar
+-mfg
+-yr
+Boat
+-weight
+-length
+Car
+-numberOfDoors
+-regNo
+AmphibiousCar
+-mfg
+-yr
+Car
+-numberOfDoors
+-regNo
+Boat
+-weight
+-length
+FIGURE 9-6  Mapping Problem Domain Objects to a Single Inheritance-Based OODBMS
+340
+Mapping Problem Domain Objects to Object Persistence Formats  341
+Th e advantage of Rule 1a is that all problem domain classes identifi ed during analysis are 
+preserved in the database. Th is allows maximum fl exibility of maintenance of the design of the 
+data management layer. However, Rule 1a increases the amount of message passing required 
+in the system, and it has added processing requirements involving the XOR constraint, thus 
+reducing the overall effi ciency of the design. Our recommendation is to limit Rule 1a to be 
+applied only when dealing with “extra” superclasses that are concrete because they have an 
+independent existence in the problem domain. Use Rule 1b when they are abstract because 
+they do not have an independent existence from the subclass.
+In either case, additional processing will be required. In the fi rst case, cascading of deletes 
+will work, not only from the individual object to all its elements but also from the superclass 
+instances to all the subclass instances. In the second case, there will be a lot of copying and 
+pasting of the structure of the superclass to the subclasses. In the case that a modifi cation of 
+the structure of the superclass is required, the modifi cation must be cascaded to all of the subclasses. However, multiple inheritance is rare in most business problems. In most situations, 
+the preceding rules will never be necessary.
+When instantiating problem domain objects from OODBMS objects, additional processing will also be required. Th e additional processing will be in the retrieval of the OODBMS 
+objects and taking their elements to create a problem domain object. Also, when storing the 
+problem domain object, the conversion to a set of OODBMS objects is required. Basically 
+speaking, any time that an interaction takes place between the OODBMS and the system, if 
+multiple inheritance is involved and the OODBMS supports only single inheritance, a conversion between the two formats will be required.
+Mapping Problem Domain Objects to an ORDBMS Format
+If we support object persistence with an ORDBMS, then the mapping from the problem 
+domain objects to the data management objects is much more involved. Depending on 
+the level of support for object orientation, diff erent mapping rules are necessary. For our 
+purposes, we assume that the ORDBMS supports Object IDs, multivalued attributes, and 
+stored procedures. However, we assume that the ORDBMS does not provide any support 
+for inheritance. Based on these assumptions, Figure 9-7 lists a set of rules that can be used to 
+design the mapping from the Problem Domain objects to the tables of the ORDBMS-based 
+data management layer.
+First, all concrete Problem Domain classes must be mapped to the tables in the ORDBMS. 
+For example in Figure 9-8, the Patient class has been mapped to Patient-ORDBMS table. 
+Notice that the Participant class has also been mapped to an ORDBMS table. Even though 
+the Participant class is abstract, this mapping was done because in the complete class diagram 
+(see Figure 7-15), the Participant class had multiple direct subclasses (Employee and Patient).
+Second, single-valued attributes should be mapped to columns in the ORDBMS tables. 
+Again, referring to Figure 9-8, we see that the amount attribute of the Patient class has been 
+included in the Patient Table class.
+Th ird, depending on the level of support of stored procedures, the methods and derived 
+attributes should be mapped either to stored procedures or program modules.
+Fourth, single-valued (one-to-one) aggregation and association relationships should be 
+mapped to a column that can store an Object ID. Th is should be done for both sides of the 
+relationship.
+Fift h, multivalued attributes should be mapped to columns that can contain a set of 
+values. For example in Figure 9-8, the insurance carrier attribute in the Patient class may 
+contain multiple values because a patient may have more than one insurance carrier. Th us 
+in the Patient table, a multiplicity has been added to the insurance carrier attribute to portray this fact.
+342 Chapter 9 Data Management Layer Design
+Rule 1: Map all concrete Problem Domain classes to the ORDBMS tables. Also, if an abstract problem domain class has multiple 
+direct subclasses, map the abstract class to an ORDBMS table.
+Rule 2: Map single-valued attributes to columns of the ORDBMS tables.
+Rule 3: Map methods and derived attributes to stored procedures or to program modules.
+Rule 4: Map single-valued aggregation and association relationships to a column that can store an Object ID. Do this for both sides 
+of the relationship.
+Rule 5: Map multivalued attributes to a column that can contain a set of values.
+Rule 6: Map repeating groups of attributes to a new table and create a one-to-many association from the original table to the 
+new one.
+Rule 7: Map multivalued aggregation and association relationships to a column that can store a set of Object IDs. Do this for both 
+sides of the relationship.
+Rule 8: For aggregation and association relationships of mixed type (one-to-many or many-to-one), on the single-valued side (1..1 
+or 0..1) of the relationship, add a column that can store a set of Object IDs. The values contained in this new column will be the 
+Object IDs from the instances of the class on the multivalued side. On the multivalued side (1..* or 0..*), add a column that can 
+store a single Object ID that will contain the value of the instance of the class on the single-valued side.
+For generalization/inheritance relationships:
+Rule 9a: Add a column(s) to the table(s) that represents the subclass(es) that will contain an Object ID of the instance stored in the 
+table that represents the superclass. This is similar in concept to a foreign key in an RDBMS. The multiplicity of this new association from the subclass to the “superclass” should be 1..1. Add a column(s) to the table(s) that represents the superclass(es) that will 
+contain an Object ID of the instance stored in the table that represents the subclass(es). If the superclasses are concrete, that is, they 
+can be instantiated themselves, then the multiplicity from the superclass to the subclass is 0..1, otherwise, it is 1..1. An exclusive-or 
+(XOR) constraint must be added between the associations. Do this for each superclass.
+or
+Rule 9b: Flatten the inheritance hierarchy by copying the superclass attributes down to all of the subclasses and remove the superclass from the design.*
+*It is also a good idea to document this modifi cation in the design so that in the future, modifi cations to the design can be maintained easily.
+FIGURE 9-7  Schema for Mapping Problem Domain Objects to ORDBMS
+Th e sixth mapping rule addresses repeating groups of attributes in a problem domain 
+object. In this case, the repeating group of attributes should be used to create a new table in 
+the ORDBMS. It can imply a missing class in the problem domain layer. Normally, when 
+a set of attributes repeats together as a group, it implies a new class. Finally, we must create a 
+one-to-many association from the original table to the new one.
+Th e seventh rule supports mapping multivalued (many-to-many) aggregation and 
+association relationships to columns that can store a set of Object IDs. Basically, this is a 
+combination of the fourth and fi ft h rules. Like the fourth rule, this should be done for both 
+sides of the relationships. For example in Figure 9-8, the Symptom table has a multivalued 
+attribute (Patients) that can contain multiple Object IDs to Patient Table objects, and 
+Patient table has a multivalued attribute (Symptoms) that can contain multiple Object IDs 
+to Symptom Table objects.
+Th e eighth rule combines the intentions of Rules 4 and 7. In this case, the rule maps 
+one-to-many and many-to-one relationships. On the single-valued side (1..1 or 0..1) of the 
+relationship, a column that can store a set of Object IDs from the table on the multivalued side 
+(1..* or 0..*) of the relationship should be added. On the multivalued side, a column should 
+be added to the table that can store an Object ID from an instance stored in the table on the 
+single-valued side of the relationship. For example, in Figure 9-8, the Patient table has a multivalued attribute (Appts) that can contain multiple Object IDs to Appointment Table objects, 
+whereas the Appointment table has a single-valued attribute (Patient) that can contain an 
+Object ID to a Patient Table object.
+Th e ninth, and fi nal, rule deals with the lack of support for generalization and inheritance. In this case, there are two diff erent approaches. Th ese approaches are virtuallyTh e fi fth rule addresses multivalued attributes and repeating groups of attributes in a 
+problem domain object. In these cases, the attributes should be used to create new tables 
+in the RDBMS. As in the ORDBMS mappings, repeating groups of attributes can imply 
+missing classes in the Problem Domain layer. In that case, a new problem domain class 
+may be required. Finally, we should create a one-to-many or zero-to-many association 
+from the original table to the new one. For example, in Figure 9-10, we needed to create a 
+new table for insurance carrier because it was possible for a patient to have more than one 
+insurance carrier.
+Th e sixth rule supports mapping multivalued (many-to-many) aggregation and association relationships to a new table that relates the two original tables. In this case, the new 
+table should contain foreign keys back to the original tables. For example, in Figure 9-10, we 
+needed to create a new table that represents the suff er association between the Patient and 
+Symptom problem domain classes.
+Th e seventh rule addresses one-to-many and many-to-one relationships. With these 
+types of relationships, the multivalued side (0..* or 1..*) should be mapped to a column 
+in its table that can store a foreign key back to the single-valued side (0..1 or 1..1). It is 
+possible that we have already taken care of this situation because we earlier recommended 
+inclusion of both primary and foreign key attributes in the problem domain classes. In the 
+case of Figure 9-10, we had already added the primary key from the Patient class to the 
+Appointment class as a foreign key (see participantNumber). However, in the case of the 
+refl exive relationship, primary insurance carrier, associated with the Patient class, we need 
+to add a new attribute (primaryInsuranceCarrier) to be able to store the relationship.
+Th e eighth, and fi nal, rule deals with the lack of support for generalization and inheritance. As in the case of an ORDBMS, there are two diff erent approaches. Th ese approaches 
+are virtually identical to the rules described with OODBMS and ORDBMS object persistence 
+formats given earlier. Th e fi rst approach is to add a column to each table that represents a 
+subclass for each of the concrete superclasses of the subclass. Essentially, this ensures that 
+the primary key of the subclass is the same as the primary key for the superclass. If we had 
+previously added the primary and foreign keys to the problem domain objects, as we recommended, then we do not have to do anything else. Th e primary keys of the tables will be used 
+to rejoin the instances stored in the tables that represent each of the pieces of the problem 
+domain object. Conversely, the inheritance hierarchy can be fl attened and the rules (Rules 1 
+through 7) can be reapplied.
+As in the case of the ORDBMS approach, additional processing will be required any time 
+that an interaction takes place between the database and the system. Every time an object 
+must be created, retrieved from the database, updated, or deleted, the mapping between the 
+problem domain and the RDBMS must be used to convert between the two diff erent formats. 
+In this case, a great deal of additional processing will be required.
+OPTIMIZING RDBMS-BASED OBJECT STORAGE
+Once the object persistence format is selected, the second step is to optimize the object persistence for processing effi ciency. Th e methods of optimization vary based on the format that 
+you select; however, the basic concepts remain the same. Once you understand how to optimize a particular type of object persistence, you will have some idea as to how to approach the 
+optimization of other formats. Th is section focuses on the optimization of the most popular 
+storage format: relational databases.
+Th ere are two primary dimensions in which to optimize a relational database: for storage 
+effi ciency and for speed of access. Unfortunately, these two goals oft en confl ict because the 
+Optimizing RDBMS-Based Object Storage  347
+best design for access speed may take up a great deal of storage space as compared to other, 
+less-speedy designs. Ultimately, the project team will go through a series of trade-off s until the 
+ideal balance is reached.
+Optimizing Storage Effi ciency
+Th e most effi cient tables in a relational database in terms of storage space have no redundant 
+data and very few null values. Th e presence of null values suggests that space is being wasted 
+(and more data to store means higher data storage hardware costs). For example, the table 
+in Figure 9-11 repeats customer information, such as name and state, each time a customer 
+places an order, and it contains many null values in the product-related columns. Th ese nulls 
+occur whenever a customer places an order for fewer than three items (the maximum number 
+on an order).
+In addition to wasting space, redundancy and null values also allow more room for error 
+and increase the likelihood that problems will arise with the integrity of the data. What if 
+customer 1035 moved from Maryland to Georgia? In the case of Figure 9-11, a program must 
+be written to ensure that all instances of that customer are updated to show Georgia as the 
+new state of residence. If some of the instances are overlooked, then the table will contain an 
+update anomaly, whereby some of the records contain the correctly updated value for state 
+and other records contain the old information.
+Nulls threaten data integrity because they are diffi cult to interpret. A blank value in the 
+Order table’s product fi elds could mean the customer did not want more than one or two 
+products on his or her order, the operator forgot to enter in all three products on the order, 
+or the customer canceled part of the order and the products were deleted by the operator. It 
+is impossible to be sure of the actual meaning of the nulls.
+For both these reasons—wasted storage space and data integrity threats—project teams 
+should remove redundancy and nulls from the table. During design, the class diagram is 
+used to examine the design of the RDBMS tables (e.g., see Figure 9-10) and to optimize it 
+for storage effi ciency. If you follow the modeling instructions and guidelines that were presented in Chapter 5, you will have little trouble creating a design that is highly optimized in 
+this way because a well-formed logical data model does not contain redundancy or many 
+null values.
+Sometimes, however, a project team needs to start with a model that was poorly constructed or with one that was created for fi les or a nonrelational type of format. In these cases, 
+the project team should follow a series of steps that serve to check the model for storage 
+effi ciency. Th ese steps make up a process called normalization.10 Normalization is a process 
+whereby a series of rules are applied to the RDBMS tables to assess the effi ciency of the tables 
+(see Figure 9-12). Th ese rules help analysts identify tables that are not represented correctly. 
+Here, we describe three normalization rules that are applied regularly in practice. Figure 9-11 
+shows a model in 0 Normal Form, which is an unnormalized model before the normalization 
+rules have been applied.
+A model is in fi rst normal form (1NF) if it does not lead to multivalued fi elds, fi elds 
+that allow a set of values to be stored, or repeating fi elds, which are fi elds that repeat within 
+a table to capture multiple values. Th e rule for 1NF says that all tables must contain the 
+same number of columns (i.e., fi elds) and that all the columns must contain a single value. 
+Notice that the model in Figure 9-11 violates 1NF because it causes product number, 
+10 Normalization also can be performed on the problem domain layer (see Chapter 8). However, the normalization 
+process should be used on the problem domain layer only to uncover missing classes. Otherwise, optimizations that 
+have nothing to do with the semantics of the problem domain can creep into the problem domain layerdescription, price, and quantity to repeat three times for each order in the table. Th e resulting table has many records that contain nulls in the product-related columns, and orders 
+are limited to three products because there is no room to store information for more.
+A much more effi cient design (and one that conforms to 1NF) leads to a separate 
+table to hold the repeating information; to do this, we create a separate table on the model 
+to capture product order information. A zero-to-many relationship would then exist 
+between the two tables. As shown in Figure 9-13, the new design eliminates nulls from 
+the Order table and supports an unlimited number of products that can be associated 
+with an order.
+Second normal form (2NF) requires fi rst that the data model is in 1NF and second that the 
+data model leads to tables containing fi elds that depend on a whole primary key. Th is means 
+that the primary key value for each record can determine the value for all the other fi elds in 
+the record. Sometimes fi elds depend on only part of the primary key (i.e., partial dependency), 
+and these fi elds belong in another table.
+For example, in the new Product Order table that was created in Figure 9-13, the primary 
+key is a combination of the order number and product number, but the product description 
+and price attributes are dependent only upon product number. In other words, by knowing 
+product number, we can identify the product description and price. However, knowledge of 
+the order number and product number is required to identify the quantity. To rectify this 
+violation of 2NF, a table is created to store product information, and the description and 
+price attributes are moved into the new table. Now, product description is stored only once 
+for each instance of a product number as opposed to many times (every time a product is 
+placed on an order).
+Do any tables have repeating fields? Do some
+records have a different number of columns
+from other records?
+Yes: Remove the repeating fields. Add a new
+table that contains the fields that repeat.
+No: The data model is in 1NF
+0 Normal Form
+Is the primary key made up of more than one
+field? If so, do any fields depend on only a part
+of the primary key?
+Yes: Remove the partial dependency. Add a 
+new table that contains the fields that are
+partially dependent.
+No: The data model is in 2NF
+Do any fields depend on another nonprimary
+key field?
+Yes: Remove the transitive dependency. 
+Add a new table that contains the fields
+that are transitively dependent.
+No: The data model is in 3NF
+Third Normal Form
+Second Normal Form
+First Normal Form
+FIGURE 9-12
+The Steps of 
+Normalization
+Optimizing RDBMS-Based Object Storage  349
+350 Chapter 9 Data Management Layer Design
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+-State : String
+-Tax Rate : float
+Product Order
+-Order Number : unsigned long
+-Product Number : String
+-Product Desc : String
+-Product Price : double
+-Product Qty : unsigned long
+Revised Model:
+0..* 1..*
+Note: Order Number will serve as part 
+of the primary key of Product Order
+Note: Product Number will serve as part 
+of the primary key of Product Order
+Note: Order Number also will serve as a 
+foreign key in Product Order
+Note: Order Number will serve as part 
+of the primary key of Order
+Note: Cust ID also will serve as part of 
+the primary key of Order
+(a)
+Sample Records:
+Order Table
+Order 248 has 3 products
+Order 237 has 2 products
+ Order Cust Last First Tax 
+ Number Date ID Name Name State Rate
+ 239 11/23/00 1035 Black John MD 0.05
+ 260 11/24/00 1035 Black John MD 0.05 
+ 273 11/27/00 1035 Black John MD 0.05
+ 241 11/23/00 1123 Williams Mary CA 0.08
+ 262 11/24/00 1123 Williams Mary CA 0.08
+ 287 11/27/00 1123 Williams Mary CA 0.08
+ 290 11/30/00 1123 Williams Mary CA 0.08
+ 234 11/23/00 2242 DeBerry Ann DC 0.065
+ 237 11/23/00 2242 DeBerry Ann DC 0.065
+ 238 11/23/00 2242 DeBerry Ann DC 0.065
+ 245 11/24/00 2242 DeBerry Ann DC 0.065
+ 250 11/24/00 2242 DeBerry Ann DC 0.065
+ 252 11/24/00 2242 DeBerry Ann DC 0.065
+ 253 11/24/00 2242 DeBerry Ann DC 0.065
+ 297 11/30/00 2242 DeBerry Ann DC 0.065
+ 243 11/24/00 4254 Bailey Ryan MD 0.05
+ 246 11/24/00 4254 Bailey Ryan MD 0.05
+ 248 11/24/00 4254 Bailey Ryan MD 0.05
+ 235 11/23/00 9500 Chin April KS 0.05
+ 242 11/23/00 9500 Chin April KS 0.05
+ 244 11/24/00 9500 Chin April KS 0.05
+ 251 11/24/00 9500 Chin April KS 0.05
+Product Order Table
+ Order Product Product Product Product 
+ Number Number Desc Price Qty
+ 239 555 Cheese Tray $45.00 2
+ 260 444 Wine Gift Pack $60.00 1
+ 273 222 Bottle Opener $12.00 1
+ 241 444 Wine Gift Pack $60.00 2
+ 262 222 Bottle Opener $12.00 2
+ 287 222 Bottle Opener $12.00 2
+ 290 555 Cheese Tray $45.00 3
+ 234 555 Cheese Tray $45.00 2
+ 237 111 Wine Guide $15.00 1
+ 237 444 Wine Gift Pack $60.00 1
+ 238 444 Wine Gift Pack $60.00 1
+ 245 222 Bottle Opener $12.00 1
+ 250 222 Bottle Opener $12.00 1
+ 252 222 Bottle Opener $12.00 1
+ 252 444 Wine Gift Pack $60.00 2
+ 253 222 Bottle Opener $12.00 1
+ 253 444 Wine Gift Pack $60.00 1
+ 297 333 Jams & Jellies $20.00 2
+ 243 555 Cheese Tray $45.00 2
+ 246 333 Jams & Jellies $20.00 3
+ 248 222 Bottle Opener $12.00 1
+ 248 333 Jams & Jellies $20.00 2
+ 248 111 Wine Guide $15.00 1
+ 235 222 Bottle Opener $12.00 1
+ 242 333 Jams & Jellies $20.00 3
+ 244 222 Bottle Opener $12.00 2
+ 251 111 Wine Guide $15.00 2
+(b)
+FIGURE 9-13  1NF: Remove Repeating Fields
+A second violation of 2NF occurs in the Order table: customer fi rst name and last name 
+depend only upon the customer ID, not the whole key (Cust ID and Order number). As a result, 
+every time the customer ID appears in the Order table, the names also appear. A much more 
+economical way of storing the data is to create a Customer table with the Customer ID as the 
+primary key and the other customer-related fi elds (i.e., last name and fi rst name) listed only 
+once within the appropriate record. Figure 9-14 illustrates how the model would look when 
+placed in 2NF.
+Th ird normal form (3NF) occurs when a model is in both 1NF and 2NF and, in the resulting tables, none of the fi elds depend on nonprimary key fi elds (i.e., transitive dependency). 
+Figure 9-14 contains a violation of 3NF: Th e tax rate on the order depends upon the state to 
+which the order is being sent. Th e solution involves creating another table that contains state 
+abbreviations serving as the primary key and the tax rate as a regular fi eld. Figure 9-15 presents 
+the end results of applying the steps of normalization to the original model from Figure 9-11.
+Optimizing Data Access Speed
+Aft er you have optimized the design of the object storage for effi ciency, the end result is that 
+data are spread out across a number of tables. When data from multiple tables need to be 
+accessed or queried, the tables must be fi rst joined. For example, before a user can print out 
+a list of the customer names associated with orders, fi rst the Customer and Order tables need 
+to be joined, based on the customer number fi eld (see Figure 9-15). Only then can both the 
+order and customer information be included in the query’s output. Joins can take a lot of 
+time, especially if the tables are large or if many tables are involved.
+Consider a system that stores information about 10,000 diff erent products, 25,000 customers, and 100,000 orders, each averaging three products per order. If an analyst wanted 
+to investigate whether there were regional diff erences in music preferences, he or she would 
+need to combine all the tables to be able to look at products that have been ordered while 
+knowing the state of the customers placing the orders. A query of this information would 
+result in a huge table with 300,000 rows (i.e., the number of products that have been ordered) 
+and 11 columns (the total number of columns from all of the tables combined).
+Th e project team can use several techniques to try to speed up access to the data, including denormalization, clustering, and indexing.
+Denormalization Aft er the object storage is optimized, the project team may decide that 
+increased data retrieval speed is more important than storage effi ciency or data update speed 
+and elect to denormalize or add redundancy back into the design. Denormalization reduces 
+the number of joins that need to be performed in a query, thus speeding up access. Figure 9-16 
+shows a denormalized model for customer orders. Th e customer last name was added back 
+into the Order table because the project team learned during analysis that queries about orders 
+usually require the customer last name fi eld. Instead of joining the Order table repeatedly to 
+the Customer table, the system now needs to access only the Order table because it contains all 
+of the relevant information needed to solve the music preference question posed above.
+Denormalization is ideal in situations in which information is queried frequently but 
+updated rarely. However, due to the additional storage required and the potential update 
+anomalies, denormalization should be applied sparingly. Th ere are three cases in which you 
+may rely upon denormalization to reduce joins and improve performance. First, denormalization can be applied in the case of look-up tables, which are tables that contain descriptions of 
+values (e.g., a table of product descriptions or a table of payment types). Because descriptions 
+of codes rarely change, it may be more effi cient to include the description along with its respective code in the main table to eliminate the need to join the look-up table each time a query is 
+performed (see Figure 9-17a).
+Optimizing RDBMS-Based Object Storage  351
+352 Chapter 9 Data Management Layer Design
+Customer
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-State : String
+-Tax Rate : float
+Product Order
+-Order Number : unsigned long
+-Product Number : unsigned long
+-Qty : unsigned long
+P 

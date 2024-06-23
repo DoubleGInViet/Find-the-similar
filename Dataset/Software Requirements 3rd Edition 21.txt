@@ -1,0 +1,317 @@
+﻿A much more effective way to reuse by reference is to store requirements in a requirements management tool, as described in Chapter 30, “Tools for requirements engineering.” Depending on the tool’s capabilities, you might be able to reuse a requirement that is already in the database without replicating it. Some such tools retain historical versions of individual requirements, which allows you to reuse a specific version of a requirement or set of related requirements. If someone
+modifies that requirement in the database, the older version that you are reusing still exists. You can then tailor your own version of that requirement to suit the needs of your project without disrupting other reusers.
+Figure 18-1 illustrates this process. Project A creates the initial version of a particular requirement.
+Later on, Project B decides to reuse that same requirement, so the two projects share a common version. Then Project A modifies that requirement, thereby spawning version 2. However, version 1 still exists unchanged for use in Project B. If Project B needs to modify its copy later, it creates version 3, which does not affect any other project using any other version of that same requirement.
+
+FIGURE 18-1 How a requirement can evolve through reuse in multiple projects.
+
+
+Types of requirements information to reuse
+Table 18-2 identifies some types of requirements-related assets that have good reuse potential for various scopes of applicability. Several of these assets appear in multiple scope categories. Some types of assets have very broad reusability, such as accessibility requirements (a subset of usability).
+A set of related requirements in a specific functional area offers more reuse value than do single, isolated requirements. One example is around security (Firesmith 2004). There’s no reason for every project team in an organization to reinvent requirements for user logon and authentication, changing and resetting passwords, and so forth. If you can write a set of comprehensive, well-specified requirements for these common capabilities, they can be reused many times to save time and provide consistency across applications. You might be able to reuse sets of constraints within a specific operating environment or delivery platform. For instance, developers of smartphone apps need to be
+ 
+aware of screen size, resolution, and user interaction constraints. Following are some other groupings
+of related requirements information to reuse in sets:
+■	Functionality plus associated exceptions and acceptance tests
+■	Data objects and their associated attributes and validations
+■	Compliance-related business rules, such as Sarbanes–Oxley, other regulatory constraints by industry, and organization policy-focused directives
+■	Symmetrical user functions such as undo/redo (if you reuse the requirements for an application’s undo function, also reuse the corresponding redo requirements)
+■	Related operations to perform on data objects, such as create, read, update, and delete
+
+TABLE 18-2 Some types of reusable requirements information
+
+Scope of reuse	Potentially reusable requirements assets
+Within a product or application	User requirements, specific functional requirements within use cases, performance
+requirements, usability requirements, business rules
+Across a product line	Business objectives, business rules, business process models, context diagrams, ecosystem maps, user requirements, core product features, stakeholder profiles, user class descriptions, user personas, usability requirements, security requirements, compliance requirements, certification requirements, data models and definitions, acceptance tests, glossary
+Across an enterprise	Business rules, stakeholder profiles, user class descriptions, user personas, glossary,
+security requirements
+Across a business domain	Business process models, product features, user requirements, user class descriptions, user personas, acceptance tests, glossary, data models and definitions, business rules, security requirements, compliance requirements
+Within an operating environment or platform	Constraints, interfaces, infrastructures of functionality needed to support certain types of requirements (such as a report generator)
+
+
+
+ 
+Whether you are creating a family of products, building applications across an organization, or even developing a product having a feature that appears in multiple contexts, there are opportunities for reuse. Let’s look at some scenarios where requirements reuse offers good potential.
+
+Software product lines
+Anytime you’re creating a set of products in a family—a software product line—those products will have a lot of functionality in common. Sometimes you’re producing variations of a base product for different customers or markets. Requirements you’ve incorporated into a specific variant for a
+particular customer might be folded into a common specification for the base product. Other product lines involve a family of related products that are based on a common architectural platform. For example, the vendor of a popular income tax preparation package offers a free version for online
+ 
+use as well as basic, deluxe, premier, home and business, and business versions for use on personal
+computers. Analyze the features in the software product line to see which ones are:
+■	Common, appearing in all members of the product line.
+■	Optional, appearing in certain family members but not others.
+■	Variants, with different versions of the feature appearing in different family members
+(Gomaa 2004; Dehlinger and Lutz 2008).
+The common features offer the greatest opportunities for reusing not just certain requirements, but also their downstream work products, including architectural components, design elements, code, and tests. This is the most powerful form of reuse, but we don’t often detect the opportunity to take advantage of it. Reusing the common functionality is far better than reimplementing it each time, perhaps making it slightly different without good reason. Be aware of any constraints that the operating environment or hardware platform of certain products might impose that could limit reuse options. If the implementation must be different in certain product-line members, you’re limited to reusing only requirements, not designs and code.
+
+Reengineered and replacement systems
+Reengineered and replacement systems always reuse some requirements from the original incarnation, even if those “requirements” were never written down. If you have to reverse-engineer requirements knowledge from an older system for possible reuse, you might need to move your thinking up to a higher level of abstraction to get away from specific implementation characteristics. Often, you can harvest business rules that were embedded in an old system and reuse them on future projects, updating them as necessary, as in the case of regulatory or compliance rules.
+
+
+Other likely reuse opportunities
+Table 18-3 lists several other situations in which reusing requirements information is common.
+If you encounter any of these opportunities in your organization, contemplate whether it is worth accumulating the reusable artifacts into a shared repository and managing the information as an enterprise-level asset. If you previously worked on a project similar to the current one, consider whether you can use any artifacts from the earlier project again.
+ 
+TABLE 18-3 Common opportunities where requirements reuse can be valuable
+
+Reuse opportunity	Examples
+Business processes	Often business processes are common across organizations and need to be commonly supported by software. Many institutions maintain a set of business process descriptions that are reused across IT projects.
+Distributed deployments	Often the same system is deployed multiple times with slight variations. This is fairly typical for retail stores and warehouses. A common set of requirements is reused for each separate deployment.
+Interfaces and integration	There is often a need to reuse requirements for interfaces and integration purposes. For example, in hospitals, most ancillary systems need interfaces to and from the admissions, discharge, and transfer system. This also applies to financial interfaces to an enterprise resource planning system.
+Security	User authentication and security requirements are often the same across systems. For example, the systems might have a common requirement that all products must have a single sign-on using Active Directory for user authentication.
+Common application
+features	Business applications often contain common functionality for which requirements— and perhaps even full implementations—can be reused. Possibilities include search operations, printing, file operations, user profiles, undo/redo, and text formatting.
+Similar products for multiple platforms	The same core set of requirements is used even though there might be some detailed requirement and/or user interface design differences based on the platform. Examples include applications that run on both Mac and Windows or on both iOS and Android.
+Standards, regulations, and legal compliance	Many organizations have developed a set of standards, often based on regulations, that are defined as a set of requirements. These are reused between projects.
+Examples are ADA Standards for Accessible Design and HIPAA privacy rules for healthcare companies.
+
+
+Requirement patterns
+Taking advantage of knowledge that makes the job of writing requirements easier can be regarded as reuse. That’s the rationale behind requirement patterns: to package considerable knowledge about a particular type of requirement in a way that’s convenient for a BA who wants to define such a requirement.
+Pioneered by Stephen Withall (2007),
+to specifying a particular type of requirement. A pattern defines a template with categories of information for each of the common types of requirements a project might encounter. Different types of requirement patterns will have their own sets of content categories. Populating the template will likely provide a more detailed specification of a requirement than if the BA simply wrote it in natural language. The structure and content of a requirement written according to a pattern facilitates reuse.
+A requirement pattern contains several sections (Withall 2007):
+1.	Guidance Basic details about the pattern, including related patterns, situations to which it is
+(and is not) applicable, and a discussion of how to approach writing a requirement of this type.
+2.	Content  A detailed explanation of the content that such a requirement ought to convey,
+item by item.
+ 
+3.	Template A requirement definition with placeholders wherever variable pieces of information need to go. This can be used as a fill-in-the-blanks starting point for writing a specific requirement of that type.
+4.	Examples One or more illustrative requirements of this type.
+5.	Extra requirements   Additional requirements that can define certain aspects of the topic, or an explanation of how to write a set of detailed requirements that spell out what must be done to satisfy an original, high-level requirement.
+6.	Considerations for development and testing   Factors for developers to keep in mind when implementing a requirement of the type specified by the pattern, and factors for testers to keep in mind when testing such requirements.
+As an illustration, many software applications generate reports. Withall (2007) provides a pattern for specifying requirements that define reports. Withall’s pattern includes a template that shows how to structure numerous report elements into a set of more detailed requirements that constitute a complete report specification. But the template is just one piece of the pattern. The pattern
+also contains an example of a reporting requirement, possible extra requirements to include, and
+considerable guidance about specifying, implementing, and testing such requirements.
+You can create requirement patterns of your own that are ideally suited to your organization’s style and projects. Following a pattern helps create consistency and will likely give you richer and more precise requirements. Simple templates like these remind you about important information that you might otherwise overlook. If you need to write a requirement on an unfamiliar topic, using a pattern is likely to be quicker than researching the topic yourself.
+
+
+
+ 
+In an ideal world, your organization would store all of its software requirements in a requirements management tool with a complete set of traceability links. These links would tie each requirement back to a parent requirement or other origin, to other requirements it depends on, and to downstream development artifacts that are linked to it. Every historical version of each requirement would be available. This is the best way to enable effective reuse on a large scale across a whole application, product portfolio, or organization.
+Few organizations have reached this level of sophistication, but storing your requirements in a tool will still enhance reuse in several ways (Akers 2008). Commercial requirements management tools provide various capabilities to facilitate reuse. Some even contain large libraries of requirements from certain domains available for ready reuse. When you’re selecting a tool, include your expectations regarding how it will help you reuse requirements as part of the evaluation process. Chapter 30 describes typical capabilities of commercially available requirements management tools.
+A tool might allow you to reuse a specific requirement by sharing it across multiple projects or baselines. If you do this, you need to think about what should happen if you change either the original requirement or its clones. Some tools let you lock the content so you can edit only
+ 
+the original instance of the requirement. This ensures that any places where that requirement is reused are also updated at the time of the editing. Of course, if you start with a reused requirement and then do want to modify it for use in its new setting, you don’t want to keep that lock in place. In that case, you would like to copy it using a mode that permits you to change the copied requirement.
+Similarly, when you copy a requirement that has associated traceability relationships, you might or might not want to carry along everything that is linked to it. Sometimes, you might want to pull just the requirement, plus its children and requirements on which it depends, into a new project. This would be the case if the function is the same but the delivery platforms differ, as is the case with applications that run on a web browser, tablet, smartphone, and kiosk.
+
+
+Making requirements reusable
+Just because a requirement exists doesn’t mean it’s reusable in its present form. It could be specific to a particular project. It might be written at too high a level because the BA could safely assume certain knowledge on the part of the development team or because some details were communicated
+only verbally. A requirement could be lacking information about how possible exceptions should be handled. You might have to tune up the original requirements to increase their value to future BAs.
+Well-written requirements lend themselves to reuse. The steps you take to make requirements more reusable also increases their value to the project for which you originally write them; it simply makes them better requirements. Reusers need to know about dependencies each requirement has on others, as well as other requirements that go with it and that might also be reused, so that they can package sets of related requirements appropriately. Although reuse saves your team time and money, making something readily reusable is likely to cost time and money.
+Reusable requirements must be written at the right level of abstraction and scope. Domain-specific requirements are written at a low level of abstraction. They are likely to be applicable only in
+their original domain (Shehata, Eberlein, and Hoover 2002). Generic requirements have broader applicability for reuse in a variety of systems. However, if you attempt to reuse requirements at too general a level, you won’t save much effort because the BA will still have to elaborate the details. It’s tricky to find the right balance between making reuse easier (with more abstract or generalized requirements) and making reuse pay off (with more detailed or specific requirements).
+Figure 18-2 provides an example. Perhaps you’re building an application that includes a user requirement to accept credit card payments. This user requirement would expand into a set of related
+ 
+functional and nonfunctional requirements around handling credit card payments. Other applications also might need to take payments by credit card, so that’s a potentially reusable set of requirements.
+
+FIGURE 18-2 Generalized requirements offer greater reuse potential.
+
+But suppose you could generalize that user requirement to encompass several payment mechanisms: credit card, debit card, gift card, eCheck, and electronic funds transfer. The resulting requirement offers greater reuse potential in a wider range of future projects. One project might need just credit card processing, whereas others require several of the payment processing methods. Generalizing an initial user requirement like this—from “accept credit card payment” to “accept payment”—could be valuable even on the current project. Even if the customer only asked to handle credit card payments initially, users might really like to accept multiple payment methods either now or in the future.
+Choosing the right abstraction level for requirements can pay off during construction, as well. On one project that had exactly this need for multiple payment methods, generating clear requirements and rules for each case revealed both commonalities and distinctions. Independent from future reuse possibilities, building the higher-level abstractions contributed to easier design and construction.
+That’s the good news. The bad news is that it will take some effort to generalize the initially presented requirement. That’s the investment you make in reusability, anticipating that you will recoup the investment—and more—through multiple, future reuse instances. It’s up to you to decide whether to simply place today’s requirements into a shared location for possible reuse or to invest effort to improve their reusability on future projects.
+
+ 
+ 
+
+
+Requirements reuse barriers and success factors
+Requirements reuse sounds like a grand idea, but it isn’t always practical or appropriate. This section describes some considerations to help your organization succeed with requirements reuse.
+
+Reuse barriers
+The first step to overcoming an obstacle is to recognize and understand it. Following are several barriers you might encounter when it comes to reusing requirements.
+Missing or poor requirements A common barrier is that the requirements developed on previous projects weren’t documented, so it’s impossible to reuse them. And even if you find a relevant requirement, it might be badly written, incomplete, or a poor fit for your present circumstances. Even if they’re documented, the original requirements for an old application might not have been kept current as the application evolved over time, rendering them obsolete.
+NIH and NAH Two barriers to reuse are NIH and NAH syndromes.
+Some people are reluctant to reuse requirements from another organization or generic requirements found in a public collection. Requirements written elsewhere could be harder to understand: terminology could be different; the requirements might refer to documents that are unavailable; you might not be able to discern the context of the original requirements; and important background information could go unexplained. A BA might correctly decide that it takes less work to write new requirements than to understand and fix up the existing ones.
+NAH, or “not applicable here,” syndrome reveals itself when practitioners protest that a new process or approach does not apply to their project or organization. “We’re different,” they claim. The members might feel that their project is unique, so no existing requirements could possibly apply.
+Sometimes that’s true, but often NIH and NAH indicate an inflexible attitude.
+Writing style The BAs on previous projects might have used a wide variety of requirements representation techniques and conventions. It’s best to adopt some standard notations for documenting requirements to facilitate reuse, such as using patterns. If requirements are written at a common level of granularity, it’s easier for future BAs to search for candidate requirements at the right level of detail. Consistent terminology is also important. You might overlook a potentially
+ 
+reusable requirement simply because some of the terminology involved is not the same as what your stakeholders are used to. Requirements written in natural language are notoriously prone to ambiguities, missing information, and hidden assumptions. These issues reduce their reuse potential.
+Requirements that have embedded design constraints will offer little opportunity for reuse in
+a different environment. Think about the airport check-in kiosk described earlier. If user interface details about the kiosk were embedded in the requirements, you couldn’t reuse those requirements for software having essentially the same functionality but running on a website.
+Inconsistent organization It can be difficult to find requirements to reuse because authors organize their requirements in many different ways: by project, process flow, business unit, product feature, category, subsystem or component, and so forth.
+Project type   Requirements that are tightly coupled to specific implementation environments or platforms are less likely to generate reusable requirements or to benefit from an existing pool of requirements knowledge. Rapidly evolving domains don’t yet have a pool of requirements information to reuse; requirements that are relevant today might be obsolete tomorrow.
+Ownership Another barrier has to do with ownership (Somerville and Sawyer 1997). If you’re developing a software product for a specific customer, its requirements are likely the proprietary intellectual property of the customer. You might not have the legal right to reuse any of those requirements in a different system you develop for your own company or for other customers.
+
+Reuse success factors
+An organization that is serious about reuse should create mechanisms to make it easy to share and take advantage of existing information. This means pulling information that has the potential for reuse out of a specific project so others can access and reuse it. Keep the following success tips in mind.
+Repository You can’t reuse something if you can’t find it. An enabling tool for effective large-scale reuse, therefore, is a searchable repository in which to store requirements information. This repository could take several forms:
+■	A single network folder that contains previous requirements documents
+■	A collection of requirements stored in a requirements management tool that can be searched
+across projects
+■	A database that stores sets of requirements culled from projects for their reuse potential and enhanced with keywords to help future BAs know their origin, judge their suitability, and learn about their limitations
+Consider giving someone the responsibility to manage the reusable requirements repository. This person would adapt existing requirements knowledge as necessary to represent and store the assets in a form suitable for efficient discovery, retrieval, and reuse. A scheme similar to that used to store and manage business rules as an enterprise asset could be adapted to handle reusable requirements.
+ 
+Quality No one wants to reuse junk. Potential reusers need confidence in the quality of the information. And even if a requirement you are reusing isn’t perfect, you should try to make it better when you reuse it. This way you iteratively improve a requirement over time, increasing its reuse potential for future projects.
+Interactions Requirements often have logical links or dependencies on each other. Use traceability links in a tool to identify these dependencies so people know just what they’re getting into when they select a requirement for reuse. Reused requirements must conform to existing business rules, constraints, standards, interfaces, and quality expectations.
+Terminology Establishing common terminology and definitions across your projects will be helpful for reusability. Terminology variations won’t prevent you from reusing requirements, but you’ll have to deal with the inconsistencies and take steps to prevent misunderstandings. Glossaries and data dictionaries are good sources of reusable information. Rather than incorporating an entire glossary into every requirements specification, create links from key terms to their definitions in the shared glossary.
+Organizational culture Management should encourage reuse from two perspectives: contributing high-quality components with real reuse potential, and effectively reusing existing artifacts. The individuals, project teams, and organizations that practice reuse most effectively are likely to enjoy the highest productivity. In a reuse culture, BAs look at the reusable requirements repository before creating their own requirements. They might start with a user story or other high-level requirement statement and see to what extent they can populate the details through reuse of existing information.
+Your project requirements constitute valuable corporate information. To maximize the investment your teams make in requirements engineering, look for requirements knowledge that you can treat as an enterprise-level asset. The requirements you reuse do not have to be perfect to be valuable.
+Even if they just save you 20 percent of the work you might have otherwise spent writing new requirements, that’s a big gain. A culture that encourages BAs to borrow first and create second, and that makes a little extra investment in making requirements reusable, can increase the productivity of both analysts and development teams and lead to higher-quality products.
+
+ 
+C HA P T E R 1 9
+Beyond requirements development
+
+The Chemical Tracking System’s project sponsor, Gerhard, had been skeptical of the need to spend time defining requirements. However, he joined the development team and product champions at a one-day training class on software requirements, which motivated him to support the requirements activities.
+As the project progressed, Gerhard received excellent feedback from the user representatives about how well requirements development had gone. He even sponsored a luncheon for the analysts and product champions to celebrate reaching the significant milestone of baselined requirements for the first system release. At the luncheon, Gerhard thanked the participants for their effective teamwork. Then he said, “Now that the requirements are done, I look forward to seeing the final product.”
+“Please keep in mind, Gerhard, we won’t have the final product for about a year,” the project manager explained. “We plan to deliver the system through a series of bimonthly releases. If we take the time to think about design now, it will be easier for developers to add more functionality later. We’ll also learn more about requirements as we go along. We will show you some working software at each release, though.”
+Gerhard was frustrated. It looked like the development team was stalling rather than getting down to the real work of programming. But was he jumping the gun?
+
+. These steps are necessary whether the next release represents 1 percent or 100 percent of the final product. This chapter explores some approaches for bridging the gap between requirements development and a successful product release.
+. We’ll look at several ways in which requirements influence project plans, designs, code, and tests, as shown in Figure 19-1. In addition to these connections, there is a link between the requirements for the software to be built and other project and transition requirements. Those include data migrations, training design and delivery, business process and organizational changes, infrastructure modifications, and others. Those activities aren’t discussed further in this book.
+
+
+
+
+365
+ 
+ 
+FIGURE 19-1 Requirements drive project planning, design, coding, and testing activities.
+
+
+
+
+ 
+One of the earliest project planning activities is to judge how much of the project’s schedule and effort should be devoted to requirements activities. Karl Wiegers (2006) suggests some ways to judge this and some factors that would lead you to spend either more or less time than you might otherwise
+ 
+expect.
+ 
+typically spend
+ 
+their total effort on requirements work
+ 
+(Wiegers 1996), but the appropriate percentage depends on the size and complexity of the project. Despite the fear that exploring requirements will slow down a project, considerable evidence shows that taking time to understand the requirements actually accelerates development, as the following examples illustrate:
+ 
+
+■
+most successful projects spent
+ 
+evealed that the rces on requirements elicitation,
+ 
+modeling, validation, and verification (Hofmann and Lehner 2001). The average project
+ 
+devoted engineering.
+ 
+percent of its schedule to requirements
+ 
+■	NASA projects that invested more than 10 percent of their total resources on requirements development had substantially smaller cost and schedule overruns than projects that devoted less effort to requirements (Hooks and Farry 2001).
+ 
+■	In a s
+ 
+ams that developed products more quickly devoted more of their requirements than did slower teams, as shown in Table 19-1
+ 
+(Blackburn, Scudder, and Van Wassenhove 1996).
+TABLE 19-1 Investing in requirements accelerates development
+
+	Effort devoted to requirements	Schedule devoted to requirements
+Faster projects	14%	17%
+Slower projects	7%	9%
+ 
+Requirements engineering activity is distributed throughout the project in different ways, depending on whether the project is following a sequential (waterfall), iterative, or incremental development life cycle, as was illustrated in Figure 3-3 in Chapter 3, “Good practices for requirements engineering.”
+
+When estimating the effort a project should devote to requirements development, let experience be your guide. Look back at the requirements effort from previous projects and judge how effective the requirements work on those projects was. If you can attribute issues to poor requirements, perhaps more emphasis on requirements work would pay off for you. Of course, this assessment demands that you retain some historical data from previous projects so you can better estimate future projects. You might not have any such data now, but if team members record how they spend their time on today’s project, that becomes tomorrow’s “historical data.” It’s not more complicated than that. Recording both estimated and actual effort allows you to think of how you can improve future estimates.
+The requirements engineering consulting company Seilevel (Joy’s company) developed an effective approach for estimating a project’s requirements development effort, refined from work estimates and actual results from many projects.
+ 
+estimates: percent of total work; a
+resource costs to generate a bottom-up estimate. C
+ 
+o; and an activity breakdown that uses basic
+ 
+
+ 
+.
+The first estimate is based on a percentage of the estimated total project work. Specifically, we consider that about 15 percent of the total project effort should be allocated to requirements work. This value is in line with the percentages cited earlier in this section. So if the full project is estimated at 1,000 hours, we estimate 150 hours of requirements work. Of course, the overall project estimate might change after the requirements are better understood.
+The second type of estimate assumes a typical ratio of developers to business analysts. Our default value is 6:1, meaning that one BA can produce enough requirements to keep six developers busy.
+The BAs also will be working with quality assurance, project management, and the business itself, so this estimate encompasses all of the BA team’s project work. For a packaged solution (COTS) project, this ratio changes to 3:1 (three developers per BA). There are still many selection, configuration,
+and transition requirements to be elicited and documented, but the development team is smaller because the code is largely purchased instead of developed new. So if we know the development team size, we can estimate an appropriate BA staffing level. This is a rule-of-thumb estimator, not a cast-in-concrete prediction of the future, so be sure to adjust for your organization and project type.
+ 
+The third estimate considers the various activities a BA performs, based on estimates of the numbers of various artifacts that might be created on a specific project. The BA can estimate the number of process flows, user stories, screens, reports, and the like and then make reasonable assumptions of how many other requirements artifacts are needed. Based on time estimates per activity that we have accumulated from multiple projects, we can generate a total requirements effort
+
+
+ 
+
+ 
+as a starting point for reconciling the differences, negotiating resources, and planning the project’s BA needs.
+
+FIGURE 19-2 Partial output from the requirements effort estimation spreadsheet.
+
+The requirements estimation tool has three worksheet tabs. First, there is a summary where you input several project characteristics. The tool will calculate various elements of the three types of estimates. Second, there is an assumptions tab where you can adjust items that vary from the provided assumptions. The third tab provides instructions about how to use the estimation tool.
+The assumptions built into this estimation tool are based on Seilevel’s extensive experience with actual projects. You’ll need to tweak some of the assumptions for your own organization. For
+example, if your BAs are either novices or especially highly experienced, some of your estimates of the time needed per activity may vary from the defaults. To tailor the tool to best suit your reality, collect some data from your own projects and modify the adjustable parameters.
+
+ 
+Betty’s in a corner
+Sridhar, the project manager of a million-dollar project, approached the BA, Betty, to discuss her initial estimate regarding how long requirements development would take. In an earlier email exchange she had estimated eight weeks. Sridhar asked, “Betty, is it really going to take you eight weeks to do the requirements for our shopping portal? Surely your team can have it done in four weeks; the system is just not that complex. I mean, really, people come to the website to search for and buy products. That’s it! Heck, the development manager is thinking
+that his team can just develop the system without any requirements at all, so that’s what they’re planning to do if you don’t have the requirements done in four weeks.”
+Betty is backed into a corner here. She can give in and agree to an unreasonable four-week deadline for this large project. Or, she can push back at the risk of looking ineffective because the project is supposed to be “simple.” After all, Betty isn’t actually sure how long it will take her to develop an adequate set of requirements, because she doesn’t yet know the size of the system. Until she begins the analysis, she doesn’t know what she doesn’t know.
+Variations on this story are a big part of why Seilevel developed the estimation tool described in this chapter. This tool aids Betty in her stressful conversation with Sridhar. She can say, “Well, if I only have four weeks, let me show you what I CAN do.” She can tweak the numbers of reports or processes for which requirements are needed. Betty can effectively timebox the requirements effort. However, it’s important for Sridhar to recognize that
+understanding the requirements for only the tip of the iceberg can lead to unpleasant surprises
+further down the road.
+
+
+
+From requirements to project plans
+Because requirements are the foundation for the project’s intended work,
+ 
+
+ 
+
+   
+
+ 
+might not have been realistic or well-aligned with the objectives. Business needs, business rules, and project constraints all can change. The project’s business success will be problematic if you don’t update your plans to align with evolving objectives and realities.
+ 
+ 
+ 
+
+factors, but it b
+ 
+ends on many
+t. You can base size estimates
+ 
+on functional requirements, user stories, analysis models, prototypes, or user interface designs. Although there’s no perfect measure of software size, the following are some frequently used metrics:
+■	The number of individually testable requirements (Wilson 1995)
+■	Function points (Jones 1996b; IFPUG 2010)
+■	Story points (Cohn 2005; McConnell 2006) or use case points (Wiegers 2006)
+■	The number, type, and complexity of user interface elements
+■	Estimated lines of code needed to implement specific requirements
+Base whatever approach you choose on your experience and on the nature of the software you’re
+developing.
+. After you estimate size and productivity, you can estimate the total effort needed to implement the project. Effort estimates depend on the team size (multitasking people are less productive, and more communication interfaces slow things down) and planned schedule (compressed schedules actually increase the total effort needed).
+One approach is to use commercial software estimation tools that suggest various feasible combinations of development effort and schedule. These tools let you adjust estimates based on factors such as the skill of the developers, project complexity, and the team’s experience in the application domain. Complex, nonlinear relationships exist between product size, effort, development time, productivity, and staff buildup time (Putnam and Myers 1997). Understanding these relationships can keep you from being trapped in the “impossible region,” combinations of product size, schedule, and team size where the probability of success is extremely low.
+The best estimation processes acknowledge the early uncertainty and ongoing volatility of scope. People using such a process will express each estimate as a range, not a single value. They manage the accuracy of their estimate by widening the range based on the uncertainty and volatility of the data that fed into the estimate.
+ 
+Agile projects estimate scope in units of
+ 
+l
+y. Estimates of the size of a specific story depend on
+ 
+the knowledge you have—and lack—about the story, its complexity, and the functionality involved (Leffingwell 2011). Agile teams measure their team’s velocity, the number of story points the team expects to complete in a standard iteration based on its previous experience and the results from early iterations on a new project. The team members combine the size of the product backlog
+with velocity to estimate the project’s schedule, cost, and the number of iterations required. Dean Leffingwell (2011) describes several techniques for estimating and planning agile projects in this fashion.
+ 
+   
+Even a good estimating process will be challenged if your project must cope with requirements that customers, managers, or lawmakers frequently change. If the changes are so great that the development team can’t keep up with them, they can become paralyzed, unable to make meaningful progress. Agile development methods provide another way to deal with highly volatile requirements. These methods start by implementing a relatively solid portion of the requirements, knowing up front that changes will be made later. Teams then use customer feedback on the early increments to clarify the remaining product requirements.
+A goal is not the same thing as an estimate. Anytime an imposed deadline and a thoughtfully estimated schedule don’t agree, negotiation is in order. A project manager who can justify an estimate based on a well-thought-out process and historical data is in a better bargaining position than someone who simply makes her best guess. The project’s business objectives should guide stakeholders to resolve the schedule conflict by stretching timelines, reducing scope, adding resources, or compromising on quality. These decisions aren’t easy, but making them is the only way to maximize the delivered product value.
+
+
+lead to uncertain estimates. Because requirements uncertainty is unavoidable early in the project and because estimates are usually optimistic, include contingency buffers in your schedule and budget to accommodate some requirements growth (Wiegers 2007). Scope growth takes place because business needs change, users and markets shift, and stakeholders reach a better understanding of what the software can or should do. On agile projects, scope growth typically leads to adding more iterations to the development cycle. Extensive requirements growth, however, often indicates that many requirements were missed during elicitation.
+ 
+   
+
+Many projects practice “right-to-left scheduling”: a delivery date is cast in concrete and then the product’s requirements are defined. In such cases, it often proves impossible to meet the specified ship date while including all the demanded functionality at the expected quality level. It’s more realistic to define the software requirements before making detailed plans and commitments. A
+design-to-schedule strategy can work if the project manager can negotiate what portion of the desired functionality can fit within the schedule constraints. Requirements prioritization is a key success factor.
+For complex systems in which software is only a part of the final product, project managers generally establish high-level schedules after developing the product-level (system) requirements and a preliminary architecture. At this point, the key delivery dates can be established, based on input from sources including marketing, sales, customer service, and development.
+Consider planning and funding the project in stages. An initial requirements exploration stage will provide enough information to let you make realistic plans and estimates for one or more construction stages. Projects that have uncertain requirements benefit from incremental and iterative development approaches. Incremental development lets the team begin delivering useful software long before the requirements become fully clear. Prioritization of requirements dictates the functionality to include in each construction timebox.
+Software projects frequently fail to meet their goals because the developers and other project participants are optimistic estimators and poor planners, not because they’re poor software engineers. Typical planning mistakes include overlooking common tasks, underestimating effort or time, failing to account for project risks, and not anticipating rework (McConnell 2006).
+elements:
+■	Estimated product size
+■	Known productivity of the development team, based on historical performance
+■	A list of the tasks needed to completely implement and verify a feature or use case
+■	Reasonably stable requirements, at least for the forthcoming development iteration
+■	Experience, which helps the project manager adjust for intangible factors and the unique aspects of each project
+

@@ -1,0 +1,553 @@
+﻿Amanda Lamy, president and majority stockholder of 
+Mountain Vista Motorcycles (MVM), is an avid motorcycle enthusiast and businesswoman. MVM is headquartered in Denver and has locations throughout 
+the western United States and Canada. Since the late 
+1990s, the market for motorcycles has grown tremendously. Amanda expects that the market will continue to 
+be strong throughout the 2010s.
+The demographics of the motorcycle market are 
+an interesting study in contrasts—an over-50 majority 
+customer base, but with an under-30 contingent that is 
+growing. The remaining customer base includes men 
+and women between the ages of 30 and 50.
+The “over 50” customers are typically male professionals or businesspeople who are partly or fully retired. 
+They have substantial disposable income, lots of free 
+time, and tend to own multiple expensive motorcycles 
+from such manufacturers as Harley-Davidson, Honda, 
+Ducati, and Moto Guzi. Older customers are generally 
+comfortable with Internet and Web technology, but are 
+not significant users of social media technology. Although many own smartphones, they tend to use them 
+primarily for voice, e-mail, and texting.
+Male customers under 30 years of age tend to buy 
+sport and dirt bikes, typically from such manufacturers 
+as Suzuki and Kawasaki. They buy less-expensive bikes 
+than older customers and are more likely to buy parts 
+and supplies from MVM to service their own bikes. Female customers under 30 years of age tend to buy motor 
+scooters and smaller “commuter” motorcycles. Customers in the 30–50 age range include men and women 
+who buy bikes of many types from many manufacturers. 
+For all customers under the age of 50, comfort with and 
+use of Internet technology, social media, and portable 
+computing devices such as smartphones and iPads is 
+very high, but especially with customers under age 30.
+Amanda is convinced that the key to long-term success in the motorcycle market is to build an active community of motorcycle enthusiasts that includes a broad 
+spectrum of customers at each MVM location. In essence, each location needs to be seen as a hub of local 
+motorcycle-related activity and information in physical and 
+virtual terms. On the physical side, MVM has added activity and event-oriented pages to its Web sites, sponsored 
+rallies and clubs, added meeting rooms and small coffee 
+shops in some locations, and collocated with bars and restaurants that feature motorcycle-related themes and entertainment. These efforts have yielded good results with 
+older customers but less so with younger customers.
+Amanda is concerned about the lack of participation 
+in the new initiatives by younger customers and is sure 
+that MVM’s minimal presence in social media and virtual 
+relationships is a significant factor. She and her senior 
+staff, most of whom are older, are unsure how to attract 
+younger customers. They have little knowledge of and no 
+experience with creating modern technology-based virtual 
+communities. To fill this gap, Amanda turns to her chief 
+information officer (CIO), and tasks her with finding a way 
+technology can connect the diverse customer base.
+MVM’s CIO is starting to develop a project plan for a 
+virtual community oriented toward younger customers. 
+If the plan were for developing a traditional information 
+system, she would use such standard approaches as interviewing internal users and managers, and having her 
+development staff write specifications, generate storyboards and screen layouts, and develop prototypes. But 
+few of the intended virtual community users are MVM 
+employees, and few staff members fully comprehend 
+how to successfully use social media and other techniques for building virtual societies. Traditional methods 
+of defining and refining requirements seem inadequate 
+to the task.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 39
+3. Discover and understand the details of the problem or the need.
+4. Design the system components that solve the problem or satisfy the need.
+5. Build, test, and integrate system components.
+6. Complete system tests and then deploy the solution.
+In this chapter, we start expanding the scope and detail of the SDLC core 
+processes to cover a wider range of concepts, tools, and techniques. The extra 
+depth and detail are needed to tackle larger and more complex projects. This 
+chapter concentrates on systems analysis activities (Core Process 3), and the next 
+few chapters follow up with detailed discussions of models developed during 
+those systems analysis activities. Subsequent chapters expand the discussion of 
+other core SDLC processes. The RMO Consolidated Sales and Marketing System project is used for examples throughout the rest of the book. It is a much 
+larger project than the Tradeshow System project in Chapter 1.
+■ The RMO Consolidated Sales 
+and Marketing System Project
+Ridgeline Mountain Outfitters has an elaborate set of information systems 
+applications developed over the years to support operations and management. 
+However, there is a growing gap between customer expectations, current technological capabilities, and existing RMO systems that support sales and customer 
+interaction. This section reviews the existing system inventory and introduces 
+the proposed Consolidated Sales and Marketing System that will update and 
+enhance sales and marketing.
+■ Existing RMO Information Systems and Architecture
+RMO’s Information Systems Department has always been forward looking. In 
+past years, the department, in conjunction with corporate strategic plans, has 
+developed five-year plans for development and deployment of new technology 
+and information systems. The planning process has been an excellent tool to 
+help the organization stay current with new trends and technology capabilities. 
+However, the plans themselves have had mixed success. One of the problems 
+with long-range information technology (IT) and software development plans is 
+that technology changes rapidly and moves in unexpected directions. For example, the Tradeshow System described in Chapter 1 was made possible by the 
+availability of powerful and flexible handheld devices and the widespread availability of Wi-Fi and Internet connections. Both technologies reached a fairly 
+mature level in just a couple of years, which created an opportunity for RMO to 
+optimize this important business process for mobile technology.
+Historically, RMO has adopted new technology as soon as it became cost 
+effective. Past examples include adoption of smaller servers and desktop computing, interconnection of locations with dedicated telecommunications links, and 
+such Web-based technologies as customer-oriented Web sites and browser-based 
+user interfaces for internal systems. At present, RMO has a disparate collection of 
+computers dispersed across home offices, retail stores, telephone centers, order fulfillment/shipping centers, and warehouses—everything connected by a complex 
+set of local area networks (LANs), wide area networks (WANs), and virtual private networks (VPNs). This constitutes RMO’s current technology architecture.
+The term technology architecture refers to the set of computing hardware, network hardware and topology, and system software—such as operating and database management systems—employed by an organization. RMO’s 
+technology architecture is modern but not state of the art, which is consistent 
+with its goal of adopting proven technology.
+technology architecture a set of computing hardware, network hardware and topology, and system software employed by an 
+organization
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+40 PART 2 ■ Systems Analysis Activities
+The term application architecture refers to the set of information systems 
+(the software applications) the organization needs to support its strategic plan. 
+Each information system supports the work that needs to be carried out by the 
+organization; the strategic plan includes what the information systems are and 
+how the information systems are integrated together.
+Currently, the major systems in RMO’s application architecture consist of 
+the following:
+■ Supply chain management (SCM). This application was deployed five years 
+ago as a client/server application using Java and Oracle. Currently, it supports inventory control, purchasing, and distribution, although integration 
+of functions needs improvement. The new Tradeshow System will interface 
+with this system.
+■ Phone/mail order system. This modest client/server application was developed 12 years ago using Visual Studio and Microsoft SQL Server as a quick 
+solution to customer demand for phone and mail orders. It is integrated 
+with the SCM and has reached capacity.
+■ Retail Store System (RSS). This is a retail store package with point-of-sale 
+processing. It was upgraded eight years ago from overnight batch to realtime inventory updates to/from the SCM.
+■ Customer Support System (CSS). This system was first deployed 15 years ago 
+as a Web-based catalog to support customer mail and phone orders. Four 
+years later, it was upgraded to an Internet storefront, supporting customer 
+inquiries, shopping cart, order tracking, shipping, back orders, and returns.
+All organizations—including RMO—face a difficult challenge keeping all 
+their information systems current and effective. Because development resources 
+are limited, an organization’s technology architecture and application architecture will include a mix of old and new. Older systems were often designed for 
+outdated operational methods and typically lack modern technologies and features that some competitors have adopted to improve efficiency or competitiveness. Such is the case with RMO’s existing customer-facing systems, which have 
+several shortcomings, including:
+■ Treating phone, Web, and retail sales as separate systems rather than as an 
+integrated whole
+■ Employing outdated Web-based storefront technology
+■ Not supporting modern technologies and customer interaction modes, 
+including mobile computing devices and social networking
+Rather than incrementally update the existing sales systems, RMO plans to 
+replace them with the new Consolidated Sales and Marketing System, as shown 
+in Figure 2-1.
+■ The New Consolidated Sales and Marketing System
+The goals of the Consolidated Sales and Marketing System (CSMS) are to modernize the technology and functionality of the CSS and to add more customeroriented functionality. On the technology side, the CSMS will incorporate 
+current Web standards and require high-bandwidth customer Internet connections and high-resolution displays. Updating the technology allows a higher 
+degree of interactivity, richer graphics, and a streamlined interface.
+Key additions to system functionality will be support for mobile computing devices, incorporation of customer feedback and comments into product 
+information, and integration of social networking functions. Unlike the CSS, 
+the CSMS will support smartphones and tablet computers with interfaces 
+specifically designed for each platform and with downloadable apps. Customer feedback will be captured directly through the Internet storefront, from 
+application architecture the set of 
+information systems (the software applications) the organization needs to support its 
+strategic plan
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 41
+RMO-supported comment forums and blogs, and mined from Facebook and 
+Twitter. RMO will develop a complete presence in each social networking venue 
+and enable system users to share purchases, recommendations, coupons, and 
+store credits using those venues.
+The new CSMS will have four subsystems:
+■ The Sales subsystem provides such basic functions as searching the online 
+catalog, purchasing items, and paying for them online. However, it has many 
+new capabilities to assist the shopper. The system will provide specific suggestions about accessories that go with the purchased item. Images and videos 
+of animated models will be available to help the customer see how various 
+items and accessory packages will look together. The system will also provide 
+information to shoppers about related purchases made by other shoppers. 
+Customer ratings and comments are available for viewing. Finally, key social 
+networking components will permit shoppers to network with their friends by 
+sending messages to ask their opinions about particular merchandise items.
+■ The Order Fulfillment subsystem will perform all the normal tasks of shipping items and allowing customers to track the status of their orders and 
+shipments. In addition, as part of order fulfillment, customers can rate and 
+make comments about particular merchandise and their overall shopping 
+experience. They may also make suggestions directly to RMO about the 
+attractiveness of the Web site and the quality of the service they received.
+■ The Customer Account subsystem provides services that enhance the customer experience. Customers can view and maintain their account information. They also can “link up” with friends who are also customers to share 
+Supply Chain Management (SCM) Consolidated Sales and Marketing System (CSMS)
+Suppliers
+Customers
+Buyers
+Retail Stores
+Retail Sales
+Phone Sales
+Trade Show System (TSS) Customers
+Warehouses
+Shipments
+Orders
+Shipments
+Orders
+Shipments
+Online Sales
+Figure 2-1 Proposed application architecture for RMO (partial)
+©Marcin Balcerzak/Shutterstock.com; ©Cherkas / Shutterstock.com; ©luchschen/Shutterstock.com; ©Kurhan/
+Shutterstock.com; ©CandyBoxPhoto/Shutterstock.com; ©Valentyn Volkov/Shutterstock.com; ©L Barnwell/
+Shutterstock.com; ©Login/Shutterstock.com
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+42 PART 2 ■ Systems Analysis Activities
+experiences and opinions on merchandise. The system will keep track of 
+detailed shipping addresses, including payment information and preferences. 
+RMO also instituted a Mountain Bucks program where customers accumulate credits that can be used to redeem prizes as well as purchase merchandise. 
+Customers may use these Mountain Bucks for themselves or they may transfer 
+them to other people in their family/friends group. This is a great opportunity 
+to combine accumulated bucks to obtain expensive merchandise.
+■ The Marketing subsystem is primarily for employees to set up the information and services for customers. Additionally, employees can enter 
+information about the merchandise offered by RMO. This subsystem is also 
+fed by the SCM system to maintain accurate data on the inventory in stock 
+and anticipated arrival dates of items on order. Employees also set up the 
+various promotional packages and seasonal catalogs by using the functions 
+of this subsystem. Furthermore, RMO is experimenting with a new idea to 
+enhance customer experience and satisfaction: building partner relationships with other retailers so customers can earn “combined” points with 
+RMO purchases or a partner retailer purchase. These points can be used at 
+RMO or transferred and used at the partner. For example, because RMO 
+sells outdoor and sporting clothing, it has partnered with various sporting 
+goods stores. That way, a person can buy sporting equipment at the sporting equipment store and get promotional discounts for clothing at RMO. 
+The success of this new venture has yet to be proven, but RMO anticipates 
+that it will enhance the shopping experience of all its customers.
+In later chapters, more details will be given about the capabilities of the new 
+CSMS system. Assuming the project has been proposed, approved, and planned, 
+the next section describes activities associated with the next step in the development process: systems analysis (SDLC Core Process 3). We will return to project 
+management and project planning later in the text.
+■ Systems Analysis Activities
+The callout on the left side of Figure 2-2 lists the activities of the third core process, which is to discover and understand the details. This core process also goes 
+by the name systems analysis. The activities are as follows:
+■ Gather detailed information.
+■ Define requirements.
+■ Prioritize requirements.
+■ Develop user-interface dialogs.
+■ Evaluate requirements with users.
+Analysis activities
+Gather detailed information.
+Define requirements.
+Prioritize requirements.
+Develop user-interface dialogs.
+Evaluate requirements with users.
+Core
+processes 1 2 3 4 5 6
+Identify the problem and obtain
+approval.
+Plan and monitor the project.
+Discover and understand details.
+Design system components.
+Build, test, and integrate system
+components.
+Complete systems tests and
+deploy the solution.
+Iterations Figur e 2-2 “Analysis” activities 
+from Core Process 3
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 43
+By completing these activities, the analyst defines in great detail what the 
+information system needs to accomplish to provide the organization with the 
+desired benefits.
+Although we concentrate only on analysis activities in this chapter, keep in 
+mind that they are usually intermixed with design, implementation, and other 
+activities during the system development life cycle. For example, as shown in 
+Figure 2-2, analysis activities are most intensive in the second iteration but occur 
+in varying degrees during all project iterations except the last. This pattern is 
+typical because an analyst often concentrates on one part of a system, defining 
+requirements only for that part and simultaneously designing and implementing software to satisfy those requirements. Organizing development activities in 
+this iterative manner enables development to be broken into smaller steps and 
+helps users to validate requirements by testing and observing parts of the functional system. The following sections briefly describe analysis activities, and the 
+remainder of this chapter expands the discussion of information gathering and 
+defining system requirements.
+■ Gather Detailed Information
+Systems analysts obtain information from people who will be using the system, 
+either by interviewing them or by watching them work. In short, analysts need to 
+talk to nearly everyone who will use the new system or has used similar systems, 
+and they must read nearly everything available about the existing system. Specifically, they obtain additional information by reviewing planning documents 
+and policy statements; study existing systems, including their documentation; 
+and obtain additional information by looking at what other companies (particularly vendors) have done when faced with a similar business need. Finally, they 
+try to understand an existing system by identifying and understanding activities 
+of all the current and future users by identifying all present and future locations 
+where work occurs and all system interfaces with other systems, both inside and 
+outside the organization. Later in this chapter, we discuss how to identify and 
+extract information from all these people.
+Beginning analysts often underestimate how much there is to learn about the 
+work the user performs. The analyst must become an expert in the business area 
+the system will support. For example, if you are implementing an order-entry 
+system, you need to become an expert on the way orders are processed (including related accounting procedures). If you are implementing a loan-processing 
+system, you need to become an expert on the rules used for approving credit. If 
+you work for a bank, you need to think of yourself as a banker. The most successful analysts become experts in their organization’s main business.
+■ Define Requirements
+The analyst uses information gathered from users and documents to define 
+requirements for the new system. System requirements include the functions the 
+system must perform (functional requirements) and such related issues as userinterface formats and requirements for reliability, performance, and security 
+(nonfunctional requirements). We further discuss the distinction between functional and nonfunctional requirements a bit later in this chapter.
+Defining requirements is not just a matter of writing down facts and figures. 
+Instead, the analyst creates models to record requirements, reviews the models with users and others, and refines and expands the models to reflect new 
+or updated information. In Chapter 1, you learned about requirements models, 
+such as use case diagrams, activity diagrams, and domain model class diagrams. 
+Building and refining requirements models occupies much of the analyst’s time. 
+This chapter and the next two chapters explain in considerable depth how to 
+create requirements models.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+44 PART 2 ■ Systems Analysis Activities
+■ Prioritize Requirements
+Once the system requirements are well understood, it is important to establish 
+which requirements are most crucial for the system. Sometimes, users request 
+additional system functions that are desirable but not essential. However, users 
+and analysts need to ask themselves which functions are truly important and 
+which are fairly important but not absolutely required. Again, an analyst who 
+understands the organization and the work done by the users will have more 
+insight toward answering these questions.
+Why prioritize the functions requested by the users? Resources are always 
+limited, and the analyst must always be prepared to justify the scope of the system. Therefore, it is important to know what is absolutely required. Unless the 
+analyst carefully evaluates priorities, system requirements tend to expand as 
+users make more suggestions (a phenomenon called scope creep). Requirements 
+priorities also help to determine the number, composition, and ordering of project iterations. High-priority requirements are often incorporated into early project iterations so analysts and users have ample opportunity to refine those parts 
+of the system. Furthermore, a project with many high-priority requirements will 
+typically have many iterations.
+■ Develop User-Interface Dialogs
+In some cases, when a new system is replacing an old system that does similar 
+work, users are usually quite sure about their requirements and the desired form 
+of the user interface. In other cases, the system development project breaks new 
+ground by automating functions that were previously performed manually or by 
+implementing functions that were not performed in the past. In either case, users 
+tend to be uncertain of many aspects of system requirements. Such requirements 
+models as use cases, activity diagrams, and interaction diagrams can be developed based on user input, but it is often difficult for users to interpret and validate such abstract models.
+In comparison, user validation of a user interface is much simpler and more 
+reliable because the user can see and feel the system. To most users, the user 
+interface is all that matters. Thus, developing user-interface dialogs is a powerful 
+method of eliciting and documenting requirements. Analysts can develop user 
+interfaces via abstract models, such as interaction diagrams and written dialogs 
+(covered in more detail in later chapters), or they can develop storyboards or 
+user-interface prototypes on the actual input/output devices that users will use 
+(e.g., a computer monitor, iPad, or smartphone). A prototype interface can serve 
+as a requirement and a starting point for developing a portion of the system. 
+A user-interface prototype developed in an early iteration can be expanded in 
+later iterations to become a fully functioning part of the system.
+■ Evaluate Requirements with Users
+Ideally, evaluating requirements with users and documenting the requirements are 
+fully integrated. But in practice, users generally have other responsibilities besides 
+developing a new system. Thus, analysts usually use an iterative process in which 
+they elicit user input to model requirements, return to the user for additional input 
+or validation, and then work alone to incorporate the new input and refine the 
+models. Prototypes of user interfaces and other parts of the system may also be 
+developed when “paper” models are inadequate or when users and analysts need 
+to prove that chosen technologies will do what they are supposed to do. Also, if 
+the system will include new or innovative technology, the users may need help 
+visualizing the possibilities available from the new technology as they define what 
+they require. Prototypes can fill that need. The processes of eliciting requirements, 
+building models and prototypes, and evaluating them with users may repeat many 
+times until requirements models and prototypes are complete and accurate.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 45
+■ What Are Requirements?
+As you can see from the previous section, requirements and models that represent them are a key focus of analysis phase activities. Most of the analyst’s time 
+is devoted to requirements: gathering information about them, formalizing them 
+by using models and prototypes, refining and expanding them, prioritizing them, 
+and generating and evaluating alternatives. But to fully understand those activities, you need to answer a fundamental question: What are requirements?
+■ System Requirements and FURPS
+System requirements are all the activities the new system must perform or 
+support and the constraints that the new system must meet. Generally, analysts 
+divide system requirements into two categories: functional and nonfunctional 
+requirements. Functional requirements are the activities that the system must 
+perform (i.e., the business uses to which the system will be applied). For example, 
+if you are developing a payroll system, the required business uses might include 
+such functions as “generate electronic fund transfers,” “calculate commission 
+amounts,” “calculate payroll taxes,” “maintain employee-dependent information,” and “report tax deductions to the IRS.” The new system must handle all 
+these functions. Identifying and describing all these business uses require a substantial amount of time and effort because the list of functions and their dependencies can be very complex.
+In Chapter 1, the functional requirements were defined by the list of use 
+cases for the Tradeshow System, but functional requirements are also based on 
+the procedures and rules that an organization uses to run its business. That is 
+why use case details must be captured and modeled, too. Sometimes, they are 
+well documented and easy to identify and describe. An example might be the 
+following: “All new employees must fill out a W-4 form to enter information 
+about their tax withholding in the payroll system.” Other business rules might 
+be more obtuse or difficult to find. An example from RMO might be the following: “Air shipping charges are reduced by 50 percent for orders over $200 
+that weigh less than two pounds.” Discovering such rules is critical to the final 
+design of the system. If this rule were not discovered, customers who had relied 
+on it in the past might become angry. Modifying the system after customers start 
+complaining is much more difficult and expensive than building in the rule from 
+the start.
+Nonfunctional requirements are characteristics of the system other than 
+those activities it must perform or support. It is not always easy to distinguish 
+functional from nonfunctional requirements. One way to do so is to use a framework for identifying and classifying requirements. There have been many such 
+frameworks developed over time; the most widely used today is referred to as 
+FURPS (see Figure 2-3). FURPS is an acronym that stands for functional, 
+usability, reliability, performance, and security. The F in FURPS is equivalent to 
+the functional requirements defined previously. The remaining categories (URPS) 
+describe nonfunctional requirements as follows:
+■ usability requirements describe operational characteristics related to 
+users, such as the user interface, related work procedures, online help, 
+and documentation. For example, the user interface for a smartphone app 
+should behave similarly to other apps when responding to such gestures as 
+two-finger slides, pinching, and expanding. Additional requirements might 
+include menu format, color schemes, use of the organization’s logo, and 
+multilanguage support.
+■ Reliability requirements describe the dependability of a system—how 
+often a system exhibits such behaviors as service outages and incorrect processing and how it detects and recovers from those problems.
+System requirements all the activities 
+the new system must perform or support and 
+the constraints that the new system must 
+meet (functional + nonfunctional)
+Functional requirements the activities 
+the system must perform to support the 
+users’ work
+nonfunctional requirements required 
+system characteristics other than the activities it must perform or support
+FURPS an acronym that stands for functional, usability, reliability, performance, and 
+security requirements
+usability requirements the requirements 
+for operational characteristics related to 
+users, such as the user interface, related work 
+procedures, online help, and documentation
+reliability requirements the requirements that describe system dependability
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+46 PART 2 ■ Systems Analysis Activities
+■ Performance requirements describe operational characteristics related 
+to measures of workload, such as throughput and response time. For example, the client portion of a system might be required to have a .5 second 
+response time to all button presses, and the server might need to support 
+100 simultaneous client sessions (with the same response time).
+■ Security requirements describe how access to the application will be 
+controlled and how data will be protected during storage and transmission. 
+For example, the application might be password protected, encrypt locally 
+stored data with 1024-bit keys, and use secure HTTP for communication 
+among client and server nodes.
+■ Additional Requirements Categories
+FURPS+ is an extension of FURPS that adds additional categories, including 
+design constraints as well as implementation, system interface, physical, and 
+supportability requirements—all these additional categories summarized by the 
+plus sign. Here are short descriptions of each category:
+■ Design constraints describe restrictions to which the hardware and software must adhere. For example, a cell phone application might be required 
+to use the Android operating system, consume no more than 30 MB of 
+flash memory storage, consume no more than 10 MB of system memory 
+while running, and operate on CPUs rated at 1 GHz or higher.
+■ Implementation requirements describe constraints such as required programming languages and tools, documentation method and level of detail, 
+and a specific communication protocol for distributed components.
+■ Interface requirements describe interactions among systems. For example, 
+a financial reporting system for a publicly traded company in the United 
+States must generate data for the Securities and Exchange Commission (SEC) in a specific XML format. The system might also supply data 
+directly to stock exchanges and bond rating agencies, and automatically 
+generate Twitter messages, RSS feeds, and Facebook updates.
+■ Physical requirements describe such characteristics of hardware as size, 
+weight, power consumption, and operating conditions. For example, a system 
+that supports battlefield communications might have such requirements as 
+weighing less than 200 grams, being no larger than 5 centimeters cubed, and 
+operating for 48 hours on a fully charged 1200 milliwatt lithium ion battery.
+■ Supportability requirements describe how a system is installed, configured, monitored, and updated. For example, requirements for a game installed on a home 
+PC might include automatic configuration to maximize performance on existing 
+hardware, error reporting, and download of updates from a support server.
+As with any set of requirements categories, FURPS+ has some gray areas 
+and some overlaps among its categories. For example, is a requirement that a 
+battlefield communications device survive immersion in water and operate across 
+a temperature range of –20°C to 50°C a performance or physical requirement? Is a restriction to use no more than 100 megabytes of memory a performance or 
+design requirement? Is a requirement to secure communication between workstations and servers with 1024-bit encryption a performance, design, or implementation requirement? What is important is that all requirements be identified 
+and precisely stated early in the development process and that inconsistencies or 
+trade-offs among them be resolved.
+■ Stakeholders
+Stakeholders are your primary source of information for system requirements. 
+Stakeholders are all the people who have an interest in the successful implementation of the system. Depending on the nature and scope of the system, this 
+can be a small group, or a large, diverse group. For example, when implementing a comprehensive accounting system for a publicly traded corporation in the 
+United States, the stakeholders include bookkeepers, accountants, managers and 
+executives, customers, suppliers, auditors, investors, the SEC, and the Internal 
+Revenue Service (IRS). Each stakeholder group interacts with the system in different ways, and each has a unique perspective on system requirements. Before 
+gathering detailed information, the analyst identifies every type of stakeholder 
+who has an interest in the new system and ensures that critical people from each 
+stakeholder category are available to serve as the business experts.
+One useful way to help identify all the interested stakeholders is to consider two dimensions by which they vary: internal stakeholders versus external stakeholders and operational stakeholders versus executive stakeholders 
+(see Figure 2-4). Internal stakeholders are those within the organization 
+who interact with the system or have a significant interest in its operation or 
+success. You may be tempted to define internal stakeholders as employees of 
+an organization, but some organizations—such as nonprofits and educational 
+institutions—have internal users (e.g., volunteers and students) who are not 
+employees. External stakeholders are those outside the organization’s control 
+and influence—although this distinction can also be fuzzy, such as when an 
+organization’s strategic partners (e.g., suppliers and shipping companies) interact 
+directly with internal systems.
+Operational stakeholders are those who regularly interact with a system in 
+the course of their jobs or lives. Examples include accountants interacting with 
+an accounting or billing system, factory supervisors interacting with a production 
+scheduling system, customers interacting with an Internet storefront, and patients 
+Regulators
+Partner organizations
+Bookkeepers
+Operational Executive
+Accountants
+Internal auditors
+Internal
+External
+Customers
+Investors
+Board of directors
+Senior managers
+External 
+auditors
+Operational
+managers
+Figure 2-4 Stakeholders of a 
+comprehensive accounting system 
+for a publicly traded company
+internal stakeholders persons within the 
+organization who interact with the system or 
+have a significant interest in its operation or 
+success
+external stakeholders persons outside 
+the organization’s control and influence who 
+interact with the system or have a significant 
+interest in its operation or success
+operational stakeholders persons who 
+regularly interact with a system in the course 
+of their jobs or lives
+Stakeholders persons who have an 
+interest in the successful implementation of 
+the system
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+48 PART 2 ■ Systems Analysis Activities
+who interact with a health-care Web site, Facebook page, or Twitter newsfeed. 
+Operational users are a key source of requirements information, especially as it 
+pertains to user interfaces and related functionality. Executive stakeholders are 
+those who do not interact directly with the system, but who either use information produced by the system or have a significant financial or other interest in its 
+operation and success. Examples include an organization’s senior managers and 
+board of directors, regulatory agencies, and taxing authorities.
+Including such stakeholders in analysis activities is critical because the information they possess may not be obvious or widely known in the organization. 
+In addition, system requirements imposed by executive stakeholders, especially 
+external ones, often have significant legal and financial implications. For example, consider the potential effects of IRS regulations on an accounting system, or 
+the effects of federal and state privacy laws on a social networking system.
+Two other stakeholder groups that do not neatly fall into the categories just 
+described deserve special attention. The client is the person or group that provides the funding for the project. In many cases, the client is senior management. 
+However, clients may also be a separate group, such as a corporation’s board of 
+directors, executives in a parent company, or the board of regents of a university. 
+The project team includes the client in its list of important stakeholders because 
+the team must provide periodic status reviews to the client throughout development. The client or a direct representative on a steering or oversight committee 
+also usually approves stages of the project and releases funds.
+An organization’s technical and support staff are also stakeholders in any system. The technical staff includes people who establish and maintain the computing 
+environment of the organization. Support staff provide user training, troubleshooting, and related services. Both groups should provide guidance in such areas as programming language, computer platforms, network interfaces, and existing systems 
+and their support issues. Any new system must fit within an organization’s existing 
+technology architecture, application architecture, and support environment. Thus, 
+technical and support representatives are important stakeholders.
+■ The Stakeholders for RMO
+As a starting point for identifying CSMS stakeholders, it is helpful to develop a 
+list of current CSS stakeholders, which include:
+■ Phone/mail sales order representatives
+■ Warehouse and shipping personnel
+■ Marketing personnel who maintain online catalog information
+■ Marketing, sales, accounting, and financial managers
+■ Senior executives
+■ Customers
+■ External shippers (e.g., UPS and FedEx)
+Because the CSMS will take over existing functions of the CSS, the list of CSMS 
+stakeholders includes all the stakeholders in the CSS list; however, there are some 
+subtle differences. For example, the inclusion of social networking functions in the 
+CSMS and the planned ability to share Mountain Bucks expands the definition of 
+a customer. Whereas the old CSS was intended for use by potential customers visiting the Web site, the new system will interact with a much larger group of external 
+stakeholders, including friends and family of existing customers and potentially all 
+users of popular social networking sites. In essence, the stakeholder group “Customers” is much larger, more diverse, and includes people who have not purchased 
+from RMO. Ensuring that the viewpoints and requirements of this diverse group 
+are represented during analysis activities will be a considerable challenge.
+Expanded functionality for sales promotions with partner organizations creates an entirely new group of external stakeholders within those partner organizations. At this point, it is unclear whether that group will include operationa

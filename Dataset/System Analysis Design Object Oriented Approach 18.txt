@@ -1,0 +1,478 @@
+﻿the systems analysts, as experts with computer systems, were in the best position to defi ne 
+how a computer system should operate. Many systems failed because they did not adequately 
+address the true business needs of the users. Gradually, the presumption changed so that the 
+users, as the business experts, were seen as being the best position to defi ne how a computer 
+system should operate. However, many systems failed to deliver performance benefi ts because 
+users simply automated an existing ineffi cient system, and they failed to incorporate new 
+opportunities off ered by technology.
+Th erefore, the most eff ective approach is to have both business people and analysts 
+working together to determine business requirements. Sometimes, however, users don’t 
+know exactly what they want, and analysts need to help them discover their needs. A set of 
+strategies has become popular to help analysts do problem analysis, root cause analysis, duration analysis, activity-based costing, informal benchmarking, outcome analysis, technology 
+analysis, and activity elimination. Analysts can use these tools when they need to guide the 
+users in explaining what is wanted from a system. Th ese strategies work similarly. Th ey help 
+users critically examine the current state of systems and processes (the as-is system), identify 
+exactly what needs to change, and develop a concept for a new system (the to-be system).
+Functional Requirements
+ 1. Manage Appointments
+ 1.1. Patient makes new appointment.
+ 1.2. Patient changes appointment.
+ 1.3. Patient cancels appointment. 
+2. Produce Schedule 
+ 2.1. Office Manager checks daily schedule.
+ 2.2. Office Manager prints daily schedule.
+3. Record Doctor Availability 
+ 3.1. Doctor updates schedule
+Nonfunctional Requirements 
+ 1. Operational Requirements
+ 1.1. The system will operate in Windows environment.
+ 1.2. The system should be able to connect to printers wirelessly.
+ 1.3. The system should automatically back up at the end of each day. 
+ 2. Performance Requirements
+ 2.1. The system will store a new appointment in 2 seconds or less.
+ 2.2. The system will retrieve the daily appointment schedule in 2 seconds or less. 
+ 3. Security Requirements
+ 3.1. Only doctors can set their availability.
+ 3.2. Only a manager can produce a schedule. 
+ 4. Cultural and Political Requirements
+ 4.1. No special cultural and political requirements are anticipated. 
+FIGURE 3-1
+Sample Requirements 
+Defi nition
+Requirements Determination  91
+Although these strategies enable the analyst to help users create a vision for the new 
+system, they are not suffi cient for extracting information about the detailed business requirements that are needed to build it. Th erefore, analysts use a portfolio of requirements-gathering 
+techniques to acquire information from users. Th e analyst has many techniques from which 
+to choose: interviews, questionnaires, observation, joint application development (JAD), and 
+document analysis. Th e information gathered using these techniques is critically analyzed and 
+used to craft the requirements defi nition report.
+Creating a Requirements Defi nition
+Creating a requirements defi nition is an iterative and ongoing process whereby the analyst 
+collects information with requirements-gathering techniques (e.g., interviews, document 
+analysis), critically analyzes the information to identify appropriate business requirements 
+for the system, and adds the requirements to the requirements defi nition report. Th e requirements defi nition is kept up to date so that the project team and business users can refer to it 
+and get a clear understanding of the new system.
+To create a requirements defi nition, the project team fi rst determines the kinds of functional and nonfunctional requirements that they will collect about the system (of course, these 
+may change over time). Th ese become the main sections of the document. Next, the analysts 
+use a variety of requirements-gathering techniques to collect information, and they list the 
+business requirements that were identifi ed from that information. Finally, the analysts work 
+with the entire project team and the business users to verify, change, and complete the list and 
+to help prioritize the importance of the requirements that were identifi ed.
+Th is process continues throughout analysis, and the requirements defi nition evolves 
+over time as new requirements are identifi ed and as the project moves into later phases of the 
+Unifi ed Process. Beware: Th e evolution of the requirements defi nition must be carefully managed. Th e project team cannot keep adding to the requirements defi nition, or the system will 
+keep growing and growing and never get fi nished. Instead, the project team carefully identifi es 
+requirements and evaluates which ones fi t within the scope of the system. When a requirement 
+refl ects a real business need but is not within the scope of the current system or current release, 
+it is either added on a list of future requirements or given a low priority. Th e management of 
+requirements (and system scope) is one of the hardest parts of managing a project.
+Real-World Problems with Requirements Determination
+Avison and Fitzgerald provide us with a set of problems that can arise with regard to determining the set of requirements with which to be dealt.4 First, the analyst might not have 
+access to the correct set of users to uncover the complete set of requirements. Th is can lead to 
+requirements being missed, misrepresented, and/or overspecifi ed. Second, the specifi cation 
+of the requirements may be inadequate. Th is can be especially true with the lightweight techniques associated with agile methodologies. Th ird, some requirements are simply unknowable at the beginning of a development process. However, as the system is developed, the users 
+and analysts will get a better understanding of both the domain issues and the applicable technology. Th is can cause new functional and nonfunctional requirements to be identifi ed and 
+current requirements to evolve or be canceled. Iterative and incremental-based development 
+methodologies, such as the Unifi ed Process and agile, can help in this case. Fourth, verifying 
+and validating of requirements can be very diffi cult. We take up this topic in the chapters 
+that deal with the creation of functional (Chapter 4), structural (Chapter 5), and behavioral 
+(Chapter 6) models.
+4 See D. Avison and G. Fitzgerald, Information Systems Development: Methodologies, Techniques, & Tools, 4th Ed. 
+(London: McGraw-Hill, 2006).
+92 Chapter 3 Requirements Determination
+REQUIREMENTS ANALYSIS STRATEGIES
+Before the project team can determine what requirements are appropriate for a given system, 
+there needs to be a clear vision of the kind of system that will be created and the level of 
+change that it will bring to the organization. Th e basic process of analysis is divided into three 
+steps: understanding the as-is system, identifying improvements, and developing requirements for the to-be system.
+Sometimes the fi rst step (i.e., understanding the as-is system) is skipped or is performed in a 
+cursory manner. Th is happens when no current system exists, if the existing system and processes 
+are irrelevant to the future system, or if the project team is using a RAD or agile development 
+methodology in which the as-is system is not emphasized. Newer RAD, agile, and object-oriented 
+methodologies, such as phased development, prototyping, throwaway prototyping, extreme programming, and Scrum (see Chapter 1) focus almost exclusively on improvements and the to-be 
+system requirements, and they spend little time investigating the current as-is system.
+Requirements analysis strategies help the analyst lead users through the analysis steps 
+so that the vision of the system can be developed. Requirements analysis strategies and 
+requirements-gathering techniques go hand in hand. Analysts use requirements-gathering 
+techniques to collect information; requirements analysis strategies drive the kind of information that is gathered and how it is ultimately analyzed. Th e requirements analysis strategies and requirements gathering happen concurrently and are complementary activities.
+To move the users from the as-is system to the to-be system, an analyst needs strong 
+critical thinking skills. Critical thinking is the ability to recognize strengths and weaknesses 
+and recast an idea in an improved form, and critical thinking skills are needed to really understand issues and develop new business processes. Th ese skills are also needed to thoroughly 
+examine the results of requirements gathering, to identify business requirements, and to 
+translate those requirements into a concept for the new system.
+Problem Analysis 
+Th e most straightforward (and probably the most commonly used) requirements-analysis 
+technique is problem analysis. Problem analysis means asking the users and managers to 
+identify problems with the as-is system and to describe how to solve them in the to-be 
+system. Most users have a very good idea of the changes they would like to see, and most 
+are quite vocal about suggesting them. Most changes tend to solve problems rather than 
+capitalize on opportunities, but the latter is possible as well. Improvements from problem 
+analysis tend to be small and incremental (e.g., provide more space in which to type the 
+customer’s address; provide a new report that currently does not exist).
+Th is type of improvement oft en is very eff ective at improving a system’s effi ciency or 
+ease of use. However, it oft en provides only minor improvements in business value—the new 
+system is better than the old, but it may be hard to identify signifi cant monetary benefi ts from 
+the new system.
+Root Cause Analysis 
+Th e ideas produced by problem analysis tend to be solutions to problems. All solutions make 
+assumptions about the nature of the problem, assumptions that might or might not be valid. 
+In our experience, users (and most people in general) tend to quickly jump to solutions without fully considering the nature of the problem. Sometimes the solutions are appropriate, but 
+many times they address a symptom of the problem, not the true problem or root cause itself.5
+5 Two good books that discuss the diffi culty in fi nding the root causes to problems are: E. M. Goldratt and 
+J. Cox, Th e Goal (Croton-on-Hudson, NY: North River Press, 1986); E. M. Goldratt, Th e Haystack Syndrome 
+(Croton-on-Hudson, NY: North River Press, 1990).
+Requirements Analysis Strategies  93
+For example, suppose a fi rm notices that its users report inventory stock-outs. Th e cost of 
+inventory stock-outs can be quite signifi cant. In this case, since they happen frequently, customers could fi nd another source for the items that they are purchasing from the fi rm. It is in the 
+fi rm’s interest to determine the underlying cause and not simply provide a knee-jerk reaction 
+such as arbitrarily increasing the amount of inventory kept on hand. In the business world, 
+the challenge lies in identifying the root cause—few real-world problems are simple. Th e users 
+typically propose a set of causes for the problem under consideration. Th e solutions that users 
+propose can address either symptoms or root causes, but without a careful analysis, it is diffi cult 
+to tell which one is addressed. 
+Root cause analysis, therefore, focuses on problems, not solutions. Th e analyst starts by 
+having the users generate a list of problems with the current system and then prioritize the 
+problems in order of importance. Starting with the most important, the users and/or the 
+analysts then generate all the possible root causes for the problems. Each possible root cause 
+is investigated (starting with the most likely or easiest to check) until the true root causes 
+are identifi ed. If any possible root causes are identifi ed for several problems, those should 
+be investigated fi rst, because there is a good chance they are the real root causes infl uencing 
+the symptom problems. In our example, there are several possible root causes:
+■ Th e fi rm’s supplier might not be delivering orders to the fi rm in a timely manner.
+■ Th ere could be a problem with the fi rm’s inventory controls.
+■ Th e reorder level and quantities could be set wrong.
+Sometimes, using a hierarchical chart to represent the causal relationships helps with the analysis. 
+As Figure 3-2 shows, there are many possible root causes that underlie the higher-level causes 
+identifi ed. Th e key point in root cause analysis is always to challenge the obvious.
+Duration Analysis 
+Duration analysis requires a detailed examination of the amount of time it takes to perform 
+each process in the current as-is system. Th e analysts begin by determining the total amount 
+of time it takes, on average, to perform a set of business processes for a typical input. Th ey 
+then time each of the individual steps (or subprocesses) in the business process. Th e time to 
+Frequent
+Inventory Stock-Outs
+Order Approval 
+Late
+Identifying Vendor 
+Delayed
+Delay in Sending
+Order to Vendor
+Delays in Order
+Processing
+Late Recording of
+Sales
+Late Recording of
+Purchases Received
+Infrequent Manual
+Inventory Reconciliation
+Problems with
+Inventory Controls
+Reorder point set
+too low
+Reorder Quantity
+(EOQ) set too low
+Incorrect Reorder 
+Level and Quantities
+FIGURE 3-2 Root Cause Analysis for Inventory Stock-Outs
+complete the basic step is then totaled and compared to the total for the overall process. A 
+signifi cant diff erence between the two—and in our experience the total time oft en can be 10 
+or even 100 times longer than the sum of the parts—indicates that this part of the process is 
+badly in need of a major overhaul.
+For example, suppose that the analysts are working on a home mortgage system and discover that on average, it takes thirty days for the bank to approve a mortgage. Th ey then look 
+at each of the basic steps in the process (e.g., data entry, credit check, title search, appraisal) 
+and fi nd that the total amount of time actually spent on each mortgage is about eight hours. 
+Th is is a strong indication that the overall process is badly broken, because it takes thirty days 
+to perform one day’s work.
+Th ese problems probably occur because the process is badly fragmented. Many diff erent 
+people must perform diff erent activities before the process fi nishes. In the mortgage example, the application probably sits on many people’s desks for long periods of time before it 
+is processed.
+Processes in which many diff erent people work on small parts of the inputs are prime 
+candidates for process integration or parallelization. Process integration means changing the 
+fundamental process so that fewer people work on the input, which oft en requires changing 
+the processes and retraining staff to perform a wider range of duties. Process parallelization 
+means changing the process so that all the individual steps are performed at the same time. 
+For example, in the mortgage application case, there is probably no reason that the credit 
+check cannot be performed at the same time as the appraisal and title check.
+Activity-Based Costing 
+Activity-based costing is a similar analysis; it examines the cost of each major process or step 
+in a business process rather than the time taken.6 Th e analysts identify the costs associated 
+with each of the basic functional steps or processes, identify the most costly processes, and 
+focus their improvement eff orts on them.
+Assigning costs is conceptually simple. Analysts simply examine the direct cost of labor 
+and materials for each input. Materials costs are easily assigned in a manufacturing process, 
+whereas labor costs are usually calculated based on the amount of time spent on the input and 
+the hourly cost of the staff . However, as you may recall from a managerial accounting course, 
+there are indirect costs, such as rent, depreciation, and so on, that also can be included in 
+activity costs.
+Informal Benchmarking 
+Benchmarking refers to studying how other organizations perform a business process in 
+order to learn how your organization can do something better. Benchmarking helps the 
+organization by introducing ideas that employees may never have considered but that have 
+the potential to add value.
+Informal benchmarking is fairly common for customer-facing business processes (i.e., 
+processes that interact with the customer). With informal benchmarking, the managers and 
+analysts think about other organizations or visit them as customers to watch how the business 
+process is performed. In many cases, the business studied may be a known leader in the industry or simply a related fi rm. 
+6 Many books have been written on activity-based costing. Useful ones include K. B. Burk and D. W. Webster, 
+Activity-Based Costing (Fairfax, VA: American Management Systems, 1994); D. T. Hicks, Activity-Based Costing: 
+Making It Work for Small and Mid-sized Companies (New York: Wiley, 1998). Th e two books by Eli Goldratt mentioned previously (Th e Goal and Th e Haystack Syndrome) also off er unique insights into costing.
+94 Chapter 3 Requirements Determination
+Requirements-Gathering Techniques  95
+Outcome Analysis 
+Outcome analysis focuses on understanding the fundamental outcomes that provide value to 
+customers. Although these outcomes sound as though they should be obvious, they oft en are 
+not. For example, consider an insurance company. One of its customers has just had a car 
+accident. What is the fundamental outcome from the customer’s perspective? Traditionally, 
+insurance companies have answered this question by assuming the customer wants to receive 
+the insurance payment quickly. To the customer, however, the payment is only a means to 
+the real outcome: a repaired car. Th e insurance company might benefi t by extending its view 
+of the business process past its traditional boundaries to include not paying for repairs but 
+performing the repairs or contracting with an authorized body shop to do them.
+With this approach, system analysts encourage the managers and project sponsor to 
+pretend they are customers and to think carefully about what the organization’s products and 
+services enable the customers to do—and what they could enable the customer to do.
+Technology Analysis 
+Many major changes in business since the turn of the century have been enabled by new 
+technologies. Technology analysis starts by having the analysts and managers develop a list 
+of important and interesting technologies. Th en the group systematically identifi es how 
+every technology could be applied to the business process and identifi es how the business 
+would benefi t. It is important to note the technology analysis in no way implies adopting 
+technology for technology’s sake. Rather the focus is on using new technologies to meet the 
+goals of the organization.
+Activity Elimination 
+Activity elimination is exactly what it sounds like. Th e analysts and managers work together 
+to identify how the organization could eliminate each activity in the business process, how the 
+function could operate without it, and what eff ects are likely to occur. Initially, managers are 
+reluctant to conclude that processes can be eliminated, but this is a force-fi t exercise in that 
+they must eliminate each activity. In some cases, the results are silly; nonetheless, participants 
+must address every activity in the business process.
+REQUIREMENTS-GATHERING TECHNIQUES
+An analyst is very much like a detective (and business users are sometimes like elusive suspects). He or she knows that there is a problem to be solved and therefore must look for clues 
+that uncover the solution. Unfortunately, the clues are not always obvious (and are oft en 
+missed), so the analyst needs to notice details, talk with witnesses, and follow leads just as 
+Sherlock Holmes would have done. Th e best analysts thoroughly gather requirements using a 
+variety of techniques and make sure that the current business processes and the needs for the 
+new system are well understood before moving into design. Analysts don’t want to discover 
+later that they have key requirements wrong—such surprises late in the development process 
+can cause all kinds of problems.
+Th e requirements-gathering process is used for building political support for the project and establishing trust and rapport between the project team building the system and 
+the users who ultimately will choose to use or not use the system. Involving someone in the 
+process implies that the project teams view that person as an important resource and value 
+his or her opinions. All the key stakeholders (the people who can aff ect the system or who 
+will be aff ected by the system) must be included in the requirements-gathering process. Th e 
+stakeholders might include managers, employees, staff members, and even some customers 
+and suppliers. If a key person is not involved, that individual might feel slighted, which can 
+cause problems during implementation (e.g., How could they have developed the system 
+without my input?).
+Th e second challenge of requirements gathering is choosing the way(s) information is 
+collected. Th ere are many techniques for gathering requirements that vary from asking people 
+questions to watching them work. In this section, we focus on the fi ve most commonly used 
+techniques: interviews, JAD sessions (a special type of group meeting), questionnaires, document analysis, and observation. Each technique has its own strengths and weaknesses, many of 
+which are complementary, so most projects use a combination of techniques.7
+Interviews
+An interview is the most commonly used requirements-gathering technique. Aft er all, it is 
+natural—if you need to know something, you usually ask someone. In general, interviews are 
+conducted one-on-one (one interviewer and one interviewee), but sometimes, owing to time 
+constraints, several people are interviewed at the same time. Th ere are fi ve basic steps to the interview process: selecting interviewees, designing interview questions, preparing for the interview, 
+conducting the interview, and postinterview follow-up.8
+Th e fi rst step in interviewing is to create an interview schedule listing who will be interviewed, 
+when, and for what purpose (see Figure 3-3). Th e schedule can be an informal list that is 
+used to help set up meeting times or a formal list that is incorporated into the workplan. Th e 
+people who appear on the interview schedule are selected based on the analyst’s information 
+needs. Th e project sponsor, key business users, and other members of the project team can 
+help the analyst determine who in the organization can best provide important information 
+about requirements. Th ese people are listed on the interview schedule in the order in which 
+they should be interviewed.
+People at diff erent levels of the organization have varying perspectives on the system, so 
+it is important to include both managers who manage the processes and staff who actually 
+perform the processes to gain both high-level and low-level perspectives on an issue. Also, 
+the kinds of interview subjects needed can change over time. For example, at the start of the 
+project, the analyst has a limited understanding of the as-is business process. It is common 
+to begin by interviewing one or two senior managers to get a strategic view and then to move 
+to midlevel managers who can provide broad, overarching information about the business 
+process and the expected role of the system being developed. Once the analyst has a good 
+understanding of the big picture, lower-level managers and staff members can fi ll in the exact 
+details of how the process works. Like most other things about systems analysis, this is an 
+iterative process—starting with senior managers, moving to midlevel managers, then staff 
+members, back to midlevel managers, and so on, depending upon what information is needed 
+along the way.
+It is quite common for the list of interviewees to grow, oft en by 50 to 75 percent. As people are interviewed, more information that is needed and additional people who can provide 
+the information will probably be identifi ed.
+7 Some excellent books that address the importance of gathering requirements and various techniques include 
+Alan M. Davis, Soft ware Requirements: Objects, Functions, & States, Revision (Englewood Cliff s, NJ: Prentice Hall, 
+1993); Gerald Kotonya and Ian Sommerville, Requirements Engineering (Chichester, England: Wiley, 1998); Dean 
+ Leffi ngwell and Don Widrig, Managing Soft ware Requirements: A Unifi ed Approach (Reading, MA: Addison-Wesley, 
+2000).
+8 A good book on interviewing is that by Brian James, Th e Systems Analysis Interview (Manchester, England: NCC 
+Blackwell, 1989).
+1. Select 
+Interviewees
+96 Chapter 3 Requirements Determination
+Requirements-Gathering Techniques  97
+Th ere are three types of interview questions: closed-ended questions, open-ended questions, 
+and probing questions. Closed-ended questions are those that require a specifi c answer. Th ey 
+are similar to multiple-choice or arithmetic questions on an exam (see Figure 3-4). Closedended questions are used when an analyst is looking for specifi c, precise information (e.g., 
+how many credit card requests are received per day). In general, precise questions are best. 
+For example, rather than asking, Do you handle a lot of requests? it is better to ask, How many 
+requests do you process per day? Closed-ended questions enable analysts to control the interview and obtain the information they need. However, these types of questions don’t uncover 
+why the answer is the way it is, nor do they uncover information that the interviewer does not 
+think to ask for ahead of time.
+Open-ended questions are those that leave room for elaboration on the part of the interviewee. Th ey are similar in many ways to essay questions that you might fi nd on an exam (see 
+Figure 3-4 for examples). Open-ended questions are designed to gather rich information and 
+give the interviewee more control over the information that is revealed during the interview. 
+Sometimes the information that the interviewee chooses to discuss uncovers information that is 
+just as important as the answer (e.g., if the interviewee talks only about other departments when 
+asked for problems, it may suggest that he or she is reluctant to admit his or her own problems).
+Th e third type of question is the probing question. Probing questions follow up on what 
+has just been discussed in order to learn more, and they oft en are used when the interviewer is 
+unclear about an interviewee’s answer. Th ey encourage the interviewee to expand on or to confi rm information from a previous response, and they signal that the interviewer is listening and 
+is interested in the topic under discussion. Many beginning analysts are reluctant to use probing 
+questions because they are afraid that the interviewee might be off ended at being challenged or 
+because they believe it shows that they didn’t understand what the interviewee said. When done 
+politely, probing questions can be a powerful tool in requirements gathering.
+In general, an interviewer should not ask questions about information that is readily 
+available from other sources. For example, rather than asking what information is used to 
+perform to a task, it is simpler to show the interviewee a form or report (see the section on 
+document analysis) and ask what information on it is used. Th is helps focus the interviewee 
+on the task and saves time, because the interviewee does not need to describe the information 
+detail—he or she just needs to point it out on the form or report.
+No type of question is better than another, and a combination of questions is usually used 
+during an interview. At the initial stage of an IS development project, the as-is process can 
+2. Design 
+Interview Questions
+FIGURE 3-3
+Sample Interview 
+Schedule
+Andria McClellan Director, Accounting Strategic vision for new Mon., March 1
+ accounting system 8:00–10:00 AM
+Jennifer Draper Manager, Accounts Current problems with Mon., March 1 
+ Receivable accounts receivable 2:00–3:15 PM
+ process; future goals 
+Mark Goodin Manager, Accounts Current problems with Mon., March 1 
+ Payable accounts payable 4:00–5:15 PM
+ process; future goals
+Anne Asher Supervisor, Data Entry Accounts receivable and Wed., March 3 
+ payable processes 10:00–11:00 AM
+Fernando Merce Data Entry Clerk Accounts receivable and Wed., March 3 
+ payable processes 1:00–3:00 PM
+ Purpose of 
+Name Position Interview Meeting
+be unclear, so the interview process begins with unstructured interviews, interviews that seek 
+broad and roughly defi ned information. In this case, the interviewer has a general sense of the 
+information needed but has few closed-ended questions to ask. Th ese are the most challenging interviews to conduct because they require the interviewer to ask open-ended questions 
+and probe for important information on the fl y.
+As the project progresses, the analyst comes to understand the business process much better 
+and needs very specifi c information about how business processes are performed (e.g., exactly 
+how a customer credit card is approved). At this time, the analyst conducts structured interviews,
+in which specifi c sets of questions are developed before the interviews. Th ere usually are more 
+closed-ended questions in a structured interview than in the unstructured approach.
+No matter what kind of interview is being conducted, interview questions must be 
+organized into a logical sequence so that the interview fl ows well. For example, when trying 
+to gather information about the current business process, it can be useful to move in logical 
+order through the process or from the most important issues to the least important.
+Th ere are two fundamental approaches to organizing the interview questions: top down 
+or bottom up (see Figure 3-5). With the top-down interview, the interviewer starts with broad, 
+general issues and gradually works toward more-specifi c ones. With the bottom-up interview, 
+the interviewer starts with very specifi c questions and moves to broad questions. In practice, 
+analysts mix the two approaches, starting with broad, general issues, moving to specifi c questions, and then returning to general issues.
+Th e top-down approach is an appropriate strategy for most interviews (it is certainly the 
+most common approach). Th e top-down approach enables the interviewee to become accustomed to the topic before he or she needs to provide specifi cs. It also enables the interviewer 
+to understand the issues before moving to the details because the interviewer might not have 
+suffi cient information at the start of the interview to ask very specifi c questions. Perhaps most 
+importantly, the top-down approach enables the interviewee to raise a set of big-picture issues 
+before becoming enmeshed in details, so the interviewer is less likely to miss important issues.
+One case in which the bottom-up strategy may be preferred is when the analyst already 
+has gathered a lot of information about issues and just needs to fi ll in some holes with details. 
+Bottom-up interviewing may be appropriate if lower-level staff members feel threatened or 
+unable to answer high-level questions. For example, How can we improve customer service? 
+might be too broad a question for a customer service clerk, whereas a specifi c question is readily 
+answerable (e.g., How can we speed up customer returns?). In any event, all interviews should 
+begin with noncontroversial questions and then gradually move into more contentious issues 
+aft er the interviewer has developed some rapport with the interviewee.
+Closed-ended questions • How many telephone orders are received per day?
+• How do customers place orders?
+• What information is missing from the monthly sales report?
+Open-ended questions • What do you think about the current system?
+• What are some of the problems you face on a daily basis?
+ • What are some of the improvements you would like to see in a 
+new system?
+Probing questions • Why?
+• Can you give me an example?
+• memorandums, policy manuals, user-training manuals, organization charts, forms, and, of 
+course, the user interface with the existing system.
+But these documents tell only part of the story. Th ey represent the formal system that the 
+organization uses. Quite oft en, the real, or informal, system diff ers from the formal one, and these 
+diff erences, particularly large ones, give strong indications of what needs to be changed. For 
+example, forms or reports that are never used should probably be eliminated. Likewise, boxes or 
+questions on forms that are never fi lled in (or are used for other purposes) should be rethought. 
+See Figure 3-8 for an example of how a document can be interpreted.
+Th e most powerful indication that the system needs to be changed is when users 
+create their own forms or add additional information to existing ones. Such changes clearly 
+demonstrate the need for improvements to existing systems. Th us, it is useful to review both 
+blank and completed forms to identify these deviations. Likewise, when users access multiple 
+reports to satisfy their information needs, it is a clear sign that new information or new information formats are needed.
+Name: Buffy Pat Smith
+Pet’s Name: Buffy Collie 7/6/99
+Address: 100 Central Court. Apartment 10
+Toronto, Ontario K7L 3N6
+Phone Number: 555-3400
+416-
+Do you have insurance: yes
+Insurance Company: Pet’s Mutual
+Policy Number: KA-5493243
+CENTRAL VETERINARY CLINIC
+Patient Information Card
+The staff had to add additional
+information about the type of animal
+and the animal’s date of birth. This
+information should be added to the
+new form in the to-be system.
+The customer made a mistake.
+This should be labeled
+Owner’s Name to prevent
+confusion.
+The customer did not include
+area code in the phone
+number. This should be made
+more clear.
+FIGURE 3-8
+Performing a 
+Document Analysis
+Requirements-Gathering Techniques  107
+Observation
+Observation, the act of watching processes being performed, is a powerful tool for gathering 
+information about the as-is system because it enables the analyst to see the reality of a situation, rather than listening to others describe it in interviews or JAD sessions. Several research 
+studies have shown that many managers really do not remember how they work and how 
+they allocate their time. (Quick, how many hours did you spend last week on each of your 
+courses?) Observation is a good way to check the validity of information gathered from indirect sources such as interviews and questionnaires.
+In many ways, the analyst becomes an anthropologist as he or she walks through the 
+organization and observes the business system as it functions. Th e goal is to keep a low profi le, to not interrupt those working, and to not infl uence those being observed. Nonetheless, 
+it is important to understand that what analysts observe may not be the normal day-to-day 
+routine because people tend to be extremely careful in their behavior when they are being 
+watched. Even though normal practice may be to break formal organizational rules, the 
+observer is unlikely to see this. (Remember how you drove the last time a police car followed 
+you?) Th us, what you see might not be what you get.
+Observation is oft en used to supplement interview information. Th e location of a person’s 
+offi ce and its furnishings give clues to the person’s power and infl uence in the organization and 
+can be used to support or refute information given in an interview. For example, an analyst 
+might become skeptical of someone who claims to use the existing computer system extensively if the computer is never turned on while the analyst visits. In most cases, observation 
+supports the information that users provide in interviews. When it does not, it is an important 
+signal that extra care must be taken in analyzing the business system.
+Selecting the Appropriate Techniques
+Each of the requirements-gathering techniques discussed earlier has strengths and weaknesses. No one technique is always better than the others, and in practice most projects use a 
+combination of techniques. Th us, it is important to understand the strengths and weaknesses 
+of each technique and when to use each (see Figure 3-9). One issue not discussed is that of the 
+analysts’ experience. In general, document analysis and observation require the least amount 
+of training, whereas JAD sessions are the most challenging.
+Type of Information Th e fi rst characteristic is the type of information. Some techniques are 
+more suited for use at diff erent stages of the analysis process, whether understanding the as-is 
+system, identifying improvements, or developing the to-be system. Interviews and JAD are 
+commonly used in all three stages. In contrast, document analysis and observation usually are 
+most helpful for understanding the as-is, although occasionally they provide information about current problems that need to be improved. Questionnaires are oft en used to gather information about the as-is system as well as general information about improvements.
+Depth of Information Th e depth of information refers to how rich and detailed the information is that the technique usually produces and the extent to which the technique is useful 
+for obtaining not only facts and opinions but also an understanding of why those facts and 
+opinions exist. Interviews and JAD sessions are very useful for providing a good depth of rich 
+and detailed information and helping the analyst to understand the reasons behind them. At 
+the other extreme, document analysis and observation are useful for obtaining facts, but little 
+beyond that. Questionnaires can provide a medium depth of information, soliciting both facts 
+and opinions with little understanding of why they exist

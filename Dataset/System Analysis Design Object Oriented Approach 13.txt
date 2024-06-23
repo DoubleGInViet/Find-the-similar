@@ -1,0 +1,740 @@
+﻿executing during the earlier phases of the evolving system. Depending on the results 
+from the testing workfl ow, some redesign and programming activities on the design and 
+implementation workfl ows could be necessary, but they should be minimal at this point. 
+From a managerial perspective, the project management, confi guration and change management, and environment are involved. Some of the activities that take place are beta and 
+acceptance testing, fi ne-tuning the design and implementation, user training, and rolling 
+out the fi nal product onto a production platform. Obviously, the primary deliverable is 
+the actual executable information system. Th e other deliverables include user manuals, a 
+plan to support the users, and a plan for upgrading the information system in the future.
+Workfl ows
+Th e workfl ows describe the tasks or activities that a developer performs to evolve an information system over time. Th e workfl ows of the Unifi ed Process are grouped into two broad 
+categories: engineering and supporting.
+Engineering Workfl ows Engineering workfl ows include business-modeling, requirements, 
+analysis, design, implementation, test, and deployment workfl ows. Th e engineering workfl ows deal with the activities that produce the technical product (i.e., the information system).
+Business Modeling Workfl ow Th e business-modeling workfl ow uncovers problems and 
+identifi es potential projects within a user organization. Th is workfl ow aids management in 
+understanding the scope of the projects that can improve the effi ciency and eff ectiveness of a 
+user organization. Th e primary purpose of business modeling is to ensure that both developer 
+and user organizations understand where and how the to-be-developed information system 
+fi ts into the business processes of the user organization. Th is workfl ow is primarily executed during the inception phase to ensure that we develop information systems that make 
+business sense. Th e activities that take place on this workfl ow are most closely associated with 
+the planning phase of the traditional SDLC; however, requirements gathering, and use-case 
+and business process modeling techniques also help us to understand the business situation.
+Requirements Workfl ow In the Unifi ed Process, the requirements workfl ow includes eliciting both functional and nonfunctional requirements. Typically, requirements are gathered 
+from project stakeholders, such as end users, managers within the end user organization, and 
+even customers. Th e requirements workfl ow is used the most during the inception and elaboration phases. Th e identifi ed requirements are very helpful for developing the vision document and the use cases used throughout the development process. Additional requirements 
+tend to be discovered throughout the development process. In fact, only the transition phase 
+tends to have few, if any, additional requirements identifi ed.
+Analysis Workfl ow Th e analysis workfl ow primarily addresses the creation of an analysis 
+model of the problem domain. In the Unifi ed Process, the analyst begins designing the architecture associated with the problem domain; using the UML, the analyst creates structural and 
+behavior diagrams that depict a description of the problem domain classes and their interactions. Th e primary purpose of the analysis workfl ow is to ensure that both the developer 
+and user organizations understand the underlying problem and its domain without overanalyzing. If they are not careful, analysts can create analysis paralysis, which occurs when the 
+project becomes so bogged down with analysis that the system is never actually designed or 
+implemented. A second purpose of the analysis workfl ow is to identify useful reusable classes 
+for class libraries. By reusing predefi ned classes, the analyst can avoid reinventing the wheel 
+The Unifi ed Process  29
+when creating the structural and behavior diagrams. Th e analysis workfl ow is predominantly 
+associated with the elaboration phase, but like the requirements workfl ow, it is possible that 
+additional analysis will be required throughout the development process.
+Design Workfl ow Th e design workfl ow transitions the analysis model into a form that can 
+be used to implement the system: the design model. Whereas the analysis workfl ow concentrated on understanding the problem domain, the design workfl ow focuses on developing a 
+solution that will execute in a specifi c environment. Basically, the design workfl ow simply 
+enhances the description of the evolving system by adding classes that address the environment of the system to the evolving analysis model. Th e design workfl ow uses activities such 
+as detailed problem domain class design, optimization of the evolving information system, 
+database design, user-interface design, and physical architecture design. Th e design workfl ow 
+is associated primarily with the elaboration and construction phases of the Unifi ed Process.
+Implementation Workfl ow Th e primary purpose of the implementation workfl ow is to 
+create an executable solution based on the design model (i.e., programming). Th is includes 
+not only writing new classes but also incorporating reusable classes from executable class 
+libraries into the evolving solution. As with any programming activity, the new classes and 
+their interactions with the incorporated reusable classes must be tested. Finally, in the case of 
+multiple groups performing the implementation of the information system, the implementers 
+also must integrate the separate, individually tested modules to create an executable version 
+of the system. Th e implementation workfl ow is associated primarily with the elaboration and 
+construction phases.
+Testing Workfl ow Th e primary purpose of the testing workfl ow is to increase the quality 
+of the evolving system. Testing goes beyond the simple unit testing associated with the 
+implementation workfl ow. In this case, testing also includes testing the integration of all 
+modules used to implement the system, user acceptance testing, and the actual alpha testing of the soft ware. Practically speaking, testing should go on throughout the development 
+of the system; testing of the analysis and design models occurs during the elaboration and 
+construction phases, whereas implementation testing is performed primarily during the 
+construction and, to some degree, transition phases. Basically, at the end of each iteration 
+during the development of the information system, some type of test should be performed.
+Deployment Workfl ow Th e deployment workfl ow is most associated with the transition 
+phase of the Unifi ed Process. Th e deployment workfl ow includes activities such as soft ware 
+packaging, distribution, installation, and beta testing. When actually deploying the new system into a user organization, the developers might have to convert the current data, interface 
+the new soft ware with the existing soft ware, and train the end user to use the new system.
+Supporting Workfl ows Th e supporting workfl ows include the project management, confi guration and change management, and environment workfl ows. Th e supporting workfl ows 
+focus on the managerial aspects of information systems development.
+Project Management Workfl ow Whereas the other workfl ows associated with the Unifi ed 
+Process are technically active during all four phases, the project management workfl ow is 
+the only truly cross-phase workfl ow. Th e development process supports incremental and 
+iterative development, so information systems tend to grow or evolve over time. At the end 
+of each iteration, a new incremental version of the system is ready for delivery. Th e project 
+management workfl ow is quite important owing to the complexity of the two-dimensional 
+30 Chapter 1 Introduction to Systems Analysis and Design
+development model of the Unifi ed Process (workfl ows and phases). Th is workfl ow’s activities 
+include identifying and managing risks, managing scope, estimating the time to complete 
+each iteration and the entire project, estimating the cost of the individual iteration and the 
+whole project, and tracking the progress being made toward the fi nal version of the evolving 
+information system.
+Confi guration and Change Management Workfl ow Th e primary purpose of the confi guration and change management workfl ow is to keep track of the state of the evolving system. 
+In a nutshell, the evolving information system comprises a set of artifacts (e.g., diagrams, 
+source code, and executables). During the development process, these artifacts are modifi ed. 
+A substantial amount of work—and, hence, money—is involved in developing the artifacts. 
+Th e artifacts themselves should be handled as any expensive asset would be handled—access 
+controls must be put into place to safeguard the artifacts from being stolen or destroyed. Furthermore, because the artifacts are modifi ed on a regular, if not continuous, basis, good version control mechanisms should be established. Finally, a good deal of project management 
+information needs to be captured (e.g., author, time, and location of each modifi cation). Th e 
+confi guration and change management workfl ow is associated mostly with the construction 
+and transition phases.
+Environment Workfl ow During the development of an information system, the development team needs to use diff erent tools and processes. Th e environment workfl ow addresses 
+these needs. For example, a CASE tool that supports the development of an object-oriented 
+information system via the UML could be required. Other tools necessary include programming environments, project management tools, and confi guration management tools. 
+Th e environment workfl ow involves acquiring and installing these tools. Even though this 
+workfl ow can be active during all of the phases of the Unifi ed Process, it should be involved 
+primarily with the inception phase.
+Extensions to the Unifi ed Process
+As large and as complex as the Unifi ed Process is, many authors have pointed out a set of 
+critical weaknesses. First, the Unifi ed Process does not address staffi ng, budgeting, or contract 
+management issues. Th ese activities were explicitly left out of the Unifi ed Process. Second, the 
+Unifi ed Process does not address issues relating to maintenance, operations, or support of 
+the product once it has been delivered. Th us, it is not a complete soft ware process; it is only 
+a development process. Th ird, the Unifi ed Process does not address cross- or inter-project 
+issues. Considering the importance of reuse in object-oriented systems development and the 
+fact that in many organizations employees work on many diff erent projects at the same time, 
+leaving out inter-project issues is a major omission.
+To address these omissions, Ambler and Constantine suggest adding a production phase 
+and two workfl ows: the operations and support workfl ow and the infrastructure management 
+workfl ow (see Figure 1-16).20 In addition to these new workfl ows, the test, deployment, and 
+environment workfl ows are modifi ed, and the project management and the confi guration 
+and change management workfl ows are extended into the production phase. Th ese extensions 
+20 S. W. Ambler and L. L. Constantine, Th e Unifi ed Process Inception Phase: Best Practices in Implementing the UP 
+(Lawrence, KS: CMP Books, 2000); S. W. Ambler and L. L. Constantine, Th e Unifi ed Process Elaboration Phase: 
+Best Practices in Implementing the UP (Lawrence, KS: CMP Books, 2000); S. W. Ambler and L. L. Constantine, Th e 
+Unifi ed Process Construction Phase: Best Practices in Implementing the UP (Lawrence, KS: CMP Books, 2000); S. W. 
+Ambler and L. L. Constantine, Th e Unifi ed Process Transition and Production Phases: Best Practices in Implementing 
+the UP (Lawrence, KS: CMP Books, 2002).
+The Unifi ed Process  31
+are based on alternative object-oriented soft ware processes: the OPEN process (Object-oriented 
+Process, Environment, and Notation) and the Object-Oriented Soft ware Process.21
+Production Phase Th e production phase is concerned primarily with issues related to the 
+soft ware product aft er it has been successfully deployed. Th is phase focuses on issues related 
+to updating, maintaining, and operating the soft ware. Unlike the previous phases, there are 
+no iterations or incremental deliverables. If a new release of the soft ware is to be developed, 
+21 S. W. Ambler, Process Patterns—Building Large-Scale Systems Using Object Technology (Cambridge, UK: SIGS 
+Books/Cambridge University Press, 1998); S. W. Ambler, More Process Patterns—Delivering Large-Scale Systems 
+Using Object Technology (Cambridge, UK: SIGS Books/Cambridge University Press, 1999); I. Graham, B. HendersonSellers, and H. Younessi, Th e OPEN Process Specifi cation (Harlow, UK: Addison-Wesley, 1997); B. Henderson-Sellers and 
+B. Unhelkar, OPEN Modeling with UML (Harlow, UK: Addison-Wesley, 2000).
+FIGURE 1-16  The Enhanced Unifi ed Process
+Business Modeling
+Phases Inception
+Supporting Workflows
+Elaboration Construction Transition Production
+Requirements
+Analysis
+Design
+Implementation
+Configuration and 
+Change Management
+Infrastructure 
+Management
+Project Management
+Environment
+Operations and Support
+Iter
+1
+… Iter
+i
+Iter
+i + 1
+… Iter
+j
+Iter
+j + 1
+… Iter
+k
+Iter
+k + 1
+… Iter
+m
+Test
+Deployment
+Phases Inception
+Engineering Workflows
+Elaboration Construction Transition Production
+32 Chapter 1 Introduction to Systems Analysis and Design
+then the developers must begin a new run through the fi rst four phases. Based on the activities that take place during this phase, no engineering workfl ows are relevant. Th e supporting 
+workfl ows that are active during this phase include the confi guration and change management workfl ow, the project management workfl ow, the new operations and support workfl ow, and the infrastructure management workfl ow.
+Operations and Support Workfl ow Th e operations and support workfl ow, as you might guess, 
+addresses issues related to supporting the current version of the soft ware and operating the 
+soft ware on a daily basis. Activities include creating plans for the operation and support of the 
+soft ware product once it has been deployed, creating training and user documentation, putting 
+into place necessary backup procedures, monitoring and optimizing the performance of the 
+soft ware, and performing corrective maintenance on the soft ware. Th is workfl ow becomes 
+active during the construction phase; its level of activity increases throughout the transition 
+and, fi nally, the production phase. Th e workfl ow fi nally drops off when the current version of 
+the soft ware is replaced by a new version. Many developers are under the false impression that 
+once the soft ware has been delivered to the customer, their work is fi nished. In most cases, the 
+work of supporting the soft ware product is much more costly and time consuming than the 
+original development. At that point, the developer’s work may have just begun.
+Infrastructure Management Workfl ow Th e infrastructure management workfl ow’s primary 
+purpose is to support the development of the infrastructure necessary to develop objectoriented systems. Activities such as development and modifi cation of libraries, standards, 
+and enterprise models are very important. When the development and maintenance of a 
+ problem-domain architecture model goes beyond the scope of a single project and reuse 
+is going to occur, the infrastructure management workfl ow is essential. Another very important set of cross-project activities is the improvement of the soft ware development process. 
+Because the activities on this workfl ow tend to aff ect many projects and the Unifi ed Process 
+focuses only on a specifi c project, the Unifi ed Process tends to ignore these activities (i.e., they 
+are simply beyond the scope and purpose of the Unifi ed Process).
+Existing Workfl ow Modifi cations and Extensions In addition to the workfl ows that were 
+added to address defi ciencies contained in the Unifi ed Process, existing workfl ows had to 
+be modifi ed and/or extended into the production phase. Th ese workfl ows include the test, 
+deployment, environment, project management, and confi guration and change management 
+workfl ows.
+Test Workfl ow For high-quality information systems to be developed, testing should be 
+done on every deliverable, including those created during the inception phase. Otherwise, less 
+than high-quality systems will be delivered to the customer.
+Deployment Workfl ow Legacy systems exist in most corporations today, and these systems 
+have databases associated with them that must be converted to interact with the new systems. 
+Owing to the complexity of deploying new systems, the conversion requires signifi cant planning. Th erefore, the activities on the deployment workfl ow need to begin in the inception phase 
+instead of waiting until the end of the construction phase, as suggested by the Unifi ed Process.
+Environment Workfl ow Th e environment workfl ow needs to be modifi ed to include activities related to setting up the operations and production environment. Th e actual work performed is similar to the work related to setting up the development environment that was 
+performed during the inception phase. In this case, the additional work is performed during 
+the transition phase.
+The Unifi ed Process  33
+Project Management Workfl ow Even though the project management workfl ow does not 
+include staffi ng the project, managing the contracts among the customers and vendors, and 
+managing the project’s budget, these activities are crucial to the success of any soft ware 
+development project. We suggest extending project management to include these activities. 
+Th is workfl ow should additionally occur in the production phase to address issues such as 
+training, staff management, and client relationship management.
+Confi guration and Change Management Workfl ow Th e confi guration and change management workfl ow is extended into the new production phase. Activities performed during the 
+production phase include identifying potential improvements to the operational system and 
+assessing the potential impact of the proposed changes. Once developers have identifi ed these 
+changes and understood their impact, they can schedule the changes to be made and deployed 
+with future releases.
+Figure 1-17 shows the chapters in which the Enhanced Unifi ed Process’s phases and 
+workfl ows are covered. Given the off shore outsourcing and automation of information 
+Enhanced UP Phases Chapters
+Inception 2–4
+Elaboration 3–11
+Construction 8, 12
+Transition 12–13
+Production 13
+Enhanced UP 
+Engineering Workfl ows Chapters
+Business Modeling 2–5
+Requirements 3–5, 10
+Analysis 3–7
+Design 7–11
+Implementation 9, 12
+Test 4–7, 12
+Deployment 13
+Enhanced UP 
+Supporting Workfl ows Chapters
+Project Management 2, 13
+Confi guration and 
+Change Management
+13
+Environment 2
+Operations and Support 13
+Infrastructure 
+Management
+2
+FIGURE 1-17  The Enhanced Unifi ed Process and the Textbook Organization
+34 Chapter 1 Introduction to Systems Analysis and Design
+technology,22 in this textbook, we focus primarily on the elaboration phase and the business modeling, requirements, analysis, design, and project management workfl ows of the 
+Enhanced Unifi ed Process. However, as Figure 1-17 shows, the other phases and workfl ows 
+are covered. In many object-oriented systems development environments today, code 
+generation is supported. Th us, from a business perspective, we believe the activities associated 
+with these workfl ows are the most important.
+THE UNIFIED MODELING LANGUAGE
+Until 1995, object concepts were popular but implemented in many diff erent ways by 
+diff erent developers. Each developer had his or her own methodology and notation (e.g., 
+Booch, Coad, Moses, OMT, OOSE, SOMA).23 Th en in 1995, Rational Soft ware brought 
+three industry leaders together to create a single approach to object-oriented systems 
+development. Grady Booch, Ivar Jacobson, and James Rumbaugh worked with others to 
+create a standard set of diagramming techniques known as the Unifi ed Modeling Language 
+(UML). Th e objective of UML was to provide a common vocabulary of object-oriented 
+terms and diagramming techniques rich enough to model any systems development project from analysis through implementation. In November 1997, the Object Management 
+Group (OMG) formally accepted UML as the standard for all object developers. During the 
+following years, the UML has gone through multiple minor revisions. Th e current version 
+of UML is Version 2.5.
+Version 2.5 of the UML defi nes a set of fi ft een diagramming techniques used to model a 
+system. Th e diagrams are broken into two major groupings: one for modeling the structure 
+of a system and one for modeling behavior. Structure diagrams provide a way to represent 
+the data and static relationships in an information system. Th e structure diagrams include 
+class, object, package, deployment, component, composite structure, and profi le diagrams. 
+Behavior diagrams provide the analyst with a way to depict the dynamic relationships among 
+the instances or objects that represent the business information system. Th ey also allow modeling of the dynamic behavior of individual objects throughout their lifetime. Th e behavior 
+diagrams support the analyst in modeling the functional requirements of an evolving information system. Th e behavior modeling diagrams include activity, sequence, communication, 
+interaction overview, timing, behavior state machine, protocol state machine, and use-case 
+diagrams.24 Figure 1-18 provides an overview of these diagrams.
+22 See Th omas L. Friedman, Th e World Is Flat: A Brief History of the Twenty-First Century, Updated and Expanded 
+Edition (New York: Farrar, Straus, and Giroux, 2006); Daniel H. Pink, A Whole New Mind: Why Right-Brainers Will 
+Rule the Future (New York: Riverhead Books, 2006).
+23 See Grady Booch, Object-Oriented Analysis and Design with Applications, 2nd Ed. (Redwood City, CA: Benjamin/ 
+Cummings, 1994); Peter Coad and Edward Yourdon, Object-Oriented Analysis, 2nd Ed. (Englewood Cliff s, NJ: 
+Yourdon Press, 1991); Peter Coad and Edward Yourdon, Object-Oriented Design (Englewood Cliff s, NJ: Yourdon 
+Press, 1991); Brian Henderson-Sellers and Julian Edwards, Book Two of Object-Oriented Knowledge: Th e Working 
+Object (Sydney, Australia: Prentice Hall, 1994); James Rumbaugh, Michael Blaha, William Premerlani, Frederick 
+Eddy, and William Lorensen, Object-Oriented Modeling and Design (Englewood Cliff s, NJ: Prentice Hall, 1991); 
+Ivar Jacobson, Magnus Christerson, Patrik Jonsson, and Gunnar Overgaard, Object-Oriented Soft ware Engineering: 
+A Use Case Approach (Wokingham, England: Addison-Wesley, 1992); Ian Graham, Migrating to Object Technology
+(Wokingham, England: Addison-Wesley, 1994).
+24 Th e material contained in this section is based on the Unifi ed Modeling Language: Superstructure Version 2.4, 
+ptc/2010-11-14 (www.uml.org). Additional useful references include Michael Jesse Chonoles and James A. Schardt, 
+UML 2 for Dummies (Indianapolis, IN: Wiley, 2003); Hans-Erik Eriksson, Magnus Penker, Brian Lyons, and David 
+Fado, UML 2 Toolkit (Indianapolis, IN: Wiley, 2004); Kendall Scott, Fast Track UML 2.0 (Berkeley, CA: Apress, 
+2004). For a complete description of all diagrams, see www.uml.org.
+The Unifi ed Modeling Language  35
+Structure Diagrams
+Class Illustrate the relationships between classes modeled Analysis, Design
+in the system
+Object Illustrate the relationships between objects modeled Analysis, Design
+in the system; used when actual instances of the classes 
+will better communicate the model
+Package Group other UML elements together to form Analysis, Design,
+ higher-level constructs Implementation
+Deployment Show the physical architecture of the system; can also Physical Design, 
+be used to show software components being deployed Implementation
+onto the physical architecture
+Component Illustrate the physical relationships among the software Physical Design,
+ components Implementation
+Composite Structure Design Illustrate the internal structure of a class, i.e., the Analysis, Design
+relationships among the parts of a class
+Profi le Used to develop extensions to the UML itself None
+Behavioral Diagrams
+Activity Illustrate business workfl ows independent of classes, the fl ow Analysis, Design
+of activities in a use case, or detailed design of a method
+Sequence Model the behavior of objects within a use case; Analysis, Design
+focuses on the time-based ordering of an activity
+Communication Model the behavior of objects within a use case; Analysis, Design
+focus on the communication among a set of 
+collaborating objects of an activity
+Interaction Overview Illustrate an overview of the fl ow of control of a process Analysis, Design
+Timing Illustrate the interaction among a set of objects and the state Analysis, Design
+changes they go through along a time axis
+Behavioral State Machine Examine the behavior of one class Analysis, Design
+Protocol State Machine Illustrate the dependencies among the different Analysis, Design
+interfaces of a class
+Use-Case Capture business requirements for the system and illustrate Analysis
+the interaction between the system and its environment
+FIGURE 1-18  UML 2.5 Diagram Summary
+Diagram Name Used to... Primary Phase
+Depending on where in the development process the system is, diff erent diagrams play 
+a more important role. In some cases, the same diagramming technique is used throughout 
+the development process. In that case, the diagrams start off very conceptual and abstract. 
+As the system is developed, the diagrams evolve to include details that ultimately lead to 
+generating and developing code. In other words, the diagrams move from documenting the 
+requirements to laying out the design. Overall, the consistent notation, integration among 
+the diagramming techniques, and application of the diagrams across the entire development 
+process make the UML a powerful and fl exible language for analysts and developers. Later 
+chapters provide more detail on using a subset of the UML in object-oriented systems analysis 
+36 Chapter 1 Introduction to Systems Analysis and Design
+and design. In particular, these chapters describe activity, use-case, class, object, sequence, 
+ communication, package, and deployment diagrams and the behavior state machines. We 
+also introduce an optional UML diagram, the windows navigation diagram, that is an extension to the behavioral state machine that is used to design user navigation through an information system’s user interfaces.
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+Th is course will introduce many new concepts regarding object-oriented analysis and 
+design. To make these concepts more relevant and understandable, we will apply the 
+concepts, introduced in each chapter, to a fi ctitious company called Patterson Superstore. 
+Patterson is a retail chain established in Pittsburgh, PA, in 1985. Currently, Patterson 
+uses a mobile application to facilitate prescription order, notifi cation, and auto refi ll services. Th is service is widely used by Patterson’s client base, and Patterson has leveraged 
+this mobile app to gain an advantage over less technically advanced competitors.
+Clients now want to use this technology to access health clinic services. Th e Vice 
+President of Pharmacy Services, Max Ross, would like to use this opportunity to position 
+Patterson as a leader in the use of technology use for clinic access. Th e system that he 
+envisions will enable real-time communication with medical personnel (audio, video, 
+and text), mobile appointment scheduling, telehealth assessment, and diagnosis of minor 
+problems through video house calls. Th roughout the book, we will revisit Patterson 
+Superstore to see how the concepts introduced in each chapter aff ect this project.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy 
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the four primary phases of the Systems Development Life Cycle (SDLC).
+ Explain the evolution of system development methodologies from process-centric to data-centric to RAD-based 
+methodologies.
+ Explain the diff erent roles played by a systems analyst in the process of developing information systems.
+ Describe the basic characteristics of object-oriented systems: objects, attributes, methods, messages, encapsulation, 
+information hiding, polymorphism, dynamic binding, and inheritance.
+ Discuss the three basic characteristics of all object-oriented systems analysis and design approach: use-case driven, 
+architecture-centric, and iterative and incremental development.
+ Describe the Unifi ed Process.
+ List and categorize, as to their primary purpose, the diff erent diagrams associated with the Unifi ed Modeling 
+ Language (UML).
+KEY TERMS
+Abstract classes
+Agile development
+A-kind-of
+Analysis model
+Analysis paralysis
+Analysis phase
+Analysis strategy
+Analysis workfl ow
+Approval committee
+Architecture-centric
+Architecture design
+As-is system
+Attribute
+Behavior
+Behavior diagrams
+Behavioral view
+Business analyst
+Business modeling 
+workfl ow
+Change agent
+Questions  37
+Change management 
+analyst
+Class
+Concrete classes
+Confi guration and change 
+management workfl ow
+Construction
+Construction phase
+Database and fi le 
+specifi cation
+Data-centered 
+methodology
+Deliverable
+Deployment workfl ow
+Design model
+Design phase
+Design prototype
+Design strategy
+Design workfl ow
+Dynamic binding
+Dynamic view
+Elaboration phase
+Encapsulation
+Engineering workfl ow
+Environment 
+workfl ow
+External view
+Extreme programming (XP)
+Feasibility analysis
+Functional view
+Gradual refi nement
+Implementation phase
+Implementation workfl ow
+Inception phase
+Incremental
+Information hiding
+Infrastructure analyst
+Infrastructure management 
+workfl ow
+Inherit
+Inheritance
+Instance
+Interface design
+Iterative
+Message
+Method
+Methodology
+Object
+Object Management 
+Group (OMG)
+Object-oriented 
+methodologies
+Operations and support 
+workfl ow
+Parallel development
+Phased development
+Phases
+Planning phase
+Polymorphism
+Process-centered methodology
+Production phase
+Program design
+Programmer
+Project management
+Project management 
+workfl ow
+Project manager
+Project plan
+Project sponsor
+Prototyping
+Rapid application development 
+(RAD)
+Requirements gathering
+Requirements workfl ow
+Scrum
+State
+Static binding
+Static view
+Structural view
+Structure diagrams
+Structured design
+Subclass
+Superclass
+Support plan
+System proposal
+System prototype
+System request
+System specifi cation
+Systems analyst
+Systems development life 
+cycle (SDLC)
+Technical writer
+Testing workfl ow
+Th rowaway prototyping
+Training plan
+Transition phase
+Unifi ed Modeling Language 
+(UML)
+Use case
+Use-case driven
+Version
+Waterfall development
+Workfl ows
+Workplan
+QUESTIONS
+1. Compare and contrast phases, steps, techniques, and 
+deliverables.
+2. Describe the major phases in the SDLC.
+3. Describe the principal steps in the planning phase. 
+What are the major deliverables?
+4. Describe the principal steps in the analysis phase. 
+What are the major deliverables?
+5. Describe the principal steps in the design phase. What 
+are the major deliverables?
+6. Describe the principal steps in the implementation 
+phase. What are the major deliverables?
+7. What are the roles of a project sponsor and the 
+approval committee?
+8. What does gradual refi nement mean in the context of 
+SDLC?
+9. Compare and contrast process-centered methodologies with data-centered methodologies.
+10. Compare and contrast structured design-based methodologies in general to RAD-based methodologies in 
+general.
+11. Compare and contrast extreme programming and 
+throwaway prototyping.
+12. Describe the major elements in and issues with waterfall development.
+13. Describe the major elements in and issues with parallel 
+development.
+14. Describe the major elements in and issues with phased 
+development.
+15. Describe the major elements in and issues with 
+prototyping.
+16. Describe the major elements in and issues with throwaway prototyping.
+17. Describe the major elements in and issues with XP.
+18. Describe the major elements in and issues with 
+Scrum.
+19. What are the key factors in selecting a methodology?
+20. What are the major roles played by a systems analyst 
+on a project team?
+21. Compare and contrast the role of a systems analyst, 
+business analyst, and infrastructure analyst.
+22. What is the diff erence between classes and objects?
+23. What are methods and messages?
+24. Why are encapsulation and information hiding 
+important characteristics of object-oriented systemsWhat is meant by polymorphism when applied to 
+object-oriented systems?
+26. Compare and contrast dynamic and static binding.
+27. What is a use case?
+28. What is meant by use-case driven?
+29. What is the Unifi ed Modeling Language?
+30. Who is the Object Management Group?
+31. What is the primary purpose of structure diagrams? 
+Give some examples of structure diagrams.
+32. For what are behavior diagrams used? Give some 
+examples of behavior diagrams.
+33. Why is it important for an OOSAD approach to be 
+architecture-centric?
+34. What does it mean for an OOSAD approach to be 
+incremental and iterative?
+35. What are the phases and workfl ows of the Unifi ed 
+Process?
+36. Compare the phases of the Unifi ed Process with the 
+phases of the waterfall model.
+37. Which phase in the SDLC is most important? Why?
+38. Describe the major elements and issues with an objectoriented approach to developing information systems. Suppose you are a project manager using a waterfall development-based methodology on a large and 
+complex project. Your manager has just read the latest 
+article in Computerworld that advocates replacing 
+this methodology with prototyping and comes to you 
+requesting that you switch. What would you say?
+B. Th e basic types of methodologies discussed in this 
+chapter can be combined and integrated to form new 
+hybrid methodologies. Suppose you were to combine throwaway prototyping with the use of waterfall 
+development. What would the methodology look 
+like? Draw a picture (similar to those in Figures 1–2 
+through 1–7). How would this new methodology 
+compare to the others?
+C. Look on the Web for diff erent kinds of job opportunities that are available for people who want analyst 
+positions? Compare and contrast the skills that the ads 
+ask for to the skills that we presented in this chapter.
+D. Th ink about your ideal analyst position. Write an ad 
+to hire someone for that position. What requirements 
+would the job have? What skills and experience would 
+be required? How would an applicant be able to demonstrate having the appropriate skills and experience?
+E. Using your favorite Web search engine, fi nd alternative descriptions of the basic characteristics of objectoriented systems.
+F. Look up object-oriented programming in Wikipedia. 
+Write a short report based on its entry.
+G. Choose an object-oriented programming language, 
+such as C++, Java, Objective-C, Smalltalk, or VB.Net, 
+and use the Web to fi nd out how the language supports 
+the basic characteristics of object-oriented systems.
+H. Assume that you have been assigned the task of creating an object-oriented system that could be used to 
+support students in fi nding an appropriate apartment 
+to live in next semester. What are the diff erent types 
+of objects (i.e., classes) you would want to include in 
+your system? What attributes or methods would you 
+want to include in their defi nition? Is it possible to 
+arrange them into an inheritance hierarchy? If so, do 
+it. If not, why not?
+I. Create an inheritance hierarchy that could be used to 
+represent the following classes: accountant, customer, 
+department, employee, manager, organization, and 
+salesperson.
+J. Investigate IBM’s Rational Unifi ed Process (RUP) on the 
+Web. RUP is a commercial version that extends aspects of 
+the Unifi ed Process. Write a brief memo describing how it 
+is related to the Unifi ed Process as described in this chapter. 
+(Hint: A good website with which to begin is www-01.
+ibm.com/soft ware/rational/rup/.)
+K. Suppose you are a project manager who typically has 
+been using a waterfall development-based methodology on a large and complex project. Your manager has 
+just read the latest article in Computerworld that advocates replacing this methodology with the Unifi ed 
+Process and comes to you requesting you to switch. 
+What do you say?
+L. Suppose you are an analyst working for a small company to develop an accounting system. Would you use 
+the Unifi ed Process to develop the system, or would 
+you prefer one of the other approaches? Why?
+M. Suppose you are an analyst developing a new information system to automate the sales transactions 
+and manage inventory for each retail store in a large 
+chain. Th e system would be installed at each store 
+and exchange data with a mainframe computer at the 
+company’s head offi ce. Would you use the Unifi ed 
+Process to develop the system, or would you prefer 
+one of the other approaches? Why?
+25. What is meant by polymorphism when applied to 
+object-oriented systems?
+26. Compare and contrast dynamic and static binding.
+27. What is a use case?
+28. What is meant by use-case driven?
+29. What is the Unifi ed Modeling Language?
+30. Who is the Object Management Group?
+31. What is the primary purpose of structure diagrams? 
+Give some examples of structure diagrams.
+32. For what are behavior diagrams used? Give some 
+examples of behavior diagrams.
+33. Why is it important for an OOSAD approach to be 
+architecture-centric?
+34. What does it mean for an OOSAD approach to be 
+incremental and iterative?
+35. What are the phases and workfl ows of the Unifi ed 
+Process?
+36. Compare the phases of the Unifi ed Process with the 
+phases of the waterfall model.
+37. Which phase in the SDLC is most important? Why?
+38. Describe the major elements and issues with an objectoriented approach to developing information systems.
+Minicases  39
+N. Suppose you are an analyst working for a small company to develop an accounting system. What type of 
+methodology would you use? Why?
+O. Suppose you are an analyst developing a new executive information system intended to provide key strategic information from existing corporate databases 
+to senior executives to help in their decision making. 
+What type of methodology would you use? Why?
+P. Investigate the Unifi ed Modeling Language on the 
+Web. Write a paragraph news brief describing the 
+current state of the UML. (Hint: A good website with 
+which to begin is www.uml.org.)
+Q. Investigate the Object Management Group (OMG) on the 
+Web. Write a report describing the purpose of the OMG 
+and what it is involved with besides the UML. (Hint: A 
+good website with which to begin is www.omg.org.)
+R. Using the Web, fi nd a set of CASE tools that support 
+the UML. A couple of examples include Poseidon, 
+Rational Rose, and Visual Paradigm. Find at least two 
+more. Write a short report describing how well they 
+support the UML, and make a recommendation as to 
+which one you believe would be best for a project team 
+to use in developing an object-oriented information 
+system using the UML.
+MINICASES
+1. Barbara Singleton, manager of western regional sales 
+at the WAMAP Company, requested that the IS 
+department develop a sales force management and 
+tracking system that would enable her to better monitor the performance of her sales staff . Unfortunately, 
+owing to the massive backlog of work facing the IS 
+department, her request was given a low priority. 
+Aft er six months of inaction by the IS department, 
+Barbara decided to take matters into her own hands. 
+Based on the advice of friends, Barbara purchased 
+simple database soft ware and constructed a sales force 
+management and tracking system on her own.
+Although Barbara’s system has been “completed” 
+for about six weeks, it still has many features that 
+do not work correctly, and some functions are full 
+of errors. Barbara’s assistant is so mistrustful of the 
+system that she has secretly gone back to using her old 
+paper-based system, because it is much more reliable.
+Over dinner one evening, Barbara complained to 
+a systems analyst friend, “I don’t know what went 
+wrong with this project. It seemed pretty simple to 
+me. Th ose IS guys wanted me to follow this elaborate 
+set of steps and tasks, but I didn’t think all that really 
+applied to a PC-based system. I just thought I could 
+build this system and tweak it around until I got what 
+I wanted without all the fuss and bother of the methodology the IS guys were pushing. I mean, doesn’t 
+that just apply to their big, expensive systems?”
+Assuming you are Barbara’s systems analyst friend, 
+how would you respond to her complaint?
+2. Marcus Weber, IS project manager at ICAN Mutual 
+Insurance Co., is reviewing the staffi ng arrangements 
+for his next major project, the development of an 
+expert system-based underwriter’s assistant. Th is new 
+system will involve a whole new way for the underwriters to perform their tasks. Th e underwriter’s assistant system will function as sort of an underwriting 
+supervisor, reviewing key elements of each application, checking for consistency in the underwriter’s 
+decisions, and ensuring that no critical factors have 
+been overlooked. Th e goal of the new system is to 
+improve the quality of the underwriters’ decisions and 
+to improve underwriters’ productivity. It is expected 
+that the new system will substantially change the way 
+the underwriting staff do their jobs.
+Marcus is dismayed to learn that because of budget 
+constraints, he must choose between one of two available staff members. Barry Filmore has had considerable 
+experience and training in individual and organizational behavior. Barry has worked on several other 
+projects in which the end users had to make signifi cant 
+adjustments to the new system, and Barry seems to 
+have a knack for anticipating problems and smoothing 
+the transition to a new work environment. Marcus had 
+hoped to have Barry’s involvement in this project.
+Marcus’s other potential staff member is Kim Danville. Prior to joining ICAN Mutual, Kim had considerable work experience with the expert system 
+technologies that ICAN has chosen for this expert 
+system project. Marcus was counting on Kim to 
+help integrate the new expert system technology into 
+ICAN’s systems environment, and also to provide 
+on-the-job training and insights to the other developers on this team.
+Given that Marcus’s budget will only permit him to 
+add Barry or Kim to this project team, but not both, 
+what choice do you recommend for him? Justify your 
+answer.
+40 Chapter 1 Introduction to Systems Analysis and Design
+3. Joe Brown, the president of Roanoke Manufacturing, 
+requested that Jack Jones, the MIS department manager, investigate the viability of selling their products 
+over the Web. Currently, the MIS department is still 
+using an IBM mainframe as their primary deployment environment. As a fi rst step, Jack contacted his 
+friends at IBM to see if they had any suggestions as to 
+how Roanoke Manufacturing could move toward supporting sales in an electronic commerce environment 
+while keeping their mainframe as their main system. 
+His friends explained that IBM (www.ibm.com) now 
+supports Java and Linux on their mainframes. Jack has 
+also learned that IBM owns Rational (www-01.ibm.
+com/soft ware/rational/), the creator of the UML and 
+the Unifi ed Process. Jack’s friends suggested that Jack 
+investigate using object-oriented systems as a basis for 
+developing the new system. Th ey also suggested that 
+using the Rational Unifi ed Process (RUP), Java, and virtual Linux machines on his current mainframe as a way 
+to support the move toward a distributed electronic 
+commerce system would protect his current investment 
+in his legacy systems while allowing the new system to 
+be developed in a more modern manner. Even though 
+Jack’s IBM friends were very persuasive, Jack is still a 
+little wary about moving his operation from a structured systems approach to this new object-oriented 
+approach. Assuming that you are one of Jack’s IBM 
+friends, how would you convince him to move toward 
+using an object-oriented systems development method, 
+such as RUP, and using Java and Linux as a basis for 
+developing and deploying the new system on Roanoke 
+Manufacturing’s current mainframe?

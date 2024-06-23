@@ -1,0 +1,292 @@
+FIGURE 8-4 An activity diagram illustrating the step sequence in the normal and alternative flows of a use case.
+
+ 
+ 
+
+ 
+Extend and include
+You can show two types of relationships, called
+ 
+
+
+, between use cases in a use case
+ 
+diagram. Figure 8-3 showed that the normal flow for the "Request a Chemical" use case is to request a chemical from the Chemical Stockroom; an alternative flow is to request a chemical from a vendor. In the use case diagram in Figure 8-2, the Buyer has a use case called "Search Vendor Catalogs." Suppose you wanted to let the Requester execute that same "Search Vendor Catalog" use case as an option when requesting a chemical, as part of the alternative flow processing. A use case diagram can show that a standalone use case like "Search Vendor Catalogs" extends the normal flow into an alternative flow, as illustrated in Figure 8-5 (Armour and Miller 2001).
+
+Sometimes several use cases share a common set of steps. To avoid duplicating these steps in each such use case, you can define a separate use case that contains the shared functionality and indicate that the other use cases include that subordinate use case. This is analogous to calling a common subroutine in a computer program. Consider an accounting software package. Two use cases are "Pay a Bill" and "Reconcile Credit Card," both of which might involve the user writing a check to make the payment. You can create a separate use case called "Write a Check" that contains the common steps involved in writing the check. The two transaction use cases both include the "Write a Check" use case, as shown with the notation in Figure 8-6. "Write a Check" is a standalone use case, because that's another task someone might perform with the accounting software.
+
+FIGURE 8-6 An example of the use case include relationship for an accounting application.
+ 
+ 
+
+Aligning preconditions and postconditions
+In many applications, the user can chain together a sequence of use cases into a "macro" use case that describes a larger task. Some use cases for an e-commerce website might be "Search Catalog," "Add Item to Shopping Cart," and "Pay for Items in Shopping Cart." If you could perform each of these activities independently, they are individual use cases. That is, you could have one session with the website in which you just searched the catalog, a second session in which you just added an item to your shopping cart without searching (perhaps by typing in the product number), and a third session in which you paid for the items in the shopping cart (implying that your cart must persist across logon sessions). However, you might also be able to perform all three activities in sequence as a single large use case called "Buy Product," as shown in Figure 8-7. The description of the "Buy Product" use case could simply say to perform each of those other three use cases in turn: "Search Catalog," "Add Item to Shopping Cart," and then "Pay for Items in Shopping Cart."
+
+FIGURE 8-7 Preconditions and postconditions define the boundaries of the individual use cases that can be chained together to perform a larger task.
+
+To make this process work, each use case must leave the system in a state that enables the user to commence the next use case immediately. That is, the postconditions of one use case must satisfy the preconditions of the next one in the sequence. Similarly, in a transaction-processing application such as an ATM, each use case must leave the system in a state that permits the next transaction to begin.
+
+Use cases and business rules
+Use cases and business rules are intertwined. Some business rules constrain which roles can perform
+. Perhaps only users who have certain privilege levels can perform specific alternative flows. That is, the rule might impose preconditions that the system must test before letting the user proceed. Business rules can influence specific steps in the normal flow by defining valid input values or dictating how computations are to be performed. Suppose an airline charges a premium for
+ 
+passengers who want certain preferred seats. If the passenger executes a use case to select a new seat on the airline's website, the relevant business rules would change the passenger's airfare if he chooses one of those seats. When specifying a use case, record the identifiers of any known business rules that affect the use case, and indicate which part of the use case each rule affects.
+While you are exploring use cases you might uncover pertinent business rules. When the chemists who participated in requirements elicitation for the Chemical Tracking System discussed the use case to view an order stored in the system, one of them said, "Fred shouldn't be able to see my orders, and I don't want to see Fred's orders." That is, they came up with a business rule: a user may view only chemical orders that he placed. Sometimes you invent business rules during elicitation and analysis,
+sometimes your discussions reveal relevant rules that already exist in the organization, and sometimes you already know about existing rules that the system will have to respect.
+
+You can identify use cases in several ways (Ham 1998; Larman 1998):
+¦	Identify the actors first, then lay out the business processes being supported by the system, and define the use cases for activities where actors and systems interact.
+¦	Create a specific scenario to illustrate each business process, then generalize the scenarios into use cases and identify the actors involved in each one.
+¦	Using a business process description, ask, "What tasks must the system perform to complete this process or convert the inputs into outputs?" Those tasks might be use cases.
+¦	Identify the external events to which the system must respond, then relate these events to
+participating actors and specific use cases.
+¦	to identify data entities that require use cases to	,
+, or otherwise manipulate them (see Chapter 13, "Specifying data requirements").
+¦	Examine the context diagram and ask, "What objectives do each of these external entities want to achieve with the help of the system?"
+The CTS team followed the first approach, using the proc
+
+ 
+
+ 
+s
+. This worked well because only a few use cases were common to multiple user classes. Each workshop included the user class's product champion, other selected user representatives, and a developer. Participating in elicitation workshops gives developers early insight into the product they will be expected to build. Developers also serve as the voice of reality when infeasible requirements are suggested.
+ 
+Prior to beginning the workshops, each BA asked the users to think of tasks they would need to perform with the new system. Each of these tasks became a candidate use case. This is a bottom-up approach to use case elicitation, which complements the top-down strategy of identifying all the business processes the system will support and gleaning use cases from those. Comparing the lists of use cases generated from these different thought processes reduces the chance of overlooking one.
+A few candidates were judged to be out of scope and weren't pursued. As the group explored the remaining in-scope use cases in the workshops, they found that some of them were related scenarios that could be consolidated into a single, more general use case. The group also discovered additional use cases beyond those in the initial set. Expect to perform these sorts of adjustments as you go along.
+Some users proposed use cases that were not phrased as tasks, such as "Material Safety Data Sheet." A use case's name should indicate a goal the user wants to accomplish, so you need to start with a verb. Does the user want to request, view, print, download, order, revise, delete, or create a material safety data sheet? Sometimes a suggested use case was just a single step the actor would perform as part of process, such as "Scan Bar Code." The BA needs to learn what objective the user has in mind that involves scanning a bar code. The BA might ask, "When you scan the bar code on the chemical container, what are you trying to accomplish?" Suppose the reply is, "As a chemist, I need to scan the container's bar code so I can log the chemical into my laboratory." (Note how this is stated
+in the style of a user story.) The real use case, therefore, is "Log Chemical into Lab." Scanning the bar code label is just one step in the interaction between the actor and the system that logs the chemical into the lab.
+Don't dive into high-resolution analysis of the first use case that someone proposes. Learn just enough about each use case so the team can prioritize them and do an initial allocation of use cases, or portions thereof, to forthcoming releases or iterations. Then you can begin exploring the highest-priority use cases, those that are allocated to the next development cycle, so developers can begin implementing them as soon as possible. Lower-priority use cases can wait for detailing until just before they're scheduled to be implemented. This is the same strategy you would pursue when working with user stories on an agile project.
+
+
+Exploring use cases
+The participants in the CTS elicitation workshops began each use case discussion by identifying the actor who would benefit from the use case and writing the short description. Estimating the frequency of use provided an early indicator of concurrent usage and capacity requirements. Then
+ 
+they began defining the preconditions and postconditions, which are the boundaries of the use case; all use case steps take place between these boundaries. The preconditions and postconditions were adjusted as more information surfaced during the discussion.
+Next, the BA asked the participants how they envisioned interacting with the system to perform the task. The resulting sequence of actor actions and system responses became the normal flow for the use case. Although each participant had a different mental image of what the future
+user interface would look like, the group reached a common vision of the essential steps in the
+actor-system dialog.
+
+
+The BA captured the actor actions and their corresponding system responses on sticky notes, which he placed on a flipchart sheet. Sticky notes work well for such workshops. It's easy to move them around, group them together, and replace them as the discussion progresses. Another way to conduct such a workshop is to project a use case template onto a large screen from a computer and populate the template during the discussion. The elicitation team developed similar dialogs for the alternative flows and exceptions. Many exceptions were discovered when the analyst asked questions similar to "What should happen if the database isn't online at that moment?" or "What if the chemical isn't commercially available?" The workshop is also a good time to discuss the user's expectations of quality, such as response times and availability, security requirements, and UI design constraints.
+After the workshop participants described each use case and no one proposed additional variations, exceptions, or other information, they moved on to another one. They didn't try to cover all the use cases in one marathon workshop or to pin down every detail of every use case they discussed. Instead, they explored the use cases in layers, beginning with the broad strokes for the top-priority use cases and iteratively refining them just prior to implementation.
+Figure 8-8 shows the sequence of work products created during the CTS use case elicitation process. Following the workshop, the analyst documented each use case by using the template illustrated in Figure 8-3, using his judgment to decide how complete the template needed to be for each use case.
+ 
+ 
+FIGURE 8-8 Use case elicitation work products.
+
+When writing the steps in the use case flows, avoid language that refers to specific user interface interactions. "Requester specifies the desired chemical" is nicely general and UI-independent. It allows for multiple ways to accomplish the user's intention of indicating the chemical to be requested: enter a chemical ID number, import a chemical structure from a file, draw the structure on the screen with the mouse (or a stylus on a tablet), or select a chemical from a list. Proceeding too quickly into specific interaction details constrains the thinking of the workshop participants.
+Use cases often involve some additional information or requirements that do not fit within any of the template sections. Use the "Other Information" section to record pertinent performance and other quality requirements, constraints, and external interface knowledge. Eventually, all this
+information should find a home in the SRS or other elements of your requirements documentation. Also note any information that might not be visible to the users, such as the need for one system to communicate behind the scenes with another to complete the use case.
+
+Validating use cases
+The process in Figure 8-8 shows that after each workshop, the BAs on the Chemical Tracking System
+cases. (For more about this, see the next section, "Use cases and functional requirements.") The BAs also drew some analysis models, such as a state-transition diagram that showed all possible chemical request statuses and the permitted
+status changes. Multiple use cases can manipulate a chemical request, so the diagram pulls together information and operations that span several use cases. Chapter 12 illustrates several analysis models for the CTS; the state-transition diagram is in Figure 12-3.
+A day or two after each workshop, the BA gave the use cases and functional requirements to
+the workshop participants, who reviewed them prior to the next workshop. These informal reviews revealed many errors: previously undiscovered alternative flows, new exceptions, incorrect functional
+ 
+requirements, and missing dialog steps. The team quickly learned to allow at least one day between successive workshops. The mental relaxation that comes after a day or two away allows people to examine their earlier work from a fresh perspective. One BA who held daily workshops found that the participants had difficulty spotting errors in the materials they reviewed because the information was too fresh in their minds. They mentally recited the recent discussion and didn't see the errors.
+
+Early in requirements development, the Chemical Tracking System's test lead began creating conceptual tests-independent of implementation and user-interface specifics-from the use cases (Collard 1999). These tests helped the team reach a shared understanding of how the system should behave in specific scenarios. The tests let the BAs verify whether they had derived the functionality needed to let users perform each use case. During the final elicitation workshop, the participants walked through the tests together to be sure they agreed on how the use cases should work.
+Early conceptual test thinking like this is much cheaper and faster than writing code, building part of the system, executing tests, and only then discovering problems with requirements. It is analogous to the agile approach of fleshing out user stories with acceptance tests, but the CTS team wrote both functional requirements and tests. Comparing the two revealed errors in both before any code was written. Chapter 17, "Validating the requirements," discusses generating tests from requirements.
+The CTS team created multiple representations of the requirements they identified: a list of functional requirements, a set of corresponding tests, and analysis models, all based on use cases. Comparing these alternative views of the requirements is a powerful quality technique (Wiegers 2006). The team used the tests to verify the functional requirements, looking for tests that couldn't be "executed" with the set of requirements and for requirements that were not covered by tests.
+If you create just a single representation, or view, of the requirements, you must trust it. You have nothing to compare it against to look for errors, gaps, and different interpretations. Agile project teams do not typically document functional requirements, preferring to create acceptance tests.
+Although thinking about testing during requirements exploration is an excellent idea on every project, it still leaves you with only a single representation of the requirements that you must trust as being correct. Similarly, traditional project teams that create only a set of functional requirements and leave testing until later in the project have only one representation. You'll get the best results with a judicious combination of written requirements, tests, analysis models, and prototypes.
+
+Use cases and functional requirements
+Software developers don't implement business requirements or user requirements. They implement functional requirements, specific bits of system behavior. Some practitioners regard the use cases as being the functional requirements. However, we have seen many organizations get into trouble when they simply pass their use cases to developers for implementation. Use cases describe the
+ 
+user's perspective, looking at the externally visible behavior of the system. They don't contain all the information that a developer needs to write the software. The user of an ATM doesn't know about any back-end processing involved, such as communicating with the bank's computer. This detail is invisible to the user, yet the developer needs to know about it. Developers who receive even fully dressed use cases often have many questions. To reduce this uncertainty, consider having a BA explicitly specify the functional requirements necessary to implement each use case (Arlow 1998).
+Many functional requirements fall right out of the dialog steps between the actor and the system.
+Some are obvious, such as "The system shall assign a unique sequence number to each request." There is no point in duplicating those elsewhere if they're clear from the use case. Other functional requirements don't appear in the use case description. For instance, the way use cases are typically documented does not specify what the system should do if a precondition is not satisfied. This is an example of how use cases often do not provide all the necessary information for a developer to know what to build. The BA must derive those missing requirements and communicate them to developers and testers (Wiegers 2006). This analysis to get from the user's view of the requirements to the developer's view is one of the many ways the BA adds value to a project.
+The Chemical Tracking System employed the use cases primarily as a tool to reveal the necessary functional requirements. The analysts wrote only casual descriptions of the less complex use cases. They then derived all the functional requirements that, when implemented, would allow an actor to perform the use case, including alternative flows and exception handlers. The analysts documented these functional requirements in the SRS, which was organized by product feature.
+You can document the functionality associated with a use case in several ways. None of the following methods is perfect, so select the approach that best fits with how you want to document and manage your project's software requirements.
+
+Use cases only
+One possibility is to include the functional requirements along with each use case specification, if they aren't already evident. You'll still need to document nonfunctional requirements and any functionality that's not associated with a use case. Additionally, several use cases might need the same functional requirement. If five use cases require that the user's identity be authenticated, you don't want to
+write five different blocks of code for that purpose. Rather than duplicate them, cross-reference functional requirements that appear in multiple use cases. The use cases could be collected in a user requirements document.
+
+Use cases and functional requirements
+Another option is to write fairly simple use cases and document the functional requirements derived from each one in an SRS or a requirements repository. In this approach, you should establish traceability between the use cases and their associated functional requirements. That way, if a use case changes, you can quickly find the affected functional requirements. The best way to manage the traceability is with a requirements management tool.
+ 
+Functional requirements only
+One more option is to organize your functional requirements by use case or by feature, and include both the use cases and the functional requirements in the SRS or requirements repository. This is the approach that the CTS team used, and we've done the same on several website development
+projects. We wrote most of our use cases in very concise form, not completing the full template from Figure 8-3. The details were then specified through a set of functional requirements. This approach doesn't result in a separate user requirements document.
+
+Use cases and tests
+If you write both detailed use case specifications and functional requirements, you might notice some duplication, particularly around the normal flow. There is little value in writing the same requirement twice. So another strategy is to write fairly complete use case specifications, but then write acceptance tests to determine if the system properly handles the basic behavior of the use case, alternative success paths, and the various things that could go wrong.
+
+Use case traps to avoid
+As with any software engineering technique, there are many ways to go astray when applying the use
+case approach (Lilly 2000; Kulak and Guiney 2004). Watch out for the following traps:
+¦	Too many use cases If you're caught in a use case explosion, you might not be writing them at the appropriate level of abstraction. Don't create a separate use case for every possible scenario. You'll typically have many more use cases than business requirements and features, but many more functional requirements than use cases.
+¦	Highly complex use cases I once reviewed a use case with four dense pages of dialog steps,
+with a lot of embedded logic and branching conditions. It was incomprehensible. I've heard of even longer use cases, going on page after page. You can't control the complexity of the business tasks, but you can control how you represent them in use cases. Select one success path through the use case and call that the normal flow. Use alternative flows for the other
+logic branches that lead to success, and use exceptions to handle branches that lead to failure. You might have many alternatives, but each one will be short and easy to understand. If a flow exceeds 10 to 15 steps in length, confirm whether it truly describes just a single scenario. Don't arbitrarily split a legitimately long flow just because it has a lot of steps, though.
+ 
+¦	Includin
+ 
+cases U
+ 
+
+k. Emphasize the conceptual
+ 
+interactions between the actors and the system. For example, say "System presents choices" instead of "System displays drop-down list." Don't let the UI design drive the requirements exploration. Use screen sketches and dialog maps (see Chapter 12) to help visualize the actor-system interactions, not as firm design specifications.
+ 
+¦	Including data definitions in the use cases    Use case explorations naturally stimulate data discussions, thinking about what data elements serve as inputs and outputs during the interaction. Some use case authors include definitions of the pertinent data elements right in the use case specification. This makes it difficult for people to find the information because
+it isn't obvious which use case contains each data definition. It can also lead to duplicate definitions, which get out of sync when one instance is changed and others are not. Store data definitions in a project-wide data dictionary and data model, as discussed in Chapter 13.
+¦	Use cases that users don't understand If users can't relate a use case to their business processes or goals, there's a problem. Write use cases from the user's perspective, not the system's point of view, and ask users to review them. Keep the use cases as simple as you can while still achieving the goal of clear and effective communication.
+
+ 
+Benefits of usage-centric requirements
+
+perspective. The users will have clearer expe
+. The cust
+ 
+
+
+ntric and usage-centric
+
+ 
+
+ 
+ 
+
+to do. Use cases help B
+ 
+notions of what visitors to their websites should be able
+ss. Thinking through the
+ 
+actor-system dialogs reveals ambiguity and vagueness early in the development process, as does
+generating tests from the use cases.
+Overspecifying the requirements up front and trying to include every conceivable function can lead to implementing unnecessary requirements. The usage-centric approach leads to functionality that will allow the user to perform certain known tasks. This helps prevent "orphan functionality" that seems like a good idea but that no one uses because it doesn't relate directly to user goals.
+Developing user requirements helps with requirements prioritization. The highest-priority functional requirements are those that originate in the top-priority user requirements. A use case or
+¦	It describes part of a core business process that the system enables.
+¦	Many users will use it frequently.
+¦	A favored user class requested it.
+¦	It's required for	.
+¦	Other system functions depend on its presence.
+
+ 
+There are technical benefits to use cases, too. They reveal some of the important domain objects and their responsibilities to each other. Developers using object-oriented design methods can turn use cases into object models such as class and sequence diagrams. As business processes change over time, the tasks that are embodied in specific user requirements will change. If you've traced functional requirements, designs, code, and tests back to their parent user requirements-the voice of the user-it will be easier to cascade those changes through the entire system.
+
+ 
+
+ 
+C HA P T E R 9
+Playing by the rules
+
+
+
+
+ 
+"Hi, Tim, this is Jackie. I'm havin My lab manager suggested that provided many of the requireme
+ 
+sting a chemical with the Chemical Tracking System.
+. He said you were the product champion who
+."
+ 
+"Yes, that's correct," Tim replied. "What's the problem?"
+"I need to get some more ph	es that I make for my research project," said Jackie,
+"but the system won't accept my request. It says I haven't taken a training class in handling hazardous
+ 
+chemicals in more than a year. problem. Why can't I get some more?"
+ 
+ut? I've been using phosgene for years with no
+ 
+"You're probably aware that Contoso requires an annual refresher class in the safe handling of hazardous chemicals," Tim pointed out. "This is a corporate policy based on OSHA regulations. The Chemical Tracking System just enforces it. I know the stockroom guys used to give you whatever you wanted, but they can't do that anymore. Sorry about the inconvenience, but you'll have to take the refresher training before the system will let you request more phosgene."
+
+
+
+.
+procedures. In many cases, though, software applications also need to enforce these rules.
+Most business rules originate outside the context of any specific software application. The corporate policy requiring annual training in handling hazardous chemicals applies even if all chemical purchasing and dispensing is done manually. Standard accounting practices were in use long before the digital computer was invented. Because business rules are a property of the business, they are not in themselves software requirements. However, business rules are a rich source of requirements because they dictate properties the system must possess to conform to the rules. As Figure 1-1 in Chapter 1, "The essential software requirement" showed, business rules can be the origin of several types of requirements. Table 9-1 illustrates and provides examples of how business rules influence several types of requirements.
+
+
+
+
+
+167
+ 
+TABLE 9-1
+
+Requirement type	Illustration of business rules' influence	Example
+Business requirement	Government regulations can lead to
+necessary business objectives for a project.	The Chemical Tracking System must enable compliance with all federal and state chemical usage and disposal reporting regulations within five months.
+User requirement	Privacy policies dictate which users can and cannot perform certain tasks with the system.	Only laboratory managers are allowed to generate chemical exposure reports for anyone other than themselves.
+Functional
+requirement	Company policy is that all vendors must be registered and approved before an invoice will be paid.	If an invoice is received from an unregistered vendor, the Supplier System shall email the vendor editable PDF versions of the supplier intake form and the W-9 form.
+Quality attribute	Regulations from government agencies, such as OSHA and EPA, can dictate safety requirements, which must be enforced through system functionality.	The system must maintain safety training records, which it must check to ensure that users are properly trained before they can request a hazardous chemical.
+People sometimes confuse business rules with business processes or business requirements. As you saw in Chapter 5, "Establishing the business requirements," a business requirement states a desirable outcome or a high-level objective of the organization that builds or procures a software solution.
+Business requirements serve as the justification for undertaking a project. A business process describes a series of activities that transform inputs into outputs to achieve a specific result. Information systems frequently automate business processes, which could lead to efficiencies and other benefits that achieve stated business requirements. Business rules influence business processes by establishing vocabulary, imposing restrictions, triggering actions, and governing how computations are carried out. The same business rule could apply to multiple manual or automated processes, which is one reason why it's best to treat business rules as a separate set of information.
+Not all companies treat their essential business rules as the valuable enterprise asset they are.
+Certain departments might document their local rules, but many companies lack a unified effort to document business rules in a common repository accessible to the IT organization. Treating this vital information as corporate folklore leads to numerous problems. If business rules are not properly documented and managed, they exist only in the heads of select individuals. A BA needs to know who to call to learn about rules that affect his project. Individuals can have conflicting understandings of the rules, which can lead to different software applications enforcing the same business rule inconsistently or overlooking it entirely. Having a master repository of business rules makes it easier for all projects that are affected by certain rules to learn about them and implement them in a consistent fashion.
+
+As an example, your organization likely has security policies that control access to information systems. Such policies might state the minimum and maximum length and the allowed characters in passwords, dictate the frequency of required password changes, state how many failed login attempts
+ 
+a user gets before his account is locked, and the like. Applications that the organization develops should apply these policies-these business rules-consistently. Tracing each rule into the code that implements it makes it easier to update systems to comply with changes in the rules, such as altering the required frequency of password changes. It also facilitates code reuse across projects.
+
+A business rules taxonomy
+The Business Rules Group (2012) provides definitions for business rules from the perspectives of both
+the business and its information systems:
+¦	From the business perspective: "A business rule is guidance that there is an
+concerning conduct, action, practice, or procedure within a particular activity or sphere." (There ought to be an explicit motivation for the rule, as well as enforcement methods and an understanding of what the consequences would be if the rule were broken.)
+¦	From the	: "A business rule is a statement that defines or
+constrains some aspect of the business. It is intended to assert business structure or to control or influence the behavior of the business."
+Whole methodologies have been developed based on the discovery and documentation of business rules and their implementation in automated business rules systems (von Halle 2002; Ross 1997; Ross and Lam 2011). Unless you're building a system that is heavily rules-driven, you don't need an elaborate methodology. Simply identify and document the rules that pertain to your system and link them to the specific requirements that implement them.
+Numerous classification schemes have been proposed for organizing business rules (Ross 2001; Morgan 2002; von Halle 2002; von Halle and Goldberg 2010). The simple taxonomy shown in Figure 9-1, with five types of rules, will work for most situations. A sixth category is terms, defined words, phrases, and abbreviations that are important to the business. You could group terms with factual business rules. A glossary is another convenient place to define terms.
+
+FIGURE 9-1 A simple business rule taxonomy.
+
+Recording the business rules in a consistent way is more important than having heated arguments about precisely how to classify each one. However, a taxonomy is helpful to identify business rules you might not have thought of otherwise. Classifying the rules also gives you an idea of how you might apply them in a software application. For instance, constraints often lead to system functionality that enforces the restrictions, and action enablers lead to functionality to make something happen under certain conditions. Let's see some examples of these five kinds of business rules.
+ 
+Facts
+Facts are simply statements that are true about the business at a specified point in time. A fact describes associations or relationships between important business terms. Facts about data entities that are important to the system might appear in data models. (See Chapter 13, "Specifying data requirements," for more about data modeling.) Examples of facts include the following:
+¦	Every chemical container has a unique bar code identifier.
+¦	.
+¦	.
+¦	Nonrefundable airline tickets incur a fee when the purchaser changes the itinerary.
+¦	Books taller than 16 inches are shelved in the library's Oversize section.
+Of course, there are countless facts floating around about businesses. Collecting irrelevant facts can bog down business analysis. Even if they're true, it might not be obvious how the development team is to use the information. Focus on facts that are in scope for the project, rather than trying to amass a complete collection of business knowledge. Try to connect each fact to the context diagram's inputs and outputs, to system events, to known data objects, or to specific user requirements.
+
+Constraints
+A constraint is a statement that restricts the actions that the system or its users are allowed to
+perform. S
+ople or roles can perform particular actions.
+Following are some examples of constraints with various origins.
+Organizational policies
+¦	A loan applicant who is less than 18 years old must have a parent or a legal guardian as
+cosigner on the loan.
+¦	A library patron may have a maximum of 10 items on hold at any time.
+¦	Insurance c	l
+
+ 
+Government regulations
+¦	All s
+.
+¦	Airline
+ 
+
+
+mply with government regulations for
+
+.
+ 
+¦	Individual federal income tax returns must be postmarked by midnight on the first business day after April 14 unless an extension has been granted.
+ 
+Industry standards
+¦	Mortgage loan applicants must satisfy the Federal Housing Authority qualification standards.
+ 
+¦	Web applications may not contain any to the HTML 5 standard.
+ 
+attributes that are deprecated according
+ 
+
+ 
+
+Constraining business rules can convey implications for	development even if they don't
+translate directly into functionality. Consider a retail store's policy that only supervisors and managers are allowed to issue cash refunds larger than $50. If you're developing a point-of-sale application for use by store employees, this rule implies that each user must have a privilege level. The software must check to see if the current user is of sufficiently high privilege level to perform certain actions, such as opening the cash register drawer so a cashier can issue a refund to a customer.
+Because many constraint-type business rules deal with which types of users can perform which functions, a concise way to document such rules is with a roles and permissions matrix (Beatty and Chen 2012). Figure 9-2 illustrates such a matrix for various users of a public library's information system. The roles have been separated into employees and non-employees. The system functions are grouped into system operations, operations dealing with patron records, and operations involving individual library items. An X in a cell indicates that the role named in the column has permission to perform the operation shown in the row.
+
+Action enablers
+. A person could perform the activity in a manual process. Alternatively, the rule might lead to specifying software functionality that makes an application exhibit the correct behavior when the system detects the triggering event. The conditions that lead to the action could be a complex combination of true and false values for multiple individual conditions. A decision table (described in Chapter 12, "A picture is worth 1024 words") provides a concise way to document action-enabling business rules that involve extensive logic. A statement in the form "If <some condition is true or some event takes place>, then

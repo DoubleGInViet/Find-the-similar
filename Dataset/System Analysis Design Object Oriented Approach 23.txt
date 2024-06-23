@@ -1,0 +1,686 @@
+﻿Th e fi fth step focuses on identifying and writing the alternative or exceptional fl ows. 
+Alternative or exceptional fl ows are fl ows of success that represent optional or exceptional 
+behavior. Th ey tend to occur infrequently or as a result of a normal fl ow failing. Th ey should 
+be labeled so that there is no doubt as to which normal fl ow of events it is related. For example 
+in Figure 4-13, alternative/exceptional fl ow S-1, 2a1 executes when step 2 of subfl ow S-1 fails 
+(i.e., the requested appointment time was not available). Like the normal fl ows and subfl ows, 
+alternative or exceptional fl ows should be written in the SVDPI form whenever possible.
+Th e sixth step is to carefully review the use-case description and confi rm that the use case is 
+correct as written, which means reviewing the use case with the users to make sure each step 
+is correct.21 Th e review should look for opportunities to simplify a use case by decomposing it 
+into a set of smaller use cases, merging it with others, looking for common aspects in both the 
+semantics and syntax of the use cases, and identifying new use cases. Th is is also the time to 
+look into adding the include, extend, and/or generalization relationships between use cases. Th e 
+most powerful way to confi rm a use case is to ask the user to role-play, or execute the process 
+using the written steps in the use case. Th e analyst hands the user pieces of paper labeled with 
+the major inputs to the use case and has the user follow the written steps like a recipe to make 
+sure that those steps really can produce the outputs defi ned for the use case using its inputs.
+Th e seventh and fi nal step is to iterate the entire set of steps again. Users oft en change their 
+minds about what is a use case and what it includes. It is very easy to get trapped in the details 
+at this point, so remember that the goal is to just address the major use cases. Th erefore, 
+the analyst should continue to iterate these steps until he or she and the users believe that a 
+suffi cient number of use cases have been documented to begin identifying candidate classes 
+for the structural model (see Chapter 5). As candidate classes are identifi ed, it is likely that 
+additional use cases will be uncovered.
+Campus Housing Example Th e fi rst step in documenting a use case with a use-case description is to choose a use case. For instructional purposes, we use the same use case used earlier 
+with the activity diagrams; the Maintain Available Rental Unit Information, which is associated with the apartment owners. Th e next step is to create an Overview Description of the use 
+case. In this case, the primary actor is the apartment owner. Given that the use-case description documents the detailed logic steps for the use case, the type of use case is Detailed and 
+Essential. Th e Stakeholders include the apartment owners and the campus housing service. 
+Th eir respective interests are to advertise their available apartments and to provide a service 
+that enables the apartment owners to rent their available apartments. Th e Brief Description 
+for this use case is “Th is use case describes how the campus housing service can maintain an 
+up-to-date listing of available apartments.” Th e trigger for the use case is when an apartment 
+owner wants to add or delete an available apartment. As such, the trigger is “fi red” from 
+outside of the system. In this case, the apartment owner’s action triggers this use case. Th ere 
+is only one Association relationship between this use case and its Primary Actor: Apartment 
+Owner. Figure 4-14 documents this information.
+Next, we document and verify the logical steps necessary to successfully execute this use 
+case. Th at is, we document the normal fl ow of events, check the normal fl ow of events (possibly identifying subfl ows), identify any alternative or exceptional fl ows, and then carefully 
+review the description to be sure that it is complete. If you recall, in this specifi c example, the 
+apartment owners provided information to add a rental unit to the available rental units or 
+provided information that identifi ed an available unit that was no longer available and needed 
+21 Th is process is related to role-playing, which is discussed in Chapter 5.
+5. Identify Alternative 
+or Exceptional Flows
+6. Review the UseCase Description
+7. Repeat Until Done
+Business Process Documentation with Use Cases and Use-Case Descriptions  149
+to be deleted from the list of available rental units. Th ese two processes were treated as two 
+subprocesses of the Maintain Available Rental Unit Information use case. Now that we have to 
+determine which of these subprocesses is to be treated as the Normal Flow of Events and which 
+is to be treated as an Alternative or Exceptional Flow. However, upon further refl ection, the 
+question as to whether these should be separated into two independent use cases or whether 
+they should remained together should be investigated. Th is is a great example where moving 
+from one representation (activity diagram) to another representation (use case description) 
+in an iterative and incremental manner raises issues that were not readily apparent. In this 
+example, it is probably better to replace the Maintain Available Rental Unit Information use 
+case with two simpler use cases: one for adding a rental unit and one for deleting a rental unit. 
+Consequently, we now have to change the use-case diagram (see Figure 4-15) and create two 
+activity diagrams to replace the earlier ones (see Figure 4-16). And, we must create two usecase descriptions to replace the one that we just begun (see Figures 4-17 and 4-18). We will 
+return to this example in the next chapter when we begin to create a structural model for the 
+campus housing service. However, next we return to the university library problem.
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Type: External
+Maintain Available Rental Unit Information 1 High
+Apartment Owner
+Apartment Owner—wants to advertise available apartment
+Campus Housing Service—provides a service that enables the apartment owners to rent their available apartments
+Use Case Type: Detail, Essential
+Apartment Owner wants to add or delete an available apartment
+Apartment Owner
+This use case describes how the campus housing service can maintain an up-to-date listing of
+available apartments.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+Campus Housing System
+Apartment
+Owner
+Add Apartment
+Delete Apartment
+* *
+*
+*
+*
+*
+Student
+Search Available
+Rental Units
+FIGURE 4-14  Campus Housing Maintain Available Rental Unit Information Overview 
+Use-Case Description
+FIGURE 4-15
+Campus Housing 
+Use-Case Diagram
+150  Chapter 4 Business Process and Functional Modeling
+Capture Location
+Capture Number of
+Bedrooms
+Capture Monthly
+Rent
+Add Apartment
+Capture Apartment
+Identifier
+Delete Apartment
+FIGURE 4-16
+Campus Add and 
+Delete Apartment 
+Activity Diagrams
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Add Apartment 1 High
+Apartment Owner
+Apartment Owner—wants to advertise available apartment
+Campus Housing Service—provides a service that enables the apartment owners to rent their available apartments
+Use Case Type: Detail, Essential
+Apartment Owner wants to add an available apartment
+Apartment Owner
+1. Capture the location of the apartment.
+2. Capture the number of bedrooms in the apartment.
+3. Capture the monthly rent of the apartment.
+4. Add the apartment to the listing of available apartments.
+This use case describes how the campus housing service can maintain an up-to-date listing of
+available apartments.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+FIGURE 4-17  Campus Housing Service Add an Apartment Use-Case Description
+Business Process Documentation with Use Cases and Use-Case Descriptions  151
+FIGURE 4-18  Campus Housing Service Delete an Apartment Use-Case Description
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Delete Apartment 2 High
+Apartment Owner
+Apartment Owner—wants to delist apartment
+Campus Housing Service—provides a service that enables the apartment owners to rent their available apartments
+Use Case Type: Detail, Essential
+Apartment Owner wants to delete an available apartment
+Apartment Owner
+1. Capture the apartment identifier.
+2. Delete the apartment from the listing of available apartments.
+This use case describes how the campus housing service can maintain an up-to-date listing of
+available apartments.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+Library Example As with the Campus Housing example, the first step to document business processes with use-case descriptions is to choose a use case. Because we previously 
+chose the Borrow Books use case in the Library Collection Management System example, 
+we will stay with it. Next, we need to create the overview description. In this case, we have 
+to go back and look at the use case diagram (see Figure 4-6) that describes the external 
+behavior of the Library Collection Management System and the activity diagram (see Figure 4-12) that describes the functionality of the Borrow Books use case. It also is a good 
+idea to refer back, once again, to the functional requirements that drove the creation of 
+the Borrow Books use case. Here they are:
+Th e borrowing activities are built around checking books out and returning books by 
+borrowers. Th ere are three types of borrowers: students, faculty or staff , and guests. 
+Regardless of the type of borrower, the borrower must have a valid ID card. If the 
+borrower is a student, having the system check with the registrar’s student database 
+validates the ID card. If the borrower is a faculty or staff member, having the system 
+check with the personnel offi ce’s employee database validates the ID card. If the borrower is a guest, the ID card is checked against the library’s own borrower database. 
+If the ID card is valid, the system must also check to determine whether the borrower 
+has any overdue books or unpaid fi nes. If the ID card is invalid, the borrower has 
+overdue books, or the borrower has unpaid fi nes, the system must reject the borrower’s request to check out a book, otherwise the borrower’s request should be honored.
+Based on these three critical pieces of information and using the use-case description template (see Figure 4-13), we can create the overview description of the Borrow Books use case 
+(see Figure 4-19).
+152  Chapter 4 Business Process and Functional Modeling
+By carefully reviewing the functional requirements (above) and the activity diagram 
+(Figure 4-12), we can easily identify the Normal Flow of Events for the Borrow Books use case. 
+Furthermore, it is possible to decide whether any of the events contained in the Normal Flow 
+of Events list should be decomposed using Subfl ows or other use cases that would need to be 
+included. In the latter case, we would have to modify the Relationships section of the overview 
+description and modify the use-case diagram to refl ect this addition. Also, based on the logic 
+structure of the activity diagram, it is possible to identify the alternative exceptional fl ows to 
+the normal fl ow of events for the Borrow Books use case. Based on the overall simplicity of 
+the Borrow Books use case, we decided not to decompose the process using either subfl ows or 
+included use cases. However, due to the logic structure laid out in the activity diagram, there 
+were two alternate/exceptional fl ows identifi ed. Figure 4-20 depicts the Normal Flow of Events, 
+Subfl ows, and Alternative/Exceptional Flows sections of the Borrow Books use-case description.
+Association: Borrower, Personnel Office, Registrar’s Office
+Include:
+Extend:
+Generalization:
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+Trigger:
+Type: External
+Use Case Type:
+Relationships:
+Borrow Books ID: 2 Importance Level: High
+Borrower
+Borrower brings books to check out desk.
+Detail, Essential
+This use case describes how books are checked out of the library.
+Borrower—wants to check outbooks
+Librarian—wants to ensure borrower only gets books deserved
+FIGURE 4-19  Overview Description for the Borrow Books Use Case
+FIGURE 4-20  Flow Descriptions for the Borrow Books Use Case
+Normal Flow of Events:
+SubFlows:
+1. The Borrower brings books to the Librarian at the check out desk.
+2. The Borrower provides Librarian their ID card.
+3. The Librarian checks the validity of the ID Card.
+ If the Borrower is a Student Borrower, Validate ID Card against Registrar's Database.
+ If the Borrower is a Faculty/Staff Borrower, Validate ID Card against Personnel Database.
+ If the Borrower is a Guest Borrower, Validate ID Card against Library's Guest Database.
+4. The Librarian checks whether the Borrower has any overdue books and/or fines
+5. The Borrower checks out the books
+Alternate/Exceptional Flows:
+4a The ID Card is invalid, the book request is rejected.
+5a The Borrower either has overdue books, fines, or both, the book request is rejected.
+Verifying and Validating the Business Processes and Functional Models  153
+VERIFYING AND VALIDATING THE BUSINESS PROCESSES 
+AND FUNCTIONAL MODELS22
+Before we move on to structural (Chapter 5) and behavioral (Chapter 6) modeling, we need to 
+verify and validate the current set of functional models to ensure that they faithfully represent 
+the business processes under consideration. Th is includes testing the fi delity of each model; 
+for example, we must be sure that the activity diagram(s), use-case descriptions, and use-case 
+diagrams all describe the same functional requirements. Before we describe the specifi c tests 
+to consider, we describe walkthroughs, a manual approach that supports verifying and validating the evolving models.23
+Verifi cation and Validation through Walkthroughs
+A walkthrough is essentially a peer review of a product. In the case of the functional 
+models, a walkthrough is a review of the diff erent models and diagrams created during 
+functional modeling. Th is review typically is completed by a team whose members come 
+from the development team and the client. Th e purpose of a walkthrough is to thoroughly 
+test the fi delity of the functional models to the functional requirements and to ensure that 
+the models are consistent. Th at is, a walkthrough uncovers errors or faults in the evolving 
+specifi cation. However, a walkthrough does not correct errors—it simply identifi es them. 
+Error correction is to be accomplished by the team aft er the walkthrough is completed.
+Walkthroughs are very interactive. As the presenter walks through the representation, 
+members of the walkthrough team should ask questions regarding the representation. For 
+example, if the presenter is walking through an activity diagram, another member of the team 
+could ask why certain activities or objects were not included. Th e actual process of simply 
+presenting the representation to a new set of eyes can uncover obvious misunderstandings 
+and omissions. In many cases, the representation creator can get lost in the proverbial trees 
+and not see the forest.24 In fact, many times the act of walking through the representation 
+causes a presenter to see the error himself or herself. For psychological reasons, hearing the 
+representation helps the analyst to see the representation more completely.25 Th erefore, the 
+representation creators should regularly do a walkthrough of the models themselves by reading the representations out loud to themselves, regardless of how they think it might make 
+them look.
+Th ere are specifi ed roles that diff erent members of the walkthrough team can play. Th e 
+fi rst is the presenter role. Th is should be played by the person who is primarily responsible 
+for the specifi c representation being reviewed. Th is individual presents the representation 
+to the walkthrough team. Th e second role is recorder, or scribe. Th e recorder should be a 
+member of the analysis team. Th is individual carefully takes the minutes of the meeting 
+by recording all signifi cant events that occur during the walkthrough. In particular, all 
+errors that are uncovered must be documented so that the analysis team can address them. 
+Another important role is to have someone who raises issues regarding maintenance of 
+22 Th e material in this section has been adapted from E. Yourdon, Modern Structured Analysis (Englewood Cliff s, NJ: 
+Prentice Hall, 1989). Verifying and validating are types of testing.
+23 Even though many modern CASE tools can automate much of the verifying and validating of the analysis models, we 
+feel that it is paramount that systems analysts understand the principles of verifi cation and validation. Furthermore, 
+some tools, such as Visio, that support UML diagramming are only diagramming tools. Regardless, the analyst is 
+expected to perform all diagramming correctly.
+24 In fact, all joking aside, in many cases the developer is down at the knothole level and can’t even see the tree, let 
+alone the forest.
+25 Th is has to do with using diff erent senses. Because our haptic senses are the most sensitive, touching the representation would be best. However, it is not clear how one can touch a use case or a class.
+154  Chapter 4 Business Process and Functional Modeling
+the representation. Yourdon refers to this individual as a maintenance oracle.26 Owing to 
+the emphasis on reusability in object-oriented development, this role becomes particularly 
+crucial. Finally, someone must be responsible for calling, setting up, and running the walkthrough meetings.
+For a walkthrough to be successful, the members of the walkthrough team must be fully 
+prepared. All materials to be reviewed must be distributed with suffi cient time for the team 
+members to review them before the actual meeting. All team members should be expected to 
+mark up the representations so that during the walkthrough meeting, all relevant issues can 
+be discussed. Otherwise, the walkthrough will be ineffi cient and ineff ective. During the actual 
+meeting, as the presenter is walking through the representation, the team members should point 
+out any potential errors or misunderstandings. In many cases, the errors and misunderstandings 
+are caused by invalid assumptions that would not be uncovered without the walkthrough.
+One potential danger of walkthroughs is when management decides the results of 
+uncovering errors in the representation are a refl ection of an analyst’s capability. Th is must 
+be avoided at all costs. Otherwise, the underlying purpose of the walkthrough—to improve 
+the fi delity of the representation—will be thwarted. Depending on the organization, it may 
+be necessary to omit management from the walkthrough process. If not, the walkthrough 
+process could break down into a slugfest to make some team members to look good by 
+destroying the presenter. To say the least, this is obviously counterproductive.
+Functional Model Verifi cation and Validation
+We have suggested three different representations for the functional model: activity diagrams, use-case descriptions, and use-case diagrams. In this section, we describe a set of 
+rules to ensure that these three representations are consistent among themselves.
+First, when comparing an activity diagram to a use-case description, there should be at 
+least one event recorded in the normal fl ow of events, subfl ows, or alternative/exceptional 
+fl ows of the use-case description for each activity or action that is included on an activity diagram, and each event should be associated with an activity or action. For example, in Figure 
+4-4, there is an activity labeled Get Patient Information that is associated with the fi rst two 
+events contained in the normal fl ow of events of the use-case description shown in Figure 4-13.
+Second, all objects portrayed as an object node in an activity diagram must be mentioned in 
+an event in the normal fl ow of events, subfl ows, or alternative/exceptional fl ows of the use-case 
+description. For example, the activity diagram in Figure 4-4 portrays an Appt object, and the usecase description refers to a new appointment and changing or canceling an existing appointment.
+Th ird, sequential order of the events in a use-case description should occur in the same 
+sequential order of the activities contained in an activity diagram. For example in Figures 4-4 
+and 4-13, the events associated with the Get Patient Information activity (events 1 and 2) should 
+occur before the events associated with the Make Payment Arrangements activity (event 4).
+Fourth, when comparing a use-case description to a use-case diagram, there must be one 
+and only one use-case description for each use case, and vice versa. For example, Figure 4-13 
+portrays the use-case description of the Make Old Patient Appt use case. However,  the 
+ use-case diagram shown in Figure 4-4, the activity diagram shown in Figure 4-8, and the usecase description given in Figure 4-13 are inconsistent with each other. In this case, the use-case 
+diagram implies that the Make Payment Arrangements use case is optional regardless of 
+whether the patient is a new or old patient. However, when we review the activity diagram, 
+we see that it is an optional activity for old patients, but a required activity for a new patient. 
+Th erefore, only one of the diagrams is correct. In this instance, the use-case diagram needs to 
+be corrected. Th e new corrected use-case diagram is shown in Figure 4-21.
+26 See Appendix D of Yourdon, Modern Structured Analysis.
+Verifying and Validating the Business Processes and Functional Models  155
+Fift h, all actors listed in a use-case description must be portrayed on the use-case diagram. Each actor must have an association link that connects it to the use case and must be 
+listed with the association relationships in the use-case description. For example, the Old 
+Patient actor is listed in the use-case description of the Make Old Patient Appt use case (see 
+Figure 4-13), it is listed with the association relationships in the Make Old Patient Appt usecase description, and it is connected to the use case in the use-case diagram (see Figure 4-21).
+Sixth, in some organizations, we should also include the stakeholders listed in the usecase description as actors in the use-case diagram. For example, there could have been an 
+association between the Doctor actor and the Make Old Patient Appt use case (see Figures 
+4-13 and 4-21). However, in this case it was decided not to include this association because 
+the Doctor never participates in the Make Old Patient Appt use case.27
+Appointment System
+Patient
+New Patient
+Old Patient
+Produce Schedules
+Update Patient
+Information
+Make Old
+Patient Appt
+Make New
+Patient Appt
+Make Payment
+Arrangements
+Create New
+Patient
+Manage
+Appointments
+Management
+Doctor
+Record
+Availability Manage
+Schedule
+<<extend>>
+<<extend>>
+<<include>>
+<<include>>
+<<include>>
+*
+*
+*
+*
+*
+*
+*
+*
+<<include>>
+FIGURE 4-21  Modifi ed Use-Case Diagram for the Appointment System
+27 Another possibility could have been to include a Receptionist actor. However, we had previously decided that the 
+Receptionist was in fact part of the Appointment System and not simply a user of the system. If UML supported the 
+idea of internal actors, or actor-to-actor associations, this implicit association could easily be made explicit by having 
+the Patient actor communicate with the Receptionist actor directly, regardless of whether the Receptionist actor was 
+part of the system or not. See footnote 4.
+156  Chapter 4 Business Process and Functional Modeling
+Seventh, all other relationships listed in a use-case description (include, extend, and 
+generalization) must be portrayed on a use-case diagram. For example, in Figure 4-13, 
+there is an extend relationship listed with the Update Patient Information use case, and 
+in Figure 4-21, we see that it appears on the diagram between the two use cases.
+Finally, there are many diagram-specifi c requirements that must be enforced. For example, in an activity diagram a decision node can be connected to activity or action nodes only 
+with a control fl ow, and for every decision node there should be a matching merge node. 
+Every type of node and fl ow has diff erent restrictions. However, the complete restrictions for 
+all the UML diagrams are beyond the scope of this text.28 Th e concept map in Figure 4-22 
+portrays the associations among the functional models.
+28 A good reference for these types of restrictions is S.W. Ambler, Th e Elements of UML 2.0 Style (Cambridge, UK: 
+Cambridge University Press, 2005).
+Use Cases
+Scenarios
+Activity Diagram
+Object Nodes
+Object Flows
+Activities/Actions
+Stakeholders
+Relationships
+Control Flows
+Events
+Actors
+Flows
+Including
+Contains
+HasKinds
+Contains
+Contains
+Have
+AssociatedWith
+AssociatedWith
+AssociatedWith
+AssociatedWith
+AssociatedWith
+AssociatedWith
+AssociatedWith
+Use-Case Diagram
+Functional Models
+Use-Case Descriptions
+FIGURE 4-22  Interrelationships among Functional Models
+Key Terms  157
+KEY TERMS
+Action
+Activity
+Activity diagram
+Actor
+Alternative fl ows
+Association relationship
+Black-hole activities
+Brief description
+Control fl ow
+Control node
+Decision node
+Detail use case
+Errors
+Essential use case
+Exceptional fl ows
+Extend relationship
+External trigger
+Faults
+Final-activity node
+Final-fl ow node
+Flow of events
+Fork node
+Functional decomposition
+Generalization relationship
+Guard condition
+Importance level
+Include relationship
+Inheritance
+Initial node
+Iterate
+Join node
+Logical model
+Maintenance oracle
+Merge node
+Miracle activity
+Normal fl ow of events
+Object fl ow
+Object node
+Overview use cases
+Packages
+Physical model
+Presenter
+Primary actor
+Process models
+Real use case
+Recorder
+Relationships
+Role
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+In this chapter, you learned about business processes and functional models. Objectoriented systems are developed in an incremental and iterative manner. Th is is especially 
+true when the phased approach is used as in the Patterson Superstore case. Th e team fi rst 
+developed a use-case diagram for the entire Integrated Health Clinic Delivery System. 
+Next, the team moved into modeling the processes of Version 1 of the system by creating 
+an activity diagram and use-case description for Schedule Appointment. You will also 
+see these models revisited and developed in further iterations as more information is 
+uncovered. Th e three versions of the Integrated Health Clinic Delivery System will each 
+go through individual process and functional modeling as well as structural and behavior 
+modeling with iteration across all of these tasks. 
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Explain the purpose of a use case in business process and functional modeling.
+ Describe the diff erent elements of a use-case diagram.
+ Create use-case diagrams that portray how business information systems interact with their environment.
+ Explain how to model a specifi c use case with an activity diagram.
+ Describe the diff erent elements of an activity diagram.
+ Create an activity diagram that represents a specifi c use case.
+ Document a business process with a use-case description.
+ Describe the diff erent types of use cases.
+ Describe the diff erent elements of a use-case description.
+ Create a use-case description that represents a specifi c use case.
+ Verify and validate the evolving functional model using walkthroughs.
+ Verify and validate the functional model by ensuring the consistency of the three functional representations: usecase diagrams, activity diagrams, and use-case descriptions.
+158  Chapter 4 Business Process and Functional Modeling
+Scenario
+Scribe
+Specialized actor
+Stakeholders
+Subfl ows
+Subject boundary
+SVDPI
+Swim lanes
+Temporal trigger
+Test
+Trigger
+Use case
+Use-case description
+Use-case diagram
+Use-case ID number
+Use-case name
+Use-case type
+Validation
+Verifi cation
+Walkthrough
+QUESTIONS
+1. Why is business process modeling important?
+2. How do you create use cases?
+3. Why do we strive to have about three to nine major 
+use cases in a business process?
+4. How do you create use-case diagrams?
+5. How is use-case diagramming related to functional 
+modeling?
+6. Explain the following terms: actor, use case, system 
+boundary, relationship. Use layperson’s language, as 
+though you were describing them to a user.
+7. Every association must be connected to at least one 
+_______ and one _________. Why?
+8. What are some heuristics for creating a use-case diagram?
+9. Why is iteration important in creating use cases?
+10. What is the purpose of an activity diagram?
+11. What is the diff erence between an activity and an 
+action?
+12. What is the purpose of a fork node?
+13. What are the diff erent types of control nodes?
+14. What is the diff erence between a control fl ow and an 
+object fl ow?
+15. What is an object node?
+16. Explain how a detail use case diff ers from an overview 
+use case. When are each used?
+17. How does an essential use case diff er from a real use case?
+18. What are the major elements of an overview use case?
+19. What are the major elements of a detail use case?
+20. What is the viewpoint of a use case, and why is it 
+important?
+21. What are some guidelines for designing a set of use 
+cases? Give two examples of the extend associations 
+on a use-case diagram. Give two examples for the 
+include associations.
+22. Which of the following could be an actor found on a 
+use-case diagram? Why?
+Ms. Mary Smith
+Supplier
+Customer
+Internet customer
+Mr. John Seals
+Data entry clerk
+Database administrator
+23. What is CRUD? Why is it useful?
+24. What is a walkthrough? How does it relate to verifi cation and validation?
+25. What are the diff erent roles played during a walkthrough? What are their purposes?
+26. How are the diff erent functional models related, and 
+how does this aff ect the verifi cation and validation of 
+the models?
+EXERCISES
+A. Investigate the UML website at the Object Management Group (www.uml.org). Write a paragraph news 
+brief on the current state of UML (e.g., the current version and when it will be released, future 
+improvements).
+B. Investigate the Object Management Group. Write a 
+brief memo describing what it is, its purpose, and 
+its infl uence on UML and the object approach to 
+ systems development. (Hint: A good resource is 
+www.omg.org.)
+C. Draw a use-case diagram and a set of activity diagrams for the process of buying glasses from the 
+viewpoint of the patient. Th e fi rst step is to see an eye 
+doctor who will give you a prescription. Once you 
+have a prescription, you go to an optical dispensary, 
+where you select your frames and place the order for 
+your glasses. Once the glasses have been made, you 
+return to the store for a fi tting and pay for the glasses.
+D. Create a set of detailed use-case descriptions for the 
+process of buying glasses in exercise C.
+Exercises  159
+E. Draw a use-case diagram and a set of activity diagrams for the following doctor’s offi ce system. Whenever new patients are seen for the fi rst time, they 
+complete a patient information form that asks their 
+name, address, phone number, and brief medical 
+history, which are stored in the patient information 
+fi le. When a patient calls to schedule a new appointment or change an existing appointment, the receptionist checks the appointment fi le for an available 
+time. Once a good time is found for the patient, the 
+appointment is scheduled. If the patient is a new 
+patient, an incomplete entry is made in the patient’s 
+fi le; the full information will be collected when the 
+patient arrives for the appointment. Because appointments are oft en made far in advance, the receptionist 
+usually mails a reminder postcard to each patient two 
+weeks before the appointment.
+F. Create a set of detail use-case descriptions for the 
+dentist’s offi ce system in exercise E.
+G. Draw a use-case diagram and a set of activity diagrams for an online university registration system. 
+Th e system should enable the staff of each academic 
+department to examine the courses off ered by their 
+department, add and remove courses, and change the 
+information about them (e.g., the maximum number 
+of students permitted). It should permit students to 
+examine currently available courses, add and drop 
+courses to and from their schedules, and examine the 
+courses for which they are enrolled. Department staff 
+should be able to print a variety of reports about the 
+courses and the students enrolled in them. Th e system 
+should ensure that no student takes too many courses 
+and that students who have any unpaid fees are not 
+permitted to register (assume that fees data are maintained by the university’s fi nancial offi ce, which the 
+registration system accesses but does not change).
+H. Create a set of detailed use-case descriptions for the 
+online university registration system in exercise G.
+I. Draw a use-case diagram and a set of activity diagrams for the following system. A Real Estate Inc. 
+(AREI) sells houses. People who want to sell their 
+houses sign a contract with AREI and provide information on their house. Th is information is kept in a 
+database by AREI, and a subset of this information is 
+sent to the citywide multiple-listing service used by 
+all real estate agents. AREI works with two types of 
+potential buyers. Some buyers have an interest in one 
+specifi c house. In this case, AREI prints information 
+from its database, which the real estate agent uses to 
+help show the house to the buyer (a process beyond 
+the scope of the system to be modeled). Other buyers 
+seek AREI’s advice in fi nding a house that meets their 
+needs. In this case, the buyer completes a buyer information form that is entered into a buyer database, and 
+AREI real estate agents use its information to search 
+AREI’s database and the multiple-listing service for 
+houses that meet their needs. Th e results of these 
+searches are printed and used to help the real estate 
+agent show houses to the buyer.
+J. Create a set of detailed use-case descriptions for the 
+real estate system in exercise I.
+K. Perform a verifi cation and validation walkthrough 
+of the functional models of the real estate system 
+described in exercises I and J.
+L. Draw a use-case diagram and a set of activity diagrams for the following system. A Video Store (AVS) 
+runs a series of fairly standard video stores. Before 
+a video can be put on the shelf, it must be cataloged 
+and entered into the video database. Every customer 
+must have a valid AVS customer card in order to rent 
+a video. Customers rent videos for three days at a 
+time. Every time a customer rents a video, the system 
+must ensure that he or she does not have any overdue 
+videos. If so, the overdue videos must be returned and 
+an overdue fee paid before customer can rent more 
+videos. Likewise, if the customer has returned overdue 
+videos but has not paid the overdue fee, the fee must 
+be paid before new videos can be rented. Every morning, the store manager prints a report that lists overdue videos. If a video is two or more days overdue, 
+the manager calls the customer to remind him or her 
+to return the video. If a video is returned in damaged 
+condition, the manager removes it from the video 
+database and may sometimes charge the customer.
+M. Create a set of detailed use-case descriptions for the 
+video system in exercise L.
+N. Perform a verifi cation and validation walkthrough 
+of the functional models of the video store system 
+described in exercises L and M.
+O. Draw a use-case diagram and a set of activity diagrams for a gym membership system. When members join the gym, they pay a fee for a certain length 
+of time. Most memberships are for one year, but 
+memberships as short as two months are available. 
+Th roughout the year, the gym off ers a variety of 
+discounts on their regular membership prices (e.g., 
+two memberships for the price of one for Valentine’s 
+day). It is common for members to pay diff erent 
+160  Chapter 4 Business Process and Functional Modeling
+amounts for the same length of membership. Th e 
+gym wants to mail out reminder letters to members 
+asking them to renew their memberships one month 
+before their memberships expire. Some members 
+have become angry when asked to renew at a much 
+higher rate than their original membership contract, 
+so the club wants to track the prices paid so that the 
+manager can override the regular prices with special prices when members are asked to renew. Th e 
+system must track these new prices so that renewals 
+can be processed accurately. One of the problems in 
+the industry is the high turnover rate of members. 
+Although some members remain active for many 
+years, about half of the members do not renew their 
+memberships. Th is is a major problem, because the 
+gym spends a lot in advertising to attract each new 
+member. Th e manager wants the system to track each 
+time a member comes into the gym. Th e system will 
+then identify the heavy users and generate a report so 
+that the manager can ask them to renew their memberships early, perhaps off ering them a reduced rate 

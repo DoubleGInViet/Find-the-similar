@@ -1,0 +1,629 @@
+﻿Th e third way to consider making your IT infrastructure greener is to consider the cloud 
+(see earlier section). With the cloud’s virtualization capabilities, the number of high-powered 
+servers and desktops can be reduced. However, you will need to perform some trade-off s 
+between the obstacles of moving to the cloud and the move toward a greener IT. Th e fourth 
+way to address the power demands for a modern IT infrastructure is by only purchasing Energy 
+Star compliant electronics. Th e fi fth way is to encourage employees to have their machines go 
+to “sleep” to save energy when the machines have been idle for some period of time.
+Th e paperless offi ce idea has been around for a very long time. However, up until now, 
+the idea has been more fantasy than reality. Today, with the advent of multiuse tablets, such 
+as Apple’s iPadTM, the paperless offi ce is becoming a reality. When considering the cloud and 
+the apps available on the iPadTM, it is possible not only to create a paperless offi ce but also to 
+have the paperless offi ce eff ectively be a portable offi ce.
+INFRASTRUCTURE DESIGN
+In most cases, a system is built for an organization that has a hardware, soft ware, and communications infrastructure already in place. Th us, project teams are usually more concerned with 
+how an existing infrastructure needs to be changed or improved to support the requirements 
+that were identifi ed during analysis, as opposed to how to design and build an infrastructure 
+from scratch. Coordination of infrastructure components is very complex, and it requires 
+highly skilled technical professionals. As a project team, it is best to allow the infrastructure 
+analysts to make changes to the computing infrastructure. 
+Deployment Diagram
+Deployment diagrams are used to represent the relationships between the hardware components 
+used in the physical infrastructure of an information system. For example, when designing a 
+distributed information system that will use a wide area network, a deployment diagram can 
+be used to show the communication relationships among the diff erent nodes in the network. 
+Th ey also can be used to represent the soft ware components and how they are deployed over 
+the physical architecture or infrastructure of an information system. In this case, a deployment 
+diagram represents the environment for the execution of the soft ware.
+Th e elements of a deployment diagram include nodes, artifacts, and communication 
+paths (see Figure 11-7). Other elements can also be included in this diagram. In our case, 
+we include only the three primary elements and the element that portrays an artifact being 
+deployed onto a node.
+A node represents any piece of hardware that needs to be included in the model of the 
+physical architecture layer design. For example, nodes typically include client computers, 
+servers, separate networks, or individual network devices. Typically, a node is labeled with its 
+name and, possibly, with a stereotype. Th e stereotype is modeled as a text item surrounded 
+by “<< >>” symbols. Th e stereotype represents the type of node being represented on the 
+diagram. For example, typical stereotypes include device, mobile device, database server, Web 
+server, and application server. Th ere are times that the notation of a node should be extended 
+to better communicate the design of the physical architecture layer. Figure 11-8 includes a set 
+of typical network node symbols that can be used instead of the standard notation.
+An artifact represents a piece of the information system that is to be deployed onto the 
+physical architecture (see Figure 11-7). Typically, an artifact represents a soft ware component, a 
+subsystem, a database table, an entire database, or a layer (data management, human–computer 
+interaction, or problem domain). Artifacts, like nodes, can be labeled with both a name and a 
+stereotype. Stereotypes for artifacts include source fi le, database table, and executable fi le.
+Infrastructure Design  433
+FIGURE 11-7  Development Diagram Syntax
+A node:
+■ Is a computational resource, e.g., a client computer, server, separate network, or 
+individual network device.
+■ Is labeled by its name. 
+■ May contain a stereotype to specifically label the type of node being represented, 
+e.g., device, client workstation, application server, mobile device, etc.
+An artifact:
+■ Is a specification of a piece of software or database, e.g., a database or a table or 
+view of a database, a software component or layer.
+■ Is labeled by its name.
+■ May contain a stereotype to specifically label the type of artifact, e.g., source file, 
+database table, executable file, etc.
+A communication path:
+■ Represents an association between two nodes.
+■ Allows nodes to exchange messages.
+■ May contain a stereotype to specifically label the type of communication path 
+being represented, (e.g., LAN, Internet, serial, parallel).
+A node with a deployed artifact:
+■ Portrays an artifact being placed on a physical node.
+<<stereotype>>
+Node Name
+<<stereotype>>
+<<stereotype>>
+Artifact Name
+<<stereotype>>
+Node Name
+<<stereotype>>
+Artifact Name
+A communication path represents a communication link between the nodes of the physical architecture (see Figure 11-7). Communication paths are stereotyped based on the type 
+of communication link they represent (e.g., LAN, Internet, serial, parallel, or USB) or the 
+protocol that is being supported by the link (e.g., TCP/IP).
+FIGURE 11-8  Extended Node Syntax for Development Diagram
+Workstation Server Mainframe
+Subnetwork Database
+Firewall
+434 Chapter 11 Physical Architecture Layer Design
+Figure 11-9 portrays three diff erent versions of a deployment diagram. Version a uses 
+only the basic standard notation. Version b introduces the idea of deploying an artifact 
+onto a node (see Figure 11-7). In this case, the artifacts represent the diff erent layers of the 
+appointment system described in earlier chapters. Version c uses the extended notation to 
+represent the same architecture. As you can see, all three versions have their strengths and 
+weaknesses. When comparing version a and version b, the user can glean more information 
+from version b with little additional eff ort. However, when comparing version a to version 
+c, the extended node notation enables the user to quickly understand the hardware requirements of the architecture. When comparing version b to version c, version b supports the 
+soft ware distribution explicitly but forces the user to rely on the stereotypes to understand the 
+required hardware, whereas version c omits the soft ware distribution information entirely. 
+We recommend that you use the combination of symbols to best portray the physical architecture to the user community.
+Network Model
+Th e network model is a diagram that shows the major components of the information system 
+(e.g., servers, communication lines, networks) and their geographic locations throughout the 
+organization. Th ere is no one way to depict a network model, and in our experience analysts 
+FIGURE 11-9  Three Versions of Appointment System Deployment Diagram
+<<LAN>>
+<<Client Workstation>>
+Receptionist PC
+<<Server>>
+Office Server
+<<Client Workstation>>
+Receptionist PC
+<<HCI Layer>>
+Appt System
+<<Server>>
+Office Server
+<<PD Layer>>
+Appt System
+<<DM Layer>>
+Appt System
+Receptionist PC Office Server
+Appt
+Data
+Base
+<<LAN>>
+<<LAN>>
+(a)
+(b)
+(c)
+Infrastructure Design  435
+create their own standards and symbols, using presentation applications (e.g., PowerPoint) or 
+diagramming tools (e.g., Visio). In this text, we use UML’s deployment diagram.
+Th e purpose of the network model is twofold: to convey the complexity of the system 
+and to show how the system’s soft ware components will fi t together. Th e diagram also helps 
+the project team develop the hardware and soft ware specifi cation that is described later in 
+this chapter.
+Th e components of the network model are the various clients (e.g., personal computers, 
+kiosks), servers (e.g., database, network, communications, printer), network equipment (e.g., 
+WiFi connections, ethernet, cell phone network, satellite links), and external systems or 
+networks (e.g., Internet service providers) that support the application. Locations are the geographic sites related to these components. For example, if a company created an application 
+for users at four of its plants in Canada and eight plants in the United States and it used one 
+external system to provide Internet service, the network model to depict this would contain 
+twelve locations (4 1 8 5 12).
+Creating the network model is a top-down exercise whereby we fi rst graphically depict 
+all the locations where the application will reside. Placing symbols that represent the locations 
+for the components on a diagram and then connecting them with lines that are labeled with 
+the approximate amount of data or types of network circuits between the separated components accomplish this.
+Companies seldom build networks to connect distant locations by buying land and laying cable (or sending up their own satellites). Instead, they usually lease services provided by 
+large telecommunications fi rms such as AT&T, Sprint, and Verizon. Figure 11-10 shows a 
+typical network. Th e clouds in the diagram represent the networks at diff erent locations (e.g., 
+Toronto, Atlanta). Th e lines represent network connections between specifi c points (e.g., 
+Toronto to Brampton). In other cases, a company might lease connections from many points 
+to many others, and rather than trying to show all the connections, a separate cloud may be 
+drawn to represent this many-to-many type of connection (e.g., the cloud in the center of 
+Figure 11-10 represents a network of many-to-many connections provided by a telecom fi rm 
+like Verizon).
+Th is high-level diagram has several purposes. First, it shows the locations of the components needed to support the application; therefore, the project team can get a good 
+understanding of the geographic scope of the new system and how complex and costly the 
+communications infrastructure will be to support. (For example, an application that supports 
+one site will probably have less communications costs as compared to a more- complex application that will be shared all over the world.) Th e diagram also indicates the external components of the system (e.g., customer systems, supplier systems), which may impact security or 
+global needs (discussed later in this chapter).
+Th e second step of the network model is to create low-level network diagrams for each 
+of the locations shown on the top-level diagram. First, hardware is drawn on the model 
+in a way that depicts how the hardware for the new system will be placed throughout the 
+location. It usually helps to use symbols that resemble the hardware that will be used. Th e 
+amount of detail to include on the network model depends on the needs of the project. 
+Some low-level network models contain text descriptions below each of the hardware 
+ components that describe in detail the proposed hardware confi gurations and processing 
+needs; others include only the number of users that are associated with the diff erent parts 
+of the diagram.
+Next, lines are drawn connecting the components that will be physically attached to 
+each other. In terms of soft ware, some network models list the required soft ware for each 
+network model component right on the diagram, whereas other times, the soft ware is 
+436 Chapter 11 Physical Architecture Layer Design
+FIGURE 11-10  Deployment Diagram Representation of a Top-Level Network Model
+<<private
+network>>
+<<private
+network>>
+<<private
+network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+<<private network>>
+Verizon Network
+Ottawa,
+ONT
+Tyson’s Corner,
+VA
+Research
+Triangle Park,
+NC
+Ossining,
+NY
+Sunrise,
+FL
+Atlanta,
+GA
+Nashville,
+TN
+Richardson,
+TX
+Santa Clara,
+CA
+Toronto,
+ONT
+Brampton,
+ONT
+Mariline,
+ONT
+described in a memo attached to the network model. Figure 11-11 shows a deployment 
+diagram that portrays two levels of detail of a low-level network model. Notice, we use both 
+the standard and extended node notation in this fi gure. In this case, we have included a 
+package (see Chapter 7) to represent a set of connections to the router in the MFA building. 
+By including a package, we show only the detail necessary. Th e extended notation in many 
+cases aids the user in understanding the topology of the physical architecture layer much 
+better than the standard notation. We recommend using the symbols that get the message 
+across best.
+Infrastructure Design  437
+FIGURE 11-11  Deployment Diagram Representation of a Low-Level Network Model
+<<location>>
+Main Financial Aid Building
+<<private>>
+<<private>>
+DOE
+Washington, DC
+Offices
+DOE Regional Offices
+(a)
+(b)
+Main Financial Aid Building
+<<ATM>>
+<<ATM>>
+Server Server
+Ethernet
+LAN
+Ethernet
+LAN
+<<ATM>>
+<<ATM>>
+<<ATM>>
+<<ATM>>
+Server Server
+Ethernet
+LAN
+Ethernet
+LAN
+<<switch>>
+Ethernet
+LAN
+<<ATM>>
+<<ATM>>
+<<ATM>>
+<<switch>>
+Ethernet
+LAN
+<<ATM>>
+<<ATM>>
+<<router>>
+MFA Building
+<<ATM>>
+<<private>>
+<<private>>
+DOE
+Washington, DC
+Offices
+DOE Regional Offices
+438 Chapter 11 Physical Architecture Layer Design
+Our experiences have shown that most project teams create a memo for the project fi les 
+that provides additional detail about the network model. Th is information is helpful to the 
+people who are responsible for creating the hardware and soft ware specifi cations (described 
+later in this chapter) and who will work more extensively with the infrastructure development. Th is memo can include special issues that aff ect communications, requirements for 
+hardware and soft ware that might not be obvious from the network model, or specifi c hardware or soft ware vendors or products that should be acquired.
+Th e primary purpose of the network model diagram is to present the proposed infrastructure for the new system. Th e project team can use the diagrams to understand the scope 
+of the system, the complexity of its structure, any important communication issues that might 
+aff ect development and implementation, and the actual components that need to be acquired 
+or integrated into the environment.
+HARDWARE AND SYSTEM SOFTWARE SPECIFICATIONS
+Th e time to begin acquiring the hardware and soft ware that will be needed for a future system 
+is during the design of the system. In many cases, the new system will simply run on the existing equipment in the organization. Other times, however, new hardware and soft ware must be 
+purchased. Th e hardware and soft ware specifi cation is a document that describes what hardware 
+and soft ware are needed to support an application. Th e actual acquisition of hardware and soft -
+ware should be left to the purchasing department or the area in the organization that handles 
+capital procurement. However, the project team writes the hardware and soft ware specifi cation 
+to communicate the project needs to the appropriate people. Th ere are several steps involved 
+in creating the document. Figure 11-12 shows a sample hardware and soft ware specifi cation.
+First, we need to defi ne the soft ware that will run on each component. Th is usually 
+starts with the operating system (e.g., Windows, Linux) and includes any special-purpose 
+soft ware on the client and servers (e.g., Oracle database). Th is document should consider any 
+additional costs, such as technical training, maintenance, extended warranties, and licensing 
+agreements (e.g., a site license for a soft ware package). Th e listed needs are infl uenced by 
+decisions that are made in the other design activities.
+Second, we must create a list of the hardware that is needed to support the future system. 
+With the advent of mobile computing (see Chapter 10), cloud computing (see earlier in this 
+chapter), the IoT (see earlier in this chapter), and Green IT (see earlier in this chapter), this 
+Specifi cation
+Standard 
+ Client
+Standard 
+Web Server
+Standard 
+Application Server
+Standard 
+Database Server
+Operating System • Windows
+ • Internet Explorer
+ • Linux • Linux • Linux
+Special Software • Acrobat Reader
+ • Adobe Flash
+ • QuickTime
+ • Apache • Java • Oracle
+Hardware • 8 GB Memory
+ • 500 GB disk drive
+ • Intel Core i5
+ • 2--22” monitors
+ • 16 GB Memory
+ • 1TB disk drive
+ • Intel Xenon
+ E%-2400
+ • 1--22” monitor
+ • 32 GB Memory
+ • 2–1 TB disk drives
+ • Intel Xenon E5-2600
+ • 1--22” monitor
+ • 32 GB Memory
+ • 4–1 TB Hotplug
+ disk drives
+ • Intel Xenon E5-2600
+ • 1--22” monitor
+Network • 100 Mbps Ethernet
+ High-speed Wireless
+ • 100 Mbps Ethernet • 100 Mbps Ethernet • 100 Mbps Ethernet
+FIGURE 11-12  Sample Hardware and Software Specifi cation
+Hardware and System Software Specifi cations  439
+step is much more involved than it used to be. However, the low-level network model provides a good starting point for recording the project’s hardware needs because each component on the diagram corresponds to an item on this list. In general, the list can include things 
+like database servers, network servers, peripheral devices (e.g., printers, scanners), backup 
+devices, storage components, and any other hardware component that is needed to support an 
+application. At this time, you also should note the quantity of each item that will be needed.
+Th ird, we must describe, in as much detail as possible, the minimum requirements for 
+each piece of hardware. Typically, the project team must convey requirements like the amount 
+of processing capacity, the amount of storage space, and any special features that should be 
+included. Many organizations have standard lists of approved hardware and soft ware that must 
+be used; so in many cases, this step simply involves selecting items from the lists. Other times, 
+however, the team is operating in new territory and is not constrained by the need to select from 
+an approved list. Th is step becomes easier with experience; however, there are some hints that 
+can help you describe hardware needs (see Figure 11-13). For example, consider the hardware 
+standards within the organization or those recommended by vendors. Talk with experienced 
+system developers or other companies with similar systems. Finally, think about the factors that 
+aff ect hardware performance, such as the response-time expectations of the users, data volumes, 
+soft ware memory requirements, the number of users accessing the system, the number of external connections, and growth projections.
+Th e last step to consider is to evaluate vendor proposals (see Chapter 7). Th e easiest way 
+to do this is to create an alternative matrix (see Chapters 2 and 7). In this case, the evaluation 
+criteria in the alternative matrix should include all architectural requirements, both optional 
+and mandatory, and each criterion should be weighted. Some general criteria include CPU 
+speed, bus speed, disk size, disk access time, cache size, cache speed, RAM size, RAM speed, 
+data transfer rate, video RAM size and speed, monitor size, and printer resolution. Of course, 
+in today’s connected world, the networking hardware and soft ware would also need to be 
+specifi ed, including routers, print servers, hubs, and switches. Mobile devices such as smartphones and tablets may be part of the physical architecture solution. Depending on the problem domain requirements, additional hardware and system soft ware could be required, such 
+as speech recognition and generation soft ware and hardware, digitizing tablets, and possibly 
+head-mounted displays, shutter glasses, force feedback pointing devices, and 3D printers. 
+Each of these types of specialized devices has its own specialized evaluation criteria. In a nutshell, when creating a hardware and system soft ware specifi cation, most systems analysts fi nd 
+that they need help from IT and CS personnel.
+FIGURE 11-13 
+Factors in Hardware 
+and Software 
+Selection
+Functions and Features What specifi c functions and features are needed (e.g., size of monitor, 
+software features)?
+Performance How fast does the hardware and software operate (e.g., processor, number of 
+database writes per second)?
+Legacy Databases and Systems How well does the hardware and software interact with legacy 
+systems (e.g., can it write to this database)?
+Hardware and OS Strategy What are the future migration plans (e.g., the goal is to have all of one 
+vendor’s equipment)?
+Cost of Ownership What are the costs beyond purchase (e.g., incremental license costs, annual 
+maintenance, training costs, salary costs)?
+Political Preferences People are creatures of habit and are resistant to change, so changes should 
+be minimized.
+Vendor Performance Some vendors have reputations or future prospects that are different from 
+those of a specifi c hardware or software system they currently sell.
+440 Chapter 11 Physical Architecture Layer Design
+Depending on the overall cost and size of the project, one thing that should be seriously 
+considered is the use of a benchmark. A benchmark is essentially a sample of programs that 
+would be expected to run on the new physical architecture. Even though benchmarks can be 
+expensive to create, they tend to provide a more realistic picture of how the proposed physical 
+architecture layer will perform.
+When evaluating hardware, there is a set of issues that you should recognize.14
+■ Not only should you provide sample programs for the benchmarks, but you also 
+need to provide actual data. Otherwise, the benchmark results could be misleading.
+■ You need to carefully review the mix of system soft ware and hardware. For 
+ example, in many cases, Linux performs better on the same hardware when 
+ compared against Windows, but some applications might not be available under 
+Linux. Consequently, there may be some trade-off s that should be considered.
+■ When considering adding additional hardware, be sure to evaluate the additional 
+hardware based on marginal utility, not actual utility.
+■ Do not specify the physical architecture before you understand the problem 
+domain requirements. Th is might seem obvious, but when you consider the time 
+it takes for a mainframe computer, a large number of servers, or a large number 
+of client machines to be specifi ed, ordered, and delivered, it can be tempting to 
+specify the hardware and system soft ware prematurely. Th is could lead to either 
+under- or over-specifi cation.
+■ Recognize the reality of Parkinson’s Law. From an IT perspective, Parkinson’s Law 
+implies that regardless of the users’ real needs, their imagined needs will always 
+fi ll up whatever capacity the system has. Consequently, it is imperative that the 
+physical architecture layer design be based on the current and expected future 
+architecture of the problem domain layer.
+■ Do not limit choices to a single vendor. Th is is especially true when you consider 
+commodity hardware, such as displays, desktops, and department-size servers.
+■ Given the rate of technological change that is taking place in IT, consider leading-edge ideas. For example, even though tablet computers have been around for 
+a while, the iPadTM was not on most people’s radar. Today, it is considered to be a 
+game changer when considering client-based hardware. Consequently, you really 
+must stay up to date when it comes to the design of the physical architecture layer.
+NONFUNCTIONAL REQUIREMENTS AND PHYSICAL 
+ARCHITECTURE LAYER DESIGN
+Th e design of the physical architecture layer specifi es the overall architecture and the placement of soft ware and hardware that will be used. Each of the architectures discussed before 
+has its strengths and weaknesses. Most organizations use client–server architectures for cost 
+reasons, so in the event that there is no compelling reason to choose one architecture over 
+another, cost usually suggests client–server.
+Creating a physical architecture layer design begins with the nonfunctional requirements. 
+Th e fi rst step is to refi ne the nonfunctional requirements into more-detailed requirements 
+that are then used to help select the architecture to be used (server-based, client-based, or 
+client–server) and what soft ware components will be placed on each device. In a client–server 
+14 Alton R. Kindred, Data Systems and Management: An Introduction to Systems Analysis and Design, 2nd Ed. 
+(Englewood Cliff s, NJ: Prentice-Hall, 1980).
+Nonfunctional Requirements and Physical Architecture Layer Design  441
+architecture, one also has to decide whether to use a two-tier, three-tier, or n-tier architecture. 
+Th en the nonfunctional requirements and the architecture design are used to develop the 
+hardware and soft ware specifi cation.
+Four primary types of nonfunctional requirements can be important in designing the 
+architecture: operational requirements, performance requirements, security requirements, 
+and cultural/political requirements. Furthermore, each of these requirements must be fully 
+verifi ed and validated.
+Operational Requirements
+Operational requirements specify the operating environment(s) in which the system must 
+perform and how those might change over time. Th is usually refers to operating systems, 
+system soft ware, and information systems with which the system must interact, but on occasion it also includes the physical environment if the environment is important to the application (e.g., it’s located on a noisy factory fl oor, so no audible alerts can be heard). Figure 11-14 
+summarizes four key operational requirement areas and provides some examples of each.
+Technical Environment Requirements Technical environment requirements specify the type 
+of hardware and soft ware system on which the system will work. Th ese requirements usually 
+focus on the operating system soft ware (e.g., Windows, Linux, Mac OS), database system 
+soft ware (e.g., Oracle), and other system soft ware (e.g., Firefox). In today’s distributed world, 
+issues related to mobile computing (see Chapter 10), cloud computing (see the earlier section 
+in this chapter), the IoT (see earlier section in this chapter), and Green IT (see the earlier section in this chapter) are very relevant. Consequently, it also includes all of the diff erent types of 
+Type of Requirement Defi nition Examples
+Technical Environment
+Requirements
+Special hardware, software, and network
+ requirements imposed by business 
+ requirements
+• The system will work over the Web
+environment with Internet Explorer.
+• All offi ce locations will have an always-on 
+network connection to enable real-time database updates.
+• A version of the system will be provided for 
+customers connecting over the Internet via a 
+tablet or smartphone.
+System Integration
+ Requirements
+The extent to which the system will
+ operate with other systems
+• The system must be able to import and 
+exportExcel spreadsheets.
+• The system will read and write to the main 
+inventory database in the inventory system.
+Portability Requirements The extent to which the system will need
+ to operate in other environments
+• The system must be able to work with differentoperating systems (e.g., Linux, Mac OS, 
+and Windows).
+• The system might need to operate with 
+handheld devices, such as Android and 
+Apple iOS devices.
+Maintainability
+ Requirements
+Expected business changes to which the
+ system should be able to adapt
+• The system will be able to support more than
+one manufacturing plant with six months’
+advance notice.
+• New versions of the system will be released
+every six months.
+FIGURE 11-14  Operational Requirements
+442 Chapter 11 Physical Architecture Layer Design
+hardware from mainframe computers to smartphones. Depending on the applications being 
+deployed over the physical architecture, specialized hardware could be required, such as 3D 
+displays, 3D printing, 3D sound systems, and tablets with accelerometers. With today’s technology, the possible combinations of hardware that can be used to solve a problem are nearly 
+endless. Consequently, this is one area where additional expertise might be required.
+System Integration Requirements System integration requirements are those that require 
+the system to operate with other information systems, either inside or outside the company. 
+Th ese typically specify interfaces through which data will be exchanged with other systems.
+Portability Requirements Information systems never remain constant. Business needs 
+change and operating technologies change, so the information systems that support them 
+and run on them must change, too. Portability requirements defi ne how the technical operating environments might change over time and how the system must respond (e.g., the system currently runs on Windows, whereas in the future the system might have to be deployed 
+on Linux). Portability requirements also refer to potential changes in business requirements 
+that drive technical environment changes. For example, in the future users might want to 
+access a website from their cell phones.
+Maintainability Requirements Maintainability requirements specify the business requirement changes that can be anticipated. Not all changes are predictable, but some are. For 
+example, suppose a small company has only one manufacturing plant but is anticipating the 
+construction of a second plant in the next fi ve years. All information systems must be written 
+to make it easy to track each plant separately, whether for personnel, budgeting, or inventory 
+systems. Th e maintainability requirements attempt to anticipate future requirements so that 
+the systems designed today will be easy to maintain if and when those future requirements 
+appear. Maintainability requirements can also defi ne the update cycle for the system, such as 
+the frequency with which new versions will be released.
+Performance Requirements
+Performance requirements focus on performance issues, such as response time, capacity, and 
+reliability. Figure 11-15 summarizes three key performance requirement areas and provides 
+some examples.
+Speed Requirements Speed requirements are exactly what they say: How fast should the system operate? First is the response time of the system: How long it takes the system to respond to 
+a user request. Although everyone would prefer low response times, with the system responding immediately to each user request, this is not practical. We could design such a system, but it 
+would be expensive. Most users understand that certain parts of a system will respond quickly, 
+whereas others are slower. Actions that are performed locally on the user’s computer must be 
+almost immediate (e.g., typing, dragging, and dropping), whereas others that require communicating across a network can have longer response times (e.g., a Web request). 
+Th e second aspect of speed requirements is how long it takes transactions in one part 
+of the system to be refl ected in other parts. For example, how soon aft er an order is placed 
+will the items it contained be shown as no longer available for sale to someone else? If the 
+inventory is not updated immediately, then someone else could place an order for the same 
+item, only to fi nd out later it is out of stock. Th is is especially true when one considers NoSQL 
+database that does not update all copies of the data immediately (see Chapter 9). Or how soon 
+aft er an order is placed is it sent to the warehouse to be picked from inventory and shipped?
+Nonfunctional Requirements and Physical Architecture Layer Design  443
+Type of Requirement Defi nition Examples
+Speed Requirements The time within which the system must 
+ perform its functions
+• Response time must be less than 7 seconds 
+for any transaction over the network.
+• The inventory database must be updated in 
+real time.
+• Orders will be transmitted to the factory 
+fl oor every 30 minutes.
+Capacity Requirements The total and peak number of users
+ and the volume of data expected
+• There will be a maximum of 100–200 
+simultaneous users at peak use times.
+• A typical transaction will require the transmission of 10K of data.
+Availability and Reliability
+ Requirements
+The extent to which the system will 
+ be available to the users and the
+ permissible failure rate due to errors
+• The system will store data on approximately 
+5,000 customers for a total of about 2 MB 
+of data.
+• Scheduled maintenance shall not exceed 
+one 6-hour period each month.
+• The system shall have 99% uptime performance.
+FIGURE 11-15  Performance Requirements
+Capacity Requirements Capacity requirements attempt to predict how many users the system will have to support, both in total and simultaneously. Capacity requirements are important in understanding the size of the databases, the processing power needed, and so on. Th e 
+most important requirement is usually the peak number of simultaneous users because this 
+has a direct impact on the processing power of the computer(s) needed to support the system.
+It is oft en easier to predict the number of users for internal systems designed to support 
+an organization’s own employees than it is to predict the number of users for customer-facing 
+systems, especially those on the Web. How does Weather.com estimate the peak number of 
+users who will simultaneously seek weather information? Th is is as much an art as a science, 
+so oft en the team provides a range of estimates, with wider ranges used to signal a less-accurate estimate.
+Availability and Reliability Requirements Availability and reliability requirements focus 
+on the extent to which users can assume that the system will be available for them to use. 
+Although some systems are intended to be used only during the forty-hour workweek, some 
+systems are designed to be used by people around the world. For such systems, project team 
+members need to consider how the application can be operated, supported, and maintained 
+24/7 (i.e., 24 hours a day, 7 days a week). Th is 24/7 requirement means that users might need 
+help or have questions at any time, and a support desk that is available eight hours a day will 
+not be suffi cient support. It is also important to consider what reliability is needed in the system. A system that requires high reliability (e.g., a medical device or telephone switch) needs 
+far greater planning and testing than one that does not have such high-reliability needs (e.g., 
+personnel system, Web catalog).
+It is more diffi cult to predict the peaks and valleys in use of the system when the system 
+has a global audience. Typically, applications are backed up on weekends or late evenings 
+when users are no longer accessing the system. Such maintenance activities need to be 
+rethought with global initiatives. For example, what day(s) of the week is considered a “down” 
+day. In diff erent parts of the world, business does not take place every day. In some parts, Friday is sacred; in other parts, it’s Saturday or Sunday. Consequently, political and cultural 
+issues (described below and in Chapter 10) can impact the performance requirements. Th e 
+development of Web interfaces, in particular, has escalated the need for 24/7 support; by 
+default, the Web can be accessed by anyone at any time. For example, the developers of a 
+Web application for U.S. outdoor gear and clothing retailer Orvis were surprised when the 
+fi rst order aft er going live came from Japan.
+Security Requirements15
+Security is the ability to protect the information system from disruption and data loss, whether 
+caused by an intentional act (e.g., a hacker, a terrorist attack) or a random event (e.g., disk 
+failure, tornado). Security is primarily the responsibility of the operations group—the staff 
+responsible for installing and operating security controls, such as fi rewalls, intrusion-detection 
+systems, and routine backup and recovery operations. Nonetheless, developers of new systems 
+must ensure that the system’s security requirements produce reasonable precautions to prevent 
+problems; system developers are responsible for ensuring security within the information 
+systems themselves.
+Security is an ever-increasing problem in today’s Internet-enabled world. Historically, 
+the greatest security threat has come from inside the organization itself. Ever since the early 
+1980s when the FBI fi rst began keeping computer crime statistics and security fi rms began 
+conducting surveys of computer crime, organizational employees have perpetrated the vast 
+majority of computer crimes. For years, 80 percent of unauthorized break-ins, theft s, and 
+sabotage have been committed by insiders, leaving only 20 percent to hackers external to the 
+organizations.
+In 2001, that changed. Depending on what survey you read, the percentage of incidents 
+attributed to external hackers in 2001 increased to 50 to 70 percent of all incidents, meaning 
+that the greatest risk facing organizations is now from the outside. Although some of this shift 
+may be due to better internal security and better communications with employees to prevent 
+security problems, much of it is simply due to an increase in activity by external hackers. With 
+cloud computing and the IoT, security has become even more important.
+Developing security requirements usually starts with some assessment of the value of the 
+system and its data. Th is helps pinpoint extremely important systems so that the operations 
+staff is aware of the risks. Security within systems usually focuses on specifying who can access 
+what data, identifying the need for encryption and authentication, and ensuring the application prevents the spread of viruses (see Figure 11-16).
+System Value Th e most important computer asset in any organization is not the equipment; 
+it is the organization’s data. For example, suppose someone destroyed a mainframe computer worth $10 million. Th e mainframe could be replaced, simply by buying a new one. It 
+would be expensive, but the problem would be solved in a few weeks. Now suppose someone 
+destroyed all the student records at your university so that no one knew what courses anyone 
+had taken or their grades. Th e cost would far exceed the cost of replacing a $10 million computer. Th e lawsuits alone would easily exceed $10 million, and the cost of staff to fi nd paper 
+records and reenter the data from them would be enormous and certainly would take more 
+than a few weeks.
+15 For more information, see Brett C. Tjaden, Fundamentals of Secure Computer Systems (Wilsonville, OR: Franklin, 
+Beedle, and Associates, 2004); for security controls associated with the Sarbanes–Oxley act, see Dennis C. Brewer, 
+Security Controls for Sarbanes–Oxley Section 404 IT Compliance: Authorization, Authentication, and Access 
+(Indianapolis: Wiley, 2006).
+Nonfunctional Requirements and Physical Architecture Layer Design  445
+FIGURE 11-16  Security Requirements
+Type of Requirement Defi nition Examples
+System Value Estimates Estimated business value of the system and
+ its data
+• The system is not mission critical, but a system outage is estimated to cost $50,000 per 
+hour in lost revenue.
+• A complete loss of all system data is estimated to cost $20 million.
+Access Control
+ Requirements
+Limitations on who can access what data • Only department managers will be able to 
+change inventory items within their own 
+department.
+• Telephone operators will be able to read 
+and create items in the customer fi le but 
+cannot change or delete items.
+Encryption and the 

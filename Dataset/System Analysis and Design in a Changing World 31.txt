@@ -1,0 +1,705 @@
+﻿be shipped. For that one use case, the analyst can define tangible things (items 
+ordered), roles played (customer), incidents or events (the sale), sites/locations 
+(warehouse), and organizational units (shipping).
+Here are the steps to follow when using the brainstorming technique:
+1. Identify a user and a set of use cases or user stories.
+2. Brainstorm with the user to identify things involved when carrying out the 
+use case—that is, things about which information should be captured by 
+the system.
+3. Use the types of things (categories) to systematically ask questions about 
+potential things, such as the following: Are there any tangible things you 
+store information about? Are there any locations involved? Are there roles 
+played by people that you need to remember?
+4. Continue to work with all types of users and stakeholders to expand the 
+brainstorming list.
+5. Merge the results, eliminate any duplicates, and compile an initial list.
+■ The Noun Technique
+Another useful procedure for identifying things in the problem domain is called 
+the noun technique. Recall that a noun is a person, place, or thing. Therefore, 
+identifying nouns might help you identify what needs to be stored by the system. 
+Begin by listing all the nouns that users mention when talking about the system. 
+Nouns used to describe events, use cases, user stories, and the actors are potential things. Next, add to the list any additional nouns that appear in information 
+about the existing system or that come up in discussions with stakeholders about 
+the problem domain of the system. The list of nouns will become quite long, 
+so the list will need to be trimmed and refined. How the noun technique differs from the brainstorming technique is that the analyst lists all nouns without 
+thinking too much about them and without talking about them with users. Only 
+later will the list be refined based on consultation with stakeholders and users.
+Here are the steps to follow when using the noun technique:
+1. Using the use cases, actors, and other information about the system—
+including inputs and outputs—identify all nouns. For the RMO CSMS, 
+the nouns might include the following: customer, product item, sale, confirmation, transaction, shipping, bank, change request, summary report, 
+management, transaction report, accounting, back order, back-order 
+notification, return, return confirmation, fulfillment reports, prospective 
+customer, marketing, customer account, promotional materials, charge adjustment, sale details, merchandising, and customer activity reports.
+2. Using other information from existing systems, current procedures, and current reports or forms, add items or categories of information needed. For the 
+RMO CSMS, these might include more detailed information, such as price, 
+size, color, style, season, inventory quantity, payment method, and shipping 
+address. Some of these items might be additional things, and some might be 
+specific information (called attributes) about things you have already identified. Refine the list and then record assumptions or issues to explore.
+3. As this list of nouns builds, you will need to refine it. Ask these questions 
+about each noun to help you decide whether you should include it:
+■ Is it a unique thing the system needs to know about?
+■ Is it inside the scope of the system I am working on?
+■ Does the system need to remember more than one of these items?
+Ask these questions about each noun to decide whether you should exclude it:
+■ Is it really a synonym for some other thing I have identified?
+■ Is it really just an output of the system produced from other information 
+I have identified?
+noun technique a technique used to 
+identify things in the problem domain by 
+finding and classifying the nouns in a dialog 
+or description
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 97
+■ Is it really just an input that results in recording some other information I 
+have identified?
+Ask these questions about each noun to decide whether you should research it:
+■ Is it likely to be a specific piece of information (attribute) about some 
+other thing I have identified?
+■ Is it something I might need if assumptions change?
+4. Create a master list of all nouns identified and then note whether each one 
+should be included, excluded, or researched further.
+5. Review the list with users, stakeholders, and team members and then refine 
+the list of things in the problem domain.
+Figure 4-2 lists some of the nouns from the RMO CSMS, with notes about 
+each one. As with the brainstorming technique, the initial list developed from 
+this table is just a start. Much more work is needed to refine the list and define 
+more information about each item in the list.
+■ Attributes of Things
+The noun technique involves listing all the nouns that come up in discussions or 
+documents about the requirements. The list can become quite long because many 
+of these nouns are actually attributes. Most information systems store and use 
+specific pieces of information about each “thing” of interest, as shown for some 
+nouns in Figure 4-2. The specific pieces of information are called attributes. 
+For example, a customer has a name, a phone number, a credit limit, and so on. 
+Each of these details is an attribute. So as you refine your list of nouns, you may 
+redefine many nouns as attributes rather than fundamental “things.”
+The analyst needs to identify all of the attributes of each thing that the system needs to store even if they don’t turn up on the initial list of nouns. One 
+Figure 4-2 Partial list of “things” 
+based on nouns for RMO Identified noun Notes on including noun as a thing to store
+Accounting We know who they are. No need to store it.
+Back order A special type of order? Or a value of order status? Research.
+Back-order information An output that can be produced from other information.
+Bank Only one of them. No need to store.
+Catalog Yes, need to recall them, for different seasons and years. Include.
+Catalog activity reports An output that can be produced from other information. Not stored.
+Catalog details Same as catalog? Or the same as product items in the 
+catalog? Research.
+Change request An input resulting in remembering changes to an order.
+Charge adjustment An input resulting in a transaction.
+Color One piece of information about a product item.
+Confirmation An output produced from other information. Not stored.
+Credit card information Part of an order? Or part of customer information? Research.
+Customer Yes, a key thing with lots of details required. Include.
+Customer account Possibly required if an RMO payment plan is included. Research.
+Fulfillment reports An output produced from information about shipments. Not stored.
+Inventory quantity One piece of information about a product item. Research.
+Management We know who they are. No need to store.
+Marketing We know who they are. No need to store.
+Merchandising We know who they are. No need to store.
+attributes descriptive pieces of information about things or objects
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+98 PART 2 ■ Systems Analysis Activities
+attribute may be used to identify a specific thing, such as a Social Security 
+number for an employee or an order number for a purchase. The attribute that 
+uniquely identifies the thing is called an identifier or key. Sometimes, the identifier is already established (a Social Security number, vehicle ID number, or 
+product ID number). Sometimes, the system needs to assign a specific identifier 
+(an invoice number or transaction number).
+A system may need to remember many similar attributes. For example, a 
+customer has several names: a first name, a middle name, a last name, and possibly a nickname. A compound attribute is an attribute that contains a collection of related attributes, so an analyst may choose one compound attribute to 
+represent all these names, perhaps naming it Customer full name. A customer 
+might also have several phone numbers: home phone number, office phone number, fax phone number, and cell phone number. The analyst might start out by 
+describing the most important attributes but later add to the list. Attribute lists 
+can get quite long. Some examples of attributes of a customer and the values of 
+attributes for specific customers are shown in Figure 4-3.
+■ Associations among Things
+After recording and refining the list of things and determining potential 
+attributes, the analyst needs to research and record additional information. 
+Many important relationships among things are important to the system. An 
+association is a naturally occurring relationship between specific things, such 
+as an order is placed by a customer and an employee works in a department
+(see Figure 4-4). Is placed by and works in are two associations that naturally 
+occur between specific things. Information systems need to store information about things such as employees and departments, but equally important 
+is storing information about the specific associations between those things; for 
+Figure 4-3 Attributes and 
+values
+All customers have these attributes: Each customer has a value for each attribute:
+Customer ID
+First name
+Last name
+Home phone
+Work phone
+101
+John
+Smith
+555-9182
+555-3425
+102
+Mary
+Jones
+423-1298
+423-3419
+103
+Bill
+Casper
+874-1297
+874-8546
+Figure 4-4 Associations naturally occur 
+among things
+Mr Smith
+“is placed by” “works in”
+“contains” “contains”
+401 jeans size
+34 long
+red shirt size
+16/32
+Order # 1043 Accounting Dept
+identifier or key an attribute the value of 
+which uniquely identifies an individual thing 
+or object
+compound attribute an attribute that 
+consists of multiple pieces of information but 
+is best treated in the aggregate
+association a term, in UML, that describes 
+a naturally occurring relationship between 
+specific things
+© Cengage Learning® © Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 99
+example, John works in the Accounting Department and Mary works in the 
+Marketing Department. Similarly, it is quite important to store the fact that 
+Order 1043 for a shirt was placed by John Smith. In database management, the 
+term relationship is often used in place of association, which is the term used 
+when modeling in Unified Modeling Language (UML). This book uses the term 
+association because it emphasizes UML diagrams and terms.
+Associations between things apply in two directions. For example, a customer places an order describes the association in one direction. Similarly, an 
+order is placed by a customer describes the association in the other direction. 
+It is important to understand the association in both directions because sometimes it might seem more important for the system to record the association in 
+one direction than in the other. For example, Ridgeline Mountain Outfitters 
+definitely needs to know what items a customer ordered so the shipment can be 
+prepared. However, it might not be initially apparent that the company needs to 
+know about the customers who have ordered a particular item. What if the company needs to notify all customers who ordered a defective or recalled product? 
+Knowing this information would be very important, but the operational users 
+might not immediately recognize that issue.
+It is also important to understand the nature of each association in terms 
+of the number of links for each thing and in which direction. For example, a 
+customer might place many different orders, but an order is placed by only one 
+customer. In database management, the number of links that occur is referred 
+to as the cardinality of the association. Cardinality can be one-to-one or oneto-many. The term multiplicity is used to refer to the number of links in UML 
+and should be used when discussing UML models. Multiplicity is established for 
+each direction of the association. Figure 4-5 lists examples of cardinality/multiplicity associated with an order.
+It is important to describe not just the multiplicity but also the range of 
+possible values of the multiplicity (the minimum and maximum multiplicity). 
+For example, a particular customer might not ever place an order. In this case, 
+there are zero associations. Alternatively, the customer might place one order, 
+meaning one association exists. Finally, the customer might place two, three, or 
+even more orders. The relationship for a customer placing an order can have a 
+range of zero, one, or more, usually indicated as zero or more. The zero is the 
+minimum multiplicity, and more is the maximum multiplicity. These terms are 
+referred to as multiplicity constraints.
+In some cases, at least one association is required (a mandatory as opposed 
+to optional association). For example, the system might not record any information about a customer until the customer places an order. Therefore, the multiplicity would read customer places one or more orders.
+A one-to-one association can also be refined to include minimum and maximum multiplicity. For example, an order is placed by one customer; it is impossible to have an order if there is no customer. Therefore, one is the minimum 
+Mr. Jones has placed no order yet,
+but there might be many placed
+over time.
+(Direction: Mr. Jones to Order)
+A particular order is placed by Mr.
+Smith. There can’t be an order
+without stating who the customer is.
+(Reverse direction: Order to Mr. Smith)
+An order contains at least one item,
+but it could contain many items.
+(Direction: Order to OrderItem)
+multiplicity/cardinality
+is zero or more—
+optional relationship
+multiplicity/cardinality
+is one and only one—
+mandatory relationship
+multiplicity/cardinality
+is one or more—
+mandatory relationship
+Figure 4-5 Multiplicity/cardinality 
+of associations
+cardinality a measure of the number of 
+links in a particular relationship between a 
+thing (database data entity) and one or more 
+other things (database data entities)
+relationship a term, in database management, that describes a naturally occurring 
+association between specific things
+multiplicity in UML, a measure of the 
+number of links in a particular association 
+between a thing (object) and one or more 
+other things (objects)
+multiplicity constraints the actual 
+numeric count of the constraints on things 
+(UML objects) allowed in an association
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+100 PART 2 ■ Systems Analysis Activities
+multiplicity, making the association mandatory. Because there cannot be more 
+than one customer for each order, one is also the maximum multiplicity. Sometimes, such an association is read as an order must be placed by one and only 
+one customer.
+The associations described here are between two different types of things—
+for example, a customer and an order. These are called binary associations. 
+Sometimes, an association is between two things of the same type—for example, 
+the association is married to, which is between two people. This type of association is called a unary association (and sometimes called a recursive association). Another example of a unary association is an organizational hierarchy 
+in which one organizational unit reports to another organizational unit—the 
+Packing Department reports to Shipping, which reports to Distribution, which 
+reports to Marketing.
+An association can also be among three different types of things, when it 
+is called a ternary association, or among any number of different types of 
+things, when it is called an n-ary association. For example, one particular 
+order might be associated with a specific customer plus a specific sales representative, requiring a ternary association.
+■ The Entity-Relationship Diagram
+Traditional approaches to system development place a great deal of emphasis 
+on data requirements for a new system and use the term data entities for the 
+things about which the system needs to store information. Data requirements 
+include the data entities, their attributes, and the relationships (called associations in UML) among the data entities. The brainstorming technique and noun 
+technique described earlier are used in the same way with data entities as with 
+domain classes used for UML modeling. A model commonly used by traditional 
+analysts and database analysts is called the entity-relationship diagram (ERD). 
+The ERD is not a UML diagram, but it is frequently used and is quite similar to 
+the UML domain model class diagram that is discussed later in this chapter.
+■ Examples of ERD Notation
+On the entity-relationship diagram, rectangles represent data entities, and the 
+lines connecting the rectangles show the relationships among data entities. 
+Figure 4-6 shows an example of a simplified entity-relationship diagram with 
+two data entities: Customer and Order. Each Customer can place many Orders, 
+and each Order is placed by one Customer. The cardinality is one-to-many in 
+binary associations associations 
+between exactly two distinct types of things
+unary association an association 
+between two instances of the same type 
+of thing
+ternary association an association 
+between exactly three distinct types of things
+n-ary association an association between 
+n distinct types of things
+data entities the term used in ERD modeling to describe things about which the system 
+needs to store information
+entity-relationship diagram (ERD)
+a diagram consisting of data entities, their 
+attributes, and their relationships
+an Order must be placed
+by exactly one Customer
+a Customer can place
+zero or more Orders
+Customer Order
+Figure 4-6 A simple 
+entity-relationship diagram (ERD)
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 101
+one direction and one-to-one in the other direction. The crow’s-feet symbol on 
+the line next to the Order data entity indicates many orders. But other symbols 
+on the relationship line also represent the minimum and maximum cardinality 
+constraints. See Figure 4-7 for an explanation of ERD relationship symbols. 
+The model in Figure 4-6 actually says that a Customer places a minimum of 
+zero Orders and a maximum of many Orders. Reading in the other direction, 
+the model says an Order is placed by at least one and only one Customer.
+Cardinality constraints reflect the business policies defined by management. 
+The analyst does not decide that two customers cannot share one order. Rather, 
+the analyst must discover the underlying policy and accurately represent it using 
+cardinality constraints. The analyst must be very careful not to invent policies 
+by defining arbitrary cardinality constraints. When the discovery process raises 
+policy questions that haven’t yet been answered—the analyst must raise the 
+question with management and let it decide on an appropriate policy.
+Figure 4-8 shows the model expanded to include the order items (one or 
+more specific items included on the order). Each order contains a minimum of 
+one and a maximum of many items (there could not be an order if it did not 
+contain at least one item). For example, an order might include a shirt, a pair of 
+shoes, and a belt, and each of these items is associated with the order. This example also shows some of the attributes of each data entity: A customer has a customer number, a name, a billing address, and several phone numbers. Each order 
+has an order ID, order date, and so on. Each order item has an item ID, quantity, 
+and price. The attributes of the data entity are listed below the name, with the 
+key identifier listed first, usually followed by PK to indicate primary key.
+Figure 4-9 shows how the actual data in some transactions might look. 
+John is a customer who has placed two orders. The first order, placed on February 4, was for two shirts and one belt. The second order, placed on March 29, 
+was for one pair of boots and two pairs of sandals. Mary is a customer who has 
+not yet placed an order. Recall that a customer might place zero or more orders. 
+Therefore, Mary is not associated with any orders. Finally, Sara placed an order 
+on March 30 for three pairs of sandals. The diagram shown in Figure 4-9 is 
+Figure 4-7 Cardinality symbols of 
+ERD relationships Exactly one (mandatory)
+Zero or more (optional)
+One or more (mandatory)
+Zero or one (optional)
+© Cengage Learning®
+Figure 4-8 An expanded ERD 
+with attributes shown Customer
+cust number–PK
+name
+bill address
+home phone
+office phone
+order ID–PK 
+order date
+amount
+Order OrderItem
+item ID–PK 
+quantity
+price
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+102 PART 2 ■ Systems Analysis Activities
+sometimes referred to as a semantic net. A semantic net shows specific objects 
+that belong to a class or data entity and the links among them. A semantic net 
+is useful for thinking through and verifying the entities and relationships in an 
+ERD and the classes and associations in a class diagram (discussed next).
+Another example is shown in Figure 4-10. This ERD is for a bank that 
+has many branches. Each branch has one or more accounts. Each account is 
+owned by one customer and results in one or more transactions. There are a few 
+other issues to consider in the bank example. First, there is no data entity named 
+Bank. That is because the ERD shows data storage requirements for the bank. 
+There is only one bank. Therefore, there is no need to include Bank in the model. 
+This is a general rule that applies to ERDs. If the system were for state bank 
+regulators, then Bank would be an important data entity because there are lots 
+of banks under the state regulators’ jurisdiction.
+semantic net a graphical representation of 
+an individual data entity and its relationship 
+with other individual data entities
+Figure 4-9 Semantic net of 
+customers, orders, and order items 
+consistent with the expanded ERD
+John
+Mary
+Sara
+no orders for
+Mary yet!
+Order: 3 March 30
+Order: 1 Feb 4
+Order: 2 March 29
+First shirt
+Second shirt
+Belt
+Boots
+First sandals
+Second sandals
+Third sandals
+First sandals
+Second sandals
+© Cengage Learning®
+Figure 4-10 An ERD for a bank 
+with many branches
+branch ID–PK
+manager name
+location
+main phone
+account ID–PK
+account type
+date opened
+balance
+cust number–PK
+name
+bill address
+home phone
+office phone
+Customer Account Branch
+trans ID–PK
+trans date
+trans type
+trans amount
+Transaction
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 103
+Look again at the cardinality. Note that a customer must have at least 
+one account. The rationale for this is that the bank would not add a customer 
+unless he or she was adding an account. Note also that the branch can have zero 
+accounts. A branch might be added long before it opens its doors, so it is possible 
+that it is does not have any accounts. Additionally, there might be some branches 
+that do not have accounts, such as a kiosk at a university or airport. Note that 
+an account must have at least one transaction. The rationale is that opening a 
+new account requires an initial deposit, which is a transaction. It is important to 
+recognize that questions about the cardinality and minimum and maximum cardinality constraints need to be discussed and reviewed with stakeholders.
+■ The Domain Model Class Diagram
+As discussed previously, many current approaches to system development use 
+the term domain class rather than data entity and use concepts and notations 
+based on UML to model the things in the problem domain. These concepts come 
+from the object-oriented approach to system development. A class is a category 
+or classification used to describe a collection of objects. Each object belongs to 
+a class. Therefore, students Mary, Joe, and Maria belong to the class Student. 
+Classes that describe things in the problem domain are called domain classes. 
+Domain classes have attributes and associations. Multiplicity (called cardinality 
+in an ERD) applies among classes. Initially, when defining requirements, the 
+approach to modeling is very similar whether the analyst is using ERD or UML 
+diagrams.
+The UML class diagram is used to show classes of objects for a system. 
+One type of UML class diagram that shows the things in the users’ problem 
+domain is called the domain model class diagram. Another type of UML 
+class diagram is called the design class diagram, and it is used when designing 
+software classes. You will learn about the design class diagram in Chapter 12.
+On a class diagram, rectangles represent classes, and the lines connecting 
+the rectangles show the associations among classes. Figure 4-11 shows such a 
+symbol for a single domain class: Customer. The domain class symbol is a rectangle with two sections. The top section contains the name of the class, and 
+the bottom section lists the attributes of the class. Later, you will learn that the 
+design class symbol includes a third section at the bottom for listing methods of 
+the class; methods do not apply to problem domain classes.
+Class names and attribute names use camelback (sometimes called 
+camelcase) notation, in which the words run together without a space or underscore. Class names begin with a capital letter; attribute names begin with a lowercase letter (see Figure 4-11). Class diagrams are drawn by showing classes and 
+associations among classes. The examples used previously for the entity-relationship diagram are redrawn by using UML domain class diagram notation in the following section so you can compare them. Additionally, more complex issues about 
+classes and associations can be illustrated by using domain model class diagrams. Figure 4-12 shows a simplified domain model class diagram with three classes: 
+Customer, Order, and OrderItem (just like the example of an ERD shown in 
+Figure 4-8). Here, each class symbol includes two sections. In diagram notation, you see that each Customer can place many Orders (a minimum of zero 
+and a maximum of many) and that each Order is placed by one Customer. The 
+associations places and consists of can be included on the diagram for clarity, 
+as shown in Figure 4-12, but this detail is optional. The multiplicity is one-tomany in one direction and one-to-one in the other direction. The multiplicity 
+notation, shown as an asterisk on the line next to the Order class, indicates 
+many orders. The other association shows that an Order consists of one or more 
+OrderItems, and each OrderItem is associated with one Order.
+See Figure 4-13 for a summary of multiplicity notation.
+Figure 4-14 shows another example of a domain model class diagram, this 
+one for the bank with multiple branches that was discussed earlier and shown as 
+an ERD. In this example, the UML notation for indicating an attribute that is 
+an identifier or key is {key}.
+Figure 4-15 shows an example of a domain model class diagram with a 
+many-to-many association. At a university, courses are offered as course sections, and a student enrolls in many course sections. Each course section contains many students. Therefore, the association between CourseSection and 
+Student is many-to-many. There are situations in which many-to-many associations are appropriate, and they can be modeled as shown.
+On closer analysis, analysts often discover that many-to-many associations 
+involve additional data that are important and must be stored. For example, in 
+Figure 4-15, where is the grade that each student receives for the course stored? 
+This is important data, and although the model indicates which course section 
+a student took, it does not have a place for the grade. Grade isn’t an attribute of 
+CourseSection alone. Nor is it an attribute of Student alone. Rather, it’s an attribute of the association between CourseSection and StudentGrade.
+orderID
+orderDate
+amount
+Order
+itemID
+quantity
+price
+OrderItem
+custNumber
+name
+billAddress
+homePhone
+officePhone
+Customer
+1 0..* 1 1..*
+places consists of
+Figure 4-12 A simple domain 
+model class diagram
+© Cengage Learning®
+Figure 4-13 UML notation for 
+multiplicity of associations
+© Cengage Learning®
+Zero or more
+(optional)
+One or more
+(mandatory)
+One and only one
+(mandatory)
+One and only one
+alternate
+(mandatory)
+Zero or more
+alternate
+(optional)
+Zero or one
+(optional)
+1
+0..1 0..*
+1..1 1..*
+*
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 4 ■ Domain Modeling 105
+Adding a domain class, called an association class, to represent the association between Student and CourseSection provides a place in which to store 
+the missing attribute for grade. Figure 4-16 shows the expanded class diagram, 
+with an association class named CourseEnrollment, which has an attribute for 
+the student’s grade. A dashed line connects the association class with the association line between the CourseSection and Student classes.
+Reading the association in Figure 4-16 from left to right, one course section has many course enrollments—each with its own grade—and each course 
+enrollment applies to one specific student. Reading from right to left, one student has many course enrollments—each with its own grade—and each course 
+enrollment applies to one specific course section. A database implemented by 
+using this model will be able to produce grade lists showing all students and 
+their grades in each course section as well as grade transcripts showing all 
+grades earned by each student.
+Figure 4-14 A domain model 
+class diagram for a bank
+© Cengage Learning®
+account ID {key}
+accountType
+dateOpened
+balance
+Account
+transID {key}
+transDate
+transType
+transAmount
+Transaction
+branchID {key}
+managerName
+branchLocation
+mainPhone
+Branch
+custNumber {key}
+fullName
+billAddress
+homePhone
+officePhone
+Customer
+1 1..*
+1
+1..*
+0..* 1
+Figure 4-15 A university course 
+enrollment domain model class 
+diagram with a many-to-many 
+association
+© Cengage Learning®
+sectionNumber
+startTime
+roomNumber
+CourseSection
+studentID
+name
+major
+Student
+courseNumber
+title
+creditHours
+Course
+0..*
+1
+0..*
+0..*
+association class an association that is 
+also treated as a class; often required in order 
+to capture attributes for the association
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+106 PART 2 ■ Systems Analysis Activities
+Another example of a domain model class diagram with a many-to-many 
+association is shown in Figure 4-17. A band has one or more band members, 
+and in this case a band member is in one and only one band. The many-to-many 
+association is between the classes Band and Concert. A band is booked for zero 
+or more concerts, and a concert books one or more bands. Note that on the 
+minimum multiplicities, a band might not have any concerts booked at a given 
+time, but a concert is ordinarily created only when at least one band is booked. 
+These minimum multiplicities can seem somewhat arbitrary, although they do 
+convey important information for programmers and database analysts. Be sure 
+it is the policymakers who make the decisions about multiplicity constraints.
+Looking more closely at the many-to-many association, the analyst might 
+ask if there is some additional information about the booking that needs to be 
+captured and remembered by the system. Is it important to store the base pay 
+expected for the booking? Pay differs for each concert. Is it important to store the 
+order of performances at the concert? Some booking might be main act and some 
+might be opening act. Figure 4-18 shows a refined domain model class diagramthat adds an associative class named Booking that includes attributes dateBooked, 
+performanceOrder, and basePay. Reading from Band to Concert, the diagram 
+says one band is booked July 7 as a main act for $4,500 (from Booking class) 
+for a concert on July 28 at the Downtown Concert House (from Concert class). 
+Again reading from Band to Concert, the diagram says another band is booked 
+July 9 as the opening act for $2,500 (from Booking class) for a concert on July 28 
+at the Downtown Concert House (from Concert class).
+■ More Complex Issues about Classes of Objects
+Previously, you learned about associations between domain classes. In UML, 
+an association is one of many types of relationships, so you need to be more 
+precise when discussing UML diagrams than when discussing ERDs. With 
+class diagrams, there are actually three types of relationships among classes 
+of objects: association relationships (discussed previously), generalization/
+specialization relationships, and whole-part relationships. This section discusses 
+generalization/specialization relationships and whole-part relationships and 
+shows how they are represented in UML class diagrams.
+❚ Generalization/Specialization Relationships
+Generalization/specialization relationships are based on the idea that people 
+classify things in terms of similarities and differences. Generalizations are judgments that group similar types of things. For example, there are several types of 
+motor vehicles: cars, trucks, and tractors. All motor vehicles share certain general 
+characteristics, so a motor vehicle is a more general class. Specializations are judgments that group different types of things. For example, special types of cars include 
+sports cars, sedans, and sport utility vehicles. These types of cars are similar in some 
+ways yet different in other ways. Therefore, a sports car is a special type of car.
+A generalization/specialization relationship is used to structure or rank 
+these things from the more general to the more special. As discussed previously, classification refers to defining classes of things. Each class of things in 
+the hierarchy might have a more general class above it, called a superclass. 
+At the same time, a class might have a more specialized class below it, called a 
+subclass. In Figure 4-19, the class Car has three subclasses and one superclass 
+(MotorVehicle). UML class diagram notation uses a triangle that points to the 
+superclass to show a generalization/specialization hierarchy.
+memberName
+yearsInBand
+instrument
+BandMember
+bandName
+style
+yearFormed
+Band
+concertDate
+location
+audienceCapacity
+startTime
+priceRange
+Concert
+dateBooked
+performanceOrder
+basePay
+Booking
+1..*
+0..*
+1..* 1..1
+Figure 4-18 A refined band 
+booking domain model class 
+diagram with an association class
+© Cengage Learning®
+generalization/specialization relationships
+a type of hierarchical relationship in which 
+subordinate classes are subsets of objects of 
+the superior classes; an inheritance hierarchy
+superclass the superior or more general 
+class in a generalization/specialization 
+relationship
+subclass the subordinate or more specialized class in a generalization/specialization 
+relationship
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+108 PART 2 ■ Systems Analysis Activities
+We mentioned that people structure their understanding by using generalization/specialization relationships. In other words, people learn by refining 
+the classifications they make about some field of knowledge. A knowledgeable 
+banker can talk at length about special types of loans and deposit accounts. 
+A knowledgeable merchandiser like John Blankens at Ridgeline Mountain 
+Outfitters can talk at length about special types of outdoor activities and 
+clothes. Therefore, when asking users about their work, the analyst is trying to 
+understand the knowledge the user has about the work, which the analyst can 
+represent by constructing generalization/specialization relationships. At some 
+level, the motivation for the new CSMS project at RMO started with John’s recognition that Ridgeline Mountain Outfitters might handle many special types of 
+sales with a new system (online sales, telephone sales, and in-store sales). These 
+special types of sales are shown in Figure 4-20.
+Inheritance allows subclasses to share characteristics of their superclass. 
+Returning to Figure 4-19, a car is everything any other motor vehicle is but also 
+something special. A sports car is everything any other car is but also something 
+special. In this way, the subclass “inherits” the characteristics of the superclass. In 
+the object-oriented approach, inheritance is a key concept that is possible because 
+of generalization/specialization hierarchies. Sometimes, these are referred to as 
+inheritance relationships. Another term often used to describe generalization/
+specialization is an “ISA” relationship. In other words, it makes sense to say, “a 
+Sedan IS A special type of Car and a Car IS A special type of MotorVehicle.”
+Consider Figure 4-20, which represents a partial domain model for a retail 
+business such as RMO. Attributes are included for each class in the hierarchy. Each 
+member of the Sale class has a saleDateTime attribute and a priorityCode attribute. 
+Each InStoreSale has a storeID, clerkID, and registerID, but an OnlineSale and a 
+TelephoneSale have other attributes. OnlineSale, InStoreSale, and TelephoneSale 
+inherit the attributes from Sale, plus they have some special attributes of their own. 
+An OnlineSale actually has eight attributes (six from Sale and two additional). 
+An InStoreSale has nine attributes, and a TelephoneSale has eight attributes.
+Figure 4-19 Generalization/specialization relationships for motor vehicles
+Truck Tractor
+MotorVehicle
+SportsCar Sedan SportUtility
+Car
+Trucks, cars, and tractors
+are special types of motor
+vehicles
+Sports cars, sedans, and
+sport utilities are special
+types of cars
+© Cengage Learning®
+inheritance the concept that specialization classes inherit characteristics of the 
+generalization class
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter

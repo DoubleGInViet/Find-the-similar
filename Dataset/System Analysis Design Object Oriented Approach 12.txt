@@ -1,0 +1,552 @@
+﻿plans go out the window.13 Th e best you can do is to react to where the proverbial rugby 
+ball squirts out. You then sprint with the ball until the next scrum. In the case of the Scrum 
+methodology, a sprint lasts thirty working days. At the end of the sprint, a system is delivered to the customer.
+Of all systems development approaches, on the surface, Scrum is the most chaotic. To 
+control some of the innate chaos, Scrum development focuses on a few key practices. Teams 
+are self-organized and self-directed. Unlike other approaches, Scrum teams do not have a designated team leader. Instead, teams organize themselves in a symbiotic manner and set their 
+own goals for each sprint (iteration). Once a sprint has begun, Scrum teams do not consider 
+any additional requirements. Any new requirements that are uncovered are placed on a backlog of requirements that still need to be addressed. At the beginning of every workday, a Scrum 
+meeting takes place. At the end of each sprint, the team demonstrates the soft ware to the client. 
+Based on the results of the sprint, a new plan is begun for the next sprint.
+Scrum meetings are one of the most interesting aspects of the Scrum development process. Th e team members attend the meetings, but anyone can attend. However, with very 
+few exceptions, only team members may speak. One prominent exception is management 
+providing feedback on the business relevance of the work being performed by the specifi c 
+team. In this meeting, all team members stand in a circle and report on what they accomplished during the previous day, state what they plan to do today, and describe anything 
+that blocked progress the previous day. To enable continuous progress, any block identifi ed 
+is dealt with within one hour. From a Scrum point of view, it is better to make a “bad” decision about a block at this point in development than to not make a decision. Because the 
+meetings take place each day, a bad decision can easily be undone. Larman14 suggests that 
+each team member should report any additional requirements that have been uncovered 
+during the sprint and anything that the team member learned that could be useful for other 
+team members to know.
+One of the major criticisms of Scrum, as with all agile methodologies, is that it is questionable whether Scrum can scale up to develop very large, mission-critical systems. A typical 
+Scrum team size is no more than seven members. Th e only organizing principle put forth by 
+Scrum followers to address this criticism is to organize a scrum of scrums. Each team meets 
+every day, and aft er the team meeting takes place, a representative (not leader) of each team 
+attends a scrum-of-scrums meeting. Th is continues until the progress of entire system has 
+been determined. Depending on the number of teams involved, this approach to managing a 
+large project is doubtful. However, as in XP and other agile development approaches, many 
+of the ideas and techniques associated with Scrum development are useful in object-oriented 
+systems development, such as the focus of a Scrum meeting, the evolutionary and incremental approach to identifying requirements, and the incremental and iterative approach to the 
+development of the system.
+Selecting the Appropriate Development Methodology
+Because there are many methodologies, the fi rst challenge faced by analysts is selecting which 
+methodology to use. Choosing a methodology is not simple, because no one methodology is 
+always best. (If it were, we’d simply use it everywhere!) Many organizations have standards 
+and policies to guide the choice of methodology. You will fi nd that organizations range from 
+13 Scrum developers are not the fi rst to question the use of plans. One of President Eisenhower’s favorite maxims 
+was, “In preparing for battle I have always found that plans are useless, but planning is indispensable.” M. Dobson, 
+Streetwise Project Management: How to Manage People, Processes, and Time to Achieve the Results You Need (Avon, 
+MA: F+W Publications, 2003), p. 43.
+14 C. Larman, Agile & Iterative Development: A Manager’s Guide (Boston: Addison-Wesley, 2004).
+16 Chapter 1 Introduction to Systems Analysis and Design
+having one “approved” methodology to having several methodology options to having no 
+formal policies at all.
+Figure 1-8 summarizes some important criteria for selecting a methodology. One important item not discussed in this fi gure is the degree of experience of the analyst team. Many 
+of the RAD-based methodologies require the use of new tools and techniques that have a 
+signifi cant learning curve. Oft en these tools and techniques increase the complexity of the 
+project and require extra time for learning. However, once they are adopted and the team 
+becomes experienced, the tools and techniques can signifi cantly increase the speed at which 
+the methodology can deliver a fi nal system.
+Clarity of User Requirements When the user requirements for a system are unclear, it is 
+diffi cult to understand them by talking about them and explaining them with written reports. 
+Users normally need to interact with technology to really understand what a new system can 
+do and how to best apply it to their needs. RAD and agile methodologies are usually more 
+appropriate when user requirements are unclear.
+Familiarity with Technology When the system will use new technology with which the analysts and programmers are not familiar, early application of the new technology in the methodology will improve the chance of success. If the system is designed without some familiarity 
+with the base technology, risks increase because the tools might not be capable of doing what 
+is needed. Th rowaway prototyping-based methodologies are particularly appropriate if users 
+lack familiarity with technology because they explicitly encourage the developers to develop 
+design prototypes for areas with high risks. Phased development-based methodologies create 
+opportunities to investigate the technology in some depth before the design is complete. Also, 
+owing to the programming-centric nature of agile methodologies, both XP and Scrum are 
+appropriate. Although you might think prototyping-based methodologies are also appropriate, 
+they are much less so because the early prototypes that are built usually only scratch the surface 
+of the new technology. It is generally only aft er several prototypes and several months that the 
+developers discover weaknesses or problems in the new technology.
+System Complexity Complex systems require careful and detailed analysis and design. 
+Th rowaway prototyping-based methodologies are particularly well suited to such detailed 
+analysis and design, but prototyping-based methodologies are not. Th e traditional structured 
+Ability to Develop 
+Systems
+Structured 
+Methodologies RAD Methodologies
+Agile 
+Methodologies
+Waterfall Parallel Phased Prototyping
+Throwaway 
+Prototyping XP SCRUM
+With Unclear User Requirements Poor Poor Good Excellent Excellent Excellent Excellent
+With Unfamiliar Technology Poor Poor Good Poor Excellent Good Good
+That Are Complex Good Good Good Poor Excellent Good Good
+That Are Reliable Good Good Good Poor Excellent Excellent Excellent
+With a Short Time Schedule Poor Good Excellent Excellent Good Excellent Excellent
+With Schedule Visibility Poor Poor Excellent Excellent Good Excellent Excellent
+FIGURE 1-8  Criteria for Selecting a Methodology
+Typical Systems Analyst Roles and Skills  17
+design-based methodologies can handle complex systems, but without the ability to get the 
+system or prototypes into the users’ hands early on, some key issues may be overlooked. 
+Although phased development-based methodologies enable users to interact with the system 
+early in the process, we have observed that project teams who follow these tend to devote less 
+attention to the analysis of the complete problem domain than they might using other methodologies. Finally, agile methodologies are a mixed bag when it comes to system complexity. 
+If the system is going to be a large one, agile methodologies will perform poorly. However, 
+if the system is small to medium size, then agile approaches will be excellent. We rate them 
+good on these criteria.
+System Reliability System reliability is usually an important factor in system development; 
+aft er all, who wants an unreliable system? However, reliability is just one factor among 
+several. For some applications, reliability is truly critical (e.g., medical equipment, missile-control systems), whereas for other applications (e.g., games, Internet video) it is merely 
+important. Because throwaway prototyping methodologies combine detailed analysis and 
+design phases with the ability for the project team to test many diff erent approaches through 
+design prototypes before completing the design, they are appropriate when system reliability 
+is a high priority. Prototyping methodologies are generally not a good choice when reliability 
+is critical because it lacks the careful analysis and design phases that are essential for dependable systems. However, owing to the heavy focus on testing, evolutionary and incremental 
+identifi cation of requirements, and iterative and incremental development, agile methods 
+may be the best overall approach.
+Short Time Schedules RAD-based and agile methodologies are excellent choices when 
+timelines are short because they best enable the project team to adjust the functionality in 
+the system based on a specifi c delivery date, and if the project schedule starts to slip, it can 
+be readjusted by removing functionality from the version or prototype under development. 
+Waterfall-based methodologies are the worst choice when time is at a premium because they 
+do not allow easy schedule changes.
+Schedule Visibility One of the greatest challenges in systems development is determining 
+whether a project is on schedule. Th is is particularly true of the structured design methodologies because design and implementation occur at the end of the project. Th e RAD-based 
+methodologies move many of the critical design decisions earlier in the project to help project 
+managers recognize and address risk factors and keep expectations in check. However, given 
+the daily progress meetings associated with Agile approaches, schedule visibility is always on 
+the proverbial front burner.
+TYPICAL SYSTEMS ANALYST ROLES AND SKILLS
+It is clear from the various phases and steps performed during the SDLC that the project team 
+needs a variety of skills. Project members are change agents who identify ways to improve an 
+organization, build an information system to support them, and train and motivate others to 
+use the system. Understanding what to change and how to change it—and convincing others 
+of the need for change—requires a wide range of skills. Th ese skills can be broken down into 
+six major categories: technical, business, analytical, interpersonal, management, and ethical.
+Analysts must have the technical skills to understand the organization’s existing technical environment, the technology that will make up the new system, and the way both can fi t 
+into an integrated technical solution. Business skills are required to understand how IT can be 
+18 Chapter 1 Introduction to Systems Analysis and Design
+applied to business situations and to ensure that the IT delivers real business value. Analysts 
+are continuous problem solvers at both the project and the organizational level, and they put 
+their analytical skills to the test regularly.
+Analysts oft en need to communicate eff ectively one-on-one with users and business managers (who oft en have little experience with technology) and with programmers (who oft en have 
+more technical expertise than the analyst). Th ey must be able to give presentations to large and 
+small groups and write reports. Not only do they need to have strong interpersonal abilities, but 
+they also need to manage people with whom they work and they need to manage the pressure 
+and risks associated with unclear situations.
+Finally, analysts must deal fairly, honestly, and ethically with other project team members, managers, and system users. Analysts oft en deal with confi dential information or information that, if shared with others, could cause harm (e.g., dissent among employees); it is 
+important to maintain confi dence and trust with all people.
+In addition to these six general skill sets, analysts require many specifi c skills associated 
+with roles performed on a project. In the early days of systems development, most organizations expected one person, the analyst, to have all the specifi c skills needed to conduct a systems development project. Some small organizations still expect one person to perform many 
+roles, but because organizations and technology have become more complex, most large 
+organizations now build project teams containing several individuals with clearly defi ned 
+responsibilities. Diff erent organizations divide the roles diff erently. Most IS teams include 
+many other individuals, such as the programmers, who actually write the programs that make 
+up the system, and technical writers, who prepare the help screens and other documentation 
+(e.g., users manuals and systems manuals).
+Business Analyst
+A business analyst focuses on the business issues surrounding the system. Th ese issues include 
+identifying the business value that the system will create, developing ideas and suggestions for 
+how the business processes can be improved, and designing the new processes and policies in 
+conjunction with the systems analyst. Th is individual likely has business experience and some 
+type of professional training. He or she represents the interests of the project sponsor and the 
+ultimate users of the system. A business analyst assists in the planning and design phases but is 
+most active in the analysis phase.
+Systems Analyst
+A systems analyst focuses on the IS issues surrounding the system. Th is person develops ideas 
+and suggestions for how information technology can improve business processes, designs the 
+new business processes with help from the business analyst, designs the new information system, and ensures that all IS standards are maintained. A systems analyst likely has signifi cant 
+training and experience in analysis and design, programming, and even areas of the business. 
+He or she represents the interests of the IS department and works intensively through the project but perhaps less so during the implementation phase.
+Infrastructure Analyst
+An infrastructure analyst focuses on the technical issues surrounding how the system will 
+interact with the organization’s technical infrastructure (e.g., hardware, soft ware, networks, 
+and databases). An infrastructure analyst’s tasks include ensuring that the new information 
+system conforms to organizational standards and identifying infrastructure changes needed 
+to support the system. Th is individual probably has signifi cant training and experience in 
+Basic Characteristics of Object-Oriented Systems  19
+networking, database administration, and various hardware and soft ware products. He or 
+she represents the interests of the organization and IS group that will ultimately have to 
+operate and support the new system once it has been installed. An infrastructure analyst 
+works throughout the project but perhaps less so during planning and analysis phases.
+Change Management Analyst
+A change management analyst focuses on the people and management issues surrounding 
+the system installation. Th e roles of this person include ensuring that the adequate documentation and support are available to users, providing user training on the new system, and 
+developing strategies to overcome resistance to change. Th is individual should have signifi -
+cant training and experience in organizational behavior in general and change management 
+in particular. He or she represents the interests of the project sponsor and users for whom 
+the system is being designed. A change management analyst works most actively during the 
+implementation phase but begins laying the groundwork for change during the analysis and 
+design phases.
+Project Manager
+A project manager is responsible for ensuring that the project is completed on time and within 
+budget and that the system delivers all benefi ts intended by the project sponsor. Th e role 
+of the project manager includes managing the team members, developing the project plan, 
+assigning resources, and being the primary point of contact when people outside the team 
+have questions about the project. Th is individual likely has signifi cant experience in project 
+management and has probably worked for many years as a systems analyst beforehand. He 
+or she represents the interests of the IS department and the project sponsor. Th e project manager works intensely during all phases of the project.
+BASIC CHARACTERISTICS OF OBJECT-ORIENTED SYSTEMS
+Object-oriented systems focus on capturing the structure and behavior of information systems in little modules that encompass both data and process. Th ese little modules are known 
+as objects. In this section, we describe the basic characteristics of object-oriented systems, 
+which include classes, objects, methods, messages, encapsulation, information hiding, inheritance, polymorphism, and dynamic binding.15
+Classes and Objects
+A class is the general template we use to defi ne and create specifi c instances, or objects. Every 
+object is associated with a class. For example, all the objects that capture information about 
+patients could fall into a class called Patient, because there are attributes (e.g., name, address, 
+birth date, phone, and insurance carrier) and methods (e.g., make appointment, calculate last 
+visit, change status, and provide medical history) that all patients share (see Figure 1-9).
+An object is an instantiation of a class. In other words, an object is a person, place, or 
+thing about which we want to capture information. If we were building an appointment system for a doctor’s offi ce, classes might include Doctor, Patient, and Appointment. Th e specifi c 
+patients, such as Jim Maloney, Mary Wilson, and Th eresa Marks, are considered instances, or 
+objects, of the patient class (see Figure 1-9).
+15 In Chapter 8, we review the basic characteristics of object-oriented systems in more detail.
+20 Chapter 1 Introduction to Systems Analysis and Design
+Each object has attributes that describe information about the object, such as a patient’s 
+name, birth date, address, and phone number. Attributes are also used to represent relationships between objects; for example, there could be a department attribute in an employee 
+object with a value of a department object that captures in which department the employee 
+object works. Th e state of an object is defi ned by the value of its attributes and its relationships 
+with other objects at a particular point in time. For example, a patient might have a state of 
+new or current or former.
+Each object also has behaviors. Th e behaviors specify what the object can do. For example, an appointment object can probably schedule a new appointment, delete an appointment, 
+and locate the next available appointment. In object-oriented programming, behaviors are 
+implemented as methods (see the next section).
+One of the more confusing aspects of object-oriented systems development is the fact 
+that in most object-oriented programming languages, both classes and instances of classes 
+can have attributes and methods. Class attributes and methods tend to be used to model 
+attributes (or methods) that deal with issues related to all instances of the class. For example, 
+to create a new patient object, a message is sent to the Patient class to create a new instance 
+of itself. However, in this book, we focus primarily on attributes and methods of objects and 
+not of classes.
+Methods and Messages
+Methods implement an object’s behavior. A method is nothing more than an action that an 
+object can perform. Messages are information sent to objects to trigger methods. A message 
+is essentially a function or procedure call from one object to another object. For example, if a 
+patient is new to the doctor’s offi ce, the receptionist sends a create message to the application. 
+Th e patient class receives the create message and executes its create() method which then 
+creates a new object: aPatient (see Figure 1-10).
+Encapsulation and Information Hiding
+Th e ideas of encapsulation and information hiding are interrelated in object-oriented systems. 
+However, neither of the terms is new. Encapsulation is simply the combination of process 
+and data into a single entity. Information hiding was fi rst promoted in structured systems 
+development. Th e principle of information hiding suggests that only the information 
+FIGURE 1-9
+Classes and Objects
+Patient
+-name
+-address
+-birthdate
+-phone
+-insurance carrier
++make appointment()
++calculate last visit()
++change status()
++provides medical history()
++create()
+Jim Maloney : Patient Mary Wilson : Patient Theresa Marks : Patient
+Basic Characteristics of Object-Oriented Systems  21
+required to use a soft ware module be published to the user of the module. Typically, this 
+implies that the information required to be passed to the module and the information 
+returned from the module are published. Exactly how the module implements the required 
+functionality is not relevant. We really do not care how the object performs its functions, 
+as long as the functions occur. In object-oriented systems, combining encapsulation with the 
+ information-hiding principle supports treating objects as black boxes.
+Th e fact that we can use an object by calling methods is the key to reusability because it 
+shields the internal workings of the object from changes in the outside system, and it keeps 
+the system from being aff ected when changes are made to an object. In Figure 1-10, notice 
+how a message (create) is sent to an object, yet the internal algorithms needed to respond to 
+the message are hidden from other parts of the system. Th e only information that an object 
+needs to know is the set of operations, or methods, that other objects can perform and what 
+messages need to be sent to trigger them.
+Inheritance
+Inheritance, as an information systems development characteristic, was proposed in data 
+modeling in the late 1970s and the early 1980s. Th e data modeling literature suggests using 
+inheritance to identify higher-level, or more general, classes of objects. Common sets of 
+attributes and methods can be organized into superclasses. Typically, classes are arranged in 
+a hierarchy whereby the superclasses, or general classes, are at the top and the subclasses, or 
+specifi c classes, are at the bottom. In Figure 1-11, Person is a superclass to the classes Doctor 
+and Patient. Doctor, in turn, is a superclass to General Practitioner and Specialist. Notice how 
+a class (e.g., Doctor) can serve as a superclass and subclass concurrently. Th e relationship 
+between the class and its superclass is known as the a-kind-of relationship. For example in 
+Figure 1-11, a General Practitioner is a-kind-of Doctor, which is a-kind-of Person.
+Subclasses inherit the appropriate attributes and methods from the superclasses above 
+them. Th at is, each subclass contains attributes and methods from its parent superclass. For 
+example, Figure 1-11 shows that both Doctor and Patient are subclasses of Person and therefore inherit the attributes and methods of the Person class. Inheritance makes it simpler to 
+defi ne classes. Instead of repeating the attributes and methods in the Doctor and Patient classes 
+separately, the attributes and methods that are common to both are placed in the Person class 
+and inherited by the classes below it. Notice how much more effi cient inheritance hierarchies 
+of object classes are than the same objects without an inheritance hierarchy (see Figure 1-12).
+Most classes throughout a hierarchy lead to instances; any class that has instances 
+is called a concrete class. For example, if Mary Wilson and Jim Maloney are instances of 
+the Patient class, Patient would be considered a concrete class (see Figure 1-9). Some 
+classes do not produce instances because they are used merely as templates for other, 
+FIGURE 1-10
+Messages and 
+Methods
+Receptionist
+create
+Patient
+-name
+-address
+-birthdate
+-phone
+-insurance carrier
++make appointment()
++calculate last visit()
++change status()
++provides medical history()
++create()
+aPatient
+22 Chapter 1 Introduction to Systems Analysis and Design
+more-specific classes (especially classes located high up in a hierarchy). The classes are 
+referred to as abstract classes. Person is an example of an abstract class. Instead of creating 
+objects from Person, we create instances representing the more-specifi c classes of Specialist 
+and Patient, both types of Person (see Figure 1-11). 
+Polymorphism and Dynamic Binding
+Polymorphism means that the same message can be interpreted diff erently by diff erent 
+classes of objects. For example, inserting a patient means something diff erent than inserting 
+an appointment. Th erefore, diff erent pieces of information need to be collected and stored. 
+Luckily, we do not have to be concerned with how something is done when using objects. 
+We can simply send a message to an object, and that object will be responsible for interpreting the message appropriately. For example, if an artist sent the message Draw yourself to a 
+FIGURE 1-11
+Class Hierarchy 
+with Abstract and 
+Concrete Classes
+Person
+Doctor Patient
+General Practitioner Specialist
+Abstract classes
+Concrete classes
+FIGURE 1-12  Inheritance Advantage?
+Patient
+-name
+-address
+-birthdate
+-phone
+-insurance carrier
++updateBirthDate()
++updateInsuranceCarrier()
+Person
+-name
+-address
+-birthdate
+-phone
++updateBirthDate()
+Doctor
+Doctor
+-name
+-address
+-birthdate
+-phone
+-medicalSchoolSpecialty
++updateBirthDate()
++updateMedicalSchoolSpecialty()
+VS.
+-medicalSchoolSpecialty
++updateMedicalSchoolSpecialty()
+Patient
+-insurance carrier
++updateInsuranceCarrier()
+Object-Oriented Systems Analysis and Design (OOSAD)  23
+square object, a circle object, and a triangle object, the results would be very diff erent, even 
+though the message is the same. Notice in Figure 1-13 how each object responds appropriately (and diff erently) even though the messages are identical.
+Polymorphism is made possible through dynamic binding. Dynamic, or late, binding is 
+a technique that delays typing the object until run-time. Th e specifi c method that is actually called is not chosen by the object-oriented system until the system is running. Th is is 
+in contrast to static binding. In a statically bound system, the type of object is determined 
+at compile-time. Th erefore, the developer has to choose which method should be called 
+instead of allowing the system to do it. Th is is why most traditional programming languages have complicated decision logic based on the diff erent types of objects in a system. 
+For example, in a traditional programming language, instead of sending the message Draw 
+yourself to the diff erent types of graphical objects in Figure 1-13, we would have to write 
+decision logic using a case statement or a set of if statements to determine what kind of 
+graphical object we wanted to draw, and we would have to name each draw function differently (e.g., draw square, draw circle, or draw triangle). Th is obviously makes the system 
+much more complicated and diffi cult to understand.
+OBJECT-ORIENTED SYSTEMS ANALYSIS AND DESIGN (OOSAD)
+Object-oriented approaches to developing information systems, technically speaking, can use 
+any of the traditional methodologies. However, the object-oriented approaches are most associated with a phased development RAD or agile methodology. Th e primary diff erence between 
+a traditional approach like structured design and an object-oriented approach is how a problem is decomposed. In traditional approaches, the problem-decomposition process is either 
+ process-centric or data-centric. However, processes and data are so closely related that it is 
+diffi cult to pick one or the other as the primary focus. Based on this lack of congruence with the 
+real world, new object-oriented methodologies have emerged that use the RAD-based sequence 
+of SDLC phases but attempt to balance the emphasis between process and data by focusing the 
+decomposition of problems on objects that contain both data and processes.
+FIGURE 1-13
+Polymorphism
+DrawYourself
+DrawYourself 
+DrawYourself
+aTriangle
+aSquare
+aCircle
+anArtist
+24 Chapter 1 Introduction to Systems Analysis and Design
+16 Grady Booch, Ivar Jacobson, and James Rumbaugh, Th e Unifi ed Modeling Language User Guide (Reading, MA: 
+Addison-Wesley, 1999).
+17 For those of you who have experience with traditional structured analysis and design, this is one of the most unusual 
+aspects of object-oriented analysis and design using UML. Unlike structured approaches, object-oriented approaches 
+stress focusing on just one use case at a time and distributing that single use case over a set of communicating and 
+collaborating objects.
+According to the creators of the Unifi ed Modeling Language (UML), Grady Booch, Ivar 
+Jacobson, and James Rumbaugh,16 any modern object-oriented approach to developing information systems must be use-case driven, architecture-centric, and iterative and incremental.
+Use-Case Driven
+Use-case driven means that use cases are the primary modeling tools defi ning the behavior of 
+the system. A use case describes how the user interacts with the system to perform some activity, such as placing an order, making a reservation, or searching for information. Th e use cases 
+are used to identify and to communicate the requirements for the system to the programmers 
+who must write the system. Use cases are inherently simple because they focus on only one 
+business process at a time. In contrast, the process model diagrams used by traditional structured and RAD methodologies are far more complex because they require the systems analyst 
+and user to develop models of the entire system. With traditional methodologies, each system 
+is decomposed into a set of subsystems, which are, in turn, decomposed into further subsystems, and so on. Th is goes on until no further process decomposition makes sense, and it oft en 
+requires dozens of pages of interlocking diagrams. In contrast, a use case focuses on only one 
+business process at a time, so developing models is much simpler.17
+Architecture-Centric
+Any modern approach to systems analysis and design should be architecture-centric.
+Architecture-centric means that the underlying soft ware architecture of the evolving system 
+specifi cation drives the specifi cation, construction, and documentation of the system. Modern 
+object-oriented systems analysis and design approaches should support at least three separate 
+but interrelated architectural views of a system: functional, static, and dynamic. Th e functional,
+or external, view describes the behavior of the system from the perspective of the user. Th e 
+structural, or static, view describes the system in terms of attributes, methods, classes, and 
+relationships. Th e behavioral, or dynamic, view describes the behavior of the system in terms 
+of messages passed among objects and state changes within an object.
+Iterative and Incremental
+Modern object-oriented systems analysis and design approaches emphasize iterative and 
+incremental development that undergoes continuous testing and refi nement throughout the 
+life of the project. Th is implies that the systems analysts develop their understanding of a 
+user’s problem by building up the three architectural views little by little. Th e systems analyst 
+does this by working with the user to create a functional representation of the system under 
+study. Next, the analyst attempts to build a structural representation of the evolving system. 
+Using the structural representation of the system, the analyst distributes the functionality of 
+the system over the evolving structure to create a behavioral representation of the evolving 
+system. As an analyst works with the user in developing the three architectural views of the 
+evolving system, the analyst iterates over each of and among the views. Th at is, as the analyst 
+better understands the structural and behavioral views, the analyst uncovers missing requirements or misrepresentations in the functional view. Th is, in turn, can cause changes to be 
+The Unifi ed Process  25
+cascaded back through the structural and behavioral views. All three architectural views of 
+the system are interlinked and dependent on each other (see Figure 1-14). As each increment 
+and iteration is completed, a more-complete representation of the user’s real functional 
+requirements is uncovered.
+Benefi ts of Object-Oriented Systems Analysis and Design
+Concepts in the object-oriented approach enable analysts to break a complex system into 
+smaller, more-manageable modules, work on the modules individually, and easily piece the 
+modules back together to form an information system. Th is modularity makes systems development easier to grasp, easier to share among members of a project team, and easier to communicate to users, who are needed to provide requirements and confi rm how well the system 
+meets the requirements throughout the systems development process. By modularizing systems 
+development, the project team actually is creating reusable pieces that can be plugged into 
+other systems eff orts or used as starting points for other projects. Ultimately, this can save time 
+because new projects don’t have to start completely from scratch.
+THE UNIFIED PROCESS
+Th e Unifi ed Process is a specifi c methodology that maps out when and how to use the various Unifi ed Modeling Language (UML) techniques for object-oriented analysis and design. 
+Th e primary contributors were Grady Booch, Ivar Jacobsen, and James Rumbaugh. Whereas 
+the UML provides structural support for developing the structure and behavior of an information system, the Unifi ed Process provides the behavioral support. Th e Unifi ed Process, of 
+course, is use-case driven, architecture-centric, and iterative and incremental. Furthermore, 
+the Unifi ed Process is a two-dimensional systems development process described by a set of 
+phases and workfl ows. Th e phases are inception, elaboration, construction, and transition. 
+Th e workfl ows include business modeling, requirements, analysis, design, implementation, 
+test, deployment, confi guration and change management, project management, and environment.18 Figure 1-15 depicts the Unifi ed Process.
+FIGURE 1-14
+Iterative and 
+Incremental 
+Development
+18 Th e material in this section is based on Khawar Zaman Ahmed and Cary E. Umrysh, Developing Enterprise Java 
+Applications with J2EE and UML (Boston, MA: Addison-Wesley, 2002); Jim Arlow and Ila Neustadt, UML and Th e 
+Unifi ed Process: Practical Object-Oriented Analysis & Design (Boston, MA: Addison-Wesley, 2002); Peter Eeles, 
+Kelli Houston, and Wojtek Kozacynski, Building J2EE Applications with the Rational Unifi ed Process (Boston, MA: 
+ Addison-Wesley, 2003); Ivar Jacobson, Grady Booch, and James Rumbaugh, Th e Unifi ed Soft ware Development Process 
+(Reading, MA: Addison-Wesley, 1999); Phillipe Krutchten, Th e Rational Unifi ed Process: An Introduction, 2nd Ed. 
+(Boston, MA: Addison-Wesley, 2000); “Rational Unifi ed Process: Best Practices for Soft ware Development Teams,” 
+Rational Soft ware White Paper, TP026B, Rev 11/01.
+Functional
+view
+Structural
+view
+Behavioral
+view
+Object-Oriented
+26 Chapter 1 Introduction to Systems Analysis and Design
+Phases
+Th e phases of the Unifi ed Process support an analyst in developing information systems in 
+an iterative and incremental manner. Th e phases describe how an information system evolves 
+through time. Depending on which development phase the evolving system is currently in, 
+the level of activity varies over the workfl ows. Th e curve in Figure 1-15 associated with each 
+workfl ow approximates the amount of activity that takes place during the specifi c phase. For 
+example, the inception phase primarily involves the business modeling and requirements workfl ows, while practically ignoring the test and deployment workfl ows. Each phase contains a set 
+of iterations, and each iteration uses the various workfl ows to create an incremental version of 
+the evolving system. As the system evolves through the phases, it improves and becomes more 
+complete. Each phase has objectives, a focus of activity over the workfl ows, and incremental 
+deliverables. Each of the phases is described next.
+Inception In many ways, the inception phase is very similar to the planning phase of a traditional SDLC approach. In this phase, a business case is made for the proposed system. Th is 
+includes feasibility analysis that should answer questions such as the following:
+Do we have the technical capability to build it (technical feasibility)?
+If we build it, will it provide business value (economic feasibility)?
+If we build it, will it be used by the organization (organizational feasibility)?
+FIGURE 1-15  The Unifi ed Process
+Business Modeling
+Phases Inception
+Supporting Workflows
+Elaboration Construction Transition
+Requirements
+Analysis
+Design
+Implementation
+Configuration and 
+Change Management
+Iter
+1
+… Iter
+i
+Iter
+i + 1
+… Iter
+j
+Iter
+j + 1
+… Iter
+k
+Iter
+k + 1
+… Iter
+m
+Project Management
+Environment
+Test
+Deployment
+Phases Inception
+Engineering Workflows
+Elaboration Construction Transition
+The Unifi ed Process  27
+19 With UML comprising fi ft een diff erent, related diagramming techniques, keeping the diagrams coordinated and the 
+diff erent versions of the evolving system synchronized is typically beyond the capabilities of a mere mortal systems developer. Th ese tools typically include project management and CASE tools. We describe the use of these tools in Chapter 2.
+To answer these questions, the development team performs work related primarily to 
+the business modeling, requirements, and analysis workfl ows. In some cases, depending on 
+the technical diffi culties that could be encountered during the development of the system, 
+a throwaway prototype is developed. Th is implies that the design, implementation, and test 
+workfl ows could also be involved. Th e project management and environment supporting 
+workfl ows are very relevant to this phase. Th e primary deliverables from the inception phase 
+are a vision document that sets the scope of the project; identifi es the primary requirements 
+and constraints; sets up an initial project plan; and describes the feasibility of and risks associated with the project, the adoption of the necessary environment to develop the system, and 
+some aspects of the problem domain classes being implemented and tested.
+Elaboration When we typically think about object-oriented systems analysis and design, 
+the activities related to the elaboration phase of the Unifi ed Process are the most relevant. 
+Th e analysis and design workfl ows are the primary focus during this phase. Th e elaboration 
+phase continues with developing the vision document, including fi nalizing the business 
+case, revising the risk assessment, and completing a project plan in suffi cient detail to allow 
+the stakeholders to be able to agree with constructing the actual fi nal system. It deals with 
+gathering the requirements, building the UML structural and behavioral models of the 
+problem domain, and detailing how the problem domain models fi t into the evolving system 
+architecture. Developers are involved with all but the deployment engineering workfl ow in 
+this phase. As the developers iterate over the workfl ows, the importance of addressing 
+confi guration and change management becomes apparent. Also, the development tools 
+acquired during the inception phase become critical to the success of the project during 
+this phase.19 Th e primary deliverables of this phase include the UML structure and behavior 
+diagrams and an executable of a baseline version of the evolving information system. Th e 
+baseline version serves as the foundation for all later iterations. By providing a solid foundation at this point, the developers have a basis for completing the system in the construction 
+and transition phases.
+Construction Th e construction phase focuses heavily on programming the evolving information system. Th is phase is primarily concerned with the implementation workfl ow. However, the requirements workfl ow and the analysis and design workfl ows also are involved 
+with this phase. It is during this phase that missing requirements are identifi ed and the 
+analysis and design models are fi nally completed. Typically, there are iterations of the 
+workfl ows during this phase, and during the last iteration, the deployment workfl ow kicks 
+into high gear. Th e confi guration and change management workfl ow, with its version-control activities, becomes extremely important during the construction phase. At times, an 
+iteration has to be rolled back. Without good version controls, rolling back to a previous 
+version (incremental implementation) of the system is nearly impossible. Th e primary 
+deliverable of this phase is an implementation of the system that can be released for beta 
+and acceptance testing.
+Transition Like the construction phase, the transition phase addresses aspects typically 
+associated with the implementation phase of a traditional SDLC approach. Its primary 
+focus is on the testing and deployment workfl ows. Essentially, the business modeling, 
+requirements, and analysis workfl ows should have been completed in earlier iterations 
+of the evolving information system. Furthermore, the testing workfl ow will have been

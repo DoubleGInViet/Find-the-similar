@@ -1,0 +1,1110 @@
+﻿Multiple layout, 369
+Multiplicity, 180
+Multitenancy, 426
+Multivalued attributes, 333
+MVC architecture, see Model-View-Controller 
+(MVC) architecture
+N
+Narrow and deep menu, 384
+Natural language, 384
+Navigation controls
+consistency in, 371
+direct manipulation, 385–386
+languages, 384
+menus, 384–385
+Navigation design, 383–387
+basic principles, 383–384
+documentation, 387
+grammar order, consistent, 384
+messages, 386–387
+preventing mistakes, 383
+recovery from mistakes, 383
+types of controls, 384–386
+Navigation terms identifi cation, 465–467
+Net present value (NPV), 47, 49–50
+defi ned, 51
+Management information systems (MIS), 336
+Management policies, 491–492
+Manual systems, 89
+Masculinity versus femininity, 409, 484
+Master fi les, 328
+Materials costs, 94
+McAfee, Andrew, 429
+McEwen, Adrian, 429
+Measurements, 492
+Media, 394–395
+Meeting, scrum, 15
+Menu bar, 385
+Menus (navigation control), 384–385
+Merge node, 132, 134, 317
+Message passing, 315
+Messages
+defi ned, 206, 217
+in interaction diagrams, 204
+navigation design, 386–387
+in object orientation, 282
+in object-oriented systems, 20
+Method(s), 165, 204, 257, 259
+in object orientation, 282
+in object-oriented systems, 20
+Method cohesion, 289–290
+classical, 290
+coincidental, 290
+communicational, 290
+functional, 290
+logical, 290
+procedural, 290
+sequential, 290
+temporal, 290
+Methodology(-ies), 5–17
+agile development, 12–15
+criteria for selecting, 15–17
+data-centered, 5
+defi ned, 5
+object-oriented, 5
+process-centered, 5
+rapid application development (RAD), 8–12
+sequencing of SDLC phases, 5
+structured design, 6–8
+Method specifi cation, 314–319
+algorithm specifi cations, 316–319
+events, 314
+general information, 314
+message passing, 315
+Meyers, Glenford, 290
+Middle managers, 492
+Index  517
+patterns for, 169–172
+in structural modeling, 166–172
+textual analysis for, 166–167
+Object Management Group (OMG), 34, 119
+Object nodes, 131, 132, 317
+Object orientation
+classes, 282
+dynamic binding, 283
+encapsulation, 282
+information hiding, 282
+inheritance, 284–286
+messages, 282
+methods, 282
+objects, 282
+polymorphism, 282–284
+and testing, 468–469
+Object-oriented database, 332–333, 335
+Object-oriented database management systems 
+(OODBMS), 332
+mapping problem domain objects to, 338–341
+Object-oriented development process 
+and products, 469
+Object-oriented methodology, 5
+Object-oriented programming language (OOPL), 333
+Object-oriented systems
+attributes in, 20
+behaviors in, 20
+classes in, 19, 20
+dynamic binding in, 22–23
+encapsulation in, 20–21
+information hiding in, 20–21
+inheritance in, 21–22
+messages in, 20
+methods in, 20
+objects in, 19, 20
+polymorphism in, 22
+Object-oriented systems analysis and design 
+(OOSAD), 23–25
+architecture-centric, 24
+benefi ts of, 25
+incremental development, 24–25
+iterative, 24–25
+use-case driven, 24
+Object persistence formats
+application system, type of, 336–337
+criteria for fi les, 337
+data types supported, 336
+future needs, 337
+mapping problem domain objects to, 337–346
+NoSQL data stores, 333–334, 335
+Network, 419
+Network diagram, 57–58
+Network model, 434–438
+Node, 58, 432, 433
+Nonfunctional requirements, 87, 88
+cultural, 88, 90
+cultural and political requirements, 447–448
+and data management layer design, 360–361
+and human-computer interaction layer 
+design, 410
+operational, 88, 90
+operational requirements, 441–442
+performance, 88, 90
+performance requirements, 442–444
+and physical architecture layer design, 440–449
+political, 88, 90
+security, 88, 90
+security requirements, 444–447
+synopsis, 448–449
+Normal fl ow of events, 144
+Normalization process, 298, 347
+NoSQL data stores, 333–334, 335
+n-tiered architecture, 422
+advantage of, 423
+disadvantage of, 424
+Null values, 347
+Number box, 390
+O
+Object(s)
+defi ned, 206, 217
+in interaction diagrams, 204, 205
+in object orientation, 282
+in object-oriented systems, 19, 20
+temporary, 205
+Object–action order, 384
+Object-based language, 301–303
+Object Constraint Language (OCL), 304, 305
+Object design activities, 293–304
+adding specifi cations, 293
+mapping problem-domain classes to implementation 
+languages, 300–304
+opportunities for reuse, 294–297
+optimizing design, 298–300
+restructuring design, 297–298
+Object diagrams, 184
+Object fl ows, 131, 132, 317
+Object identifi cation
+brainstorming for, 167–169
+common object lists for, 169
+518 Index
+technical environment requirements, 441–442
+Operation call messages, 207
+Operations and support workfl ow (Unifi ed Process), 32
+Optical character recognition, 389
+ORDBMS, see Object-relational database management 
+systems
+Ordered sequential access fi les, 328
+Organizational feasibility, 51–53
+Organizational management, 52
+Outcome analysis, 95
+Output design, 392–395
+basic principles, 392–394
+media, 394–395
+types of output, 394
+Outsourcing, 270–272
+Overview information, 142
+Overview use case, 141
+P
+Package(s)
+in class diagrams, 184
+communication diagram, 218
+in design model, 262–268
+in use-case diagram, 127
+Package diagrams
+creating, 266
+dependency relationship in, 262, 263
+in design model, 262–268
+guidelines for creating, 264–265
+syntax for, 263
+verifi cation and validation of, 266–268
+Packaged soft ware, 269–270
+Page-Jones, Meilir, 291
+Paper-based documentation, 462
+Paperless offi ce, 432
+Parallel conversion, 486
+Parallel development, 8
+Parallelization, process, 94
+Parkinson’s Law, 440
+Partial dependency, 349
+Partitions, 258–259
+Patterns, 294
+for object identifi cation, 169–172
+Perceived benefi ts, 491
+Perceived costs, 491
+Pereira, Arun, 407, 408
+Performance requirements, 88, 360, 410
+availability and reliability requirements, 443–444
+capacity requirements, 443
+speed requirements, 442, 443
+synopsis, 448
+Object persistence formats (continued)
+object-oriented database, 332–333, 335
+object-relational databases, 332, 335
+random access fi les, 328, 335
+relational database, 330–332
+selecting, 335–337
+sequential access fi les, 327, 335
+storage formats, existing, 337
+strengths of fi les, 335
+weaknesses of fi les, 335–336
+Object recognition, 404
+Object-relational database management systems 
+(ORDBMS), 332
+mapping problem domain objects to, 341–344
+using DAM classes, 358
+Object-relational databases, 332, 335
+Object storage optimization, RDBMS-based, 346–357
+data access speed, optimizing, 351–356
+data storage size, 356–357
+storage effi ciency, optimizing, 347–351
+Object wrapper, 270
+Observation, 108
+Occlusion, 403
+OCL, see Object Constraint Language
+OMG, see Object Management Group
+On-demand training, 498
+One-on-one training, 496
+Online documentation, 463
+Online support, 498
+Online versus batch processing, 387–389
+On-screen list box, 391
+OODBMS, see Object-oriented database management 
+systems
+OOPL, see Object-oriented programming language
+OOSAD, see Object-oriented systems analysis and design
+Open-ended questions, 97, 98
+OPEN process (Object-oriented Process, Environment, 
+and Notation), 31
+Operating system, 438
+Operation, 165, 204
+constructor, 176
+destructor, 176
+query, 176
+update, 176
+Operational costs, 47, 48
+Operational requirements, 88, 360, 410
+maintainability requirements, 441, 442
+portability requirements, 441, 442
+synopsis, 448
+system integration requirements, 441, 442 Performance testing, 477
+Person, 164, 165
+Person-hours multiplier (PHM), 63
+Phase(s)
+construction, 27
+elaboration, 27
+inception, 26–27
+production, 31–32
+transition, 27–28
+of Unifi ed Process, 26–28
+Phased conversion, 487, 489
+Phased development, 9, 10
+Physical architecture layer, 261–262
+Physical architecture layer design, 418–449
+architectural components, 419
+client-based architectures, 420–421
+client–server architectures, 421–422
+client–server tiers, 422–424
+cloud computing, 426–428
+Green IT, 431–432
+hardware and soft ware specifi cation, 438–440
+infrastructure design, 432–438
+Internet of Th ings (IoT), 428–431
+nonfunctional requirements and, 440–449
+selecting, 424–425
+server-based architectures, 420
+ubiquitous computing, 428
+verifying and validating, 449
+Physical models, 120
+Pilot conversion, 487, 489
+Pink, D. H., 74, 76
+Planning phase. See also Systems development life 
+cycle (SDLC)
+project initiation, 3
+project management, 3
+Platform as a Service (PaaS), 427
+Pointer, 328
+Political and cultural requirements, 361
+Political requirements, 88
+Political strategy, 494, 495
+Polychronic time, 408, 461, 483
+Polymorphism, 22, 282–284, 468
+Pop-up menu, 385
+Portability requirements, 441, 442
+Portfolio management, 53
+Postcondition, 306
+Post-implementation activities, 482
+project assessment, 500–501
+system maintenance, 498–500
+system support, 497–498
+520 Index
+phased development, 9
+prototyping, 9–11
+throwaway prototyping, 11–12
+Rational Soft ware, 34
+Raw data, 356
+RDBMS, see Relational database management systems
+Ready adopters, 495
+Real benefi ts, 491
+Real costs, 491
+Real-time reports, 393
+Real use case, 141, 373, 387
+Recorders, 153
+Redefi nition, 284, 285
+Reference documents, 463
+Referential integrity, 330, 331
+Refi nement
+in factoring, 258
+Regular meetings, 458
+Reich, Robert, 74
+Relational database, 330–332
+Relational database management systems (RDBMS), 330
+data access speed, optimizing, 351–356
+data storage size, 356–357
+mapping problem domain objects to, 344–346
+referential integrity, referencing, 330
+storage effi ciency, optimizing, 347–351
+Relationships
+aggregation, 166
+association, 142, 166
+extend, 144
+generalization, 144, 165–166
+include, 144
+sets, 333
+Reliability, system, 17
+Reluctant adopters, 495
+Repeating groups (fi elds), 333
+Reporting structure, 73
+Report usage, 393
+Request for information (RFI), 274
+Request for proposal (RFP), 274
+Request for quote (RFQ), 274
+Requirements. See also specifi c types of requirements
+business, 44, 87
+functional, 87
+gathering, 4
+system, 87
+Requirements analysis strategies, 92–95
+activity-based costing, 94
+activity elimination, 95
+duration analysis, 93–94
+Project charter, 76
+Project eff ort estimation, 58–63
+Project identifi cation, 43–45
+system request, 44
+Project initiation, 3
+Project management, 3, 41–80, 42, 273
+environment and infrastructure management, 76–79
+feasibility analysis in, 45–53
+project eff ort estimation, 58–63
+project identifi cation in, 43–45
+project selection, 53–54
+staffi ng in, 71–76
+traditional tools for, 54–58
+workplan, creating/managing, 63–71
+Project management tools, traditional, 54–58
+Gantt chart, 56–57
+network diagram, 57–58
+work breakdown structure (WBS), 55–56
+Project management workfl ow (Unifi ed Process), 29–30, 33
+Project manager, 3, 19, 42
+Project plan, 3
+Project size, 46
+Project skills, 272–273
+Project sponsor, 3, 42, 43
+Project team(s), 274
+Project team review, 500–501
+Protected attribute, 176
+Prototyping, 9–11
+throwaway, 11–12
+Public attribute, 176
+Public clouds, 426
+Public key, 446
+Public key infrastructure (PKI), 446
+Pull approaches (social media), 399
+Push approaches (social media), 399
+Q
+Query operation, 178
+Questionnaires, 104–106
+administration of, 106
+designing, 105
+participants selection, 104–105
+R
+RAD, see Rapid application development
+Radio button, 391
+Random access fi les, 328, 335
+Range check, 392
+Rapid application development (RAD), 8–12
+Index  521
+S
+Sans serif fonts, 370
+Sarbanes-Oxley Act, 88, 428
+Scalability, 421, 424, 425
+Scenario, 141
+Schedlbauer, Martin, 130
+Schedule
+adjusting for missed dates, 70
+management, 458–459
+short time, 17
+visibility, 17
+Schell, Jesse, 402
+Scope creep, 67, 459
+Scope management, 67–68
+Scribes, 101, 153
+Scrum, 14–15
+Second normal form (2NF), 349, 351
+Security requirements, 88, 361, 410
+access control requirements, 445
+authentication requirements, 445–446
+encryption, 445–446
+synopsis, 449
+system value, 444–445
+virus control requirements, 447
+Security testing, 477
+Selection box, 390
+Self-delegation, 207
+Sequence diagrams
+creating, 209–210
+elements of, 204–207
+examples, 210–215
+guidelines for creating, 207–209
+Sequential access fi le, 327, 335
+ordered, 328
+unordered, 328
+Serif fonts, 370
+Server-based architectures, 420
+Server object, 173
+Servers, 259, 419
+Service-oriented architectures, 426
+Short time schedules, 17
+Signature of method, 294
+Simone, S. S., 167
+Simple actors, 59
+Simultaneous conversion, 487
+Singh, Nitish, 407, 408
+Single inheritance, 284
+Single inheritance language, 301, 302
+Slider, 391
+Smalltalk, 259, 260
+informal benchmarking, 94
+outcome analysis, 95
+problem analysis, 92
+root cause analysis, 92–93
+technology analysis, 95
+Requirements determination, 86–91
+defi ning requirement, 87–89
+determining requirements, 89–91
+purpose, 87
+real-world problems with, 91
+requirements defi nition creation, 91
+requirements defi nition report, 89
+Requirements documentation techniques, alternative
+concept maps, 110–112
+user stories, 112
+Requirements-gathering techniques, 95–110
+combining, 109–110
+document analysis, 106–107
+interviews, 96–100, 101
+joint application development (JAD), 100–104
+observation, 108
+questionnaires, 104–106
+selection of, 108–110
+Requirements workfl ow (Unifi ed Process), 28
+Resistance to change, 490–491
+Resistant adopters, 495
+Resource allocation, 492
+Responsibilities
+CRC cards, 172
+doing, 172
+knowing, 172
+Return message, 207
+Return on investment (ROI), 47, 50
+defi ned, 51
+Reuse, 469
+Rewards, 492
+RFI, see Request for information
+RFP, see Request for proposal
+RFQ, see Request for quote
+Risk
+assessment, 70, 71
+in conversion strategy, 488–489
+management, 70–71
+Role-playing CRC cards, 110, 141
+with use cases, 174–175
+Root cause analysis, 92–93
+Rose, David, 430
+Round-robin approach, 169
+Round-trip engineering, 77
+Rumbaugh, James, 24, 25, 34
+522 Index
+Structural model, 163, 164
+balancing behavioral model and, 251–254
+balancing functional models and, 242–243
+and functional model, relationships, 244
+Structural modeling, 163–197
+attributes, 165
+class diagrams, 176–185
+classes, 164–165
+CRC cards, 172–175
+creating, 185–194
+object identifi cation, 166–172
+operations, 164–165
+primary purposes of, 164
+relationships, 165–166
+verifying and validating, 194–197
+Structured design, 6–8
+parallel development, 8
+waterfall development, 7
+Structured English, 316
+Structure diagrams (UML), 34
+Structured interviews, 98
+Structured query language (SQL), 332, 419
+Stubs, 471
+Subclass
+in behavioral state machines, 225
+in generalization relationships, 165
+in object-oriented systems, 21
+Subfl ows, 144
+Subject boundary, 122, 125–126
+Subject–Verb–Direct-Object–Preposition–Indirect object 
+(SVDPI), 186
+Submenus, 384
+Substitutability, 166
+Summary report, 395
+Superclass
+generalization relationships, 165
+in object-oriented systems, 21
+Supporting workfl ows. See also Workfl ows
+confi guration and change management 
+workfl ow, 30
+environment workfl ow, 30
+project management workfl ow, 29–30
+Support plan, 5
+Swimlane, 132, 136, 317
+Symmetric encryption algorithm, 446
+Synopsis
+cultural and political requirements, 449
+operational requirements, 448
+performance requirements, 448
+security requirements, 449
+Smart cards, 389
+Snyder, Alan, 289
+Social media, 398–400
+Social networking platforms, 261
+Soft ware as a Service (SaaS), 427
+Soft ware quality, 88
+Soft ware testing, 467
+SOP, see Standard operating procedures
+Source data automation, 389
+Space, 370
+Special issues, 44
+Specialized actor, 122
+Specifi cation requirement standards, 78
+Speed of messages, 408, 461, 483
+Speed requirements, 442, 443
+Sponsors, 489, 490
+SQL, see Structured query language
+Staffi ng, 71–76. See also Project management
+confl ict management, 76
+jelled team, 71–72
+motivation, 75–76
+staffi ng plan, 73–74
+Stakeholder analysis, 52
+Stakeholders, 142
+Standard operating procedures (SOP), 492
+Standards
+coding, 78
+documentation, 78
+environment and infrastructure management, 77–78
+procedural, 78
+specifi cation requirement, 78
+user interface design, 78
+State, 221
+black hole, 226
+defi ned, 222, 223
+fi nal, 222
+initial, 222
+miracle, 226
+State symbol, 222
+Static binding, 23
+Static model, 176
+Static structure diagram, 184
+Steering committee, 3
+Stereotype, 375, 432
+Storage effi ciency, optimizing, 347–351
+Storage formats, 337
+Storyboard, 377–379
+Story cards, 112
+Strategic alignment, 52
+Stress tests, 477
+Index  523
+Technical feasibility, 45–46
+Technical lead, 74
+Technical risk analysis, 46
+Technical skills, 74
+Technical writer, 18
+Technology
+analysis, 95
+familiarity with, 16
+Temporal trigger, 142
+Temporary object, 205
+Testing workfl ow (Unifi ed Process), 29
+Test planning, 469–471
+Tests, designing, 467–477
+acceptance tests, 477
+integration tests, 475–476
+and object orientation, 468–469
+system tests, 476–477
+test planning, 469–471
+unit tests, 471–475
+Test specifi cations, 471
+Test workfl ow (Unifi ed Process), 32
+Text box, 390
+Textual analysis, 166–167
+Th ick client, 421
+Th in client, 421
+Th ird normal form (3NF), 351
+Th ree-tiered architecture, 422
+Th rowaway prototyping, 11–12, 110
+Tidwell, Jenifer, 396, 397
+Time-and-arrangements contract, 271
+Timeboxing, 68–69
+Time dimension, 461
+Time frame, 273
+Time in conversion strategy, 489
+Timesharing, 427
+To-be system, 3, 86
+Tool bar, 385
+Top-down interviews, 98, 99
+Total cost of ownership, 422
+Touchscreen, 397
+Traceability of artifacts, 457
+Trade-off s, 54
+Traditional language, 304
+Training (Change management), 495–497
+Training plan, 5
+Transaction fi les, 328
+Transaction processing, 336, 387
+Transition phase (Unifi ed Process), 27–28
+Transition process, 222, 223, 375, 491
+Transitive dependency, 351
+System complexity, 16–17
+System documentation, 462
+System integration requirements, 441, 442
+System interface testing, 475
+System maintenance, 497, 498–500
+System proposal, 4, 113
+System reliability, 17
+System request, 3, 42, 44, 45, 499
+System requirements, 87
+System review, 501
+Systems analyst, 18
+business analyst, 18
+change management analyst, 19
+infrastructure analyst, 18–19
+primary objective of, 2
+project manager, 19
+roles and skills, 17–19
+Systems development life cycle (SDLC), 2–5
+analysis phase, 3–4
+defi ned, 1
+design phase, 4
+implementation phase, 4–5
+planning phase, 3
+Systems integration, 270
+System specifi cation, 4
+System support, 497–498
+System tests, 472, 476–477
+System users, 52, 53
+System value, 444–445
+System value estimates, defi ned, 445
+T
+Table scan, 354
+Tab menu, 385
+Tangible benefi ts, 47, 48
+Tangible value, 44
+Task, 54
+Task information, 54
+Task lists, 112
+Teams
+autonomy for, 76
+complexity with, 73
+dysfunctional, 72
+jelled, 72
+leaders of, 76
+scrum, 15
+Technical complexity factors (TCF), 59, 62
+Technical environment requirements, 
+441–442
+Technical factor value (TFactor), 59, 62
+524 Index
+overview information in, 142
+process documentation with, 140–152
+relationships, 142–144
+Use-case diagrams, 121
+actors, 121–123
+association, 123–124
+creating, 127–129
+subject boundary, 125–126
+use case in, 124
+Use-case driven OOSAD, 24
+Use-case ID number, 142
+Use-case name, 142
+Use-case point estimation
+for appointment system, 61
+worksheet, 60
+Use-case points, 58
+Use-case type, 142
+User documentation, 462
+User eff ort minimization, 372
+User experience, 371, 401
+User interface design. See also Human-computer 
+ interaction layer design
+aesthetics, 370–371
+consistency, 371–372
+content awareness, 369–370
+games/gamifi cation and, 400–402
+and immersive environments, 404–406
+international and cultural issues and, 406–410
+layout, 369
+mobile computing and, 395–398
+principles for, 368–372
+social media and, 398–400
+user eff ort, minimizing, 372
+user experience, 371
+User interface design process, 372–383
+common sense approach to, 382–383
+interface design prototyping, 377–380
+interface evaluation, 380–382
+interface standards design, 376–377
+navigation structure design, 375–376
+use scenario development, 373–374
+User interface design standards, 78
+User interface prototypes, 379
+User interface testing, 472, 475
+User involvement, 109
+User participation, 53
+User requirements, clarity of, 16
+User stories, 112
+Use scenarios, 372
+Utility classes, 260
+Trigger
+external, 142
+temporal, 142
+Turnaround document, 395
+Tutorials, 463
+Two-tiered architecture, 422
+Type of information 
+(requirements analysis), 108–109
+U
+Ubiquitous computing, 428–431
+UML, see Unifi ed Modeling Language
+Unadjusted Actor Weight Total (UAW), 59
+Unadjusted use-case points (UUCP), 59
+Unadjusted use-case weight total (UUCW), 59
+Uncertainty avoidance, 409, 484
+Unifi ed Modeling Language (UML), 34–36, 119
+objective of, 34
+UML 2.5 diagram summary, 35
+Unifi ed Process, 25–34
+documentation in, 79
+enhanced, 31, 33, 64
+extensions to, 30–34
+phases, 26–28
+workfl ows, 28–30
+Unit tests, 471–475
+Unordered sequential access fi le, 328
+Unstructured interviews, 98
+Update anomaly, 347
+Update operation, 179
+Usability testing, 476
+Use case, 24, 120
+behavioral models, 203
+complex, 59
+defi ned, 59, 120
+detail, 141
+essential, 141
+identifying, 126–127
+overview, 141
+real, 141
+role-playing CRC cards with, 174–175
+simple, 59
+testing, 472, 475
+types of, 141
+in use-case diagrams, 122, 124
+Use-case description, 121
+creating, 146–152
+elements of, 141–145
+fl ow of events, 144
+guidelines for creating, 145–146
+Index  525
+Waterfall development, 7
+WBS, see Work breakdown structure
+Web services, 270, 426
+White-box testing, 472, 473
+White space, 370
+Wholes, 166
+Whole-system conversion, 487
+Windows layout diagram, 372, 377
+Windows navigation diagram (WND), 372, 375
+Workaround, 270
+Work breakdown structure (WBS), 55–56
+evolutionary, 63–67
+Workfl ow modifi cations and extensions
+confi guration and change management workfl ow, 
+33–34
+deployment workfl ow, 32
+environment workfl ow, 32
+project management workfl ow, 33
+test workfl ow, 32
+Workfl ows
+engineering, 28–29
+supporting, 29–30
+in Unifi ed Process, 28–30
+Workplan creation and management, 63–71. See also
+Project management
+estimates, refi ning, 69–70
+evolutionary work breakdown structures, 63–67
+iterative workplans, 63–67
+risk management, 70–71
+scope management, 67–68
+timeboxing, 68–69
+X
+XP, see Extreme programming
+Y
+Yourdon, Edward, 154, 286, 289
+Yo-yo problem, 476
+V
+Validation
+of analysis models, 242–257
+of behavioral models, 233–234
+of class and method design, 319–321
+of data management layer design, 361–362
+of functional modeling, 154–156
+of package diagrams, 266–268
+of physical architecture layer design, 449
+of structural modeling, 194–197
+Validation of input, 391–392
+Value-added contract, 271
+Verifi cation
+of analysis models, 242–257
+of behavioral models, 233–234
+of class and method design, 319–321
+of data management layer design, 361–362
+of functional modeling, 154–156
+of package diagrams, 266–268
+of physical architecture layer design, 449
+of structural modeling, 194–197
+Version 2.5 (UML), 34, 35
+Virtualization, 426
+Virtual memory, 426
+Virtual reality (VR), 404
+Virus control, 477
+Virus control requirements, 447
+defi ned, 445
+Visibility
+of attribute, 176
+of methods, 282
+schedule, 17
+Visualization, 147
+Volume tests, 477
+Volumetrics, 356
+W
+Walkthrough, 108
+evaluation, 381
+verifi cation and validation through, 154–155
+WILEY END USER LICENSE AGREEMENT
+Go to www.wiley.com/go/eula to access Wiley’s ebook EULA When we wrote the first edition of this textbook, the world of system development was in a major transition period—from structured methodologies to 
+object-oriented methodologies. We were among the first to introduce a comprehensive treatment of object-oriented methodologies, and Systems Analysis and 
+Design in a Changing World, Seventh Edition, continues to be the leader in 
+teaching UML and object-oriented techniques.
+However, change continues. Today, many new initiatives and trends have 
+become firmly embedded in the world of system development. First and foremost is the ubiquitous access to the Internet throughout the global economy. 
+The resulting explosion of connectivity means that project teams are now distributed around the world. In addition, large providers (such as Microsoft) and a 
+proliferation of small providers now contribute to a wonderfully rich and varied 
+software development environment.
+In order to manage system development teams in today’s distributed, fastpaced, connected, ever-changing environment, the techniques for software development and the approach to project management have expanded. Along with 
+the foundational project management principles, additional approaches and 
+philosophies provide new, success-oriented methodologies, such as Agile iterative, incremental development approaches. These are thoroughly covered in this 
+edition.
+Even though Systems Analysis and Design in a Changing World, Seventh 
+Edition, continues to be the leader in its field, with thorough treatment of such 
+topics as user stories, use cases, object-oriented modeling, comprehensive project 
+management, the Unified Modeling Language, and Agile techniques, it was time 
+to take another step forward in textbook design. This edition uses an innovative 
+approach to teaching systems analysis and design, taking advantage of the new 
+teaching tools and techniques that are now available. As a result, not only is systems analysis and design easier to learn by using this approach, it is also easier 
+to teach. It brings together the best approaches for teachers and students.
+In this edition, we accomplish four major new objectives. First, we teach all 
+the essential principles of system development—principles that must be followed 
+in today’s connected environment. Second, we teach and explain the new methodologies and techniques that are now available because of widespread connectivity. Third, we have organized and revamped the textbook so that it teaches 
+these new concepts in a new way. Fourth, we created a set of short videos that 
+explain key concepts and walk the reader through UML diagrams to help with 
+understanding complex modeling. 
+For example, Chapter 1 presents a complete iteration in the development 
+of a new system. Students get to see that complete iteration—from beginning 
+to end (through implementation and testing)—before having to learn abstract 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+PREFACE xix
+principles or memorize terms. Also, the newly written running cases throughout the book focus on current issues of communication and connectedness 
+and take the students through all aspects of system development. We have also 
+expanded the Instructor’s Materials and enhanced the aids available through 
+CourseMate, our online resource. Additional online chapters are also available 
+to enhance and extend the learning experience.
+Finally, we updated and enhanced the set of over 30 short videos that explain key concepts in the text. These videos have been very well received and are 
+even better with the new edition. These videos are useful for blended and online 
+classes as well as traditional classes. The videos range from 3 to 10 minutes, 
+and provide just-in-time explanations for often difficult to understand concepts, 
+such as iterative development and Agile development, and illustrate important 
+techniques such as identifying user stories and use cases. Most importantly, the 
+videos show by demonstration how to read and interpret important UML models such as the domain model class diagrams, use case diagrams, sequence diagrams, and package diagrams. Understanding detailed UML models is finally 
+possible in a way no other text can match. 
+We are excited about this new approach. The time is right for new materials 
+and new tools for teaching systems analysis and design. Instructors will find this 
+textbook intuitive, powerful, and easy to use. Students will find it engaging and 
+empowering. Many concepts are presented so the students can teach themselves, 
+with coaching and direction provided by the professor. It will be an rewarding 
+experience to teach and learn with this textbook.
+■ Innovations
+This edition is innovative in many respects. It includes key concepts from traditional and object-oriented approaches, covers the use case-driven approach 
+(with UML modeling being detailed in depth), emphasizes Agile and iterative 
+development, and incorporates the latest concepts in Agile project management. 
+Also, the material is completely reorganized to better support learning systems 
+analysis and design.
+■ Coverage of Object Orientation and Traditional Analysis 
+and Design
+This textbook is unique in its integration of key systems-modeling concepts that 
+apply to the traditional structured approach and the object-oriented approach—
+user goals and events that trigger system use cases, plus classes of objects/data 
+entities that are part of the system’s problem domain. We devote one chapter 
+to identifying user stories and use cases and another chapter to modeling key 
+objects/entities, including coverage of entity-relationship diagrams, while emphasizing UML domain model class diagrams. After completing these chapters, instructors can cover structured analysis and design by including an online 
+chapter, or they can focus on object-oriented analysis and design by using the 
+chapters in this textbook. It is assumed from the beginning that everyone should 
+understand the key object-oriented concepts. The traditional approach isn’t discarded; key structured concepts are still included. But these days, most instructors are emphasizing the object-oriented approach.
+■ Full Coverage of UML and the Object-Oriented Approach
+The object-oriented approach presented in this textbook is based on the Unified 
+Modeling Language (UML 2.0) from the Object Management Group, as originated by Grady Booch, James Rumbaugh, and Ivar Jacobson. A model-driven 
+approach to analysis starts with user stories and use cases and then defines 
+problem domain classes involved in the users’ work. We include requirements 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+xx PREFACE
+modeling with use case diagrams, domain modeling, use case descriptions, activity diagrams, and system sequence diagrams. The FURPS+ model is used to 
+emphasize functional and nonfunctional requirements.
+Design principles and design patterns are discussed in depth, and system 
+architecture is modeled by using UML component diagrams and package diagrams. Detailed design models are also discussed in detail, with particular attention given to use case realization with CRC cards, sequence diagrams, and 
+design class diagrams.
+■ Project Management Coverage
+Many undergraduate programs depend on their systems analysis and design 
+course to teach project management principles. To satisfy this need, we cover 
+project management by taking a four-pronged approach. First, specific project 
+management techniques, skills, and tasks are included and highlighted throughout this book. This integration teaches students how to apply specific project 
+management tasks to the various activities of the system development life cycle 
+(SDLC), including iterative development. Second, complete coverage of project 
+planning and project management is included in a separate chapter. Third, we 
+include a 120-day trial version of Microsoft Project Professional in the back of 
+this book so students can obtain hands-on experience with this important tool. 
+Fourth, a more in-depth treatment of project management techniques and principles is provided in an online chapter on this book’s Web site. This information 
+is based on the Project Management Body of Knowledge (PMBOK), as developed by the Project Management Institute—the primary professional organization for project managers in the United States.
+■ Organized for More Effective Learning
+This edition’s innovative and entirely new organization starts with a complete 
+beginning-to-end example of system development, moves immediately to systems analysis models and techniques, and then proceeds to system design concepts, emphasizing system architecture, user interfaces, and database design. 
+The student sees analysis and much of design covered in the first nine chapters. Next, the text focuses on managing system development projects, including 
+Agile development, after the student has had a chance to understand what is 
+actually involved in system development. Finally, the text covers detailed design 
+topics and deployment topics, going into more depth about such contemporary 
+approaches as the Unified Process, Extreme Programming, and Scrum.
+■ CourseMate Companion Web Site
+Cengage Learning’s Systems Analysis and Design in a Changing World, Seventh Edition, CourseMate brings course concepts to life with interactive learning, study, and exam preparation tools that support the printed textbook. Watch 
+student comprehension soar as your class works with the printed textbook and 
+the textbook-specific Web site. CourseMate goes beyond the book to deliver 
+what you need! Learn more at cengage.com/coursemate.
+❚ Engagement Tracker
+How do you assess your students’ engagement in your course? How do you know 
+your students have read the material or viewed the resources you have assigned? 
+How can you tell if your students are struggling with a concept? With CourseMate, 
+you can use the included Engagement Tracker to assess student preparation and engagement. Use the tracking tools to see progress for the class as a whole or for individual students. Identify students at risk early in the course. Uncover which concepts 
+are most difficult for your class. Monitor time on task. Keep your students engaged.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+PREFACE xxi
+❚ Interactive Teaching and Learning Tools
+CourseMate includes interactive teaching and learning tools:
+■ Quizzes
+■ Case projects
+■ Flash cards
+■ Short videos on concepts, techniques, and models
+■ PowerPoint presentations
+These assets enable students to review for tests, prepare for class, and address the needs of students’ varied learning styles.
+❚ Interactive E-Book
+In addition to interactive teaching and learning tools, CourseMate includes an 
+interactive e-book. Students can take notes, highlight, search for, and interact with embedded media specific to their book. Use it as a supplement to the 
+printed text or as a substitute—the choice is your students’ with CourseMate.
+■ Organization and Use
+Systems Analysis and Design in a Changing World, Seventh Edition, includes 
+this printed textbook, a complete e-book, and supporting online chapters. The 
+current printed textbook provides a focused presentation of those topics that are 
+essential and most important for information systems developers. The online 
+chapters extend those concepts and provide a broader presentation of several 
+topics. The online chapters may be integrated into the course or simply used as 
+additional readings as prescribed by the instructor.
+There are three major subject areas discussed in this book: systems analysis, systems design, and project management. There are additional subject areas, 
+which are no less important but aren’t discussed in as much depth. These include 
+systems implementation, testing, and deployment. In addition, we have taken 
+an approach that is quite different from other texts. Because students already 
+have a basic understanding of systems analysis and design from Chapter 1, we 
+immediately present in-depth concepts related to systems analysis and design. 
+We present approaches to development and project management topics later in 
+the text. This allows students to learn those project management concepts after 
+understanding the elements of systems analysis and design. We think it will be 
+more meaningful for students at that point in the course.
+■ Part 1: Introduction to System Development
+Part 1, comprising Online Chapter A and Chapter 1, presents an overview of 
+system development. Online Chapter A, “The Role of the Systems Analyst,” 
+describes basic systems concepts and the role of the systems analyst in system 
+development projects. Chapter 1 begins by briefly explaining the objectives of 
+systems analysis and systems design. Then, it provides a detailed, concrete example of what is required in a typical software development project. Many students who take a programming class think that programming is all you need 
+to develop software and deploy a system. This chapter and the rest of the book 
+should dispel that myth.
+■ Part 2: Systems Analysis Tasks
+Chapters 2 through 5 cover systems analysis in detail. Chapter 2 discusses system requirements, analysis activities, and techniques for gathering information 
+about the business problem. Developing the right system solution is possible only 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+xxii PREFACE
+if the problem is accurately understood. Chapter 2 also explains how to identify 
+and involve the stakeholders and introduces the concept of models and modeling. Chapters 3 and 4 teach modeling techniques for capturing the detailed 
+requirements for the system in a useful form. When discussing an information 
+system, two key concepts are particularly useful: the user stories/use cases that 
+define what the end users need the system to do and the data entities/domain 
+classes that users work with while carrying out their work tasks. These two 
+concepts—user stories/use cases and data entities/domain classes—are important no matter what approach to system development is being used. Chapter 5 
+presents more in-depth requirements models, such as use case descriptions, activity diagrams, system sequence diagrams, and CRUD analysis.
+Online Chapter B, “The Traditional Approach to Requirements,” presents 
+the traditional, structured approach to developing systems. To those instructors 
+and students who desire to learn about data flow diagrams and structured English, this chapter provides an in-depth presentation.
+All these modeling techniques provide in-depth analysis of user needs and 
+allow the analyst to develop requirements and specifications. Again, the purpose 
+of systems analysis is to thoroughly understand and specify the user’s needs and 
+requirements.
+■ Part 3: Essentials of Systems Design
+Part 3 provides the fundamental concepts related to systems design and designing the user experience. Chapter 6 provides broad and comprehensive coverage 
+of important principles of systems design, including design activities and the 
+crucial issues of system controls and security that all students should understand. It serves not only as a broad overview of design principles but also as a 
+foundation for later chapters that explain the detailed techniques, tasks, skills, 
+and models used to carry out design.
+Chapter 7 provides a comprehensive overview of system architecture and 
+is a new chapter that consolidates material previously spread out in multiple 
+chapters. Chapter 8 presents additional design principles related to the user experience. Designing the user interface is a combination of analysis and design. 
+It is related to analysis because it requires heavy user involvement and includes 
+specifying user activities and desires. On the other hand, it is a design activity 
+because it is creating specific final components that are used to drive the programming effort. The screens and reports and other user interaction components must be precisely designed so they can be programmed as part of the final 
+system. Chapter 9 provides a compact and integrated coverage of designing the 
+database.
+■ Part 4: Projects and Project Management
+By this point, students will have a basic understanding of all the elements of 
+system development. Part 4 brings together all these concepts by explaining 
+more about the process of organizing and managing development projects. 
+Chapter 10 describes different approaches to system development in today’s environment, including Agile development and several widely used development 
+methodologies—the Unified Process, Extreme Programming, and Scrum. It is 
+an important chapter to help you understand how projects actually get executed.
+Chapter 11 extends these concepts by teaching foundation principles of 
+project planning and project management. Every systems analyst is involved in 
+helping organize, coordinate, and manage software development projects. In 
+addition, most good students will eventually become team leaders and project 
+managers. The principles presented in Chapter 11 are essential to a successful 
+career.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+PREFACE xxiii
+Online Chapter C, “Project Management Techniques,” goes into more detail regarding the tools and techniques used by systems analysts and project 
+managers to plan and monitor development projects. For those instructors and 
+students who would like to learn specific project management skills, this is an 

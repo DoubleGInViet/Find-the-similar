@@ -1,0 +1,566 @@
+﻿skill. PSSM negotiates contracts with its client com panies in which it agrees to provide temporary staff in 
+specifi c job categories for a specifi ed cost. For exam ple, PSSM has a contract with an oil and gas explora tion company in which it agrees to supply geologists 
+with at least a master’s degree for $5,000 per week. 
+PSSM has contracts with a wide range of companies 
+and can place almost any type of professional or sci entifi c staff members, from computer programmers to 
+geologists to astrophysicists.
+When a PSSM client company determines that 
+it will need a temporary professional or scientifi c 
+employee, it issues a staffi ng request against the con tract it had previously negotiated with PSSM. When 
+PSSM’s contract manager receives a staffi ng request, 
+the contract number referenced on the staffi ng request 
+is entered into the contract database. Using informa tion from the database, the contract manager reviews 
+the terms and conditions of the contract and deter mines whether the staffi ng request is valid. Th e staff -
+ing request is valid if the contract has not expired, the 
+type of professional or scientifi c employee requested 
+is listed on the original contract, and the requested 
+fee falls within the negotiated fee range. If the staffi ng 
+request is not valid, the contract manager sends the 
+staffi ng request back to the client with a letter stating 
+why the staffi ng request cannot be fi lled, and a copy 
+of the letter is fi led. If the staffi ng request is valid, the 
+contract manager enters the staffi ng request into the 
+staffi ng request database as an outstanding staffi ng 
+request. Th e staffi ng request is then sent to the PSSM 
+placement department.
+In the placement department, the type of staff 
+member, experience, and qualifi cations requested 
+on the staffi ng request are checked against the data base of available professional and scientifi c staff . If 
+a qualifi ed individual is found, he or she is marked 
+“reserved” in the staff database. If a qualifi ed individ ual cannot be found in the database or is not imme diately available, the placement department creates a 
+memo that explains the inability to meet the staffi ng 
+request and attaches it to the staffi ng request. All 
+staffi ng requests are then sent to the arrangements 
+department.
+162  Chapter 4 Business Process and Functional Modeling
+In the arrangements department, the prospective 
+temporary employee is contacted and asked to agree to 
+the placement. Aft er the placement details have been 
+worked out and agreed to, the staff member is marked 
+“placed” in the staff database. A copy of the staffi ng 
+request and a bill for the placement fee is sent to the 
+client. Finally, the staffi ng request, the “unable-to-fi ll” 
+memo (if any), and a copy of the placement fee bill are 
+sent to the contract manager. If the staffi ng request 
+was fi lled, the contract manager closes the open staff -
+ing request in the staffi ng request database. If the 
+staffi ng request could not be fi lled, the client is notifi ed. 
+Th e staffi ng request, placement fee bill, and unable-to fi ll memo are then fi led in the contract offi ce.
+ a. Create a use-case diagram for the system described 
+here.
+ b. Create a set of activity diagrams for the business 
+processes described here.
+ c. For each major use case identifi ed in the use-case 
+diagram, develop both an overview and a detail 
+use-case description. phone number, e-mail address, credit-card infor mation, start date, and membership service(s) (e.g., 
+coff ee). Some customers request a double or triple 
+membership (e.g., two pounds of coff ee, three cases 
+of beer). Th e computer game membership operates 
+a bit diff erently from the others. In this case, the 
+member must also select the type of game (action, 
+arcade, fantasy/science fi ction, educational, etc.) and 
+age level. OTMC is planning to greatly expand the 
+number of memberships it off ers (e.g., video games, 
+movies, toys, cheese, fruit, and vegetables), so the 
+system needs to accommodate this future expansion. 
+OTMC is also planning to off er three-month and 
+six-month memberships.
+Minicases  161
+V. Create a set of detailed use-case descriptions for the 
+system in exercise U.
+W. Perform a verifi cation and validation walkthrough of 
+the functional models of the Of-the-Month Club sys tem described in exercises U and V.
+MINICASES
+1. Williams Specialty Company is a small printing and 
+engraving organization. When Pat Williams, the 
+owner, brought computers into the business offi ce fi ve 
+years ago, the business was very small and very simple. 
+Pat was able to use an inexpensive PC-based account ing system to handle the basic information-processing 
+needs of the fi rm. As time has gone on, however, the 
+business has grown and the work being performed 
+has become signifi cantly more complex. Th e simple 
+accounting soft ware still in use is no longer adequate 
+to keep track of many of the company’s sophisticated 
+deals and arrangements with its customers.
+Pat has a staff of four people in the business offi ce 
+who are familiar with the intricacies of the company’s 
+record-keeping requirements. Pat recently met with 
+her staff to discuss her plan to hire an IS consulting 
+fi rm to evaluate the organization’s information sys tem needs and recommend a strategy for upgrading 
+its computer system. Th e staff are excited about the 
+prospect of a new system, because the current system 
+causes them much annoyance. No one on the staff has 
+ever done anything like this before, however, and they 
+are a little wary of the consultants who will be con ducting the project.
+Assume that you are a systems analyst on the con sulting team assigned to the Williams Specialty Co. 
+engagement. At your fi rst meeting with the Williams 
+staff , you want to be sure that they understand the 
+work that your team will be performing and how they 
+will participate in that work.
+ a. Explain, in clear, nontechnical terms, the goals of 
+the analysis of the project.
+ b. Explain, in clear, nontechnical terms, how func tional models will be used by the project team to 
+model the identifi ed business processes. Explain 
+what these models are, what they represent in the 
+system, and how they will be used by the team.
+2. Professional and Scientifi c Staff Management (PSSM) 
+is a unique type of temporary staffi ng agency. Many 
+organizations today hire highly skilled technical 
+employees on a short-term, temporary basis to assist 
+with special projects or to provide a needed technical
+ d. Verify and validate the functional models for early renewal. Likewise, the system should identify 
+members who have not visited the gym in more than 
+a month, so the manager can call them and attempt to 
+reinterest them in the gym.
+P. Create a set of detailed use-case descriptions for the 
+system in exercise O.
+Q. Perform a verifi cation and validation walkthrough of 
+the functional models of the gym membership system 
+described in exercises O and P.
+R. Draw a use-case diagram and a set of activity dia grams for the following system. Picnics R Us (PRU) 
+is a small catering fi rm with fi ve employees. During 
+a typical summer weekend, PRU caters fi ft een pic nics with twenty to fi ft y people each. Th e business 
+has grown rapidly over the past year, and the owner 
+wants to install a new computer system for man aging the ordering and buying process. PRU has 
+a set of ten standard menus. When potential cus tomers call, the receptionist describes the menus to 
+them. If the customer decides to book a picnic, the 
+ receptionist records the customer information (e.g., 
+name, address, phone number) and the information 
+about the picnic (e.g., place, date, time, which one of 
+the standard menus, total price) on a contract. Th e 
+customer is then faxed a copy of the contract and 
+must sign and return it along with a deposit (oft en 
+a credit card or by debit card) before the picnic is 
+offi cially booked. Th e remaining money is collected 
+when the picnic is delivered. Sometimes, the cus tomer wants something special (e.g., birthday cake). 
+In this case, the receptionist takes the information 
+and gives it to  the owner, who determines the cost; 
+the receptionist then calls the customer back with the 
+price information. Sometimes the customer accepts 
+the price; other times, the customer requests some 
+changes that have to go back to the owner for a new 
+cost estimate. Each week, the owner looks through 
+the picnics scheduled for that weekend and orders the 
+supplies (e.g., plates) and food (e.g., bread, chicken) 
+needed to make them. Th e owner would like to use 
+the system for marketing as well. It should be able to 
+track how customers learned about PRU and identify 
+repeat customers, so that PRU can mail special off ers 
+to them. Th e owner also wants to track the picnics for 
+which PRU sent a contract, but the customer never 
+signed the contract and actually booked a picnic.
+S. Create a set of detailed use-case descriptions for the 
+system in exercise R.
+T. Perform a verifi cation and validation walkthrough 
+of the functional models of the catering system 
+described in exercises R and S.
+U. Draw a use-case diagram and a set of activity dia grams for the following system. Of-the-Month Club 
+(OTMC) is an innovative young fi rm that sells 
+memberships to people who have an interest in 
+certain products. People pay membership fees for 
+one year and each month receive a product by mail. 
+For example, OTMC has a coff ee-of-the-month club 
+that sends members one pound of special coff ee 
+each month. OTMC currently has six memberships 
+(coff ee, wine, beer, cigars, fl owers, and computer 
+games), each of which costs a diff erent amount. Cus tomers usually belong to just one, but some belong 
+to two or more. When people join OTMC, the tele phone operator records the name, mailing address, A structural, or conceptual, model describes the structure of the objects that support 
+the business processes in an organization. During analysis, the structural model presents 
+the logical organization of the objects without indicating how they are stored, created, or 
+manipulated so that analysts can focus on the business, without being distracted by technical details. Later during design, the structural model is updated to refl ect exactly how 
+the objects will be stored in databases and fi les. Th is chapter describes class–responsibility–
+collaboration (CRC) cards, class diagrams, and object diagrams, which are used to create the 
+structural model.
+OBJECTIVES
+■ Understand the rules and style guidelines for creating CRC cards, class diagrams, 
+and object diagrams.
+■ Understand the processes used to create CRC cards, class diagrams, and object diagrams.
+■ Be able to create CRC cards, class diagrams, and object diagrams.
+■ Understand the relationship among the structural models.
+■ Understand the relationship between the structural and functional models.
+INTRODUCTION
+During analysis, analysts create business process and functional models to represent how the 
+business system will behave. At the same time, analysts need to understand the information 
+that is used and created by the business system (e.g., customer information, order information). In this chapter, we discuss how the objects underlying the behavior modeled in the 
+business process and functional models are organized and presented.
+As pointed out in Chapter 1, all object-oriented systems development approaches are 
+use-case driven, architecture-centric, and iterative and incremental. Use cases, described in 
+Chapter 4, form the foundation on which the business information system is created. From 
+an architecture-centric perspective, structural modeling supports the creation of an internal 
+structural or static view of a business information system in that it shows how the system is 
+structured to support the underlying business processes. Finally, as with business process and 
+functional modeling, you will fi nd that you will need to not only iterate across the structural 
+models (described in this chapter), but you will also have to iterate across all three architectural views (functional, structural, and behavioral) to fully capture and represent the requirements for a business information system.
+A structural model is a formal way of representing the objects that are used and created by 
+a business system. It illustrates people, places, or things about which information is captured 
+and how they are related to one another. Th e structural model is drawn using an iterative 
+process in which the model becomes more detailed and less conceptual over time. In analysis, 
+analysts draw a conceptual model, which shows the logical organization of the objects without 
+CHAPTER 5
+Structural Modeling
+164 Chapter 5 Structural Modeling
+indicating how the objects are stored, created, or manipulated. Because this model is free 
+from any implementation or technical details, the analysts can focus more easily on matching 
+the model to the real business requirements of the system.
+In design, analysts evolve the conceptual structural model into a design model that 
+refl ects how the objects will be organized in databases and soft ware. At this point, the model is 
+checked for redundancy, and the analysts investigate ways to make the objects easy to retrieve. 
+Th e specifi cs of the design model are discussed in detail in the design chapters.
+STRUCTURAL MODELS
+Every time a systems analyst encounters a new problem to solve, the analyst must learn the 
+underlying problem domain. Th e goal of the analyst is to discover the key objects contained 
+in the problem domain and to build a structural model. Object-oriented modeling allows the 
+analyst to reduce the semantic gap between the underlying problem domain and the evolving 
+structural model. However, the real world and the world of soft ware are very diff erent. Th e 
+real world tends to be messy, whereas the world of soft ware must be neat and logical. Th us, 
+an exact mapping between the structural model and the problem domain may not be possible. 
+In fact, it might not even be desirable.
+One of the primary purposes of the structural model is to create a vocabulary that can be 
+used by the analyst and the users. Structural models represent the things, ideas, or concepts 
+contained in the domain of the problem. Th ey also allow the representation of the relationships among the things, ideas, or concepts. By creating a structural model of the problem 
+domain, the analyst creates the vocabulary necessary for the analyst and users to communicate eff ectively.
+It is important to remember that at this stage of development, the structural model does not 
+represent soft ware components or classes in an object-oriented programming language, even 
+though the structural model does contain analysis classes, attributes, operations, and the relationships among the analysis classes. Th e refi nement of these initial classes into programming-level 
+objects comes later. Nonetheless, the structural model at this point should represent the responsibilities of each class and the collaborations among the classes. Typically, structural models are 
+depicted using CRC cards, class diagrams, and, in some cases, object diagrams. However, before 
+describing CRC cards, class diagrams, and object diagrams, we describe the basic elements of 
+structural models: classes, attributes, operations, and relationships.
+Classes, Attributes, and Operations
+A class is a general template that we use to create specifi c instances, or objects, in the problem 
+domain. All objects of a given class are identical in structure and behavior but contain diff erent data in their attributes. Th ere are two general kinds of classes of interest during analysis: 
+concrete and abstract. Normally, when an analyst describes the application domain classes, 
+he or she is referring to concrete classes; that is, concrete classes are used to create objects.
+Abstract classes do not actually exist in the real world; they are simply useful abstractions. 
+For example, from an employee class and a customer class, we may identify a generalization 
+of the two classes and name the abstract class person. We might not actually instantiate the 
+person class in the system itself, instead creating and using only employees and customers.1
+1 Because abstract classes are essentially not necessary and are not instantiated, arguments have been made that it 
+would be better not to include any of them in the description of the evolving system at this stage of development (see 
+J. Evermann and Y. Wand, “Towards Ontologically Based Semantics for UML Constructs,” in H. S. Junii, S. Jajodia, 
+and A. Solvberg (eds.) ER 2001, Lecture Notes in Computer Science 2224 (Berlin: Springer-Verlag, 2001): 354–367). 
+However, because abstract classes traditionally have been included at this stage of development, we also include them.
+Structural Models  165
+A second classifi cation of classes is the type of real-world thing that a class represents. Th ere are domain classes, user-interface classes, data structure classes, fi le structure 
+classes, operating environment classes, document classes, and various types of multimedia 
+classes. At this point in the development of our evolving system, we are interested only 
+in domain classes. Later in design and implementation, the other types of classes become 
+more relevant.
+An attribute of an analysis class represents a piece of information that is relevant to the 
+description of the class within the application domain of the problem being investigated. 
+An attribute contains information the analyst or user feels the system should keep track of. 
+For example, a possible relevant attribute of an employee class is employee name, whereas 
+one that might not be as relevant is hair color. Both describe something about an employee, 
+but hair color is probably not all that useful for most business applications. Only attributes 
+that are important to the task should be included in the class. Finally, only attributes that 
+are primitive or atomic types (i.e., integers, strings, doubles, date, time, Boolean, etc.) should 
+be added. Most complex or compound attributes are really placeholders for relationships 
+between classes. Th erefore, they should be modeled as relationships, not as attributes (see 
+the next section).
+Th e behavior of an analysis class is defi ned in an operation or service. In later phases, the 
+operations are converted to methods. However, because methods are more related to implementation, at this point in the development we use the term operation to describe the actions 
+to which the instances of the class are capable of responding. Like attributes, only problem 
+domain–specifi c operations that are relevant to the problem being investigated should be 
+considered. For example, it is normally required that classes provide means of creating 
+instances, deleting instances, accessing individual attribute values, setting individual attribute values, accessing individual relationship values, and removing individual relationship 
+values. However, at this point in the development of the evolving system, the analyst should 
+avoid cluttering up the defi nition of the class with these basic types of operations and focus 
+only on relevant problem domain–specifi c operations.
+Relationships
+Th ere are many diff erent types of relationships that can be defi ned, but all can be classifi ed 
+into three basic categories of data abstraction mechanisms: generalization relationships, 
+aggregation relationships, and association relationships. Th ese data-abstraction mechanisms allow the analyst to focus on the important dimensions while ignoring nonessential dimensions. As with attributes, the analyst must be careful to include only relevant 
+relationships.
+Generalization Relationships Th e generalization abstraction enables the analyst to create 
+classes that inherit attributes and operations of other classes. Th e analyst creates a superclass that contains basic attributes and operations that will be used in several subclasses. 
+Th e subclasses inherit the attributes and operations of their superclass and can also contain 
+attributes and operations that are unique just to them. For example, a customer class and 
+an employee class can be generalized into a person class by extracting the attributes and 
+operations both have in common and placing them into the new superclass, person. In this 
+way, the analyst can reduce the redundancy in the class defi nitions so that the common 
+elements are defi ned once and then reused in the subclasses. Generalization is represented 
+with the a-kind-of relationship, so that we say that an employee is a-kind-of person.
+Th e analyst also can use the opposite of generalization. Specialization uncovers 
+additional classes by allowing new subclasses to be created from an existing class. For 
+example, an employee class can be specialized into a secretary class and an engineer class. 
+166 Chapter 5 Structural Modeling
+Furthermore, generalization relationships between classes can be combined to form generalization hierarchies. Based on the previous examples, a secretary class and an engineer class 
+can be subclasses of an employee class, which in turn could be a subclass of a person class. 
+Th is would be read as a secretary and an engineer are a-kind-of employee and a customer 
+and an employee are a-kind-of person.
+Th e generalization data abstraction is a very powerful mechanism that encourages the 
+analyst to focus on the properties that make each class unique by allowing the similarities 
+to be factored into superclasses. However, to ensure that the semantics of the subclasses are 
+maintained, the analyst should apply the principle of substitutability. By this we mean that 
+the subclass should be capable of substituting for the superclass anywhere that uses the superclass (e.g., anywhere we use the employee superclass, we could also logically use its secretary 
+subclass). By focusing on the a-kind-of interpretation of the generalization relationship, the 
+principle of substitutability is applied.
+Aggregation Relationships Generally speaking, all aggregation relationships relate parts to 
+wholes or assemblies. For our purposes, we use the a-part-of or has-parts semantic relationship 
+to represent the aggregation abstraction. For example, a door is a-part-of a car, an employee is 
+a-part-of a department, or a department is a-part-of an organization. Like the generalization 
+relationship, aggregation relationships can be combined into aggregation hierarchies. For 
+example, a piston is a-part-of an engine, and an engine is a-part-of a car.
+Aggregation relationships are bidirectional. Th e fl ip side of aggregation is decomposition.
+Th e analyst can use decomposition to uncover parts of a class that should be modeled separately. For example, if a door and an engine are a-part-of a car, then a car has-parts door and 
+engine. Th e analyst can bounce around between the various parts to uncover new parts. For 
+example, the analyst can ask, What other parts are there to a car? or To which other assemblies can a door belong?
+Association Relationships Th ere are other types of relationships that do not fi t neatly into 
+a generalization (a-kind-of) or aggregation (a-part-of) framework. Technically speaking, 
+these relationships are usually a weaker form of the aggregation relationship. For example, a 
+patient schedules an appointment. It could be argued that a patient is a-part-of an appointment. However, there is a clear semantic diff erence between this type of relationship and one 
+that models the relationship between doors and cars or even workers and unions. Th us, they 
+are simply considered to be associations between instances of classes.
+OBJECT IDENTIFICATION
+Diff erent approaches have been suggested to aid the analyst in identifying a set of candidate 
+objects for the structural model. Th e four most common approaches are textual analysis, 
+brainstorming, common object lists, and patterns. Most analysts use a combination of these 
+techniques to make sure that no important objects and object attributes, operations, and 
+relationships have been overlooked.
+Textual Analysis
+Th e analyst performs textual analysis by reviewing the use-case diagrams and examining 
+the text in the use-case descriptions to identify potential objects, attributes, operations, and 
+relationships. Th e nouns in the use case suggest possible classes, and the verbs suggest possible operations. Figure 5-1 presents a summary of useful guidelines. Th e textual analysis of 
+Object Identifi cation  167
+use-case descriptions has been criticized as being too simple, but because its primary purpose is to create an initial rough-cut structural model, its simplicity is a major advantage. 
+For example, if we applied these rules to the Make Old Patient Appt use case described in 
+Chapter 4 and replicated in Figure 5-2, we can easily identify potential objects for an old 
+patient, doctor, appointment, patient, offi ce, receptionist, name, address, patient information, payment, date, and time. We also can easily identify potential operations that can be 
+associated with the identifi ed objects. For example, patient contacts offi ce, makes a new 
+appointment, cancels an existing appointment, changes an existing appointment, matches 
+requested appointment times and dates with requested times and dates, and fi nds current 
+appointment.
+Brainstorming
+Brainstorming is a discovery technique that has been used successfully in identifying candidate classes. Essentially, in this context, brainstorming is a process that a set of individuals 
+sitting around a table suggest potential classes that could be useful for the problem under 
+consideration. Typically, a brainstorming session is kicked off by a facilitator who asks the 
+set of individuals to address a specifi c question or statement that frames the session. For 
+example, using the appointment problem described previously, the facilitator could ask the 
+development team and users to think about their experiences of making appointments and 
+to identify candidate classes based on their past experiences. Notice that this approach does 
+not use the functional models developed earlier. It simply asks the participants to identify 
+the objects with which they have interacted. For example, a potential set of objects that 
+come to mind are doctors, nurses, receptionists, appointment, illness, treatment, prescriptions, insurance card, and medical records. Once a suffi cient number of candidate objects 
+have been identifi ed, the participants should discuss and select which of the candidate 
+objects should be considered further. Once these have been identifi ed, further brainstorming can take place to identify potential attributes, operations, and relationships for each of 
+the identifi ed objects.
+Bellin and Simone2 have suggested a set of useful principles to guide a brainstorming 
+session. First, all suggestions should be taken seriously. At this point in the development 
+• A common or improper noun implies a class of objects.
+• A proper noun or direct reference implies an instance of a class.
+• A collective noun implies a class of objects made up of groups of instances of another class.
+• An adjective implies an attribute of an object.
+• A doing verb implies an operation.
+• A being verb implies a classifi cation relationship between an object and its class.
+• A having verb implies an aggregation or association relationship.
+• A transitive verb implies an operation.
+• An intransitive verb implies an exception.
+• A predicate or descriptive verb phrase implies an operation.
+• An adverb implies an attribute of a relationship or an operation.
+Adapted from: These guidelines are based on Russell J. Abbott, “Program Design by Informal English Descriptions,” 
+Communications of the ACM 26, no. 11 (1983): 882–894; Peter P-S Chen, “English Sentence Structure and 
+Entity-Relationship Diagrams,” Information Sciences: An International Journal 29, no. 2–3 (1983): 127–149; 
+Ian Graham, Migrating to Object Technology (Reading, MA: Addison Wesley Longman, 1995).
+FIGURE 5-1
+Textual Analysis 
+Guidelines
+2 D. Bellin and S. S. Simone, Th e CRC Card Book (Reading, MA: Addison-Wesley, 1997).
+168 Chapter 5 Structural Modeling
+FIGURE 5-2  Use-Case Description (Figure 4-13)
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Make Old Patient Appt 2 Low
+Old Patient
+Old Patient – wants to make, change, or cancel an appointment
+Doctor – wants to ensure patient’s needs are met in a timely manner
+Use Case Type: Detail, Essential
+Patient calls and asks for a new appointment or asks to cancel or change an existing appointment.
+Old Patient
+Update Patient Information
+Manage Appointments
+1. The Patient contacts the office regarding an appointment.
+2. The Patient provides the Receptionist with his or her name and address.
+3. If the Patient’s information has changed
+ Execute the Update Patient Information use case.
+4. If the Patient’s payment arrangements has changed
+ Execute the Make Payments Arrangements use case.
+5. The Receptionist asks Patient if he or she would like to make a new appointment, cancel an existing appointment, or change
+ an existing appointment.
+S-1: New Appointment
+1. The Receptionist asks the Patient for possible appointment times.
+2. The Receptionist matches the Patient’s desired appointment times with available dates and 
+times and schedules the new appointment.
+S-2: Cancel Appointment
+1. The Receptionist asks the Patient for the old appointment time.
+2. The Receptionist finds the current appointment in the appointment file and cancels it. 
+S-3: Change Appointment
+1. The Receptionist performs the S-2: cancel appointment subflow.
+2. The Receptionist performs the S-1: new appointment subflow.
+S-1, 2a1: The Receptionist proposes some alternative appointment times based on what is available in the 
+ appointment schedule.
+S-1, 2a2: The Patient chooses one of the proposed times or decides not to make an appointment. 
+6. The Receptionist provides the results of the transaction to the Patient.
+This use case describes how we make an appointment as well as changing or canceling 
+an appointment for a previously seen patient.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+If the patient wants to make a new appointment,
+ the S-1: new appointment subflow is performed.
+If the patient wants to cancel an existing appointment,
+ the S-2: cancel appointment subflow is performed.
+If the patient wants to change an existing appointment,
+ the S-3: change appointment subflow is performed.
+TEMPLATE
+can be found at
+www.wiley.com
+/college/dennis
+Object Identifi cation  169
+of the system, it is much better to have to delete something later than to accidentally leave 
+something critical out. Second, all participants should begin thinking fast and furiously. Aft er 
+all ideas are out on the proverbial table, then the participants can be encouraged to ponder 
+the candidate classes they have identifi ed. Th ird, the facilitator must manage the fast and 
+furious thinking process. Otherwise, the process will be chaotic. Furthermore, the facilitator 
+should ensure that all participants are involved and that a few participants do not dominate 
+the process. To get the most complete view of the problem, we suggest using a round-robin 
+approach wherein participants take turns suggesting candidate classes. Another approach is 
+to use an electronic brainstorming tool that supports anonymity.3 Fourth, the facilitator can 
+use humor to break the ice so that all participants can feel comfortable in making suggestions.
+Common Object Lists
+As its name implies, a common object list is simply a list of objects common to the business 
+domain of the system. Several categories of objects have been found to help the analyst 
+in creating the list, such as physical or tangible things, incidents, roles, and interactions.4 
+Analysts should fi rst look for physical, or tangible, things in the business domain. Th ese could 
+include books, desks, chairs, and offi ce equipment. Normally, these types of objects are the 
+easiest to identify. Incidents are events that occur in the business domain, such as meetings, 
+fl ights, performances, or accidents. Reviewing the use cases can readily identify the roles that 
+the people play in the problem, such as doctor, nurse, patient, or receptionist. Typically, an 
+interaction is a transaction that takes place in the business domain, such as a sales transaction. Other types of objects that can be identifi ed include places, containers, organizations, 
+business records, catalogs, and policies. In rare cases, processes themselves may need information stored about them. In these cases, processes may need an object, in addition to a use 
+case, to represent them. Finally, there are libraries of reusable objects that have been created 
+for diff erent business domains. For example, with regard to the appointment problem, the 
+Common Open Source Medical Objects5 could be useful to investigate for potential objects 
+that should be included.
+Patterns
+Th e idea of using patterns is a relatively new area in object-oriented systems development.6 
+Th ere have been many defi nitions of exactly what a pattern is. From our perspective, a pattern is simply a useful group of collaborating classes that provide a solution to a commonly 
+occurring problem. Because patterns provide a solution to commonly occurring problems, 
+they are reusable.
+3 A.R. Dennis, J.S. Valacich, T. Connolly, and B.E. Wynne, “Process Structuring in Electronic Brainstorming,” 
+Information Systems Research 7, no. 2 (June 1996): 268–277.
+4 For example, see C. Larman, Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design 
+(Englewood Cliff s, NJ: Prentice Hall, 1998); S. Shlaer and S. J. Mellor, Object-Oriented Systems Analysis: Modeling the 
+World in Data (Englewood Cliff s, NJ: Yourdon Press, 1988).
+5 See Common Open Source Medical Objects, Sourceforge, sourceforge.net/projects/cosmos/.
+6 Many books have been devoted to this topic. For example, see P. Coad, D. North, and M. Mayfi eld, Object Models: Strategies, Patterns, & Applications, 2nd Ed. (Englewood Cliff s, NJ: Prentice Hall, 1997); H.-E. Eriksson and 
+M. Penker, Business Modeling with UML: Business Patterns at Work (New York: Wiley, 2000); M. Fowler, Analysis 
+Patterns: Reusable Object Models (Reading, MA: Addison-Wesley, 1997); E. Gamma, R. Helm, R. Johnson, and 
+J. Vlissides, Design Patterns: Elements of Reusable Object-Oriented Soft ware (Reading, MA: Addison-Wesley, 1995); 
+David C. Hay, Data Model Patterns: Conventions of Th ought (New York: Dorset House, 1996); L. Silverston, Th e 
+Data Model Resource Book: A Library of Universal Data Models for All Enterprises, Volume 1, Revised Ed. (New 
+York, NY; Wiley, 2001).
+170 Chapter 5 Structural Modeling
+FIGURE 5-3  Sample Patterns
+Place
+Transaction Transaction Line Item Item
+Participant
+0..*
+0..*
+1..*
+1..1
+1..1
+1..1 0..* 1..1
+Transaction Account
+2..21..1
+1..10..*
+Person Organization
+Party
+Good Service
+Product
+Entry
+An architect, Christopher Alexander, has inspired much of the work associated with 
+using patterns in object-oriented systems development. According to Alexander and his colleagues,7 it is possible to make very sophisticated buildings by stringing together commonly 
+found patterns, rather than creating entirely new concepts and designs. In a similar manner, it is possible to put together commonly found object-oriented patterns to form elegant 
+object-oriented information systems. For example, many business transactions involve the 
+same types of objects and interactions. Virtually all transactions would require a transaction 
+class, a transaction line item class, an item class, a location class, and a participant class. By 
+reusing these existing patterns of classes, we can more quickly and more completely defi ne 
+the system than if we start with a blank piece of paper.
+Many types of patterns have been proposed, ranging from high-level business-oriented 
+patterns to more low-level design patterns. For example, Figure 5-3 depicts a set of useful 
+analysis patterns.8 Figure 5-4 portrays a class diagram that we created by merging the patterns 
+contained in Figure 5-3 into a single reusable pattern. In this case, we merged the Transaction–
+Entry–Account pattern (located at the bottom left of Figure 5-3) with the Place–Transaction–
+Participant–Transaction Line Item–Item pattern (located at the top left of Figure 5-3) on the 
+7 C. Alexander, S. Ishikawa, M. Silverstein, M. Jacobson, I. Fiksdahl-King, and S. Angel, A Pattern Language (New 
+York: Oxford University Press, 1977).
+8 Th e patterns are portrayed using UML Class Diagrams. We describe the syntax of the diagrams later in this chapter. 
+Th e specifi c patterns shown have been adapted from patterns described in P. Coad, D. North, and M. Mayfi eld,
+Object Models: Strategies, Patterns, & Applications, 2nd Ed.; M. Fowler, Analysis Patterns: Reusable Object Models; 
+L. Silverston, Th e Data Model Resource Book: A Library of Universal Data Models for All Enterprises, Volume 1, 
+Revised Edition.
+Object Identifi cation  171
+FIGURE 5-4  Sample Integration of Sample Patterns
+Place
+Transaction Transaction Line Item Item
+Participant
+0..*
+0..*
+1..*
+1..1
+1..1
+1..1 0..* 1..1
+2..2 1..1
+Person Organization
+Good Service
+Account
+1..1 0..*
+Entry
+common Transaction class. Next, we merged the Party–Person–Organization (located at the 
+top right of Figure 5-3) by merging the Participant and Party classes. Finally, we extended 
+the Item class by merging the Item class with the Product class of the Product–Good–Service 
+pattern (located at the bottom right of Figure 5-3).
+In this manner, using patterns from diff erent sources in enables the development team 
+to leverage knowledge beyond that of the immediate team members and allows the team to 
+develop more complete and robust models of the problem domain. For example, in the case 
+of the appointment problem, we can look at the objects previously identifi ed through textual 
+analysis, brainstorming, and/or common object lists and see if it makes sense to map any of 
+them into any predefi ned reusable patterns. In this specifi c case, we can look at an appointment 
+as a type of transaction in which a doctor’s offi ce participates. By looking at an appointment as a 
+type of transaction, we can apply the pattern we created in Figure 5-4 and discover a set of previously unidentifi ed objects, such as Place, Patient as a type of Participant, and Transaction Line 
+Items that are associated with diff erent types of Items (Goods and/or Services). Discovering 
+these specifi c additional objects could be useful in developing the billing side of the appointment system. Even though these additional objects could be applicable, they were not uncovered using the other techniques.
+Based on this simple example, it is obvious that using patterns to develop structural 
+models can be advantageous. Figure 5-5 lists some common business domains for which 
+patterns have been developed and their source. If we are developing a business information 
+system in one of these business domains, then the patterns developed for that domain may 
+be a very useful starting point in identifying needed classes and their attributes, operations, 
+and relationships.
+172 Chapter 5 Structural Modeling
+CRC CARDS
+CRC (Class–Responsibility–Collaboration) cards are used to document the responsibilities and 
+collaborations of a class. In some object-oriented systems-development methodologies, CRC 
+cards are seen to be an alternative competitor to the Unifi ed Process employment of use cases 
+and class diagrams. However, we see them as a useful, low-tech approach that can compliment a typical high-tech Unifi ed Process approach that uses CASE tools. We use an extended 
+form of the CRC card to capture all relevant information associated with a class.9 We describe 
+the elements of our CRC cards later, aft er we explain responsibilities and collaborations.
+Responsibilities and Collaborations
+Responsibilities of a class can be broken into two separate types: knowing and doing. 
+Knowing responsibilities are those things that an instance of a class must be capable of knowing. An instance of a class typically knows the values of its attributes and its relationships.
+Doing responsibilities are those things that an instance of a class must be capable of doing. In 
+this case, an instance of a class can execute its operations or it can request a second instance, 
+which it knows about, to execute one of its operations on behalf of the fi rst instance.
+Th e structural model describes the objects necessary to support the business processes 
+modeled by the use cases. Most use cases involve a set of several classes, not just one class. 
+9 Our CRC cards are based on the work of D. Bellin and S. S. Simone, Th e CRC Card Book (Reading, MA: AddisonWesley, 1997); I. Graham, Migrating to Object Technology (Wokingham, England: Addison-Wesley, 1995); B. 
+ Henderson-Sellers and B. Unhelkar, OPEN modeling with UML (Harlow, England: Addison-Wesley, 2000)

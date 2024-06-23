@@ -1,0 +1,708 @@
+﻿Figure 2-16 illustrates another workflow diagram, which demonstrates 
+some new concepts. In this example, a customer is ordering a product that has 
+to be manufactured to match customer specifications. To show that the salesper son sends the order to Engineering, the diagram uses a new symbol to emphasize 
+the transmission of the document between Sales and Engineering. After Engi neering develops the specifications, two concurrent activities happen: Purchas ing orders the materials, and Production writes the program for the automated 
+milling machines. These two activities are completely independent and can 
+occur at the same time. Notice that one synchronization bar splits the path into 
+two concurrent paths and that another synchronization bar reconnects them. 
+Finally, Scheduling puts the order on the Production schedule.
+Creating activity diagrams to document workflows is straightforward. 
+The first step is to identify the agents to create the appropriate swimlanes. Next, 
+follow the various steps of the workflow and then make appropriate ovals for 
+the activities. Connect the activity ovals with arrows to show the workflow. 
+Here are a couple guidelines:
+■ Use a decision symbol to represent an either/or situation—one path or the 
+other path but not both. As a shorthand notation, you can merge an activ ity (by using an oval) and a decision (by using a diamond) into a single oval 
+Salesperson Engineering Purchasing Production
+Accept
+order
+Make
+specifications
+Buy
+materials
+Program
+computer
+Schedule
+production
+Scheduling
+Order
+Figur e 2-16 Activity diagram showing concurrent paths
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 63
+with two exit arrows, as indicated on the right in Figure 2-14. This nota tion represents a decision (either/or) activity. Wherever you have an activity 
+that reads “verify” or “check,” you will probably require a decision—one 
+for the “accept” path and one for the “reject” path.
+■ Use synchronization bars for parallel paths—situations in which both paths 
+are taken. Include a beginning and an ending synchronization bar. You can 
+also use synchronization bars to represent a loop, such as a “do while” pro gramming loop. Put the bar at the beginning of the loop and then describe 
+it as “for every.” Put another synchronization bar at the end of the loop 
+with the description “end for every.”
+CHAPTER Summary
+This chapter focuses on system requirements, which is 
+the focus of the Core Process 3 (systems analysis) of 
+the SDLC. There are five primary activities of systems 
+analysis:
+■ Gather detailed information.
+■ Define requirements.
+■ Prioritize requirements.
+■ Develop user-interface dialogs.
+■ Evaluate requirements with users.
+Functional requirements are those that explain the 
+basic business functions that the new system must sup port. Nonfunctional requirements involve the system’s 
+objectives with regard to usability, reliability, perfor mance, and security.
+Stakeholders include internal and external users 
+of the system and other persons or organizations that 
+have a vested interest in the system.
+Analysts use many techniques to gather informa tion about requirements, including:
+■ Interviews
+■ Questionnaires
+■ Documentation, input and output reviews
+■ Process observation and documentation
+■ Vendor solution research
+■ Active comments and suggestions from users
+Textual, graphical, and mathematical models are 
+developed to document requirements and as an aid in 
+evaluating requirements with users and other stake holders. Models are created when gathering informa tion about the system. They are also created when 
+designing the system. Unified Modeling Language 
+(UML) defines a collection of diagrams and constructs 
+used for system modeling.
+UML activity diagrams are used to model work flows, a technique often used as an early requirements 
+model. Activity diagrams graphically model the steps 
+of a business process and the participants who per form them. Other models and UML diagrams are cov ered in later chapters.
+internal stakeholders
+mathematical models
+model
+nonfunctional requirements
+open-ended questions
+operational stakeholders
+performance requirements
+reliability requirements
+security requirements
+stakeholders
+swimlane
+synchronization bar
+system requirements
+technology architecture
+textual models
+Unified Modeling Language 
+(UML)
+usability requirements
+workflow
+activity diagram
+application architecture
+client
+closed-ended questions
+executive stakeholders
+external stakeholders
+functional requirements
+FURPS
+FURPS+
+graphical models
+Key Terms
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+64 PART 2 ■ Systems Analysis Activities
+7. Describe the open-items list and then explain 
+why it is important.
+8. List and briefly describe the six information gathering techniques.
+9. What is the purpose of an activity diagram?
+10. Draw and explain the symbols used on an 
+activity diagram.
+11. Explain why the Unified Modeling Language 
+(UML) is important to use as a standard for 
+creating information systems models.
+1. List and briefly describe the five activities of 
+systems analysis.
+2. What are three types of models?
+3. What is the difference between functional re quirements and nonfunctional requirements?
+4. Describe the steps in preparing for, conducting, 
+and following up on an interview session.
+5. What are the benefits of doing vendor research 
+during information-gathering activities?
+6. What types of stakeholders should you include in 
+fact finding?
+Review Questions
+PROBLEMS AND EXERCISES
+1. Provide an example of each of the three types 
+of models that might apply to designing a car, a 
+house, and an office building.
+2. One of the toughest problems in investigating 
+system requirements is to make sure they are 
+complete and comprehensive. How would you 
+ensure that you get all the right information dur ing an interview session?
+3. One of the problems you will encounter during 
+your investigation is scope creep (i.e., user requests 
+for additional features and functions). Scope creep 
+happens because users can have problems with the 
+current system and the system investigation may be 
+the first time anybody has listened to their needs. 
+How do you keep the system from including new 
+functions that expand the scope beyond the con straints imposed by the project schedule or budget?
+4. What would you do if you got conflicting an swers for the same procedure from two different 
+people you interviewed? What would you do if 
+one was a clerical person and the other was the 
+department manager?
+5. You have been assigned to resolve several issues 
+on the open-items list, and you are having a hard 
+time getting policy decisions from the user con tact. How can you encourage the user to finalize 
+these policies?
+6. In the running case of RMO, assume that you 
+have set up an interview with the manager of the 
+Shipping Department. Your objective is to deter mine how shipping works and what the informa tion requirements for the new system will be. 
+Make a list of questions—open ended and closed 
+ended—that you would use. Include any ques tions or techniques you would use to ensure you 
+find out about the exceptions.
+7. Develop an activity diagram based on the follow ing narrative. Note any ambiguities or questions 
+that you have as you develop the model. If you 
+need to make assumptions, also note them.
+The Purchasing Department handles pur chase requests from other departments in the 
+company. People in the company who initiate 
+the original purchase request are the “custom ers” of the Purchasing Department. A case 
+worker within the Purchasing Department re ceives the request and monitors it until it is or dered and received.
+Case workers process requests for the pur chase of products under $1,500, write a pur chase order, and then send it to the approved 
+vendor. Purchase requests over $1,500 must first 
+be sent out for bid from the vendor that sup plies the product. When the bids return, the case 
+worker selects one bid and then writes a pur chase order and sends it to the vendor.
+8. Develop an activity diagram based on the follow ing narrative. Note any ambiguities or questions 
+that you have as you develop the model. If you 
+need to make assumptions, also note them.
+The Shipping Department receives all ship ments on outstanding purchase orders. When 
+the clerk in the Shipping Department receives 
+a shipment, he or she finds the outstanding 
+purchase order for those items. The clerk then 
+sends multiple copies of the shipment pack ing slip. One copy goes to Purchasing, and the 
+department updates its records to indicate that 
+the purchase order has been fulfilled. Another 
+copy goes to Accounting so a payment can be 
+made. A third copy goes to the requesting in house customer so he or she can receive the 
+shipment arrows represent the sequence of the activities. The black circles denote the 
+beginning and the ending of the workflow. The diamond is a decision point at 
+which the flow of the process will either follow one path or another. The heavy 
+solid line is a synchronization bar, which either splits the path into multiple 
+concurrent paths or recombines concurrent paths. The swimlane represents an 
+agent who performs the activities. It is called a swimlane because each agent fol lows a path parallel with other agents in the workflow, as with swimmers in a 
+swimming pool.
+Figure 2-15 is an activity diagram that describes the order fulfillment pro cess for the current RMO CSMS. Processing begins when the customer has 
+completed the order checkout process and the warehouse begins order fulfill ment. The diagram describes the back-and-forth flow of information and con trol between the order subsystem, inventory subsystem, warehouse(s), and 
+shipper. The diagram is simplified because it omits many error-handling path ways, including what happens if enough item stock is on hand to fulfill only part 
+of an order.
+workflow a sequence of work steps that 
+completely handle one business transaction 
+or customer request
+activity diagram a UML diagram that 
+describes user (or system) activities, the per son or component that completes each activ ity, and the sequential flow of these activities
+synchronization bar an activity diagram 
+component that either splits a control path 
+into multiple concurrent paths or recombines 
+concurrent paths
+swimlane an activity diagram component 
+that divides the workflow activities into 
+groups showing which agent performs which 
+activity
+Ending activity
+(Pseudo)
+Activity
+Transition arrow
+Starting activity
+(Pseudo)
+Decision
+activity
+Another way
+to show decision
+Synchronization
+bar (Split)
+Synchronization
+bar (Join)
+Manager
+Review
+financials
+Prepare
+report
+[no] [yes]
+Swimlane
+heading
+Figur e 2-14 Activity diagram 
+symbols
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 61
+Order subsystem
+Pick Item from
+stock
+Prepare shipment Generate tracking
+record
+Store shipment
+record
+Transmit shipment Receive shipment
+Decrement item
+stock count
+Transmit
+shipping details
+Update order
+shipment status
+Inventory
+subsystem Warehouse Shipping
+company
+Find warehouse
+with sufficient stock
+Identify order
+Select order
+to process
+Stock
+found?
+For each item
+on order
+End for each item
+Figur e 2-15 Simple activity diagram for order fulfillment after online checkout
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+62 PART 2 ■ Systems Analysis Activities After payment is made, the Accounting 
+Department sends a notification to Purchasing. After the customer receives and accepts the 
+goods, he or she sends notification to Purchasing. When Purchasing receives these other verifications, it closes the purchase order as fulfilled 
+and paid.
+9. Conduct a fact-finding interview with someone 
+involved in a procedure that is used in a business 
+or organization. This person could be someone at 
+the university, in a small business in your neighborhood, in the student volunteer office at the 
+university, in a doctor’s or dentist’s office, or in a 
+volunteer organization. Identify a process, such 
+as keeping student records, customer records, or 
+member records. Make a list of questions and then 
+conduct the interview. Remember, your objective 
+is to understand that procedure thoroughly (i.e., to 
+become an expert on that single procedure).
+10. Using RMO and the CSMS as your guide, develop a list of all the procedures that may need 
+to be researched. You may want to think about 
+the exercise in the context of your experience 
+with such retailers as L.L. Bean, Lands’ End, or 
+Amazon.com. Check out the Internet marketing 
+done on the retailers’ Web sites and then think 
+about the underlying business procedures that 
+are required to support those sales activities. List 
+the procedures and then describe your understanding of each.
+John and Jacob, Inc.: Online 
+Trading System
+John and Jacob, Inc., is a regional brokerage firm that has 
+been successful over the last several years. Competition for 
+customers is intense in this industry. The large national firms 
+have very deep pockets, with many services to offer clients. 
+Severe competition also comes from discount and Internet 
+trading companies. However, John and Jacob has been able 
+to cultivate a substantial customer base from upper-middleincome clients in the northeastern United States. To maintain a competitive edge with its customers, John and Jacob 
+is in the process of modernizing its online trading system. 
+The modernization will add new features to the existing system and expand the range of interfaces beyond desktop and 
+laptop computers to include tablet computers and smartphones. The system will add Twitter messaging in addition 
+to continued support for traditional e-mail.
+Edward Finnigan, the project manager, is in the process of identifying all the groups of people who should be 
+included in the development of the system requirements. 
+He is not quite sure exactly who should be included. Here 
+are the issues he is considering:
+■ Users. The trading system will be used by customers and by staff in each of the company’s 30 trading 
+offices. Obviously, the brokers who are going to use 
+the system need to have input, but how should this be 
+done? Edward also is not sure what approach would 
+be best to ensure that the requirements are complete 
+without requiring tremendous amounts of time from the 
+stakeholders. Including all the offices would increase 
+enthusiasm and support for the system, but it would 
+increase the time required to compile the information. 
+Furthermore, involving more brokers would bring divergent opinions that would have to be reconciled.
+■ Customers. The trading system will also include trade 
+order entry, investment analysis reports, trade confirmations, standard and customized reporting, and customer statements. Edward wonders how to involve 
+John and Jacob customers in the development of system requirements. Edward is sensitive to this issue 
+because many brokers have told him that their customers are unhappy with the current system, and customer complaints are sometimes posted to the public 
+comments area of the current Web site. He would like 
+to involve customers, but he does not know how.
+■ Other stakeholders. Edward knows he should involve 
+other stakeholders to help define system requirements. 
+He is not quite sure whom he should contact. Should he 
+go to senior executives? Should he contact middle management? Should he include such back-office functions 
+as accounting and investing? He is not quite sure how to 
+get organized or how to decide who should be involved.
+1. What is the best method for Edward to involve the 
+brokers (users) in the development of the updated 
+online trading system? Should he use a questionnaire? 
+Should he interview the brokers in each of the company’s 30 offices or would one or two brokers representing the entire group be better? How can ­Edward 
+ensure that the information about requirements is 
+complete, yet not lose too much time doing so?
+2. Concerning customer input for the new system, how can 
+Edward involve customers in the process? How can he 
+interest them in participating? What methods can Edward 
+use to ensure that the customers he involves are representative of John and Jacob’s entire customer group?
+3. As Edward considers what other stakeholders he 
+should include, what are some criteria he should use? 
+Develop some guidelines to help him build a list of 
+people to include.
+CASE STUDY
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+66 PART 2 ■ Systems Analysis Activities
+Community Board of Realtors®
+The real estate business relies on an extensive amount of 
+information used in the buying and selling of real property. Most communities of real estate agents and brokers 
+have formed cooperative organizations to help consolidate and distribute information on the real estate profession, real estate trends, properties in the community, 
+historical records of property sales, and current listings 
+of properties for sale. These organizations are usually 
+referred to as the Community Board of Realtors.
+Research your local Community Board of Realtors to answer these questions:
+1. Who are the stakeholders for the issues related to 
+real estate in your community, and what are their 
+main interests?
+2. What types of information does the board collect and make available to its members and to the 
+community?
+3. Research the real estate industry in at least two 
+countries other than the United States. For each of 
+these countries, what are some of the cultural and 
+legal issues that differ from those in the United 
+States? If you were working on support for an international real estate cooperative system, in what 
+ways would the information collection activity 
+process be complicated?
+Running Case Studies
+The Spring Breaks ‘R’ Us Travel Service
+Spring Breaks ‘R’ Us (SBRU) is an online travel service that books spring break trips to resorts for college 
+students. Students have booked spring break trips for 
+decades, but changes in technology have transformed 
+the travel business in recent years. SBRU moved away 
+from having campus reps with posted fliers and moved 
+to the Web early on. The basic idea is to get a group 
+of students to book a room at a resort for one of the 
+traditional spring break weeks. SBRU contracts with 
+dozens of resorts in key spring break destinations like 
+Florida, Texas, the Caribbean, and Mexico. Its Web 
+site shows information on each resort and includes 
+prices, available rooms, and special features. Students 
+can research and book a room, enter contract information, and pay deposits and final payments through 
+the system. SBRU provides updated booking information, resort information updates, and travel information for booked students when they log in to the site.
+The resorts also need access to information from 
+SBRU. They need to know about their bookings for 
+each week, the room types that are booked, and so 
+forth. Before the spring break booking season starts, 
+they need to enter information on their resorts, including prices and special features. Resorts need to be paid 
+by SBRU for the bookings, and they need to be able to 
+report and collect for damages caused by spring breakers during their stay.
+SBRU has recently decided to upgrade its system 
+to provide social networking features for students. It 
+is currently researching possibilities and collecting information from prospective customers about desirable 
+features and functions. From the business standpoint, 
+the idea is to increase bookings by enhancing the 
+experience before, during, and after the trip.
+1. Who are the stakeholders for SBRU? For each 
+type of stakeholder, what aspects of the SBRU 
+booking system are of particular interest?
+2. What are the main functional requirements 
+for the major subsystems (i.e., resort relations, 
+student booking, accounting and finance, and 
+social networking)?
+3. Describe some usability requirements for students, booking interactions, and social networking interactions.
+4. Assuming that social networking at the resorts 
+will require wireless communication and connection to the Internet, what are some reliability 
+requirements that resorts might be asked to 
+maintain? What are some performance requirements? Is this a bigger issue because resorts are 
+in international locations?
+5. What are some security requirements? Is there 
+any reason why students in Europe, Asia, or 
+other locations could not book rooms through 
+SBRU? What issues might be anticipated?
+6. To collect information on functional requirements for the social networking subsystem, what 
+are some techniques that might be used? Be 
+specific and include some sample questions you 
+might ask by using various techniques.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 2 ■ Investigating System Requirements 67
+On the Spot Courier Services
+As an employee of a large international courier and 
+shipping service, Bill Wiley met with many companies 
+that shipped and received packages almost every day. 
+He was frequently asked if his company could deliver 
+local packages on the same day. Over several months, 
+he observed that there appeared to be a substantial 
+need for courier services in the city in which he lived. 
+He decided that he would form his own courier delivery company called On the Spot to fill this need.
+Bill began by listing his mobile telephone number 
+in the Yellow Pages. He also sent letters to all those 
+companies that had requested same-day courier service that his prior company had not been able to serve. 
+He hoped that through good service and word-ofmouth advertising that his business would grow. He 
+also began other advertising and marketing activities 
+to promote his services.
+At first, Bill received delivery requests on his business mobile phone. However, it was not long before 
+his customers were asking if he had a Web site where 
+they could place orders for shipments. He knew that if 
+he could get a Web presence that he could increase his 
+exposure and help his business grow.
+After he had been in business only a few short 
+months, Bill discovered he needed to have additional 
+help. He hired another person to help with the delivery 
+and pickup of packages. It was good to see the business 
+grow, but another person added to the complexity of 
+coordinating pickups and deliveries. With the addition 
+of a new person, he could no longer “warehouse” the 
+packages out of his delivery van. He now needed a central warehouse where he could organize and distribute 
+packages for delivery. He thought that if his business 
+grew enough to add one more delivery person that he 
+would also need someone at the warehouse to coordinate the arrival and distribution of all the packages.
+1. Who are the stakeholders for On the Spot? How 
+involved should On the Spot’s customers be in 
+system definition? As the business grows, who 
+else might be potential stakeholders and interested in system functions?
+2. If you were commissioned to build a system 
+for Bill, how would you determine the requirements? Be specific in your answer. Make a list of 
+the questions you need answered.
+3. What technology and communication requirements do you see? What are the hardware requirements, and what kind of equipment will 
+provide viable options to the system? What 
+would you recommend to Bill?
+4. What are the primary functional requirements 
+for the system as described so far in the case?
+Sandia Medical Devices
+Medical monitoring technology has advanced significantly in the last decade. Monitoring that once 
+required a visit to a health-care facility can now be 
+performed by devices located in a patient’s home, or 
+carried or worn at all times. Examples include measures of glucose level (blood sugar), pulse, blood pressure, and electrocardiogram (EKG). Measurements 
+can be transmitted via telephone, Internet connection, 
+and wireless data transmission standards, such as 
+Bluetooth. A particularly powerful technology combination is a wearable device that records data periodically or continuously and transmits it via Bluetooth to 
+a cell phone app. The cell phone app can inform the 
+patient of problems and can automatically transmit 
+data and alerts to a central monitoring application (see 
+Figure 2-17).
+Health-care providers and patients incur significant costs when glucose levels are not maintained 
+within acceptable tolerances. Short-term episodes of 
+very high or very low glucose often result in expensive 
+visits to urgent care clinics or hospitals. In addition, 
+patients with frequent but less severe episodes of high 
+or low glucose are more susceptible to such expensive, 
+long-term complications as vision, circulatory, and 
+kidney problems.
+Sandia Medical Devices (SMD), an Albuquerque 
+manufacturer of portable and wearable medical monitoring devices, has developed a glucose monitor embedded in a wristband. The device is powered by body 
+heat and senses glucose levels from minute quantities 
+of perspiration. SMD is developing the Real-Time Glucose Monitoring (RTGM) device in partnership with 
+New Mexico Health Systems (NMHS), a comprehensive health delivery service with patients throughout 
+New Mexico. The system’s vision statement reads as 
+follows:
+RTGM will enable patients and their health-care 
+providers to continuously monitor glucose levels, 
+immediately identify short- and long-term medical dangers, and rapidly respond to those dangers 
+in medically appropriate ways.
+SMD will develop the initial prototype software 
+for smartphones with Bluetooth capability running 
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+68 PART 2 ■ Systems Analysis Activities
+the Google Android operating system. If successful, 
+NMHS and its patients will have free use of the software and SMD will resell the software to other health 
+systems worldwide.
+1. Who are RTGM’s stakeholders? Should 
+NMHS’s patients be included in defining the 
+system requirements? Why or why not? Should 
+RTGM interact with medical professionals other 
+than physicians? Why or why not?
+2. If you were the lead analyst for RTGM, 
+how would you determine the requirements? 
+Be specific in your answer. List several questions 
+you need answered.
+3. What are the primary functional requirements 
+for the system as described so far in the case?
+4. Are the parameters for alerting patients and 
+medical personnel the same for every patient? 
+Can they vary over time for the same patient? 
+What are the implications for the system’s functional requirements?
+5. Briefly describe some possible nonfunctional requirements for RTGM.
+Figure 2-17 Data movement among devices and users
+Cell phone app
+routes date and
+interacts with
+patient for alerts
+and monitoring
+Wristband continuously
+measures glucose level
+Data sent to/from
+server via
+wireless Internet
+Server archives
+data and
+generates alerts
+Medical personnel
+monitor levels/trends
+and plan response
+Communication with
+patient via voice
+or text messages
+Data transmitted
+to cell phone
+via Bluetooth
+Soren Lauesen, Software Requirements: Styles and 
+Techniques. Addison-Wesley, 2002.
+Stan Magee, Guide to Software Engineering Standards and Specifications. Artech House, 1997.
+Suzanne Robertson and James Robertson, Mastering the Requirements Process, Second Edition. 
+Addison-Wesley, 2006.
+Karl Wiegers, Software Requirements. Microsoft 
+Press, 2003.
+Karl Wiegers, More About Software Requirements: 
+Thorny Issues and Practical Advice. Microsoft 
+Press, 2006.
+Ralph Young, The Requirements Engineering 
+Handbook. Artech House, 2003.
+FURTHER RESOURCES
+© Blue Vista Design/
+Shutterstock.com
+© Rehan Qureshi/Shutterstock.com
+© StockLite/Shutterstock.com
+© Alexey Boldin/Shutterstock.com
+© Jon Le-Bon/
+Shutterstock.com
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+After reading this chapter, you should be able to:
+Explain why identifying user stories and 
+use cases is the key to defining functional 
+requirements
+Write user stories with acceptance criteria
+Describe the two techniques for identifying 
+use cases
+Apply the user goal technique to identify use 
+cases
+Apply the event decomposition technique to 
+identify use cases
+Describe the notation and purpose for the use 
+case diagram
+Draw use case diagrams by actor and by 
+subsystem
+Learning Objectives
+User Stories and Use Cases
+Use Cases and the User Goal Technique
+Use Cases and Event Decomposition
+Use Cases in the Ridgeline Mountain 
+Outfitters Case
+Chapter Outline
+Identifying User Stories 
+and Use Cases
+CHAPTER three
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+70 PART 2 ■ Systems Analysis Activities
+■ Overview
+Chapter 2 described the systems analysis activities used in system development and introduced the tasks and techniques involved when completing the 
+first analysis activity—gathering information about the system, its stakeholders, and its requirements. An extensive amount of information is required to 
+properly define the system’s functional and nonfunctional requirements. This 
+chapter, with Chapter 4 and Chapter 5, presents techniques for documenting 
+Opening case Waiters on Call Meal-Delivery System
+Waiters on Call is a restaurant meal-delivery service 
+started in 2010 by Sue and Tom Bickford. The Bickfords worked for restaurants while in college and always 
+dreamed of opening their own restaurant; unfortunately, 
+the initial investment was always out of reach. The Bickfords noticed that many restaurants offer takeout food, 
+and that some restaurants—primarily pizzerias—offer 
+home-delivery service. However, many people they 
+met seemed to want home delivery with a wider food 
+selection.
+Sue and Tom conceived Waiters on Call as the best 
+of both worlds: a restaurant service without the high 
+initial investment. They contracted with a variety of 
+well-known restaurants in town to accept orders from 
+customers and to deliver the complete meals. After preparing the meal to order, the restaurant charges Waiters 
+on Call a wholesale price, and the customer pays retail 
+plus a service charge and tip when the meals are delivered. Waiters on Call started modestly, with only two 
+restaurants and one delivery driver working the dinner 
+shift. Business rapidly expanded, until the Bickfords realized they needed a custom computer system to support 
+their operations. They hired a consultant, Sam Wells, to 
+help them define what sort of system they needed.
+“What events happen when you are running your 
+business that make you want to reach for a computer?” 
+asked Sam. “Tell me about what usually goes on.”
+“Well,” answered Sue, “when a customer calls in 
+wanting to order, I need to record it and get the information to the right restaurant. I need to know which drivers 
+are available to pick up the order, so I need drivers to call 
+in and tell me when they are free. Perhaps this could 
+be included as a smartphone or iPad app. Sometimes, 
+customers call back wanting to change their orders, so I 
+need to find the original order and notify the restaurant 
+to make the change.”
+“Okay, that’s great. Now, how do you handle the 
+money?” queried Sam.
+Tom jumped in. “The drivers get a copy of the bill 
+showing the retail price directly from the restaurant 
+when they pick up the meal. The bill should agree with 
+our calculations. The drivers collect that amount plus a 
+service charge. When drivers report in at closing, we 
+add up the money they have and compare it with the 
+records we have. After all drivers report in, we need to 
+create a deposit slip for the bank for the day’s total receipts. At the end of each week, we calculate what we 
+owe each restaurant at the agreed-to wholesale price 
+and send them a statement and check.”
+“What other information do you need to get from 
+the system?” continued Sam.
+“It would be great to have some information at the 
+end of each week about orders by restaurant and orders by area of town—things like that,” Sue said. “That 
+would help us decide about advertising and restaurant 
+contracts. Then, we need monthly statements for our 
+accountant.”
+Sam made some notes and sketched some diagrams as Sue and Tom talked. Then, after spending 
+some time thinking about it, he summarized the situation for Waiters on Call. “It sounds to me like you need a 
+system to use whenever these events occur”:
+■ A customer calls in to place an order, so you need to 
+Record an order.
+■ A driver is finished with a delivery, so you need to 
+Record delivery completion.
+■ A customer calls back to change an order, so you 
+need to Update an order.
+■ A driver reports for work, so you need to Sign in the 
+driver.
+■ A driver submits the day’s receipts, so you need to 
+Reconcile driver receipts.
+Sam continues, “Then, you need the system to 
+produce information at specific points in time—for 
+example, when it is time to,”
+■ Produce an end-of-day deposit slip.
+■ Produce end-of-week restaurant payments.
+■ Produce weekly sales reports.
+■ Produce monthly financial reports.
+“Am I on the right track?”
+Sue and Tom quickly agreed that Sam was talking 
+about the system in a way they could understand. They 
+were confident that they had found the right consultant he functional requirements by creating a variety of models. These models are 
+created as part of the analysis activity Define requirements, although remember 
+that the analysis activities are actually done in parallel with design and implementation and in each iteration of the project.
+In the Waiters on Call case, Sam Wells is working with the Bickfords to 
+identify the functional requirements for the new system using the event decomposition technique. The sketch he was drawing was a use case diagram. You 
+will learn about this technique and others that help identify user stories and use 
+cases in this chapter.
+■ User Stories and Use Cases
+As you saw in Chapter 1, identifying user stories and use cases is a key task 
+when defining functional requirements because these form the basis for the list 
+of functions the system needs to carry out. Virtually all recent approaches to 
+system development begin the requirements modeling activity with the concept 
+of a user story or a use case. These two concepts are similar in that they focus 
+on the goals of the user, and they show the list of functions at the appropriate 
+level of detail. But they differ in the approach taken to identify them and in the 
+amount of detail that is captured by the analyst. User stories are favored by 
+highly Agile system development methodologies, and they are turned over to the 
+programmer analyst much earlier than use cases are. The programmer analyst 
+designs and codes each user story to discover needed details. The Agile development philosophy is to work directly with users and avoid doing too much 
+documentation. In contrast, a use case approach traditionally meant analysts 
+complete much documentation for each use case, focusing on detailed steps carried out by the user and the system. In practice, use cases can also be very brief 
+for Agile development.
+A user story is usually one short sentence in the everyday language of 
+the end user that states what a user does as part of his or her work. In other 
+words, a user story describes a goal the user has when using the system. 
+User stories are a basic concept in Agile development because they focus on 
+simplicity, value added, and user collaboration. They document the functional 
+requirements quickly and less formally than traditional requirements modeling 
+by focusing on who, what, and why for each function. The users and stakeholders are responsible for identifying the user stories.
+In meetings with stakeholders, analysts encourage participants to write out 
+each user story on an index card or on a shared whiteboard app. The objective 
+is to get a potential user to articulate what he or she wants to do with the new 
+system. A standard template helps users think through what they want and why 
+they want it. The standard template for a user story looks like this:
+“As a <role played>, I want to <goal or desire> so that <reason or benefit>.”
+For example, some user stories for a bank teller might be:
+■ “As a teller, I want to make a deposit to quickly serve more customers.”
+■ “As a teller, I want to balance the cash drawer to assure there were no 
+errors.”
+As a customer of the bank using an ATM machine, some user stories might be:
+■ “As a bank customer, I want to withdraw cash and feel confident the stack 
+of cash I get is the correct amount.”
+■ “As a bank customer, I want to deposit a check and feel confident the 
+deposit is recorded correctly.”

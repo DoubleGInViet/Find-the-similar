@@ -1,0 +1,236 @@
+﻿Architecture diagram
+Another type of model that’s useful for these types of systems is an architecture diagram, which is generally part of the high-level design. Figure 26-4 shows a portion of a simple architecture diagram for the treadmill. It identifies the major subsystems that will provide all of the treadmill’s functions, as well as the data and control interfaces between them, at a high level of abstraction. Richer architecture description languages are available, and the Unified Modeling Language (UML) also works well for modeling architectures (Rozanski and Woods 2005). The subsystems shown in Figure 26-4 can be further elaborated into specific hardware components (motors and sensors) and software components as architectural analysis proceeds. A preliminary architecture analysis can reveal and refine functional, interface, and quality requirements that might not have been evident from other elicitation activities.
+
+
+FIGURE 26-4 Partial architecture diagram for an exercise treadmill.
+ 
+Drawing architecture models during requirements analysis is clearly taking a step into design. It’s a necessary step. Iterating on the architectural partitioning and the allocation of system capabilities to subsystems and components is how an architect devises the most appropriate and effective solution.
+Further requirements elicitation is needed, though. Functional requirements such as the following will guide the developers in both choosing appropriate hardware components and designing user interface controls:
+Incline.Angle.Range The Exerciser shall be able to increase and decrease the incline angle of the treadmill from 0 degrees through 10 degrees, inclusive, in 0.5- degree increments.
+Incline.Angle.Limits The treadmill shall stop changing its angle and provide audible feedback when it has reached the minimum or maximum limit of its incline range.
+In addition to the functionality represented by the architecture, the treadmill designers must know about the business rules that provide necessary algorithms. An example is calculating the number of calories the Exerciser has burned from the combination of his weight and the workout program, which is a series of segments of specified duration, incline angle, and belt speed. It might seem peculiar
+to speak of “business rules” in conjunction with an embedded system. However, virtually all of the requirements practices discussed elsewhere in this book apply to embedded and other real-time systems, just as they do to business information systems.
+
+Prototyping
+s. Because of the costs and time needed to build hardware (and perhaps to rebuild it if you discover requirement or design errors), you can use prototypes to test operational concepts and to explore both requirements and design options for the device.
+Simulations can help you better understand user interface displays and controls, network interactions, and hardware-software interfaces (Engblom 2007). Keep in mind, though, that the simulation will differ from the real product in numerous respects.
+
+Interfaces
+Interfaces are a critical aspect of embedded and other real-time systems. As you saw in Chapter 10, “Documenting the requirements,” the SRS should address four classes of external interface requirements: user, software, hardware, and communications interfaces. In addition, the partitioning of complex systems into multiple subsystems creates numerous internal interfaces between components. Because embedded systems can be incorporated into other embedded systems as part of a larger product (such as a cell phone integrated into a motor vehicle’s communication system), the interface issues become even more complex.
+   
+ 
+If your external interfaces are relatively simple, you can specify them as described in section 5 of the SRS template illustrated in Figure 10-2, shown earlier in Chapter 10. Projects that are building complex systems often create a separate interface specification to document these critical aspects. Figure 26-5 suggests a template for an interface specification document that can accommodate both
+l	.
+
+FIGURE 26-5 Proposed template for an interface specification.
+
+
+
+ 
+Timing requirements lie at the heart of real-time control systems (Koopman 2010). Undesirable outcomes can result if signals are not received from sensors as scheduled, if the software cannot send control signals to the hardware when anticipated, or if the physical devices do not perform their actions on time. Timing requirements involve multiple dimensions:
+■ Execution time The execution time for a specific task is the elapsed time from when it is initiated to when it completes. This can be measured as the duration between two specific events that bound the task’s execution.
+
+■	Latency   Latency is the time lag between when a trigger event occurs and when the system
+	begins to respond to it. Excessive latency poses a problem in, for example, music recording	
+	and production software,	in which multiple prerecorded and live audio tracks must b	e
+precisely synchronized.
+ 
+■	Predictability Predictability refers to the repeated, consistent timing of a recurring event. Even if the timing is not especially “fast,” events often have to be performed at precise intervals, as when sampling an incoming signal. Digitizing an audio waveform often is performed at 44,100 cycles per second. The sampling frequency must be predictable to avoid constructing a distorted digital representation of the analog waveform.
+
+
+ 
+
+■	Periodicity (frequency) of execution of the tasks and their tolerances.
+■	Deadlines and tolerances for execution of each task.
+■	Typical and worst-case execution time for each task.
+■	Consequences of missing a deadline.
+■	The minimum, average, and maximum arrival rate of data in each relevant component state.
+■	The maximum time before the first input or output is expected after a task initiates.
+■	What to do if data is not received within the maximum time before the expected first input (timeout).
+■	The sequence in which tasks must run.
+■	Tasks that must begin or end execution prior to other tasks beginning.
+■	Task prioritization, so you know which tasks can interrupt or preempt others, and on what basis.
+■	Functions that depend on what mode the system is in (normal mode versus firefighter service mode for an elevator, for example).
+ 
+When
+ 
+,
+. Understand the distinction between soft and hard real-time demands for your system
+ 
+so you don’t specify overly stringent timing requirements. Those can lead to over-engineering the product at excessive cost and effort. If the timing tolerances are broader, you might be able to get away with using less expensive hardware. As Philip Koopman (2010) points out, “Real-time
+performance is seldom about being as fast as absolutely possible. Rather, it is about being just as fast as you need to be, and minimizing overall cost.”
+Specifying the timing requirements for the system involves understanding the deadlines for
+time-critical functions. It entails scheduling both sequential and concurrent functions to achieve the necessary performance within the constraints of processor capacity, input/output rates, and network communication rates. One team used a project-scheduling tool to model the timing requirements for an embedded product, working at the millisecond time scale rather than in the more traditional days and weeks. This creative and unconventional use of a modeling tool worked very well. In some cases, the timing and scheduling algorithms to be used might be imposed through requirements in the form
+ 
+of design constraints, but more frequently these will be design choices. Krishna Kavi, Robert Akl, and Ali Hurson (2009) offer a valuable overview of scheduling issues for real-time systems.
+
+
+
+ 
+Quality attribute requirements are especially critical for embedded and real-time systems. They can be vastly more complex and intertwined than those for other software applications. Business software is generally used in an office where there is not much variance in the environment. In contrast, the operating environment for embedded systems could involve temperature extremes, vibration, shock, and other factors that dictate specific quality considerations. Quality categories that are likely to be particularly important include performance, efficiency, reliability, robustness, safety, security, and usability. This section discusses some of the particular aspects of these quality attributes that you need to explore carefully during elicitation of requirements for such systems.
+In addition to the software quality attributes that were discussed in Chapter 14, “Beyond functionality,” embedded systems are subject to quality attributes and constraints that apply only to physical systems. These include size, shape, weight, materials, flammability, connectors, durability, cost, noise levels, and strength. All of these can dramatically increase the cost and effort needed to validate the requirements adequately. There could be business and political reasons to avoid using materials whose supply might be threatened by conflict or boycott, causing prices to skyrocket. Other materials are best avoided because of their environmental impacts. Avoiding the use of optimal materials could lead to trade-offs in performance, weight, cost, or other attributes.
+It can be difficult and expensive to build in desired quality characteristics after the hardware design is complete, so address these requirements early during elicitation. Because quality characteristics often have a profound impact on a complex product’s architecture, it’s essential to perform the attribute prioritization and trade-off analysis before getting into design. Koopman (2010) presents a good discussion of nonfunctional requirements that are especially important for embedded systems development. Chapter 14 presented many examples of these and other quality attribute requirements.
+Performance   The essence of a real-time system is that its performance must satisfy the timing needs and constraints of the operating environment. Therefore, all processing deadlines for specific operations must be included in the requirements. However, performance goes beyond operational response times. It includes startup and reset times, power consumption, battery life, battery recharge time (as with electric automobiles), and heat dissipation. Energy management alone has multiple dimensions. How should the system behave if the voltage drops momentarily, or under a particularly high current load during startup, or if external power is lost and the device must switch to battery backup power? And, unlike software, many of these components can degrade over time. What are the requirements for how long a battery maintains a given profile of power over time before it needs to be replaced?
+ 
+Efficiency Efficiency is the internal quality counterpart to the externally observable attribute of performance. Efficiency aspects of embedded systems focus on the consumption (and hence the remaining availability at any moment) of resources including processor capacity, memory, disk space, communication channels, electrical power, and network bandwidth. When you are dealing with these matters, requirements, architecture, and design become tightly coupled. For instance, if the total power demand of the device could exceed the power available, can the device be designed to cut power to components that don’t need it all the time, thereby making more power available to other components or services?
+The requirements should specify the maximum anticipated consumption of various system resources so designers can provide sufficient slack resources for future growth and unexpected operating conditions. This is one of those situations for which concurrent hardware and software design is vital. If the software is consuming too much of the available resources, the developers must resort to clever tricks to work around those limitations. Choosing more capable hardware up front offers a much less costly solution than fine-tuning the software components (Koopman 2010).
+
+
+. An artificial cardiac pacemaker that’s implanted into a patient’s body must be expected to work reliably for years. If the product fails or the battery goes dead prematurely, the patient can die too. When you are specifying reliability requirements, realistically assess the likelihood and impact of failure so you don’t over-engineer a product whose true reliability requirements aren’t as demanding as you might think. Increasing reliability and availability comes at a price. Sometimes you need to pay that price; sometimes you do not.
+
+
+. There are several aspects to robustness. One is survivability, which is often considered to apply to devices in use by the military but has everyday applications as well. A good example of
+embedded systems designed for high survivability are the aircraft “black boxes,” electronic recording devices that are designed to survive the horrific trauma of an airplane crash. Actually bright orange
+ 
+and technically called the flight data recorder and the cockpit voice recorder, these devices are built to withstand an impact of 3,400 times the force of gravity, fires, immersion in water, and other
+hazards. Not only must the physical container retain its integrity under such extreme conditions, but the data recording devices inside must still be intact and readable.
+Other aspects of robustness have to do with how the system deals with faults, or exceptions, that occur during execution and can lead to system failures. Both hardware and software faults can lead to failures. I once attempted to withdraw $140 from an ATM. The ATM gave me a receipt for $140, all right, but it only gave me $80 in cash. I waited 15 minutes while a bank employee rooted around in the back of the ATM; then she handed me my $60. Apparently there was a mechanical failure: several bills were stuck together and jammed the exit slot. Besides the fact that I wasted some time, I was concerned because the ATM thought the transaction had gone just fine—it never detected the problem.
+There are four aspects to how systems handle faults (Koopman 2010):
+■		Ideally, the system will prevent many potential fault conditions before they can cause a failure. That’s the idea behind having software systems test preconditions before initiating the execution of a use case.
+■		The next-best course of action is to detect a fault as soon as it occurs. This is why requirements elicitation must explore exception conditions, so developers can anticipate possible errors and devise ways to look for them.
+■	Fault recovery   If the system detects an anticipated fault, it should have mechanisms defined
+for responding to it. Requirements development should not only identify potential faults but also specify how they should be handled. Sometimes the system can retry an operation, as with an intermittent communication interruption or a timeout that might work fine the next time. Systems are sometimes designed with failover mechanisms. If a fault causes the system to fail, a backup system takes over the operation. In other cases, the system must terminate the operation, perhaps shutting down or restarting in some way that minimizes the negative impact on the user. As an example, if your car’s antilock brake system (ABS) detects a faulty sensor, it might shut down the ABS, illuminate a warning light on the dashboard, and log that information in the car’s computer for future diagnosis and repair. Which leads us to. . .
+■	Fault logging The system should retain a history of faults that it detects and what happened as a consequence. This information is useful for diagnosing what’s wrong and can help a maintenance person detect patterns that lead to problems. For instance, a fault history might indicate a defective hardware component that should be replaced. Modern automobiles contain an on-board diagnostics system. A technician can plug a cable into this system and retrieve a history of events in the form of standardized codes that report what malfunctions occurred.
+The designers of my treadmill recognized that under certain conditions the treadmill can be jammed in a position in which the incline angle cannot be lowered to zero. The user manual describes a (rather tricky) manual operation I can perform to reset the treadmill so it again has the full range
+of incline angles available. It would have been even better had the manufacturer designed the
+ 
+treadmill so that it was impossible for this jam to take place, if feasible. Sometimes, though, providing a workaround for a low-probability and low-impact failure is cheaper than designing the system to completely prevent the failure.
+Safety Any system that contains moving parts or uses electricity has the potential to cause injury or death to a human being. Safety requirements are vastly more significant for real-time systems than for information systems. Numerous books have been written on software and system safety engineering, so we will not attempt to recap all of that vital information here. Good sources are Nancy Leveson (1995), Debra Herrmann (1999), Philip Koopman (2010), and Terry Hardy (2011).
+Begin your investigation of safety requirements by performing a hazard analysis (Ericson 2005; Ericson 2012). This will help you discover the potential risks that your product could present. You can rate them by their probability of occurrence and the severity of occurrence, so that you can focus on the most serious threats. (Chapter 32, “Software requirements and risk management,” discusses risk analysis further.) A fault tree analysis is a graphical, root-cause analysis technique for thinking about safety threats and what factors could lead to them (Ericson 2011). This allows you to focus on how to avoid specific combinations of risk factors materializing when your product is in use. Safety requirements should address the risks and state what the system must do—or must not do—to avoid them.
+Hardware devices often include some kind of emergency stop button or dead man’s switch that will quickly turn the device off. The exercise treadmill had a safety requirement something like the following:
+Stop.Emergency The treadmill shall have an emergency stop mechanism that brings the belt to a halt within 1 second when activated.
+This requirement led to the design of a flat plastic key that must be inserted in the front of the treadmill before the treadmill can be powered up. Removing the key cuts the treadmill power, stopping the belt motion quickly. A lanyard attached to the key can be clipped to the Exerciser’s clothing to pull out the key if the Exerciser slips or falls off the treadmill. It works!
+The security of embedded systems is under much discussion these days because of concerns about cyberattacks that could take over, disrupt, or disable power plants, railroad control systems, electrical distribution grids, and other critical infrastructure. Theft of intellectual property from the memory of embedded systems is also a risk. An attacker could potentially reverse engineer code to learn how the system works, either to copy it or to attack it. Protecting embedded systems involves some of the same security measures that host-based information systems need. These include the following (Koopman 2010):
+■	Secrecy, primarily through encryption
+■	Authentication, to ensure that only authorized users can access the system, typically provided through passwords (with all the human failings that involves)
+■	Data integrity checks, to try to discover whether the system has been tampered with
+■	Privacy of data, such as protecting against unauthorized tracking of users through their
+handheld GPS devices
+ 
+In addition, though, embedded systems are subject to other types of specific attacks.
+These include attempts by users to take over control of the system; interception of electronic communications, particularly wireless communications; and the insertion of malicious software updates, sometimes through social engineering of gullible users (many of us fall for that trick from time to time). The full scope of security considerations for embedded systems is large, and it is a very serious concern (Anderson 2008). Koopman (2010) and David and Mike Kleidermacher (2012) offer many suggestions for how to make your embedded products more secure.
+Usability Many embedded systems include some kind of human-computer interface. The general
+principles of software usability apply, but other aspects of usability might be important when
+a person is using a physical device in the field as opposed to a keyboard in the office. Recently,
+I switched from using a mouse designed for right-handed users to a symmetrical one. I keep inadvertently hitting the right mouse button with the ring finger on my right hand. This wastes my time and can lead to undesired system responses.
+Display screens on products to be used outdoors must accommodate different lighting situations.
+I once had an account at a bank whose drive-up ATM was located such that the LCD screen was completely unreadable when sunlight hit it at certain angles. As another example, I cannot read the display on my digital wristwatch when I’m wearing polarized sunglasses unless I rotate my wrist to just the right angle, because LCD displays are themselves polarized.
+Some usability constraints are imposed by legislation such as the Americans with Disabilities Act, which requires certain systems to provide accessibility aids for people who have physical limitations. Embedded systems must accommodate users having different degrees of:
+■	Audio acuity and frequency response (consider when designing audio feedback and prompts).
+■	Visual acuity and color vision (consider the use of color and text size in visual displays).
+■	Handedness and manual dexterity (affects the user’s ability to press small buttons accurately or to navigate using a touch screen).
+■	Body size and reach (keep the user profile in mind when establishing the physical positioning of controls, displays, and equipment).
+■	Native languages (important for devices controlled by speech recognition).
+
+The challenges of embedded systems
+Embedded and other real-time control systems offer a unique set of challenges that software-only applications do not. The basic principles and practices of requirements elicitation, analysis, specification, and validation apply to both classes of products. Embedded systems require taking a systems engineering approach so that developers do not optimize either software or hardware components at the expense of the other and to avoid ugly integration problems.
+design choices are more tightly linked with requirements analysis than in software-only systems, partly because it is so much more expensive to change hardware after it has been designed or
+ 
+manufactured. Embedded systems present a different emphasis of constraints and quality attributes than do software-only systems, and often they are more interwoven with operating system considerations as well. Careful specification of system requirements, software requirements, hardware requirements, and interface requirements will go a long way toward making your embedded and other real-time development projects successful.
+ 
+
+
+
+
+
+
+
+
+
+
+PART IV 
+Requirements management
+Chapter 27	Requirements management practices	457
+Chapter 28	Change happens	471
+Chapter 29	Links in the requirements chain	491
+Chapter 30	Tools for requirements engineering	503
+ 
+
+ 
+C HA P T E R 2 7
+Requirements management practices
+
+“I finally finished implementing the multivendor catalog query feature,” Shari reported at the Chemical
+Tracking System’s weekly project status meeting. “Man, that was a lot of work!”
+“Oh, the customers canceled that feature two weeks ago,” the project manager, Dave, replied. “Didn’t you get the revised SRS?”
+Shari was confused. “What do you mean, it was canceled? Those requirements are at the top of page 6 of my latest SRS.”
+Dave said, “Hmmm, they’re not in my copy. I’ve got version 1.5 of the SRS. What version are you looking at?”
+“Mine says version 1.5 also,” said Shari in disgust. “These documents should be identical, but obviously they’re not. So, is this feature still needed, or did I just waste 30 hours of my life?”
+If you’ve ever heard a conversation like this one, you know how frustrating it is when people waste time working from obsolete or inconsistent requirements specifications. Having great requirements gets you only partway to a solution; they also have to be well managed and effectively communicated among the project participants. Version control of individual requirements and sets of requirements is one of the core activities of requirements management.
+Chapter 1, “The essential software requirement,” divided the domain of software requirements engineering into requirements development and requirements management. (Some people refer to the entire domain as “requirements management,” but we favor a narrower definition of that term.) This chapter addresses some principles and practices of requirements management. The other chapters in Part IV describe certain requirements management practices in more detail, including change control (Chapter 28, “Change happens”), change impact analysis (also Chapter 28), and requirements tracing (Chapter 29, “Links in the requirements chain”). Part IV concludes with a discussion of commercial tools that can help a project team develop and manage its requirements (Chapter 30, “Tools for requirements engineering”). Note that a project might be managing certain sets of agreed-upon requirements while concurrently performing requirements development activities on other portions of the product’s requirements. Requirements management process
+Requirements management includes all activities that maintain the integrity, accuracy, and currency of requirements agreements throughout the project. Figure 27-1 shows the core activities of requirements management in four major categories: version control, change control, requirements status tracking, and requirements tracing.
+
+FIGURE 27-1 Major requirements management activities.
+
+Your organization should define the activities that project teams are expected to perform to manage their requirements. Documenting these activities and training practitioners in their
+performance enables the members of the organization to conduct them consistently and effectively. Consider addressing the following topics:
+■	Tools, techniques, and conventions for distinguishing versions of individual requirements and
+of requirements sets
+■	The way that sets of requirements are approved and baselined (see Chapter 2, “Requirements from the customer’s perspective”)
+■	The ways that new requirements and changes to existing ones are proposed, evaluated,
+negotiated, and communicated
+■	How to assess the impact of a proposed change
+■	Requirement attributes and requirements status-tracking procedures, including the requirement statuses that you will use and who can change them
+■	Who is responsible for updating requirements trace information and when
+ 
+■	How to track and resolve requirements issues
+■	How the project’s plans and commitments will reflect requirements changes
+■	How to use the requirements management (RM) tool effectively
+You can include all this information in a single requirements management process description.
+Alternatively, you might prefer to write separate version control, change control, impact analysis, and status tracking procedures. These procedures should apply across your organization because they represent common functions that every project team ought to perform. Chapter 31, “Improving your requirements processes,” describes several useful process assets for requirements management.
+Your process descriptions should identify the team role that owns each of the requirements management activities. The project’s business analyst typically has the lead responsibility for requirements management. The BA will set up the requirements storage mechanisms, define requirement attributes, coordinate requirement status and trace data updates, and monitor change activity as needed. The process description should also indicate who has authority to modify the requirements management process, how exceptions should be handled, and the escalation path for impediments encountered.
+
+
+The requirements baseline
+
+. Requirements development deliverables include business requirements, user requirements, functional and nonfunctional requirements, a data dictionary, and various analysis models. After they are reviewed and approved, any defined subset of these items constitutes a requirements baseline. As was described in Chapter 2, a requirements baseline is a set of requirements that stakeholders have agreed to, often defining the contents of a specific planned release or development iteration. The project might have additional agreements regarding deliverables, constraints, schedules, budgets, transition requirements, and contracts; those lie beyond the scope of this book.
+At the time a set of requirements is baselined—typically following review and approval—the requirements are placed under configuration (or change) management. Subsequent changes can be made only through the project’s defined change control procedure. Prior to baselining, the requirements are still evolving, so there’s no point in imposing unnecessary process overhead on those modifications. A baseline could consist of some or all the requirements in a particular SRS (whether for an entire product or a single release), or a designated set of requirements stored in an RM tool, or an agreed-on set of user stories for a single iteration on an agile project.
+ 
+If the scope of a release changes, update the requirements baseline accordingly. Distinguish the requirements in a particular baseline from others that were proposed but not accepted, are allocated to a different baseline, or remain unallocated in the product backlog. If the requirements are specified in the form of a document such as an SRS, clearly identify it as a baseline version to distinguish it from prior drafts. Storing requirements in an RM tool facilitates the identification of those that belong to a specific baseline and the management of changes to that baseline.
+A development team that accepts proposed requirement changes or additions might not be able to fulfill its existing schedule and quality commitments. The project manager must negotiate changes to those commitments with affected managers, customers, and other stakeholders. The project can accommodate new or changed requirements in various ways:
+■	By deferring lower-priority requirements to later iterations or cutting them completely
+■	By obtaining additional staff or outsourcing some of the work
+■	By extending the delivery schedule or adding iterations to an agile project
+■	By sacrificing quality to ship by the original date
+No single approach is universally correct, because projects differ in their flexibility of features, staff, budget, schedule, and quality (Wiegers 1996). The choice should be based on the project’s business objectives and the priorities the key stakeholders established during project initiation. No matter how you respond to changing requirements, accept the reality of adjusting expectations and commitments when necessary. This is better than imagining that somehow all the new features will be incorporated by the original delivery date without budget overruns, team member burnout, or quality compromises.
+
+Requirements version control
+Version control—uniquely identifying different versions of an item—applies at the level of both individual requirements and requirements sets, most commonly represented in the form of documents. Begin version control as soon as you draft a requirement or a document so you can retain a history of changes made.
+Every version of the requirements must be uniquely identified. Every team member must be able to access the current version of the requirements. Changes must be clearly documented and communicated to everyone affected. To minimize confusion and miscommunication, permit
+only designated individuals to update the requirements, and make sure that the version identifier changes whenever an update is made. Each circulated version of a requirements document or each requirement in a tool should include a revision history that identifies the changes made, the date of each change, the individual who made the change, and the reason for each change.
+ 
+It’s not a bug; it’s a feature!
+A contract development team received a flood of bug reports from the testers of the latest release they had just delivered to a customer. The contract team was perplexed—the system had passed all their own tests. After considerable investigation, it turned out that the customer was testing the new software against an obsolete version of the SRS. What the testers were reporting as bugs truly were features. Normally, this is just a little joke that software people like to make. The testers spent considerable time rewriting the tests against the correct
+version of the SRS and retesting the application, all because of a version control problem. Another colleague who once experienced the same kind of testing confusion because of an uncommunicated change said, “We probably wasted four to six hours of effort that our department had to absorb and couldn’t spend on actual billable hours. I think software
+professionals would be shocked if they multiplied out these wasted hours times their bill rate to
+see what the loss in revenue is.”
+Similar confusion can arise when multiple BAs are working on a project. One BA begins to edit version 1.2 of the requirements specification. A few days later, another BA starts to work on some requirements and also labels his version 1.2, not knowing about the conflict. Pretty soon changes are lost, requirements are no longer up to date, work is overwritten, and confusion ensues.
+
+The most robust approach to version control is to store the requirements in a requirements management tool, as described in Chapter 30. RM tools track the history of changes made to every requirement, which is valuable when you need to revert to an earlier version. Such a tool allows for comments describing the rationale behind a decision to add, modify, or delete a requirement. These comments are helpful if the requirement becomes a topic for discussion again in the future.
+If you’re storing requirements in documents, you can track changes by using the word processor’s
+revision marks feature. This feature visually highlights changes made in the text with notations such as strikethrough highlighting for deletions and underscores for additions. When you baseline a document, first archive a marked-up version, then accept all the revisions, and then store the now clean version as the new baseline, ready for the next round of changes. Store requirements documents in a version control tool, such as the one your organization uses for controlling source code through check-out and check-in procedures. This will let you revert to earlier versions if necessary and to know who changed each document, when, and why. (Incidentally, this describes
+exactly how we wrote this book. We wrote the chapters in Microsoft Word, using revision marks as we iterated on the chapters. We had to refer back to previous versions on several occasions.)
+I know of one project that stored several hundred use case documents written in Microsoft Word in a version control tool. The tool let the team members access all previous versions of every use case, and it logged the history of changes made to each one. The project’s BA and her backup person had read-write access to the documents stored in the tool; the other team members had read-only access. This approach worked well for this team.
+ 
+The simplest version control mechanism is to manually label each revision of a document according to a standard convention. Schemes that try to differentiate document versions based on dates are prone to confusion. I use a convention that labels the first version of any new document with its title and “Version 1.0 draft 1.” The next draft keeps the same title but is identified as “ Version 1.0 draft 2.” The author increments the draft number with each iteration until the document is approved and baselined. At that time, the version identifier is changed to “Version 1.0 approved,” again keeping the same document title. The next version is either “Version 1.1 draft 1” for a minor revision or “Version 2.0 draft 1” for a major change. (Of course, “major” and “minor” are subjective
+and depend on the context.) This scheme clearly distinguishes between draft and baselined document versions, but it does require manual discipline on the part of those who modify the documents.
+
+Requirement attributes
+Think of each requirement as an object with properties that distinguish it from other requirements. In addition to its textual description, each requirement should have supporting pieces of information or attributes associated with it. These attributes establish a context and background for each requirement. You can store attribute values in a document, a spreadsheet, a database, or—most effectively—a requirements management tool. It’s cumbersome to use more than a couple of requirements attributes with documents.
+RM tools typically provide several system-generated attributes in addition to letting you define others, some of which can be automatically populated. The tools let you query the database to view selected subsets of requirements based on their attribute values. For instance, you could list all high-priority requirements that were assigned to Shari for implementation in release 2.3 and have a status of Approved. Following is a list of potential requirement attributes to consider:
+■	Date the requirement was created
+■	Current version number of the requirement
+■	Author who wrote the requirement
+■	Priority
+■	Status
+■	Origin or source of the requirement
+■	Rationale behind the requirement
+■	Release number or iteration to which the requirement is allocated
+■	Stakeholder to contact with questions or to make decisions about proposed changes
+■	Validation method to be used or acceptance criteria
+ 
+ 	 
+
+The requirements planned for a release will change as new requirements are added and existing ones are deleted or deferred. The team might be juggling separate requirements documents for multiple releases or iterations. Leaving obsolete requirements in the SRS can confuse readers as to whether those requirements are included in that baseline. A solution is to store the requirements in an RM tool and define a Release Number attribute. Deferring a requirement means changing
+its planned release, so simply updating the release number shifts the requirement into a different baseline. Handle deleted and rejected requirements by using a status attribute, as described in the next section.
+Defining and updating these attribute values is part of the cost of requirements management, but that investment can yield a significant payback. One company periodically generated a requirements report that showed which of the 750 requirements from 3 related specifications were assigned to each designer. One designer discovered several requirements that she didn’t realize were her responsibility. She estimated that she saved one to two months of engineering design rework that would have been required had she not found out about those requirements until later in the project. The larger the project, the easier it is to experience time-wasting miscommunications.

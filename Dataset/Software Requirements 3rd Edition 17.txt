@@ -1,0 +1,307 @@
+﻿Inquire whether the new system must conform to any user interface standards or conventions, or whether its user interface needs to be consistent with those of other frequently used systems. You might state such a usability requirement in the following way:
+USE-2. All functions on the File menu shall have shortcut keys defined that use the Control key pressed simultaneously with one other key. Menu commands that also appear in Microsoft Word shall use the same default shortcut keys that Word uses.
+Such consistency of usage can help avoid those frustrating errors that occur when your fingers perform an action by habit that has some different meaning in an application you don’t use frequently. Ease-of-learning goals also can be quantified and measured, as the following example indicates:
+USE-3. 95 percent of chemists who have never used the Chemical Tracking System before shall be able to place a request for a chemical correctly with no more than 15 minutes of orientation.
+Carefully specifying requirements for the diverse dimensions of usability can help designers make the choices that distinguish delighted users from those who use an application with frowns on their faces or, worse, those who refuse to use it at all.
+
+Internal quality attributes
+Internal quality attributes are not directly observable during execution of the software. They are
+p
+. Internal attributes can indirectly affect the customer’s perception of the product’s quality if it later proves difficult to add new functionality or if internal inefficiencies result in performance degradation. The following sections describe quality attributes that are particularly important to software architects, developers, maintainers, and other technical staff.
+
+Efficiency
+Efficiency is closely related to the external quality attribute of performance.
+h. If a system consumes too much of the available resources, users will encounter degraded performance.
+Efficiency—and hence performance—is a driving factor in systems architecture, influencing how  a designer elects to distribute computations and functions across system components. Efficiency requirements can compromise the achievement of other quality attributes. Consider minimum hardware configurations when defining efficiency, capacity, and performance goals. To allow engineering margins for unanticipated conditions and future growth (thereby influencing scalability), you might specify something like the following:
+EFF-1. At least 30 percent of the processor capacity and memory available to the application shall be unused at the planned peak load conditions.
+ 
+EFF-2. The system shall provide the operator with a warning message when the usage load exceeds 80 percent of the maximum planned capacity.
+Users won’t state efficiency requirements in such technical terms; instead, they will think in terms of response times or other observations. The BA must ask the questions that will surface user expectations regarding issues such as acceptable performance degradation, demand spikes, and anticipated growth. Examples of such questions are:
+■	What is the maximum number of concurrent users now and anticipated in the future?
+■	By how much could response times or other performance indicators decrease before users or
+the business suffer adverse consequences?
+■	How many operations must the system be able to perform simultaneously under both normal and extreme operating conditions?
+
+Modifiability
+
+. Modifiability encompasses several other quality attribute terms that relate to different forms of software maintenance, as shown in Table 14-4. It is closely related to verifiability. If developers anticipate making many enhancements, they can choose design approaches that maximize the software’s modifiability. High modifiability is critical for systems that will undergo frequent revision, such as those being developed by using an incremental or iterative life cycle.
+TABLE 14-4 Some aspects of modifiability
+
+Maintenance type	Modifiability dimensions	Description
+Corrective	Maintainability, understandability	Correcting defects
+Perfective	Flexibility, extensibility, and
+augmentability	Enhancing and modifying functionality to meet new business
+needs and requirements
+Adaptive	Maintainability	Modifying the system to function in an altered operating environment without adding new capabilities
+Field support	Supportability	Correcting faults, servicing devices, or repairing devices in
+their operating environment
+Ways to measure modifiability include the average time required to add a capability or fix a problem, and the percentage of fixes that are made correctly. The Chemical Tracking System included the following modifiability requirement:
+
+MOD-1. A maintenance programmer experienced with the system shall be able to modify existing reports to conform to revised chemical-reporting regulations from the federal government with 10 hours or less of development effort.
+ 
+On the Graphics Engine project, we knew we would be doing frequent software surgery to satisfy evolving user needs. Being experienced developers ourselves, we adopted design guidelines such as the following to guide developers in writing the code to enhance the program’s understandability and hence maintainability:
+MOD-2. Function calls shall not be nested more than two levels deep.
+Such design guidelines should be stated carefully to discourage developers from taking silly actions that conform to the letter, but not the intent, of the goal. The BA should work with maintenance programmers to understand what properties of the code would make it easy for them to modify it or correct defects.
+Hardware devices containing embedded software often have requirements for supportability in the field. Some of these lead to software design choices, whereas others influence the hardware design. The following is an example of the latter:
+SUP-1. A certified repair technician shall be able to replace the scanner module in no
+more than 10 minutes.
+Supportability requirements might also help make the user’s life easier, as this example illustrates:
+SUP-2. The printer shall display an error message if replacement ink cartridges were not inserted in the proper slots.
+
+Portability
+The effort needed to migrate software from one operating environment to another is a measure of
+. Some practitioners include the ability to internationalize and localize a product under the heading of portability. The design approaches that make software portable are similar to those that make it reusable. Portability has become increasingly important as applications must run in multiple environments, such as Windows, Mac, and Linux; iOS and Android; and PCs, tablets, and phones. Data portability requirements are also important.
+Portability goals should identify those portions of the product that must be movable to other environments and describe those target environments. One product for analyzing chemicals ran in two very different environments. One version ran in a laboratory where a PhD chemist used the
+software to control several analytical instruments. The second version ran in a handheld device to be used in the field, such as at an oil pipeline, by someone who had much less technical education. The core capabilities of the two versions were largely the same. Such a product needs to be designed from the outset to work in both kinds of environments with the minimum amount of development work.
+If developers know about the customers’ expectations of portability, they can select development approaches that will enhance the product’s portability appropriately. Following are some sample portability requirements:
+ 
+POR-1. Modifying the iOS version of the application to run on Android devices shall require changing no more than 10 percent of the source code.
+POR-2. The user shall be able to port browser bookmarks to and from Firefox, Internet Explorer, Opera, Chrome, and Safari.
+POR-3. The platform migration tool shall transfer customized user profiles to the
+new installation with no user action needed.
+When you are exploring portability, questions like the following might be helpful:
+■	What different platforms will this software need to run on, both now and in the future?
+■	What portions of the product need to be designed for greater portability than other portions?
+■	What data files, program components, or other elements of the system need to be portable?
+■	By making the software more portable, what other quality attributes might be compromised?
+
+Reusability
+Reusability indicates the relative effort required to convert a software component for use in other applications. Reusable software must be modular, well documented, independent of a specific application and operating environment, and somewhat generic in capability. Numerous project artifacts offer the potential for reuse, including requirements, architectures, designs, code, tests, business rules, data models, user class descriptions, stakeholder profiles, and glossary terms
+(see Chapter 18, “Requirements reuse”). Making software reusable is facilitated by thorough specification of requirements and designs, rigorous adherence to coding standards, a maintained regression suite of test cases, and a maintained standard library of reusable components.
+Reusability goals are difficult to quantify. Specify which elements of the new system need to be constructed in a manner that facilitates their reuse, or stipulate the reusable components that should be created as a spin-off from the project. Following are some examples:
+REU-1. The chemical structure input functions shall be reusable at the object code level in other applications.
+REU-2. At least 30 percent of the application architecture shall be reused from the approved reference architectures.
+REU-3. The pricing algorithms shall be reusable by future store-management applications.
+Consider discussing the following questions when you are trying to learn about reusability requirements for your project:
+■	What existing requirements, models, design components, data, or tests could be reused in this
+application?
+■	What functionality available in related applications might meet certain requirements for this
+application?
+ 
+■	What portions of this application offer good potential for being reused elsewhere?
+■	What special actions should be taken to facilitate making portions of this application reusable?
+
+Scalability
+Scalability requirements address the ability of the application to grow to accommodate more users, data, servers, geographic locations, transactions, network traffic, searches, and other services without compromising performance or correctness. Scalability has both hardware and software implications. Scaling up a system could mean acquiring faster computers, adding memory or disk space, adding servers, mirroring databases, or increasing network capacity. Software approaches might include distributing computations onto multiple processors, compressing data, optimizing algorithms,
+and other performance-tuning techniques. Scalability is related to modifiability and to robustness, because one category of robustness has to do with how the system behaves when capacity limits are approached or exceeded. Following are some examples of scalability requirements:
+SCA-1. The capacity of the emergency telephone system must be able to be increased from 500 calls per day to 2,500 calls per day within 12 hours.
+SCA-2. The website shall be able to handle a page-view growth rate of
+30 percent per quarter for at least two years without user-perceptible performance degradation.
+SCA-3. The distribution system shall be able to accommodate up to 20 new warehouse centers.
+The business analyst might not have a good sense of future expansion plans for a specific application. She might need to work with the project sponsor or subject matter experts to get a sense of how much the user base, data volume, or other parameters could grow over time. The following questions could be helpful during those discussions:
+■	What are your estimates for the number of total and concurrent users the system must be able
+to handle over the next several months, quarters, or years?
+■	Can you describe how and why data capacity demands of the system might grow in the future?
+■	What are the minimum acceptable performance criteria that must be satisfied regardless of the number of users?
+■	What growth plans are available regarding how many servers, data centers, or individual
+installations the system might be expected to run on?
+ 
+ 
+
+Verifiability
+More narrowly referred to as testability, verifiability refers to how well software components or the integrated product can be evaluated to demonstrate whether the system functions as expected.
+Designing for verifiability is critical if the product has complex algorithms and logic, or if it contains subtle functionality interrelationships. Verifiability is also important if the product will be modified often, because it will undergo frequent regression testing to determine whether the changes damaged any existing functionality. Systems with high verifiability can be tested both effectively and efficiently. Designing software for verifiability means making it easy to place the software into the desired pretest state, to provide the necessary test data, and to observe the result of the test. Here are some examples of verifiability requirements:
+VER-1. The development environment configuration shall be identical to the test configuration environment to avoid irreproducible testing failures.
+VER-2. A tester shall be able to configure which execution results are logged during
+testing.
+VER-3. The developer shall be able to set the computational module to show the
+interim results of any specified algorithm group for debugging purposes.
+Because my team and I knew that we’d have to test the Graphics Engine many times while it was repeatedly enhanced, we included the following design guideline to enhance verifiability:
+VER-4. The maximum cyclomatic complexity of a module shall not exceed 20.
+Cyclomatic complexity is a measure of the number of logic branches in a source code module.
+Adding more branches and loops to a module makes it harder to understand, to test, and to maintain. The project wasn’t going to be a failure if some module had a cyclomatic complexity of 24, but documenting such guidelines helped the developers achieve a desired quality objective.
+ 
+Defining verifiability requirements can be difficult. Explore questions like the following:
+■	How can we confirm that specific calculations are giving the expected results?
+■	Are there any portions of the system that do not yield deterministic outputs, such that it could
+be difficult to determine if they were working correctly?
+■	Is it possible to come up with test data sets that have a high probability of revealing any errors
+in the requirements or in their implementation?
+■	What reference reports or other outputs can we use to verify that the system is producing its
+outputs correctly?
+
+
+Specifying quality requirements with Planguage
+You can’t evaluate a product to judge whether it satisfies vague quality requirements. Unverifiable quality requirements are no better than unverifiable functional requirements. Simplistic quality and performance goals can be unrealistic. Specifying a subsecond response time for a database query might be fine for a simple lookup in a local database but unrealistic for a six-way join of relational tables residing on geographically separated servers.
+To address the problem of ambiguous and incomplete nonfunctional requirements, Tom Gilb (1997; 2005) developed Planguage, a language with a rich set of keywords that permits precise statements of quality attributes and other project goals (Simmons 2001). Following is an example of how to express a performance requirement using just a few of the many Planguage keywords. Expressed in traditional form, this requirement might read: “At least 95 percent of the time, the system shall take no more than 8 seconds to display any of the predefined accounting reports.”
+■	TAG Performance.Report.ResponseTime
+■	AMBITION Fast response time to generate accounting reports on the base user platform.
+■	SCALE Seconds of elapsed time between pressing the Enter key or clicking OK to request a report and the beginning of the display of the report.
+■	METER Stopwatch testing performed on 30 test reports that represent a defined usage operational profile for a field office accountant.
+■	GOAL No more than 8 seconds for 95 percent of reports. ßField Office Manager
+■	STRETCH No more than 2 seconds for predefined reports, 5 seconds for all reports.
+■	WISH No more than 1.5 seconds for all reports.
+■	base user platform DEFINED Quad-core processor, 8GB RAM, Windows 8, QueryGen 3.3 running, single user, at least 50 percent of system RAM and 70 percent of system CPU capacity free, network connection speed of at least 30 Mbps.
+ 
+Each requirement receives a unique tag, or label, using the hierarchical naming convention that was described in Chapter 10. The ambition states the purpose or objective of the system that leads to this requirement. Scale defines the units of measurement and meter describes how to make the
+measurements. All stakeholders need to have the same understanding of what “performance” means. Suppose that a user interprets the measurement to be from the time that he presses the Enter key until the complete report appears, rather than until the beginning of the report display, as stated in the example. The developer might claim that the requirement is satisfied, whereas the user insists that it is not. Unambiguous quality requirements and measurements prevent these sorts of debates.
+One advantage of Planguage is that you can specify several target values for the quantity being measured. The goal criterion is the minimum acceptable achievement level. The requirement isn’t satisfied unless every goal condition is completely satisfied, so make sure the goals are justifiable in terms of real business needs. An alternative way to state the goal requirement is to define the fail (another Planguage keyword) condition: “More than 8 seconds on more than 5 percent of all reports.” The stretch value describes a more desirable performance objective, and the wish value represents the ideal outcome. Consider showing the origin of performance goals. The “ß” notation following
+the goal criterion shows that it came from the Field Office Manager. Any specialized terms in the Planguage statement are defined to make them clear to the reader. This example provides a definition of something called the Base User Platform on which the test is to be conducted.
+Planguage includes many additional keywords to provide flexibility and precision in specifying unambiguous quality attribute requirements, and even business objectives. Specifying multiple levels of achievement yields a far richer statement of a quality requirement than a simple black-and-white, yes-or-no construct can. The drawback to using Planguage is that the resulting requirements are much bulkier than simple quality requirement statements. However, the richness of information provided outweighs this inconvenience. Even if you don’t write the quality requirements using the full Planguage formalism, using the keywords to think through exactly what people mean by “fast” will yield much more precise and shared expectations.
+
+Quality attribute trade-offs
+Certain attribute combinations have inescapable trade-offs. Users and developers must decide which attributes are more important than others, and they must respect those priorities when they make decisions. The technique described earlier in “Step 3: Prioritize the attributes” can help with this analysis. Figure 14-2 illustrates some typical interrelationships among the quality attributes from Table 14-1, although you might encounter exceptions to these (Charette 1990; Glass 1992; IEEE 1998). A plus sign in a cell indicates that increasing the attribute in the corresponding row usually has a positive effect on the attribute in the column. For example, design approaches that increase a software component’s portability also make the software easier to connect to other software components, easier to reuse, and easier to test.
+ 
+ 
+
+FIGURE 14-2 Positive and negative relationships among selected quality attributes.
+
+A
+the attribute in the column. An empty cell indicates that the attribute in the row has little effect on the attribute in the column. Performance and efficiency have a negative impact on several other attributes. If you write the tightest, fastest code you can, using coding tricks and relying on
+execution side effects, it’s likely to be hard to maintain and enhance. It also could be harder to port to other platforms if you’ve tuned the code for a specific operating environment. Similarly, systems that optimize ease of use or that are designed to be reusable and interoperable with other software or hardware components often incur a performance penalty. Using the general-purpose Graphics Engine component described earlier in the chapter to generate plots resulted in poorer performance compared with the old applications that incorporated custom graphics code. You have to balance the possible performance (or other) reductions against the anticipated benefits of your proposed solution to ensure that you’re making sensible trade-offs.
+The matrix in Figure 14-2 isn’t symmetrical because the effect that increasing attribute A has on attribute B isn’t necessarily the same as the effect that increasing B will have on A. Figure 14-2 shows that designing the system to increase performance doesn’t necessarily have any effect on security. However, increasing security likely will hurt performance because the system must go through more layers of user authentications, encryption, and malware scanning.
+ 
+To reach the optimum balance of product characteristics, you must identify, specify, and prioritize the pertinent quality attributes during requirements elicitation. As you define the important quality attributes for your project, use Figure 14-2 to avoid making commitments to conflicting goals.
+Following are some examples:
+■	Don’t expect to maximize usability if the software must run on multiple platforms with minimal modification (portability). Different platforms and operating systems impose different constraints and offer different usability characteristics.
+■	It’s hard to completely test the integrity requirements of highly secure systems. Reused generic components could compromise security mechanisms.
+■	Highly robust code could exhibit reduced performance because of the data validations and error checking that it performs.
+As usual, overconstraining system expectations or defining conflicting requirements makes it impossible for the developers to fully satisfy the requirements.
+
+Implementing quality attribute requirements
+
+Although these are nonfunctional requirements, they can lead to derived functional requirements, design guidelines, or other types of technical information that will produce the desired product characteristics. Table 14-5 indicates the likely categories of technical information that different types of quality attributes will generate. For example, a medical device with stringent availability and reliability requirements might include a backup battery power supply (architecture), along with functional requirements to indicate when the product is operating on battery power, when the battery is getting low, and so forth. This translation from external or internal quality requirements into corresponding technical information is part of the requirements analysis and high-level design processes.
+TABLE 14-5 Translating quality attributes into technical specifications
+
+Quality attributes	Likely technical information category
+Installability, integrity, interoperability, reliability, robustness, safety,
+security, usability, verifiability	Functional requirement
+Availability, efficiency, modifiability, performance, reliability, scalability	System architecture
+Interoperability, security, usability	Design constraint
+Efficiency, modifiability, portability, reliability, reusability, scalability, verifiability, usability	Design guideline
+Portability	Implementation constraint
+Business analysts who lack development experience might not appreciate the technical implications of quality requirements. Therefore, the BA should engage the right stakeholders who have knowledge of these implications and learn from those collaborations. Consider scalability, which
+ 
+can be profoundly affected by architecture and design choices. Scalability requirements might lead the developer to retain performance buffers (disk space, CPU consumption, network bandwidth) to accommodate potential growth without degrading system performance unacceptably. Scalability expectations can affect the hardware and operating environment decisions that developers make. This is why it’s important to elicit and document scalability requirements early on so developers can ensure that the product can grow as expected and still exhibit acceptable performance. This is also one reason why it’s important to involve developers early in requirements elicitation and reviews.
+
+Constraints
+A constraint places restrictions on the design or implementation choices available to the developer. Constraints can be imposed by external stakeholders, by other systems that interact with the one you’re building or maintaining, or by other life cycle activities for your system, such as transition and maintenance. Other constraints result from existing agreements, management decisions, and technical decisions (ISO/IEC/IEEE 2011). Sources of constraints include:
+■	Specific technologies, tools, languages, and databases that must be used or avoided.
+■	Restrictions because of the product’s operating environment or platform, such as the types
+and versions of web browsers or operating systems that will be used.
+■ Required development conventions or standards. (For instance, if the customer’s organization will be maintaining the software, the organization might specify design notations and coding standards that a subcontractor must follow.)
+■	Backward compatibility with earlier products and potential forward compatibility, such as
+knowing which version of the software was used to create a specific data file.
+■	Limitations or compliance requirements imposed by regulations or other business rules.
+■	Hardware limitations such as timing requirements, memory or processor restrictions, size, weight, materials, or cost.
+■	Physical restrictions because of the operating environment or because of characteristics or
+limitations of the users.
+
+■	Interfaces to other existing systems, such as data formats and communication protocols.
+■	Restrictions because of the size of the display, as when running on a tablet or phone.
+■	Standard data interchange formats used, such as XML, or RosettaNet for e-business.
+These sorts of constraints often are imposed from external sources and must be respected.
+Constraints can be imposed inadvertently, though. It’s common for users to present “requirements”
+that are actually solution ideas that describe one particular way the user envisions meeting a
+need. The BA must detect when a requirement includes a solution idea like this and distinguish
+ 
+the underlying need from the constraint that the solution imposes. Perhaps the solution the user has in mind is in fact the ideal way to solve the problem, in which case the constraint is perfectly legitimate. More often, the real need is hidden, and the BA must work with the user to articulate the thoughts that led to the presented solution. Asking “why” a few times generally will lead to that real requirement.
+Some people say that quality attributes are constraints. We prefer to think of certain quality requirements as being the origin of some design or implementation constraints. As Table 14-5 indicated, interoperability and usability requirements are potential sources of design constraints. Portability often imposes implementation constraints to make sure the application can easily be moved from one platform or operating environment to another. For instance, some compilers define an integer as being 32 bits long, and others define it as 64 bits. To satisfy a portability requirement,
+a developer might symbolically define a data type called WORD as a 32-bit unsigned integer and use the WORD data type instead of the compiler’s default integer data type. This ensures that all compilers will treat data items of type WORD in the same way, which helps to make the system work predictably in different operating environments.
+Following are
+ 
+
+CON-1. T
+
+requirement]
+ 
+.
+.
+ed as a design constraint on a functional
+ 
+CON-2. Only open source software available under the GNU General Public License may be used to implement the product. [implementation constraint]
+CON-3. The application must use Microsoft .NET framework 4.5. [architecture constraint]
+CON-4. ATMs contain only $20 bills. [physical constraint]
+CON-5. Online payments may be made only through PayPal. [design constraint] CON-6. All textual data used by the application shall be stored in the form of XML
+files. [data constraint]
+Note that some of these constraints exist to comply with some perhaps-unstated quality expectation. Ask why each constraint is imposed to try to reach that underlying quality requirement. Why must open-source software be used, as stated in CON-2? Perhaps because of a desire for increased modifiability, so that’s the requirement that leads to the constraint. Why must a specific version of .NET be used, per CON-3? Perhaps because of an implicit portability or reliability requirement. Remember, a constraint is a perceived solution; asking “why” can lead you to the requirement for which it is thought to be a solution.
+ 
+Handling quality attributes on agile projects
+It can be difficult and expensive to retrofit desired quality characteristics into a product late in development or after delivery. That’s why even agile projects that develop requirements and deliver functionality in small increments need to specify significant quality attributes and constraints early in the project. This allows developers to make appropriate architectural and design decisions as a foundation for the desired quality characteristics. Nonfunctional requirements need to have priority alongside user stories; you can’t defer their implementation until a later iteration.
+It’s possible to specify quality attributes in the form of stories:
+As a help desk technician, I want the knowledge base to respond to queries within
+five seconds so the customer doesn’t get frustrated and hang up.
+However, quality requirements are not implemented in the same discrete way as user stories. They can span multiple stories and multiple iterations. Nor are they always readily divisible into smaller chunks to be implemented across multiple iterations like user stories.
+Developers need to keep nonfunctional requirements in mind as they consider the implications of implementing individual user stories. As more functionality is added through a series of iterations,
+the system’s efficiency and hence performance can deteriorate. Specify performance goals and begin performance testing with early iterations, so you can become aware of concerns early enough to take corrective actions.
+As you saw in Table 14-5, some quality attributes are the source of derived functionality. On an agile project, quality requirements can spawn new items for the product backlog. Consider the following security requirement:
+As an account owner, I want to prevent unauthorized users from accessing my
+account so I don’t lose any money.
+This requirement would lead the product owner or business analyst on the project to derive multiple user stories that describe the security-related functionality. These stories can be added to the backlog and planned for implementation in specific iterations in the usual fashion. Understanding these requirements up front ensures that the team implements the security requirements at the right time.
+As with user stories, it’s possible to write acceptance tests for quality attributes. This is a way to quantify the quality attributes. If a performance goal is stated simply as “The knowledge base must return search results quickly,” you can’t write tests to define what constitutes “quickly.” A better acceptance test would be:
+Keyword search of the knowledge base takes less than 5 seconds, and preferably less than 3 seconds, to return a result.
+ 
+Acceptance tests written in this form can present several acceptable levels of satisfaction for the requirement, much like the Goal, Stretch, and Wish keywords used in Planguage, as discussed earlier in this chapter. You could use the Planguage keywords Scale and Meter to define more precisely what exactly is meant by “return a result” and how to perform the test and evaluate the results.
+Part of accepting an iteration as being complete is to assess whether the pertinent nonfunctional requirements are satisfied. Often there is a range of acceptable performance, with some outcomes more desirable than others. As it does for any other software development approach, satisfying quality requirements can distinguish delight from disappointment on agile projects.
+
+Next steps
+■	Identify several quality attributes from Table 14-1 that might be important to users on your current project. Formulate a few questions about each attribute that will help your users articulate their expectations. Based on the user responses, write one or two specific requirements for each important attribute.
+■	Examine several documented quality requirements for your project to see if they are verifiable. If not, rewrite them so you could assess whether the expected quality outcomes were achieved in the product.
+■	Revisit the section titled “Exploring quality attributes” in this chapter and try the spreadsheet approach described to rank-order your important quality attributes. Are the trade-offs between attributes being made on your project in agreement with this priority analysis?
+■	Rewrite several of the quality attribute examples in this chapter by using Planguage, making assumptions when necessary for the sake of illustration. Can you state those quality requirements with more precision and less ambiguity by using Planguage?
+■	Examine your users’ quality expectations for the system for possible conflicts and resolve them. The favored user classes should have the most influence on making the necessary trade-off choices.
+■	Trace your quality attribute requirements to the functional requirements, design and implementation constraints, or architectural and design choices that implement them.
+ 
+C HA P T E R 1 5
+Risk reduction through prototyping“Sharon, today I’d like to talk with you about the requirements that the buyers in the Purchasing Department have for the new Chemical Tracking System,” began Lori, the business analyst. “Can you tell me what you want to be able to do with the system?”
+“I’m not sure what to say,” replied Sharon with a puzzled expression. “I can’t describe what I need,
+but I’ll know it when I see it.”
+The phrase IKIWISI—”I’ll know it when I see it”—chills the blood of	. It conjures an
+image of the development team having to make their best guess at the right software to build, only to have users tell them, “Nope, that’s not right; try again.” To be sure, envisioning a future software system and articulating its requirements is hard. People have difficulty describing their needs without having something tangible in front of them to contemplate; critiquing is much easier than conceiving.
+Software prototyping takes a tentative step into the solution space. It makes the requirements more real, brings use cases to life, and closes gaps in your understanding of the requirements.
+Prototyping puts a mock-up or an initial slice of a new system in front of users to stimulate their thinking and catalyze the requirements dialog. Early feedback on prototypes helps stakeholders arrive at a shared understanding of the system’s requirements, which reduces the risk of customer dissatisfaction.
+Even if you apply the requirements development practices described in earlier chapters, portions of your requirements might still be uncertain or unclear to customers, developers, or both. If you don’t correct these problems, an expectation gap between a user’s vision of the product and a developer’s understanding of what to build is guaranteed. Prototyping is a powerful way to introduce those all-important customer contact points that can reduce the expectation gap described in Chapter 2, “Requirements from the customer’s perspective.” It’s hard to visualize exactly how software will behave by reading textual requirements or studying analysis models. Users are more willing to
+try out a prototype (which is fun) than to read an SRS (which is tedious). When you hear IKIWISI from your users, think about what you can provide that would help them articulate their needs or help you better understand what they have in mind (Boehm 2000). Prototypes are also a valuable tool for requirements validation. A
+based on the prototype would truly meet their needs.
+
+
+295
+ 
+
+
+—it might not do anything useful at all. Software prototypes can be static designs or working models; quick sketches or highly detailed screens; visual displays or full slices of functionality; or simulations (Stevens et al.
+1998; Constantine and Lockwood 1999).
+This chapter describes how prototyping provides value to the project and different kinds of prototypes you might create for different purposes. It also offers guidance on how to use them during requirements development, as well as ways to make prototyping an effective part of your software engineering process.
+
+Prototyping: What and why
+A software prototype is a partial, possible, or preliminary implementation of a proposed new product. Prototypes can serve three major purposes, and that purpose must be made clear from the very beginning:
+ 
+
+■
+assists in
+ 
+s   Used as a requirements tool, the prototype
+
+s. User evaluation of the prototype points out problems with
+ 
+requirements and uncovers overlooked requirements, which you can correct at low cost before you construct the actual product. This is especially helpful for parts of the system that are not well understood or are particularly risky or complex.
+■		Used as a design tool, a prototype lets stakeholders explore different user interaction techniques, envision the final product, optimize system usability, and evaluate potential technical approaches. Prototypes can demonstrate requirements feasibility through working designs. They’re useful for confirming the developer’s understanding of the requirements before constructing the actual solution.
+■	Create a subset that will grow into the ultimate product Used as a construction tool, a prototype is a functional implementation of a subset of the product, which can be elaborated into the complete product through a sequence of small-scale development cycles. This is a safe approach only if the prototype is carefully designed with eventual release intended from the beginning.
+The primary reason for creating a prototype is to resolve uncertainties early in the development process. You don’t need to prototype the entire product. Focus on high-risk areas or known uncertainties to
+. Users, managers, and other nontechnical stakeholders find that prototypes give them something concrete to contemplate while the product is being specified and designed. For each prototype you create, make sure you know—and communicate—why you’re creating it, what you expect to learn from it, and what you’ll do with the prototype after you’ve had people evaluate it.
+ 
+Because of the	, it’s important to put some descriptors in front of the word
+“prototype” so the project participants understand why and when you might create one type of prototype or another. This chapter describes three classes of prototype attributes, each of which has two alternatives:
+■	A mock-up prototype focuses on the user experience; a proof-of-concept prototype
+explores the technical soundness of a proposed approach.
+■	Future use  A throwaway prototype is discarded after it has been used to generate feedback,
+whereas an evolutionary prototype grows into the final product through a series of iterations.
+■	Form   A paper prototype is a simple sketch drawn on paper, a whiteboard, or in a drawing
+tool. An electronic prototype consists of working software for just part of the solution.
+Each prototype you create will possess a specific combination of these attributes. For instance, you could devise a throwaway paper mock-up having simple drawings of possible screens. Or you might build an evolutionary electronic proof-of-concept, working software that demonstrates a desired technical capability that you can then grow into a deliverable product. Certain combinations don’t make sense, though. For instance, you couldn’t create an evolutionary paper proof of concept.
+
+Mock-ups and proofs of concept
+When people say “software prototype,” they are usually thinking about a mock-up of a possible user
+ 
+interface.
+
+ 
+ 
+Such a
+ 
+
+. This
+ 
+type of prototype lets you explore some specific behaviors of the intended system, with the goal of refining the requirements. The mock-up helps users judge whether a system based on the prototype will let them do their job in a reasonable way.
+A mock-up implies behavior without actually implementing it. It displays the facades of user interface screens and permits some navigation between them, but it contains little or no real functionality. Think of the set for a Western movie: the cowboy walks into the saloon and then walks out of the livery stable, yet he doesn’t have a drink and he doesn’t see a horse because there’s nothing behind the false fronts of the buildings.
+Mock-ups can demonstrate the functional options the user will have available, the look and feel of the user interface (colors, layout, graphics, controls), and the navigation structure. The navigations might work, but at certain points the user might see only a message that describes what would really be displayed or will find that some controls don’t do anything. The information that appears in response to a database query could be faked or constant, and report contents are hardcoded. If you create a mock-up, try to use actual data in sample displays and outputs. This enhances the validity of the prototype as a model of the real system, but be sure to make it clear to the prototype evaluators that the displays and outputs are simulated, not live.

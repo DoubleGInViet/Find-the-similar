@@ -1,0 +1,373 @@
+﻿
+Many projects practice “right-to-left scheduling”: a delivery date is cast in concrete and then the product’s requirements are defined. In such cases, it often proves impossible to meet the specified ship date while including all the demanded functionality at the expected quality level. It’s more realistic to define the software requirements before making detailed plans and commitments. A
+design-to-schedule strategy can work if the project manager can negotiate what portion of the desired functionality can fit within the schedule constraints. Requirements prioritization is a key success factor.
+For complex systems in which software is only a part of the final product, project managers generally establish high-level schedules after developing the product-level (system) requirements and a preliminary architecture. At this point, the key delivery dates can be established, based on input from sources including marketing, sales, customer service, and development.
+Consider planning and funding the project in stages. An initial requirements exploration stage will provide enough information to let you make realistic plans and estimates for one or more construction stages. Projects that have uncertain requirements benefit from incremental and iterative development approaches. Incremental development lets the team begin delivering useful software long before the requirements become fully clear. Prioritization of requirements dictates the functionality to include in each construction timebox.
+Software projects frequently fail to meet their goals because the developers and other project participants are optimistic estimators and poor planners, not because they’re poor software engineers. Typical planning mistakes include overlooking common tasks, underestimating effort or time, failing to account for project risks, and not anticipating rework (McConnell 2006).
+elements:
+■	Estimated product size
+■	Known productivity of the development team, based on historical performance
+■	A list of the tasks needed to completely implement and verify a feature or use case
+■	Reasonably stable requirements, at least for the forthcoming development iteration
+■	Experience, which helps the project manager adjust for intangible factors and the unique aspects of each project
+
+ 
+From requirements to designs and code
+The boundary between requirements and design is not a sharp line but a gray, fuzzy area (Wiegers 2006).
+. Ideally, the descriptions of what the system
+is intended to do should not be slanted by desig
+e
+y to avoid inadvertent design, needless or unintended restrictions on the
+design. Include designers in requirements reviews to make sure the requirements can serve as a solid foundation for design.
+
+Architecture and allocation
+(Bass, Clements, and Kazman 1998; Rozanski and Woods 2005). Analyzing a proposed architecture helps the analyst to verify the requirements and tune their precision, as does prototyping. Both methods use the following thought process: “If I understand the requirements correctly, this approach I’m reviewing is a good way to satisfy them. Now that I have a preliminary architecture (or a prototype) in hand, does it help me better understand the requirements and spot incorrect, missing, or conflicting requirements?”
+Architecture is especially critical for systems that include both software and hardware
+components and for complex software-only systems.
+
+ 
+s. Requirements trace information lets the development team track where each requirement is addressed in the design.
+Inappropriate allocation decisions can result in the software being expected to perform functions that should have been assigned to hardware components (or the reverse), in poor performance, or in the inability to replace one component easily with an improved version. On one project, the hardware engineer blatantly told my group that he expected our software to overcome all limitations of his hardware design! Although software is more malleable than hardware, engineers shouldn’t use that flexibility as a reason to skimp on hardware design. Take a systems engineering approach to decide which capabilities each system component should deliver.
+
+(Hooks and Farry 2001). Consider a Blu-ray Disc player. As illustrated in Figure 19-3, it includes motors to open and close the disc tray and to spin the disc, an optical subsystem to read the data on the disc, an image-rendering subsystem, a multifunction remote control, and more. The subsystems interact to control the behavior that results when, say, the user presses a button on the remote control to open the disc tray while the disc is playing. The system requirements drive the architecture design for such complex products, and the architecture influences the requirements allocation.
+ 
+ 
+FIGURE 19-3 Complex products such as Blu-ray Disc players contain multiple software and hardware subsystems.
+
+
+
+Software design
+Software design receives short shrift on some projects, yet the time spent on design is an excellent investment. A variety of software designs will satisfy most products’ requirements. These designs will vary in their performance, efficiency, robustness, and the technical methods employed. If you leap directly from requirements into code, you’re essentially designing the software mentally and on the fly. You come up with a design but not necessarily with an excellent design. Poorly structured software is the likely result.
+As with requirements, excellent designs result from iteration. Make multiple passes through the design to refine your initial concepts as you gain information and generate additional ideas.
+Shortcomings in design lead to products that are difficult to maintain and extend and that don’t satisfy the customer’s performance, usability, and reliability objectives. The time you spend translating requirements into designs is an excellent investment in building high-quality, robust products.
+A project that’s applying object-oriented development methods might begin with object-oriented analysis of requirements, using class diagrams and other UML models to represent and analyze requirements information. A designer can elaborate these conceptual class diagrams, which are free of implementation specifics, into more detailed object models for design and implementation.
+
+implementation, but you should design each component before you code it. Formal design is of most
+ 
+benefit to particularly difficult projects, projects involving systems with many internal component interfaces and interactions, and projects staffed with inexperienced developers (McConnell 1998). All projects, however, will benefit from the following strategies:
+■	Developing a solid architecture of subsystems and components that will permit enhancement
+over the product’s life
+■	Identifying the key functional modules or object classes you need to build, as well as defining
+their interfaces, responsibilities, and collaborations with other units
+ 
+■	Ensuring that the design
+unnecessary functionality
+ 
+l requirements and doesn’t contain
+ 
+■	Defining each code unit’s intended functionality, following the sound design principles of strong cohesion, loose coupling, and information hiding (McConnell 2004)
+■	Ensuring that the design addresses exception conditions that can arise
+■	Ensuring that the design will achieve stated performance, security, and other quality goals
+■	Identifying any existing components that can be reused
+■	Defining—and respecting—any limitations or constraints that have a significant impact on the
+design of the software components
+As developers translate requirements into designs and code, they’ll encounter points of ambiguity and confusion. Ideally, developers can route these issues back to customers or BAs for resolution through the project’s issue-tracking process. If an issue can’t be resolved immediately, any
+assumptions, guesses, or interpretations that a developer makes should be documented and reviewed
+with customer representatives.
+
+User interface design
+
+book. Your requirements explorations probably took at least tentative steps into UI design. UI design is so closely related to requirements that you shouldn’t just push it downstream to be done without end-user engagement. Chapter 15, “Risk reduction through prototyping,” described how use cases lead to dialog maps, wireframes, or prototypes, and ultimately into detailed UI designs. A
+display-action-response (DAR) model is a useful tool for documenting the UI elements that appear in screens and how the system responds to user actions (Beatty and Chen 2012). A DAR model combines a visual screen layout with tables that describe the elements on the screen and their behaviors under different conditions. Figure 19-4 shows a sample page from a website, and Figure 19-5 shows a corresponding DAR model. The DAR model contains enough details about the screen layout and behavior that a developer should be able to implement it with confidence.
+ 
+ 
+
+FIGURE 19-4 High-fidelity webpage design.
+
+UI Element: Submit a Pearl Page at PearlsFromSand.com
+UI Element Description
+ID	submit.html
+Description	Page where users can submit their own life lessons to be posted on the Pearls from Sand blog
+UI Element Description
+Precondition	Display
+Always	“Home” link
+“About the Book” link “About the Author” link “Blog” link
+“Submit a Pearl” link (inactive, different color because it’s the current page) “Buy the Book” link
+“Contact” link “Name” text field “City” text field
+“State or Province” drop-down list “Email” text field
+“Title” text field
+“Pearl Category” drop-down list “Your Story” text field
+“I agree” check box, cleared “Submit” button
+“Pearl Submission Guidelines” link “Pearl Submission Terms” link
+User just
+submitted a pearl	“Name,” “City,” “State or Province,” and “Email” fields are populated with values from previous pearl. “Title,” “Pearl Category,” “Your Story,” and “I agree” fields are reset to default values.
+ 
+UI Element Behaviors
+Precondition	User Action	Response
+Always	User clicks on navigation links: “Home,” “About the Book,” “About the Author,” “Buy the Book,” “Contact,” “Pearl Submission Guidelines,” “Pearl Submission Terms”	Corresponding page is displayed
+Always	User clicks on either “Blog” link	Pearls from Sand blog opens in new browser tab
+Always	User types or pastes text into a text field	User’s text is displayed in field; for “Your Story” field, count of remaining characters is displayed
+Always	User clicks on “I agree” check box	Check box toggles on/off
+One or more
+invalid entries	User clicks on “Submit” link	Error message appears for any invalid text entry or length or for required fields that are blank
+All fields have valid entries; “I agree” check box is selected	User clicks on “Submit” link	Pearl is submitted; pearl counter is incremented; email with pearl info is sent to Submitter
+and Administrator; successful submission
+acknowledgment message is displayed.
+“I agree” box not
+checked	User clicks on “Submit” link	System displays error message on this page
+FIGURE 19-5 Display-action-response (DAR) model for the webpage shown in Figure 19-4.
+
+
+ 
+From requirements to tests
+
+points out, “
+ 
+
+
+. As consultant Dorothy Graham (2002)
+ 
+The requirements provide the foundation for system testing. The product should be tested against what it was intended to do as recorded in the requirements documentation, not against its design or code. System testing that’s based on the code can become a self-fulfilling prophecy. The product might correctly exhibit all the behaviors described in tests based on the code, but that doesn’t mean that it meets the customers’ needs. I
+
+(Cohn 2004). Rather than specifying the capabilities the system must exhibit or the actions a user must be able to take, the acceptance tests flesh out the expected behavior of a user story. This conveys to developers the information they need to feel confident that they’ve correctly and completely implemented each story. As described in Chapter 17, “Validating the requirements,” acceptance tests should cover:
+■	Expected behavior under normal conditions (good input data and valid user actions).
+■	How anticipated error conditions and expected failure scenarios should be handled (bad input data or invalid user actions).
+■	Whether quality expectations are satisfied (for example, response times, security protections, and the average time or number of user actions needed to accomplish a task).
+ 
+ 	 
+
+The testers or quality assurance staff should determine how they’d verify the implementation of
+each requirement.	:
+■	Testing (executing the software to look for defects)
+■	Inspection (examining the code to ensure that it satisfies the requirements)
+■	Demonstration (showing that the product works as expected)
+■	Analysis (reasoning through how the system should work under certain circumstances)
+Connecting testing back to requirements helps keep the testing effort prioritized and focused for maximum benefit. One colleague, a seasoned project manager and business analyst, related her experience along these lines: “A clearly articulated business need can drive user acceptance testing (UAT), which is typically the final hurdle a project undergoes prior to going live. On a recent web portal development project, we worked with the business sponsor to understand the real gains the web portal was expected to deliver. Understanding the critical requirements allowed the project manager to craft clear definitions of critical, moderate, and cosmetic defects. By tying defect criteria clearly to requirements, we guided our customers through UAT and successfully completed a major development effort without any ambiguity about quality or acceptance criteria.”
+The simple act of thinking about how you’ll verify each requirement is a useful quality practice. Use analytical techniques such as cause-and-effect graphs to derive tests based on the logic described in a requirement. This will reveal ambiguities, missing or implied else conditions, and other problems.
+Each functional requirement should map to at least one test so that no expected system behavior goes unverified. Requirements-based testing applies several test design strategies: action-driven, data-driven (including boundary value analysis and equivalence class partitioning), logic-driven, event-driven, and state-driven (Poston 1996). Skillful testers will augment requirements-based testing with additional testing based on the product’s history, intended usage scenarios, overall quality characteristics, service level agreements, boundary conditions, and quirks.
+ 
+The effort invested in early test thinking isn’t wasted, even if you plan a separate system testing effort before release. It’s a matter of reallocating test effort that historically was weighted toward the latter project stages. Conceptual tests are readily transformed into specific test scenarios and automated, where feasible and appropriate. Moving test thinking up earlier in the development cycle will pay off with better requirements, clear communication and common expectations among stakeholders, and early defect removal.
+As development progresses, the team will elaborate the requirements from the high level found in user requirements, through the functional requirements, and ultimately down to specifications for individual code modules. Testing authority Boris Beizer (1999) points out that testing against requirements must be performed at every level of software construction, not just the end-user level. Some application code isn’t directly accessed by users but is needed for infrastructure operations.
+Each module must satisfy its own specification, even if that module’s function is invisible to the user. Consequently, testing the system against user requirements is a necessary—but not sufficient— strategy for system testing.
+
+From requirements to success
+I once encountered a project in which a contract development team came on board to implement a very large application for which an earlier team had developed the requirements. The new team took one look at the dozen three-inch binders of requirements, shuddered in horror, and began coding. They didn’t refer to the SRS during construction. Instead, they built what they thought they were supposed to build, based on an incomplete and inaccurate understanding of the project’s goals. Not surprisingly, this project encountered a lot of problems. Trying to understand a huge volume of even excellent requirements is certainly hard, but ignoring them is a decisive step toward project failure.
+It’s faster to read the requirements, however extensive, before implementation than it is to build the wrong system and then have to build it again correctly. It’s even faster to engage the development team early in the project so that they can participate in the requirements work and
+perform early prototyping or take an iterative development approach. The development team still has to read the entire specification eventually. However, they are spreading their reading time across the project, which alleviates some of the tedious nature of the activity.
+A more successful team had a practice of listing all the requirements that were planned for a specific release. The project’s quality assurance group evaluated each release by executing the tests for those requirements. A requirement that didn’t satisfy its test criteria was counted as a defect. The QA group rejected the release if more than a predetermined number of requirements weren’t met or if specific high-impact requirements weren’t satisfied. This project was successful largely because it used its documented requirements to decide when a release was shippable.
+ 
+The ultimate deliverable from a software development project is a solution that meets the customers’ needs and expectations. Requirements are an essential step on the path from business need to satisfied customers. If you don’t base your project plans, designs, and acceptance and system tests on a foundation of high-quality requirements, you’re likely to waste a great deal of effort trying to deliver a solid product. Don’t become a slave to your requirements processes, though. There’s no point in spending time generating unnecessary documents and holding ritualized meetings. Strive for a sensible balance between rigorous specification and off-the-top-of-the-head coding that will reduce the risk of building the wrong product to an acceptable level.
+
+Next steps
+■	Estimate the requirements work on your next project by using the requirements estimation tool from Figure 19-2. Track your time on the project and compare the results to your initial estimation. Adapt the estimation tool for your next project.
+■	Estimate the percentage of unplanned requirements growth on your last several projects. Can you build contingency buffers into your project schedules to accommodate a similar scope increase on future projects? Use the growth data from previous projects to justify the schedule contingency so that it doesn’t look like arbitrary padding.
+■	Try to trace all the requirements in an implemented portion of your SRS to individual design elements. The design elements might be processes in design data flow diagrams, tables in data models, object classes or methods, or other design components. Are any design elements missing? Were any requirements overlooked?
+■	Record the number of lines of code, function points, story points, or UI elements that are needed to implement each feature or user requirement. Also record the actual effort needed to fully implement and verify each feature or use case. Look for correlations between size and effort that will help you make more accurate estimates in the future.
+■	Record your estimates of size and effort for the requirements development activities and deliverables on your project, and compare those to the actual results. Did you really do the 5 interviews planned, or did you end up doing 15? Did you create twice as many use cases as expected? How can you change your estimation process to be more accurate in the future?
+ 
+
+
+
+
+
+
+
+
+
+
+PART III 
+Requirements for specific project classes
+CHAPTER 20	Agile projects	383
+CHAPTER 21	Enhancement and reengineering projects	393
+CHAPTER 22	Packaged solution projects	405
+CHAPTER 23	Outsourced projects	415
+CHAPTER 24	Business process automation projects	421
+CHAPTER 25	Business analytics projects	427
+CHAPTER 26	Embedded and other real-time
+systems projects	439
+ 
+
+ 
+C HA P T E R 2 0
+Agile projects
+
+
+
+
+
+here are many different types of agile methods; some of the most popular are Scrum, Extreme Programming, Lean Software Development, Feature-Driven Development, and Kanban. The term “agile development” has gained popularity since the publication of the “Manifesto for Agile
+Software Development” (Beck et al. 2001).	l
+approaches to software development, which have been around for many years (for example, see Boehm 1988; Gilb 1988; and Larman and Basili 2003).
+The agile development approaches have characteristics that distinguish them from one another, but they all fundamentally champion an
+(Boehm and Turner 2004; IIBA 2009).
+
+ 
+. The project managers and business analysts make sure that all stakeholders understand exactly what will be delivered before it gets built. This can work well if the requirements are well understood at the outset and are likely to remain relatively stable during the project.
+approaches such as agile methods are designed to accommodate the inevitable change that takes
+place on projects. They also work well for	.
+This chapter describes the characteristics of agile approaches as they relate to the requirements activities for a software project, the major adaptations of traditional requirements practices for an agile project, and a road map of where to find more detailed guidance throughout the rest of the book.
+
+ 
+Limitations of the waterfall
+Organizations often think of a
+activities, where project teams fully specify (and sometimes overspecify) the requirements, then
+create designs, then write code, and finally test the solution.	l
+advantages. The team can catch any flaws in the application’s requirements and design early on rather than during construction, testing, or maintenance, when fixing an error is much more costly.
+requirements are correct up front,	it is easy to allocate budget and resources, to measure progress,
+and to estimate an accurate completion date	. However, in practice, software development is rarely
+that straightforward.
+Few projects follow a purely sequential waterfall approach. Even predictive projects expect a certain amount of change and put mechanisms in place to handle it. There is always some overlap and feedback between the phases. In general, though, on waterfall development projects the team puts considerable effort into trying to get the full requirements set “right” early on. There are many possible software development life cycles in addition to waterfall and agile approaches. They place varying degrees of emphasis on developing a complete set of requirements early in the project (McConnell 1996; Boehm and Turner 2004). A key differentiator across the spectrum between totally fixed, predictive projects and totally uncertain, adaptive projects is the amount of time that elapses between when a requirement is created and when software based on that requirement is delivered to customers.
+
+. Waterfall projects are susceptible to this kind of failure because of the layers of dependency built upon the requirements. Stakeholders often change their require- ments during the course of a long project, and projects struggle when the software development teams cannot respond to these changes effectively. The reality is that stakeholders will change requirements—because they don’t know precisely what they want at the beginning of the project, because sometimes they can articulate their vision only after they see something that clearly doesn’t match their vision, and because business needs sometimes change during the course of a project.
+Although Winston Royce (1970) is often credited with being the first to publish the formal waterfall model (though not by that name), he actually presented it in the context of being an approach that is “risky and invites failure.” He identified the exact problem that projects today still experience: errors
+in requirements likely aren’t caught until testing, l	. He went on to explain that the
+steps ideally should be performed in the sequence of requirements, design, code, and test, but that projects really need to overlap some of these phases and iterate between them. Royce even proposed using simulations to prototype the requirements and designs as an experiment before committing to the full development effort. Modified waterfalls, though, are followed by many projects today, with varying degrees of success.
+ 
+ 	 
+
+The agile development approach
+Agile development methods attempt to address some limitations of the waterfall model.
+ 
+
+     
+uring each iteration, the development team adds a small set of functionality based on priorities established by the customer, tests it to make sure it works properly, and validates it with acceptance criteria established by the customer.
+
+   
+
+ 
+. The goal is to have a body of potentially shippable software at the end of each iteration, even if it constitutes just a small portion of the ultimately desired product.
+
+Essential aspects of an agile approach to requirements
+The following sections describe several differences in the ways that agile projects and traditional projects approach requirements. Many of the requirements practices applied on agile projects also work well on—and are a good idea for—projects following any other development life cycle.
+ 
+Customer involvement
+Collaborating with customers on software development projects always increases the chances of project success. This is true for waterfall projects as well as for agile projects.
+ 
+ect during user acceptance testing, providing feedback on whether the product meets their needs. However, during the construction phase, there is generally little customer involvement, which makes it difficult for a project to adapt to changing customer needs.
+
+. During an initial planning iteration on some agile projects, customers work with the project team to identify and prioritize user stories that will serve as the preliminary road map
+for the development of the product.	l
+. They should also test and provide feedback on the newly developed features when the construction phase of the iteration is complete.
+It is common to have product owners, customers, and end users participate in writing user stories or other requirements, but these individuals might not all be trained in effective requirements methods. Inexpertly written user stories are likely not sufficient for clear communication of requirements. Regardless of who is writing the user stories, someone with solid business analysis skills should review and edit the stories before the team begins implementing them. Chapter 6, “Finding the voice of the user,” further elaborates on customer involvement on agile projects.
+
+Documentation detail
+Because developers have little interaction with customers after construction begins on waterfall projects, the requirements must specify system behavior, data relationships, and user experience expectations in considerable detail.
+. Instead, BAs or other people responsible for requirements will develop the necessary precision through conversations and documentation when it is needed (IIBA 2013).
+People sometimes think that agile project teams are not supposed to write requirements. not accurate. Instead,
+needed to accurately guide the developers and testers. Any documentation beyond what the development and test teams need (or that is required to satisfy regulations or standards) represents wasted effort. Certain user stories might have little detail provided, with only the riskiest or
+highest-impact functionality being specified in more detail, typically in the form of acceptance tests.
+ 
+The backlog and prioritization
+The product backlog on an agile project contains a list of requests for work that the team might perform (IIBA 2013).
+Each project should maintain only one backlog (Cohn 2010). Therefore, defects might need to be represented in the backlog for prioritization against new user stories. Some teams rewrite defects as new user stories or variants of old stories. Backlogs can be maintained on story cards or in tools. Agile purists might insist on using cards, but they are not practical for large projects or distributed teams. Chapter 27, “Requirements management practices,” discusses the product backlog in more
+detail. Various tools for agile project management, including backlog management, are commercially available.
+Prioritization of the backlog is an ongoing activity to select which work items go into upcoming iterations and which items are discarded from the backlog. The priorities assigned to backlog items don’t have to remain constant forever, just for the next iteration (Leffingwell 2011). Tracing items in the backlog back to the business requirements facilitates prioritization. All projects, not just agile projects, ought to be managing priorities of the work remaining in their backlog.
+
+Timing
+. Someone still needs to elicit requirements from user representatives, analyze them, document requirements of various kinds at appropriate levels of detail, and validate that the requirements will achieve the business objectives for the project. However, detailed requirements are not documented all at once at the beginning of an agile project. Instead, high-level requirements, typically in the form of user stories, are elicited to populate a product backlog early in a project for planning and prioritization.
+As shown in Figure 20-1, user stories are allocated to specific iterations for implementation, and the details for each story are further clarified during that iteration. As was illustrated in Figure 3-3 in Chapter 3, “Good practices for requirements engineering,” requirements might be developed in small portions throughout the entire project, even up until shortly before the product is released. However, it’s important to learn about nonfunctional requirements early on so the system’s architecture can be designed to achieve critical performance, usability, availability, and other quality goals.
+ 
+ 
+FIGURE 20-1 Standard requirements activities occur within each agile iteration.
+
+Epics, user stories, and features, oh my!
+As described in Chapter 8, “Understanding user requirements,” a user story is a concise statement that articulates something a user needs and serves as a starting point for conversations to flesh out the details. User stories were created specifically to address the needs of agile developers. You might prefer to employ use case names, features, or process flows when exploring user requirements. The form you choose to describe these sorts of requirements is not important; this chapter primarily refers to them as user stories because they are so commonly used on agile projects.
+User stories are sized so as to be fully implementable in a single iteration. Mike Cohn (2010) defines an epic as being a user story that is too large to fully implement in a single iteration. Because epics span iterations, they must be split into sets of smaller stories. Sometimes epics are large enough that they must be subdivided into multiple epics, each of which is then split into multiple stories
+until each resulting story can be reliably estimated and then implemented and tested within a single iteration (see Figure 20-2). Breaking epics down into smaller epics and then into user stories is often referred to as story decomposition (IIBA 2013).
+
+FIGURE 20-2 Epics can be subdivided into smaller epics and then into user stories.
+ 
+A feature is a grouping of system capabilities that provides value to a user. In the context of an agile project, features could encompass an individual user story, multiple user stories, an individual epic, or multiple epics. For example, a zoom feature on a phone’s camera might be developed to enable execution of the following two unrelated user stories:
+■
+
+.
+Identifying the lowest level of stories that still aligns with the business requirements allows you to determine the smallest set of functionality that the team can deliver that provides value to the customer. This concept is often called a minimum (or minimal, or minimally) marketable feature (MMF), as described by Mark Denne and Jane Cleland-Huang (2003).
+
+
+Expect change
+Organizations know that change will happen on projects. Even business objectives can change. The biggest adaptation that BAs need to make when a requirement change arises on an agile project is to say not, “Wait, that’s out of scope” or “We need to go through a formal process to incorporate that change,” but rather, “Okay, let’s talk about the change.” This encourages customer collaboration to create or change user stories and prioritize each change request against everything else that’s already in the backlog. As with all projects, agile project teams need to manage changes thoughtfully to reduce their negative impact, but they anticipate and even embrace the reality of change. See Chapter 28, “Change happens,” for more information about managing requirements change on agile projects.
+Knowing that you can handle changes doesn’t mean you should blindly ignore the future and pay attention only to what’s known now. It is still important to look ahead and see what might be coming farther down the road. The developers might not design for every possible future requirement. Given some glimpse of the future, though, they can create a more expandable and robust architecture or design hooks to make it easy to add new functionality.
+Change also includes removing items from scope. Items can be removed from an iteration’s scope
+for various reasons, including the following:
+■	Implementation issues prevent an item from being completed within the current time frame.
+■	Issues discovered by product owners or during testing make the implementation of a
+particular story unacceptable.
+■	Higher-priority items need to replace less important ones that were planned for an iteration.
+ 
+ 
+
+ 
+Most of the practices described throughout this book can easily be adapted to agile projects, perhaps by altering the timing when they’re used, the degree to which they are applied, or who performs each practice. The International Institute of Business Analysis (IIBA) provides detailed suggestions regarding business analysis techniques to apply to agile projects (IIBA 2013). Many other chapters in this book address how to adapt the practices described in the chapter to suit an agile project. Table 20-1 provides a road map to the specific chapters that address agile projects directly.
+TABLE 20-1 A road map to chapters that address agile development topics
+
+Chapter	Topic
+Chapter 2, “Requirements from the customer’s perspective”	Reaching agreement on requirements
+Chapter 4, “The business analyst”	The BA’s role on agile projects and who is responsible for the
+requirements artifacts created
+Chapter 5, “Establishing the business requirements”	Setting and managing the vision and scope
+Chapter 6, “Finding the voice of the user”	User representation
+Chapter 8, “Understanding user requirements”	User stories
+Chapter 10, “Documenting the requirements”	Specifying requirements for agile development
+Chapter 12, “A picture is worth 1024 words”	Modeling on agile projects
+Chapter 14, “Beyond functionality”	Identifying quality attributes, especially those needed up front for architecture and design
+Chapter 15, “Risk reduction through prototyping”	Agile projects and evolutionary prototyping
+Chapter 16, “First things first: Setting requirement priorities”	Prioritization on agile projects
+Chapter 17, “Validating the requirements”	Acceptance criteria and acceptance tests
+Chapter 27, “Requirements management practices”	Managing requirements on agile projects through backlogs
+and burndown charts
+Chapter 28, “Change happens”	Managing change on agile projects
+
+Transitioning to agile: Now what?
+
+practices you already use will still apply. After all, both agile and traditional project teams need to understand the requirements for the solutions they build. Following are a few suggestions to help you make the conversion to an agile approach:
+■	Determine what your role is on the team. As described in Chapter 4, some agile projects have a dedicated BA, whereas others have people with different titles who perform business analysis activities. Encourage all team members to focus on the goals of the project, not their individual roles or titles (Gorman and Gottesdiener 2011).
+ 
+■	Read a book on the agile product owner role so you understand user stories, acceptance tests, backlog prioritization, and why the agile BA is never “finished” until the end of the project or release. One suggested book is Agile Product Management with Scrum (Pichler 2010).
+■	Identify suggested agile practices that will work best in your organization. Consider what has worked well already with other development approaches in your organization, and carry on those practices. Collaborate with the people currently performing other team roles to determine how their practices will work in an agile environment.
+■	Implement a small project first as a pilot for agile methods, or implement only a few agile practices on your next project.
+■	If you decide to implement a hybrid model that adopts some agile practices but not others, select a few low-risk practices that can work well in any methodology to start. If you are new to agile, bring in an experienced coach for three or four iterations to help you avoid the temptation to revert to the historical practices with which you are comfortable.
+■	Don’t be an agile purist just for the sake of being a purist.
+
+Be agile when adopting agile practices
+One organization I worked with decided to move from a traditional approach to agile development. The entire organization jumped in feet first, dogmatically trying to adapt agile practices across the entire organization at once. Many of the developers tried to be agile purists, writing story cards and incorrectly insisting that no other documentation was allowed.
+This attempted implementation of agile approaches failed miserably. Not all of the stakeholders bought into the effort. Some of the practices the developers insisted on didn’t scale up to their large projects. The customers didn’t know how their role would be different on an agile project. The new projects failed so badly that the IT executive mandated that agile development must stop immediately. All projects would follow a waterfall model from that point forward. “Agile” became a bad word. This was like trying to fix one poor decision with another!
+Something interesting happened in the IT organization. The development teams knew this mandate was also going to lead to disaster, so they adopted a hybrid development approach. They used backlogs to prioritize requirements, they developed in three-week iterations, and they specified detailed requirements just-in-time for each iteration. When the teams described their approach to their management, they just said they were using “standard waterfall approaches” in their development so they wouldn’t get in trouble. Most of the agile practices actually worked well in their organization when they learned how to execute them properly.
+This organization initially tried to adopt agile methods in a way that didn’t work in their organization and ended up giving agile an undeserved bad name.
+ 
+
+ 
+C HA P T E R 2 1
+Enhancement and replacement projects
+
+Most of this book describes requirements development as though you are beginning a new software or system development project, sometimes called a green-field project. However, many organizations devote much of their effort to enhancing or replacing existing information systems or building
+new releases of established commercial products. Most of the practices described in this book are appropriate for enhancement and replacement projects. This chapter provides specific suggestions as to which practices are most relevant and how to use them.
+An enhancement project is one in which new capabilities are added to an existing system.
+Enhancement projects might also involve correcting defects, adding new reports, and modifying functionality to comply with revised business rules or needs.
+ 
+A
+system, a commercial off-the-shel
+ 
+replaces an existing application with a new custom-built
+ 
+
+ 
+s. If your replacement project will involve a COTS solution, the guidance presented in Chapter 22, “Packaged solution projects,” will also be helpful.
+Replacement and enhancement projects face some particular requirements issues. The original developers who held all the critical information in their heads might be long gone. It’s tempting to claim that a small enhancement doesn’t warrant writing any requirements. Developers might believe that they don’t need detailed requirements if they are replacing an existing system’s functionality.
+The approaches described in this chapter can help you to deal with the challenges of enhancing or replacing an existing system to improve its ability to meet the organization’s current business needs.
+
+393
+ 
+ 
+
+
+ 
+Expected
+The
+ 
+
+
+leads to common challenges that both enhancement and
+ 
+replacement projects will face, including the following:
+■	The changes made could degrade the performance to which users are accustomed.
+■	Little or no requirements documentation might be available for the existing system.
+■	Users who are familiar with how the system works today might not like the changes they are about to encounter.
+■	You might unknowingly break or omit functionality that is vital to some stakeholder group.
+■	Stakeholders might take this opportunity to request new functionality that seems like a good
+idea but isn’t really needed to meet the business objectives.
+Even if there is existing documentation, it might not prove useful. For enhancement projects, the documentation might not be up to date. If the documentation doesn’t match the existing
+application’s reality, it is of limited use. For replacement systems, you also need to be wary of carrying forward all of the requirements, because some of the old functionality probably should not be migrated.
+One of the major issues in replacement projects is validating that the reasons for the replacement are sound. There need to be justifiable business objectives for the change. When existing systems are being completely replaced, organizational processes might also have to change, which makes it harder for people to accept a new system. The change in business processes, change in the software system, and learning curve of a new system can disrupt current operations.
+
+Requirements techniques when there is an existing system
+Table 21-1 describes the most important requirements development techniques to consider when working on enhancement and replacement projects.

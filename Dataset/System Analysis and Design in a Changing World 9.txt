@@ -1,0 +1,747 @@
+﻿Project teams can make indexes perform even faster by placing them into the main 
+memory of the data storage hardware. Retrieving information directly from memory is 
+much faster than retrieving it from a hard disk—Th ink about how much faster it is to 
+retrieve a memorized phone number versus one that must be looked up in a phone book. 
+Similarly, when a database has an index in memory, it can locate records very, very quickly.
+Of course, indexes require overhead in that they take up space on the storage medium. 
+Also, they need to be updated as records in tables are inserted, deleted, or changed. Th us, 
+although indexes lead to faster access to the data, they slow down the update process. In 
+general, we should create indexes sparingly for transaction systems or systems that require a 
+lot of updates, but we should apply indexes generously when designing systems for decision 
+support (see Figure 9-19).
+Estimating Data Storage Size
+Even if we have denormalized our physical data model, clustered records, and created indexes 
+appropriately, the system will perform poorly if the database server cannot handle its volume of data. Th erefore, one last way to plan for good performance is to apply volumetrics,
+which means estimating the amount of data that the hardware will need to support. You can 
+incorporate your estimates into the database server hardware specifi cation to make sure that 
+the database hardware is suffi cient for the project’s needs. Th e size of the database is based 
+on the amount of raw data in the tables and the overhead requirements of the DBMS. To 
+estimate size, you will need to have a good understanding of the initial size of your database 
+as well as its expected growth rate over time.
+Raw data refers to all the data that are stored within the tables of the database, and it is 
+calculated based on a bottom-up approach. First, write down the estimated average width 
+for each column (fi eld) in the table and sum the 
+values for a total record size (see Figure 9-20). For 
+example, if a variable-width Last Name column is 
+assigned a width of 20 characters, you can enter 13 
+as the average character width of the column. In 
+Figure 9-20, the estimated record size is 49.
+Next, calculate the overhead for the table as 
+a percentage of each record. Overhead includes 
+the room needed by the DBMS to support such 
+functions as administrative actions and indexes, 
+and it should be assigned based on past experience, 
+recommendations from technology vendors, or 
+parameters that are built into soft ware that was 
+written to calculate volumetrics. For example, your 
+DBMS vendor might recommend that you allocate 
+30 percent of the records’ raw data size for overhead storage space, creating a total record size of 
+63.7 in the Figure 9-20 example.
+Use indexes sparingly for transaction systems.
+Use many indexes to increase response times in decision support systems.
+For each table, create a unique index that is based on the primary key.
+For each table, create an index that is based on the foreign key to improve the performance of joins.
+Create an index for fi elds that are used frequently for grouping, sorting, or criteria.
+FIGURE 9-19
+Guidelines for 
+Creating Indexes
+FIGURE 9-20
+Calculating 
+Volumetrics
+Order Number 8
+Date 7
+Cust ID 4
+Last Name 13
+First Name 9
+State 2
+Amount 4
+Tax Rate 2
+Record Size 49
+Overhead 30%
+Total Record Size 63.7
+Initial Table Size 50,000
+Initial Table Volume 3,185,000
+Growth Rate/Month 1,000
+Table Volume @ 3 years 5,478,200
+ Field Average Size
+Designing Data Access and Manipulation Classes  357
+Finally, record the number of initial records that will be loaded into the table, as well as 
+the expected growth per month. Th is information should have been collected during analysis. 
+According to Figure 9-20, the initial space required by the fi rst table is 3,185,000, and future 
+sizes can be project based on the growth fi gure. Th ese steps are repeated for each table to get 
+a total size for the entire database.
+Many CASE tools provide you with database-size information based on how you set up the 
+object persistence, and they calculate volumetrics estimates automatically. Ultimately, the size 
+of the database needs to be shared with the design team so that the proper technology can be 
+put in place to support the system’s data and potential performance problems can be addressed 
+long before they aff ect the success of the system.
+DESIGNING DATA ACCESS AND MANIPULATION CLASSES
+Th e fi nal step in developing the data management layer is to design the data access and 
+manipulation classes that act as a translator between the object persistence and the problem 
+domain objects. Th us, they should always be capable of at least reading and writing both the 
+object persistence and problem domain objects. As described earlier and in Chapter 8, the 
+object persistence classes are derived from the concrete problem domain classes, whereas 
+the data access and manipulation classes depend on both the object persistence and problem 
+domain classes.
+Depending on the application, a simple rule to follow is that there should be one data 
+access and manipulation class for each concrete problem domain class. In some cases, 
+it might make sense to create data access and manipulation classes associated with the 
+human–computer interaction classes (see Chapter 10). However, this creates a dependency from the data management layer to the human–computer interaction layer. Adding 
+this additional complexity to the design of the system normally is not recommended.
+Returning to the ORDBMS solution for the Appointment system example (see 
+Figure 9-8), we see that we have four problem domain classes and four ORDBMS tables. 
+Following the previous rule, the DAM classes are rather simple. Th ey have to support only 
+a one-to-one translation between the concrete problem domain classes and the ORDBMS 
+tables (see Figure 9-21). Because the Participant problem domain class is an abstract class, 
+only three data access and manipulation classes are required: Patient-DAM, SymptomDAM, and Appointment-DAM. However, the process to create an instance of the Patient 
+problem domain class can be fairly complicated. Th e Patient-DAM class might have to be 
+able to retrieve information from all four ORDBMS tables. To accomplish this, the PatientDAM class retrieves the information from the Patient table. Using the Object-IDs stored 
+in the attribute values associated with the Participant, Appts, and Symptoms attributes, the 
+remaining information required to create an instance of Patient is easily retrieved by the 
+Patient-DAM class.
+In the case of using an RDBMS to provide persistence, the data access and manipulation classes tend to become more complex. For example, in the Appointment system, there 
+are still four problem domain classes, but, owing to the limitations of RDBMSs, we have to 
+support six RDBMS tables (see Figure 9-10). Th e data access and manipulation class for the 
+Appointment problem domain class and the Appointment RDBMS table is no diff erent from 
+those supported for the ORDBMS solution (see Figures 9-21 and 9-22). However, owing 
+to the multivalued attributes and relationships associated with the Patient and Symptom 
+problem domain classes, the mappings to the RDBMS tables were more complicated. 
+Consequently, the number of dependencies from the data access and manipulation classes 
+(Patient-DAM and Symptom-DAM) to the RDBMS tables (Patient table, Insurance Carrier 
+table, Suff er table, and the Symptom table) has increased. Furthermore, because the Patientproblem domain class is associated with the other three problem domain classes, the actual 
+retrieval of all information necessary to create an instance of the Patient class could involve 
+joining information from all six RDBMS tables. To accomplish this, the Patient-DAM class 
+must fi rst retrieve information from the Patient table, Insurance Carrier table, Suff er table, 
+and the Appointment table. Because the primary keys of the Patient table and the Participant 
+table are identical, the Patient-DAM class can either directly retrieve the information from 
+the Participant table, or the information can be joined using the participantNumber attributes 
+of the two tables, which act as both primary and foreign keys. Finally, using the information 
+RDBMS Tables Data Access and Problem Domain Classes
+Manipulation Classes
+Participant Table
+-lastname[1..1]
+-firstname[1..1]
+-address[1..1]
+-phone[1..1]
+-birthdate[1..1]
+-participantNumber[1..1]
+Patient-DAM
++ReadPatientTable()
++WritePatientTable()
++ReadInsuranceCarrierTable()
++WriteInsuranceCarrierTable()
++ReadSufferTable()
++WriteSufferTable()
++ReadApptTable()
++WriteApptTable()
++ReadPatient()
++WritePatient()
+Symptom-DAM
++ReadSymptomTable()
++WriteSymptomTable()
++ReadSufferTable()
++WriteSufferTable()
++ReadSymptom()
++WriteSymptom()
+Appointment-DAM
++ReadApptTable()
++WriteApptTable()
++ReadAppt()
++WriteAppt()
+Patient Table
+-amount[1..1]
+-participantNumber[1..1]
+-primaryInsuranceCarrier[0..1]
+Appointment Table
+-time[1..1]
+-date[1..1]
+-reason[1..1]
+-personNumber[1..1]
+1..1
+1..1
+1..1
+0..* 0..*
+0..*
+1
+1
+1..1
+1..*
+Symptom Table
+-name[1..1]
+Suffer Table
+-participantNumber[1..1]
+-name[1..1]
+Insurance Carrier Table
+-name[1..1]
+-participantNumber[1..1]
+1..*
++ primary
+insurance
+carrier
+0..*
+0..*
+1..1
+1..1
+1..1
+0..*
+Symptom
+-name
+Appointment
+-time
+-date
+-reason
+Patient +cancel without notice()
+-amount
+-insurance carrier
++make appointment()
++calculate last visit()
++change status()
++provides medical history()
+Participant
+-lastname
+-firstname
+-address
+-phone
+-birthdate
+-/ age
+suffers
+schedules
+FIGURE 9-22  Mapping Problem Domain Objects to RDBMS Using DAM Classes
+360 Chapter 9 Data Management Layer Design
+contained in the Suff er table, the information in the Symptom table can also be retrieved. 
+Obviously, the farther we get from the object-oriented problem domain class representation, 
+the more work must be performed. However, as in the case of the ORDBMS example, notice 
+that absolutely no modifi cations were made to the problem domain classes. Th erefore, the 
+data access and manipulation classes again have prevented data management functionality 
+from creeping into the problem domain classes.
+One specifi c approach that has been suggested to support the implementation of 
+data access and manipulation classes is to use an object-relational mapping library such 
+as Hibernate.11 Hibernate, developed within the JBoss community, allows the mapping 
+of objects written in Java that are to be stored in an RDBMS. Instead of using an objectoriented programming language to implement the data access and manipulation classes, with 
+Hibernate, they are implemented in XML fi les that contain the mapping. As in the above 
+approach, modeling the mapping in an XML fi le prevents the details on data access and 
+manipulation from sneaking into the problem domain representation.
+NONFUNCTIONAL REQUIREMENTS AND DATA 
+MANAGEMENT LAYER DESIGN12
+Recall that nonfunctional requirements refer to behavioral properties that the system must 
+have. Th ese properties include issues related to performance, security, ease of use, operational 
+environment, and reliability. In this text, we have grouped nonfunctional requirements into 
+four categories: operational, performance, security, and cultural and political requirements. 
+We describe each of these in relation to the data management layer.
+Th e operational requirements for the data management layer include issues that deal with 
+the technology being used to support object persistence. However, the choice of the hardware 
+and operating system limits the choice of the technology and format of the object persistence 
+available. Th is is especially true when you consider mobile computing. Given the limited 
+memory and storage available on these devices, the choices to support object persistence 
+are limited. One possible choice to support object persistence that works both on Google’s 
+Android and Apple’s iOS-based platforms is SQLite. SQLite is a lightweight version of SQL 
+that supports RDBMS. However, there are many diff erent approaches to support object persistence that are more platform dependent; for example, Android supports storing objects 
+with shared preferences (a key-value pair-based NoSQL approach), internal storage, on an 
+SD card, in a local cache, or on a remote system. Th is, in turn, determines which set of the 
+mapping rules described earlier will have to be used. Another operational requirement could 
+be the ability to import and export data using XML. Again, this could limit the object stores 
+under consideration.
+Th e primary performance requirements that aff ect the data management layer are speed 
+and capacity. As described before, depending on the anticipated—and, aft erwards, actual—
+usage patterns of the objects being stored, diff erent indexing and caching approaches may 
+be necessary. When considering distributing objects over a network, speed considerations 
+can cause objects to be replicated on diff erent nodes in the network. Th us, multiple copies 
+of the same object may be stored in diff erent locations on the network. Th is raises the issue 
+of update anomalies described before in conjunction with normalization. Depending on 
+the application being built, NoSQL data stores that support an eventually consistent update 
+11 For more information on Hibernate, see www.hibernate.org.
+12 Because the vast majority of nonfunctional requirements aff ect the physical architecture layer, we provide 
+additional details in Chapter 11.
+Verifying and Validating the Data Management Layer  361
+model may be appropriate. Also, depending on the estimated size and growth of the system, 
+diff erent DBMSs may need to be considered. An additional requirement that can aff ect the 
+design of the data management layer deals with the availability of the objects being stored. It 
+might make sense to limit the availability to diff erent objects based on the time of day. For 
+example, one class of users may be allowed to access a set of objects only from 8 to 12 in the 
+morning and a second set of users may be able to access them only from 1 to 5 in the aft ernoon. Th rough the DBMS, these types of restrictions could be set.
+Th e security requirements deal primarily with access controls, encryption, and backup. 
+Th rough a modern DBMS, diff erent types of access can be set (e.g., Read, Update, or Delete) 
+granting access only to users (or class of users) who have been authorized. Furthermore,
+access control can be set to guarantee that only users with “administrator” privileges are 
+allowed to modify the object storage schema or access controls. Encryption requirements 
+on this layer deal with whether the object should be stored in an encrypted format or not. 
+Even though encrypted objects are more secure than unencrypted objects, the process of 
+encrypting and decrypting the objects will slow down the system. Depending on the physical 
+architecture being used, the cost of encryption may be negligible. For example, if we plan on 
+encrypting the objects before transmitting them over a network, there may be no additional 
+cost of storing them in the encrypted format. Backup requirements deal with ensuring that 
+the objects are routinely copied and stored in case the object store becomes corrupted or 
+unusable. Having a backup copy made on a periodic basis and storing the updates that have 
+occurred since the last backup copy was made ensure that the updates are not lost and the 
+object store can be reconstituted by running the copies of the updates against the backup copy 
+to create a new current copy.
+Th ere are few political and cultural requirements that can aff ect the data management layer. 
+Th ese include issues related to the expected number of characters that should be allocated for a 
+data fi eld, the format of a data fi eld, and the issues related to security. For example, how many 
+characters should be allocated for a last name fi eld that is part of an Employee object, what 
+format should a date be stored, or where will the data be physically located—diff erent parts of 
+the world have diff erent laws regarding the protection of data. Finally, there could be a corporate IT bias toward diff erent hardware and soft ware platforms. If so, this could limit the type 
+of object store available.
+VERIFYING AND VALIDATING THE DATA 
+MANAGEMENT LAYER
+Like the models on the problem domain layer, the specifi cations for the data management layer 
+need to be verifi ed and validated. By now, it might seem a little heavy handed to insist on more 
+verifying and validating. However, depending on the object persistence chosen, the changes that 
+have been applied to the design of the evolving system may be very substantial. Consequently, 
+it is crucial to thoroughly test the fi delity of the design again before the system is implemented. 
+Without thoroughly testing the data management layer, there is no guarantee that an effi cient 
+and eff ective system will be implemented. Verifying and validating the design of the data management layer fall into three basic groups.
+First, we recommend verifying and validating any changes made to the problem domain 
+by performing walkthroughs of the modifi ed functional models (Chapter 4), structural 
+models (Chapter 5), and behavioral models (Chapter 6). Furthermore, all of the models 
+must be consistent and balanced (Chapter 7). And, if any problem domain class was modifi ed that was associated with a use-case scenario, that scenario should be tested again 
+through role-playing.
+362 Chapter 9 Data Management Layer Design
+Second, the dependency of the object persistence instances on the problem domain must be 
+enforced. For example, all invariants associated with a problem domain class (Chapter 8) need 
+to be verifi ed and validated. For example, if a name data fi eld is specifi ed in a problem domain 
+class as being thirty-fi ve characters long and as being a required fi eld, then similar constraints 
+must be enforced when the fi eld is stored. 
+Th ird, the design of the data access and manipulation classes need to be tested to ensure that 
+they are dependent on the problem domain classes and the object persistence format, not the 
+other way around. For example, in Figure 9-21, we see that the Patient-DAM class is dependent 
+on both the Patient problem domain class and the Patient table. 
+Once the system has been implemented, testing of the data management layer becomes 
+even more important. One issue that should be addressed is the testing of the nonfunctional 
+requirements. In this case, tests must be designed and performed for each of the nonfunctional requirements. For example, for the performance requirements, load testing must be 
+performed to identify possible performance bottlenecks in the database. We will return to this 
+topic in Chapter 12.
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+Ben Joseph, the data specialist, led the team in designing the model for the data management 
+layer for the fi rst phase of the Integrated Health Clinic Delivery System. Th eir fi rst step was 
+to choose the object persistence format that the system would use. Th en they mapped the 
+problem domain to the object persistence classes. Th ey also checked for optimization opportunities. Finally, they designed the Data Access and Manipulation (DAM) classes.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the diff erent types of object persistence formats.
+ Select the appropriate object persistence format based on its strengths and weaknesses.
+ Map a set of problem domain objects to an OODBMS format.
+ Map a set of problem domain objects to an ORDBMS format.
+ Map a set of problem domain objects to an RDBMS format.
+ Use normalization to minimize update anomalies and to increase storage effi ciency.
+ Describe the fi rst three normal forms.
+ Describe when to use denormalization, clustering, and indexing to increase the speed of data access.
+ Describe why denormalization, clustering, and indexing can slow down updating.
+ Apply volumetrics to estimate the amount of data storage required.
+ Create a set of data access and manipulation classes that act as a communication layer between the problem domain 
+layer and the actual object persistence used.
+ Describe why the operational and performance nonfunctional requirements of the object persistence format are 
+constrained by decisions made regarding the physical architecture layer.
+ Describe how the nonfunctional requirements of the object persistence format may infl uence the actual design of 
+the data management layer; these include both the object persistence format and the data access and manipulation 
+classes.
+ Understand how to verify and validate both the design of both the object persistence format and the data access and 
+manipulation classes.
+Questions  363
+KEY TERMS
+Access control
+Attribute sets
+Audit fi le
+Cluster
+Column-oriented data 
+stores
+Data access and manipulation classes
+Data management layer
+Database
+Database management 
+system (DBMS)
+Decision support systems 
+(DSS)
+Denormalization
+Document data stores
+End-user DBMS
+Enterprise DBMS
+Executive information 
+systems (EIS)
+Expert system (ES)
+Extent
+File
+First normal form (1NF)
+Foreign key
+Hardware and operating 
+system
+History fi le
+Impedance mismatch
+Index
+Interfi le clustering
+Intrafi le clustering
+Join
+Key-value data stores
+Linked list
+Lookup fi le
+Management information 
+system (MIS)
+Master fi le
+Multivalued attributes 
+(fi elds)
+Normalization,
+NoSQL data stores
+Object ID
+Object-oriented database 
+management system 
+(OODBMS)
+Object-oriented 
+programming language 
+(OOPL)
+Object persistence
+Object-relational database 
+ management system 
+(ORDBMS)
+Operational requirements
+Ordered sequential 
+access fi le
+Overhead
+Partial dependency
+Performance requirements
+Pointer
+Political and cultural 
+requirements
+Primary key
+Problem domain classes
+Random access fi les
+Raw data
+Referential integrity
+Relational database 
+management system 
+(RDBMS)
+Repeating groups (fi elds)
+Second normal form 
+(2NF)
+Security requirements
+Sequential access fi les
+Structured query language 
+(SQL)
+Table scan
+Th ird normal form (3NF)
+Transaction fi le
+Transaction-processing 
+system
+Transitive dependency
+Unordered sequential 
+access fi le
+Update anomaly
+Volumetrics
+QUESTIONS
+ 1. Describe the four steps in object persistence design.
+ 2. How are a fi le and a database diff erent from each other?
+ 3. What is the diff erence between an end-user database and 
+an enterprise database? Provide an example of each one.
+ 4. What are the diff erences between sequential and random access fi les?
+ 5. Name fi ve types of fi les and describe the primary purpose of each type.
+ 6. What is the most popular kind of database today? 
+Provide three examples of products that are based on 
+this database technology.
+ 7. What is referential integrity and how is it implemented in an RDBMS?
+ 8. List some of the diff erences between an ORDBMS and 
+an RDBMS.
+ 9. What are the advantages of using an ORDBMS over 
+an RDBMS?
+10. List some of the diff erences between an ORDBMS and 
+an OODBMS.
+11. What are the advantages of using an ORDBMS over 
+an OODBMS?
+12. What are the advantages of using an OODBMS over 
+an RDBMS?
+13. What are the advantages of using an OODBMS over 
+an ORDBMS?
+14. What are the factors in determining the type of 
+object persistence format that should be adopted for a 
+system? Why are these factors so important?
+15. Why should you consider the storage formats that 
+already exist in an organization when deciding upon a 
+storage format for a new system?
+16. When implementing the object persistence in an 
+ORDBMS, what types of issues must you address?
+17. When implementing the object persistence in an 
+RDBMS, what types of issues must you address?
+18. Name three ways null values can be interpreted in a 
+relational database. Why is this problematic?
+19. What are the two dimensions in which to optimize a 
+relational database?
+20. What is the purpose of normalization?
+21. How does a model meet the requirements of third 
+normal form?
+364 Chapter 9 Data Management Layer Design
+EXERCISES
+A. Using the Web or other resources, identify a product 
+that can be classifi ed as an end-user database and a 
+product that can be classifi ed as an enterprise database. How are the products described and marketed? 
+What kinds of applications and users do they support? 
+In what kinds of situations would an organization 
+choose to implement an end-user database over an 
+enterprise database?
+B. Visit a commercial website (e.g., Amazon.com). If fi les 
+were being used to store the data supporting the application, what types of fi les would be needed? What 
+access type would be required? What data would they 
+contain?
+C. Using the Web, review one of the following products. What are the main features and functions of 
+the soft ware? In what companies has the DBMS 
+been implemented, and for what purposes? According to the information that you found, what are 
+three strengths and weaknesses of the product?
+ 1. Relational DBMS
+ 2. Object-relational DBMS
+ 3. Object-oriented DBMS
+D. You have been given a fi le that contains the following 
+fi elds relating to CD information. Using the steps of 
+normalization, create a model that represents this fi le 
+in third normal form. Th e fi elds include:
+Musical group name CD title 2
+Musicians in group CD title 3
+Date group was formed CD 1 length
+Group’s agent CD 2 length
+CD title 1 CD 3 length
+ Assumptions:
+ • Musicians in group contain a list of the members of 
+the people in the musical group.
+ • Musical groups can have more than one CD, so both 
+group name and CD title are needed to uniquely 
+identify a particular CD.
+E. Jim Smith’s dealership sells Fords, Hondas, and 
+Toyotas. Th e dealership keeps information about each 
+car manufacturer with whom it deals so that the dealership can get in touch with them easily. Th e dealership also keeps information about the models of cars 
+that it carries from each manufacturer. It keeps information like list price, the price the dealership paid to 
+obtain the model, and the model name and series (e.g., 
+Honda Civic LX). It also keeps information about all 
+sales that it has made (e.g., it records a buyer’s name, 
+the car bought, and the amount paid for the car). To 
+contact the buyers in the future, contact information 
+is also kept (e.g., address, phone number). Create a 
+class diagram for this situation. Apply the rules of normalization to the class diagram to check the diagram 
+for processing effi ciency.
+F. Describe how you would denormalize the model that 
+you created in exercise E. Draw the new class diagram 
+based on your suggested changes. How would performance be aff ected by your suggestions?
+G. Examine the model that you created in exercise F. 
+Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve the 
+performance of the database.
+H. Calculate the size of the database that you created in 
+exercise F. Provide size estimates for the initial size of 
+22. Describe three situations that can be good candidates 
+for denormalization.
+23. Describe several techniques that can improve performance of a database.
+24. What is the diff erence between interfi le and intrafi le 
+clustering? Why are they used?
+25. What is an index and how can it improve the performance of a system?
+26. Describe what should be considered when estimating 
+the size of a database.
+27. Why is it important to understand the initial and 
+projected size of a database during design?
+28. What are some of the nonfunctional requirements that 
+can infl uence the design of the data management layer?
+29. What are the key issues in deciding between using perfectly normalized databases and denormalized databases?
+30. What is the primary purpose of the data access and 
+manipulation classes?
+31. Why should the data access and manipulation classes 
+be dependent on the problem domain classes instead 
+of the other way around?
+32. Why should the object persistence classes be dependent on the problem domain classes instead of the other 
+way around?
+Minicases  365
+the database as well as for the database in one year’s 
+time. Assume that the dealership sells ten models of 
+cars from each manufacturer to approximately 20,000 
+customers a year. Th e system will be set up initially 
+with one year’s worth of data.
+I. For the A Real Estate Inc. problem in Chapter 4 
+(exercises I, J, and K), Chapter 5 (exercises P and Q), 
+Chapter 6 (exercise D), Chapter 7 (exercise A), and 
+Chapter 8 (exercise A):
+ 1. Apply the rules of normalization to the class diagram 
+to check the diagram for processing effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+J. For the A Video Store problem in Chapter 4 (exercises 
+L, M, and N), Chapter 5 (exercises R and S), Chapter 
+6 (exercise E), Chapter 7 (exercise B), and Chapter 8 
+(exercise B):
+ 1. Apply the rules of normalization to the class 
+ diagram to check the diagram for processing 
+ effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+K. For the gym membership problem in Chapter 4 (exercises O, P, and Q), Chapter 5 (exercises T and U), 
+Chapter 6 (exercise F), Chapter 7 (exercise C), and 
+Chapter 8 (exercise C):
+ 1. Apply the rules of normalization to the class 
+ diagram to check the diagram for processing 
+ effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+L. For the Picnics R Us problem in Chapter 4 (exercises 
+R, S, and T), Chapter 5 (exercises V and W), Chapter 
+6 (exercise G), Chapter 7 (exercise D), and Chapter 8 
+(exercise D):
+ 1. Apply the rules of normalization to the class diagram 
+to check the diagram for processing effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+M. For the Of-the-Month-Club problem in Chapter 4 
+(exercises U, V, and W), Chapter 5 (exercises X and 
+Y), Chapter 6 (exercise H), Chapter 7 (exercise E), and 
+Chapter 8 (exercise E):
+ 1. Apply the rules of normalization to the class diagram to check the diagram for processing effi ciency.
+ 2. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+MINICASES
+1. Th e system development team at the Wilcon Company 
+is working on developing a new customer order entry 
+system. In the process of designing the new system, the 
+team has identifi ed the following class and its attributes:
+ Inventory Order
+ Order Number (PK)
+ Order Date
+ Customer Name
+ Street Address
+ City
+ State
+ Zip
+ Customer Type
+ Initials
+ District Number
+ Region Number
+ 1 to 22 occurrences of:
+ Item Name
+ Quantity Ordered
+ Item Unit
+ Quantity Shipped
+ Item Out
+ Quantity Received
+ a. State the rule that is applied to place a class in fi rst 
+normal form. Based on the above class, create a 
+class diagram that will be in 1NF.
+ b. State the rule that is applied to place a class into 
+second normal form. Revise the class diagram for 
+the Wilcon Company using the class and attributes 
+described (if necessary) to place it in 2NF.
+ c. State the rule that is applied to place a class into 
+third normal form. Revise the class diagram to 
+place it in 3NF.
+ d. When planning for the physical design of this database, can you identify any likely situations where 
+the project team might choose to denormalize theclass diagram? Aft er going through the work of 
+normalizing, why would this be considered?
+2. In the new system under development for Holiday 
+Travel Vehicles, seven tables will be implemented in 
+the new relational database. Th ese tables are: New 
+Vehicle, Trade-in Vehicle, Sales Invoice, Customer, 
+Salesperson, Installed Option, and Option. Th e 
+expected average record size for these tables and the 
+initial record count per table are given here.
+Average Initial Table 
+Table Name Record Size Size (records)
+New Vehicle 65 characters 10,000
+Trade-in Vehicle 48 characters 7,500
+Sales Invoice 76 characters 16,000
+Customer 61 characters 13,000
+Salesperson 34 characters 100
+Installed Option 16 characters 25,000
+Option 28 characters 500
+ Perform a volumetrics analysis for the Holiday 
+Travel Vehicle system. Assume that the DBMS that 
+will be used to implement the system requires 35 percent overhead to be factored into the estimates. Also, 
+assume a growth rate for the company of 10 percent 
+per year. Th e systems development team wants to 
+ensure that adequate hardware is obtained for the next 
+three years.
+3. Refer to the Professional and Scientifi c Staff Management (PSSM) minicase in Chapters 4, 6, 7, and 8.
+ a. Apply the rules of normalization to the class 
+diagram to check the diagram for processing 
+effi ciency.
+ b. Develop a clustering and indexing strategy for this 
+model. Describe how your strategy will improve 
+the performance of the database.
+A user interface is the part of the system with which the users interact. From the user’s 
+point of view, the user interface is the system. It includes the screen displays that provide navigation through the system, the screens and forms that capture data, and the reports that the 
+system produces (whether on paper, on the screen, or via some other medium). Th is chapter 
+introduces the basic principles and processes of interface design and discusses how to design 
+the interface structure and standards, navigation design, input design, and output design. Th e 
+chapter introduces the issues related to designing user interfaces for the mobile computing 
+environment and social media. It also introduces the issues that need to be considered when 
+designing user interfaces for a global audience. Finally, the chapter describes the eff ect of the 
+nonfunctional requirements on designing the human–computer interaction layer.
+OBJECTIVES
+■ Understand several fundamental user interface design principles.
+■ Understand the process of user interface design.
+■ Understand how to design the user interface structure.
+■ Understand how to design the user interface standards.
+■ Understand commonly used principles and techniques for navigation design.
+■ Understand commonly used principles and techniques for input design.
+■ Understand commonly used principles and techniques for output design.
+■ Be able to design a user interface.
+■ Understand the eff ect of nonfunctional requirements on the human–computer 
+ interaction layer.
+IINTRODUCTION
+Interface design is the process of defi ning how a system will interact with external entities (e.g., 
+customers, suppliers, other systems). In this chapter, we focus on the design of user interfaces, 
+but it is also important to remember that there are sometimes system interfaces, which exchange 
+information with other systems. System interfaces are typically designed as part of a systems 
+integration eff ort. Th ey are defi ned in general terms as part of the physical architecture and data 
+management layers. Th e human–computer interaction layer defi nes the way in which the users 
+interact with the system and the nature of the inputs and outputs that the system accepts and 
+produces.
+Up until now, the entire development process has been focused on getting the problem 
+domain layer and its storage on the data management layer right. However, from the user’s point 
+of view, the user interface on the human–computer interaction layer is the system. Users do 
+not really care about how the problem domain objects are stored. But, they do care about how 
+367
+CHAPTER 10
+Human–Computer Interaction 
+Layer Design
+368 Chapter 10 Human–Computer Interaction Layer Design
+they can use the system to support them in their activities. Based on our layered based design 
+approach, the user interface of the human–computer interaction layer is independent of the data 
+management layer. But it is dependent on both the problem domain and physical architecture 
+layers. Depending on the type of device that the human–computer interaction layer is deployed 
+on will set both opportunities and constraints as to what user interface features can be included. 
+For example, deploying the human computer interaction layer on both a smartphone and a 
+desktop computer will cause two diff erent user interfaces to be designed.
+Even though there are command-line user interfaces (e.g., Terminal on Mac OSX), we are 
+only focusing on graphical user interfaces (GUI) that use windows, menus, icons, etc.1 Today, 
+GUI-based interfaces are the most common type of interfaces that we use.2 Regardless of the 
+underlying hardware being used, a GUI-based user interface comprises three fundamental 
+parts. Th e fi rst is the navigation mechanism, the way in which the user gives instructions to 
+the system and tells it what to do (e.g., buttons, menus). Th e second is the input mechanism, 
+the way in which the system captures information (e.g., forms for adding new customers). Th e 
+third is the output mechanism, the way in which the system provides information to the user or 
+to other systems (e.g., reports, Web pages). Each of these is conceptually diff erent, but they are 
+closely intertwined. All GUI-based displays contain navigation mechanisms, and most contain 
+input and output mechanisms. Th erefore, navigation design, input design, and output design are 
+tightly coupled and must be performed in an incremental and iterative manner.
+In this chapter, even though we focus primarily on designing user interfaces that run in 
+a laptop or desktop type of environment, we also provide general guidelines for mobile computing. We also address some of the unique issues you face when deploying the user interface 
+in social applications, such as FacebookTM and TwitterTM; in advanced technology interfaces, 
+such as 3D augmented and virtual reality applications; and fi nally, issues related to going 
+global with the user interface.
+PRINCIPLES FOR USER INTERFACE DESIGN
+In many ways, user interface design is an art. Th e goal is to make the interface pleasing to the 
+eye and simple to use while minimizing the eff ort the users need to accomplish their work. 
+Th e system is never an end in itself; it is merely a means to accomplish the business of the 
+organization.
+We have found that the greatest problem facing experienced designers is using space eff ectively. Simply put, oft en there is much more information that needs to be presented on a screen 
+or report or form than will fi t comfortably. Analysts must balance the need for simplicity and 
+pleasant appearance against the need to present the information across multiple pages or screens, 
+which decreases simplicity. In this section, we discuss some fundamental interface design principles, which are common for navigation design, input design, and output design3 (see Figure 10-1).
+1 Many people attribute the origin of GUI interfaces to Apple or Microsoft . Some people know that Microsoft copied 
+from Apple, which, in turn, “borrowed” the whole idea from a system developed at the Xerox Palo Alto Research 
+Center (PARC) in the 1970s. Very few know that the Xerox system was based on a system developed by Doug 
+E nglebart of Stanford that was fi rst demonstrated at the Western Computer Conference in 1968. Around the same 
+time, he also invented the mouse, desktop video conferencing, groupware, and a host of other things we now take for 
+granted. Doug is a legend in the computer science community and has won too many awards to count but is relatively 
+unknown by the general public.
+2 A set of good books on GUI design include Jennifer Tidwell, Designing Interfaces, 2nd Ed. (Sebastopol, CA: O’Reilly 
+Media, 2010); Ben Shneiderman, Designing the User Interface: Strategies for Eff ective Human–Computer Interaction, 
+3rd Ed. (Reading, MA: Addison-Wesley, 1998); Alan Cooper, About Face 3: Th e Essentials of Interaction Design
+(Indianapolis, IN: Wiley, 2007).
+3 A good book on the design of interfaces is Susan Weinschenk, Pamela Jamar, and Sarah Yeo, GUI Design Essential

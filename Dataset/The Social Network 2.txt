@@ -1,0 +1,1007 @@
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+The WINKLEVOSSES and DIVYA with GAGE.
+GAGE
+That’s what you said?
+MARK
+It was three or four years ago, I don’t know what I said.
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+EDUARDO with GRETCHEN.
+GRETCHEN
+When did you come to Eduardo?
+MARK
+I don’t understand that question.
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+Do you remember answering in the
+affirmative?
+MARK
+The affirmative?
+CUT TO:
+36.
+INT. FIRST DEPOSITION ROOM - DAY
+GRETCHEN
+When did you come to Eduardo with the idea for Facebook.
+MARK
+It was called TheFacebook then.
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+This doesn’t need to be that difficult.
+MARK
+I’m currently in the middle of two different lawsuits.
+GAGE
+Did you answer affirmatively? When Tyler and Cameron Winklevoss and Divya Narendra asked you to build HarvardConnection, did you say yes?
+MARK
+I said I’d help.
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+GRETCHEN
+When did you approach Mr. Saverin with the idea for TheFacebook?
+MARK
+I wouldn’t say I approached him.
+GRETCHEN
+Sy?
+SY
+You can answer the question.
+MARK
+At a party at Alpha Epsilon Pi.
+GRETCHEN
+What’s that?
+MARK
+The Jewish fraternity. It was Caribbean
+Night.
+CUT TO:
+37.
+INT. LARGE MULTI-PURPOSE ROOM - NIGHT
+The hall has been converted into “Alpha Epsilon Pi Caribbean Night, 2003” and the party is about as lame as it sounds. What’s important is that this couldn’t be less like the final club party we saw at the beginning if they were playing Pin the Tail on the Donkey.
+Some potted palm trees have been brought in along with a steel drum set. The man playing the steel drum set has a yarmulke bobby pinned to his thinning hair. A table with a punch bowl and assorted cookies is nearby.
+EDUARDO, in baggy cargo shorts and a Hawaiian shirt buttoned up to the top, is standing with a few similarly dressed friends, including DUSTIN MOSKOVITZ and CHRIS HUGHES, in the sparsely populated room. On the other side of the room are a few girls--all Asian. One of the girls is wearing a bikini over her clothes. A television monitor has been set up with a DVD running of Niagara Falls.
+EDUARDO
+It’s not that guys like me are generally attracted to Asian girls. It’s that Asian girls are generally attracted to guys like me.
+DUSTIN
+I’m developing an algorithm to define the connection between Jewish guys and Asian girls.
+EDUARDO
+I don’t think it’s that complicated.
+They’re hot, they’re smart, they’re not
+Jewish and they can’t dance.
+CHRIS
+Mark’s here.
+They see MARK come in and look around. EDUARDO waves him over... 
+EDUARDO
+(calling)
+Mark.
+MARK sees EDUARDO and waves him over to where he is. He wants to talk privately.
+EDUARDO (CONT’D)
+I’ll be right back.
+EDUARDO joins MARK in the back of the room and they take up a spot next to a bay window that’s covered on the outside with ice.
+38.
+MARK
+I think I’ve come up with something.
+EDUARDO
+Hang on, I’ve gotta tell you something you’re not going to believe.
+MARK
+What?
+EDUARDO
+I got punched by the Phoenix.
+MARK
+(beat)
+Are you kidding?
+EDUARDO
+No. I mean it’s just the first of the four step process but they slipped the invitation under my door tonight. I go to the first punch party tomorrow and if they like me--
+MARK
+You got punched by the Phoenix.
+EDUARDO
+(pause)
+It was, you know... it was probably just a diversity thing. It was just a diversity thing. I’ll just ride that horse until-- what did you want to talk to me about?
+(pause)
+Mark?
+MARK
+Yeah.
+EDUARDO
+You said you’ve come up with something.
+It seems like MARK’s just made a small decision in his head.
+MARK
+(pause)
+Yeah. I think I’ve come up with
+something. Come outside.
+EDUARDO
+It’s 20 degrees outside.
+39.
+MARK
+I can’t stare at that loop of Niagara
+Falls which has nothing to do with the
+Caribbean.
+CUT TO:
+EXT. QUAD - NIGHT
+MARK and EDUARDO come outside and are immediately met by the freezing cold air.
+MARK
+People came to Facemash in a stampede, right?
+EDUARDO
+Yeah.
+MARK
+It wasn’t because they saw pictures of hot girls. You can go anywhere on the internet and see pictures of hot girls.
+EDUARDO
+Yeah.
+MARK
+It was because they saw pictures of girls that they knew. People want to go on the internet and check out their friends. Why not build a website that offers that?
+Friends, pictures, profiles, whatever you can... visit, browse around, maybe it’s somebody you just met at a party. I’m not talking about a dating site. I’m talking about taking the entire social experience of college and putting it online.
+EDUARDO
+I can’t feel my legs.
+MARK
+I know, I’m totally psyched about this, too. But Wardo--
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+EDUARDO
+“It would be exclusive”.
+CUT BACK TO:
+40.
+EXT. QUAD - NIGHT
+MARK
+You’d have to know the people on the site to get past your own page. Like getting punched.
+EDUARDO
+That’s good, that’s new.
+MARK
+Wardo, it’s like a Final Club except we’re the president.
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+EDUARDO
+I told him I thought it sounded great. It was a great idea. There was nothing to hack, people were going to provide their own pictures, their own information. And people had the ability to invite--or not invite--their friends to join. See, in a world where social structure was everything, that was the thing.
+(beat)
+It was a big project and he was going to have to write tens of thousands of lines of code so I wondered why he was coming to me and not his roommates. Dustin Moskovitz and Chris Hughes they were programmers.
+CUT TO:
+EXT. QUAD - NIGHT
+MARK
+We’re gonna need a little start-up cash to rent the servers and get it online.
+CUT TO:
+INT. FIRST DEPOSITION ROOM - NIGHT
+EDUARDO
+That was why.
+GRETCHEN
+Did he offer terms?
+CUT TO:
+41.
+EXT. QUAD - NIGHT
+MARK
+We’ll split it 70-30. 70 for me 30 for you for putting up the thousand dollars and handling for everything on the business end. You’re CFO.
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+GRETCHEN
+And you said?
+EDUARDO
+I said “Let’s do it”.
+GRETCHEN
+Okay. Did he add anything else?
+EDUARDO
+Yes.
+CUT TO:
+EXT. QUAD - NIGHT
+MARK
+It probably was a diversity thing but so what?
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+GRETCHEN
+Why do you think he said that?
+SY
+Gretchen, excuse me for interrupting but whose discovery is this?
+GRETCHEN
+Sy, if you’ll let me continue with my line of questioning--
+SY
+What are you suggesting?
+MARK
+They’re suggesting I was jealous of Eduardo for getting punched by the Phoenix and began a plan to screw him out of a company I hadn’t even invented yet.
+42.
+GRETCHEN
+Were you?
+SY
+Gretchen--
+MARK
+Jealous of Eduardo?
+SY
+Stop typing, we’re off the record.
+MARK
+Ma’am, I know you’ve done your homework and so you know that money isn’t a big part of my life, but at the moment I could buy Mount Auburn Street, take the Phoenix Club and turn it into my ping pong room.
+CUT TO:
+EXT. QUAD - NIGHT
+EDUARDO’s walking away and calls back to MARK--
+EDUARDO
+(calling)
+I’ll let you know how the party is.
+We stay on MARK for a moment longer, his wheels turning, before we
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+EDUARDO’s in different clothes and being questioned by GAGE.
+GAGE
+We recognize that you’re a plaintiff in one suit involving Facebook and a witness in another.
+EDUARDO
+Yes sir.
+GAGE
+At any time in the weeks prior to Mark’s telling you his idea, did he mention Tyler Winklevoss, Cameron Winklevoss, Divya Narendra or HarvardConnection?
+43.
+EDUARDO
+Yes. He said they’d asked him to work on their site but that he’d looked at what they had and decided it wasn’t worth his time. He said even his most pathetic friends knew more about getting people interested in a website than these guys.
+GAGE
+“These guys” meaning my clients.
+EDUARDO
+Yes. He resented--Mark resented that they-- your clients, thought he needed to rehabilitate his image after Facemash but Mark didn’t want to rehabilitate anything. With Facemash he’d hacked into the Harvard computers, he’d thumbed his nose at the Ad Board, he’d gotten a lot of notoriety. Facemash did exactly what he wanted it to do.
+MARK kind of nods a little to himself.
+It should be noted that these depositions have an extra element of discomfort as everything is being said within a few feet of the people being talked about.
+GAGE
+Were you aware that while Mr. Zuckerberg was building TheFacebook he was also communicating with the plaintiffs?
+EDUARDO
+Not at the time I wasn’t, but it really didn’t have much to do with the Winklevoss’s dating--
+TYLER
+You weren’t there!
+GAGE
+Ty.
+(to EDUARDO)
+Were you aware that while Mr. Zuckerberg was building TheFacebook, he was leading the plaintiffs to believe he was building Harvard Connection?
+SY
+You’re offering a conclusion not found in evidence.
+GAGE
+We’re about to find it in evidence.
+44.
+MUSIC kicks in that will tie this next section together as we
+CUT TO:
+INT. MARK’S DORM ROOM - NIGHT
+Two printouts of web pages are taped to a white board-- ”Friendster” and “MySpace”. Under the two pages, MARK draws a third page and titles it “NewCo”.
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+(reading)
+From Mark Zuckerberg to Tyler Winklevoss. November 30, 2003. “I read over all the stuff you sent me re Harvard Connection and it seems like it shouldn’t take too long to implement, so we can talk about it after I get all the basic functionality up tomorrow night.”
+CUT TO:
+INT. MARK’S DORM ROOM - NIGHT
+The whiteboard is filled with diagrams now--login page, profile page, create account... We move over to see MARK at his computer. He opens the Emacs program and then Firefox, hits a few keys and the diagram on the whiteboard comes to life on his computer as we
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+From Mark Zuckerberg to Cameron Winklevoss. December 1, 2003. “Sorry I was unreachable tonight. I just got about three of your missed calls. I was working on a problem set for my systems class.”
+CAMERON and TYLER are looking blankly at MARK who’s giving them a casual “I’m not scared of you” look and we
+CUT TO:
+INT. PHOENIX HOUSE - NIGHT
+The MUSIC CONTINUES as EDUARDO and other prospective new members, all wearing tuxedos, are lined up in four rows.
+45.
+The boy at the front of each row has a bottle of Jack Daniels and drinks as long as they can before passing the bottle, relay style, to the boy in back of him as a few seniors look on. EDUARDO gets handed the bottle and starts in as we
+CUT TO:
+INT. CLASSROOM - DAY
+It’s an Art History class and as we run past the rows of STUDENTS we see that they all have the same painting up on their laptops as the PROFESSOR gives his lecture. When we get to MARK’s laptop we see that he’s writing code and we
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+From Mark Zuckerberg to Cameron and Tyler Winklevoss. December 10, 2003. “This week has been pretty busy thus far with classes and work so I think it’s probably best to postpone the meeting.”
+CUT TO:
+INT. CAMERON AND TYLER’S DORM ROOM - NIGHT
+CAMERON, TYLER and DIVYA are reading the e-mail.
+DIVYA
+(reading)
+“I’m also really busy tomorrow.”
+(beat)
+Anybody else feel like there’s something up with this guy?
+CAMERON
+Tell him okay but we’ve gotta make sure that we meet up before we all go off for break.
+CUT TO:
+INT. EDUARDO’S DORM ROOM - NIGHT
+EDUARDO’s at his desk on the phone when an envelope that says “Phoenix” is slipped under his door. He turns and looks to see it... 
+CUT TO:
+INT. MARK’S DORM ROOM - NIGHT
+Every available wall space is covered with a diagram or a printout. EDUARDO comes in with the envelope.
+46.
+EDUARDO
+Mark--
+MARK
+I need a dedicated Linux box running Apache with a mySQL backend. It’s gonna cost a little more money.
+EDUARDO
+How much more?
+MARK
+Two-hundred more.
+EDUARDO
+Do we need it?
+MARK
+Gotta handle the traffic.
+EDUARDO
+Do it.
+MARK
+I already did.
+EDUARDO
+Hey, guess what?
+(shows MARK the envelope)
+I made the second cut.
+MARK
+Good job. You should be proud of that right there, don’t worry if you don’t make it any further.
+EDUARDO
+I’ll get outa here.
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+The MUSIC CONTINUES--
+GAGE
+(reading)
+From Mark Zuckerberg to Tyler and Cameron Winklevoss and Divya Narendra. December 15, 2003. “I have a cs problem set that I’m just getting started with and it should be about 15 hours of coding so I’ll be busy tomorrow night.”
+CUT TO:
+47.
+INT. PFORZHEIMER DINING HALL - NIGHT
+DIVYA
+(reading)
+“I won’t really be free to meet until next Wednesday afternoon.”
+CAMERON and TYLER give each other a look--”Is this guy flaking out?”
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+(reading)
+“... have to cancel Wednesday afternoon. I’ve basically been in the lab this whole time and also... ”
+CUT TO:
+INT. HAMBURGER JOINT - NIGHT
+DIVYA’s reading off his blackberry to TYLER and CAMERON--
+DIVYA
+(reading)
+“Won’t be able to do Saturday as I have to meet up with my parents to... ”
+CUT TO:
+EXT. HARVARD YARD - NIGHT
+The MUSIC CONTINUES--
+It’s snowing and cold as hell. EDUARDO’s now with a smaller group of prospective members, most of whom are in their underwear with a couple of them wearing pants. They’re all blue and shivering. They’re gathered around a statue of John Harvard as a senior announces--
+SENIOR
+As the plaque reads, this is John Harvard, founder of Harvard University in 1638. It’s also called The Statue of Three Lies. What are the three lies, Mr. Dowd?
+(beat)
+Mr. Dowd.
+SOPHOMORE
+The three lies--
+(beat)
+The first--
+(MORE)
+48.
+SOPHOMORE (CONT'D)
+(beat)
+Shit!
+SENIOR
+Take your pants off.
+EDUARDO
+I know.
+SENIOR
+Mr. Saverin.
+EDUARDO
+1)	Harvard was founded in 1636, not 1638.
+2)	Harvard wasn’t founded by John Harvard and 3) That’s not John Harvard.
+SENIOR
+Who is it?
+EDUARDO
+A friend of the sculptor, Daniel Chester.
+SENIOR
+Keep your jacket on.
+And as another kid simply falls to his hands and knees and throws up, we
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+39 days after Mr. Zuckerberg’s initial meeting with my clients and he still hadn’t completed work on HarvardConnection. But on January 11, 2004--
+CUT TO:
+INT. MARK’S DORM ROOM - DAY
+A website called Network Solutions is up on Mark’s screen. He hits a couple of keys and waits intently.
+Then the computer shows him what he wanted to see--
+www.theFacebook.com--DOMAIN NAME REGISTERED
+GAGE (V.O.)
+Mr. Zuckerberg registered the domain name theFacebook via network solutions.
+CUT TO:
+49.
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+To the best of your knowledge, had he even begun work on HarvardConnection?
+EDUARDO
+Not to my knowledge, no.
+CUT TO:
+INT. PORCELLIAN - NIGHT
+CAMERON’s looking at his e-mail.
+CAMERON
+What in the world is this?
+(reading)
+“Hey Cameron. I’m still a little skeptical that we have enough functionality in the site to really draw the attention and gain the critical mass necessary to get a site like this to run. We’ll speak soon.”
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+This is the first time he mentioned any problem?
+DIVYA
+Yes it was.
+GAGE
+You’d sent 36 e-mails to Mr. Zuckerberg and received 16 return e-mails and this was the first time he indicated he was not happy.
+DIVYA
+That’s correct. He had 42 days to study our system and get out ahead on--
+MARK
+Do you see any of your code on Facebook?
+GAGE
+(help me)
+Sy, could you--
+SY
+(calming him)
+Mark--
+50.
+MARK
+Did I use any of your code?
+DIVYA
+You stole our whole goddam idea!
+SY
+Fellas.
+MARK
+Match-dot-com for Harvard guys?
+GAGE
+Can I continue with my deposition?
+MARK
+You know you really don’t need a forensic team to get to the bottom of this. If you guys were the inventors of Facebook you’d have invented Facebook.
+DIVYA
+I can’t wait to stand over your shoulder and watch you write us a check.
+MARK
+No shit?
+SY
+(to GAGE)
+Let’s continue.
+DIVYA’s still staring at MARK, who just smiles a little as he looks down.
+GAGE
+(beat)
+February 4th, 2004--
+CUT TO:
+INT. COMPUTER SCIENCE LAB - DAY
+MARK is working at a station. We can see through the windows that it’s a frigid, snowy February day in Cambridge but MARK’s in his hoodie and cargo shorts nonetheless. It looks like he hasn’t slept in days. On his monitor we can see that he’s working on the profile page for theFacebook.
+DUSTIN MOSKOVITZ steps up to him quietly.
+DUSTIN
+Mark?
+(pause)
+Mark.
+MARK turns his head and looks at him... 
+51.
+DUSTIN (CONT’D)
+(quietly)
+There’s a girl in your art history class. Her name is Stephanie Attis. Do you happen to know if she has a boyfriend?
+MARK just keeps looking at him--barely even blinking--”Why am I being interrupted?”
+DUSTIN (CONT’D)
+(beat)
+Have you ever seen her with anyone?
+(beat)
+And if not, do you happen to know if she’s looking to go out with anyone?
+MARK
+(pause)
+Dustin. People don’t walk around with a sign on them that says--
+And MARK stops short right there. Because in his head, he’s just discovered the cure for cancer.
+DUSTIN
+(pause)
+Mark?
+EXT. COMPUTER SCIENCE BUILDING - DAY
+As MARK, with his backpack stuffed, comes flying out of the building and into the snow, barely keeping his balance on the ice and we
+CUT TO:
+INT. KIRKLAND HOUSE/LOBBY - MORNING
+The heavy door bursts open and MARK comes busting through. He makes his way with speed and intent up a flight of stairs.
+Then another.
+And then another until he gets to his floor. He sprints down his hall toward his dorm room and barely notices EDUARDO leaning against the door.
+EDUARDO
+We were supposed to meet at 9.
+MARK is searching the pockets of his shorts for his keys.
+EDUARDO (CONT’D)
+Have you slept yet?
+MARK opens the door and they go into his suite--
+52.
+MARK
+I have to add something.
+EDUARDO
+What?
+MARK’s in his own world as he sits at the computer and calls up theFacebook. The home page fills the screen.
+EDUARDO (CONT’D)
+(simply)
+Shit.
+(beat)
+That looks good.
+(beat)
+That looks really good.
+MARK
+It’s clean and simple. No Disneyland, no Live Nude Girls.
+The CAMERA surveys the screen as MARK slips through some functions to show EDUARDO and we see things that are now familiar--A photo, sex, a profile, a list of attributes, a poke application, etc.
+MARK (CONT’D)
+But watch.
+MARK’s called up a the Emacs program and quickly writes out
+several lines of code... 
+EDUARDO
+What’d you write?
+MARK goes back to the profile page. There’s a new area to be
+filled in... 
+MARK
+“Relationship Status”, “Interested In”.
+(beat)
+This is what drives life at college. Are you having sex or aren’t you. It’s why people take certain classes, and sit where they sit, and do what they do, and at its, um, center, you know, that’s what theFacebook is gonna be about. People are gonna log on because after all the cake and watermelon there’s a chance they’re actually gonna--
+EDUARDO
+--get laid.
+MARK
+(over)
+--meet a girl. Yes.
+53.
+EDUARDO
+That’s really good.
+MARK
+(beat)
+And that’s it.
+EDUARDO
+(beat)
+What do you mean?
+MARK
+It’s ready.
+EDUARDO
+It’s ready?
+MARK
+Yeah.
+EDUARDO
+Right now?
+MARK
+That was it. And here’s the masthead.
+MARK hits another couple of keystrokes and the website’s masthead comes up.
+EDUARDO
+You made a masthead.
+MARK
+Yeah.
+EDUARDO
+(reading)
+“Eduardo Saverin. Co-Founder and CFO.”
+MARK
+Yeah.
+EDUARDO
+You have no idea what that’s going to mean to my father.
+MARK
+Sure I do.
+EDUARDO
+(pause)
+When’s it gonna go live?
+MARK
+Right now. Get your laptop out.
+54.
+EDUARDO
+Why do we need my laptop?
+MARK
+Because you’ve got e-mails for everyone at the Phoenix.
+EDUARDO
+(beat)
+I’m not sure if it’s gonna be cool with them that I spam their--
+MARK
+This is not spam.
+EDUARDO
+No, I know it’s not spam--
+MARK
+If we send it to our friends it’ll just bounce around the Dworkin.
+EDUARDO
+I haven’t gotten in yet.
+MARK
+These guys know people and I need their e-mails.
+EDUARDO
+(beat)
+Sure.
+MARK
+Good.
+EDUARDO takes out his laptop--
+MARK (CONT’D)
+Gimmie the mailing list.
+EDUARDO
+“Jabberwock12.listserv@Harvard E-D-U.”
+MARK opens up an e-mail and is writing a short message, then includes a link to the site--
+MARK
+These guys. They’re literary geniuses because the world’s most obvious Lewis Carroll reference--
+EDUARDO
+They’re not so bad.
+MARK
+I’m just saying.
+55.
+EDUARDO
+You’re right.
+He hits “Send”.
+MARK
+The site’s live.
+EDUARDO
+(pause)
+You know what? Let’s go get a drink and celebrate. I’m buying.
+MARK is staring at the computer... 
+EDUARDO (CONT’D)
+Mark?
+MARK doesn’t hear him. We just see MARK’s head from the back
+and it’s ever so slightly bobbing back and forth... 
+EDUARDO (CONT’D)
+(pause)
+Mark?
+(beat)
+Are you praying?
+CUT TO:
+INT. DINING HALL - NIGHT
+THE KROKODILOES, Harvard’s oldest male a Capella group, are singing at the front of the hall in their usual uniform of white tie and tails for a packed crowd of students and parents.
+Incongruously, but with surprisingly nice results, the group is covering a song from All-4-One--”I Swear”--and the pub full of students is loving it.
+We find a table in the back where DIVYA is sitting with his girlfriend and some of their friends who are having a nice time. Divya’s girlfriend, K.C., has her laptop open.
+MALE FRIEND
+What ever happened to Cole Porter and
+Irving Berlin?
+FEMALE FRIEND
+It’s a Valentine’s theme. They’re playing love songs.
+MALE FRIEND
+Good point, ‘cause Cole Porter and Irving
+Berlin never wrote any love songs.
+56.
+DIVYA
+Honey, you should put the laptop away.
+K.C.
+Seven different people spammed me the same link.
+DIVYA
+K.C.--
+She clicks on the link--
+FEMALE FRIEND
+What is it?
+K.C.
+(dryly)
+I don’t know, but I’m really hoping it’s cats that look like Hitler ‘cause I can never get enough of that.
+(beat)
+It’s not.
+DIVYA takes K.C.’s hand and turns his focus back to the singers but only for just a second because whatever was on the screen gets his attention in a hurry.
+He swivels the laptop toward himself--
+He starts quickly scrolling and reading it and we PUSH IN on
+his face as the blood starts draining away... 
+K.C. (CONT’D)
+Div!
+(beat)
+What?
+DIVYA shuts the laptop, grabs it off the table-- Puts it back--
+People are starting to turn and see what the commotion is about as the singing continues.
+K.C. (CONT’D)
+What is wrong?
+DIVYA starts to bolt out of the pub. His foot gets caught on a chair leg and he falls hard face-first to the floor.
+DIVYA
+It’s fine.
+He starts out again, then comes back for his coat, grabs it, starts out and falls down all over again.
+57.
+Finally he’s got it together and flies out of the pub and we
+CUT TO:
+EXT. BRIDGE - NIGHT
+DIVYA’s running across the Charles in the freezing February air and we
+CUT TO:
+INT. BOATHOUSE - NIGHT
+CAMERON and TYLER are rowing in a large practice tank--a simulator with a hull, oars and rowable water.
+They’re focused and charging away in perfect sync when the door at the end of the century-old boathouse opens and DIVYA charges in from the cold with his laptop and a copy of the Crimson in his hands.
+DIVYA
+(calling)
+Hey!
+The twins are in the zone and don’t pay any attention.
+DIVYA (CONT’D)
+(louder)
+Hey!
+CAMERON
+Not now, we need 20 minutes.
+DIVYA
+(calmly)
+Okay. I just wanted to let you know Zuckerberg stole our website.
+TYLER stops rowing and then CAMERON. They look at DIVYA... 
+DIVYA (CONT’D)
+Mark Zuckerberg stole our website. It’s been live for more than 36 hours.
+CUT TO:
+INT. CAMERON AND TYLER’S DORM ROOM - NIGHT
+They’re in gear. CAMERON’s taken a quick shower but didn’t dry off. He’s in sweatpants with a towel over his shoulder, talking on the phone with his father and holding the Crimson. DIVYA’s on his cell looking for MARK and TYLER, still in his practice clothes, has his desktop computer open to theFacebook and is studying it.
+58.
+CAMERON
+(covering the phone)
+Ty, the lawyer’s on the phone with Dad.
+(into phone)
+I’m here with my brother, Tyler, and our business partner, Divya.
+TYLER
+(reading off the computer) “Welcome to theFacebook. TheFacebook is an online directory that connects people through different social networks. You must have a Harvard.edu address to register.”
+CAMERON
+(into phone)
+That’s right.
+DIVYA
+(into cell)
+I called earlier. I’m looking for Mark Zuckerberg.
+CAMERON
+(into phone)
+Yes sir, he’s quoted a couple of times. I can read it to you, “’Everyone’s been talking a lot about a universal facebook within Harvard’, he says”--he meaning Mark--”’I think it’s kind of silly that it would take the University a couple of years to get around to it. I can do a classier job than they can and I did in a week.’”
+DIVYA
+(into cell)
+Tell him Divya Narendra called, I
+appreciate it.
+CAMERON
+(into phone)
+I know, that’s how he talks.
+DIVYA
+(off another copy of the
+Crimson)
+“As of yesterday evening, Zuckerberg said over 650 students had registered to use theFacebook.com. He said he anticipated that 900 students would have joined the site by this morning.”
+59.
+CAMERON
+(into phone)
+Yeah, Divya was just reading that 650 students signed up for it on the first day.
+TYLER
+If I were a drug dealer I couldn’t give free drugs to 650 people in one day.
+DIVYA
+And this guy doesn’t have three friends to rub together to make a fourth.
+CAMERON
+(quieting them so he can hear)
+Guys, please, come on.
+(into phone)
+That’s what we’ll do, Mr. Hotchkiss. We’ll put all this together and we’ll email it to you.
+(listens)
+You won’t be able to get on the website yourself.
+(beat)
+Because you don’t have--a Harvard, umm-- You know what, it would just be easier for us to email it to you.
+(listens)
+No, I’m sure you’re right, this is a good guy--
+DIVYA
+(reacting)
+Wow!!
+CAMERON
+(into phone)
+--and he’s very bright and I’m sure he didn’t mean to... do what he did.
+(beat)
+Thank you very much, and Dad--alright love you too.
+CAMERON hangs up.
+DIVYA
+This is a good guy?
+CAMERON
+We don’t know that he’s not a good guy.
+DIVYA
+We know that he stole our idea. We know he lied to our faces for a month and a half while he--
+60.
+CAMERON
+He never lied to our faces.
+DIVYA
+(DIVYA tosses the Crimson to
+TYLER)
+He never saw our faces! He lied to our e-mail accounts and he got himself a 42-day head start because he knows what apparently you don’t which is that getting there first is everything!
+CAMERON
+I’m a competitive racer, Div, I don’t think you need to school me on the importance of getting there first, thank you.
+DIVYA
+Alright. That was your father’s lawyer?
+CAMERON
+It was his in-house counsel, he’ll look at it and if he thinks it’s appropriate he’ll send a cease and desist letter.
+DIVYA
+What’s that gonna do?
+CAMERON
+What, do you wanna hire and IP lawyer and sue him?
+DIVYA
+No, I wanna hire the Sopranos to beat the shit out of him with a hammer.
+TYLER
+We don’t even have to do that.
+CAMERON
+That’s right.
+TYLER
+We can do that ourselves.
+CAMERON
+Hey--
+TYLER
+I’m six-five, 220 and there’s two of me.
+DIVYA
+I’m with this guy.
+61.
+CAMERON
+And I’m saying let’s calm down until we know what we’re talking about.
+DIVYA
+How much more information are you waiting for? We met with Mark three times, we exchanged 52 e-mails, we can prove that he looked at the code--
+(then)
+What is that on the bottom of the page?
+CAMERON
+(he’s already seen it)
+It says “A Mark Zuckerberg Production”.
+DIVYA
+On the home page?
+TYLER
+On every page.
+DIVYA
+Shit, I need a second to let the
+classiness waft over me.
+CAMERON
+Look--
+TYLER
+Cam. They wrote, “Zuckerberg said that he hoped the privacy options would help to restore his reputation following student outrage over Facemash.com”.
+(beat)
+That’s exactly what WE said to him. He’s giving us the finger in the Crimson. Now while we’re waiting for Dad’s lawyer to look this stuff over, we can at least--
+CAMERON
+No.
+TYLER
+--get something going in the paper so that people know--
+CAMERON
+What?
+TYLER
+That this thing is in dispute.
+CAMERON
+We’re not starting a knife fight in the Crimson and we’re not suing anybody.
+62.
+DIVYA
+Why not?
+CAMERON wants to answer the question but doesn’t... 
+DIVYA (CONT’D)
+I don’t understand, why not?
+CAMERON
+(beat--referring to TYLER)
+He’s gonna say it’s stupid.
+TYLER
+Me?
+DIVYA
+Say it. Why not?
+CAMERON
+Because we’re gentlemen of Harvard.
+(beat)
+This is Harvard. You don’t plant stories and you don’t sue people.
+DIVYA
+(pause)
+You thought he was going to be the only one who thought that was stupid?
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+GAGE
+During the time when you say you had this idea, did you know Tyler and Cameron came from a family of means?
+MARK
+(pause)
+A family of means?
+GAGE
+Did you know that his father was wealthy.
+MARK
+(pause)
+I’m not sure why you’re asking me that.
+GAGE
+It’s not important that you be sure why
+I’m asking you.
+MARK
+It’s not important to you.
+63.
+GAGE
+(asking for help again)
+Sy.
+SY
+(to MARK)
+Did you know that they came from money?
+MARK
+I had no idea whether they came from money or not.
+GAGE
+In one of your e-mails to Mr. Narendra you referenced Howard Winklevoss’ consulting firm.
+MARK
+(beat)
+If you say so.
+GAGE
+Howard Winklevoss founded a firm whose assets are in the hundreds of millions.
+MARK
+Mm-hm... 
+GAGE
+You also knew that Cameron and Tyler were members of a Harvard final club called the Porcellian.
+MARK
+They pointed that out.
+TYLER
+Excuse us for inviting you in.
+MARK
+To the bike room.
+GAGE
+(to TYLER)
+Please.
+(to MARK)
+So it’s safe to say you were aware that my clients had money?
+MARK
+Yes.
+GAGE
+Let me tell you why I’m asking. I’m wondering why, if you needed a thousand dollars for an internet venture, you didn’t ask my clients for it.
+(MORE)
+64.
+GAGE (CONT'D)
+They’d demonstrated to you an interest in this kind of thing so--
+MARK
+I went to my friend for the money because that’s who I wanted to be partners with. Eduardo was the president of the Harvard Investors Association and he was my best friend.
+GAGE
+Your best friend is suing you for 600-million dollars.
+MARK
+I didn’t know that, tell me more.
+CUT TO:
+INT. FIRST DEPOSITION ROOM - DAY
+SY
+Eduardo, what happened after the initial launch?
+GRETCHEN
+I’m sorry, Sy, would you mind addressing him as Mr. Saverin?
+SY
+Gretchen, they’re best friends.
+GRETCHEN
+Not anymore.
+SY
+We already went through this on the-- nevermind. Mr. Saverin, what happened after the initial--
+EDUARDO
+It exploded.
+CUT TO:
+INT. SECOND DEPOSITION ROOM - DAY
+DIVYA
+Everyone on campus was using it. “Facebook me” was a common expression after two weeks.
+SY
+And Mark?
+65.
+DIVYA
+Mark was the biggest thing on a campus that included 19 Nobel Laureates, 15 Pulitzer Prize winners, two future Olympians and a movie star.
+SY
+Who’s the movie star?
+DIVYA
+(pause)
+Does it matter?
+SY
+No.
+CUT TO:
+EXT./EST. AUDITORIUM - NIGHT
+The lamps in Harvard Yard light the snow falling.
+SPEAKER (VO)
+The light bulb event--the inciting action-- was when he was at Out of Town News and picked up a copy of Popular Electronics that had the MITS Altair Kit on the cover.
+INT. AUDITORIUM - SAME TIME
+There’s a lower-level and a balcony and both are full.
+MARK and EDUARDO are sitting in the second to last row of the balcony.
+We’ll hear the SPEAKER but we’ll only get to see him in a slightly blurry image as our attention is on MARK and EDUARDO.
+SPEAKER
+It was a beautiful day and I was in my room at Radcliffe and he brought me the magazine and he said, “Look, it’s going to happen without us, we’ve got to start it now.” And so I said, “Okay, you’re right. Let’s get BASIC out there.”
+He gets an appreciative LAUGH from the STUDENTS.
+SPEAKER (CONT’D)
+Most of you think you know the rest of the story but you may not.
+(beat)
+The beginnings of this industry were very humble. That kit computer on the cover of that magazine--
+66.
+We HEAR a little muffled giggling coming from the row behind MARK and EDUARDO. MARK is too into the speech to notice but the giggling registers as a slight annoyance on EDUARDO’s face.
+SPEAKER (CONT’D)
+--had an 8080 microprocessor in it, unless you paid extra for a 1K memory board, you had 256 bytes.
+EDUARDO hears the giggling again and turns around.
+In the row behind them and a few seats over are two beautiful Asian students--ALICE and CHRISTY. They’re a little overly made-up for a lecture. CHRISTY, the one sitting closest to EDUARDO, is wearing a short skirt with a white shirt open one button too far down the front and we can see a hint of the red bra she’s wearing underneath.
+She leans forward and whispers to EDUARDO--
+CHRISTY
+(whispering)
+Your friend--is that Mark Zuckerberg?
+EDUARDO
+(beat)
+Uh... yes.
+CHRISTY
+He made theFacebook.
+EDUARDO smiles a little... this has just never happened--
+EDUARDO
+Yeah. I mean it’s both of ours--but, yeah we--yes.
+CHRISTY
+(still whispering)
+Cool. I’m Christy. This is Alice.
+EDUARDO can’t help noticing--just because it’s in his line of sight--that down the row from the girls, someone else is pointing at them and whispering to a friend.
+Then back to the girls--
+EDUARDO
+(whispering)
+Very nice to meet you.
+CHRISTY
+(whispering)
+Facebook me when you get home. Maybe we can all go out and grab a drink later.
+67.
+EDUARDO
+(whispering)
+Certainly. Absolutely I will do that.
+EDUARDO turns back to the speaker, who MARK hasn’t taken his eyes off of--
+SPEAKER
+There were a number of machines that came next--the TRS-80, Apple II, Commodore Pet--
+CUT TO:
+EXT. AUDITORIUM - NIGHT
+As the CROWD from the lecture spills out onto the snowy quad. EDUARDO--always in his suit--is buttoning up his overcoat as he walks and MARK zips up his hoodie.
+EDUARDO
+She said “Facebook me” and we can all go for a drink later. Which is stunningly great for two reasons. One, she said “Facebook me”. Right? And the other is, you know--
+MARK
+They want to have drinks later.
+EDUARDO
+Yes! Have you ever heard so many different good things packed into one regular-sized sentence?
+A group of guys hustle up to MARK and EDUARDO--
+STUART
+Excuse me. Mark?
+MARK
+Yeah.
+STUART
+I’m Stuart Singer. I’m in your O.S. lab.
+MARK
+Sure.
+STUART
+Awesome job with theFacebook.
+VIKRAM
+Awesome job.
+MARK
+Thanks.
+68.
+BOB
+I’m Bob.
+MARK
+How you doin’.
+BOB
+You know, I could swear he was looking at you when he said the next Bill Gates could be right in this room.
+MARK
+I doubt it.
+BOB
+I showed up late, I don’t even know who the speaker was.
+MARK
+(beat)
+It was Bill Gates.
+BOB
+Shit, that makes sense.
+EDUARDO
+(beat)
+Alright, thanks guys.

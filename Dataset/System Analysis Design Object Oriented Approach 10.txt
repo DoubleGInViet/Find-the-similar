@@ -1,0 +1,806 @@
+﻿setting priorities, 50
+template for, 146, 150, 532
+testing and, 144, 146–147, 343–344, 347
+traps to avoid, 163–164 usage scenarios and, 149
+use case diagrams, 148, 243, 395, 603
+user stories and, 144–147, 152–153 users and actors, 147–148 validating, 160–161
+ 
+
+
+user acceptance testing
+
+ 
+user, defined, 603
+user acceptance testing, 377–379
+user classes, defined, 603. See also user analysis user documentation, requirements and, 519–520 user goals. See user requirements
+user interfaces
+analyzing, good practices, 51 architecture diagrams, 445–446
+control descriptions, 226
+customer input, 137
+design of, requirements and, 375–377
+dialog maps, 235–238
+embedded projects, 446–447, 453
+flow, 235
+interface specification document, 447 mock-ups, 297–298
+models for, 226
+prototypes, 50
+real-time projects, 446–447, 453
+requirements analysis, 128
+SRS and, 189–190, 196–197
+SRS document, sample, 592–593 user interface analysis, 128 wireframe prototype, 299
+user involvement in requirements, 101–116
+user requirements. See also use cases; also user stories
+business analytics projects, 431–432
+business process automation requirements,
+423–424
+customer input, 136
+defined, 7, 9, 603
+elicitation, good practices, 48–49 packaged solution projects, 406–407 requirement levels and types, 7–13 requirements development, 16–17
+stakeholder analysis, 28–29
+techniques for identifying, overview, 143–144 user requirements document, 13, 400–401
+user role. See actor
+user stories. See also use cases; also user requirements
+agile projects, 199–201, 386–389, 489
+defined, 145, 603
+enhancement and replacement projects, 395, 400–401
+epics and, 388–389
+ 
+features and, 388–389
+overview, 143–147, 388–389
+quality attributes, agile projects, 293–294 setting and changing priorities, 50, 314, 489
+use cases and, 144–147, 152–153
+user requirements, 9 user task models, 226
+users. See also customers; also stakeholders
+agile projects and, 115–116 classifying users, 102–104
+conflicting requirements, resolution of, 116–117 customer comments, use in models, 223–224 enhancement and replacement projects, 395 importance of, 101–102
+product champions, 109–114
+SRS document, 193
+user classes, identifying, 105–107
+user observations, 125–126
+user personas, 107–108
+user representatives, 108–109
+
+V
+V model of software development, 330
+validation, requirements. See also testing acceptance criteria, 347–349 business analyst role, 64
+defect checklist for requirements reviews, 338–339
+defined, 331, 603
+good practices, 44, 52–53
+inspections, 332–338
+outsourced projects, 420
+overview of, 329–331
+packaged solution projects, 408–409 peer reviews, 332–342
+prototyping requirements, 342
+requirements development, 15, 17, 45–47 requirements review tips and challenges, 339–342 requirements testing, 342–347
+reviewing requirements, 332–342
+risk factors, 545
+testing requirements, 342–347
+troubleshooting problems, 570
+use cases, 160–161
+verifiability requirements, 286–287
+verifiable requirements, 205
+ 
+
+
+ 
+
+
+verification, defined, 331, 603. See also validation version control
+good practices, 53
+overview of, 460–462
+requirements management tools, 506–510
+requirements management, overview, 457–459 vertical prototype, 298, 603. See also prototypes vision and scope document
+agile projects, 98–99
+business context, 90–92
+business requirements, 83–88
+defined, 8, 81, 603
+deliverables, 13
+good practices, 51–52
+overview, 81–83
+sample document, 576–580
+scope and limitations section, 88–90
+ 
+
+
+voice of the user, 101, 108, 109
+von Halle, Barbara, 177
+
+W
+walkthrough, 332–333
+waterfall development, defined, 384, 603 waterfall development, limitations of, 384–385 Weinberg, Gerald, 105
+Wiegers, Karl, 78, 225, 339, 366, 467
+wireframe, 299, 603. See also prototypes
+Withall, Stephen, 267, 358 work product, defined, 603 workshops
+good practices, 49
+requirements elicitation, 122–125 writing requirements documents, 203–220
+ 
+Young, Ralph
+ 
+template for, 81–83, 532
+vision statement, 87–88, 577
+vision, product, 78–79, 603
+vision statement, 87–88, 577 visual representations. See models
+ 
+writing style, requirements documentation, 207–211
+
+Y
+Young, Ralph, 61 traceable requirements, 206 tracing requirements
+allocated requirements, 441
+defined, 603
+levels and types, 7–13
+missing requirements, identifying, 141–142, 222,
+225, 227, 236, 238, 346
+motivations for, 494–495, 500–501
+overview, 491–493
+packaged solution projects, 407, 410
+procedure for, 499–501, 533
+requirements management overview, 457–459 requirements traceability matrix, 495–498 tools for, 498–499
+traceability data, 400
+traceability table, 495
+tracking changes, 461–462, 474
+tracking effort on requirements activities, 467–468 tracking requirements status, 458, 464–466, 469
+training and skills development, 54–55, 68–71
+transition requirements, 14, 22, 402
+troubleshooting
+analysis issues, 567–569
+barriers to implementing solutions, 560 change management issues, 572–574 communication issues, 564
+elicitation issues, 565–566
+overview, 559
+planning issues, 562–564
+ 
+process issues, 561–562
+product issues, 562
+requirements management issues, 571 signs of requirements problems, 559–560 specification issues, 569–570
+validation issues, 570–571
+
+U
+understandability requirements. See modifiability
+requirements
+UML diagrams, 243
+Unified Modeling Language (UML), 148–149, 232,
+243, 445–446, 603
+usability. See also quality attributes embedded systems, 453 packaged solution projects, 408 prototype evaluations, 306–307
+requirements, 279–281
+SRS document, 197–198
+usage-centric strategy, 16
+usage scenarios, 149
+use cases. See also user requirements actors and roles, 147–148 benefits of, 164–165
+business rules and, 156–157
+chaining together, 156
+defined, 144, 603
+diagrams, 148–149
+elements of, 149–150
+eliciting use cases, 158–160
+enhancement and replacement projects, 400–401 extend and include relationships, 155–156 functional requirements and, 161–163 identifying, 157–158
+labeling conventions, 151
+normal flow, alternative flows, and exceptions,
+152–153
+overview, 9, 143–147
+pre- and postconditions, 151, 156 embedded and real-time systems projects, 440–441
+partitioning of, 440–441
+system requirements specification, 440
+ 
+system state models, 226
+system testing, requirements and, 519
+
+T
+taxonomy, business rules, 169
+TBD (to be determined), 206, 208, 216, 221, 602
+team building, 72–73
+templates
+change control board charter, 481, 533 change control process, 475–479 change impact analysis, 488
+defined, 602
+functional requirements, 207–208 interface specification document, 446–447 project risk documentation, 539–541 reporting specifications, 255–256
+requirement patterns, 358–359
+software requirements specification (SRS),
+190–199, 532
+tips for using, 82–83
+use case, 146, 532
+user story, 145
+vision and scope document, 81–83, 532
+vision statement, 87
+temporal events
+defined, 241
+event-response tables, 241–242
+identifying, 48–49
+terminators, context diagrams, 92–93. See also
+external entities terminology, good practices, 55, 364 testability. See verifiability
+testing
+acceptance criteria, 347–349 creating validation tests, 342–347 dialog maps and, 344–347
+enhancement and replacement projects, 400–401 fit criteria, 267
+outsourced projects, 416, 420 packaged solution projects, 408–409
+project planning and, 365–366, 377–379
+prototype evaluations, 306–307 requirements process improvement, 518–520 requirements reuse and, 362
+software requirements specification (SRS), 9 tracing requirements to tests, 495 troubleshooting issues, 570
+use cases and functional requirements, 163
+ 
+
+
+use cases
+
+ 
+use cases and user stories, 146–147 use cases and, 160–161, 346–348 validating use cases, 160–161 validation, good practices, 52–53 verifiability requirements, 286–287
+textual tags, requirement labeling, 187–188 three-level scale, prioritization, 319–320 throwaway prototypes, 298–300, 602. See also
+prototypes
+time-based events. See temporal events
+timeboxed development, 98–99. See also agile development
+timeboxing discussions, workshops, 124
+timing requirements, on embedded and other
+real-time systems, 447–449 to be determined. See TBD
+tools for requirements engineering overview, 503–505
+requirements development tools, 505–506 requirements management tools, 506–510 selecting and using, 510–513 About the authors
+KARL WIEGERS is principal consultant with Process Impact, a software process consulting and education company in Portland, Oregon. His interests include requirements engineering, peer reviews, project management, and process improvement. Previously, he spent 18 years at Eastman Kodak Company as a photographic research scientist, software developer,
+software manager, and software process and quality improvement leader.
+Karl received a PhD degree in organic chemistry from the University
+of Illinois. When he’s not on the computer, Karl enjoys wine tasting, playing guitar, writing and recording songs, and doing volunteer work.
+Karl is the author of numerous books and articles on software development, chemistry, self-help, and military history. His books include the two previous editions of Software Requirements (Microsoft Press, 1999 and 2003), More About Software Requirements (Microsoft Press, 2006), Practical Project Initiation (Microsoft Press, 2007), Peer Reviews in Software (Addison-Wesley, 2002), and Creating a Software Engineering Culture (Dorset House Publishing, 1996). He is also the author of a memoir of life lessons, Pearls from Sand (Morgan James Publishing, 2011). Karl has served on the editorial board for IEEE Software magazine and as a contributing editor for Software Development magazine. He has delivered more than 300 seminars and training courses on software requirements. You can reach Karl at www.processimpact
+.com and www.karlwiegers.com. (Photo credit: Emily Down, Jama Software)
+JOY BEATTY is a vice president at Seilevel, a professional services and training company in Austin, Texas, that helps redefine the way customers create software requirements. With 15 years of experience in business analysis, Joy evolves new methods and helps customers implement best practices that improve requirements elicitation and modeling. She assists Fortune 500 companies as they build business analysis centers of excellence. Joy has provided training to thousands of business analysts and is a Certified Business Analysis Professional (CBAP). Joy graduated from Purdue
+University with BS degrees in both computer science and mathematics. Joy’s passions
+beyond requirements include rowing, swimming, and being outside with her family.
+Joy is actively involved as a leader in the requirements community. She has worked with the International Institute of Business Analysis (IIBA) on A Guide to the Business Analysis Body of Knowledge (BABOK Guide). Additionally, she writes about requirements methodologies in journals, white papers, and blog posts and presents
+at requirements-related conferences. She also co-authored Visual Models for Software Requirements (Microsoft Press, 2012). Joy can be reached at www.seilevel.com and joy.beatty@seilevel.com.
+ 
+ 
+
+Tell us what you think!
+Was it useful?
+Did it teach you what you wanted to learn? Was there room for improvement?
+Let us know at http://aka.ms/tellpress
+Your feedback goes directly to the staff at Microsoft Press, and we read every one of your responses. Thanks in advance!
+Visible Analyst Student Edition
+Educating tomorrow’s developers today
+Disclaimer: The publisher of the textbook does not sponsor, review, or make decisions about Visible Analyst software, 
+and will not be responsible for, or involved in, any changes to the software.
+
+System Analysis &Design 
+ A n O bject -O riented A pproach with UML 
+Fift h Edition 
+Alan Dennis 
+Indiana University 
+Barbara Haley Wixom 
+Massachusetts Institute of Technology 
+David Tegarden 
+Virginia Tech 
+With contributions by Elaine Seeman, 
+East Carolina University 
+VP & EXECUTIVE PUBLISHER: Don Fowley 
+EXECUTIVE EDITOR: Beth Lang Golub
+CONTENT EDITOR: Mary O’Sullivan
+ASSOCIATE EDITOR: Ellen Keohane
+MARKETING MANAGER: Christopher Ruel
+ASSOCIATE PRODUCTION MANAGER: Joyce Poh
+DESIGNER: Wendy Lai
+Cover Image: © Christopher Boswell/Shutterstock
+ Th is book was set in 10/12 Minion pro by Aptara and printed and bound by Courier Kendallville. Th e cover 
+was printed by Courier Kendallville. 
+ Th is book is printed on acid-free paper . 
+Founded in 1807, John Wiley & Sons, Inc. has been a valued source of knowledge and understanding for more 
+than 200 years, helping people around the world meet their needs and fulfi ll their aspirations. Our company is 
+built on a foundation of principles that include responsibility to the communities we serve and where we live 
+and work. In 2008, we launched a Corporate Citizenship Initiative, a global eff ort to address the environmental, 
+social, economic, and ethical challenges we face in our business. Among the issues we are addressing are carbon 
+impact, paper specifi cations and procurement, ethical conduct within our business and among our vendors, and 
+community and charitable support. For more information, please visit our website: www.wiley.com/go/citizenship.
+Copyright © 2015, 2012, 2009 John Wiley & Sons, Inc. All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, scanning or otherwise, except as permitted under Sections 107 or 108 of the 1976 United States 
+Copyright Act, without either the prior written permission of the Publisher, or authorization through payment of 
+the appropriate per-copy fee to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923 
+(Web site: www.copyright.com). Requests to the Publisher for permission should be addressed to the Permissions 
+Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030-5774, (201) 748-6011, fax (201) 748-6008, 
+or online at: www.wiley.com/go/permissions.
+ Evaluation copies are provided to qualifi ed academics and professionals for review purposes only, for use in 
+their courses during the next academic year. Th ese copies are licensed and may not be sold or transferred to a 
+third party. Upon completion of the review period, please return the evaluation copy to Wiley. Return instructions and a free of charge return shipping label are available at: www.wiley.com/go/returnlabel. If you have 
+chosen to adopt this textbook for use in your course, please accept this book as your complimentary desk copy. 
+Outside of the United States, please contact your local sales representative.
+Library of Congress Cataloging-in-Publication Data 
+ Dennis, Alan. 
+ Systems analysis & design : an object-oriented approach with UML/Alan Dennis, Indiana University, 
+Barbara Haley Wixom, Massachusetts Institute of Technology, David Tegarden, Virginia Tech; with 
+contributions by Elaine Seeman, East Carolina University.–Fift h edition. 
+ pages cm 
+ Includes bibliographical references and index. 
+ ISBN 978-1-118-80467-4 (pbk. : alk. paper) 
+ 1. System analysis. 2. System design. 3. UML (Computer science) I. Wixom, Barbara Haley, 
+ 1969-II. Tegarden, David Paul. III. Seeman, Elaine. IV. Title. V. Title: System analysis and design. 
+ QA402.D395 2015 
+ 004.2’1–dc23 
+2014048338 
+ Printed in the United States of America 
+ 10 9 8 7 6 5 4 3 2 1 
+ PURPOSE OF THIS BOOK 
+ Systems Analysis and Design (SAD) is an exciting, active fi eld in which analysts continually 
+learn new techniques and approaches to develop systems more eff ectively and effi ciently. 
+However, there is a core set of skills that all analysts need to know—no matter what 
+approach or methodology is used. All information systems projects move through the four 
+phases of planning, analysis, design, and implementation; all projects require analysts to 
+gather requirements, model the business needs, and create blueprints for how the system 
+should be built; and all projects require an understanding of organizational behavior concepts like change management and team building. Today, the cost of developing modern 
+soft ware is composed primarily of the cost associated with the developers themselves and 
+not the computers. As such, object-oriented approaches to developing information systems 
+hold much promise in controlling these costs. 
+ Today, the most exciting change to systems analysis and design is the move to 
+object-oriented techniques, which view a system as a collection of self-contained objects 
+that have both data and processes. Th is change has been accelerated through the creation of the Unifi ed Modeling Language (UML). UML provides a common vocabulary of 
+object-oriented terms and diagramming techniques that is rich enough to model any systems development project from analysis through implementation. 
+ Th is book captures the dynamic aspects of the fi eld by keeping students focused on 
+doing SAD while presenting the core set of skills that we feel every systems analyst needs to 
+know today and in the future. Th is book builds on our professional experience as systems 
+analysts and on our experience in teaching SAD in the classroom. 
+ Th is book will be of particular interest to instructors who have students do a major 
+project as part of their course. Each chapter describes one part of the process, provides 
+clear explanations on how to do it, gives a detailed example, and then has exercises for the 
+students to practice. In this way, students can leave the course with experience that will 
+form a rich foundation for further work as a systems analyst. 
+ OUTSTANDING FEATURES 
+ A Focus on Doing SAD 
+ Th e goal of this book is to enable students to do SAD—not just read about it, but understand the issues so that they can actually analyze and design systems. Th e book introduces 
+each major technique, explains what it is, explains how to do it, presents an example, and 
+provides Your Turn opportunities with each chapter for students to practice each new technique before they do it for real in a project. Th e Your Turn boxes are posted online at www.
+wiley.com/college/dennis. Aft er reading each chapter, the student will be able to perform 
+that step in the system development process. 
+PREFACE
+v
+vi Preface
+ Rich Examples of Success and Failure 
+ Th is book has a running online case study (accessible from www.wiley.com/go/dennis/
+casestudy ) about a fi ctitious health care company called Patterson Superstore. Each chapter of 
+the case study shows how the concepts are applied in situations at Patterson Superstore. In 
+this way, the running case serves as a template that students can apply to their own work. 
+Each chapter also includes numerous Concepts in Action boxes, which are posted online at 
+www.wiley.com/college/dennis. Th ese boxes describe how real companies succeeded—and 
+failed—in performing the activities in the chapter. Many of these examples are drawn from 
+our own experiences as systems analysts. 
+ Real World Focus 
+ The skills that students learn in a systems analysis and design course should mirror 
+the work that they ultimately will do in real organizations. We have tried to make this 
+book as “real” as possible by building extensively on our experience as professional systems analysts for organizations, such as Arthur Andersen, IBM, the U.S. Department 
+of Defense, and the Australian Army. We have also worked with a diverse industry 
+advisory board of IS professionals and consultants in developing the book and have 
+incorporated their stories, feedback, and advice throughout. Many students who use 
+this book will eventually use the skills on the job in a business environment, and we 
+believe they will have a competitive edge in understanding what successful practitioners feel is relevant in the real world. 
+ Project Approach 
+ We have presented the topics in this book in the order in which an analyst encounters them 
+in a typical project. Although the presentation is necessarily linear (because students have 
+to learn concepts in the way in which they build on each other), we emphasize the iterative, 
+complex nature of SAD as the book unfolds. Th e presentation of the material should align 
+well with courses that encourage students to work on projects because it presents topics as 
+students need to apply them. 
+ WHAT’S NEW IN THIS EDITION 
+■ A completely new, expanded case study on an integrated health clinic delivery 
+system has been written to accompany the fi ft h e dition. Th e entire case study is 
+posted online. At the end of each chapter in the text, a short synopsis of the case 
+is provided. 
+■ Th e text has been streamlined to focus on the essentials and therefore, to enhance 
+student understanding. Selected m aterial s like the “Your Turn” and “Concepts in 
+Action” boxes have been moved online and can be accessed at www.wiley.com/
+college/dennis . 
+■ Th roughout the book , there is a greater emphasis on verifying, validating, and 
+testing, as well as the incremental and iterative development of systems. 
+■ In Chapter 2, there is more content on Agile techniques , including scrum meetings, product backlog, and sprints. 
+■ In Chapter 3, we have increased focus on soft ware quality and user stories. 
+■ We have added new examples throughout the book and clarifi ed explanations to 
+help students learn some of the more diffi cult concepts. 
+Preface vii
+■ Chapter 10 includes more coverage of mobile computing , including specifi cs on 
+navigation, input, and output. Th is chapter also has a new section on games, 
+multidimensional information visualization, augmented reality, and virtual reality. 
+■ Chapter 11 includes new material o n ubiquitous computing and the Internet of Th ings. 
+■ Testing has been expanded in Chapter 12. 
+ ORGANIZATION OF THIS BOOK 
+ Th is book is loosely organized around the phases and workfl ows of the enhanced Unifi ed 
+Process. Each chapter has been written to teach students specifi c tasks that analysts need 
+to accomplish over the course of a project, and the deliverables that will be produced from 
+the tasks. As students complete the chapters, they will realize the iterative and incremental 
+nature of the tasks in object-oriented systems development. 
+ Chapter 1 introduces the SDLC, systems development methodologies, roles and 
+skills needed for a systems analyst, the basic characteristics of object-oriented systems, 
+object-oriented systems analysis, the Unifi ed Process, and the UML. Chapter 2 presents 
+topics related to the project management workfl ow of the Unifi ed Process, including project identifi cation, system request, feasibility analysis, project selection, traditional project 
+management tools (including work breakdown structures, network diagrams, and PERT 
+analysis), project eff ort estimation using use-case points, evolutionary work breakdown 
+structures, iterative workplans, scope management, timeboxing, risk management, and 
+staffi ng the project. Chapter 2 also addresses issues related to the Environment and Infrastructure management workfl ows of the Unifi ed Process. 
+ Part One focuses on creating analysis models. Chapter 3 introduces students to an assortment of requirements analysis strategies a variety of requirements-gathering techniques that 
+are used to determine the functional and nonfunctional requirements of the system, and to a 
+ system proposal. Chapter 4 focuses on constructing business process and functional models 
+ using use - case diagrams, activity diagrams, and use - case descriptions. Chapter 5 addresses 
+ producing structural models using CRC cards, class diagrams, and object diagrams. Chapter 6 
+tackles creating behavioral models using sequence diagrams, communication diagrams, 
+ behavioral state machines, and CRUDE analysis and matrices. Chapters 4 through 6 also 
+cover the verifi cation and validation of the models described in each chapter. 
+ Part Two addresses design modeling. In Chapter 7, students learn how to verify and 
+validate the analysis models created during analysis modeling and to evolve the analysis 
+models into design models via the use of factoring, partitions, and layers. Th e students also 
+learn to create an alternative matrix that can be used to compare custom, packaged, and 
+outsourcing alternatives. Chapter 8 concentrates on designing the individual classes and 
+their respective methods through the use of contracts and method specifi cations. Chapter 9 
+presents the issues involved in designing persistence for objects. Th ese issues include the 
+diff erent storage formats that can be used for object persistence, how to map an objectoriented design into the chosen storage format, and how to design a set of data access and 
+manipulation classes that act as a translator between the classes in the application and 
+the object persistence. Th is chapter also focuses on the nonfunctional requirements that 
+impact the data management layer. Chapter 10 presents the design of the human–computer 
+interaction layer, where students learn how to design user interfaces using use scenarios, 
+windows navigation diagrams, storyboards, windows layout diagrams, user interface 
+prototypes, real use cases, interface standards, and user interface templates; to perform 
+user interface evaluations using heuristic evaluation, walkthrough evaluation, interactive 
+evaluation, and formal usability testing; and to address nonfunctional requirements such 
+viii Preface
+as user interface layout, content awareness, aesthetics, user experience, and consistency. 
+Th is chapter also addresses issues related to mobile computing, social media, games, 
+multi dimensional information visualizations, immersive environments, and international 
+and cultural issues with regard to user interface design. Chapter 11 focuses on the physical architecture and infrastructure design, which includes deployment diagrams and 
+ hardware/soft ware specifi cation. In today’s world, this also includes issues related to cloud 
+computing, ubiquitous computing, the Internet of things, and green IT. Th is chapter, like 
+the previous design chapters, covers the impact that nonfunctional requirements can have 
+on the physical architecture layer. 
+ Part Th ree provides material that is related to the construction, installation, and operations 
+ of the system. Chapter 12 focuses on system construction, where students learn how to build, 
+test, and document the system. Installation and operations are covered in Chapter 13, where 
+students learn about the conversion plan, change management plan, support plan, and project 
+assessment. Additionally, these chapters address the issues related to developing systems in a fl at 
+world, where developers and users are distributed throughout the world. 
+ SUPPLEMENTS www.wiley.com/college/dennis 
+ Instructor Book Companion Web s ite 
+■ PowerPoint slides: I nstructors can tailor the slides to their classroom needs . 
+S tudents can use them to guide their reading and studying activities. 
+■ Test Bank : I ncludes a variety of questions ranging from multiple-choice, true/
+false, and short answer questions. A computerized, Respondus version of the Test 
+Bank is also available. 
+■ Instructor’s Manual : P rovides resources to support the instructor both inside 
+and out of the classroom. Th e manual includes short experiential exercises that 
+instr uctors can use to help students experience and understand key topics in 
+each chapter. Short stories have been provided by people working in both corporate and consulting environments for instructors to insert into lectures to make 
+concepts more colorful and real. Additional minicases for every chapter allow 
+students to perform some of the key concepts that were learned in the chapter. 
+ Solutions to end of chapter questions and exercises are provided. 
+ Student Book Companion Web s ite 
+■ A collection of templates and worksheets consisting of electronic versions of 
+selected fi gures from the book. 
+■ A completely new, expanded case study on an integrated health clinic delivery 
+system has been written to accompany the fi ft h edition. Th is case study is online 
+only. It can be accessed at www.wiley.com/go/dennis/casestudy . 
+■ “Your Turn” and “Concepts in Action” boxes from the fourth edition have been 
+moved online and can be accessed from the student companion site. 
+ Wiley E-Text: Powered by VitalSource 
+ Th is Wiley e-text off ers students continuing access to materials for their course. Your students 
+can access content on a mobile device, online from any Internet-connected computer, or by 
+a computer via download. With dynamic features built into this e-text, students can search 
+across content, highlight, and take notes that they can share with teachers and classmates. 
+Preface ix
+ Visible Analyst 
+ Wiley has partnered with Visible Analyst to give students a discounted price for Visible 
+Analyst soft ware, an intuitive modeling tool for all aspects of traditional or object-oriented 
+systems analysis and design. All new copies of the text will have a Key Code (printed on 
+a page near the front of this text) that will provide a discount on Visible Analyst soft ware. 
+To obtain the soft ware, students should visit http://store.visible.com/Wiley.aspx and enter 
+their Key Code. Students who buy a new print text or digital e-book will receive one-third 
+off the price of a downloadable edition of the soft ware with a 6-month license. With the 
+soft ware, they will also receive tutorials, how-to videos, and a sample project. Students who 
+buy used copies of this text may buy Visible Analyst at full price using the URL provided. 
+ Project Management Soft ware 
+ You can download a 60-day trial of Microsoft Project Professional 2013 from the following 
+Web site: www.microsoft .com/en-us/evalcenter/evaluate-project-professional-2013 . Note 
+that Microsoft has changed its policy and no longer off ers the 120-day trial previously 
+available. 
+ Another option now available to education institutions adopting this Wiley titl e is a 
+free introductory 3-year membership for DreamSpark Premium. DreamSpark Premium 
+is designed to provide the easiest and most inexpensive way for academic departments 
+to make the latest Microsoft soft ware available in labs, classrooms, and on student and 
+instructor PCs. Microsoft Project soft ware is available through this Wiley and Microsoft 
+publishing partnership, free of charge with the adoption of any qualifi ed Wiley title. Each 
+copy of Microsoft Project is the full version of the soft ware, with no time limitation, and 
+can be used indefi nitely for educational purposes. Contact your Wiley sales representative 
+for details. For more information about the DreamSpark Premium program, contact 
+drmspkna@Microsoft .com . 
+ ACKNOWLEDGMENTS 
+ Th anks to Elaine Seeman for her feedback on every chapter in this book as well as for her 
+work writing the new online case study. We would like to thank the following reviewers 
+for their helpful and insightful comments on the fi ft h edition: Mohammad Dadashzadeh, 
+Oakland University; Xiaodong Deng, Oakland University ; Th omas W. Dillon, James 
+Madison University; Bryan Goda, University of Washington, Tacoma; Kathleen S. Hartzel, 
+Duquesne University; Rajkumar Kempaiah, Stevens Institute of Technology; Sung-kwan 
+Kim, University of Arkansas at Little Rock; Richard McCarthy, Quinnipiac University; 
+Donald McCracken, Grantham University; Osama A. Morad, Southern New Hampshire 
+University; Fred Niederman, Saint Louis University; Linda Plotnick, Jacksonville State 
+University; Vladimir V. Riabov, Rivier University ; Richard Schilhavy, Guilford College; 
+Tod Sedbrook, University of Northern Colorado; Steven C. Shaff er, Penn State University; 
+Michael Smith, Georgia Institute of Technology; and John Wetsch, Southern New Hampshire 
+University. 
+ We would also like to thank the following reviewers for their helpful and insightful comments on the fi rst, second, third , and fourth editions: Evans Adams, Fort Lewis 
+College; Murugan Anandarajon, Drexel University; Ron Anson, Boise State University; 
+Noushin Ashrafi , University of Massachusetts, Boston; Dirk Baldwin, University of 
+Wisconsin-Parkside; Robert Barker, University of Louisville; Qing Cao, University of 
+Missouri–Kansas City; David Champion, DeVry University, Columbus, OH campus; Jeff 
+Cummings, Indiana University; Junhua Ding, East Carolina University; Robert Dollinger, 
+x Preface
+University of Wisconsin-Stevens Point; Abhijit Dutt, Carnegie Mellon University; Terry 
+Fox, Baylor University; Ahmad Ghafarian, North Georgia College & State U niversity; Donald 
+Golden, Cleve land State University; Cleotilde Gonzalez, Carnegie Melon University; 
+Daniel V. Goulet, University of Wisconsin–Stevens Point; Harvey Hayashi, Loyalist College 
+of Applied Arts and Technology; Yujong Hwang, DePaul University; Scott James, Saginaw 
+Valley State University; Zongliang Jiang, North Carolina A&T State University; Raymond 
+Kirsch, La Salle University; Rajiv Kishore, State University of New York–Buff alo; Ravindra 
+ Krovi, University of Akron; Jean-Piere Kuilboer, University of Massachusetts, Boston; 
+ Gilliean Lee, Lander University; Leo Legorreta, California State University Sacramento; 
+Diane Lending, James Madison University; Steve Machon, DeVry University; Fernando 
+ Maymí , West Point University; Daniel Mittleman, DePaulUniversity; Makoto Nakayama, 
+DePaul University; Fred Niederman, Saint Louis University; Parasuraman Nurani, DeVry 
+University; H. Robert Pajkowski, DeVry Institute of Technology, Scarborough, Ontario; 
+June S. Park, University of Iowa; Graham Peace, West Virginia University; Tom Pettay, 
+DeVry Institute of Technology, Columbus,Ohio; Selwyn Piramuthu, University of Florida; 
+ J. Drew Procaccino, Rider University; Neil Ramiller, Portland State University; Eliot 
+Rich, University at Albany, State University of New York; Marcus Rothenberger, University 
+of Wisconsin–Milwaukee; Carl Scott, University of Houston; Keng Siau,University of 
+Nebraska–Lincoln; Ift ikhar Sikder , Cleveland State University; Jonathan Trower, Baylor 
+University; June Verner, Drexel University; Anna Wachholz, Sheridan College; Bill Watson, 
+Indiana University- Purdue University Indianapolis; Randy S.Weinberg, Carnegie Mellon 
+University; Eli J.Weissman, DeVry Institute of Technology, Long Island City, NY; Heinz 
+Roland Weistroff er, Virginia Commonwealth University; Amy Wilson, DeVry Institute of 
+Technology, Decatur, GA; Amy Woszczynski, Kennesaw State University; Vincent C. Yen, 
+Wright State University ; Fan Zhao, Florida Gulf Coast University; and Dan Zhu, Iowa State 
+Universit CONTENTS
+Preface v
+Chapter 1
+Introduction to Systems 
+Analysis and Design 1
+Introduction 1
+The Systems Development Life Cycle 2
+Planning 3
+Analysis 3
+Design 4
+Implementation 4
+Systems Development Methodologies 5
+Structured Design 6
+Rapid Application Development (RAD) 8
+Agile Development 12
+Selecting the Appropriate Development 
+Methodology 15
+Typical Systems Analyst Roles and Skills 17
+Business Analyst 18
+Systems Analyst 18
+Infrastructure Analyst 18
+Change Management Analyst 19
+Project Manager 19
+Basic Characteristics of Object-Oriented 
+Systems 19
+Classes and Objects 19
+Methods and Messages 20
+Encapsulation and Information Hiding 20
+Inheritance 21
+Polymorphism and Dynamic Binding 22
+Object-Oriented Systems Analysis 
+and Design (OOSAD) 23
+Use-Case Driven 24
+Architecture-Centric 24
+Iterative and Incremental 24
+Benefi ts of Object-Oriented Systems 
+Analysis and Design 25
+The Unified Process 25
+Phases 26
+Workfl ows 28
+Extensions to the Unifi ed Process 30
+The Unified Modeling Language 34
+applying the concepts at patterson 
+superstore 36
+Chapter Review 36
+Chapter 2
+Project Management 41
+Introduction 41
+Project Identification 43
+System Request 44
+Feasibility Analysis 45
+Technical Feasibility 45
+Economic Feasibility 46
+Organizational Feasibility 51
+Project Selection 53
+Traditional Project Management Tools 54
+Work Breakdown Structures 55
+Gantt Chart 56
+Network Diagram 57
+Project Effort Estimation 58
+Creating and Managing the Workplan 63
+Evolutionary Work Breakdown 
+Structures and Iterative Workplans 63
+Managing Scope 67
+Timeboxing 68
+Refi ning Estimates 69
+Managing Risk 70
+Staffing the Project 71
+Characteristics of a Jelled Team 71
+Staffi ng Plan 73
+Motivation 75
+Handling Confl ict 76
+Environment and Infrastructure 
+Management 76
+CASE Tools 77
+Standards 77
+Documentation 78
+Applying the Concepts at Patterson 
+Superstore 80
+Chapter Review 80
+■ PART ONE
+ANALYSIS MODELING 85
+Chapter 3
+Requirements 
+Determination 86
+Introduction 86
+Requirements Determination 87
+Defi ning a Requirement 87
+Requirements Defi nition 89
+Determining Requirements 89
+Creating a Requirements Defi nition 91
+Real-World Problems with Requirements 
+Determination 91
+Requirements Analysis Strategies 92
+Problem Analysis 92
+Root Cause Analysis 92
+Duration Analysis 93
+Activity-Based Costing 94
+Informal Benchmarking 94
+Outcome Analysis 95
+Technology Analysis 95
+Activity Elimination 95
+Requirements-Gathering Techniques 95
+Interviews 96
+Joint Application Development (JAD) 100
+Questionnaires 104
+Document Analysis 106
+Observation 108
+Selecting the Appropriate Techniques 108
+Alternative Requirements Documentation 
+Techniques 110
+Concept Maps 110
+User Stories 112
+The System Proposal 113
+Applying the Concepts at Patterson 
+Superstore 114
+Chapter review 114
+Chapter 4
+Business Process and
+Functional Modeling 119
+Introduction 119
+Business Process Identification with Use 
+Cases and Use-Case Diagrams 121
+Elements of Use-Case Diagrams 121
+Identifying the Major Use Cases 126
+Creating a Use-Case Diagram 127
+Business Process Modeling with Activity 
+Diagrams 129
+Elements of an Activity Diagram 131
+Guidelines for Creating Activity 
+Diagrams 136
+Creating Activity Diagrams 137
+Business Process Documentation with Use 
+Cases and Use-Case Descriptions 140
+Types of Use Cases 141
+Elements of a Use-Case Description 141
+Guidelines for Creating Use-Case 
+Descriptions 145
+Creating Use Case Descriptions 146
+Verifying and Validating the Business 
+Processes and Functional Models 153
+Verifi cation and Validation through 
+Walkthroughs 153
+Functional Model Verifi cation and 
+Validation 154
+Applying the Concepts at Patterson 
+Superstore 157
+Chapter Review 157
+Chapter 5
+Structural Modeling 163
+Introduction 163
+Structural Models 164
+Classes, Attributes, and 
+Operations 164
+Relationships 165
+Object Identification 166
+Textual Analysis 166
+Brainstorming 167
+Common Object Lists 169
+Patterns 169
+Crc Cards 172
+Responsibilities and Collaborations 172
+Elements of a CRC Card 173
+Role-Playing CRC Cards with 
+Use Cases 174
+Class Diagrams 176
+Elements of a Class Diagram 176
+Simplifying Class Diagrams 184
+Object Diagrams 184
+Creating Structural Models Using 
+CRC Cards and Class Diagrams 185
+Campus Housing Example 187
+Library Example 187
+xii Contents
+Verifying and Validating the Structural 
+Model 194
+Applying the Concepts at Patterson
+Superstore 197
+Chapter Review 198
+Chapter 6
+Behavioral Modeling 202
+Introduction 202
+Behavioral Models 203
+Interaction Diagrams 204
+Objects, Operations, and Messages 204
+Sequence Diagrams 204
+Communication Diagrams 216
+Behavioral State Machines 221
+States, Events, Transitions, Actions, and 
+Activities 221
+Elements of a Behavioral State Machine 222
+Creating a Behavioral State Machine 226
+Crude Analysis 229
+Verifying and Validating the Behavioral 
+Model 233
+Applying the Concepts at Patterson 
+ Superstore 235
+Chapter Review 235
+■ PART TWO
+DESIGN MODELING 239
+Chapter 7
+Moving on to Design 240
+Introduction 240
+Verifying and Validating the Analysis 
+Models 242
+Balancing Functional and Structural 
+Models 242
+Balancing Functional and Behavioral 
+Models 243
+Balancing Structural and Behavioral 
+Models 251
+Summary 254
+Evolving the Analysis Models into Design 
+Models 257
+Factoring 257
+Partitions and Collaborations 258
+Layers 259
+Packages and Package Diagrams 262
+Guidelines for Creating Package 
+Diagrams 264
+Creating Package Diagrams 266
+Verifying and Validating Package 
+Diagrams 266
+Design Strategies 268
+Custom Development 268
+Packaged Soft ware 269
+Outsourcing 270
+Selecting a Design Strategy 272
+Selecting an Acquisition Strategy 273
+Alternative Matrix 274
+Applying the Concepts at Patterson
+Superstore 276
+Chapter Review 276
+Chapter 8
+Class and Method Design 280
+Introduction 280
+Review of the Basic Characteristics 
+of Object Orientation 282
+Classes, Objects, Methods, and Messages 282
+Encapsulation and Information Hiding 282
+Polymorphism and Dynamic Binding 282
+Inheritance 284
+Design Criteria 286
+Coupling 286
+Cohesion 289
+Connascence 292
+Object Design Activities 293
+Adding Specifi cations 293
+Identifying Opportunities for Reuse 294
+Restructuring the Design 297
+Optimizing the Design 298
+Mapping Problem-Domain Classes to 
+Implementation Languages 300
+Constraints and Contracts 304
+Types of Constraints 306
+Elements of a Contract 306
+Method Specification 314
+General Information 314
+Events 314
+Message Passing 315
+Algorithm Specifi cations 316
+Example 318
+Verifying and Validating Class and Method
+sample document, 581–583

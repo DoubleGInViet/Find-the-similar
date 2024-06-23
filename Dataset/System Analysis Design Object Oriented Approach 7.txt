@@ -1,0 +1,490 @@
+﻿2.	Scope and Limitations
+2.1	Major Features
+FE-1: Order and pay for meals from the cafeteria menu to be picked up or delivered. FE-2: Order and pay for meals from local restaurants to be delivered.
+FE-3: Create, view, modify, and cancel meal subscriptions for standing or recurring meal orders, or for daily special meals.
+FE-4: Create, view, modify, delete, and archive cafeteria menus.
+FE-5: View ingredient lists and nutritional information for cafeteria menu items.
+FE-6: Provide system access through corporate intranet, smartphone, tablet, and outside Internet access by authorized employees.
+
+FIGURE C-1 Partial feature tree for the Cafeteria Ordering System.
+ 
+2.2	Scope of Initial and Subsequent Releases
+
+Feature	Release 1	Release 2	Release 3
+FE-1, Order from cafeteria	Standard meals from lunch menu only; meal orders for delivery can be paid for by payroll deduction only	Accept credit and debit card payments	Accept meal orders for breakfasts and suppers
+FE-2, Order from
+restaurants	Not implemented	Delivery to campus
+locations only	Fully implemented
+FE-3, Meal subscriptions	Not implemented	Implemented if time permits	Fully implemented
+FE-4, Menus	Create and view menus	Modify, delete, and archive menus	
+FE-5, Ingredient lists	Not implemented	Fully implemented	
+FE-6, System access	Intranet and outside Internet access	iOS and Android phone
+and tablet apps	Windows Phone and tablet apps
+
+2.3	Limitations and Exclusions
+LI-1: Some food items that are available from the cafeteria will not be suitable for delivery, so the delivery menus available to patrons of the COS must be a subset of the full cafeteria menus.
+LI-2: The COS shall be used only for the cafeteria at the Process Impact campus in Clackamas, Oregon.
+
+3.	Business Context
+3.1	Stakeholder Profiles
+
+Stakeholder	Major value	Attitudes	Major interests	Constraints
+Corporate
+Management	Improved employee productivity; cost savings for cafeteria	Strong commitment through release 2; support for release 3 contingent on earlier results	Cost and employee time savings must exceed development and usage costs	None identified
+Cafeteria Staff	More efficient use of staff time throughout the day; higher customer satisfaction	Concern about union relationships and possible downsizing; otherwise receptive	Job preservation	Training for staff
+in Internet usage needed; delivery staff and vehicles needed
+Patrons	Better food selection; time savings; convenience	Strong enthusiasm, but might not use it as much as expected because of social value of eating lunches in cafeteria and restaurants	Simplicity of use; reliability of delivery; availability of food choices	Corporate intranet access, Internet access, or a mobile device is needed
+Payroll Department	No   benefit; needs to set up payroll deduction
+registration scheme	Not happy about the software work needed, but
+recognizes the value to the company and employees	Minimal changes in current payroll applications	No resources yet committed to make software changes
+ 
+Stakeholder	Major value	Attitudes	Major interests	Constraints
+Restaurant Managers	Increased sales; marketing exposure to generate new customers	Receptive but cautious	Minimal new technology needed; concern about resources and costs of delivering meals	Might not have capacity to handle order levels; might not all have menus online
+
+3.2	Project Priorities
+
+Dimension	Constraint	Driver	Degree of freedom
+Features	All features scheduled for release 1.0 must be fully operational		
+Quality	95% of user acceptance tests must pass; all security tests must pass		
+Schedule			Release 1 planned to be available by end of Q1 of next year, release 2 by end of Q2; overrun of up to 2 weeks acceptable without sponsor review
+Cost			Budget overrun up to 15% acceptable without sponsor review
+Staff		Team size is half-time project manager, half-time BA, 3 developers, and 1 tester; additional developer and half-time tester available if necessary	
+
+3.3	Deployment Considerations
+The web server software will need to be upgraded to the latest version. Apps will have to be developed for iOS and Android smartphones and tablets as part of the second release, with corresponding apps for Windows Phone and tablets to follow for the third release. Any corresponding infrastructure changes must be in place at the time of the second release. Videos no more than five minutes in length shall be developed to train users in both the Internet-based and app-based versions of COS.
+ 
+Use Cases
+The various user classes identified the following primary actors and use cases for the COS:
+
+Primary actor	Use cases
+Patron	1.	Order a Meal
+2.	Change Meal Order
+3.	Cancel Meal Order
+4.	View Menu
+5.	Register for Payroll Deduction
+6.	Unregister for Payroll Deduction
+7.	Manage Meal Subscription
+Menu Manager	8.	Create a Menu
+9.	Modify a Menu
+10.	Delete a Menu
+11.	Archive Menus
+12.	Define a Meal Special
+Cafeteria Staff	13.	Prepare Meal
+14.	Generate a Payment Request
+15.	Request Meal Delivery
+16.	Generate System Usage Reports
+Meal Deliverer	17.	Record Meal Delivery
+18.	Print Delivery Instructions
+
+ID and Name:	
+UC-1: Order a Meal	
+		
+Created By:	Prithvi Raj	Date Created:	October 4, 2013
+Primary Actor:	Patron	Secondary Actors:	Cafeteria Inventory System
+Description:	A Patron accesses the Cafeteria Ordering System from either the corporate intranet or external Internet, views the menu for a specific date, selects food items, and places an order for a meal to be picked up in the cafeteria or delivered to a specified location within a specified 15-minute time window.
+Trigger:	A Patron indicates that he wants to order a meal.
+Preconditions:	PRE-1. Patron is logged into COS.
+PRE-2. Patron is registered for meal payments by payroll deduction.
+Postconditions:	POST-1. Meal order is stored in COS with a status of “Accepted.”
+POST-2. Inventory of available food items is updated to reflect items in this order. POST-3. Remaining delivery capacity for the requested time window is updated.
+Normal Flow:	1.0 Order a Single Meal
+1.	Patron asks to view menu for a specific date. (see 1.0.E1, 1.0.E2)
+2.	COS displays menu of available food items and the daily special.
+3.	Patron selects one or more food items from menu. (see 1.1)
+4.	Patron indicates that meal order is complete. (see 1.2)
+5.	COS displays ordered menu items, individual prices, and total price, including taxes and delivery charge.
+6.	Patron either confirms meal order (continue normal flow) or requests to modify meal order (return to step 2).
+7.	COS displays available delivery times for the delivery date.
+8.	Patron selects a delivery time and specifies the delivery location.
+9.	Patron specifies payment method.
+10.	COS confirms acceptance of the order.
+11.	COS sends Patron an email message confirming order details, price, and delivery instructions.
+12.	COS stores order, sends food item information to Cafeteria Inventory System, and updates available delivery times.
+ 
+Alternative Flows:	1.1 Order multiple identical meals
+1.	Patron requests a specified number of identical meals. (see 1.1.E1)
+2.	Return to step 4 of normal flow.
+1.2 Order multiple meals
+1.	Patron asks to order another meal.
+2.	Return to step 1 of normal flow.
+Exceptions:	1.0.E1 Requested date is today and current time is after today’s order cutoff time
+1. COS informs Patron that it’s too late to place an order for today.
+2a. If Patron cancels the meal ordering process, then COS terminates use case. 2b. Else if Patron requests another date, then COS restarts use case.
+1.0.E2 No delivery times left
+1.	COS informs Patron that no delivery times are available for the meal date. 2a. If Patron cancels the meal ordering process, then COS terminates use case.
+2b. Else if Patron requests to pick the order up at the cafeteria, then continue with normal flow, but skip steps 7 and 8.
+1.1.	E1 Insufficient inventory to fulfill multiple meal order
+1. COS informs Patron of the maximum number of identical meals he can order, based on current available inventory.
+2a. If Patron modifies number of meals ordered, then return to step 4 of normal flow. 2b. Else if Patron cancels the meal ordering process, then COS terminates use case.
+Priority:	High
+Frequency of Use:	Approximately 300 users, average of one usage per day. Peak usage load for this use case is between 9:00 A.M. and 10:00 A.M. local time.
+Business Rules:	BR-1, BR-2, BR-3, BR-4, BR-11, BR-12, BR-33
+Other Information:	1.	Patron shall be able to cancel the meal ordering process at any time prior to confirming it.
+2.	Patron shall be able to view all meals he ordered within the previous six months and repeat one of those meals as the new order, provided that all food items are available on the menu for the requested delivery date. (Priority = medium) [Note: You could also show this as an alternative flow for the use case.]
+3.	The default date is the current date if the Patron is using the system before today’s order cutoff time. Otherwise, the default date is the next day that the cafeteria is open.
+Assumptions:	Assume that 15 percent of Patrons will order the daily special (Source: previous 6 months of cafeteria data).
+ 
+[Note: the following use case is written in less detail than UC-1, to illustrate that it isn’t always necessary to fully specify every detail of the use case, provided developers have the necessary information available from some other source.]
+
+ID and Name:	UC-5 Register for Payroll Deduction
+Created By:	Nancy Anderson	Date Created:	September 15, 2013
+Primary Actor:	Patron	Secondary Actors:	Payroll System
+Description:	Cafeteria patrons who use the COS and have meals delivered must be registered for payroll deduction. For noncash purchases made through the COS, the cafeteria will issue a payment request to the Payroll System, which will deduct the meal costs from the next scheduled employee payday direct deposit.
+Trigger:	Patron requests to register for payroll deduction, or Patron says yes when COS asks if he wants to register.
+Preconditions:	PRE-1. Patron is logged into COS.
+Postconditions:	POST-1. Patron is registered for payroll deduction.
+Normal Flow:	5.0 Register for Payroll Deduction
+1.	COS asks Payroll System if Patron is eligible to register for payroll deduction.
+2.	Payroll System confirms that Patron is eligible to register for payroll deduction.
+3.	COS asks Patron to confirm his desire to register for payroll deduction.
+4.	If so, COS asks Payroll System to establish payroll deduction for Patron.
+5.	Payroll System confirms that payroll deduction is established.
+6.	COS informs Patron that payroll deduction is established.
+Alternative Flows:	None
+Exceptions:	5.0.E1 Patron is not eligible for payroll deduction. 5.0.E2 Patron is already enrolled for payroll deduction.
+Priority:	High
+Business Rules:	BR-86 and BR-88 govern an employee’s eligibility to enroll for payroll deduction.
+Other Information:	Expect high frequency of executing this use case within first 2 weeks after system is released.
+
+[Note: the following use case is written in a very brief form, to illustrate that it is not always necessary to fully complete the use case template, provided developers have the necessary information available from some other source. It’s a good idea to plan out which use cases require detailing and which do not.]
+
+ID and Name:	UC-9 Modify a Menu
+Created By:	Mark Hassall	Date Created:	October 7, 2013
+Description:	The cafeteria Menu Manager may retrieve the menu for a specific date in the future, modify it to add new food items, remove or change food items, create or change a meal special, or change prices, and save the modified menu.
+Exceptions:	No menu exists for the specified date; show an error message and let the Menu Manager enter a new date.
+Priority:	High
+Business Rules:	BR-24
+Other Information:	Certain food items will not be deliverable, so the menu presented to the Patrons of the COS for delivery will not always exactly match the menu available for pickup in the cafeteria. The Menu Manager can set which items are not deliverable.
+ 
+ 
+
+ 
+
+1. Introduction
+
+
+ 
+
+
+
+
+1.2	Document Conventions
+No special typographical conventions are used in this SRS.
+
+1.3	Project Scope
+ 
+r software release 1.0 of the sed by the members of the
+of the system. Unless otherwise
+.
+ 
+The COS will permit Process Impact employees to order meals from the company cafeteria online to be delivered to specified campus locations. A detailed description is available in the Cafeteria
+Ordering System Vision and Scope Document [1], along with the features that are scheduled for full or partial implementation in this release.
+
+1.4	References
+1.	Wiegers, Karl. Cafeteria Ordering System Vision and Scope Document, www.processimpact.com/ projects/COS/COS Vision and Scope.docx
+2.	Beatty, Joy. Process Impact Intranet Development Standard, Version 1.3, www.processimpact.com/ corporate/standards/PI Intranet Development Standard.pdf
+3.	Rath, Andrew. Process Impact Internet Application User Interface Standard, Version 2.0, www.processimpact.com/corporate/standards/PI Internet UI Standard.pdf
+
+2.	Overall Description
+2.1	Product Perspective
+The Cafeteria Ordering System is a new software system that replaces the current manual and telephone processes for ordering and picking up meals in the Process Impact cafeteria. The context diagram in Figure C-2 illustrates the external entities and system interfaces for release 1.0. The system is expected to evolve over several releases, ultimately connecting to the Internet ordering services for several local restaurants and to credit and debit card authorization services.
+ 
+ 
+
+FIGURE C-2 Context diagram for release 1.0 of the Cafeteria Ordering System.
+
+
+
+User class	Description
+Patron (favored)	A Patron is a Process Impact employee who wants to order meals to be delivered from the company cafeteria. There are about 600 potential Patrons, of which 300 are expected to use the COS an average of 5 times per week each. Patrons will sometimes order multiple meals for group events or guests. An estimated 60 percent of orders will be placed using the corporate intranet, with 40 percent of orders being placed from home or by smartphone or tablet apps.
+Cafeteria Staff	The Process Impact cafeteria employs about 20 Cafeteria Staff who will receive orders from the COS, prepare meals, package them for delivery, and request delivery. Most of the Cafeteria Staff will need training in the use of the hardware and software for the COS.
+Menu Manager	The Menu Manager is a cafeteria employee who establishes and maintains daily menus of the food items available from the cafeteria. Some menu items may not be available for delivery. The Menu Manager will also define the cafeteria’s daily specials. The Menu Manager will need to edit existing menus periodically.
+Meal Deliverer	As the Cafeteria Staff prepare orders for delivery, they will issue delivery requests to a Meal Deliverer’s smartphone. The Meal Deliverer will pick up the food and deliver it to the Patron. A Meal Deliverer's other interactions with the COS will be to confirm that a meal was (or was not) delivered.
+ 
+2.3	Operating Environment
+OE-1: The COS shall operate correctly with the following web browsers: Windows Internet Explorer versions 7, 8, and 9; Firefox versions 12 through 26; Google Chrome (all versions); and Apple Safari versions 4.0 through 8.0.
+OE-2: The COS shall operate on a server running the current corporate-approved versions of Red Hat Linux and Apache HTTP Server.
+OE-3: The COS shall permit user access from the corporate intranet; from a VPN Internet connection; and by Android, iOS, and Windows smartphones and tablets.
+
+2.4	Design and Implementation Constraints
+CO-1: The system’s design, code, and maintenance documentation shall conform to the Process Impact Intranet Development Standard, Version 1.3 [2].
+CO-2: The system shall use the current corporate standard Oracle database engine. CO-3: All HTML code shall conform to the HTML 5.0 standard.
+2.5	Assumptions and Dependencies
+AS-1: The cafeteria is open for breakfast, lunch, and supper every company business day in which employees are expected to be on site.
+DE-1: The operation of the COS depends on changes being made in the Payroll System to accept payment requests for meals ordered with the COS.
+DE-2: The operation of the COS depends on changes being made in the Cafeteria Inventory System to update the availability of food items as COS accepts meal orders.
+
+3.	System Features
+3.1	Order Meals from Cafeteria
+3.1.1	Description
+A cafeteria Patron whose identity has been verified can order meals either to be delivered to a specified company location or to be picked up in the cafeteria. A Patron can cancel or change a meal order if it has not yet been prepared. Priority = High.
+ 
+3.1.2	Functional Requirements
+
+ 
+ 
+
+[Note: Functional requirements for reordering a meal and for changing and canceling meal orders are not provided in this example.]
+
+3.2	Order Meals from Restaurants
+[Details are not provided in this example. Quite a lot of the functionality described under 3.1 Order Meals from Cafeteria could likely be reused, so this section should just specify the additional functionality that addresses the restaurant interface.]
+
+3.3	Create, View, Modify, and Delete Meal Subscriptions
+[Details are not provided in this example.]
+
+3.4	Create, View, Modify, and Delete Cafeteria Menus
+[Details are not provided in this example.]
+ 
+4.	Data Requirements
+4.1	Logical Data Model
+
+FIGURE C-3 Partial data model for release 1.0 of the Cafeteria Ordering System.
+
+
+4.2	Data Dictionary
+
+Data element	Description	Composition or data type	Length	Values
+delivery instruction	where and to whom a meal is to be delivered, if it isn’t being picked up in the cafeteria	patron name
++ patron phone number
++ meal date
++ delivery location
++ delivery time window		
+delivery location	building and room to which an ordered meal is to be delivered	alphanumeric	50	hyphens and commas permitted
+delivery time window	beginning time of a
+15-minute range on the meal date during which an ordered meal is to be delivered	time	hh:mm	local time; hh = 0-23 inclusive; mm = 00, 15, 30, or 45
+employee ID	company ID number of the employee who placed a meal order	integer	6	
+food item description	description of a food item on a menu	alphabetic	100	
+food item price	pre-tax cost of a single unit of a menu food item	numeric, dollars and cents	dd.cc	
+ 
+Data element	Description	Composition or data type	Length	Values
+meal date	the date the meal is to be delivered or picked up	date, MM/DD/YYYY	10	default = current date if the current time is before the order cutoff time, else the next day; cannot be prior to current date
+meal order	details about a meal a Patron ordered	meal order number
++ order date
++ meal date
++ 1:m{ordered food item}
++ delivery instruction
++ meal order status		
+meal order number	unique ID that COS assigns
+to each accepted meal order	integer	7	Initial value is 1
+meal order status	status of a meal order that a Patron initiated	alphabetic	16	Incomplete, accepted, prepared, pending delivery, delivered, canceled
+meal payment	information about a payment COS accepted for a meal	payment amount
++ payment method
++ transaction number		
+menu	list of food items available for purchase on a specific date	menu date
++ 1:m{menu food item}		
+menu date	the date for which a specific
+menu is available	date, MM/DD/YYYY	10	
+menu food item	description of a menu item	food item description
++ food item price		
+order cutoff time	the time of day before which all meal orders for that date must be placed	time, HH:MM	5	
+order date	the date on which a Patron placed a meal order	date, MM/DD/YYYY	10	
+ordered food item	one menu food item that a Patron requested as part of a meal order	menu food item
++ quantity ordered		
+patron	a Process Impact employee who is authorized to order a meal	patron name
++ employee ID
++ patron phone number
++ patron location
++ patron email		
+patron email	email address of the employee who placed a meal order	alphanumeric	50	
+patron location	building and room numbers of the employee who placed a meal order	alphanumeric	50	hyphens and commas permitted
+patron name	name of the employee who placed a meal order	alphabetic	30	
+patron phone number	telephone number of the employee who placed a meal order	AAA-EEE-NNNN xXXXX for
+area code (A), exchange (E), number (N), and extension (X)	18	
+
+ 
+Data element	Description	Composition or data type	Length	Values
+payment amount	total price of an order in dollars and cents, calculated per BR-12	numeric, dollars and cents	dddd.cc	
+payment method	how the Patron is paying for a meal he ordered	alphabetic	16	payroll deduction, cash, credit card, debit card
+quantity ordered	the number of units of each food item that the Patron
+is ordering in a single meal order	integer	4	default = 1; maximum = quantity presently in inventory
+transaction number	unique sequence number that COS assigns to each payment transaction	integer	12	
+
+4.3	Reports
+4.3.1	Ordered Meal History Report
+
+Report ID	COS-RPT-1
+Report Title	Ordered Meal History
+Report Purpose	Patron wants to see a list of all meals that he had previously ordered from the Process Impact cafeteria or local restaurants over a specified time period up to 6 months prior to the current date, so he can reorder a particular meal he liked.
+Priority	Medium
+Report Users	Patrons
+Data Sources	Database of previously placed meal orders
+Frequency and Disposition	Report is generated on demand by a Patron. Data in the report is static. Report is displayed on user’s web browser screen on a computer, tablet, or smartphone. It can be printed if the display device permits printing.
+Latency	Complete report must be displayed to Patron within 3 seconds after it is requested.
+Visual Layout	Landscape mode
+Header and Footer	Report header shall contain the report title, Patron’s name, and date range specified. If printed, report footer shall show the page number.
+Report Body	Fields shown and column headings:
+■	Order Number
+■	Meal Date
+■	Ordered From (“Cafeteria” or restaurant name)
+■	Items Ordered (list all items in the meal order, their quantity, and their prices)
+■	Total Food Price
+■	Tax
+■	Delivery Charge
+■	Total Price (sum of food item prices, tax, and delivery charge) Selection Criteria: date range specified by Patron, inclusive of end points Sort Criteria: reverse chronological order
+End-of-Report Indicator	None
+Interactivity	Patron can drill down to see ingredients and nutritional information for each item in
+the order.
+Security Access Restrictions	A Patron may retrieve only his own meal order history.
+[Note: Other COS reports are not provided in this example.] 4.4	Data Integrity, Retention, and Disposal
+DI-1: The COS shall retain individual Patron meal orders for 6 months following the meal’s delivery date. DI-2: The COS shall retain menus for 1 year following the menu date.
+
+5.	External Interface Requirements
+5.1	User Interfaces
+UI-1: The Cafeteria Ordering System screen displays shall conform to the Process Impact Internet Application User Interface Standard, Version 2.0 [3].
+UI-2: The system shall provide a help link from each displayed webpage to explain how to use that page.
+UI-3: The webpages shall permit complete navigation and food item selection by using the keyboard alone, in addition to using mouse and keyboard combinations.
+
+5.2	Software Interfaces
+SI-1: Cafeteria Inventory System
+SI-1.1: The COS shall transmit the quantities of food items ordered to the Cafeteria Inventory System through a programmatic interface.
+SI-1.2: The COS shall poll the Cafeteria Inventory System to determine whether a requested food item is available.
+SI-1.3: When the Cafeteria Inventory System notifies the COS that a specific food item is no longer available, the COS shall remove that food item from the menu for the current date.
+SI-2: Payroll System
+The COS shall communicate with the Payroll System through a programmatic interface for the
+following operations:
+SI-2.1: To allow a Patron to register and unregister for payroll deduction. SI-2.2: To inquire whether a Patron is registered for payroll deduction.
+SI-2.3: To inquire whether a Patron is eligible to register for payroll deduction. SI-2.4: To submit a payment request for a purchased meal.
+SI-2.5: To reverse a previous charge because a patron rejected a meal or wasn’t satisfied with it, or because the meal was not delivered per the delivery instructions.
+
+5.3	Hardware Interfaces
+No hardware interfaces have been identified.
+ 
+5.4	Communications Interfaces
+CI-1: The COS shall send an email or text message (based on user account settings) to the Patron to confirm acceptance of an order, price, and delivery instructions.
+CI-2: The COS shall send an email or text message (based on user account settings) to the Patron to report any problems with a meal order or delivery.
+
+6.	Quality Attributes
+6.1	Usability Requirements
+USE-1: The COS shall allow a Patron to retrieve the previous meal ordered with a single interaction. USE-2: 95% of new users shall be able to successfully order a meal without errors on their first try.
+6.2	Performance Requirements
+PER-1: The system shall accommodate a total of 400 users and a maximum of 100 concurrent users during the peak usage time window of 9:00 A.M. to 10:00 A.M. local time, with an estimated average session duration of 8 minutes.
+PER-2: 95% of webpages generated by the COS shall download completely within 4 seconds from the time the user requests the page over a 20 Mbps or faster Internet connection.
+PER-3: The system shall display confirmation messages to users within an average of 3 seconds and a maximum of 6 seconds after the user submits information to the system.
+
+6.3	Security Requirements
+SEC-1: All network transactions that involve financial information or personally identifiable information shall be encrypted per BR-33.
+SEC-2: Users shall be required to log on to the COS for all operations except viewing a menu. SEC-3: Only authorized Menu Managers shall be permitted to work with menus, per BR-24. SEC-4: The system shall permit Patrons to view only orders that they placed.
+6.4	Safety Requirements
+SAF-1: The user shall be able to see a list of all ingredients in any menu items, with ingredients highlighted that are known to cause allergic reactions in more than 0.5 percent of the North American population.
+ 
+6.5	Availability Requirements
+AVL-1: The COS shall be available at least 98% of the time between 5:00 A.M. and midnight local time and at least 90% of the time between midnight and 5:00 A.M. local time, excluding scheduled maintenance windows.
+
+6.6	Robustness Requirements
+ROB-1: If the connection between the user and the COS is broken prior to a new order being either confirmed or terminated, the COS shall enable the user to recover an incomplete order and continue working on it.
+
+Appendix A: Analysis Models
+Figure C-4 is a state-transition diagram that shows the possible meal order statuses and the allowed changes in status.
+
+FIGURE C-4 State-transition diagram for meal order status.
+ 
+Business Rules
+[Note: The following illustrates a portion of a separate business rules catalog.]
+
+ID	Rule definition	Type of rule	Static or dynamic	Source
+BR-1	Delivery time windows are 15 minutes, beginning on each quarter hour.	Fact	Dynamic	Cafeteria Manager
+BR-2	Deliveries must be completed between
+11:00 A.M. and 2:00 P.M. local time, inclusive.	Constraint	Dynamic	Cafeteria Manager
+BR-3	All meals in a single order must be delivered
+to the same location.	Constraint	Static	Cafeteria Manager
+BR-4	All meals in a single order must be paid for by
+using the same payment method.	Constraint	Static	Cafeteria Manager
+BR-8	Meals must be ordered within 14 calendar days of the meal date.	Constraint	Dynamic	Cafeteria Manager
+BR-11	If an order is to be delivered, the patron must
+pay by payroll deduction.	Constraint	Dynamic	Cafeteria Manager
+BR-12	Order price is calculated as the sum of each food item price times the quantity of that food item ordered, plus applicable sales tax, plus a delivery charge if a meal is delivered outside the free delivery zone.	Computation	Dynamic	cafeteria policy; state tax code
+BR-24	Only cafeteria employees who are designated as Menu Managers by the Cafeteria Manager can create, modify, or delete cafeteria menus.	Constraint	Static	cafeteria policy
+BR-33	Network transmissions that involve financial information or personally identifiable information require 256-bit encryption.	Constraint	Static	corporate security policy
+BR-86	Only regular employees can register for payroll deduction for any company purchase.	Constraint	Static	Corporate
+Accounting Manager
+BR-88	An employee can register for payroll deduction payment of cafeteria meals if no more than 40 percent of his gross pay is currently being deducted for other reasons.	Constraint	Dynamic	Corporate
+Accounting Manager
+ 
+
+ 
+
+Glossary
+
+
+
+
+
+
+ 
+acceptance criteria Conditions that a software product must satisfy to be accepted by a user, customer, or other stakeholder.
+acceptance test A test that evaluates anticipated usage scenarios to determine the software’s acceptability. Used in agile development both
+to express details about a user story and to determine whether a user story is fully and correctly implemented.
+activity diagram An analysis model that depicts a process flow proceeding from one activity to another. Similar to a flowchart.
+actor A person performing a specific role, a software system, or a hardware device that interacts with a system to achieve a useful goal. Also called a user role.
+agile development A term used for software development methods characterized by continuous collaboration between developers and customers, limited documentation of requirements in the form of user stories and corresponding acceptance tests, and rapid and frequent delivery of small increments of useful functionality. Agile development
+methods include Extreme Programming, Scrum, Feature-Driven Development, Lean Software Development, and Kanban.
+allocation See requirements allocation.
+alternative flow A path through a use case that leads to success but that involves a variation from the normal flow in the specifics of the task or in the actor’s interaction with the system.
+analysis, requirements The process of classifying requirements information into various categories, evaluating requirements for desirable qualities, representing requirements in different forms, deriving detailed requirements from high-level
+ 
+requirements, negotiating priorities, and related
+activities.
+analyst See business analyst.
+application See product.
+architecture The structure of a system, including any software, hardware, and human components that make up the system, the interfaces and relationships between those components, and the component behaviors that are visible to other components.
+assumption A statement that is believed to be true
+in the absence of proof or definitive knowledge.
+attribute, quality See quality attribute.
+attribute, requirement See requirement attribute.
+BA See business analyst.
+backlog, product On an agile project, the prioritized list of work remaining for the project. A backlog can contain user stories, business processes, change requests, infrastructure development, and defect stories. Work items from the backlog are allocated to upcoming iterations based on their priority.
+baseline, requirements A snapshot in time that represents the current agreed-upon, reviewed, and approved set of requirements, often defining the contents of a specific product release or development iteration. Serves as the basis for further development work.
+big data A collection of data that is characterized as large volume (much data exists), high velocity (data flows rapidly into an organization), and/or highly complex (the data is diverse). Managing big data entails understanding how to discover, collect, store, and process the data quickly and effectively.
+ 
+
+
+597
+ 
+business analyst (BA) The role on a project team that has primary responsibility for working with stakeholder representatives
+to elicit, analyze, specify, validate, and manage the project’s requirements. Also called a requirements analyst, system analyst, requirements engineer, requirements manager, business systems analyst, and simply analyst.
+business analytics system A software system used to convert large and complex data sets into meaningful information from which to make decisions.
+business objective A financial or nonfinancial business benefit that an organization expects to receive as a result of a project or some other initiative.
+business objectives model A visual representation of a hierarchy of business problems and business objectives.
+business requirements A set of information that describes a business need that leads to one or more projects to deliver a solution and the desired ultimate business outcomes. The business requirements include business opportunities, business objectives, success metrics, a vision statement, and scope and limitations.
+business rule A policy, guideline, standard, regulation, or computational formula that defines or constrains some aspect of the business.
+cardinality The number of instances of a particular data entity that logically relate to an instance of another entity. Possibilities are
+one-to-one, one-to-many, and many-to-many.
+change control board (CCB) The group of people responsible for deciding to accept or reject proposed changes on a software project, including changes in requirements.
+class A description of a set of objects having common properties and behaviors, which typically correspond to real-world items (persons, places, or things) in the business or problem domain.
+class diagram An analysis model that shows a set of system or problem domain classes, their interfaces, and their relationships.
+ 
+constraint A restriction that is imposed on the choices available to the developer for the design and construction of a product. Other types of constraints can restrict the options available to project managers. Business rules often impose constraints on business operations and hence on software systems.
+context diagram An analysis model that depicts a system at a high level of abstraction. The context diagram identifies objects outside the system that exchange data with the system, but it shows nothing about the system’s internal structure or behavior.
+COTS (commercial off-the-shelf) product A software package purchased from a vendor and either used as a self-contained solution to a problem or integrated, customized, and/or extended to satisfy customer needs.
+CRUD matrix A table that correlates system actions with data entities to show where each data item is created, read, updated, and deleted.
+customer An individual or organization that derives either direct or indirect benefit from a product. Software customers might request, pay for, select, specify, use, or receive the output generated by a software product.
+dashboard report A screen display or
+printed report that uses multiple textual and/or graphical representations of data to provide a consolidated, multidimensional view of what is going on in an organization or a process.
+data dictionary A collection of definitions for the data elements and data structures that are relevant to the problem domain.
+data flow diagram An analysis model that depicts the processes, data stores, external entities, and flows among them that characterize the behavior of data flowing through business processes or software systems.
+decision rule An agreed-upon way by which a
+body of people arrives at a decision.
+decision table An analysis model in the form of a matrix that shows all combinations of values for a set of conditions and indicates the expected system action in response to each combination.
+ 
+decision tree An analysis model that visually depicts the actions a system takes in response to specific combinations of a set of conditions.
+dependency As used in requirements specification, a reliance that a project has on a factor, event, or group outside its control.
+dialog map An analysis model that depicts a user interface architecture, showing the dialog elements with which the user can interact and the navigations permitted between them.
+ecosystem map An analysis model that shows a set of systems that interact with each other and the nature of their relationships. Unlike a context diagram, an ecosystem map shows systems that have a relationship even if there is no direct interface between them.
+elicitation, requirements The process of identifying requirements from various sources through interviews, workshops, focus groups, observations, document analysis, and other mechanisms.
+embedded system A system that contains hardware components controlled by software running on a dedicated computer that is incorporated as part of a larger product.
+entity An item in the business domain about
+which data is collected and stored.
+entity-relationship diagram An analysis model that identifies the logical relationships between pairs of entities. Used for modeling data.
+epic A user story on an agile project that is too large to implement in one development iteration. It is subdivided into smaller stories that each can be fully implemented in a single iteration.
+event A trigger or stimulus that takes place in a system’s environment that leads to a system response, such as a functional behavior or a change in state.
+event-response table A list of the external or time-triggered events that could affect the
+system and a description of how the system is to
+respond to each event.
+evolutionary prototype A fully functional prototype created as a skeleton or an initial increment of the final product, which is fleshed
+ 
+out and extended incrementally as requirements
+become clear and ready for implementation.
+exception A condition that can prevent a use case from concluding successfully. Unless some recovery mechanism is possible, the use case’s postconditions are not reached and the actor’s goal is not achieved.
+extend relationship A construct in which an alternative flow in a use case branches off from the normal flow into a separate extension use case.
+external entity An object in a context diagram or a data flow diagram that represents a user class, actor, software system, or hardware device that is external to the system being described but interfaces to it in some fashion. Also called a terminator.
+

@@ -1,0 +1,236 @@
+﻿TABLE 21-1 Valuable requirements techniques for enhancement and replacement projects
+
+Technique	Why it’s relevant
+Create a feature tree to show
+changes	■	Show features being added.
+■	Identify features from the existing system that won’t be in the new system.
+Identify user classes	■	Assess who is affected by the changes.
+■	Identify new user classes whose needs must be met.
+Understand business
+processes	■	Understand how the current system is intertwined with stakeholders’ daily jobs and the impacts of it changing.
+■	Define new business processes that might need to be created to align with new features or a replacement system.
+Document business rules	■	Record business rules that are currently embedded in code.
+■	Look for new business rules that need to be honored.
+■	Redesign the system to better handle volatile business rules that were expen-
+sive to maintain.
+Create use cases or user
+stories	■	Understand what users must be able to do with the system.
+■	Understand how users expect new features to work.
+■	Prioritize functionality for the new system.
+Create a context diagram	■	Identify and document external entities.
+■	Extend existing interfaces to support new features.
+■	Identify current interfaces that might need to be changed.
+Create an ecosystem map	■	Look for other affected systems.
+■	Look for new, modified, and obsolete interfaces between systems.
+Create a dialog map	■	See how new screens fit into the existing user interface.
+■	Show how the workflow screen navigation will change.
+Create data models	■	Verify that the existing data model is sufficient or extend it for new features.
+■	Verify that all of the data entities and attributes are still needed.
+■	Consider what data has to be migrated, converted, corrected, archived, or discarded.
+Specify quality attributes	■	Ensure that the new system is designed to fulfill quality expectations.
+■	Improve satisfaction of quality attributes over the existing system.
+Create report tables	■	Convert existing reports that are still needed.
+■	Define new reports that aren’t in the old system.
+Build prototypes	■	Engage users in the redevelopment process.
+■	Prototype major enhancements if there are uncertainties.
+Inspect requirements
+specifications	■	Identify broken links in the traceability chain.
+■	Determine if any previous requirements are obsolete or unnecessary in the replacement system.
+Enhancement projects provide an opportunity to try new requirements methods in a small-scale and low-risk way. The pressure to get the next release out might make you think that you don’t have time to experiment with requirements techniques, but enhancement projects let you tackle the learning curve in bite-sized chunks. When the next big project comes along, you’ll have some experience and confidence in better requirements practices.
+Suppose that a customer requests that a new feature be added to a mature product. If you haven’t worked with user stories before, explore the new feature from the user-story perspective, discussing with the requester the tasks that users will perform with that feature. Practicing on this project reduces the risk compared to applying user stories for the first time on a green-field project, when your skill might mean the difference between success and high-profile failure.
+ 
+Prioritizing by using business objectives
+Enhancement projects are undertaken to add new capabilities to an existing application. It’s easy to get caught up in the excitement and start adding unnecessary capabilities. To combat this risk of gold-plating, trace requirements back to business objectives to ensure that the new features are
+needed and to select the highest-impact features to implement first. You also might need to prioritize enhancement requests against the correction of defects that had been reported against the old system.
+Also be wary of letting unnecessary new functionality slip into replacement projects. The main focus of replacement projects is to migrate existing functionality. However, customers might imagine that if you are developing a new system anyway, it is easy to add lots of new capabilities right away. Many replacement projects have collapsed because of the weight of uncontrolled scope growth.
+You’re usually better off building a stable first release and adding more features through subsequent enhancement projects, provided the first release allows users to do their jobs.
+Replacement projects often originate when stakeholders want to add functionality to an existing system that is too inflexible to support the growth or has technology limitations. However, there needs to be a clear business objective to justify implementing an expensive new system (Devine 2008). Use the anticipated cost savings from a new system (such as through reduced maintenance of an old, clunky system) plus the value of the new desired functionality to justify a system replacement project.
+Also look for existing functionality that doesn’t need to be retained in a replacement system. Don’t replicate the existing system’s shortcomings or miss an opportunity to update a system to suit new business needs and processes. For example, the BA might ask users, “Do you use <a particular menu option>?” If you consistently hear “I never do that,” then maybe it isn’t needed in the replacement system. Look for usage data that shows what screens, functions, or data entities are rarely accessed
+in the current system. Even the existing functionality has to map to current and anticipated business objectives to warrant re-implementing it in the new system.
+
+
+Mind the gap
+A	is a comparison of functionality between an existing system and a desired new system.
+A gap analysis can be expressed in different ways, including use cases, user stories, or features. When enhancing an existing system, perform a gap analysis to make sure you understand why it isn’t currently meeting your business objectives.
+Gap analysis for a replacement project entails understanding existing functionality and discovering the desired new functionality (see Figure 21-1). Identify user requirements for the existing system that stakeholders want to have re-implemented in the new system. Also, elicit new user requirements that the existing system does not address. Consider any change requests that were never implemented
+ 
+in the existing system. Prioritize the existing user requirements and the new ones together. Prioritize closing the gaps using business objectives as described in the previous section or the other prioritization techniques presented in Chapter 16, “First things first: Setting requirement priorities.”
+
+FIGURE 21-1 When you are replacing an existing system, some requirements will be implemented unchanged,
+some will be modified, some will be discarded, and some new requirements might be added.
+
+
+Maintaining performance levels
+Existing systems set user expectations for performance and throughput. Stakeholders almost always have key performance indicators (KPIs) for existing processes that they will want to maintain in the new system. A key performance indicator model (KPIM) can help you identify and specify these metrics for their corresponding business processes (Beatty and Chen 2012). The KPIM helps
+stakeholders see that even if the new system will be different, their business outcomes will be at least
+as good as before.
+Unless you explicitly plan to maintain them, performance levels can be compromised as systems are enhanced. Stuffing new functionality into an existing system might slow it down. One data synchronization tool had a requirement to update a master data set from the day’s transactions.
+It needed to run every 24 hours. In the initial release of the tool, the synchronization started at midnight and took about one hour to execute. After some enhancements to include additional attributes, merging, and synchronicity checks, the synchronization took 20 hours to execute. This was a problem, because users expected to have fully synchronized data from the night before available when they started their workday at 8:00 A.M. The maximum time to complete the synchronization was never explicitly specified, but the stakeholders assumed it could be done overnight in less than eight hours.
+For replacement systems, prioritize the KPIs that are most important to maintain. Look for the business processes that trace to the most important KPIs and the requirements that enable those business processes; these are the requirements to implement first. For instance, if you’re replacing a loan application system in which loan processors can enter 10 loans per day, it might be important to maintain at least that same throughput in the new system. The functionality that allows loan processers to enter loans should be some of the earliest implemented in the new system, so the loan processors can maintain their productivity.
+ 
+When
+Most older systems do not have documented—let alone accurate—requirements. In the absence of reliable documentation, teams might reverse-engineer an understanding of what the system does from the user interfaces, code, and database. We think of this as “software archaeology.” To maximize the benefit from reverse engineering, the archaeology expedition should record what it learns in
+the form of requirements and design descriptions. Accumulating accurate information about certain portions of the current system positions the team to enhance a system with low risk, to replace a system without missing critical functionality, and to perform future enhancements efficiently. It halts the knowledge drain, so future maintainers better understand the changes that were just made.
+If updating the requirements is overly burdensome, it will fall by the wayside as busy people rush on to the next change request. Obsolete requirements aren’t helpful for future enhancements. There’s a widespread fear in the software industry that writing documentation will consume too much time; the knee-jerk reaction is to neglect all opportunities to update requirements documentation. But what’s the cost if you don’t update the requirements and a future maintainer (perhaps you!) has to regenerate that information? The answer to this question will let you make a thoughtful business decision concerning whether to revise the requirements documentation when you change or
+re-create the software.
+When the team performs additional enhancements and maintenance over time, it can extend these fractional knowledge representations, steadily improving the system documentation. The incremental cost of recording this newly found knowledge is small compared with the cost of someone having to rediscover it later on. Implementing enhancements almost always necessitates further requirements development, so add those new requirements to an existing requirements repository, if there is one. If you’re replacing an old system, you have an opportunity to document the requirements for the new one and to keep the requirements up to date with what you learn throughout the project. Try to leave the requirements in better shape than you found them.
+
+Which requirements should you specify?
+It’s not always worth taking the time to generate a complete set of requirements for an entire production system. Many options lie between the two extremes of continuing forever with no requirements documentation and reconstructing a perfect requirements set. Knowing why you’d like to have written requirements available lets you judge whether the cost of rebuilding all—or even part—of the specification is a sound investment.
+Perhaps your current system is a shapeless mass of history and mystery like the one in Figure 21-2.
+Imagine that you’ve been asked to implement some new functionality in region A in this figure. Begin by recording the new requirements in a structured SRS or in a requirements management tool.
+When you add the new functionality, you’ll have to figure out how it interfaces to or fits in with the existing system. The bridges in Figure 21-2 between region A and your current system represent these interfaces. This analysis provides insight into the white portion of the current system, region B. In addition to the requirements for region A, this insight is the new knowledge you need to capture.
+ 
+ 
+FIGURE 21-2 Adding enhancement A to an ill-documented existing system provides some visibility into the
+B area.
+
+Rarely do you need to document the entire existing system. Focus detailed requirements efforts on the changes needed to meet the business objectives. If you’re replacing a system, start by documenting the areas prioritized as most important to achieve the business objectives or those that pose the highest implementation risk. Any new requirements identified during the gap analysis will need to be specified at the same level of precision and using the same techniques as you would for a new system.
+
+One of the biggest challenges is determining the appropriate level of detail at which to document requirements gleaned from the existing system. For enhancements, defining requirements for the new functionality alone might be sufficient. However, you will usually benefit from documenting all of the functionality that closely relates to the enhancement, to ensure that the change fits in seamlessly (region B in Figure 21-2). You might want to create business processes, user requirements, and/or functional requirements for those related areas. For example, let’s say you are adding a discount code feature to an existing shopping cart function, but you don’t have any documented requirements for the shopping cart. You might be tempted to write just a single user story: “As a customer, I need to be able to enter a discount code so I can get the cheapest price for the product.” However, this user story alone lacks context, so consider capturing other user stories about shopping cart operations. That information could be valuable the next time you need to modify the shopping cart function.
+I worked with one team that was just beginning to develop the requirements for version 2 of a major product with embedded software. They hadn’t done a good job on the requirements for
+version 1, which was currently being implemented. The lead BA wondered, “Is it worth going back to improve the SRS for version 1?” The company anticipated that this product line would be a major revenue generator for at least 10 years. They also planned to reuse some of the core requirements in several spin-off products. In this case, it made sense to improve the requirements documentation
+for version 1 because it was the foundation for all subsequent development work in this product line. Had they been working on version 5.3 of a well-worn system that they expected to retire within a year, reconstructing a comprehensive set of requirements wouldn’t have been a wise investment.
+ 
+Trace Data
+Requirements trace data for existing systems will help the enhancement developer determine which components she might have to modify because of a change in a specific requirement. In an ideal world, when you’re replacing a system, the existing system would have a full set of functional requirements such that you could establish traceability between the old and new systems to
+avoid overlooking any requirements. However, a poorly documented old system won’t have trace information available, and establishing rigorous traceability for both existing and new systems is time consuming.
+As with any new development, it’s a good practice to create a traceability matrix to link the new or changed requirements to the corresponding design elements, code, and test cases. Accumulating trace links as you perform the development work takes little effort, whereas it’s a great deal of work to regenerate the links from a completed system. For replacement systems, perform requirements tracing at a high level: make a list of features and user stories for the existing system and prioritize to determine which of those will be implemented in the new system. See Chapter 29, “Links in the requirements chain,” for more information on tracing requirements.
+
+How to discover the requirements of an existing system
+In enhancement and replacement projects, even if you don’t have existing documentation, you do have a system to work from to discover the relevant requirements. During enhancement projects, consider drawing a dialog map for the new screens you have to add, showing the navigation connections to and from existing display elements. You might write use cases or user stories that span the new and existing functionality.
+In replacement system projects, you need to understand all of the desired functionality, just as you do on any new development project. Study the user interface of the existing system to identify candidate functionality for the new system. Examine existing system interfaces to determine what data is exchanged between systems today. Understand how users use the current system. If no one understands the functionality and business rules behind the user interface, someone will need to look at the code or database to understand what’s going on. Analyze any documentation that does exist—design documents, help screens, user manuals, training materials—to identify requirements.
+You might not need to specify functional requirements for the existing system at all, instead creating models to fill the information void. Swimlane diagrams can describe how users do their jobs with the system today. Context diagrams, data flow diagrams, and entity-relationship diagrams are also useful. You might create user requirements, specifying them only at a high level without filling in all of the details. Another way to begin closing the information gap is to create data dictionary
+entries when you add new data elements to the system and modify existing definitions. The test suite might be useful as an initial source of information to recover the software requirements, because tests represent an alternative view of requirements.
+ 
+ 	 
+
+Encouraging new system adoption
+You’re bound to
+. Introducing a new feature that will make users’ jobs easier is a good thing. But users are accustomed to how the system works today, and you plan to modify that, which is not so good from the user’s point of view. The issue is even bigger when you’re replacing a system, because now you’re changing more than just a bit of functionality. You’re potentially changing the entire application’s look and feel, its menus, the operating environment, and possibly the user’s whole job. If you're a business analyst, project manager, or project sponsor, you have to anticipate the resistance and plan how you will overcome it, so the users will accept the new features or system.
+An existing, established system is probably stable, fully integrated with surrounding systems, and well understood by users. A new system with all the same functionality might be none of these upon its initial release. Users might fear that the new system will disrupt their normal operations while they learn how to use it. Even worse, it might not support their current operations. Users might even be afraid of losing their jobs if the system automates tasks they perform manually today. It’s not uncommon to hear users say that they will accept the new system only if it does everything the old system does—even if they don’t personally use all of that functionality at present.
+To mitigate the risk of user resistance, you first need to understand the business objectives and the user requirements. If either of these misses the mark, you will lose the users’ trust quickly. During elicitation, focus on the benefits the new system or each feature will provide to the users. Help them understand the value of the proposed change to the organization as a whole. Keep in mind—even with enhancements—that just because something is new doesn’t mean it will make the user’s job easier. A poorly designed user interface can even make the system harder to use because the old features are harder to find, lost amidst a clutter of new options, or more cumbersome to access.
+ 
+Our organization recently upgraded our document-repository tool to a new version to give us access to additional features and a more stable operating environment. During beta testing, I
+discovered that simple, common tasks such as checking out and downloading a file are now harder. In the previous version, you could check out a file in two clicks, but now it takes three or four, depending on the navigation path you choose. If our executive stakeholders thought these user interface changes were a big risk to user acceptance, they could invest in developing custom functionality to mimic the old system. Showing prototypes to users can help them get used to the new system or new features and reveal likely adoption issues early in the project.
+One caveat with system replacements is that the key performance indicators for certain groups might be negatively affected, even if the system replacement provides a benefit for the organization as a whole. Let users know as soon as possible about features they might be losing or quality attributes that might degrade, so they can start to prepare for it. System adoption can involve as much emotion as logic, so expectation management is critical to lay the foundation for a successful rollout.
+When you are migrating from an existing system, transition requirements are also important. Transition requirements describe the capabilities that the whole solution—not just the software application—must have to enable moving from the existing system to the new system (IIBA 2009). They can encompass data conversions, user training, organizational and business process changes, and the need to run both old and new systems in parallel for a period of time. Think about everything that will be required for stakeholders to comfortably and efficiently transition to the new way
+of working. Understanding transition requirements is part of assessing readiness and managing organizational change (IIBA 2009).
+
+Can we iterate?
+Enhancement projects are incremental by definition. Project teams can often adopt agile methods readily, by prioritizing enhancements using a product backlog as described in Chapter 20, “Agile projects.” However, replacement projects do not always lend themselves to incremental delivery because you need a critical mass of functionality in the new application before users can begin using it to do their jobs. It’s not practical for them to use the new system to do a small portion of their job and then have to go back to the old system to perform other functions. However, big-bang migrations are also challenging and unrealistic. It’s difficult to replace in a single step an established system that has matured over many years and numerous releases.
+One approach to implementing a replacement system incrementally is to identify functionality that can be isolated and begin by building just those pieces. We once helped a customer team to replace their current fulfillment system with a new custom-developed system. Inventory manage- ment represented about 10 percent of the total functionality of the entire fulfillment system. For the most part, the people who managed inventory were separate from the people who managed other parts of the fulfillment process. The initial strategy was to move just the inventory management
+ 
+functionality to a new system of its own. This was ideal functionality to isolate for the first release because it affected just a subset of users, who then would primarily work only in the new system. The one downside side to the approach is that a new software interface had to be developed so that the
+new inventory system could pass data to	.
+We had no requirements documentation for the existing system. But retaining the original system and turning off its inventory management piece provided a clear boundary for the requirements effort. We primarily wrote use cases and functional requirements for the new inventory system, based on the most important functions of the existing system. We created an entity-relationship diagram and a data dictionary. We drew a context diagram for the entire existing fulfillment system to understand integration points that might be relevant when we split inventory out of it. Then we created a new context diagram to show how inventory management would exist as an external system that interacts with the truncated fulfillment system.
+ 
+Not all e
+to overcome the two biggest challenges:
+ 
+cts will be this clean. Most of them will struggle
+
+ 
+. However, using the techniques
+ 
+described in this chapter can help you actively mitigate these risks.
+ 
+
+ 
+C HA P T E R 2 2
+Packaged solution projects
+
+Some organizations acquire and adapt purchased packaged solutions (also called commercial off-the- shelf, or COTS, products) to meet their software needs, instead of building new systems from scratch. Software as a service (SaaS), or cloud, solutions are becoming increasingly available to meet software needs as well. Whether you’re purchasing a package as part or all of the solution for a new project or implementing a solution in the cloud, you still need requirements. Requirements let you evaluate
+solution candidates so that you can select the most appropriate package, and then they let you adapt
+the package to meet your needs.
+As Figure 22-1 shows, COTS packages typically need to be configured, integrated, and extended to work in the target environment. Some COTS products can be deployed out of the box with no additional work needed to make them usable. Most, though, require some customization. This could take the form of configuring the default product, creating integrations to other systems, and/or developing extensions to provide additional functionality that is not included in the COTS package. These activities all demand requirements.
+
+FIGURE 22-1 COTS packages can be configured, integrated into the existing application environment, and/or extended with new functionality.
+
+
+405
+ 
+This chapter discusses requirements for selecting and implementing packaged solutions. We do not distinguish between COTS and SaaS projects due to the similarity of the requirements activities involved. The decision to implement a packaged solution instead of custom developing a system is a matter of evaluating the cost-effectiveness of the two options and lies outside the scope of this
+book. If you’re building a packaged solution to sell, the other chapters in the book are more relevant because those projects involve custom software development.
+This chapter describes several ways to approach requirements definition when you plan to acquire a commercial package to meet your needs. We also provide suggestions for how to develop requirements to implement the packaged solution in your operating environment.
+
+Requirements
+COTS packages offer the acquiring organization less flexibility to meet requirements than custom (sometimes called bespoke) development does. You need to know which requested capabilities aren’t negotiable and which you can adjust to fit within the package’s constraints. The only way to choose the right packaged solution is to understand the business activities the package must let the users perform. Selecting packaged solutions entails identifying your requirements for the software, at least at a high level. The level of detail and effort you should put into specifying requirements
+for COTS selection depends on the expected package costs, the evaluation timeline, and the number of candidate solutions. Compare buying personal finance management software to buying a multimillion-dollar financial application for a 5,000-person company. You might only name the most important use cases in the first scenario, but write full use cases and develop data and quality requirements for a more extensive evaluation in the second.
+One team needed to select packaged software to run a law office. They identified 20 tasks that users needed to perform using the software, which led to 10 features to be assessed while evaluating 4 candidate packages. The law partners knew they would have to create more detailed requirements to configure the software after they chose a package. However, a lightweight evaluation was appropriate for the package selection. In contrast, a team of 50 people worked together to
+develop detailed requirements for software to run a new semiconductor plant. There were only three candidate solutions to evaluate, but given the expected cost of the COTS software and its implementation, the company was willing to invest a lot in the selection process. They spent six months on the package selection alone.
+
+Developing user requirements
+Any package you choose must let users accomplish their task objectives, although different packaged solutions will do so in different ways. The majority of your requirements efforts for COTS acquisition should be focused at the user requirements level. Use cases and user stories work well for this purpose. Process models can also be used and might already exist in the organization. There’s little point in specifying detailed functional requirements or designing a user interface, because the vendor (presumably) already did that.
+ 
+It can also be helpful to list the features you need from the packaged solution. Identify the desired product features from an understanding of what users need to achieve with the solution and the business processes the package must enable. Suppose you have the following user story: “As a Research Manager, I need to review and approve new experiments before they are performed so that we don’t waste time and supplies on poorly designed experiments.” This user story helps identify the need for an approval workflow feature.
+No packaged solution is likely to accommodate every use case you identify, so prioritize the user requirements or features. Trace them back to business requirements so you don’t waste time on unnecessary evaluation criteria. Distinguish capabilities that must be available on day one from those that can wait for future extensions and those that your users can live without, perhaps forever.
+
+Considering business rules
+Your requirements exploration should identify pertinent business rules to which the COTS product must conform. Can you configure the package to comply with your corporate policies, industry standards, and relevant regulations? How easily can you modify the configured package when these rules change? Focus on the most important business rules, because it can be time consuming to evaluate the implementation of all of the pertinent rules.
+Some packages incorporate widely applicable business rules, such as income tax withholding computations or printed tax forms. Do you trust that these are implemented correctly? Will the package vendor provide you with timely software updates when those rules and computations change? Will they charge you for the updates? Will the vendor supply a list of the business rules the package implements? If the product implements any intrinsic business rules that don’t apply to you, can you disable, modify, or work around them? Does the vendor accept enhancement requests? If so, how are they prioritized?
+
+You might need to define the data structures required to satisfy your user requirements and business rules, particularly if the new solution must be integrated into an ecosystem of existing applications. Look for major disconnects between your data model and the package vendor’s data model. Do not be distracted by data entities and attributes that are simply named differently in the COTS solution. Instead, recognize where entities or their attributes don’t exist in the packaged solution or have significantly different definitions from what you need, and then determine whether those entities can be handled in a different way for the solution to work.
+Specify the reports that the COTS product must generate. Does it generate mandated reports in To what extent will the product let you customize its standard reports? Can you
+design new reports of your own to integrate with those that the vendor supplied?
+ 
+Defining quality requirements
+The quality attributes discussed in Chapter 14, “Beyond functionality,” are another vital aspect of user requirements that feeds into packaged solution selection. Explore at least the following attributes:
+■	Performance What maximum response times are acceptable for specific operations? Can the package handle the anticipated load of concurrent users and transaction throughput?
+■	Usability Does the package conform to any established user interface conventions? Is the interface similar to what the users experience in other applications already? How easily can your users learn to use the new package? Is training provided by the vendor included as part of the package’s cost?
+■	Modifiability How hard will it be for your developers to modify or extend the package to meet your specific needs? Does the package provide appropriate “hooks” (connection and extension points) and application programming interfaces for adding extensions? Will all those extensions stay in place when you install a new version of the package?
+■	Interoperability How easily can you integrate the package with your other enterprise applications? Does it use standard data interchange formats? Will it force you to upgrade any other third-party tools or infrastructure components because it doesn’t handle backward compatibility?
+■	Integrity Does the package safeguard data from loss, corruption, or unauthorized access?
+■	Security Does the package permit control over which users are allowed to access the system or use specific functions? Can you define the necessary user privilege levels? Particularly for SaaS solutions, evaluate the service level agreements very carefully against your requirements.
+
+Evaluating solutions
+. Do some initial market research to determine which packages are viable candidates deserving further consideration. Then you can use the requirements you identified as evaluation criteria in an informed COTS software selection process.
+One evaluation approach includes the following sequence of activities (Lawlis et al. 2001):
+1.	Weight your requirements on a scale of 1 to 10 to distinguish their importance.
+2.	Rate each candidate package as to how well it satisfies each requirement. Use a rating of 1 for full satisfaction, 0.5 for partial satisfaction, and 0 for no coverage. You can find the information to make this assessment from product literature, a vendor’s response to a request for proposal (RFP), or direct examination of the product. Ke
+ow you intend to use the product.
+Direct examination is necessary for high-priority requirements.
+3.	Calculate the score for each candidate based on the weight you gave each factor, to see which products appear to best fit your needs.
+ 
+4.	Evaluate product cost, vendor experience and viability, vendor support for the product, external interfaces that will enable extension and integration, and compliance with any technology requirements or constraints for your environment. Cost will be a selection factor, but evaluate the candidates initially without considering their cost.
+You might consider which requirements are not met by any of the candidate packages and will require you to develop extensions. These can add significant costs to the COTS implementation and should be considered in the evaluation process.
+Recently, my organization wanted to select a requirements management tool that—among other capabilities—allowed users to work offline and synchronize to the master version of the requirements when the users went back online (Beatty and Ferrari 2011). We suspected that no tools on the market would offer a good solution for this. We included this capability in our evaluation to ensure that we uncovered any solutions that did offer it. If we didn’t find one, we would know that it was a capability we’d have to implement as an extension to the selected package. Alternatively, we’d need to change our process for editing requirements.
+Another evaluation approach is to determine whether—and how well—the package will let the users perform their tasks by deriving tests from the high-priority use cases. Include tests that explore how the system handles significant exception conditions that might arise. Walk through those tests to see how the candidate packages handle them. A similar approach is to run the COTS product through a suite of scenarios that represent the expected usage patterns, which is called an operational profile (Musa 1999).
+
+The output of the evaluation process is typically an evaluation matrix with the selection requirements in the rows and various solutions’ scores for each of those requirements in the columns. Figure 22-2 shows part of a sample evaluation matrix for a requirements management tool.
+ 
+ 
+
+FIGURE 22-2 A sample of a packaged solution evaluation matrix for a requirements management tool.
+
+
+Multi-stage evaluation
+When I wrote the requirements for selecting a requirements management tool for our own consulting teams to use, I worked with the teams to identify the user classes and use cases for the tool. Although the primary users were business analysts, there were also a few use cases for managers, developers, and customers. I defined use cases by name and used my familiarity with the use cases to identify desired features. I created a traceability matrix to minimize the likelihood that any use cases or features would be missed.
+We started with 200 features and 60 vendor choices, which were far too many for our evaluation timeline. We did a first-pass evaluation to eliminate most of the candidate tools. Our first pass considered only 30 features that we deemed the most important or most likely to distinguish tools from one another. This initial evaluation narrowed our search to
+16 tool choices. Then we evaluated those 16 against the full set of 200 features. This detailed second-level evaluation resulted in a list of five closely ranked tools, all of which would clearly meet our needs.
+In addition to an objective analysis, it's a good idea to evaluate candidate packages by using a real project, not just the tutorial project that comes with the product. We ended up adding
+a third level of evaluation to actually try each of those five tools on real projects so we could see which one most closely reflected the evaluation scores in practice. The third phase of the evaluation allowed us to select our favorite tool from the high-scoring ones.
+ 
+Requirements for implementing packaged solutions
+Af
+ 
+s specification and software development for extensions. Table 22-1 describes these four types of COTS package implementations, which are not mutually exclusive. Any of these implementations might also require making infrastructure changes in the operating environment, such as upgrading operating systems or other software components that interact with the package.
+
+FIGURE 22-3 A spectrum of implementation effort for packaged solutions.
+
+TABLE 22-1 COTS package implementation approaches
+
+Type of COTS implementation	Description
+Out-of-the-box	Install the software and use it as is.
+Configured	Adjust settings in the software to suit your needs without writing new code.
+Integrated	Connect the package to existing systems in your application ecosystem; usually requires some custom code.
+Extended	Develop additional functionality with custom code to enhance the package’s capabilities to close needs gaps.
+One advantage of purchasing a COTS solution is that it might provide useful capabilities that you hadn’t originally sought. You typically select the package based on what you know you need. However, during implementation, you might discover valuable features that you hadn’t even thought of. This can change the amount of work needed to install the package to exploit the additional features.
+
+Configuration requirements
+ 
+Sometimes
+ 
+ou’ll need to
+. Configuration
+ 

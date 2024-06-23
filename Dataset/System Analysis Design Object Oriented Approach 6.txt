@@ -1,0 +1,673 @@
+﻿Symptoms	Possible root causes	Possible solutions
+■	Requirements management tools
+are underutilized.	■	Inadequate training in tool
+capabilities.
+■	Processes and culture haven’t been
+modified to take full advantage of tools.
+■	No one is responsible for leading the use of the tool.
+■	Amount of time needed to configure, learn how to use, and employ the tool is underestimated.	■	Send some BAs to a tool vendor
+training class.
+■	Establish a tool advocate to administer the tool and mentor other tool users.
+■	Identify and address the process and culture issues that impede full exploitation of the tool.
+
+Product issues
+Certain problems with the products you build indicate that improved requirements practices might be advisable.
+
+Symptoms	Possible root causes	Possible solutions
+■	Dissatisfied customers.
+■	Customers reject the product.
+■	Poor product reviews.
+■	Low sales, loss of market share.
+■	Excessive number of enhancement requests received.	■	Inadequate user involvement in
+requirements development.
+■	Unrealistic customer expectations.
+■	Mismatch between customer’s and developer’s perception of specific requirements.
+■	Insufficient market research.
+■	Poor problem definition.
+■	Necessary changes are not incorporated during development.
+■	Developers implemented what they thought they should, not what the requirements specified.	■	Define user classes.
+■	Identify product champions.
+■	Convene focus groups.
+■	Use collaborative requirements elicitation approaches.
+■	Build prototypes and have users
+evaluate them.
+■	Have customer representatives review requirements.
+■	Use incremental and iterative development methods to adapt to customer needs.
+■	Product doesn’t achieve business
+objectives.	■	Lack of clear, accurate business requirements, including business objectives and success metrics.	■	Develop business requirements with key stakeholders.
+■	Understand which success metrics are important to the project’s business stakeholders.
+■	Communicate business objectives to other stakeholders to achieve alignment.
+
+Planning issues
+The symptoms listed in this section suggest that the ways in which requirements and project planning intertwine are not being handled optimally.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Requirements are incomplete.
+■	Requirements are insufficiently detailed.
+■	Construction begins before the requirements for a development iteration or enhancement cycle are sufficiently understood.	■	Inadequate user involvement in
+requirements development.
+■	Insufficient time spent on requirements development.
+■	Release date set before
+requirements are understood.
+■	Key marketing or business stakeholders are not engaged in the requirements process.
+■	Management or customers don’t understand the need for requirements.
+■	BAs and developers don’t agree on what constitutes adequate requirements.
+■	Requirements tracing is not used
+to identify gaps.
+■	Too many open requirements issues.	■	Don’t commit to a delivery schedule before requirements are sufficiently understood.
+■	On an agile project, expect to cut scope or add iterations as precision in the requirements develops.
+■	Involve developers early in the project to ensure that they understand requirements.
+■	Define business requirements, especially scope, carefully.
+■	Educate stakeholders about the risks of hasty construction.
+■	Build a collaborative relationship between BAs, developers, and customers to set realistic goals.
+■	Use incremental development approaches to begin delivering customer value quickly.
+■	Have developers review requirements before they begin implementing them.
+■	Trace functional requirements to business requirements and user requirements to look for missing requirements.
+■	Manage and track requirements
+issue status.
+■	Schedule is cut after project starts but scope is not reduced.	■	Stakeholders don’t understand the impact of reduced time on achievable project scope.	■	Build a collaborative relationship between project management and customers to set realistic goals.
+■	Negotiate trade-offs when project constraints change.
+■	Use better estimation techniques.
+■	Some necessary and planned requirements work isn’t performed.
+■	Multiple people perform the same
+requirements activities.	■	Unclear roles and responsibilities for requirements activities.
+■	Requirements tasks are not
+incorporated into project plans.
+■	No one has responsibility for managing requirements.	■	Define roles and responsibilities for requirements activities on each project.
+■	Commit the resources needed for effective requirements development and management.
+■	Build requirements activities and deliverables into project plans and schedules.
+■	More requirements are planned than can be implemented with available time and resources.	■	Schedule is set before
+requirements are defined.
+■	Project is committed to before scope is accurately assessed.
+■	Scope growth is uncontrolled.
+■	The learning curve for unfamiliar technologies or tools isn’t taken into account.
+■	Insufficient staff is allocated to project.
+■	Stakeholders are afraid they will
+have only one release opportunity.	■	Document vision and scope, aligned with business objectives, before making commitments.
+■	Derive development schedule from requirements.
+■	Plan for multiple delivery cycles to accommodate lower-priority requirements.
+■	Incorporate training time and
+learning curve time in schedule.
+■	Prioritize requirements based on business objectives.
+■	Timebox the development or deliver product features incrementally.
+■	Adjust priorities dynamically as project realities dictate.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Undocumented or poorly defined scope.
+■	Releases or iterations are poorly
+planned.	■	Unclear business objectives.
+■	Haste to begin construction.
+■	Lack of understanding of the importance of scope definition.
+■	Lack of agreement on scope among stakeholders.
+■	Volatile market or rapidly
+changing business needs.	■	Don’t begin a project without clear business objectives.
+■	Write a vision and scope document and obtain buy-in from key stakeholders.
+■	Postpone or cancel the project if sponsorship and scope definition are not achieved.
+■	Use shorter development iterations to adapt to rapidly changing requirements.
+
+Communication issues
+Many problems, including those in the following table, arise because of ineffective communication
+among project stakeholders.
+
+Symptoms	Possible root causes	Possible solutions
+■	Duplication of effort as multiple people implement the same requirement.	■	Responsibilities for implementing
+requirements are not clear.
+■	Inadequate communication among subgroups working on the project.	■	Define clear roles and responsibilities for software implementation.
+■	Provide visible status tracking of
+individual requirements.
+■	Introduce more effective communication techniques and practices among team members.
+■	Revisiting decisions made
+previously.	■	Lack of clear recognition and empowerment of appropriate decision makers.
+■	Failure to record how and why decisions are made.	■	Identify the project’s requirements decision makers and define their decision-making process.
+■	Identify and empower product
+champions.
+■	Document why requirements were added, rejected, deferred, or canceled.
+■	Requirements questions and issues
+are not resolved.	■	Lack of coordination of questions and issues that arise about requirements.
+■	Responsibilities for resolving issues
+are not clear.
+■	No one is responsible for tracking issues and their status.
+■	Team is unable to obtain necessary information from a vendor, client, contractor, or other stakeholder.	■	Assign each open issue to an
+individual for resolution.
+■	Use an issue-tracking tool for tracking requirements issues to closure.
+■	Monitor open issues as part of
+project tracking.
+■	Obtain commitment from all stakeholders early on for open and timely information exchange and for answering questions and resolving issues.
+■	Project participants don’t share the same vocabulary.	■	Assuming that everyone has the same and the correct interpretation of key terms.	■	Define terms in a glossary.
+■	Define data structures and elements in a data dictionary.
+■	Train development team in the business domain.
+■	Train user representatives in requirements engineering.
+ 
+Elicitation issues
+Many symptoms suggest that those team members who are engaged in requirements elicitation are
+not performing as well as they could be.
+
+Symptoms	Possible root causes	Possible solutions
+■	The team can’t get customer representatives to participate in elicitation.
+■	Developers make many guesses about what to implement.
+■	Developers have to resolve requirements questions that arise.	■	Customer representatives don’t have time to participate in requirements development.
+■	Customers don’t understand the need to participate.
+■	Customers don’t know what BAs need from them.
+■	Customers aren’t committed to the project.
+■	Customers think that developers should already know what the customers need.
+■	BAs don’t know who the
+customers are.
+■	BAs don’t have access to actual
+users.
+■	Resistance to following a requirements development process.
+■	No BA is dedicated to the project.	■	Educate customers and managers about requirements and the need for their participation.
+■	Describe the risks from insufficient user involvement to customers and managers.
+■	Build a collaborative relationship between development teams and their customers.
+■	Define user classes or market segments.
+■	Identify a product champion for
+each user class.
+■	Obtain development and customer management commitment to an effective requirements process.
+■	Define clear roles and responsibilities.
+■	Hold regular customer meetings with defined agendas.
+■	Wrong user representatives are
+involved.	■	Managers, the marketing team, or other surrogates do not speak accurately for end users.
+■	Managers don’t make qualified actual users available to work with BAs.	■	Define user classes.
+■	Identify and empower appropriate
+and effective product champions.
+■	Develop user personas as stand-ins for real users.
+■	Decline requirement requests from unauthorized or inappropriate sources.
+■	Users are unsure about their needs.	■	Users don’t understand or can’t describe their business process well.
+■	System is being built to support a new, incompletely defined business process.
+■	Users aren’t committed to the project, perhaps are threatened by it.
+■	Business objectives are not well defined or communicated.	■	Clarify the intended outcomes of a successful project for the stakeholders affected by it.
+■	Identify product champions or
+product owners.
+■	Model the user’s business process.
+■	Develop an elicitation plan to define requirements sources and select appropriate elicitation techniques.
+■	Compile a list of generic questions as a starting point for elicitation activities.
+■	Develop use cases or user stories.
+■	Build prototypes and have users
+evaluate them.
+■	Use incremental development to clarify requirements a bit at a time.
+■	Project manager or business analyst doesn’t know who the users are.	■	Ill-defined product vision.
+■	Poorly understood marketplace
+needs.	■	Create a product vision statement.
+■	Perform sufficient market research.
+■	Identify users of current or
+competing products.
+■	Establish focus groups.
+■	Create user personas.
+■	Use an organization chart to look for likely users.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Too many people are involved in requirements elicitation.	■	Everyone wants to be represented for political reasons.
+■	User classes aren’t clearly defined.
+■	Lack of delegation to specific user representatives.
+■	There really are a lot of different user classes.	■	Define user classes.
+■	Identify product champions or
+product owners.
+■	Identify requirements decision
+makers.
+■	Distinguish political priorities from business and technical priorities.
+■	Focus on the needs of favored user classes.
+■	Implemented “requirements” don’t meet user needs.
+■	Requirements are overconstrained.	■	Requirements contain unnecessary
+or premature design constraints.
+■	Solutions are presented as needs, and requirements have to be deduced from the presented solutions.
+■	New software must conform to existing application standards and user interface constraints.
+■	Customers don’t know what information constitutes “the requirements.”
+■	Requirements discussions focus on
+user interface design.	■	Ask “why” several times to understand the real user needs behind the presented
+requirements and the rationale
+behind design constraints.
+■	Understand user requirements before addressing user interface specifics.
+■	Develop skilled BAs who can ask the right questions and elicit true needs.
+■	Educate customers about requirements development.
+■	Document business rules and constraints.
+■	Needed requirements are missed.	■	Users don’t know what they need.
+■	BA didn’t ask the right questions.
+■	Insufficient time was provided for elicitation.
+■	Some user classes aren’t
+represented.
+■	Appropriate, knowledgeable user representatives did not participate in elicitation.
+■	Elicitation participants make incorrect assumptions.
+■	Insufficient communication between developers and customers.
+■	Users don’t express their implicit and assumed requirements.	■	Develop skilled BAs who can ask the right questions.
+■	Elicit use cases or user stories.
+■	Use multiple elicitation techniques.
+■	Represent requirements in multiple ways, emphasizing visual models, to look for gaps.
+■	Conduct requirements reviews. Use multiple, incremental reviews.
+■	Analyze requirements by using a CRUD matrix.
+■	Build prototypes and have users
+evaluate them.
+■	Build the product incrementally and incorporate new requirements in later iterations.
+■	Create and use a requirements traceability matrix to find missing requirements.
+■	Requirements specified are incorrect or inappropriate.	■	The wrong user representatives or inappropriate surrogates are involved.
+■	User representatives speak for themselves, not for those they represent.
+■	Managers do not provide access to
+user representatives.
+■	Business requirements are not
+clearly established.
+■	User and functional requirements are not aligned with business objectives.	■	Determine what was wrong with the flawed requirements and why they were specified.
+■	Define user classes.
+■	Identify appropriate product champions, educate them, and empower them.
+■	Have a multifunctional team review requirements.
+■	Communicate the risks of inaccurate requirements to high-authority stakeholders.
+■	Explain the importance of good user representation to high-level stakeholders.
+ 
+Analysis issues
+The symptoms described in the following table indicate that more effective requirements analysis is advisable.
+
+Symptoms	Possible root causes	Possible solutions
+■	Unnecessary requirements are specified.
+■	Unexpected functionality becomes apparent during testing.
+■	Functionality is specified and built, but not used.	■	Ineffective requirement approval
+process.
+■	Developers incorporate functionality without input from users.
+■	Users request complex solutions instead of expressing business needs.
+■	Elicitation focuses on system functions instead of user goals.
+■	Developers and customers interpret requirements differently.
+■	Requirements don’t trace back to
+business objectives.	■	Record the origin and rationale for
+each requirement.
+■	Employ use cases to focus on the users’ business objectives. Derive functional requirements from the use cases or user stories.
+■	Prioritize requirements to deliver high-value functionality early.
+■	Have a multifunctional team review requirements.
+■	Testers aren’t able to write good tests from requirements.	■	Requirements are ambiguous, incomplete, or lack sufficient detail.	■	Have testers review requirements early on for verifiability and other quality issues.
+■	All requirements seem to be
+equally important.
+■	All requirements have high
+priority.
+■	BAs can’t make informed trade-off decisions when new requirements appear.	■	Fear that low-priority requirements will never be implemented.
+■	Insufficient or evolving knowledge about the business and its needs.
+■	Information on the value and cost of requirements is not known, communicated, or discussed.
+■	The product isn’t usable unless a large, critical set of functionality is implemented.
+■	Unreasonable customer or developer expectations.
+■	Only customers provide input regarding priorities.	■	Develop a collaborative process for prioritizing requirements to balance customer value against implementation cost and technical risk.
+■	Prioritize requirements early.
+■	Develop detailed specifications of high-priority requirements.
+■	Use incremental development or staged releases to deliver maximum value as early as possible.
+■	Dynamically adjust the priorities of requirements remaining in the backlog.
+■	Changing requirements priorities.	■	Decision makers are not identified or empowered.
+■	Internal political pressure.
+■	Unclear business objectives, or lack of agreement on business objectives.
+■	External forces, such as regulatory or legislative issues.
+■	Requirements and their priorities are not agreed to by the appropriate people.	■	Document the project’s business objectives, scope, and priorities.
+■	Align requirements priorities to
+business objectives.
+■	Identify and empower
+requirements decision makers.
+■	Track the impact of changes in terms of cost, revenue, and schedule slippage.
+■	Use incremental development and dynamically adjust the priorities of requirements remaining in the backlog.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Conflicting requirements priorities among stakeholders.	■	Different user classes have conflicting needs.
+■	Lack of focus on the original product vision, or the vision evolves during the project.
+■	Unclear business objectives, or lack of agreement on business objectives.
+■	Changing business objectives.
+■	It’s not clear who the requirements
+decision makers are.	■	Perform sufficient market research.
+■	Establish and communicate business objectives.
+■	Base priorities on vision, scope,
+and business objectives.
+■	Identify favored user classes or
+market segments.
+■	Identify product champions to
+represent different user classes.
+■	Identify and empower
+requirements decision makers.
+■	Rapid descoping late in the
+project.	■	Unrealistic optimism about developer productivity.
+■	Insufficient early and ongoing prioritization.
+■	Not relying on priorities to define implementation sequence and to make controlled scope changes.	■	Define priorities early on.
+■	Use priorities to guide decisions about what to work on now and what to defer.
+■	Reprioritize when new requirements are incorporated.
+■	Adjust scope periodically, not just late in the project.
+■	Use incremental development or staged releases to stay focused on delivering customer value.
+■	Developers find requirements vague and ambiguous.
+■	Developers have to track down missing information.
+■	Developers misunderstand requirements and have to rework their implementations.	■	BAs and customers don’t understand the level of requirements detail developers need.
+■	Customers don’t know what they need or can’t articulate it clearly.
+■	Insufficient time is spent on elicitation.
+■	Business rules aren’t identified, communicated, or understood.
+■	Requirements contain vague and
+ambiguous words.
+■	Stakeholders interpret terms, concepts, and data definitions differently.
+■	Customers assume that developers already know enough about the business domain and their needs.	■	Train BAs in writing good requirements.
+■	Avoid using subjective, ambiguous words in requirements specifications.
+■	Have developers and customers review requirements early for clarity and appropriate detail.
+■	Model requirements to find missing information and enhance details.
+■	Build prototypes and have users
+evaluate them.
+■	Refine requirements in progressive levels of detail.
+■	Document business rules.
+■	Define terms in a glossary.
+■	Define data items in a data dictionary.
+■	Facilitate effective communication among all project participants.
+■	Some requirements aren’t
+technically feasible.	■	Requirements are not analyzed sufficiently.
+■	Customers don’t accept feasibility analysis results.
+■	Lack of understanding of the limitations of tools, technologies, and the operating environment.	■	Perform feasibility analysis.
+■	Create proof-of-concept prototypes.
+■	Have a developer participate in elicitation.
+■	Have developers review requirements for feasibility.
+■	Conduct a separate research or exploratory mini-project or pilot to assess feasibility.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Requirements from different
+sources or user classes conflict.
+■	Difficulty in reaching agreement on requirements among stakeholders.	■	Lack of shared product vision.
+■	Requirements decision makers are
+not identified.
+■	Business processes are not understood in the same way by different stakeholders.
+■	Politics drive requirements input.
+■	Diverse users or market segments have differing needs, expectations, and objectives.
+■	Product isn’t sufficiently focused on a specific target market.
+■	Some user groups already have a useful system in place that they’re attached to.	■	Develop, approve, and communicate a unified set of business requirements.
+■	Understand target market segments and user classes.
+■	Identify favored user classes to
+resolve conflicts.
+■	Identify product champions to resolve conflicts within each user class.
+■	Identify and empower
+requirements decision makers.
+■	Focus on shared business interests instead of emotional and political positions.
+■	Requirements contain TBDs, information gaps, and open issues.	■	No one is assigned to resolve TBDs or open issues before requirements are baselined.
+■	No time is available to resolve TBDs or open issues before beginning implementation.	■	Review requirements to identify
+information gaps.
+■	Assign responsibility for resolving each TBD or open issue to an individual.
+■	Prioritize TBDs to be resolved if time is tight.
+■	Track each TBD or open issue to closure before baselining a set of requirements.
+■	BAs spend too much time on
+requirements analysis.	■	Reluctance to proceed until the requirements are “perfect” (analysis paralysis).
+■	An intent to develop a complete specification rather than one that is good enough.
+■	Inappropriate selection of analysis
+techniques for the project.	■	Focus analysis and modeling on the complex, novel, or uncertain portions of the requirements.
+■	Use peer reviews to judge when requirements are good enough for development to proceed at acceptable risk.
+
+Specification issues
+The symptoms in the following table indicate shortcomings in the way that requirements are being specified for the project.
+
+Symptoms	Possible root causes	Possible solutions
+■	Requirements are not
+documented.
+■	Developers create the requirements.
+■	Customers provide requirements details to developers verbally.
+■	Developers do a lot of exploratory programming as they try to figure out what customers want.	■	No one is sure what to build.
+■	Insufficient time is provided to elicit and document requirements.
+■	There’s a perception that writing requirements slows down the project.
+■	Individuals responsible for specification aren’t clearly identified and committed.
+■	No defined requirements development process or templates in place.
+■	Development management doesn’t value and expect requirements specifications.
+■	Developers think they know what customers need.	■	Point out risks of inadequately
+specified requirements.
+■	Define and follow a requirements development process.
+■	Establish team role definitions, and obtain commitment from individuals to perform their roles.
+■	Train other team members and customers in the requirements process.
+■	Build requirements effort, resources, tasks, and deliverables into project plans and schedules.
+■	Have standard templates and good examples of requirements specifications available to share.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Stakeholders assume that functionality in the existing system will be replicated in a new system.	■	Requirements for a new system are specified as deltas from a poorly documented existing system.
+■	Business objectives aren’t clear.	■	Reverse engineer the existing system to understand its full capabilities.
+■	Write a requirements specification that includes all the desired functionality for the new system.
+■	Build as-is and to-be process models so that stakeholders are clear on what the future system will and won’t do.
+■	Don’t replicate old functionality that might not be needed.
+■	Requirements documentation doesn’t accurately describe the system.	■	Changes made during development are not incorporated into requirements documentation.	■	Follow a change control process that includes updating requirements when changes are accepted.
+■	Pass all change requests through
+the change control board.
+■	Have key stakeholders review modified requirements.
+■	Different, conflicting versions of the requirements exist.	■	Poor version control practices.
+■	Multiple “master” copies of requirements documents.
+■	Requirements are maintained separately in a tool and in documents; people aren’t sure which is the definitive source.	■	Define and follow good version control practices for requirements documents.
+■	Store requirements in a
+requirements management tool.
+■	Assign a requirements manager to be responsible for making changes to requirements.
+
+Validation issues
+It’s difficult to know for sure if the requirements you’ve developed will in fact achieve the intended business objectives. The symptoms in this section are indicative of requirements validation shortcomings.
+
+Symptoms	Possible root causes	Possible solutions
+■	Product doesn’t achieve business objectives or meet user expectations.
+■	Customers have unstated, assumed, or implicit requirements that weren’t satisfied.	■	Customers didn’t accurately present their needs.
+■	Market or business needs changed and mechanisms were not in place to revise requirements accordingly.
+■	The BA didn’t ask the right questions.
+■	Inadequate customer participation
+in requirements development.
+■	Wrong customer representatives involved, such as surrogates who don’t represent the real users’ real needs.
+■	Market needs were not accurately assessed, especially for innovative products with uncertain requirements.
+■	Project participants made incorrect assumptions.	■	Perform market research to understand market segments and their needs.
+■	Engage product champions representing each user class throughout the duration of the project.
+■	Train BAs in how to elicit requirements.
+■	Develop use cases to make sure business tasks are understood.
+■	Have customers participate in requirements reviews.
+■	Build prototypes and have users
+evaluate them.
+■	Have users write acceptance tests and acceptance criteria.
+■	Establish effective change mechanisms to allow requirements to adapt to business realities.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Product does not achieve performance goals or satisfy other quality expectations that users have.	■	Quality attribute requirements
+were not elicited and specified.
+■	Stakeholders don’t understand nonfunctional requirements and their importance.
+■	The requirements template or tool being used doesn’t have sections for nonfunctional requirements.
+■	Users don’t state their assumptions about the system’s quality characteristics.
+■	Quality attributes weren’t specified precisely enough to give all stakeholders the same understanding.	■	Educate BAs and customers about nonfunctional requirements and how to specify them.
+■	Have BAs explore nonfunctional requirements during elicitation.
+■	Use an SRS template that includes sections for nonfunctional requirements.
+■	Use Planguage to specify quality attributes precisely.
+
+Requirements management issues
+One sign that requirements are not being managed well is that not all of the intended requirements are implemented.
+
+Symptoms	Possible root causes	Possible solutions
+■	Some planned requirements were
+not implemented.	■	SRS was not well organized or well written.
+■	Individual requirements were not
+discretely identified and labeled.
+■	Developers didn’t follow the SRS.
+■	SRS was not communicated to
+everyone.
+■	Changes were not communicated to all those affected.
+■	Requirements were inadvertently overlooked during implementation.
+■	Responsibilities for implementing
+requirements were not assigned.
+■	The status of individual requirements was not tracked accurately.	■	Keep requirements current and make them available to the whole team.
+■	Make sure the change control process includes communication to stakeholders.
+■	Store requirements in a
+requirements management tool.
+■	Track the status of individual requirements.
+■	Create and use a requirements traceability matrix.
+■	Define clear responsibilities for software construction.
+■	Train BAs in writing clear, concise requirements.
+ 
+Change management issues
+There are many indicators that a software project is not handling change requests well, several of which are itemized in the following table.
+
+Symptoms	Possible root causes	Possible solutions
+■	Requirements change frequently.
+■	Many requirements changes are made late in the development cycle.
+■	Changes cause missed delivery targets.	■	Customers aren’t sure what they need.
+■	Changing business processes or market demands.
+■	Not all the right people were involved in eliciting and approving the requirements.
+■	Requirements weren’t adequately
+defined initially.
+■	Requirements baseline wasn’t
+defined or agreed to.
+■	External sources, such as the government or political issues, dictate changes.
+■	The initial requirements contained many solution ideas, which did not satisfy the real needs.
+■	Market needs weren’t well
+understood.	■	Improve requirements elicitation
+practices.
+■	Implement and follow a change
+control process.
+■	Establish a change control board to make decisions on proposed changes.
+■	Perform impact analysis before
+accepting changes.
+■	Have stakeholders review requirements before baselining them.
+■	Design software for high modifiability to accommodate change.
+■	Include contingency buffers in the project schedule to accommodate some change.
+■	Use incremental development approaches to respond quickly to changing requirements.
+■	Protect the schedule and negotiate to deliver reduced scope, planning a follow-on release.
+■	New requirements are added frequently.
+■	Increased scope causes missed
+delivery targets.	■	Requirements elicitation was
+incomplete.
+■	Insufficient customer participation in requirements development.
+■	Business needs or environment are
+changing rapidly.
+■	Business domain is not well
+understood.
+■	Stakeholders don’t understand or
+respect project scope.
+■	Management, marketing, or customers demand new features without considering their impact on the project.	■	Improve requirements elicitation
+practices.
+■	Define and communicate scope.
+■	Have the right people make explicit business decisions to change scope.
+■	Perform root cause analysis to see where new requirements come from and why.
+■	Perform change impact analysis before accepting new requirements.
+■	Ensure that all user classes have provided input.
+■	Include contingency buffers in the project schedule to accommodate some growth.
+■	Use incremental development approaches to respond quickly to new requirements.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Requirements move in and out of
+scope.	■	Vision and scope are not clearly
+defined.
+■	Business objectives are not clearly understood and communicated.
+■	Scope is volatile, perhaps in response to changing market demands.
+■	Requirements priorities are poorly
+defined.
+■	Decision makers don’t agree on project scope.	■	Clearly define the business objectives, vision, and scope.
+■	Use the scope statement to decide whether proposed requirements are in or out of scope.
+■	Record the rationale for rejecting a proposed requirement.
+■	Ensure that the change control board has the appropriate members and a shared understanding of project scope.
+■	Use incremental development to adapt flexibly to a changing scope boundary.
+■	Focus on implementing the stable requirements.
+■	Scope definition changes after development is underway.	■	Poorly defined, poorly understood, or changing business objectives.
+■	Market segments and market
+needs aren’t well understood.
+■	Competing products become available.
+■	Key stakeholders did not review
+and approve requirements.
+■	Changes in key stakeholders partway through the project.	■	Define business objectives and align vision and scope with them.
+■	Identify decision-making stakeholders at the business requirements level.
+■	Have decision makers review the vision and scope document.
+■	Follow a change control process to incorporate changes.
+■	Renegotiate schedules, resources, and commitments when project direction changes.
+■	People don’t know the scope or
+understand scope changes.	■	Requirements changes aren’t communicated to all affected stakeholders.
+■	Requirements specifications aren’t updated when requirements change.
+■	Customers request changes directly from developers.
+■	Not everyone has ready access to the requirements documentation.
+■	Informal communication pathways
+exclude some project participants.
+■	It’s not clear who needs to be
+informed of changes.
+■	No established change control process.
+■	Lack of understanding of interrelationships between requirements.	■	Define an owner for each requirement.
+■	Define trace links between requirements and other artifacts.
+■	Include all affected areas in
+requirements communications.
+■	Establish a change control process that includes the communication mechanisms.
+■	Handle all requirements changes through the change control process.
+■	Use a requirements management tool to make current requirements available to stakeholders.
+■	Improve collaboration and communication among project participants and other stakeholders.
+■	Proposed requirements changes
+are lost.
+■	The status of each change request isn’t known.	■	Ineffective or undefined change control process.
+■	Change control process isn’t followed.	■	Adopt a practical, effective change control process and educate stakeholders about it.
+■	Assign responsibilities for performing the change control process steps.
+■	Ensure that the change control process is followed.
+■	Use requirements management tools to track changes and track each requirement’s status.
+ 
+Symptoms	Possible root causes	Possible solutions
+■	Stakeholders bypass the change
+control process.
+■	Customers request changes directly from developers.	■	Change control process isn’t practical and effective.
+■	Change control board is ineffective.
+■	Stakeholders don’t understand or
+accept the change control process.
+■	Management doesn’t require that the change control process be followed.	■	Ensure that the change control process is pragmatic, effective, efficient, and accessible to all stakeholders.
+■	Make the change control process flexible in how it handles small versus large changes.
+■	Establish and charter an appropriate change control board.
+■	Enlist management to commit to and champion the change control process.
+■	Enforce a policy that requirements changes are made only through the change control process.
+■	Requirements changes take much
+more effort than planned.
+■	Changes affect more system components than expected.
+■	Changes conflict with other requirements.
+■	Changes degrade system quality.	■	Insufficient impact analysis of proposed requirements changes.
+■	Developers underestimate the impact of requirements changes.
+■	The wrong people make decisions to accept changes.
+■	Team members are afraid to be honest about the impact of proposed changes.
+■	Change requests do not provide enough information to permit good impact analysis.	■	Adopt a change impact analysis
+procedure and checklist.
+■	Incorporate impact analysis into
+the change control process.
+■	Use requirements trace information to evaluate the impact of proposed changes.
+■	Communicate changes to all affected stakeholders.
+■	Renegotiate project commitments as needed and make necessary trade-offs when changes are proposed. Sample requirements documents
+
+This appendix illustrates some of the requirements documents and diagrams described in this book, using a hypothetical project called the Cafeteria Ordering System (COS). This appendix includes:
+■	A vision and scope document.
+■	A list of use cases and several use case specifications, showing different degrees of detail.
+■	A portion of a software requirements specification.
+■	Several partial analysis models, including a feature tree, context diagram, entity-relationship
+diagram, and state-transition diagram.
+■	A partial data dictionary.
+■	Several business rules.
+Because this is just an example, these deliverables aren’t intended to be complete. Instead, they
+are meant to illustrate how the v
+
+   
+
+ 
+and usability of the requirements information are the essential objectives. The examples conform to
+us chapters. Because this is a small project, some template sections have been combined. Every project should consider how to adapt the organization’s standard templates to best suit the size and nature of the project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+575
+ 
+Vision and Scope Document
+
+1.	Business Requirements
+1.1	Background
+Employees at the company Process Impact presently spend an average of 65 minutes per day going to the cafeteria to select, purchase, and eat lunch. About 20 minutes of this time is spent walking to and from the cafeteria, selecting their meals, and paying by cash or credit card. When employees go out for lunch, they spend an average of 90 minutes off-site. Some employees phone the cafeteria in advance to order a meal to be ready for them to pick up. Employees don’t always get the selections they want because the cafeteria runs out of certain items. The cafeteria wastes a significant quantity of food that is not purchased and must be thrown away. These same issues apply to breakfast and supper, although far fewer employees use the cafeteria for those meals than for lunch.
+
+1.2	Business Opportunity
+Many employees have requested a system that would permit a cafeteria user to order meals (defined as a set of one or more food items selected from the cafeteria menu) online, to be picked up at the cafeteria or delivered to a company location at a specified time and date. Such a system would save employees time, and it would increase their chance of getting the items they prefer. Knowing what food items customers want in advance would reduce waste in the cafeteria and would improve the efficiency of cafeteria staff. The future ability for employees to order meals for delivery from local restaurants would make a wide range of choices available to employees and provide the possibility of cost savings through volume discount agreements with the restaurants.
+
+1.3	Business Objectives
+BO-1: Reduce the cost of cafeteria food wastage by 40% within 6 months following initial release.
+[This example shows the use of Planguage to precisely state a business objective.]
+Scale: Cost of food thrown away each week by cafeteria staff Meter: Examination of Cafeteria Inventory System logs
+Past: 33% (2013, initial study) Goal: Less than 20%
+Stretch: Less than 15%
+BO-2: Reduce cafeteria operating costs by 15% within 12 months following initial release.
+BO-3: Increase average effective work time by 15 minutes per cafeteria-using employee per day within 6 months following initial release.
+ 
+1.4	Success Metrics
+SM-1: 75% of employees who used the cafeteria at least 3 times per week during Q3 2013 use the COS at least once a week within 6 months following initial release.
+SM-2: The average rating on the quarterly cafeteria satisfaction survey increases by 0.5 on a scale of 1 to 6 from the Q3 2013 rating within 3 months following initial release and by 1.0 within 12 months.
+
+1.5	
+For employees who want to order meals from the company cafeteria or from local restaurants online, the Cafeteria Ordering System is an Internet-based and smartphone-enabled application that will accept individual or group meal orders, process payments, and trigger delivery of the prepared meals to a designated location on the Process Impact campus. Unlike the current telephone and manual ordering processes, employees who use the Cafeteria Ordering System will not have to go to the cafeteria to get their meals, which will save them time and will increase the food choices available to them.
+
+RI-1: The Cafeteria Employees Union might require that their contract be renegotiated to reflect the new employee roles and cafeteria hours of operation. (Probability = 0.6; Impact = 3)
+RI-2: Too few employees might use the system, reducing the return on investment from the system development and the changes in cafeteria operating procedures. (Probability = 0.3; Impact = 9)
+RI-3: Local restaurants might not agree to offer delivery, which would reduce employee satisfaction with the system and possibly their usage of it. (Probability = 0.3; Impact = 3)
+RI-4: Sufficient delivery capacity might not be available, which means that employees might not always receive their meals on time and could not always request delivery for the desired times. (Probability = 0.5; Impact = 6)
+
+1.7 Business Assumptions and Dependencies
+AS-1: Systems with appropriate user interfaces will be available for cafeteria employees to process the
+expected volume of meals ordered.
+AS-2: Cafeteria staff and vehicles will be available to deliver all meals for specified delivery time slots within 15 minutes of the requested delivery time.
+DE-1: If a restaurant has its own online ordering system, the Cafeteria Ordering System must be able to communicate with it bidirectionally.

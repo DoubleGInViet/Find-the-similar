@@ -1,0 +1,634 @@
+﻿database performance. Whenever there are performance problems, the fi rst place to look is 
+an index.
+A query can use an index to fi nd the locations of only those records that are included in 
+the query answer, and a table can have an unlimited number of indexes. Figure 9-18 shows 
+an index that orders records by payment type. A query that searches for all the customers 
+who used American Express can use this index to fi nd the locations of the records that con tain American Express as the payment type without having to scan the entire Order table.
+Order
+ Order Cust Payment
+ Number Date ID Amount Tax Total Type
+ 234 11/23/00 2242 $ 90.00 $5.85 $ 95.85 MC
+ 235 11/23/00 9500 $ 12.00 $0.60 $ 12.60 VISA
+ 236 11/23/00 1556 $ 50.00 $2.50 $ 52.50 VISA
+ 237 11/23/00 2242 $ 75.00 $4.88 $ 79.88 AMEX
+ 238 11/23/00 2242 $ 60.00 $3.90 $ 63.90 MC
+ 239 11/23/00 1035 $ 90.00 $4.50 $ 94.50 AMEX
+ 240 11/23/00 9501 $ 50.00 $2.50 $ 52.50 VISA
+ 241 11/23/00 1123 $ 120.00 $9.60 $ 129.60 MC
+ 242 11/24/00 9500 $ 60.00 $3.00 $ 63.00 VISA
+ 243 11/24/00 4254 $ 90.00 $4.50 $ 94.50 VISA
+ 244 11/24/00 9500 $ 24.00 $1.20 $ 25.20 VISA
+ 245 11/24/00 2242 $ 12.00 $0.78 $ 12.78 AMEX
+ 246 11/24/00 4254 $ 20.00 $1.00 $ 21.00 MC
+ 247 11/24/00 2241 $ 50.00 $2.50 $ 52.50 VISA
+ 248 11/24/00 4254 $ 12.00 $0.60 $ 12.60 AMEX
+ 249 11/24/00 5927 $ 50.00 $2.50 $ 52.50 AMEX
+ 250 11/24/00 2242 $ 12.00 $0.78 $ 12.78 MC
+ 251 11/24/00 9500 $ 15.00 $0.75 $ 15.75 MC
+ 252 11/24/00 2242 $ 132.00 $8.58 $ 140.58 MC
+ 253 11/24/00 2242 $ 72.00 $4.68 $ 76.68 AMEX
+Payment Type Index
+ Payment 
+ Type Pointer
+ AMEX *
+ AMEX *
+ AMEX *
+ AMEX *
+ AMEX *
+ AMEX *
+ MC *
+ MC *
+ MC *
+ MC *
+ MC *
+ MC *
+ MC *
+ VISA *
+ VISA *
+ VISA *
+ VISA *
+ VISA *
+ VISA *
+ VISA *
+ VISA *
+FIGURE 9-18  Payment Type Index
+Optimizing RDBMS-Based Object Storage  355
+356 Chapter 9 Data Management Layer Design
+Project teams can make indexes perform even faster by placing them into the main 
+memory of the data storage hardware. Retrieving information directly from memory is 
+much faster than retrieving it from a hard disk—Th ink about how much faster it is to 
+retrieve a memorized phone number versus one that must be looked up in a phone book. 
+Similarly, when a database has an index in memory, it can locate records very, very quickly.
+Of course, indexes require overhead in that they take up space on the storage medium. 
+Also, they need to be updated as records in tables are inserted, deleted, or changed. Th us, 
+although indexes lead to faster access to the data, they slow down the update process. In 
+general, we should create indexes sparingly for transaction systems or systems that require a 
+lot of updates, but we should apply indexes generously when designing systems for decision 
+support (see Figure 9-19).
+Estimating Data Storage Size
+Even if we have denormalized our physical data model, clustered records, and created indexes 
+appropriately, the system will perform poorly if the database server cannot handle its vol ume of data. Th erefore, one last way to plan for good performance is to apply volumetrics,
+which means estimating the amount of data that the hardware will need to support. You can 
+incorporate your estimates into the database server hardware specifi cation to make sure that 
+the database hardware is suffi cient for the project’s needs. Th e size of the database is based 
+on the amount of raw data in the tables and the overhead requirements of the DBMS. To 
+estimate size, you will need to have a good understanding of the initial size of your database 
+as well as its expected growth rate over time.
+Raw data refers to all the data that are stored within the tables of the database, and it is 
+calculated based on a bottom-up approach. First, write down the estimated average width 
+for each column (fi eld) in the table and sum the 
+values for a total record size (see Figure 9-20). For 
+example, if a variable-width Last Name column is 
+assigned a width of 20 characters, you can enter 13 
+as the average character width of the column. In 
+Figure 9-20, the estimated record size is 49.
+Next, calculate the overhead for the table as 
+a percentage of each record. Overhead includes 
+the room needed by the DBMS to support such 
+functions as administrative actions and indexes, 
+and it should be assigned based on past experience, 
+recommendations from technology vendors, or 
+parameters that are built into soft ware that was 
+written to calculate volumetrics. For example, your 
+DBMS vendor might recommend that you allocate 
+30 percent of the records’ raw data size for over head storage space, creating a total record size of 
+63.7 in the Figure 9-20 example Customer
+-Cust ID (PK) : unsigned long
+-Last Name : String
+-First Name : String
+Order
+-Order Number (PK) : unsigned long
+-Date : Date
+-State (FK) : String
+-Cust ID (FK) : unsigned long
+-Customer Last Name : String
+1..1 1..*
+Last name is now in both classes
+Optimizing RDBMS-Based Object Storage  353
+354 Chapter 9 Data Management Layer Design
+If queries regarding orders continuously require customer information, the most popular cus tomer fi elds can be placed in Order to reduce the required joins to the Customer table, as was 
+done with Customer Last Name.
+Clustering Speed of access also is infl uenced by the way that the data are retrieved. Th ink 
+about shopping in a grocery store. If you have a list of items to buy but you are unfamiliar 
+with the store’s layout, you need to walk down every aisle to make sure that you don’t miss 
+anything from your list. Likewise, if records are arranged in no particular order (or in an 
+order that is irrelevant to your data needs), then any query of the records results in a table 
+scan in which the DBMS has to access every row in the table before retrieving the result set. 
+Table scans are the most ineffi cient of data retrieval methods.
+One way to improve access speed is to reduce the number of times that the storage 
+medium needs to be accessed during a transaction. One method is to cluster records together 
+physically so that similar records are stored close together. With intrafi le clustering, like 
+records in the table are stored together in some way, such as in order by primary key or, in 
+the case of a grocery store, by item type. Th us, whenever a query looks for records, it can go 
+directly to the right spot on the disk (or other storage medium) because it knows in what 
+order the records are stored, just as we can walk directly to the bread aisle to pick up a loaf 
+of bread. Interfi le clustering combines records from more than one table that typically are 
+Shipment
+-Shipment ID (PK) : unsigned long
+-Shipment Street Address : String
+-Shipment City : String
+-Shipment State : String
+-Shipment Zip Code : String
+-Shipment Method : String
+Order
+-Order: Number (PK) : unsigned long
+-Date : Date
+-State (FK) : String
+-Cust ID (FK) : unsigned long
+-Customer Last Name : String
+-Payment Type (FK) : unsigned long
+-Payment Description : String
+-Shipment ID (FK) : unsigned long
+-Shipment State : String
+-Shipment Method : String
+Order
+-Order : Number (PK) : unsigned long
+-Date : Date
+-State (FK) : String
+-Cust ID (FK) : unsigned long
+-Customer Last Name : String
+-Payment Type (FK) : unsigned long
+-Payment Description : String
+1..1 1..1
+1..1 0..*
+Notice that the payment description field
+appears in both Payment Type and Order.
+(a)
+Notice that the shipment state and shipment method
+are included in both Shipment and Order.
+(b)
+Payment Type
+-Payment Type (PK) : String
+-Payment Description : String
+FIGURE 9-17
+Denormalization 
+Situations (FK, foreign 
+key; PK, primary key)
+retrieved together. For example, if customer information is usually accessed with the related 
+order information, then the records from the two tables may be physically stored in a way 
+that preserves the customer-order relationship. Returning to the grocery store scenario, an 
+interfi le cluster would be similar to storing peanut butter, jelly, and bread next to each other 
+in the same aisle because they are usually purchased together, not because they are similar 
+types of items. Of course, each table can have only one clustering strategy because the records 
+can be arranged physically in only one way.
+Indexing A familiar time saver is an index located in the back of a textbook, which points 
+directly to the page or pages that contain a topic of interest. Th ink of how long it would take 
+to fi nd all the times that relational database appears in this textbook without the index to rely 
+on! An index in data storage is like an index in the back of a textbook; it is a minitable that 
+contains values from one or more columns in a table and the location of the values within the 
+table. Instead of paging through the entire textbook, we can move directly to the right pages roduct
+-Product Number : unsigned long
+-Product Desc : String
+1..1 0..* -Price : double
+0..* 1..*
+Sample Records:
+Customer Table
+ Cust Last First 
+ ID Name Name
+ 1035 Black John
+ 1123 Williams Mary
+ 2242 DeBerry Ann
+ 4254 Bailey Ryan
+ 9500 Chin April
+Product Table
+ Product Product Product 
+Number Desc Price
+ 111 Wine Guide $15.00
+ 222 Bottle Opener $12.00
+ 333 Jams & Jellies $20.00
+ 444 Wine Gift Pack $60.00
+ 555 Cheese Tray $45.00
+Product Order Table
+ Order Product Product 
+Number Number Qty
+ 239 555 2
+ 260 444 1
+ 273 222 1
+ 241 444 2
+ 262 222 2
+ 287 222 2
+ 290 555 3
+ 234 555 2
+ 237 111 1
+ 237 444 1
+ 238 444 1
+ 245 222 1
+ 250 222 1
+ 252 222 1
+ 252 444 2
+ 253 222 1
+ 253 444 1
+ 297 333 2
+ 243 555 2
+ 246 333 3
+ 248 222 1
+ 248 333 2
+ 248 111 1
+ 235 222 1
+ 242 333 3
+ 244 222 2
+ 251 111 2
+Order Table
+ Order Cust 
+Number Date ID State
+ 239 11/23/00 1035 MD
+ 260 11/24/00 1035 MD
+ 273 11/27/00 1035 MD
+ 241 11/23/00 1123 CA
+ 262 11/24/00 1123 CA
+ 287 11/27/00 1123 CA
+ 290 11/30/00 1123 CA
+ 234 11/23/00 2242 DC
+ 237 11/23/00 2242 DC
+ 238 11/23/00 2242 DC
+ 245 11/24/00 2242 DC
+ 250 11/24/00 2242 DC
+ 252 11/24/00 2242 DC
+ 253 11/24/00 2242 DC
+ 297 11/30/00 2242 DC
+ 243 11/24/00 4254 MD
+ 246 11/24/00 4254 MD
+ 248 11/24/00 4254 MD
+ 235 11/23/00 9500 KS
+ 242 11/23/00 9500 KS
+ 244 11/24/00 9500 KS
+ 251 11/24/00 9500 KS
+Note: Order Number will 
+serve as part of the 
+primary key of Product
+Order.
+Note: Order Number also 
+will serve as a foreign key 
+in Product Order.
+Note: Product Number
+will serve as part of the 
+primary key in Product
+Order.
+Note: Product Number
+also will serve as a foreign
+key in Product Order.
+Note: Product Number will 
+serve as part of the primary 
+key of Product Order.
+Note: Order Number will serve 
+as the primary key of Order.
+Note: Cust ID will serve as a 
+foreign key in Order.
+Note: Cust ID will serve 
+as the primary key of 
+Customer.
+Product Desc and Price 
+was moved to the Product
+table to eliminate
+redundancy
+Last Name and First 
+Name was moved 
+to the Customer
+table to eliminate
+redundancy
+Tax
+Rate
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.05
+0.08
+0.08
+0.08
+0.08
+0.065
+0.065
+0.065
+0.065
+0.065
+0.065
+0.065
+0.065
+FIGURE 9-14  2NF Partial Dependencies Removed
+Customer
+-Cust ID : unsigned long
+-Last Name : String
+-First Name : String
+State
+-State : String
+-Tax Rate : float
+Order
+-Order Number : unsigned long
+-Date : Date
+-Cust ID : unsigned long
+-State : String
+Product Order
+-Order Number : unsigned long
+-Product Number : unsigned long
+-Qty : unsigned long
+Product
+-Product Number : unsigned long (idl)
+-Product Desc : String
+1..1 -Price : double
+0..*
+1..1
+0..*
+0..* 1..*
+FIGURE 9-15  3NF Normalized Field
+Second, one-to-one relationships are good candidates for denormalization. Although log ically two tables should be separated, from a practical standpoint the information from both 
+tables may regularly be accessed together. Th ink about an order and its shipping information. 
+Logically, it might make sense to separate the attributes related to shipping into a separate 
+table, but as a result the queries regarding shipping will probably always need a join to the 
+Order table. If the project team fi nds that certain shipping information, such as state and ship ping method, is needed when orders are accessed, they may decide to combine the tables or 
+include some shipping attributes in the Order table (see Figure 9-17b).
+Th ird, at times it is more effi cient to include a parent entity’s attributes in its child entity on 
+the physical data model. For example, consider the Customer and Order tables in Figure 9-16, 
+which share a one-to-many relationship, with Customer as the parent and Order as the child. 
+FIGURE 9-16
+Denormalized 
+Physical Data Model
+and get the information we need. Indexes are one of the most important ways to improveInterface Actions Th e template also specifi es the navigation and command language style 
+(e.g., menus) and grammar (e.g., object-action order; see the navigation design section later 
+in this chapter). It gives names to the most commonly used interface actions in the navigation 
+design (e.g., buy versus purchase or modify versus change).
+Interface Icons Th e interface objects and actions and their status (e.g., deleted or overdrawn) 
+may be represented by interface icons. Icons are pictures that appear on command buttons as 
+well as in reports and forms to highlight important information. Icon design is very challenging 
+because it means developing a simple picture less than half the size of a postage stamp that needs 
+to convey an oft en-complex meaning. Th e simplest and best approach is to simply adopt icons 
+developed by others (e.g., a blank page to indicate create a new fi le, a diskette to indicate save). 
+Th is has the advantage of quick icon development, and the icons might already be well understood by users because they have seen them in other soft ware.
+Commands are actions that are especially diffi cult to represent with icons because they are 
+in motion, not static. Many icons have become well known from widespread use, but icons are 
+not as well understood as fi rst believed. Use of icons can sometimes cause more confusion than 
+insight. Icon meanings become clearer with use, but sometimes a picture is not worth even one 
+word; when in doubt, use a word, not a picture.
+Interface Design Prototyping
+An interface design prototype is a mock-up or a simulation of a computer screen, form, or 
+report. A prototype is prepared for each interface in the system to show the users and the 
+programmers how the system will perform. In the “old days,” an interface design prototype 
+was usually specifi ed on a paper form that showed what would be displayed on each part of 
+the screen. Paper forms are still used today, but more and more interface design prototypes 
+are being built using computer tools instead of paper. Th e four most common approaches 
+to interface design prototyping are storyboards, windows layout diagrams, and language 
+prototypes.
+Windows Layout Diagram A windows layout diagram is simply a picture that resembles the 
+actual user interface that the user will gradually receive. Typically, it is created using a tool such 
+as Microsoft ’s Visio. Using this type of tool, the designer can quickly drag and drop the user 
+interface components onto the canvas to lay out the design of the user interface. For example, 
+Figure 10-5 portrays a simple windows layout diagram. Even though there is no executable 
+capability associated with a windows layout diagram, it does allow the user to quickly get a feel 
+for the look of the user interface that will be delivered. 
+Storyboard At its simplest, an interface design prototype is a paper-based storyboard. Th e 
+storyboard shows hand-drawn pictures of what the screens will look like and how they fl ow 
+from one screen to another, in the same way a storyboard for a cartoon shows how the action 
+will fl ow from one scene to the next (see Figure 10-6). Storyboards are the simplest technique 
+378 Chapter 10 Human–Computer Interaction Layer Design
+because all they require is paper (oft en a fl ip chart) and a pen—and someone with some artistic 
+ability. Storyboards also combine both the navigation information of the windows navigation 
+diagram and to some degree the layout information of the windows layout diagram. However, 
+with today’s graphics tools, the designer can work eff ectively with a set of users to design both 
+FIGURE 10-5
+Sample Windows 
+Layout Diagram
+Add a Client
+First Name: ____________ Last Name: ____________
+Address: _______________________________
+ _______________________________
+City: __________________________________
+State: ________ Zip Code: ________
+Client Menu
+Add Client
+Find Client
+List Clients
+Client Information
+First Name: Pat Last Name: Smith
+Address: 1234 Anywhere St.
+ Apt 56
+City: Somethingville
+State: CA Zip Code: 90211
+Find a Client
+(Type in information to search on)
+First Name: ____________ Last Name: ____________
+Address: _______________________________
+ _______________________________
+City: __________________________________
+State: ________ Zip Code: ________
+Client List
+(Click on a client for more information)
+Adams, Clare
+Adams, John
+Baker, Robin
+FIGURE 10-6  Sample Storyboard
+User Interface Design Process  379
+the look and feel of the evolving system without having to actually implement anything, by combining the windows layout diagrams with the windows navigation diagram into a single better 
+storyboard type of diagram (see Figure 10-7).
+User Interface Prototypes With today’s programming environments, such as Visual Studio 
+and NetBeans, it is fairly easy to develop executable prototypes (see Figure 10-8) of the user 
+interface that would allow the user to be able to interact with the user interface by clicking 
+on buttons and entering pretend data into forms (but because there is no system behind 
+the pages, the data are never processed). Th e diff erent parts of the user interface are linked 
+together so that as the user clicks on buttons, the requested part of the system appears. Th ese 
+executable prototypes take longer to develop than windows navigation diagrams, windows 
+layout diagrams, and storyboards but have the distinct advantage of showing exactly what 
+the screens will look like. Th e user does not have to guess about the shape or position of the 
+elements on the screen. However, one of the potential issues that can arise when developing 
+user interface prototypes is that the user’s expectations of when the systems will be completed can become unrealistic. To actually connect the prototype up to the problem domain 
+such that the system actually works is not a trivial problem. So, user expectations need to be 
+carefully managed. Otherwise, a system that meets all of its specifi cations could end up being 
+considered a failure.
+Selecting the Appropriate Techniques Projects oft en use a combination of diff erent interface design prototyping techniques for diff erent parts of the system. Storyboarding is the 
+fastest and least expensive but provides the least amount of detail. Windows layout diagrams 
+provide more of a feel that the user will experience, while remaining fairly inexpensive 
+to develop. User interface prototypes are the slowest, most expensive, and most detailed 
+approach. Th erefore, storyboarding is used for parts of the system in which the interface 
+is well understood and when more-expensive prototypes are thought to be unnecessary. 
+However, in most cases it is probably worth the additional cost of developing windows layout diagrams in addition to storyboards. User interface prototypes are used for parts of the 
+system that are critical, yet not well understood.
+FIGURE 10-7   
+Sample Combined 
+Windows Navigation and Layout 
+ Diagrams
+380 Chapter 10 Human–Computer Interaction Layer Design
+FIGURE 10-8 
+Sample User 
+ Interface Prototype
+Interface Evaluation7
+Th e objective of interface evaluation is to understand how to improve the interface design 
+before the system is complete. Most interface designers intentionally or unintentionally 
+design an interface that meets their personal preferences, which might or might not match 
+7 Verifying and validation approaches, in general, were described in Chapters 4 through 7. Also, further approaches 
+to testing the evolving system are described in Chapter 12. In this section, we describe approaches that have been 
+customized to the human–computer interaction layer.
+User Interface Design Process  381
+the preferences of the users. Th e key message, therefore, is to have as many people as possible 
+evaluate the interface, and the more users the better. Most experts recommend involving at 
+least ten potential users in the evaluation process.
+Many organizations save interface evaluation for the very last step in the systems 
+development before the system is installed. Ideally, however, interface evaluation should be 
+performed while the system is being designed—before it is built—so that any major design 
+problems can be identifi ed and corrected before the time and cost of programming have been 
+spent on a weak design. It is not uncommon for the system to undergo one or two major 
+changes aft er the users see the fi rst interface design prototype because they identify problems 
+that are overlooked by the project team.
+As with interface design prototyping, interface evaluation can take many diff erent forms, 
+each with diff erent costs and diff erent amounts of detail. Four common approaches are heuristic evaluation, walkthrough evaluation, interactive evaluation, and formal usability testing. 
+As with interface design prototyping, the diff erent parts of a system can be evaluated using 
+diff erent techniques.
+Heuristic Evaluation A heuristic evaluation examines the interface by comparing it to a set 
+of heuristics or principles for interface design. Th e project team develops a checklist of interface design principles—from the list at the start of this chapter, for example, as well as the list 
+of principles in the navigation, input, and output design sections later in this chapter. At least 
+three members of the project team then individually work through the interface design prototype, examining every interface to ensure that it satisfi es each design principle on a formal 
+checklist. Aft er each has gone through the prototype separately, they meet as a team to discuss 
+their evaluations and identify specifi c improvements that are required.
+Walkthrough Evaluation An interface design walkthrough evaluation is a meeting conducted with the users who ultimately have to operate the system. Th e project team presents 
+the prototype to the users and walks them through the various parts of the interface. Th e 
+project team shows the storyboard and windows layout diagrams or actually demonstrates 
+the user interface prototype and explains how the interface will be used. Th e users identify 
+improvements to each of the interfaces that are presented.
+Interactive Evaluation With an interactive evaluation, the users themselves actually work 
+with the user interface prototype in a one-person session with member(s) of the project team 
+(an interactive evaluation cannot be used with a storyboard or windows layout diagrams). As 
+the user works with the prototype (oft en by going through the use scenarios, using the real 
+use cases described later in this chapter, or just navigating at will through the system), he or 
+she tells the project team member(s) what he or she likes and doesn’t like and what additional 
+information or functionality is needed. As the user interacts with the prototype, team member(s) records the cases when he or she appears to be unsure of what to do, makes mistakes, or 
+misinterprets the meaning of an interface component. If the pattern of uncertainty, mistakes, 
+or misinterpretations reoccurs across several of the users participating in the evaluation, it is 
+a clear indication that those parts of the interface need improvement.
+Formal Usability Testing Formal usability testing is commonly done with commercial soft -
+ware products and products developed by large organizations that will be widely used through 
+the organization. As the name suggests, it is a very formal—almost scientifi c— process that can 
+be used only with language prototypes (and systems that have been completely built awaiting 
+installation or shipping).8 As with interactive evaluation, usability testing is done in one-person 
+8 A good source for usability testing is Jakob Nielsen and Robert Mack (eds.), Usability Inspection Methods (New York: 
+Wiley, 1994). See also www.useit.com/papers.
+382 Chapter 10 Human–Computer Interaction Layer Design
+sessions in which a user works directly with the soft ware. However, it is typically done in a 
+special lab equipped with video cameras and special soft ware that records every keystroke and 
+mouse operation so that they can be replayed to understand exactly what the user did.
+Th e user is given a specifi c set of tasks to accomplish (usually the use scenarios), and aft er 
+some initial instructions, the project team’s members are not permitted to interact with the 
+user to provide assistance. Th e user must work with the soft ware without help, which can be 
+hard on the users if they become confused with the system. It is critical that users understand 
+that the goal is to test the interface, not their abilities, and if they are unable to complete the 
+task, the interface—not the user—has failed the test.
+Formal usability testing is very expensive, because each one-user session can take one 
+to two days to analyze depending on the volume of detail collected in the computer logs and 
+videos. Sessions typically last one to two hours. Most usability testing involves fi ve to ten 
+users, because if there are fewer than fi ve users, the results depend too much on the specifi c 
+individual users who participated, and more than ten users are oft en too expensive to justify 
+(unless a large commercial soft ware developer is involved).
+Common Sense Approach to User Interface Design
+When you consider all of the above material, creating an eff ective user interface design 
+can be a daunting and very time-consuming task. An interesting book by Steve Krug,9 however, provides us with a set of guiding principles for Web usability. In this section, we adapt 
+his principles to general user interface design.
+First, the user should never have to think about how to navigate the user interface. As Krug 
+puts it, “Don’t make me think.” Cognitively speaking, any time the user has to stop and fi gure 
+out how to use the user interface, the creator of the user interface has failed. Th at might seem 
+a little harsh, but it is true. From the user’s perspective, the user interface is the system. If the 
+developers have done their homework, the user interface should be intuitive to use. From a 
+practical perspective, we should study how the user really uses the system. Based on Krug’s 
+observations of users, he found that users do not read Web pages; instead, they tend to scan 
+them. As a general user interface design guideline, we suggest that you make it easy for 
+users to identify the diff erent parts of the user interface so that they simply scan the screen 
+to see the section of the interface that is applicable to the problem that they are solving. 
+Given the user’s tendency to simply scan the user interface, Krug suggests that we should 
+consider studying billboards for inspiration. Billboards are designed to be “read” at 70 mph 
+as you drive down the highway. Obviously, the most relevant information must catch your 
+attention for the billboard advertisement to work. He suggests that we should use the set of 
+conventions with which we are familiar. For example, when looking at a newspaper you 
+know that it is organized into diff erent sections. In the case of the Wall Street Journal, you 
+know that the front page acts as an index into the rest of the paper. Consequently, we should 
+look for conventions that we can employ to aid the user.
+Second, he suggests that the number of clicks that a user must perform to complete the 
+task is somewhat irrelevant. Instead, building on his fi rst guiding principle, the important 
+thing is to design the user interface such that the choices (clicks) to be made are unambiguous. Making a lot of obvious choices is a lot quicker and easier than a few vague and ambiguous ones. Consequently, don’t worry about the number of screens that the user must work 
+through. However, like any other rule, this can be taken to an extreme. Too many clicks is 
+still too many clicks. Th e overall goal is to minimize the user’s eff ort. Simply focus on making 
+it easier for the user to complete the task.
+9 Steve Krug, Don’t Make Me Th ink: A Common Sense Approach to Web Usability, 2nd Ed. (Berkeley, CA: 2nd ETh ird, minimize the number of words on the screen. Given that users scan the screen to 
+fi nd for what they are searching, make it easier by not cluttering the screen with lots of noise. 
+He suggests that in the case of Web interfaces, 50 percent to 75 percent of the words can be 
+eliminated without losing any information contained on the screen. Obviously, this may be 
+somewhat extreme, but it does suggest that following the KISS10 principle is critical when 
+designing eff ective user interfaces.
+NAVIGATION DESIGN
+Th e navigation component of the interface enables the user to enter commands to navigate 
+through the system and perform actions to enter and review information it contains. Th e 
+navigation component also presents messages to the user about the success or failure of his 
+or her actions. Th e goal of the navigation system is to make the system as simple as possible 
+to use. A good navigation component is one the user never really notices. It simply functions 
+the way the user expects, and thus the user gives it little thought. In other words, keep Krug’s 
+three guiding principles in mind as you work through the next three sections of the text.
+Basic Principles
+One of the hardest things about using a computer system is learning how to manipulate 
+the navigation controls to make the system do what you want. Analysts should assume that 
+users have not read the manual, have not attended training, and do not have external help 
+readily at hand. All controls should be clear and understandable and placed in an intuitive 
+location on the screen. Ideally, the controls should anticipate what the user will do and 
+simplify his or her eff orts. For example, many setup programs are designed so that for a 
+typical installation, the user can simply keep pressing the Next button.
+Prevent Mistakes Th e fi rst principle of designing navigation controls is to prevent the user 
+from making mistakes. A mistake costs time and causes frustration. Worse still, a series of 
+mistakes can cause the user to discard the system. Mistakes can be reduced by labeling commands and actions appropriately and by limiting choices. Too many choices can confuse the 
+user, particularly when the choices are similar and hard to describe in the short space available on the screen. When there are many similar choices on a menu, consider creating a second 
+menu level or a series of options for basic commands.
+Never display a command that cannot be used. Many Windows applications gray out 
+commands that cannot be used; they are displayed on pull-down menus in a very lightcolored font, but they cannot be selected. Th is shows that they are available but cannot be 
+used in the current context. It also keeps all menu items in the same place.
+When the user is about to perform a critical function that is diffi cult or impossible to 
+undo (e.g., deleting a fi le), it is important to confi rm the action with the user (and make sure 
+the selection was not made by mistake). Having the user respond to a confi rmation message, 
+which explains what the user has requested and asks the user to confi rm that this action is 
+correct, usually does this.
+Simplify Recovery from Mistakes No matter what the system designer does, users will 
+make mistakes. Th e system should make it as easy as possible to correct these errors. Ideally, 
+the system has an Undo button that makes mistakes easy to override; however, writing the 
+soft ware for such buttons can be very complicated.
+10 Keep it simple, stupid!
+384 Chapter 10 Human–Computer Interaction Layer Design
+Use Consistent Grammar Order One of the most fundamental decisions is the grammar 
+order. Most commands require the user to specify an object (e.g., fi le, record, word), and the 
+action to be performed on that object (e.g., copy, delete). Th e interface can require the user to 
+fi rst choose the object and then the action (an object–action order) or fi rst choose the action 
+and then the object (an action–object order). Most Windows applications use an object–action 
+grammar order (e.g., think about copying a block of text in your word processor).
+Th e grammar order should be consistent throughout the system, both at the data element 
+level and at the overall menu level. Experts debate about the advantages of one approach over 
+the other, but because most users are familiar with the object–action order, most systems 
+today are designed using that approach.
+Types of Navigation Controls
+Th ere are two traditional hardware devices that can be used to control the user interface: the 
+keyboard and a pointing device such as a mouse, trackball, or touch screen. Today, depending 
+on the hardware being used, voice recognition systems can also be used to control the user 
+interface. Th ere are three basic soft ware approaches for defi ning user commands: languages, 
+menus, and direct manipulation.
+Languages With a command language, the user enters commands using a special language developed for the computer system (e.g., UNIX and SQL both use command languages). Command 
+languages sometimes provide greater fl exibility than other approaches because the user can combine language elements in ways not predetermined by developers. However, they put a greater 
+burden on users because users must learn syntax and type commands rather than select from 
+a well-defi ned, limited number of choices. Systems today use command languages sparingly, 
+except in cases where there is an extremely large number of command combinations that make it 
+impractical to try to build all combinations into a menu (e.g., SQL queries for databases).
+Natural language interfaces are designed to understand the user’s own language (e.g., 
+English, French, Spanish). Th ese interfaces attempt to interpret what the user means, and 
+oft en they present back to the user a list of interpretations from which to choose. An example 
+of the use of natural language is Google’s search engine. Google’s search engine enables users 
+to use free-form text to search the Web for topics of interest.
+Menus Th e most common type of navigation system today is the menu. A menu presents a user 
+with a list of choices, each of which can be selected. Menus are easier to learn than languages 
+because a limited number of available commands are presented to the user in an organized fashion. Clicking on an item with a pointing device or pressing a key that matches the menu choice 
+(e.g., a function key) takes very little eff ort. Th erefore, menus are usually preferred to languages.
+Menus need to be designed with care because the submenus behind a main menu are 
+hidden from users until they click on the menu item. It is better to make menus broad and 
+shallow (i.e., each menu containing many items with only one or two layers of menus) rather 
+than narrow and deep (i.e., each menu containing only a few items, but each leading to three 
+or more layers of menus). A broad and shallow menu presents the user with the most information initially so that he or she can see many options and requires only a few mouse clicks or 
+keystrokes to perform an action. A narrow and deep menu makes users hunt for items hidden 
+behind menu items and requires many more clicks or keystrokes to perform an action.
+Research suggests that in an ideal world, any one menu should contain no more than 
+eight items, and it should take no more than two mouse clicks or keystrokes from any menu 
+to perform an action (or three from the main menu that starts a system).11 However, analysts 
+sometimes must break this guideline in the design of complex systems by grouping menu 
+11 Kent L. Norman, Th e Psychology of Menu Selection (Norwood NJ: Ablex Publishing Corp., 1991)

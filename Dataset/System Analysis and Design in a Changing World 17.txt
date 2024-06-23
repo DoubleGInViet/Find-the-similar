@@ -1,0 +1,669 @@
+﻿Authentication 
+ Requirements
+Defi nes what data will be encrypted Where
+ and whether authentication will be 
+ needed for user access
+• Data will be encrypted from the user’s com puter to website to provide secure ordering.
+• Users logging in from outside the offi ce will 
+be required to authenticate.
+Virus Control 
+ Requirements
+Requirements to control the spread 
+ of viruses
+• All uploaded fi les will be checked for 
+viruses before being saved in the system.
+In some cases, the information system itself has value that far exceeds the cost of the 
+equipment as well. For example, for an Internet bank that has no brick and mortar branches, 
+the website is a mission-critical system. If the website crashes, the bank cannot conduct busi ness with its customers. A mission-critical application is an information system that is literally 
+critical to the survival of the organization. It is an application that cannot be permitted to fail, 
+and if it does fail, the network staff drops everything else to fi x it. Mission-critical applications 
+are usually clearly identifi ed so that their importance is not overlooked.
+Even temporary disruptions in service can have signifi cant costs. Th e costs of disruptions 
+to a company’s primary website or the LANs and backbones that support telephone sales oper ations are oft en measured in the millions of dollars. Amazon.com, for example, has revenues 
+of more than $10 million per hour, so if its website were unavailable for an hour or even part 
+of an hour, it would lose millions of dollars in revenue. Companies that do less e-business or do 
+telephone sales have lower costs, but recent surveys suggest losses of $100,000 to $200,000 per 
+hour are not uncommon for major customer-facing information systems.
+Access Control Requirements Some of the data stored in the system need to be kept confi den tial; some data need special controls on who is allowed to change or delete it. Personnel records, 
+for example, should be able to be read only by the personnel department and the employee’s 
+supervisor; changes should be permitted to be made only by the personnel department. Access 
+control requirements state who can access what data and what type of access is permitted: whether 
+the individual can create, read, update and/or delete the data. Th e requirements reduce the 
+chance that an authorized user of the system can perform unauthorized actions. One approach 
+to address these requirements is through the use of access control lists, which can be implemented 
+via the operating system or database management system.
+Encryption and Authentication Requirements One of the best ways to prevent unauthorized 
+access to data is encryption, which is a means of disguising information by the use of mathemat ical algorithms (or formulas). Encryption can be used to protect data stored in databases or data that are in transit over a network from a database to a computer. Th ere are two fundamentally 
+diff erent types of encryption: symmetric and asymmetric. A symmetric encryption algorithm
+[such as Data Encryption Standard (DES) or Advanced Encryption Standard (AES)] is one in 
+which the key used to encrypt a message is the same as the one used to decrypt it, which means 
+that it is essential to protect the key and that a separate key must be used for each person or 
+organization with whom the system shares information (or else everyone can read all the data).
+An asymmetric encryption algorithm (such as public key encryption) is one in which the key 
+used to encrypt data (called the public key) is diff erent from the one used to decrypt it (called the 
+private key). Even if everyone knows the public key, once the data are encrypted, they cannot be 
+decrypted without the private key. Public key encryption greatly reduces the key-management 
+problem. Each user has its public key that is used to encrypt messages sent to it. Th ese public 
+keys are widely publicized (e.g., listed in a telephone book style directory)—that’s why they’re 
+called public keys. Th e private key, in contrast, is kept secret (which is why it’s called private).
+Public key encryption also permits authentication (or digital signatures). When one user 
+sends a message to another, it is diffi cult to legally prove who actually sent the message. Legal proof 
+is important in many communications, such as bank transfers and buy/sell orders in currency 
+and stock trading, which normally require legal signatures. Public key encryption algorithms are 
+invertible, meaning that text encrypted with either key can be decrypted by the other. Normally, 
+we encrypt with the public key and decrypt with the private key. However, it is possible to do the 
+reverse: encrypt with the private key and decrypt with the public key. Because the private key is 
+secret, only the real user can use it to encrypt a message. Th us, a digital signature or authentication 
+sequence is used as a legal signature on many fi nancial transactions. Th is signature is usually the 
+name of the signing party plus other unique information from the message (e.g., date, time, or 
+dollar amount). Th is signature and the other information are encrypted by the sender using the 
+private key. Th e receiver uses the sender’s public key to decrypt the signature block and compares 
+the result to the name and other key contents in the rest of the message to ensure a match.
+Th e only problem with this approach lies in ensuring that the person or organization 
+that sent the document with the correct private key is the actual person or organization. 
+Anyone can post a public key on the Internet, so there is no way of knowing for sure who 
+actually used it. For example, it would be possible for someone other than Organization A in 
+this example to claim to be Organization A when, in fact, he or she is an imposter.
+Th is is where the Internet’s public key infrastructure (PKI) becomes important.16 Th e 
+PKI is a set of hardware, soft ware, organizations, and polices designed to make public key 
+encryption work on the Internet. PKI begins with a certifi cate authority (CA), which is a 
+trusted organization that can vouch for the authenticity of the person or organization using 
+authentication (e.g., VeriSign). A person wanting to use a CA registers with the CA and must 
+provide some proof of identify. Th ere are several levels of certifi cation, ranging from a simple 
+confi rmation from a valid e-mail address to a complete police-style background check with 
+an in-person interview. Th e CA issues a digital certifi cate that is the requestor’s public key, 
+encrypted using the CA’s private key as proof of identify. Th is certifi cate is then attached 
+to the user’s e-mail or Web transactions in addition to the authentication information. Th e 
+receiver then verifi es the certifi cate by decrypting it with the CA’s public key and must also 
+contact the CA to ensure that the user’s certifi cate has not been revoked by the CA.
+Th e encryption and authentication requirements state what encryption and authentication requirements are needed for what data. For example, will sensitive data such as customer 
+credit-card numbers be stored in the database in encrypted form, or will encryption be used 
+to take orders over the Internet from the company’s website? Will users be required to use a 
+digital certifi cate in addition to a standard password?
+16 For more on the PKI, see http://datatracker.ietf.org/wg/pkix/charter/.
+Nonfunctional Requirements and Physical Architecture Layer Design  447
+Virus Control Requirements Virus control requirements address the single most common 
+security problem: viruses. Studies have shown that almost 90 percent of organizations suff er a 
+virus infection each year. Viruses cause unwanted events—some harmless (such as nuisance 
+messages), some serious (such as the destruction of data). Any time a system permits data to 
+be imported or uploaded from a user’s computer, there is the potential for a virus infection. 
+Many systems require that all information systems that permit the import or upload of user 
+fi les to check those fi les for viruses before they are stored in the system.
+Cultural and Political Requirements
+Cultural and political requirements are those specifi c to the countries in which the system will 
+be used. In today’s global business environment, organizations are expanding their systems 
+to reach users around the world. Although this can make great business sense, its impact on 
+application development should not be underestimated. Yet another important part of the 
+design of the system’s physical architecture is understanding the global cultural and political 
+requirements for the system (see Chapter 10 and Figure 11-17).
+Customization Requirements For global applications, the project team needs to give some 
+thought to customization requirements: How much of the application will be controlled by a 
+central group, and how much of the application will be managed locally? For example, some 
+companies allow subsidiaries in some countries to customize the application by omitting or 
+adding certain features. Th is decision has trade-off s between fl exibility and control because 
+customization oft en makes it more diffi cult for the project team to create and maintain the 
+application. It also means that training can diff er among diff erent parts of the organization, 
+and customization can create problems when staff moves from one location to another.
+Owing to the use of diff erent languages, in some cases, specialized hardware that has been 
+customized to the local culture is required. For example, having specialized keyboards makes 
+sense for any language that does not use the typical Roman alphabet, e.g., Arabic, Hebrew, 
+Greek, Japanese, Korean, Mandarin, or Russian. Th ere are also emulators available for many 
+diff erent languages. Depending on the users being served, assistive devices could be required, 
+such as Braille devices, eye-tracking devices, head pointers, head/mouth stick keyboards, or 
+adaptive ability switches. Depending on the cultural and political requirements, many diff erent hardware platforms might need to be considered.
+FIGURE 11-17  Cultural and Political Requirements
+Type of Requirement Defi nition Examples
+Customization 
+ Requirements
+Specifi cation of what aspects of the system
+ can be changed by local users
+• Country managers will be able to defi ne new
+fi elds in the product database to capture 
+country-specifi c information.
+• Country managers will be able to change the 
+format of the telephone number fi eld in the 
+customer database.
+Legal Requirements The laws and regulations that impose
+ requirements on the system
+• Personal information about customers cannot be transferred out of European Union 
+countries into the United States.
+• It is against U.S. federal law to divulge information on who rented what videotape, so 
+access to a customer’s rental history is permitted only to regional managers.
+448 Chapter 11 Physical Architecture Layer Design
+Legal Requirements Legal requirements are requirements imposed by laws and government 
+regulations. System developers sometimes forget to think about legal regulations; unfortunately, forgetting comes at some risk because ignorance of the law is no defense. For example, 
+in 1997 a French court convicted the Georgia Institute of Technology of violating French language law. Georgia Tech operated a small campus in France that off ered summer programs 
+for American students. Th e information on the campus Web server was primarily in English 
+because classes are conducted in English, which violated the law requiring French to be the 
+predominant language on all Internet servers in France. By formally considering legal regulations, you are less likely to overlook them. Another major example is the recent European 
+court ruling regarding the user’s right to be forgotten.
+Synopsis
+In many cases, the technical environment requirements as driven by the business requirements can simply define the physical architecture layer. In this case, the choice is simple: 
+Business requirements dominate other considerations. For example, the business requirements might specify that the system needs to work over the Web using the customer’s 
+Web browser. In this case, the architecture probably should be a thin client–server. Such 
+business requirements are most likely in systems designed to support external customers. Internal systems can also impose business requirements, but usually they are not as 
+restrictive.
+In the event that the technical environment requirements do not stipulate a specifi c 
+architecture, then the other nonfunctional requirements become important. Even in cases 
+when the business requirements drive the architecture, it is still important to work through 
+and refi ne the remaining nonfunctional requirements because they are important in later 
+stages of design and implementation. 
+Operational Requirements System integration requirements can lead to one architecture 
+being chosen over another, depending on the architecture and design of the system(s) with 
+which the system needs to integrate. For example, if the system must integrate with a desktop 
+system (e.g., Excel), this might suggest a thin or thick client–server architecture, whereas if 
+it must integrate with a server-based system, a server-based architecture may be indicated. 
+Systems that have extensive portability requirements tend to be best suited for a thin client–
+server architecture because it is simpler to write for Web-based standards (e.g., HTML, XML) 
+that extend the reach of the system to other platforms, rather than trying to write and rewrite 
+extensive presentation logic for diff erent platforms in the server-based, client-based, or thick 
+client–server architectures. Systems with extensive maintainability requirements might not 
+be well suited to client-based or thick client–server architectures because of the need to reinstall soft ware on the desktops.
+Performance Requirements Generally speaking, information systems that have high performance requirements are best suited to client–server architectures. Client–server architectures 
+are more scalable, which mean they respond better to changing capacity needs and thus 
+enable the organization to better tune the hardware to the speed requirements of the system. 
+Client–server architectures that have multiple servers in each tier should be more reliable 
+and have greater availability, because if any one server crashes, requests are simply passed to 
+other servers, and users might not even notice (although response time could be worse). In 
+practice, however, reliability and availability depend greatly on the hardware and operating 
+system, and Windows-based computers tend to have lower reliability and availability than 
+Linux or mainframe computers.
+Verifying and Validating the Physical Architecture Layer  449
+Security Requirements Generally speaking, because all soft ware is in one location and 
+because mainframe operating systems are more secure than microcomputer operating systems, 
+server-based architectures tend to be more secure. For this reason, high-value systems are more 
+likely to be found on mainframe computers, even if the mainframe is used as a server in client–
+server architectures. In today’s Internet-dominated world, authentication and encryption tools 
+for Internet-based client–server architectures are more advanced than those for mainframe 
+server-based architectures. Viruses are potential problems in all architectures because they 
+easily spread on desktop computers. If a server-based system can reduce the functions needed 
+on desktop systems, then they may be more secure.
+Cultural and Political Requirements As cultural and political requirements become 
+more important, the ability to separate the presentation logic from the application logic 
+and the data becomes important. Such separation makes it easier to develop the presentation logic in different languages while keeping the application logic and data the same. It 
+also makes it easier to customize the presentation logic for different users and to change 
+it to better meet cultural norms. To the extent that the presentation logic provides access 
+to the application and data, it also makes it easier to implement different versions that 
+enable or disable different features required by laws and regulations in different countries. This separation is the easiest in thin client–server architectures, so systems with 
+many cultural and political requirements often use thin client–server architectures. As 
+with system integration requirements, the impact of legal requirements depends on the 
+specific nature of the requirements, but in general, client-based systems tend to be less 
+flexible.
+VERIFYING AND VALIDATING THE PHYSICAL 
+ARCHITECTURE LAYER
+Like the models on the other layers, the infrastructure design and the hardware and software specifications of the physical architecture layer need to be verified and validated. 
+Verifying and validating the design of the data management layer fall into three basic 
+groups.
+First, we recommend verifying and validating deployment diagrams by ensuring that all 
+of them are in fact consistent and balanced. For example, each of the nodes in a top-level network model deployment diagram should be associated with a separate deployment diagram 
+that represents the low-level network model for the node.
+Second, the hardware and soft ware specifi cations should be consistent with the 
+“lowest-level” network models. For example, if a low-level network model for an offi ce 
+describes a set of workstations, servers, printers, switches, routers, etc., then the hardware 
+and soft ware specifi cation for that location should be the details for each of the IT artifacts 
+for that location.
+Th ird, once the system has been implemented, testing of the nonfunctional requirements 
+becomes crucial. In this case, tests must be designed and performed for each of the nonfunctional requirements. For example, for the performance requirements, load testing must be 
+performed to identify possible performance bottlenecks in the network. We will return to 
+this topic in Chapter 12.
+450 Chapter 1 Physical Architecture Layer Design
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+Sam Wilson, the infrastructure analyst, took the lead in designing this layer. Sam was 
+responsible for ensuring that the new system adheres to the infrastructure standards 
+in place at Patterson while making sure that the infrastructure can support the new 
+system. Th e team had to decide which architecture would best meet the needs of the 
+Integrated Health Clinic Delivery system and to determine what soft ware would be 
+placed on which hardware. Next, the team had to map the network model on a deployment diagram. Accomplishing this task required close communication with the other 
+layers, including the problem domain, data management, and human–computer interaction layers. 
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the four major architectural components.
+ Describe the three major physical architectures.
+ Discuss the trade-off s in selecting a physical architecture.
+ Discuss cloud computing.
+ Describe Infrastructure as a Service, Platform as a Service, and Soft ware as a Service.
+ Describe the three primary obstacles to cloud computing.
+ Discuss the potential impact of ubiquitous computing and the Internet of Th ings.
+ Describe enchanted objects. 
+ Discuss the three general questions that Green IT tries to address.
+ Create an infrastructure design using deployment diagrams.
+ Create a high-level hardware and soft ware specifi cation.
+ Describe how nonfunctional requirements may infl uence the actual design of the physical
+architecture layer.
+KEY TERMS
+24/7
+Access control list
+Access control requirements
+Alternative matrix
+Application logic
+Architectural component
+Artifact
+Asymmetric encryption 
+algorithm
+Authentication
+Availability and reliability 
+ requirements
+Benchmark
+Business process
+Capacity requirements
+Certifi cate authority (CA)
+Client-based architecture
+Client computer
+Client–server architecture
+Cloud computing
+Communication path
+Cultural and political 
+requirements
+Customization requirements
+Data access logic
+Data storage
+Deployment diagrams
+E-waste
+Enchanted objects
+Encryption
+Fat client
+Graphical user interface 
+(GUI)
+Green data centers
+Green IT
+Grid computing
+Questions  451
+Hardware and soft ware 
+specifi cation
+Hybrid cloud
+Infrastructure as a service 
+(IaaS)
+Internet of Th ings (IoT)
+Invertible
+Legal requirements
+Locations
+Maintainability 
+requirements
+Middleware
+Mission critical system
+Multitenancy
+Network
+Network model
+Node
+N-tiered architecture
+Operational requirements
+Outsourcing
+Parkinson’s law
+Performance requirements
+Paperless offi ce
+Platform as a service (PaaS)
+Portability requirements
+Presentation logic
+Private cloud
+Private key
+Public cloud
+Public key
+Public key encryption
+Response time
+Scalable
+Security requirements
+Server
+Server-based architecture
+Service
+Service-oriented 
+architecture
+Soft ware as a service 
+(SaaS)
+Speed requirements
+SQL (structured query 
+language)
+Symmetric encryption 
+algorithm
+System integration 
+requirements
+Technical environment 
+requirements
+Th ick client
+Th in client
+Th ree-tiered architecture
+Timesharing
+Total cost of ownership
+Two-tiered architecture
+Ubiquitous computing
+Virtual memory
+Virtualization
+Virus
+Virus control requirements
+Web services
+QUESTIONS
+1. What are the four basic functions of any information 
+system?
+2. What are the three primary hardware components of 
+any physical architecture?
+3. Name two examples of a server.
+4. Compare and contrast server-based architectures, 
+client-based architectures, and client–server-based 
+architectures.
+5. What is the biggest problem with server-based computing?
+ 6. What is the biggest problem with client-based computing?
+7. Describe the major benefi ts and limitations of thin 
+client–server architectures.
+8. Describe the major benefi ts and limitations of thick 
+client–server architectures.
+9. Describe the diff erences among two-tiered, threetiered, and n-tiered architectures.
+10. Defi ne scalable. Why is this term important to system 
+developers?
+11. What six criteria are helpful to use when comparing 
+the appropriateness of computing alternatives?
+12. Why should the project team consider the existing physical architecture in the organization when 
+designing the physical architecture layer of the new 
+system?
+13. Name the three diff erent types of clouds. How do they 
+diff er from one another?
+14. What is meant by a service-oriented architecture?
+15. Defi ne virtualization. How does it relate to the cloud?
+16. What are the diff erences among IaaS, PaaS, and SaaS?
+17. What are the obstacles for provisioning the physical 
+architecture layer with cloud technologies?
+18. What, if any, are the issues related to security in the 
+cloud?
+19. What are SOX and HIPAA, and how could they aff ect 
+a fi rm’s decision to adopt cloud technology?
+20. What is meant by ubiquitous computing? How about 
+the Internet of Th ings?
+21. What is an enchanted object? Give a set of examples 
+of them.
+22. What is e-waste? 
+23. What is the problem with backyard recycling of e-waste?
+24. What is meant by a green data center?
+25. How do tablets, such as the iPadTM, enable the paperless offi ce?
+26. What additional hardware- and soft ware-associated 
+costs might need to be included on the hardware and 
+soft ware specifi cation?
+27. Who is ultimately in charge of acquiring hardware 
+and soft ware for a project?
+28. What is a benchmark, and why is it important?
+29. Why is Parkinson’s Law relevant to the design of the 
+physical architecture layer?
+30. What do you think are three common mistakes that 
+novice analysts make in architecture design and hardware and soft ware specifi cation?
+31. Describe the major nonfunctional requirements and 
+how they infl uence physical architecture layer design.
+452 Chapter 1 Physical Architecture Layer Design
+32. Why is it useful to defi ne the nonfunctional requirements in more detail even if the technical environment requirements dictate a specifi c architecture?
+33. What does the network model communicate to the 
+project team?
+34. What are the diff erences between the top-level network model and the low-level network model?
+35. Are some nonfunctional requirements more important than others in infl uencing the architecture design 
+and hardware and soft ware specifi cation?
+36. What do you think are the most important security 
+issues for a system?
+EXERCISES
+A. Using the Web (or past issues of computer industry 
+magazines such as Computerworld), locate a system 
+that runs in a server-based environment. Based on 
+your reading, why do you think the company chose 
+that computing environment?
+B. Using the Web (or past issues of computer industry 
+magazines such as Computerworld), locate a system 
+that runs in a client–server environment. Based on 
+your reading, why do you think the company chose 
+that computing environment?
+C. Using the Web, locate examples of a mainframe component, a minicomputer component, and a microcomputer component. Compare the components in 
+terms of price, speed, available memory, and disk 
+storage. Did you fi nd large diff erences in prices when 
+the performances of the components are considered?
+D. You have been selected to fi nd the best client–server 
+architecture for a Web-based order entry system that 
+is being developed for L.L. Bean. Write a short memo 
+that describes to the project manager your reason for 
+selecting an n-tiered architecture over a two-tiered 
+architecture. In the memo, give some idea as to what 
+diff erent components of the architecture you would 
+include.
+E. Th ink about the system that your university currently 
+uses for career services, and suppose that you are 
+in charge of replacing the system with a new one. 
+Describe how you would decide on the computing 
+architecture for the new system using the criteria 
+presented in this chapter. What information will you 
+need to fi nd out before you can make an educated 
+comparison of the alternatives?
+F. Using the Web, fi nd information on the eff ects that 
+e-waste and backyard recycling has on developing 
+countries. Based on you fi nd, what Green IT policies 
+would you suggest a fi rm put in place to minimize the 
+negative eff ects of e-waste.
+G. Using the Web, fi nd examples of company’s pursuing 
+a Green IT strategy. Describe what they are doing.
+H. Energy Star is a joint program between the US Department of Energy and the Environmental Protection 
+Agency. What are the requirements for various IT 
+devices to be certifi ed as being Energy Star compliant?
+I. Using the Web, fi nd examples of fi rms using the cloud 
+as a basis for the physical architecture layer. Describe 
+exactly what they are doing.
+J. Locate a consumer products company on the Web 
+and read its company description (so that you get a 
+good understanding of the geographic locations of the 
+ company). Pretend that the company is about to create a new application to support retail sales over the 
+Web. Create a high-level network model that depicts 
+the locations that would include components that 
+support this application.
+K. Create a low-level network diagram for the building 
+that houses the computer labs at your university. 
+Choose an application (e.g., course registration, student admissions) and include only the components 
+that are relevant to that application.
+L. An energy company with headquarters in Dallas, 
+Texas, is thinking about developing a system to track 
+the effi ciency of its oil refi neries in North America. 
+Each week, the ten refi neries—as far as Valdez, Alaska, 
+and as close as San Antonio, Texas—will upload 
+ performance data via satellite to the corporate mainframe in Dallas. Production managers at each site will 
+use a personal computer to connect to an Internet service provider and access reports via the Web. Create 
+a high-level network model that depicts the locations 
+that have components supporting this system.
+M. Suppose that your mother is a real estate agent, and 
+she has decided to automate her daily tasks using a 
+laptop computer. Consider her potential hardware and 
+soft ware needs, and create a hardware and soft ware 
+Minicases  453
+specifi cation that describes them. Th e specifi cation 
+should be developed to help your mother buy her 
+hardware and soft ware on her own.
+N. Suppose that the admissions offi ce in your university 
+has a Web-based application so that students can apply 
+for admission online. Recently, there has been a push to 
+admit more international students into the university. 
+What do you recommend that the application include 
+to ensure that it supports this global requirement?
+O. Based on the A Real Estate Inc. problem in Chapter 4 
+(exercises I, J, and K), Chapter 5 (exercises P and Q), 
+Chapter 6 (exercise D), Chapter 7 (exercise A), Chapter 
+8 (exercise A), Chapter 9 (exercise L), and Chapter 10 
+(exercises I and J), suggest a physical architecture design 
+and portray it with a deployment diagram.
+P. Based on the A Video Store problem in Chapter 4 
+(exercises L, M, and N), Chapter 5 (exercises R and 
+S), Chapter 6 (exercise E), Chapter 7 (exercise B), 
+Chapter 8 (exercise B), Chapter 9 (exercise M), and 
+Chapter 10 (exercises K and L), suggest a physical 
+architecture design and portray it with a deployment 
+diagram.
+Q. Based on the gym membership problem in Chapter 
+4 (exercises O, P, and Q), Chapter 5 (exercises T and 
+U), Chapter 6 (exercise F), Chapter 7 (exercise C), 
+Chapter 8 (exercise C), Chapter 9 (exercise N), and 
+Chapter 10 (exercises M and N), suggest a physical 
+architecture design and portray it with a deployment 
+diagram.
+R. Based on the Picnics R Us exercises in Chapter 4 
+(exercises R, S, and T), Chapter 5 (exercises V and 
+W), Chapter 6 (exercise G), Chapter 7 (exercise D), 
+Chapter 8 (exercise D), and Chapter 9 (exercise O), 
+and Chapter 10 (exercises O and P), suggest a physical 
+architecture design and portray it with a deployment 
+diagram.
+S. Based on the Of-the-Month-Club problem in Chapter 
+4 (exercises U, V, and W), Chapter 5 (exercises X and 
+Y), Chapter 6 (exercise H), Chapter 7 (exercise E), 
+Chapter 8 (exercise E), Chapter 9 (exercise N), and 
+Chapter 10 (exercises Q and R), suggest a physical 
+architecture design and portray it with a deployment 
+diagram.
+MINICASES
+1. Th e system development project team at Birdie 
+ Masters golf schools has been working on defi ning 
+the physical architecture design for the system. Th e 
+major focus of the project is a networked school location operations system, allowing each school location 
+to easily record and retrieve all school location transaction data. Another system element is the use of the 
+Internet to enable current and prospective students 
+to view class off erings at any of the Birdie Masters’ 
+locations, schedule lessons and enroll in classes at any 
+Birdie Masters location, and maintain a student progress profi le—a confi dential analysis of the student’s 
+golf skill development.
+Th e project team has been considering the globalization issues that should be factored into the architecture design. Th e school’s plan for expansion into 
+the golf-crazed Japanese market is moving ahead. Th e 
+fi rst Japanese school location is tentatively planning 
+to open about six months aft er the target completion 
+data for the system project. Th erefore, it is important 
+that issues related to the international location be 
+addressed now during design.
+Assume that you have been given the responsibility 
+of preparing a summary memo on the globalization 
+issues that should be factored into the design. Prepare 
+this memo discussing the globalization issues that are 
+relevant to Birdie Masters’ new system.
+2. Jerry is a relatively new member of a project team that 
+is developing a retail store management system for a 
+chain of sporting goods stores. Company headquarters 
+is in Las Vegas, and the chain has twenty-seven locations throughout Nevada, Utah, and Arizona. Several 
+cities have multiple stores.
+Th e new system will be a networked client–server 
+architecture. Stores will be linked to one of three 
+regional servers, and the regional servers will be linked 
+to corporate headquarters in Las Vegas. Th e regional 
+servers also link to one another. Each retail store 
+will be outfi tted with similar confi gurations of two 
+PC-based point-of-sale terminals networked to a local 
+fi le server. Jerry has been given the task of developing 
+a network model that will document the geographic 
+structure of this system. He has not faced a system of 
+this scope before and is a little unsure how to begin.
+454 Chapter 11 Physical Architecture Layer Design
+ a. Prepare a set of instructions for Jerry to follow in 
+developing this network model.
+ b. Using a deployment diagram, draw a network 
+model for this organization.
+ c. Prepare a set of instructions for Jerry to follow in 
+developing a hardware and soft ware specifi cation.
+3. Refer to the Professional and Scientifi c Staff Management (PSSM) minicase in Chapters 4, 6, 7, 8, 9, and 10. 
+Based on the solutions developed for those problems, 
+suggest a physical architecture design and portray it 
+with a deployment diagram.
+4. Refer to the Holiday Travel Vehicles minicase in Chapters 5, 6, 7, 8, 9, and 10. Based on the solutions developed for those problems, suggest a physical architecture 
+design and portray it with a deployment diagram During construction, the actual system is built. Building a successful 
+information system requires a set of activities: programming, 
+testing, and documenting the system. In today’s global economy, 
+cultural issues also play an important role in managing these 
+activities. Installing an information system requires switching from 
+the current system to the new system. Th is conversion process can 
+be quite involved; for example, cultural diff erences among the users, 
+the development team, and the two groups can be quite challenging. 
+Furthermore, not only does conversion involve shutting the old 
+system down and turning the new one on, it also can involve 
+a signifi cant training eff ort. Finally, operating the system may 
+uncover additional requirements that may have to be addressed by 
+the development team.
+Programs Test Plan Documentation Conversion 
+Plan
+Change
+Management 
+Plan
+Support
+Plan
+Project
+Assessment
+CHAPTER 12
+Construction
+PART THREE
+Construction,
+Installation, and
+Operations
+CHAPTER 13
+Installation and
+Operations
+456
+This chapter discusses the activities needed to successfully build an information system: 
+programming, testing, and documenting the system. Programming is time-consuming and 
+costly, but except in unusual circumstances, it is the simplest for the systems analyst because 
+it is well understood. For this reason, the systems analyst focuses on testing (proving that the 
+system works as designed) and developing documentation.
+OBJECTIVES
+■ Understand the basic issues related to managing programmers.
+■ Understand how cultural issues can impact the effi ciency, eff ectiveness, and focus of 
+soft ware development teams.
+■ Be familiar with the diff erent types of documentation.
+■ Understand how to develop documentation.
+■ Understand how object-orientation eff ects soft ware testing.
+■ Understand the diff erent types of and purpose of unit tests.
+■ Understand the diff erent types of and purpose of integration tests.
+■ Understand the diff erent types of and purpose of system tests.
+■ Understand the diff erent types of and purpose of acceptance tests.
+INTRODUCTION
+When people fi rst learn about developing information systems, they usually think immediately about writing programs. Programming can be the largest single component of any 
+systems development project in terms of time and cost. However, it also can be the best 
+understood component and therefore—except in rare circumstances—off ers the fewest problems of all aspects of system development. When projects fail, it is usually not because the 
+programmers were unable to write the programs, but because the analysis, design, installation, and/or project management were done poorly. 
+Construction is the development of all parts of the system, including the soft ware 
+itself, documentation, and new operating procedures. Looking back at Figure 1-18, we see 
+that the Construction phase of the Enhanced Unifi ed Process deals predominantly with 
+the Implementation, Testing, and Confi guration and Change Management workfl ows. 
+Implementation obviously deals with programming. Programming is oft en seen as the focal 
+point of systems development. Aft er all, systems development is writing programs. It is the 
+reason we do all the analysis and design. And it’s fun. Many beginning programmers see 
+testing and documentation as bothersome aft erthoughts. Testing and documentation aren’t 
+fun, so they oft en receive less attention than the creative activity of writing programs.
+However, programming and testing are very similar to writing and editing. No professional writer (or good student writing an important term paper) would stop aft er writing 
+the fi rst draft . Rereading, editing, and revising the initial draft into a good paper are the 
+CHAPTER 12
+Construction
+Managing Programming  457
+hallmarks of good writing. Likewise, thorough testing is the hallmark of professional soft -
+ware developers. Most professional organizations devote more time and money to testing 
+(and the subsequent revision and retesting) than to writing the programs in the fi rst place.
+Th e reasons are simple economics: Downtime and failures caused by soft ware bugs1 are 
+extremely expensive. Many large organizations estimate the costs of downtime of critical applications at $50,000 to $200,000 per hour.
+2 One serious bug that causes an hour of downtime can 
+cost more than one year’s salary of a programmer—and how oft en are bugs found and fi xed 
+in one hour? Testing is, therefore, a form of insurance. Organizations are willing to spend a 
+lot of time and money to prevent the possibility of major failures aft er the system is installed.
+Th erefore, a program is usually not considered fi nished until the test for that program 
+is passed. For this reason, programming and testing are tightly coupled, and because programming is the primary job of the programmer (not the analyst), testing (not programming) oft en becomes the focus of the construction stage for the systems analysis team.
+Th e Confi guration and Change Management workfl ow keeps track of the state of the 
+evolving system. Th e evolving information system comprises a set of artifacts that include, 
+for example, diagrams, source code, and executables. During the development process, 
+these artifacts are modifi ed. Th e amount of work, and hence dollars, that goes into the 
+development of the artifacts is substantial. Th erefore, the artifacts themselves should be 
+handled as any expensive asset would be handled: Access controls must be put into place 
+to safeguard the artifacts from being stolen or destroyed. Because the artifacts are modifi ed 
+on a regular, if not on a continuous basis, good version control mechanisms should be 
+established. Th e traceability of the artifacts back through the various artifacts developed, 
+such as data management layer designs, class diagrams, package diagrams, and use-case 
+diagrams, to the specifi c requirements is also very important. Without this traceability, we 
+will not know which aspects of a system to modify when—not if—the requirements change.
+MANAGING PROGRAMMING
+In general, systems analysts do not write programs; programmers write programs. Th erefore, 
+the primary task of the systems analysts during programming is . . . waiting. However, the 
+project manager is usually very busy managing the programming eff ort by assigning the programmers, coordinating the activities, and managing the programming schedule.3
+Assigning Programmers
+Th e fi rst step in programming is assigning modules to the programmers. As discussed in 
+Chapter 8, each module (class, object, or method) should be as separate and distinct as 
+possible from the other modules (i.e., cohesion should be maximized and coupling should 
+be minimized). Th e project manager fi rst groups together classes that are related so that 
+each programmer is working on related classes. Th ese groups of classes are then assigned to 
+ programmers. A good place to start is to look at the package diagrams.
+1 When I (Alan Dennis) was an undergraduate, I had the opportunity to hear Admiral Grace Hopper tell how the 
+term bug was introduced. She was working on one of the early Navy computers when suddenly it failed. Th e computer 
+would not restart properly, so she began to search for failed vacuum tubes. She found a moth inside one tube and 
+recorded in the log book that a bug had caused the computer to crash. From then on, every computer crash was jokingly blamed on a bug (as opposed to programmer error), and eventually the term bug entered the general language 
+of computing.
+2 See Billie Shea, “Quality Patrol: Eye on the Enterprise,” Application Development Trends (November 5, 1998): 31–38.
+3 One of the best books on managing programming (even though it was fi rst written more than 30 years ago) is that by 
+Frederick P. Brooks, Jr. Th e Mythical Man-Month, 20th Anniversary Edition (Reading, MA: Addison-Wesley, 1995)

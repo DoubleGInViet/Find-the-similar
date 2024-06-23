@@ -1,0 +1,247 @@
+﻿analysis techniques (Wiegers 2002). Up to 75 percent of the defects found by an inspection are discovered during preparation, so don’t omit this step (Humphrey 1989). The techniques described in the “Finding missing requirements” section in Chapter 7, “Requirements elicitation,” can be helpful during preparation. Plan on spending at least half as much time on individual preparation as is scheduled for the team inspection meetings.
+
+FIGURE 17-3 The number of defects found depends on the inspection rate.
+
+Inspection meeting   During an inspection meeting, the reader leads the other inspectors through the document, describing one requirement at a time in his own words. As inspectors bring up possible defects and other issues, the recorder captures them in the action item list for the requirements author. The purpose of the meeting is to identify as many major defects as possible. The inspection meeting shouldn’t last more than about two hours; tired people aren’t effective inspectors. If you need more time to cover all the material, schedule additional meetings.
+After examining all the material, the team decides whether to accept the requirements document as is, accept it with minor revisions, or indicate that major revision is needed. An outcome of “major revision needed“ could suggest that the requirements development process has some shortcomings or that the BA who wrote the requirements needs additional training. Consider holding a retrospective to explore how the process can be improved prior to the next specification activity (Kerth 2001). If major revisions are necessary, the team might elect to re-examine portions of the product that require extensive rework, as shown by the dotted line between Rework and Preparation in Figure 17-2.
+Sometimes inspectors report only superficial and cosmetic issues. In addition, inspectors are easily sidetracked into discussing whether an issue really is a defect, debating questions of project scope, and brainstorming solutions to problems. These activities can be useful, but they distract attention from the core objective of finding significant defects and improvement opportunities.
+ 
+Rework Nearly every quality control activity reveals some defects. The author should plan to spend some time reworking the requirements following the inspection meeting. Uncorrected requirement defects will be expensive to fix down the road, so this is the time to resolve the ambiguities, eliminate the fuzziness, and lay the foundation for a successful development project.
+Follow-up   In this final inspection step, the moderator or a designated individual works with the author to ensure that all open issues were resolved and that errors were corrected properly.
+Follow-up brings closure to the inspection process and enables the moderator to determine whether the inspection’s exit criteria have been satisfied. The follow-up step might reveal that some of the modifications made were incomplete or not performed correctly, leading to additional rework, as shown by the dotted line between Follow-up and Rework in Figure 17-2.
+
+ 
+ 
+Your inspection process should define
+
+ 
+criteria for requirements inspections:
+ 
+
+ 
+t the meeting) complete. Here are some possible exit
+ 
+q	All issues raised during the inspection have been addressed.
+q	Any changes made in the requirements and related work products were made correctly.
+q	All open issues have been resolved, or each open issue’s resolution process, target date, and
+owner have been documented.
+
+Defect checklist
+To help reviewers look for typical kinds of errors in the products they review, develop a defect checklist for each type of requirements document your projects create. Such checklists call the reviewers’ attention to historically frequent requirement problems. Checklists serve as reminders. Over time, people will internalize the items and look for the right issues in each review out of habit. Figure 17-4 illustrates a requirements review checklist, which is included with the companion content for this book. If you create particular requirements representations or models, you might expand
+the items in the checklist to be more thorough for those. Business requirements, such as a vision and scope document, might warrant their own checklist. Cecilie Hoffman and Rebecca Burgess (2009) provide several detailed review checklists, including one to validate software requirements against business requirements.
+No one can remember all the items on a long checklist. If there are more than six or eight items on the list, a reviewer will likely have to do multiple passes through the material to look for everything on the list; most reviewers won’t bother. Pare the lists to meet your organization’s needs, and modify the items to reflect the problems that people encounter most often with your own requirements.
+Some studies have shown that giving reviewers specific defect-detection responsibilities—providing structured thought processes or scenarios to help them hunt for particular kinds of errors—is more effective than simply handing all reviewers the same checklist and hoping for the best (Porter, Votta, and Basili 1995).
+ 
+ 
+
+FIGURE 17-4 A defect checklist for reviewing requirements documents.
+
+
+Requirements review tips
+Chapter 8 of Karl Wiegers’ More About Software Requirements: Thorny Issues and Practical Advice (Microsoft Press, 2006) offers suggestions to improve your requirements reviews. The following tips apply whether you are performing informal or formal reviews on your projects, and whether you’re storing your requirements in traditional documents, in a requirements management tool, or in any other tangible form.
+Plan the examination When someone asks you to review a document, the temptation is to begin at the top of page one and read it straight through. But you don’t need to do that. The consumers of the requirements specification won’t be reading it front-to-back like a book; reviewers don’t have to, either. Invite certain reviewers to focus on specific sections of documents.
+ 
+Start early Begin reviewing sets of requirements when they are perhaps only 10 percent complete, not when you think they’re “done.” Detecting major defects early and spotting systemic problems in the way the requirements are being written is a powerful way to prevent—not just find—defects.
+Allocate sufficient time Give reviewers sufficient time to perform the reviews, both in terms of actual hours to review (effort) and calendar time. They have other important tasks that the review has to fit around.
+Provide context   Give reviewers context for the document and perhaps for the project if they are not all working on the same project. Seek out reviewers who can provide a useful perspective based on their knowledge. For example, you might know a co-worker from another project who has a good eye for finding major requirement gaps even without being intimately familiar with the project.
+Set review scope Tell reviewers what material to examine, where to focus their attention, and what issues to look for. Suggest that they use a defect checklist like the one described in the preceding section. You might want to maximize availability and skills by asking different reviewers to review different sections or to use different parts of the checklists.
+Limit re-reviews Don’t ask anyone to review the same material more than three times. He will be tired of looking at it and won’t spot major issues after a third cycle because of “reviewer fatigue.” If you do need someone to review it multiple times, highlight the changes so he can focus on those.
+Prioritize review areas Prioritize for review those portions of the requirements that are of high risk or have functionality that will be used frequently. Also, look for areas of the requirements that have few issues logged already. It might be the case that those sections have not yet been reviewed, not that they are problem-free.
+
+A peer review is both a technical activity and a social activity. Asking some colleagues to tell you what’s wrong with your work is a learned—not instinctive—behavior. It takes time for a software organization to instill peer reviews into its culture. Following are some common challenges that organizations face regarding requirements reviews, some of which apply specifically to formal inspections, with suggestions for how to address each one (Wiegers 1998a; Wiegers 2002).
+The prospect of thoroughly examining a several-hundred-page requirements document is daunting. You might be tempted to skip the review entirely and just proceed with construction—not a wise choice. Even given a document of moderate size, all reviewers might carefully examine the first part and a few stalwarts will study the middle, but it’s unlikely that anyone will look at the last part.
+To avoid overwhelming the review team, perform incremental reviews throughout requirements development. Identify high-risk areas that need a careful look through inspection, and use informal reviews for less risky material. Ask particular reviewers to start at different locations in the document to make certain that fresh eyes have looked at every page. To judge whether you really need to inspect the entire specification, examine a representative sample (Gilb and Graham 1993). The number and types of errors you find will help you determine whether investing in a full inspection is likely to pay off.
+ 
+Large inspection teams Many project participants and customers hold a stake in the requirements, so you might have a long list of potential participants for requirements inspections. However, large review teams increase the cost of the review, make it hard to schedule meetings, and have difficulty reaching agreement on issues. I once participated in a meeting with 13 other inspectors. Fourteen people cannot agree to leave a burning room, let alone agree on whether a particular requirement is correct. Try the following approaches to deal with a potentially large inspection team:
+■	Make sure every participant is there to find defects, not to be educated or to protect a position.
+■	Understand which perspective (such as customer, developer, or tester) each inspector represents. Several people who represent the same community can pool their input and send just one representative to the inspection meeting.
+■	Establish several small teams to inspect the requirements in parallel and combine their defect lists, removing any duplicates. Research has shown that multiple inspection teams find more requirements defects than does a single large group (Martin and Tsai 1990; Schneider, Martin, and Tsai 1992; Kosman 1997). The results of parallel inspections are primarily additive rather than redundant.
+Organizations often build products through the collaboration of geographically dispersed teams. This makes reviews more challenging.
+Teleconferencing doesn’t reveal the body language and expressions of other reviewers like a
+face-to-face meeting does, but videoconferencing can be an effective solution. Web conferencing tools allow reviewers to ensure that they are all looking at the same material during the discussion.
+Reviews of an electronic document placed in a shared network repository provide an alternative to a traditional review meeting. In this approach, reviewers use word-processor features to insert their comments into the text. (This is how Karl and Joy reviewed each other’s work as we were writing this book.) Each comment is labeled with the reviewer’s initials, and each reviewer can see what previous reviewers had to say. Web-based collaboration tools also can help. Some requirements management tools include components to facilitate distributed asynchronous reviews that do not involve live meetings. If you choose not to hold a meeting, recognize that this can reduce a review’s effectiveness, but it’s certainly better than not performing the review at all.
+One of the prerequisites to a formal review meeting is that the participants have examined the material being reviewed ahead of time, individually identifying their initial sets of issues. Without this preparation, you risk people spending the meeting time doing all of their thinking on the spot and likely missing many important issues.
+One project had a 50-page SRS to be reviewed by 15 people, far too many to be effective and efficient. Everyone had one week to review the document on their own and send issues back to the author. Not surprisingly, most people didn’t look at it at all. So the lead BA scheduled a mandatory meeting for the reviewers to review the document together. He projected the SRS on the screen, dimmed the lights, and began reading through the requirements one by one. (The room had one very bright light shining down in the middle, directly on the lead BA—talk about being in the
+ 
+spotlight!) A couple of hours into the review meeting, the participants were yawning, their attention fading. Not surprisingly, the rate of issue detection decreased. Everyone longed for the meeting to end. This BA let the participants leave, suggesting that they review the document on their own time to speed up the next review meeting. Sure enough, being bored during the meeting triggered them to do their prep work. See the “Workshops” section in Chapter 7 for suggestions about how to keep participants engaged during review meetings.
+
+ 
+Prototyping requirements
+I
+r
+ 
+
+
+
+. They allow the user to
+ 
+experience some aspects of what a system based on the requirements would be like. Chapter 15, “Risk reduction through prototyping,” has more information on different types of prototypes and how
+they improve requirements. Here we describe how prototypes can help stakeholders judge whether a product built according to the requirements would meet their needs, and whether the requirements are complete, feasible, and clearly communicated.
+All kinds of prototypes allow you to find missing requirements before more expensive activities like development and testing take place. Something as simple as a paper mock-up can be used to walk through use cases, processes, or functions to detect any omitted or erroneous requirements. Prototypes also help confirm that stakeholders have a shared understanding of the requirements. Someone might implement a prototype based on his understanding of the requirements, only to learn that a requirement wasn’t clear when prototype evaluators don’t agree with his interpretation.
+
+
+ 
+. Additional levels of sophistication in prototypes, such as simulations, allow more precise validation of the requirements; however, building more sophisticated prototypes will also take more time.
+
+Testing the requirements
+
+. The simple act of designing tests will reveal many problems with the requirements long before you can execute those tests on running software. Writing functional tests crystallizes your vision of how the system should behave under certain conditions. Vague and ambiguous requirements will jump out at you because you won’t be able to describe the expected system response. When
+ 
+t. Testing is a powerful tool for both validating and
+verifying requirements.
+ 
+ 
+
+
+You can begin deriving conceptual tests from user requirements early in the development process (Collard 1999; Armour and Miller 2001). Use the tests to evaluate functional requirements, analysis models, and prototypes. The tests should cover the normal flow of each use case, alternative flows, and the exceptions you identified during elicitation and analysis. Similarly, if you identified business process flows, the tests should cover the business process steps and all possible decision paths.
+These conceptual tests are independent of implementation.
+called “View a Stored Order” for the Chemical Tracking System. Some conceptual tests are:
+■	User enters order number to view, order exists, user had placed the order. Expected result: show order details.
+■	User enters order number to view, order doesn’t exist. Expected result: Display message “Sorry, I can’t find that order.”
+■	User enters order number to view, order exists, user hadn’t placed the order. Expected result: Display message “Sorry, that’s not your order.”
+Ideally, a BA will write the functional requirements and a tester will write the tests from a common starting point: the user requirements, as shown in Figure 17-5. Ambiguities in the user requirements and differences of interpretation will lead to inconsistencies between the views represented by the functional requirements, models, and tests. As developers translate requirements into user interface and technical designs, testers can elaborate the conceptual tests into detailed test procedures
+(Hsia, Kung, and Sell 1997).
+ 
+ 
+FIGURE 17-5 Development and testing work products are derived from a common source.
+
+Let’s see how the Chemical Tracking System team tied together requirements and visual models with early test thinking. Following are several pieces of requirements-related information, all of which pertain to the task of requesting a chemical.
+Business requirement As described in Chapter 5, “Establishing the business requirements,” one of the primary business objectives for the Chemical Tracking System was to:
+Reduce chemical purchasing expenses by 25% in the first year.
+Use case A use case that aligns with this business requirement is “Request a Chemical.” This use case includes a path that permits the user to request a chemical container that’s already available in the chemical stockroom. Here’s the use case description from Figure 8-3 in Chapter 8, “Understanding user requirements”:
+The Requester specifies the desired chemical to request by entering its name or chemical ID number or by importing its structure from a chemical drawing tool. The system either offers the Requester a container of the chemical from the chemical stockroom or lets the Requester order one from a vendor.
+Functional requirement Here’s a bit of functionality derived from this use case:
+1.	If the stockroom has containers of the chemical being requested, the system shall display a list of the available containers.
+2.	The user shall either select one of the displayed containers or ask to place an order for a new container from a vendor.
+Dialog map Figure 17-6 illustrates a portion of the dialog map for the “Request a Chemical” use case that pertains to this function. As was described in Chapter 12, “A picture is worth 1024 words,” the boxes in this dialog map represent user interface displays, and the arrows represent possible navigation paths from one display to another. This dialog map was created far enough along in requirements development that the project participants were beginning to identify specific screens, menus, dialog boxes, and other dialog elements so they could give them names and contemplate a possible user interface architecture.
+ 
+ 
+
+FIGURE 17-6 Portion of the dialog map for the “Request a Chemical” use case.
+
+Test Because this use case has several possible execution paths, you can envision multiple tests to address the normal flow, alternative flows, and exceptions. The following is just one test, based on the flow that shows the user the available containers in the chemical stockroom.
+At dialog box DB40, enter a valid chemical ID; the chemical stockroom has two containers of this chemical. Dialog box DB50 appears, showing the two containers. Select the second container. DB50 closes and container 2 is added to the bottom of the Current Chemical Request List in dialog box DB70.
+Ramesh, the test lead for the Chemical Tracking System, wrote several tests like this one based on his understanding of the use case. Such abstract tests are independent of implementation details.
+They don’t discuss entering data into specific fields, clicking buttons, or other specific interaction techniques. As development progresses, the tester can refine such conceptual tests into specific test procedures.
+Now comes the fun part—testing the requirements. Ramesh first mapped each test to the functional requirements. He checked to make certain that every test could be “executed” by going through a set of existing requirements. He also made sure that at least one test covered each functional requirement. Next, Ramesh traced the execution path for every test on the dialog map with a highlighter pen. The shaded line in Figure 17-7 shows how the preceding test traces onto the dialog map.
+ 
+ 
+
+FIGURE 17-7 Tracing a test onto the dialog map for the “Request a Chemical” use case.
+
+By tracing the execution path for each test, you can find incorrect or missing requirements, improve the user’s navigation options, and refine the tests. Suppose that after “executing” all the tests in this fashion, the dialog map navigation line labeled “order new container” that goes from DB50 to DB60 in Figure 17-6 hasn’t been highlighted. There are two possible interpretations:
+■	That navigation is not a permitted system behavior. The BA needs to remove that line from the dialog map. If the SRS contains a requirement that specifies the transition, that requirement must also be removed.
+■	The navigation is legitimate, but the test that demonstrates the behavior is missing.
+In another scenario, suppose a tester wrote a test based on his interpretation of the use case that says the user can take some action to move directly from dialog box DB40 to DB70. However, the dialog map in Figure 17-6 doesn’t contain such a navigation line, so that test can’t be “executed” with the existing requirements set. Again, there are two possible interpretations. You’ll need to determine which of the following is correct:
+■	The navigation from DB40 to DB70 is not a permitted system behavior, so the test is wrong.
+■	The navigation from DB40 to DB70 is legitimate, but the dialog map and perhaps the SRS are missing the requirement that is exercised by the test.
+In these examples, the BA and the tester combined requirements, analysis models, and tests
+to detect missing, erroneous, or unnecessary requirements long before any code was written. Conceptual testing of software requirements is a powerful technique for controlling a project’s cost and schedule by finding requirement ambiguities and errors early in the game. As Ross Collard (1999) pointed out,
+ 
+Use cases and tests work well together in two ways: If the use cases for a system are complete, accurate, and clear, the process of deriving the tests is straightforward.
+And if the use cases are not in good shape, the attempt to derive tests will help to debug the use cases.
+
+Validating requirements with acceptance criteria
+Software developers might believe that they’ve built the perfect product, but the customer is the
+final arbiter.
+
+ 
+(Hsia, Kung, and Sell 1997; Leffingwell 2011; Pugh 2011). Having users devise acceptance tests is a valuable contributor to effective requirements development. The earlier that acceptance tests are written, the sooner they can help the team filter out defects in the requirements and, ultimately, in the implemented software.
+
+Working with customers to develop acceptance criteria provides a way to validate both the requirements and the solution itself. If a customer can’t express how she would evaluate the system’s satisfaction of a particular requirement, that requirement is not clear enough. Acceptance criteria define the minimum conditions for an application to be considered business-ready.
+Thinking about acceptance criteria offers a shift in perspective from the elicitation question of “What do you need to do with the system?” to “How would you judge whether the solution meets your needs?” Encourage users to use the SMART mnemonic—Specific, Measurable, Attainable, Relevant, and Time-sensitive—when defining acceptance criteria. The criteria should be specified such that multiple objective observers would reach the same conclusion about whether they were satisfied.
+Acceptance criteria keep the focus on stakeholders’ business objectives and the conditions that would allow the project sponsor to declare victory. This is more important than simply delivering on a requirements specification that might not really solve the stakeholders’ business problems.
+D
+. Acceptance tests constitute just a subset of acceptance criteria. Acceptance
+criteria could also encompass dimensions such as the following:
+■	Specific high-priority functionality that must be present and operating properly before the product could be accepted and used. (Other planned functionality could perhaps be delivered later, or capabilities that aren’t working quite right could be fixed without delaying an initial release.)
+■	Essential nonfunctional criteria or quality metrics that must be satisfied. (Certain quality attributes must be at least minimally satisfied, although usability improvements, cosmetics, and performance tuning could be deferred. The product might have to meet quality metrics such as a certain minimum duration of operational usage without experiencing a failure.)
+ 
+■	Remaining open issues and defects. (You might stipulate that no defects exceeding a particular severity level remain open against high-priority requirements, although minor bugs could still be present.)
+■	Specific legal, regulatory, or contractual conditions. (These must be fully satisfied before the product is considered acceptable.)
+■	Supporting transition, infrastructure , or other project (not product) requirements. (Perhaps training materials must be available and data conversions completed before the solution can be released.)
+It can also be valuable to think of “rejection criteria,” conditions or assessment outcomes that would lead a stakeholder to deem the system not yet ready for delivery. Watch out for conflicting acceptance criteria, such that meeting one could block the satisfaction of another. In fact, looking for conflicting acceptance criteria early on is a way to discover conflicting requirements.
+Agile projects create acceptance criteria based on user stories. As Dean Leffingwell (2011) put it,
+
+
+
+
+.
+
+In principle, if all of the acceptance criteria for a user story are met, the product owner will accept the user story as being completed. Therefore, customers should be very specific in writing acceptance criteria that are important to them.
+
+Acceptance tests
+Acceptance tests constitute the largest portion of the acceptance criteria. Creators of acceptance tests should consider the most commonly performed and most important usage scenarios when deciding how to evaluate the software’s acceptability. Focus on testing the normal flows of the use cases and their corresponding exceptions, devoting less attention to the less frequently used alternative flows. Ken Pugh (2011) offers a wealth of guidance for writing requirements-based acceptance tests.
+A	l
+. Each test describes how a user story should function in the executable software.
+Because they are largely replacing detailed requirements, the acceptance tests on an agile project should cover all success and failure scenarios (Leffingwell 2011). The value in writing acceptance tests is that it guides users to think about how the system will behave following implementation. The problem with writing only acceptance tests is that the requirements exist only in people’s minds. By not documenting and comparing alternate views of requirements—user requirements, functional requirements, analysis models, and tests—you can miss an opportunity to identify errors, inconsistencies, and gaps.
+Automate the execution of acceptance tests whenever possible. This makes it easier to repeat the tests when changes are made and functionality is added in future iterations or releases. Acceptance
+ 
+tests must also address nonfunctional requirements. They should ensure that performance goals are achieved, that the system complies with usability standards, and that security expectations are fulfilled.
+Some acceptance testing might be performed manually by users. The tests used in user acceptance testing (UAT) should be executed after a set of functionality is believed to be release-ready. This allows users to get their hands on the working software before it is officially delivered and permits users to familiarize themselves with the new software. The customer or product champion should select tests for UAT that represent the highest risk areas of the system. The acceptance tests will validate that the solution does what it is supposed to. Be sure to set up these tests using plausible test data. Suppose the test data used to generate a sales report isn’t realistic for the application. A user who is performing UAT might incorrectly report a defect just because the report doesn’t look right to him, or he might miss an erroneous calculation because the data is implausible.
+
+Writing requirements isn’t enough. You need to make sure that they’re the right requirements and that they’re good enough to serve as a foundation for design, construction, testing, and project
+management. Acceptance test planning, informal peer reviews, inspections, and requirements testing techniques will help you to build higher-quality systems faster and more inexpensively than you ever have before.
+
+ 
+
+ 
+C HA P T E R 1 8
+Requirements reuse
+
+Sylvia, the product manager at Tailspin Toys, was meeting with the development lead for their line of tablet apps for musicians. “Prasad, I just learned that Fabrikam, Inc., is going to release a larger version of their tablet, called a Substrate. Right now our guitar amplifier emulator runs on their smaller tablet, the ScratchPad. We need to come up with a version for the Substrate. We can do more with the larger screen. The Substrate will come with the new release of their operating system, which will run on both.”
+“Wow, this is great,” said Prasad. “I’d like to be able to show more amp controls on the screen. We can make the controls bigger and easier to manipulate, too. We can reuse a lot of the core functionality from the ScratchPad emulator version. Unless Fabrikam changed the operating system APIs, we can reuse some of the code, too. We might want to drop some functionality in the ScratchPad version that our customers don’t use. We can add the solid state/tube hybrid amp sounds from the web version, but we need to make some changes to suit the frequency response on the tablet. This should be fun!”
+. People think most often in terms of code reuse, but many other software project components also have reuse potential. Reusing requirements can increase productivity and improve quality, as well as leading to greater consistency between related systems.
+Reuse means taking advantage of work that has been done previously, whether on the same project or on an earlier project. Anytime you can avoid starting from scratch, you’ve got a running start on the project. The simplest way to reuse a requirement is to copy and paste it from an existing specification. The most sophisticated way is to reuse an entire functional component, from
+requirements through design, code, and tests. Numerous reuse options exist between these extremes.
+Reuse is not free. It presents its own risks, both with respect to reusing existing items and to creating items with good reuse potential. It will likely take more time and effort to create high-quality reusable requirements than to write requirements you intend to use only on the current project.
+Despite the obvious merits, one study found that only about half of the organizations surveyed are actually practicing requirements reuse, primarily because of the poor quality of existing requirements (Chernak 2012). An organization that is serious about reuse needs to establish some infrastructure to make existing high-quality requirements knowledge accessible to future BAs and to foster a culture that values reuse.
+This chapter describes several kinds of requirements reuse, identifies some classes of requirements information that have reuse potential in various contexts, and offers suggestions about how to perform requirements reuse. It presents some issues around making requirements reusable.
+
+351
+ 
+The chapter concludes with both barriers to effective reuse and success factors that can help your organization better take advantage of its existing body of requirements knowledge.
+
+Why reuse requirements?
+
+. Reusing trusted requirements can save review time, accelerate the approval cycle, and speed up other project activities, such as testing. Reuse can improve your ability to estimate implementation effort if you have data available from implementing the same requirements on a previous project.
+From the user’s perspective, requirements reuse can improve functional consistency across related members of a product line or among a set of business applications. Consider the ability to format blocks of text by applying the same styling, spacing, and other properties in all members of a suite
+of related applications. Making this work in a uniform fashion involves reusing both functional and usability requirements. Such consistency can minimize the user’s learning curve and frustration levels. It also saves time for stakeholders, who then will not need to specify similar requirements repeatedly.
+Even if the implementation varies in different environments, the requirements might be the same. An airline’s website might have a feature to let a passenger check in for a flight, pay for seat upgrades, and print boarding passes. The airline might also have self-service check-in kiosks at airports. The functionality for both check-in operations will be nearly identical, and hence reusable across the two products, even though the implementations and user experiences are dissimilar.
+
+Dimensions of requirements reuse
+We can imagine several types of requirements reuse. Sometimes a business analyst will recognize that a user-presented requirement resembles one from a previous project. Perhaps he can retrieve that existing requirement and adapt it for the new project. Such ad hoc reuse is most common with experienced BAs who have good memories and access to previous requirements collections. In other cases, a BA might use some existing requirements during elicitation to help users identify topics to
+consider for the new system. It’s easier to modify something that exists than to create something new.
+Table 18-1 describes three dimensions of requirements reuse: the extent of assets being reused, the extent to which an item must be modified for use in its new setting, and the mechanism being used to perform the reuse. When you’re contemplating reusing requirements information, think about which option in each of these dimensions is most appropriate and practical for meeting your objectives. TABLE 18-1 Three dimensions of requirements reuse
+
+Dimension	Options
+Extent of reuse	■	Individual requirement statement
+■	Requirement plus its attributes
+■	Requirement plus its attributes, context, and associated information such as data definitions, glossary definitions, acceptance tests, assumptions, constraints, and business rules
+■	A set of related requirements
+■	A set of requirements and their associated design elements
+■	A set of requirements and their associated design, code, and test elements
+Extent of modification	■	None
+■	Associated requirement attributes (priority, rationale, origin, and so on)
+■	Requirement statement itself
+■	Related information (tests, design constraints, data definitions, and so on)
+Reuse mechanism	■	Copy-and-paste from another specification
+■	Copy from a library of reusable requirements
+■	Refer to an original source
+
+Extent of reuse
+The first dimension has to do with the quantity of material that you are reusing. You might reuse just a single functional requirement. Or you might reuse such a statement along with any associated attributes, such as its rationale, origin, priority, and more if those are relevant to the target project. In some cases you can reuse not just the requirement but also associated artifacts: data definitions, acceptance tests, relevant business rules, constraints, assumptions, and so on. Often, a set of related requirements can be reused, such as all the functional requirements associated with a particular feature. Applications that run on similar platforms, such as different smartphone operating systems, could reuse requirements and design elements but perhaps not much code.
+In the ideal scenario you can reuse a whole package of requirements, models, design components, code, and tests. That is, you reuse an entire chunk of implemented functionality essentially unchanged from a related product. This level of reuse can work when common operations are
+being employed across various projects on a common platform. Examples of such operations are error-handling strategies, internal data logging and reporting, communication protocol abstractions, and help systems. These functions must be developed for reuse with clear application programming interfaces (APIs) and all supporting documentation and test artifacts.
+
+ 
+Extent of modification
+The next dimension to consider is how much modification will be needed to make existing requirements reusable on the new project. In some cases, you’ll be able to reuse a requirement unchanged. In the example given earlier about the airline’s check-in kiosk, many of the functional requirements would be identical for the kiosk and for a website that offers passenger check-in. In other cases, you might reuse a requirement statement unchanged but have to modify some of its attributes, such as its priority or rationale as it applies to the new system. Often, you will start with an existing requirement but modify it to exactly suit the new purpose. Finally, whether or not you change the requirement, you might need to modify some designs and tests. An example is porting functionality from a PC to a tablet that has a touch screen rather than a mouse-and-keyboard interface.
+
+Reuse mechanism
+The most rudimentary form of reuse is simply a copy-and-paste of a piece of requirements information, either from another specification or from a library of reusable requirements. You don’t retain a history of where the original information came from, and you can modify the copies you make. Copy-and-paste within a project increases the size of your specifications because you’re duplicating information. If you find yourself populating a specification by doing a lot of copy-and-paste, a warning bell should ring. And just as when you copy code, copying and pasting
+requirements can introduce problems because of context issues, when the context isn’t carried across
+with the paste operation.
+In most cases, you’re better off reusing existing content by referring to it instead of replicating it. This means that the original source of the information must be accessible to anyone who needs to view the requirement, and it must be persistent. If you’re storing your requirements in a document and want the same requirement to appear in multiple places, you can use the cross-referencing feature of your word processor to link copies back to the master instance (Wiegers 2006). When the master instance is altered, the change is echoed everywhere you inserted a cross-reference link. This avoids the inconsistencies that can arise when one instance gets changed manually but others do not. However, it also runs the risk of all those requirements changing if someone else can alter the master instance.
+Another copy-by-reference mechanism is to store not the actual requirement information but simply a pointer to it in your project documentation. Suppose you want to reuse descriptions of some user classes from other projects in your organization. First, collect such reusable information into a shared location. Possible forms for this collection include a word processing file, spreadsheet,
+HTML or XML file, database, and a specialized requirements tool. Give each object in that collection a unique identifier. To incorporate that information by reference, enter the identifier for each object you want to reuse in the appropriate section of your document. If technology allows, include a hyperlink directly to the reused object in the information collection. A reader who wants to view that user class description can simply follow the link to go to the master source. If you maintain that collection of reusable artifacts properly, those links and the destination information will always be current.

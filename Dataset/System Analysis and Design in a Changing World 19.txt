@@ -1,0 +1,583 @@
+﻿Th ere are four general stages of tests: unit tests, integration tests, system tests, and acceptance tests. Although each application system is diff erent, most errors are found during integration and system testing. In addition to the diff erent stages of tests, the tests must address both 
+the functional and nonfunctional requirements. However, before going into the specifi c types 
+of tests, we describe the eff ect that the object-oriented characteristics have on testing and the 
+necessary planning and management activities that must take place to have a successful 
+testing program.
+Testing and Object Orientation
+Most testing techniques have been developed to support non–object-oriented development. 
+Th erefore, most of the testing approaches have had to be adapted to object-oriented systems. 
+Th e characteristics of object-oriented systems that aff ect testing the most are encapsulation 
+(and information hiding); polymorphism (and dynamic binding); inheritance; and the use 
+of patterns, class libraries, frameworks, and components. Also, the sheer volume of products 
+that come out of a typical object-oriented development process has increased the importance 
+of testing in object-oriented systems development.
+Encapsulation and Information Hiding Encapsulation and information hiding allow processes and data to be combined to create holistic entities (i.e., objects). Th ey support hiding 
+everything behind a visible interface. Although this allows the system to be modifi ed and 
+maintained in an eff ective and effi cient manner, it makes testing the system problematic. 
+What do you need to test to build confi dence in the system’s ability to meet the user’s need? 
+You need to test the business process that is represented in the use cases. However, the business process is distributed over a set of collaborating classes and contained in the methods 
+of those classes. Th e only way to know the eff ect that a business process has on a system is 
+to look at the state changes that take place in the system. But in object-oriented systems, the 
+instances of the classes hide the data behind a class boundary. How is it possible then to see 
+the impact of a business process?
+A second issue raised by encapsulation and information hiding is the defi nition of a “unit” 
+for unit testing. What is the unit to be tested? Is it the package, class, or method? In traditional 
+approaches, the answer would be the process that is contained in a function. However, the process in object-oriented systems is distributed over a set of classes. Th erefore, testing individual 
+methods makes no sense. Th e answer is the class. Th is dramatically changes the way unit testing 
+is done.
+A third issue raised is the impact on integration testing. In this case, objects can be aggregated to form aggregate objects; for instance, a car has many parts, or they can be grouped 
+together to form collaborations. Furthermore, they can be used in class libraries, frameworks, 
+and components. Based on all of these diff erent ways classes can be grouped together, how 
+does one eff ectively do integration testing?
+Polymorphism and Dynamic Binding Polymorphism and dynamic binding dramatically aff ect both unit and integration testing. Because an individual business process is 
+implemented through a set of methods distributed over a set of objects, as shown before, 
+the unit test makes no sense at the method level. However, with polymorphism and 
+dynamic binding, the same method (a small part of the overall business process) can be 
+implemented in many diff erent objects. Th erefore, testing individual implementations 
+of methods makes no sense. Again, the unit that makes sense to test is the class. Except 
+for trivial cases, dynamic binding makes it impossible to know which implementation is 
+going to be executed until the system does it. Th erefore, integration testing becomes very 
+ challenging.
+Designing Tests  469
+Inheritance When taking into consideration the issues raised about inheritance (see Chapter 8), 
+it should not be a surprise that inheritance aff ects the testing of object-oriented systems. Th rough 
+the use of inheritance, bugs can be propagated instantaneously from a superclass to all its direct 
+and indirect subclasses. However, the tests that are applicable to a superclass are also applicable 
+to all its subclasses. As usual, inheritance is a double-edged sword. Finally, even though we have 
+stated this many times before, inheritance should support only a generalization and specialization type of semantics. Remember, when using inheritance, the principle of substitutability is 
+critical (see Chapter 5). All these issues aff ect unit and integration testing.
+Reuse On the surface, reuse should decrease the amount of testing required. However, each time 
+a class is used in a diff erent context, the class must be tested again. Th erefore, any time a class 
+library, framework, or component is used, unit testing and integration testing are important. In 
+the case of a component, the unit to test is the component itself. Remember that a component has 
+a well-defi ned API (application program interface) that hides the details of its implementation.
+Object-Oriented Development Process and Products In virtually all textbooks, including 
+this one, testing is covered near the end of system development. Th is seems to imply that testing is something that takes place only aft er the programming has ended. However, every product13 that comes out of the object-oriented development process must be tested. For example, 
+it is a lot easier to ensure that the requirements are captured and modeled correctly through 
+testing the use cases, and it is a lot cheaper to catch this type of error back in analysis than it is 
+in implementation. Obviously, this is also true for testing collaborations. By the time we have 
+implemented a collaboration as a set of layers and partitions, we could have expended a great 
+deal of time—and time is money—on implementing the wrong thing. So testing collaborations 
+by role-playing the CRC cards in analysis actually saves the team lots of time and money.
+Testing is something that must take place throughout system development, not simply 
+at the end. However, the type of testing that can take place on nonexecutable representations, 
+such as use cases and CRC cards, is diff erent from those on code written in an object-oriented 
+programming language. Th e primary approach to testing nonexecutable representations is some 
+form of an inspection or walkthrough of the representation.14 In the earlier chapters, we focused 
+on verifying and validating the diff erent analysis and design representations. We also made sure 
+that the diff erent representations were consistent and balanced. As such, we have dealt with testing the nonexecutable representations throughout the development process (see Chapters 4–11).
+Test Planning
+Testing starts with the development of a test plan, which defi nes a series of tests that will be 
+conducted. Because testing takes place throughout the development of an object-oriented 
+system, a test plan should be developed at the very beginning of system development and 
+continuously updated as the system evolves. For example, the representation of a class 
+evolves from a simplistic CRC card to a set of classes that are implemented in a programming language. In Figure 12-3 we see a CRC card representation of an Order class that 
+13 For example, activity diagrams, use-case descriptions, use-case diagrams, CRC cards, class diagrams, object 
+diagrams, sequence diagrams, communication diagrams, behavioral state machines, package diagrams, contracts, 
+method specifi cations, use scenarios, window navigation diagrams, storyboards, windows layout diagrams, real use 
+cases, and source code.
+14 See Michael Fagan, “Design and Code Inspections to Reduce Errors in Program Development,” IBM Systems 
+Journal 15, no. 3 (1976); Daniel P. Freedman and Gerald M. Weinberg, Handbook of Walkthrough, Inspections, and 
+Technical Reviews: Evaluating Programs, Projects, and Products, 3rd Ed. (New York: Dorset House Publishing, 1990). 
+Also, Chapters 4, 5, 6, and 7 describe the walkthrough process in detail in relation to the verifi cation and validation 
+of the analysis models.
+470 Chapter 12 Construction
+Front:
+Class Name: Order ID: 2
+Calculate tax
+Calculate subtotal
+Calculate shipping
+Calculate total
+Responsibilities
+Description: An Individual who needs to receive or has received Associated Use Cases: 3
+medical attention
+Type: Concrete, Domain
+Collaborators
+(a)
+Back:
+Attributes: 
+Relationships: 
+Generalization (a-kind-of):
+Aggregation (has-parts):
+Other Associations: Customer {1..1} State {1..1} Product {1..*}
+(b)
+Order Number (1..1) (unsigned long)
+Date (1..1) (Date)
+Sub Total (0..1) (double) {Sub Total = ProductOrder.sum(GetExtension())}
+Tax (0..1) (double) (Tax = State.GetTaxRate() * Sub Total)
+Shipping (0..1) (double)
+Total (0..1) (double)
+Customer (1..1) (Customer)
+Cust ID (1..1) (unsigned long) {Cust ID = Customer. GetCustID()}
+State (1..1) (State)
+StateName (1..1) (String) {State Name = State. GetState()}
+FIGURE 12-3
+Order CRC Card 
+(see Figure 8-19)
+Designing Tests  471
+contains invariants. Each of these invariants must be tested and enforced for the Order class 
+to be considered to be of suffi cient quality. One simple invariant test would be to attempt to 
+assign a value to the Cust ID attribute that was not associated with the Customer object that 
+is contained in the Customer attribute. Another invariant test would be to try and assign 
+more than one date to the Date attribute. Finally, a trickier invariant test would be to try 
+to assign an integer value to the Shipping attribute. Th is one is more diffi cult because most 
+programming languages allow an integer to be “cast” to a double. If the value contained in 
+the Shipping attribute really is supposed to be a double, then casting the integer value to a 
+double would be an error. Th ese tests should be done using a walkthrough approach when 
+the class is specifi ed, as we did in Chapters 4, 5, 6, and 7, and a more rigorous approach 
+once the class has been fully implemented. Th is is an example of unit testing a class, which is 
+described later in this chapter. To ensure the quality of a class, it should be tested each time 
+its representation is changed.
+Th e test plan should address all products that are created during the development of the 
+system. For example, tests should be created that can be used to test completeness of a CRC 
+card. Each individual test has a specifi c objective and describes a set of very specifi c test cases
+to examine. In the case of invariant-based tests, a description of the invariant is given, and the 
+original values of the attribute, the event that will cause the attribute value to change, the actual 
+results observed, the expected results, and whether it passed or failed are shown. Test specifi cations are created for each type of constraint that must be met by the class. Also, similar types of 
+specifi cations are done for integration, system, and acceptance tests.
+Not all classes are likely to be fi nished at the same time, so the programmer usually 
+writes stubs for the unfi nished classes to enable the classes around them to be tested. A stub 
+is a placeholder for a class that usually displays a simple test message on the screen or returns 
+some hardcoded value15 when it is selected. For example, consider an application system that 
+provides creating, changing, deleting, fi nding, and printing functions for some object such as 
+CDs, patients, or employees. Depending on the fi nal design, these diff erent functions could 
+end up in diff erent objects on diff erent layers. Th erefore, to test the functionality associated 
+with the classes on the problem-domain layer, a stub would be written for each of the classes 
+on the other layers that interact with the problem-domain classes. Th ese stubs would be the 
+minimal interface necessary to be able to test the problem-domain classes. For example, they 
+would have methods that could receive the messages being sent by the problem-domain 
+layer objects and methods that could send messages to the problem-domain layer objects. 
+Typically, the methods would display a message on the screen notifying the tester that the 
+method was successfully reached (e.g., Delete item from Database method reached). In this 
+way, the problem-domain classes could pass class testing before the classes on the other layers 
+were completed. 
+Finally, as you may suspect, test planning should be performed throughout the development process. It is a lot easier to design tests when you are creating the diff erent analysis and 
+design representations than to wait and design them during the construction of the system.
+Unit Tests
+Unit tests focus on a single unit—the class. Th ere are two approaches to unit testing: blackbox testing and white-box testing (see Figure 12-4). Black-box testing is the most commonly 
+used because each class represents an encapsulated object. Black-box testing is driven by 
+15 Hardcoded means written into the program. For example, suppose you were writing a unit to calculate the net 
+present value of a loan. Th e stub might be written to always display (or return to the calling module) a value of 100 
+regardless of the input values.
+472 Chapter 12 Construction
+FIGURE 12-4  Types of Tests
+Unit Testing Black-Box Testing CRC Cards For normal unit testing • Tester focuses on whether the class 
+ Treats class as a Class Diagrams meets the requirements stated in the 
+ black box Contracts specifi cations.
+White-Box Testing Method Specifi cations When complexity is • By looking inside the class to review the 
+ Looks inside the high code itself, the tester may discover errors 
+ class to test its or assumptions not immediately obvious 
+ major elements to someone treating the class as a black 
+box.
+Integration User Interface Testing Interface Design For normal integration • Testing is done by moving through each 
+ Testing The tester tests each testing and every menu item in the interface 
+ interface function either in a top-down or bottom-up manner.
+Use-Case Testing Use Cases When the user • Testing is done by moving through each 
+ The tester tests each interface is important use case to ensure that they work correctly.
+ use case • Usually combined with user interface 
+ testing because it does not test all 
+ interfaces.
+Interaction Testing Class Diagrams When the system • The entire system begins as a set of 
+ Tests each process in Sequence Diagrams performs data stubs. Each class is added in turn and 
+ step-by-step Communication processing the results of the class compared to the 
+ fashion Diagrams correct result from the test data; when a 
+class passes, the next class is added 
+and the test rerun. This is done for each 
+package. Once each package has passed 
+all tests, then the process repeats 
+integrating the packages.
+System Interface Testing Use-Case Diagram When the system • Because data transfers between systems 
+ Tests the exchange of exchanges data are often automated and not monitored 
+ data with other directly by the users, it is critical to 
+ systems design tests to ensure that they are being 
+done correctly.
+System Requirements Testing System Design, Unit For normal system • Ensures that changes made as a result 
+ Testing Tests to whether Tests, and Integration testing of integration testing did not create new 
+ original business Tests errors.
+ requirements • Testers often pretend to be uninformed 
+ are met users and perform improper actions to 
+ ensure that the system is immune to invalid 
+ actions (e.g., adding blank records).
+Usability Testing Interface Design and When user interface • Often done by analyst with experience 
+ Tests how convenient Use Cases is important in how users think and in good interface 
+ the system is to use design.
+ • Sometimes uses formal usability testing 
+procedures discussed in Chapter 10.
+Documentation Testing Help System, For normal system • Analysts spot check or check every item 
+ Tests the accuracy of Procedures, Tutorials testing on every page in all documentation to 
+ the documentation ensure that the documentation items
+ and examples work properly.
+Performance Testing System Proposal When the system is • High volumes of transactions are 
+ Examines the ability to important generated and given to the system.
+ perform under high Infrastructure Design • Often done by using special-purpose 
+ loads testing software.
+Security Testing Infrastructure Design When the system is • Security testing is a complex task, usually
+ Tests disaster recovery important done by an infrastructure analyst assigned
+ and unauthorized to the project.
+ access • In extreme cases, a professional fi rm may 
+be hired.
+Acceptance Alpha Testing System Tests For normal • Often repeats previous tests but are con-
+ Testing Conducted by users to acceptance testing ducted by users themselves to ensure that 
+ ensure that they they accept the system.
+ accept the system
+Beta Testing System Requirements When the system is • Users closely monitor system for errors or 
+ Uses real data, not important useful improvements.
+ test data
+Stage Types of Tests Test Plan Source When to Use Notes
+Designing Tests  473
+the CRC cards, behavior state machines, and contracts associated with a class, not by the 
+programmers’ interpretation. In this case, the test plan is developed directly from the specifi cation of the class: each item in the specifi cation becomes a test, and several test cases 
+are developed for it. White-box testing is based on the method specifi cations associated 
+with each class. However, white-box testing has had limited impact in object-oriented 
+development. Th is is due to the rather small size of the individual methods in a class. Most 
+approaches to testing classes use black-box testing to ensure their correctness.
+Class tests should be based on the invariants on the CRC cards, the behavioral state 
+machines associated with each class, and the pre- and post-conditions contained on each 
+method’s contract. Assuming all the constraints have been captured on the CRC cards and 
+contracts, individual test cases can be developed fairly easily. For example, suppose the 
+CRC card for an order class gave an invariant that the order quantity must be between 10 
+and 100 cases. Th e tester would develop a series of test cases to ensure that the quantity is 
+validated before the system accepts it. It is impossible to test every possible combination of 
+input and situation; there are simply too many possible combinations. In this example, 
+the test requires a minimum of three test cases: one with a valid value (e.g., 15), one with 
+a low invalid value (e.g., 7), and one with a high invalid value (e.g., 110). Most tests would 
+also include a test case with a nonnumeric value to ensure the data types were checked (e.g., 
+ABCD). A really good test would include a test case with nonsensical but potentially valid 
+data (e.g. 21.4).
+Using a behavioral state machine is a useful way to identify tests for a class. Any class 
+that has a behavioral state machine associated with it has a potentially complex life cycle. 
+It is possible to create a series of tests to guarantee that each state can be reached. For 
+example, Figure 12-5 portrays the behavioral state machine for the Order class just discussed. In this case, there are many transitions between the diff erent states of an instance 
+of the Order class. Tests should be created to guarantee that the only transitions allowed 
+from an instance of the Order class are the ones specifi cally defi ned. In this case, it should 
+be impossible for an Order object to go from the In process state to the Placed state 
+without traversing the Ordered and Processing states via the Customer submits order, Order 
+sent for credit authorization, and Authorization = Approved transitions. Th is state-based testing can be done throughout the development of the class via walkthroughs and role-playing 
+early in the evolution of the class and more rigorous testing once it has been implemented in 
+a programming language.
+Tests also can be developed for each contract associated with the class. In the case 
+of a contract, a set of tests for each pre- and post-condition is required. For example, the 
+contract of the addOrder method of the Customer class shown in Figure 12-6 has both a 
+pre- and post-condition that essentially requires the new order to have not existed with 
+the instance of the Customer class before the method executes, and that the new order is 
+associated with the Customer object aft er the method executes. Tests must be created to 
+enforce these constraints. If the class is a subclass of another class, then all the tests associated with the superclass must be executed again. Th e interactions among the constraints, 
+invariants, and the pre- and post-conditions in the subclass and the superclass(es) must be 
+also addressed.
+Finally, owing to good object-oriented design, to fully test a class, special testing methods 
+might have to be added to the class being tested. For example, how can invariants be tested? 
+Th e only way to really test them is to have methods that are visible to the outside of the class 
+that can be used to manipulate the values of the class’s attributes. However, adding these types 
+of methods to a class does two things. First, they add to the testing requirements because they 
+themselves have to be tested. Second, if they are not removed from the deployed version of the 
+system, the system will be less effi cient, and the advantage of information hiding eff ectively 
+474 Chapter 12 Construction Order
+In process Ordered
+Denied
+Order is
+created
+Customer
+submits order
+Customer
+edits order
+information
+Authorization
+= Denied
+Processing
+Order sent
+for credit
+authorization
+Customer
+withdraws
+order request
+Placed
+Order sent to
+customer
+Customer
+accepts
+shipment Shipped Received
+Authorization
+= Approved
+Order is
+closed
+FIGURE 12-5  Order Behavioral State Machine (see Figure 6-18)
+Designing Tests  475
+16 We describe some of the diff erent types of user interface testing in Chapter 10.
+Method Name: Class Name: ID: 
+Associated Use Cases: 
+Clients (Consumers): 
+Type of Value Returned: 
+Description of Responsibilities: 
+Arguments Received: 
+Pre-Conditions: 
+Post-Conditions: 
+addOrder Customer 36
+addCustomerOrder
+anOrder:Order
+void
+not Orders.includes(anOrder)
+Orders = Orders@pre.including(anOrder)
+Implement the necessary behavior to add a new order to an existing customer keeping
+the orders in sorted order by the order’s order number.
+FIGURE 12-6
+addOrder Contract 
+(see Figure 8-25)
+is lost. As is readily apparent, testing classes is complex. Th erefore, great care must be taken 
+when designing tests for classes.
+Integration Tests
+Integration tests assess whether a set of classes that must work together do so without error. Th ey 
+ensure that the interfaces and linkages between diff erent parts of the system work properly. At this 
+point, the classes have passed their individual unit tests, so the focus now is on the fl ow of control 
+among the classes and on the data exchanged among them. Integration testing follows the same 
+general procedures as unit testing: Th e tester develops a test plan that has a series of tests, which, in 
+turn, have a test. Integration testing is oft en done by a set of programmers and/or systems analysts.
+From an object-oriented systems perspective, integration testing can be diffi cult. A single class 
+can be in many diff erent aggregations, because of the way objects can be combined to form new 
+objects, class libraries, frameworks, components, and packages. Where is the best place to start the 
+integration? Typically, the answer is to begin with the set of classes, a collaboration, that are used 
+to support the highest-priority use case (see Chapter 4). Also, dynamic binding makes it crucial to 
+design the integration tests carefully to ensure that the combinations of methods are tested.
+Th ere are four approaches to integration testing: user interface testing,16 use-case testing, 
+interaction testing, and system interface testing (see Figure 12-4). Most projects use all four 
+approaches. However, like unit testing, integration testing must be carefully planned. In the 
+case of use-case testing, only the aspects of the class and class invariants related to the specifi c use case are included in these use-case context-dependent class tests. In fact, typically 
+use-case testing is performed one scenario at a time. In many ways, use-case testing can be 
+viewed as a more rigorous role-playing exercise (see Chapter 5). Like unit testing, integration 
+476 Chapter 12 Construction
+testing should be performed throughout the evolution of the system. In the early stages of the 
+system’s development, you should be working with the CRC cards and role-playing them. 
+Later on, you will have the contracts and method specifi cations completed. Gradually, you 
+will have implemented the problem domain classes, the user interface classes, and the data 
+management layer classes in a programming language. As in unit testing, each time a new 
+representation (diagram, text, program) is created, a new integration test needs to be performed. Th erefore, as the system evolves to more completely support the use case, we can 
+more rigorously test whether the use case is fully supported or not.
+One of the major problems with integration testing and object-oriented systems is the 
+diffi culty caused by the interaction of inheritance and dynamic binding. Th is specifi c problem has become known as the yo-yo problem. Th e yo-yo problem occurs when the analyst or 
+designer must bounce up and down through the inheritance graph to understand the control 
+fl ow through the methods being executed. In most cases, this is caused by a rather deep inheritance graph; that is, the subclass has many superclasses above it in the inheritance graph. Th e 
+yo-yo problem becomes even more of a nightmare in testing object-oriented systems when 
+inheritance confl icts exist and when multiple inheritance is used (see Chapter 8). About the 
+only realistic approach to testing through the yo-yo problem is through an interactive debugger that is typically part of a systems development environment, such as Eclipse, Netbeans, 
+or Visual Studio.
+System Tests
+To ensure that all classes work together without error, systems analysts usually conduct the 
+system tests. System testing is similar to integration testing but is much broader in scope. 
+Whereas integration testing focuses on whether the classes work together without error, 
+system tests examine how well the system meets both the functional and nonfunctional 
+requirements, e.g., usability, documentation, performance, and security (see Figure 12-4). 
+Th e purpose of functional requirements testing is to ensure that the functional requirements uncovered are indeed met. Like integration testing, this is primarily driven by the 
+system’s use cases and their scenarios. However, in many cases, integration testing requires 
+modifi cations to the system. So, the focus of requirements testing is to ensure that the modifi cations made did not cause additional errors. 
+Usability testing is essentially a combination of the user interface and use-case testing 
+that takes place during integration testing. Where user interface and use-case testing focused 
+on whether the user interface works and whether the use case was supported, respectively, 
+usability testing focuses on how well the user interface supports the use cases. Th at is, how 
+effi cient and eff ective the user interface is. In many cases, this could include formal usability 
+testing (see Chapter 10).
+Given that documentation is basically a system in itself, documentation testing should 
+involve both unit and integration testing. In this case, the unit is a documentation entry, and 
+the user interface is either the paper or help screen. From an integration testing perspective, 
+the focus is on whether the documentation works or not. And, like system testing of the soft -
+ware, the focus of system testing of the documentation is how well the documentation works. 
+Th e reason that documentation is not typically tested in parallel with the system, i.e., when the 
+classes, use cases, and user interface are tested, is to minimize the amount of documentation 
+testing required. Even though the documentation should be developed in parallel with the 
+soft ware, until the soft ware is tested, it is unclear exactly what to test in the documentation. 
+As the soft ware “passes” its tests, the documentation that goes along with the soft ware can 
+then be fi nalized and tested.
+Designing Tests  477
+Performance testing focuses on trying to break the system with regard to the amount of 
+work the system can handle. Th ese types of tests typically fall into two categories: stress tests 
+and volume tests. Th e purpose of stress tests, also known as load tests, is to ensure that the 
+system can handle a certain number of simultaneous requests. For example, if the system is 
+supposed to be able to handle 10,000 simultaneous requests, a stress test would attempt to 
+push the system into handling more than that. If the performance of the test is insuffi cient, 
+various soft ware and database optimizations (see Chapters 8 and 9) can be investigated. In 
+other cases, additional hardware could be required. Th e purpose of volume tests is to push 
+the implementation so that it may break when there is a large amount of data required to 
+answer a user request. Again, if it is discovered that the system fails this type of test, then 
+database and soft ware optimizations and additional hardware could be required. For example, sometimes it is more effi cient to create a set of temporary tables by “selecting” the data 
+from the actual tables before “joining” the tables together. By performing the “selects” fi rst, 
+the “join” works on less data. In this case, it could both speed up and lessen the amount 
+of temporary storage required to handle the request. In other cases, denormalization of 
+the data and storing the data at multiple locations could be called for. You typically do 
+not want the user to make a request for a report and have to wait “too long” for the report 
+to be processed. In some cases, giving up some functionality to improve performance can 
+be crucial to the success of the system. So, the results of performance testing can make or 
+break a system.
+Obviously, in today’s networked world, security testing is crucial. Security testing
+involves three primary areas: authentication, authorization, and virus control. Authentication 
+testing deals with ensuring that the logged in user is who he or she claims to be. Typically, 
+this has been addressed with user IDs and passwords and through the use of encryption 
+techniques (see Chapter 11). Today, in addition to these approaches, various biometric 
+identifi ers have been used, e.g., retinal scans and fi ngerprints. Authorization testing deals 
+with ensuring that the logged in user actually has the authority to use the system(s) being 
+accessed. Authorization has been controlled through the use of roles, access control lists, 
+and capability lists. Security roles are the same as actor roles in a use-case model. Depending 
+on the role being played by a user, diff erent capabilities are made available to the user in the 
+form of a capability list. However, in this case, a role can be specifi ed down to the individual 
+user level and not be limited to a group of users. Also, an access control list can be associated 
+with each use case and with each class. In this case, an access control list specifi es which 
+roles have access to the resource (use case or class). Given that many system break-ins are a 
+function of viruses, virus controls also need to be enforced. Anytime a fi le is received or sent 
+by a user, the fi les should be scanned for potential viruses. Th is includes e-mail attachments, 
+Web downloads, and the insertion of fl ash drives on desktop computers as well on all forms 
+of “client” machines that can be attached to the system. Obviously, security requirements 
+will impact the performance of the system. Th erefore, trade-off s between these two sets of 
+requirements may be necessary.
+Acceptance Tests
+Acceptance testing is done primarily by the users with support from the project team. Th e 
+goal is to confi rm that the system is complete, meets the business needs that prompted the 
+system to be developed, and is acceptable to the users. Acceptance testing is done in two 
+stages: alpha testing, in which users test the system using made-up data, and beta testing, 
+in which users begin to use the system with real data but are carefully monitored for errors 
+(see Figure 12-4).
+478 Chapter 12 Construction
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the basic issues related to managing programmers.
+ Describe cultural issues as they are related to intellectual property.
+ Describe how Hall’s and Hofstede’s cultural dimensions can aff ect systems development.
+ Describe the diff erent types of documentation associated with an information system.
+ Describe how to develop the documentation of an information system.
+ Describe how object-orientation eff ects soft ware testing.
+ Describe and discuss unit testing.
+ Describe and discuss integration testing.
+ Describe and discuss system testing.
+ Describe and discuss acceptance testing.
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+While many of the activities, including testing and documentation, were done throughout the development process, the construction phase for phase one of the Integrated 
+Health Clinic Delivery System was a busy time for the team who conducted integration, 
+system, and acceptance testing for the system. In addition, they fi nalized user and system 
+documentation of the system.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+KEY TERMS
+Acceptance test
+Access control list
+Alpha test
+Beta test
+Black-box testing
+Capability list 
+Change control
+Collectivism
+Construction
+Context
+Documentation navigation 
+control
+Documentation topic
+Femininity
+Hardcoded
+Individualism
+Integration test
+Interaction testing
+Load test
+Long-term orientation
+Masculinity
+Monochronic time
+Polychronic time
+Power distance
+Procedures manual
+Program log
+Reference document
+Requirements testing
+Role
+Security testing
+Short-term orientation
+Speed of messages
+Stress test
+Stub
+System documentation
+System interface testing
+System test
+Test case
+Test plan
+Test specifi cation
+Time
+Timeboxing
+Traceability
+Tutorial
+Uncertainty avoidance
+Unit test
+Usability testing
+Use-case testing
+User documentation
+User interface testing
+Volume test
+White-box testing
+Yo-yo problem
+Exercises  479
+QUESTIONS
+ 1. Why is testing important?
+ 2. How can diff erent national or organizational cultures 
+aff ect the management of an information systems 
+development project?
+ 3. What is the primary role of systems analysts during 
+the programming stage?
+4. In Th e Mythical Man-Month, Frederick Brooks argues 
+that adding more programmers to a late project makes 
+it later. Why?
+ 5. When off shoring development, how could diff erences 
+in Hall’s context dimension of culture aff ect the contribution of a team member to the successful development of an information system? What about Hall’s 
+time or speed of messages dimensions?
+ 6. What are Hofstede’s fi ve dimensions of cultural diff erences? How could diff erences in them infl uence the eff ectiveness of an information systems development team?
+ 7. What are the common language or languages used 
+today in information systems development?
+ 8. Compare and contrast user documentation and system 
+documentation.
+ 9. Why is online documentation becoming more important?
+10. What are the primary disadvantages of online documentation?
+11. Compare and contrast reference documents, procedures manuals, and tutorials.
+12. What are fi ve types of documentation navigation 
+controls?
+13. What are the commonly used sources of documentation 
+topics? Which is the most important? Why?
+14. What are the commonly used sources of documentation navigation controls? Which is the most important? Why?
+15. What is the purpose of testing?
+16. Describe how object orientation aff ects testing.
+17. Compare and contrast the terms test, test plan, and 
+test case.
+18. What is a stub and why is it used in testing?
+19. What is the primary goal of unit testing?
+20. How are the test cases developed for unit tests?
+21. Compare and contrast black-box testing and whitebox testing.
+22. What are the diff erent types of class tests?
+23. What is the primary goal of integration testing?
+24. How are the test cases developed for integration tests?
+25. Describe the yo-yo problem. Why does it make integration testing diffi cult?
+26. What is the primary goal of system testing?
+27. How are the test cases developed for system tests?
+28. What is the primary goal of acceptance testing?
+29. How are the test cases developed for acceptance tests?
+30. Compare and contrast alpha testing and beta testing.
+EXERCISES
+A. Diff erent views of plagiarism and collaborative learning were described as examples of diff erences among 
+diff erent cultures today. Using the Web, identify other 
+diff erences that could aff ect the success of an information systems development team.
+B. Besides Hall and Hofstede, both David Victor and Fons 
+Trompenaars have identifi ed a set of cultural dimensions that could be useful in information systems development. Using the Web, identify their dimensions.
+C. If the registration system at your university does not 
+have a good online help system, develop one for one 
+screen of the user interface.
+D. Examine and prepare a report on the online help 
+system for the calculator program in Windows (or a 
+similar one on the Mac or Unix). (You will probably 
+be surprised at the amount of help for such a simple 
+program.)
+E. Compare and contrast the online help at two diff erent 
+websites that enable you to perform some function 
+(e.g., make travel reservations, order books).
+F. Create an invariant test specifi cation for the class you 
+chose for the A Real Estate Inc. problem in exercise A 
+in Chapter 8.
+G. Create a use-case test plan, including the specifi c class 
+plans and invariant tests, for a use case from the A 
+Real Estate Inc. exercises in the previous chapters.
+H. Create an invariant test specifi cation for the class you 
+chose for the A Video Store problem in exercise B in 
+Chapter 8.
+I. Create a use-case test plan, including the specifi c class 
+plans and invariant tests, for a use case from the A 
+Video Store exercises in the previous chapters.
+J. Create an invariant test specifi cation for the class you 
+chose for the gym problem in exercise C in Chapter 8.

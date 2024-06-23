@@ -1,0 +1,253 @@
+﻿We’ve often heard business analysts and other practitioners say that they can’t make some process change in their organization without “management support.” Too often, management support translates merely into permission to do something different. But as an intelligent professional,
+you don’t need management’s permission to work in the best way you know how: that’s your job. However, you definitely do need management commitment for a project-wide or organization-wide improvement effort to be sustained and successful. Without management commitment, only those practitioners who think that better requirements are important will get on board. It doesn’t help if your senior people say they “support” the improvements but then revert to the same old processes as soon as problems arise. Behaviors—not pronouncements—constitute evidence of commitment to quality.
+
+FIGURE 31-3 Some behaviors that indicate management’s commitment to excellent requirements processes.
+
+
+
+ 
+Because you’re reading this chapter, presumably you intend to change some of the approaches your organization currently uses for requirements engineering. As you begin your journey, keep in mind the following principles of software process improvement (Wiegers 1996):
+1.	Process improvement should be evolutionary and continuous. Instead of aiming for perfection, develop a few improved templates and procedures and get started with implementation. Adjust your approaches as the team gains experience with the new
+techniques. Sometimes simple and easy changes can lead to substantial gains, so look for the
+ 
+low-hanging fruit, problem areas that everyone involved agrees are ripe for improvement. See Table 3-2 in Chapter 3, “Good practices for requirements engineering,” for some suggestions of effective practices to implement.
+2.	People and organizations change only when they have an incentive to do so.
+The strongest incentive for change is pain. Not artificially induced pain, such as
+management-imposed schedule pressure to make teams work harder, but rather the very real pain people have experienced on previous projects. Following are some examples of problems that can provide compelling drivers for changing your requirements processes:
+•	The project missed deadlines because requirements were more extensive than expected.
+•	Developers worked a lot of overtime because of misunderstood or ambiguous requirements.
+•	System test effort was wasted because the testers didn’t understand what the product was
+supposed to do.
+•	The right functionality was present, but users were dissatisfied because of sluggish performance, poor usability, or other quality shortcomings.
+•	The organization experienced high maintenance costs because customers requested many enhancements that could have been identified during requirements elicitation.
+•	Requirement changes weren’t implemented appropriately during the course of the project, so the delivered solution did not meet the customer needs.
+•	Edits to requirements were lost or overwritten because multiple BAs were working on them concurrently without a version control process.
+•	Customers were not available to clarify and flesh out requirements.
+•	Requirements-related issues were not resolved in a timely fashion, causing rework.
+3.	Before you begin the journey to superior
+processes, make sure you know your objectives (Potter and Sakry 2002). Do you want to reduce the amount of work that is redone because of requirements problems? Do you want to overlook fewer requirements during implementation? Do you want to cut unneeded features sooner? A road map that defines pathways to your objectives greatly improves your chances of successful improvement.
+4.	Treat your improvement activities as mini-projects. Many improvement initiatives founder because they’re poorly planned or because resources never materialize. Include process improvement resources and tasks in an overall project plan. Perform the planning, tracking, measurement, and reporting that you’d do for any project, scaled for the size of the improvement project. Write a simple action plan for each improvement area you tackle.
+ 
+ 
+All team members have the opportunity—and the responsibility—to improve how they do their work. If you address something obvious on your own, your fellow team members might well see the merit and adopt the new way of working without fuss. However, a broad process improvement effort can succeed only if management is motivated to commit resources, set expectations, and hold team members accountable for contributing to the change initiative.
+
+Process improvement one-liners
+The experienced software process improvement leader accumulates a list of short, pithy observations about this difficult domain. Here are some that we have picked up over the years:
+■	Take chewable bites. (If you bite into too large a process change, the team might choke on it.)
+■	Take a lot of satisfaction from small victories. (You won’t have many big victories.)
+■	Use gentle pressure, relentlessly applied. (Steer the team toward a better future by keeping the change initiative visible and continually chipping away at it.)
+■	Focus, focus, focus. (A busy software team can work on only three, or two, or perhaps just one improvement initiative at a time. But always work on at least one.)
+■	Look for allies. (Every team has its early adopters who will try out new approaches and give the improvement leaders feedback. Cultivate them. Thank them. Reward them.)
+■	Action plans that don’t turn into actions are not useful. (It’s easy to perform a process assessment and to write an action plan. It’s hard to get people to work in new ways that hold the promise of better results, yet that’s the only useful outcome of process improvement.)
+■	Everyone has to play. (Get buy-in from team members who have to implement the change by involving them through the assessment and solution discovery parts of the improvement activities.)
+
+
+
+ 
+It’s important to focus your limited time and budget for process improvement efforts where they will do the most good. If you can identify the causes of any process shortcomings you’ve experienced, you can home in on those as high-yield improvement opportunities.
+p	oot cause analysis involves asking “why” the
+problem exists several times in succession, each time probing for the reason that underlies the answer
+ 
+to the previous “why” question. Perform root cause analysis before adopting process changes, to determine why your current approaches aren’t already achieving your desired outcomes. Otherwise, it’s easy to run around blindly, trying new methods without any confidence that they’ll address the real problems.
+Sometimes it’s not clear which is the problem and which is the root cause. Certain symptoms and root causes chain together, with one symptom being the root cause of another symptom. Suppose you’re experiencing a symptom of too many requirements being missed during elicitation. One possible root cause is that the business analysts didn’t ask the right questions. This root cause is itself a symptom of another problem, that the people performing the BA role don’t know how to do it well.
+A cause-and-effect diagram—also called a fishbone diagram or Ishikawa diagram, after its inventor, Kaoru Ishikawa—is a useful way to depict the results of a root cause analysis. Figure 31-4 illustrates a cause and effect diagram that partially analyzes a problem in which an organization’s project teams repeatedly fail to complete projects on time. The “bones” in the diagram that branch off the main “backbone” show the answers to the question “Why don’t teams finish projects on time?” Additional bones show the answers to subsequent “why” questions. Eventually this analysis reveals fundamental root causes in the most highly branched bones.
+
+FIGURE 31-4 A cause-and-effect diagram identifying root causes for identified problem symptoms.
+
+You won’t have to tackle every root cause you identify by using this type of analysis. The Pareto principle states the familiar 80/20 rule, which suggests that perhaps 20 percent of the vital root causes
+ 
+lead to approximately 80 percent of the observed problems. Even a simple root cause analysis will likely reveal the high-leverage causes that your requirements improvement actions should target.
+
+The process improvement cycle
+Figure 31-5 illustrates an effective process improvement cycle. This cycle reflects the importance of knowing where you are before you take off for someplace else, the need to chart your course, and the value of learning from your experiences as part of continuous improvement.
+
+FIGURE 31-5 The software process improvement cycle.
+
+
+Assess current practices
+Step 1 of any improvement activity is to assess the practices currently being used to identify their strengths and shortcomings. The assessment lays the foundation for selecting the changes you should make. It also brings visibility to the processes actually being used in the organization, which are frequently different from the stated or documented processes. And you’ll find that different team members often have rather different perspectives as to what processes the team is actually using.
+You can evaluate your current requirements processes in several ways. If you tried any of the “Next steps” at the end of previous chapters, you’ve already begun an informal evaluation of your requirements practices and their results. Appendix B, “Requirements troubleshooting guide,” offers dozens of symptoms of common requirements problems, along with possible root causes and possible solutions. Structured questionnaires can reveal insights about your current processes at a low cost. Interviews and discussions with team members provide a more accurate and comprehensive understanding than questionnaires reveal. Formal evaluations by outside consultants produce
+a list of findings—statements of both strengths and weaknesses in the current processes—and recommendations for addressing the improvement opportunities.
+ 
+For a simple do-it-yourself approach, use the questionnaire in Appendix A, “Current requirements practice self-assessment,” to calibrate your organization’s current requirements engineering practices. This self-assessment helps you decide which of your requirements processes are most in need of improvement. Just because you give yourself a low rating on a particular question isn’t reason enough to address it immediately or perhaps at all. Focus your energy on improving those practice areas that cause your projects the most difficulties and those that pose risks to the success of your future projects.
+
+Plan improvement actions
+In keeping with the philosophy of treating process improvement activities as projects, write an action plan following your current-practices assessment (Potter and Sakry 2002). Tactical action plans target specific improvement areas, such as the ways you elicit or prioritize requirements. Each action plan should identify measurable improvement goals, the participants, and the individual action items that must be completed to implement the plan. Without a plan, it’s easy to overlook important tasks. The plan also lets you monitor progress as you track the completion of individual action items.
+Figure 31-6 illustrates a process improvement action plan template we’ve used many times.
+Include no more than about 10 items in each action plan, scoped such that the plan can be completed
+in 2 or 3 months. As an example, I
+
+1.	Draft a requirements change control process.
+2.	Review and revise the change control process.
+3.	Pilot the change control process with Project A.
+4.	Revise the change control process based on feedback from the pilot.
+5.	Evaluate problem-tracking tools, and select one to support the change control process.
+6.	Procure the problem-tracking tool, and customize it to support the change control process.
+7.	Roll out the new change control process and tool to the organization.
+Assign each action item to a specific individual who is responsible for seeing that the item is completed. Don’t assign “the team” as an action item owner. Teams don’t do work; individuals do.
+If you need more than about 10 action items, focus the initial activity cycle on the most important issues and address the rest later in a separate action plan. Remember, process change is incremental and ongoing. The process improvement road map described later in this chapter illustrates how you can group multiple improvement actions into an overall software process improvement plan.
+ 
+ 
+
+FIGURE 31-6  Action plan template for software process improvement.
+
+
+Create, pilot, and roll out processes
+So far, you’ve evaluated your current requirements practices and crafted a plan for addressing the
+areas you think are most likely to yield benefits. Now comes the hard part: implementing the plan.
+Implementing an action plan means developing processes that you believe will yield better results than your current ways of working do. Don’t expect to get the new processes perfect on the first try. Many approaches that seem like a good idea in the abstract turn out to be less pragmatic or less effective than anticipated. Therefore, pilot most of the new procedures or templates you create on a
+ 
+small scale before implementing them for real. Use the knowledge gained from the pilot to adjust the new process. This improves the chance that it will be effective and well received when you roll it out to the affected community. Keep the following suggestions in mind for your process pilots:
+■	Select pilot participants who will give the new approaches a fair try and provide helpful feedback. These participants could be either allies or skeptics, but they shouldn’t strongly oppose the improvement effort.
+■	Quantify the criteria the team will use to evaluate the pilot’s results.
+■	Identify the stakeholders who need to be informed about the pilot and why it is being
+performed.
+■	Consider piloting portions of the new processes on different projects. This engages more people in trying new approaches, which increases awareness, feedback, and buy-in.
+■	As part of the evaluation, ask pilot participants how they would feel if they had to go back to
+their former ways of working.
+If the pilot was successful, you’re ready to make any final adjustments to the process and roll it out to the affected community for implementation. Even motivated and receptive teams have a limited capacity to absorb change, so don’t place too many new expectations on a project team at once.
+Craft a roll-out plan that defines how you’ll distribute the new methods and materials to the project teams, and provide sufficient training, coaching, and assistance. Also consider how management will set and communicate their expectations about the new processes.
+
+Evaluate results
+The final step of a process improvement cycle is to evaluate the activities performed and the results achieved. This evaluation will help the team do an even better job on future improvement activities. Assess how smoothly the pilots ran. How effective were they in resolving the uncertainties about the new processes? Would you change anything the next time you conduct a process pilot?
+Consider how well the rollout of the new processes went. Was the availability of the new processes or templates communicated to everyone affected? Did participants understand and successfully apply the new processes? Would you change anything about how you handle the next rollout?
+A critical step is to assess whether the new processes are yielding the desired results. Some new practices deliver visible improvements quickly, but others take time to demonstrate their full value. For example, you should be able to tell quickly whether a new requirements change control process is effective. However, a new document template can take some time to prove its worth as business analysts and other stakeholders get used to it. Give new approaches adequate time to work, and select measures early on that will demonstrate the success of each change.
+Accept the reality of the learning curve, the productivity drop that takes place as practitioners take time to assimilate new ways of working, as illustrated in Figure 31-7. This short-term productivity drop—sometimes called the “valley of despair”—is part of the investment your organization is making in process improvement. People who don’t understand this might be tempted to abandon
+ 
+the improvement effort before it begins to pay off, thereby achieving a zero—or worse—return on their investment. Educate your managers and peers about the learning curve, and commit to seeing the change initiative through.
+
+FIGURE 31-7 The learning curve, an unavoidable aspect of process improvement.
+
+
+Requirements engineering process assets
+High-performance projects have effective processes for all of the requirements engineering components: elicitation, analysis, specification, validation, and management. To facilitate the performance of these processes, every organization needs a collection of requirements process assets (Wiegers 1998b). A process encompasses the actions you take and the deliverables you produce; process assets help the team members perform processes consistently and effectively. These process assets will help those involved in the project understand the steps they should follow and the work products they’re expected to create. Process assets include the types of documents described in Table 31-1.
+TABLE 31-1 Types of process assets
+
+Type	Description
+Checklist	A list that enumerates activities, deliverables, or other items to be noted or verified. Checklists are memory joggers. They help ensure that busy people don’t overlook important details.
+Example	A representative of a specific type of work product. Accumulate and share good examples as your project teams create them.
+Plan	An outline of how an objective will be accomplished and what is needed to accomplish it.
+Policy	A guiding principle that sets a management expectation of behaviors, actions, and deliverables. Processes should enable satisfaction of the policies.
+Procedure	A step-by-step description of the sequence of tasks that accomplishes an activity. Describe the tasks to be performed and identify the project roles that perform them. Guidance documents can support a process or procedure with tutorial information and helpful tips.
+ 
+Type	Description
+Process description	A documented definition of a set of activities performed for some purpose. A process description might include the process objective, key milestones, participants, communication steps, inputs and outputs, deliverables, and how to tailor the process to different project situations.
+Template	A pattern to be used as a guide for producing a work product. Templates for key project documents provide many “slots” for capturing and organizing information. Guidance text embedded in the template will help the document author use it effectively. Other templates define a structure that is useful for writing a specific type of information, such as a functional requirement, quality attribute, business rule, or user story.
+Figure 31-8 identifies some valuable process assets for requirements engineering. These items should be no larger than they need to be to let team members use them consistently and effectively. They need not be separate documents; an overall requirements management process could include the status tracking procedure, change control process, and impact analysis checklist. Store these items in a shared process assets library for ease of access and ready availability, and establish mechanisms for improving them with experience (Wiegers 1998b). Many of the process assets in Figure 31-8 are available with the companion content for this book.
+
+FIGURE 31-8 Key process assets for requirements development and requirements management.
+
+Following are brief descriptions of each of the process assets listed in Figure 31-8, along with references to the chapters in which they are discussed further. Each project should plan how it will perform its requirements activities, drawing from and tailoring the contents of the organization’s process assets to best suit its needs. For instance, a large project that involves numerous user classes and other stakeholders in multiple locations would benefit from a written elicitation plan that identifies the techniques to be used for eliciting requirements, who will perform them, when, and where. A project that has co-located and highly engaged stakeholders can use a simpler, more agile process.
+
+Requirements development process assets
+The items listed here will help your teams do a better job of eliciting, analyzing, specifying, and validating requirements for their projects.
+ 
+Requirements development process This process describes how to identify and classify stakeholders in your domain and how to plan the elicitation activities. The process describes the requirements deliverables each project is expected to create and the requirements analysis and validation activities to perform. Chapter 7, “Requirements elicitation,” describes the contents of an elicitation plan.
+Requirements allocation procedure This procedure describes how to allocate high-level product requirements to specific subsystems when you are developing systems that contain both hardware and software components or multiple software subsystems. See Chapter 26, “Embedded and other real-time systems projects,” for more about requirements allocation.
+Requirements prioritization procedure This procedure describes techniques and tools to be used for prioritizing requirements and dynamically adjusting the backlog contents throughout the project. Chapter 16, “First things first: Setting requirement priorities,” describes several prioritization techniques.
+Vision and scope template This template guides the project sponsor and the business analyst in thinking through the business objectives, success metrics, product vision, and other elements of the business requirements. Chapter 5, “Establishing the business requirements,” recommends a template.
+Use case template As described in Chapter 8, “Understanding user requirements,” the use case template provides a structured format for describing tasks that users need to perform with a system.
+Software requirements specification template The SRS template provides a structured, consistent way to organize the product’s functional and nonfunctional requirements. Consider adopting more than one template to accommodate the various types or sizes of projects your organization undertakes. Chapter 10, “Documenting the requirements,” describes a sample SRS template.
+Requirements review checklist Peer review of requirements documents constitutes a powerful software quality technique. A review checklist identifies the types of errors commonly found in requirements documents, which helps the reviewer to focus his attention on common problem areas. Chapter 17, “Validating the requirements,” contains a sample requirements review checklist.
+
+Requirements management process assets
+The following items can assist your teams in managing sets of documented requirements.
+Requirements management process This process describes the actions a team takes to distinguish versions of the requirements, define baselines, deal with changes, track requirements status, and accumulate traceability information (see Chapter 27, “Requirements management practices”). For
+a sample requirements management process description, see Appendix J of CMM Implementation Guide (Caputo 1998).
+Requirements status tracking procedure Requirements management includes monitoring and reporting the status of each functional requirement. See Chapter 27 for more about requirements status tracking.
+ 
+Change control process The change control process defines the way that a new requirement or a modification to an existing requirement is proposed, communicated, evaluated, and resolved.
+Chapter 28 describes the change control process.
+Change control board charter template As described in Chapter 28, the change control board (CCB) charter describes the composition, function, and operating procedures of the CCB.
+Requirements change impact analysis checklist As illustrated in Chapter 28, an impact analysis checklist helps you contemplate the possible tasks, side effects, and risks associated with implementing a specific requirement change, as well as estimating the effort for the tasks.
+Requirements tracing procedure This procedure describes who provides the trace data that connects each requirement to other project artifacts, who collects and manages the data, and how and where it is stored. Chapter 29, “Links in the requirements chain,” addresses requirements tracing.
+
+Are we there yet?
+As with other journeys, a process improvement initiative should have a goal. If you don’t define specific improvement goals, people might not work in alignment, you can’t tell whether you’re making progress, you can’t prioritize improvement efforts, and you can’t tell if you’ve reached your destination. Metrics are quantifiable aspects of a software project, product, or process. Key
+performance indicators, or KPIs, are metrics that are tied to a target and reveal your progress toward achieving a specific goal or outcome. A set of KPIs can be displayed in a measurement dashboard that shows how you are approaching meeting your goals.
+Keep two considerations in mind when setting process improvement goals. First, remember that process improvement for its own sake is meaningless. Therefore, ask yourself whether achieving that goal would in fact deliver the business value improvements that you seek. Second, you don’t want the team members to get frustrated trying to reach a target they cannot realistically attain, so ask yourself whether the goal is achievable in your environment. The answer to both questions must be ”yes” for an improvement goal to be appropriate.
+Numerous aspects of requirements work on a project can be measured, including product size, requirements quality, requirements status, change activity, and the effort devoted to requirements engineering and management (Wiegers 2006). In addition, measurements of whether the project achieved its business objectives will reflect whether the requirements activities were on target. For process improvement activities, though, you need to select measurement targets that will tell you whether your improvement investments are paying off in the ways you hope they will. We mentioned earlier in this chapter that process improvement should be goal-oriented, and that a great motivator for process change is pain the organization has experienced on previous projects. So select your KPIs by defining quantitative improvement goals and then determining how you could judge whether the pain that led you to choose those goals is lessening.
+Note that you can’t measure quantitative progress unless you’ve established a baseline, a reference starting point of how things are working for you today. Ideally, you would measure the current value of some indicator, then set a desired target value you’d like to reach after a certain period of time,
+ 
+and direct your process improvement activities toward achieving that outcome. In reality, many software organizations lack a measurement culture, so they will have difficulty establishing such a quantitative baseline. Nonetheless, it’s hard to tell how close you’re getting to your objective if you have neither a starting point nor a yardstick.
+Table 31-2 lists several possible requirements process improvement goals you might have. For conciseness, we’ve omitted the suffix “by X <amount> in Y <period of time>“ that should be applied to each of these. For each goal, the table suggests possible indicators that would tell whether the changes you’re making are paying off as intended. Most measurements of software are lagging indicators. It takes a while for new approaches to demonstrate sustained benefits, so give the new ways of working a chance to take hold and begin to yield benefits.
+TABLE 31-2 Possible key performance indicators for certain requirements process improvement goals
+
+Improvement goal	Suggested indicators
+R	educe rework performed because of		■	Hours of rework at all life-cycle stages attributable to an erroneous,
+ambiguous, unnecessary, or missing requirement
+■	Percentage of requirements that have errors discovered following baselining
+re	quirements er	rors	
+	
+Reduce the negative impact of requirements changes	■	Number of new requirements presented after baselining that could
+have been known beforehand
+■	Percentage of requirements that are modified after baselining
+■	Number of hours per release or iteration needed to modify
+deliverables because of requirement changes
+■	Distribution of change requests by origin
+Reduce the time needed to clarify requirements during development	■	Number of requirements questions and issues raised after
+baselining
+■	Average time needed to resolve each question or issue
+Improve estimation accuracy for total requirements development effort	■	Estimated and actual labor hours spent on requirements development activities per release and for the total project
+Reduce the number of unneeded features implemented	■	Percentage of committed features that are removed before their implementation begins
+■	Percentage of committed features that are removed before delivering a release or iteration
+If you’re not sure what indicators to select, follow a simple thought process called goal-question- metric or GQM (Basili and Rombach 1988; Wiegers 2007). GQM is a way of thinking backward to figure out what metrics would be valuable. First, state the improvement goals. For each goal, think of questions you would have to answer to judge whether the team is reaching that goal. Finally, identify metrics that will provide an answer for each question. These metrics, or combinations of them, will serve as your key performance indicators.
+If you select realistic KPIs for your goals but don’t see signs of progress after a reasonable period, you need to investigate:
+■	Were the problems correctly analyzed and root causes identified?
+■	Did you select improvement actions that directly addressed those root causes?
+ 
+■	Was the plan created to implement those improvement actions realistic? Was the plan executed as intended?
+■	Has something changed since your original analysis that should lead you to redirect the team’s improvement activities?
+■	Have team members actually adopted new ways of working and pushed through the learning curve to begin applying them in practice?
+■	Did you set realistic targets that the team had a chance of achieving?
+Many points of failure are on the path to improved requirements practices; make sure that your
+improvement initiative doesn’t get caught in one of those traps.
+
+
+Creating a requirements process improvement road map
+Haphazard approaches to process improvement rarely lead to sustainable success. Rather than just diving in, consider developing a road map for implementing improved requirements practices in your organization. If you tried any of the requirements process assessment approaches described in this chapter, you have some ideas about the practices and process assets that would be most helpful to your organization. The process improvement road map sequences improvement actions to yield the greatest and quickest benefits with the smallest investment.
+Because every situation is different, there is no one-size-fits-all road map. Formulaic approaches to process improvement don’t replace careful thinking, good judgment, and common sense. Figure 31-9 illustrates one organization’s road map for improving its requirements processes. The desired business goals are shown (in simplified form) in the boxes on the right side of the figure, and the major improvement activities are shown in the other boxes. The circles indicate intermediate milestones along the paths toward the business goals. M1 means milestone 1. Implement each threaded set of improvement activities from left to right. After you’ve created a road map, give ownership of each milestone to an individual, who can then write an action plan for achieving that milestone. Then turn those action plans into actions!
+
+FIGURE 31-9 Sample requirements process improvement road map.
+ 
+Next steps
+■	Complete the “Current requirements practice self-assessment” in Appendix A. Identify your top three improvement opportunities for requirements practices, based on the consequences of shortcomings in your current practices.
+■	Determine which of the process assets listed in Figure 31-8 are not presently available in your organization but would be useful to have.
+■	Based on the two preceding steps, develop a requirements process improvement road map patterned after that shown in Figure 31-9. Persuade someone in your organization to take responsibility for each milestone. Have each milestone owner use the template in Figure 31-6 to write an action plan for implementing the recommendations leading up to his or her milestone. Track the progress of the action items in the plan as they are implemented.
+■	Select one new requirements engineering practice from this book to learn more about and try to apply it starting next week—literally! Select two or three additional practices to begin applying within a month. Choose others as long-term improvements, five or six
+months from now. Identify the situation to which you want to apply each new practice, the benefits that you hope it will provide, and any help or additional information you might need. Think about whose cooperation you’ll need to use the new techniques. Identify any barriers that might impede your ability to use the practice and consider who could help you break down those barriers.
+ 
+C HA P T E R 3 2
+Software requirements and risk management
+
+Dave, the project manager for the Chemical Tracking System at Contoso Pharmaceuticals, is meeting with his lead programmer, Helen, and the lead tester, Ramesh. All are excited about the new project, but they remember the problems they ran into on an earlier project called the Pharm Simulator.
+“Remember how we didn’t find out that the users hated the Simulator’s user interface until beta testing?” Helen asked. “It took us four weeks to rebuild it and retest it. I sure don’t want to go through that death march again.”
+“That was awful,” Dave agreed. “It was also annoying that the users we talked to swore they needed a lot of features that no one has used so far. That drug interaction modeling feature took three times longer to code than we expected, and we wound up throwing it out. What a waste!”
+Ramesh had a suggestion. “Maybe we should list these problems from the Simulator so we can try to avoid them on the Chemical Tracking System. I read an article on software risk management that said we should identify risks up front and figure out how to prevent them from hurting the project.”
+“I don’t know about that,” Dave protested. “We probably won’t have those same problems again. If we write down things that could go wrong on the Chemical Tracking System, it’ll look like I don’t know how to run a software project. I don’t want any negative thinkers on this project. We have to plan for success!”
+As Dave’s final comment suggests, software engineers and project managers are eternal optimists. We often expect our next project to run smoothly, despite the history of problems on earlier projects. The reality is that dozens of potential pitfalls can delay or derail a software project. Contrary to Dave’s beliefs, software teams must identify and control their project risks, beginning with those related to requirements.
+
+This condition hasn’t actually caused a problem yet—and you’d like to keep it that way. These potential problems might have an adverse impact on the project’s cost, schedule, or technical success; the product’s quality; or the team’s effectiveness. Risk management is the process of identifying, evaluating, and controlling risks before they harm your project. If something untoward has already happened on the project, it’s an issue, not a risk. Deal with current problems and issues through your project’s ongoing status tracking and corrective action processes.
+Because no one can predict the future with certainty, risk management is used to minimize the likelihood or impact of potential problems. Risk management means dealing with a concern before it becomes a crisis. This improves the chance of project success and reduces the financial or other consequences of those risks that you can’t avoid. Risks that lie outside the team’s sphere of control should be directed to the appropriate level of management for attention.
+Because requirements play such a central role in software projects, the prudent project manager will identify requirements-related risks early and control them aggressively. Typical requirements risks include misunderstanding the requirements, inadequate user involvement,
+uncertain or changing project scope and objectives, and continually changing requirements. Project managers can control requirements risks only through collaboration with customers and other stakeholders. Jointly documenting requirements risks and planning mitigation actions reinforces the customer-development partnership that was discussed in Chapter 2, “Requirements from the customer’s perspective.”
+Simply knowing about the risks doesn’t make them go away, so this chapter presents a brief tutorial on software risk management (Wiegers 2007). Later in the chapter, we also describe a number of risk factors that can raise their ugly heads during requirements engineering activities. Use this information to launch an attack on your requirements risks before they attack your project.
+
+
+ 
+Projects face many kinds of risks besides those related to requirements. Dependence on an external entity, such as a subcontractor or another project that is providing components to be reused, is a common source of risk. Project management is fraught with risks from poor estimation, rejection
+of accurate estimates by managers, insufficient visibility into project status, and staff turnover. Technology risks threaten highly complex and leading-edge development projects. Lack of knowledge is another source of risk, such as with practitioners who have insufficient experience with the technologies being used or with the application domain. Transitioning to a new development method introduces a raft of new risks. And ever-changing, imposed government regulations can disrupt the best-laid project plans.
+Scary! This is why all projects need to take risk management seriously. Risk management involves scanning the horizon for icebergs, rather than steaming full speed ahead with great confidence
+that your ship is unsinkable. As with other processes, scale your risk management activities to your project’s size. Small projects can get by with a simple risk list, but formal risk management planning is a key element of a successful large-scale project.
+
+Elements of risk management
+Risk management involves the application of tools and procedures to contain project risk within acceptable limits. It provides a standard approach to identify and document risk factors, evaluate their potential severity, and propose strategies for mitigating them (Williams, Walker, and Dorofee 1997). Risk management includes the activities shown in Figure 32-1 (adapted from McConnell [1996]). Risk assessment is the process of examining a project to identify potential threats. Facilitate risk identification with lists of common risk factors such as those described in the “Requirements-related risks” section later in this chapter or with other public lists of typical risks (for example, Carr et al.
+1993; McConnell 1996). During risk analysis, you’ll examine the potential consequences of specific risks to your project. Risk prioritization helps you focus on the most severe risks by assessing the potential risk exposure from each. Risk exposure is a function of both the probability of incurring a loss due to the risk and the potential magnitude of that loss.
+Risk avoidance is one way to deal with a risk: don’t do the risky thing. You can avoid some risks by not undertaking certain projects, by relying on proven rather than cutting-edge technologies and development methods, or by excluding features that will be especially difficult to implement. Software development is intrinsically risky, though, so avoiding risk might also mean losing opportunities.
+Most of the time you’ll have to perform risk control activities to manage the top-priority risks you identified. Risk management planning produces a plan for dealing with each significant risk, including mitigation approaches, contingency plans, owners, and timelines. Mitigation actions try either to prevent the risk from becoming a problem at all or to reduce the adverse impact if it does. The risks won’t control themselves, so risk resolution involves executing the plans for mitigating each risk.
+Finally, track your progress toward resolving each risk item through risk monitoring, which should become part of your routine project status tracking. Monitor how well your risk mitigation actions are working, look for new risks that have popped up, retire risks whose threat has passed, and update the priorities of your risk list periodically.
+
+Documenting project risks
+It’s not enough to simply recognize the risks that face your project. You need to manage them in a way that lets you communicate risk issues and status to stakeholders throughout the project’s
+duration. Figure 32-2 shows a template for documenting an individual risk statement. You might find
+it more convenient to store this information in tabular form, such as a spreadsheet, which makes it

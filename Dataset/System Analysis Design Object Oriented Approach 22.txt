@@ -1,0 +1,481 @@
+﻿From this we can infer that the activity diagram must include some decision and merge 
+nodes. Based on the requirements defi nition (see Figure 3-1), we can infer another set of deci sion and merge nodes based on the Create Appointment, Cancel Appointment, and Change 
+Appointment activities identifi ed in the previous step.
+Fourth, identify the object fl ows and nodes necessary to support the logic of the business 
+process. Typically object nodes and fl ows are not shown on many activity diagrams used 
+to model a business process. Th e primary exception is if information captured by the 
+system in one activity is used in an activity that is performed later, but not immediately 
+aft er the activity that captured the information. In the appointment example, it is obvious 
+that we need to be able to determine whether the patient is an old or new patient and the 
+type of action that the patient would like to have performed (create, cancel, or change an 
+appointment). It is obvious that a new patient cannot cancel or change an appointment 
+because the patient is by defi nition a new patient. Obviously, we need to capture this type 
+of information at the beginning of the business process and use it when required. For 
+example, in the appointment problem, we need to have a Get Patient Information activity 
+that captures the appropriate information and makes it available at the appropriate time 
+in the process.
+Fift h, lay out and draw the activity diagram to document the business process. For esthetic 
+and understandability reasons, just as when drawing a use-case diagram, you should attempt 
+to minimize potential line crossings. Based on the previous steps and carefully laying 
+out the diagram, the activity diagram in Figure 4-8 was created to document the Manage 
+Appointments business process.
+Campus Housing Example Th e fi rst step in detailing the identifi ed business processes 
+(Maintain Available Rental Unit Information and Search Available Rental Units) is to choose 
+one of them. In this example, we are going to focus on the Maintain Available Rental Unit 
+Information associated with the apartment owners. Based on the earlier description, there are 
+two separate activities (subprocesses): one to add a rental unit and one to delete a rental unit. 
+To add a rental unit, the apartment owner must provide the campus housing service with 
+the location of the apartment, the number of bedrooms in the apartment, and the monthly 
+rent of the apartment. To delete an apartment, the apartment owners must tell the campus 
+housing service that the specifi c apartment has been rented and is no longer available. Using 
+this information, the activity diagram that represents the logical description of the Maintain 
+Available Rental Unit Information use case is portrayed in Figure 4-11. Notice that there is 
+absolutely no reference to fi lling out a form, entering the information into a database, or 
+searching the database. Th ere are actually many diff erent potential ways in which the apart ment information could be captured, e.g., on a manual form, on a computerized form, on a 
+Web form, and via a mobile interface. In fact, we might want to be able to support all of them. 
+Also, there are many diff erent ways in which the information can be stored. However, at this 
+stage of development, all design and implementation details should be ignored. We are only 
+interested in capturing the functional requirements. Once we have successfully modeled the 
+functional requirements, we can move on to the nonfunctional requirements, design, and 
+implementation details. We will return to this example in the next section of the chapter. 
+However, before we move on, we next describe the activity diagram for the Borrow Books use 
+case of the university library problem.
+4. Identify Object 
+Flows & Nodes
+5. Lay Out & Draw 
+Diagram
+Business Process Modeling with Activity Diagrams  139
+Library Example As with the Campus Housing example, the fi rst step is to choose a business 
+process to model. In this case, we want to create an activity diagram for the Borrow Books use 
+case (see Figure 4-6). Th e functional requirements for this use case were:
+Th e borrowing activities are built around checking books out and returning books by 
+borrowers. Th ere are three types of borrowers: students, faculty or staff , and guests. 
+Regardless of the type of borrower, the borrower must have a valid ID card. If the bor rower is a student, having the system check with the registrar’s student database vali dates the ID card. If the borrower is a faculty or staff member, having the system check 
+with the personnel offi ce’s employee database validates the ID card. If the borrower 
+is a guest, the ID card is checked against the library’s own borrower database. If the 
+ID card is valid, the system must also check to determine whether the borrower has 
+any overdue books or unpaid fi nes. If the ID card is invalid, the borrower has overdue 
+books, or the borrower has unpaid fi nes, the system must reject the borrower’s request 
+to check out a book, otherwise the borrower’s request should be honored.
+Th e second step to model a business process is to identify the activities that make up the pro cess. Based on the requirements for the Borrow Books use case, we can identify three major 
+activities: Validate ID Card, Check for Overdue Books and Fines, and Check Out Books. Th e 
+third step is to identify the control fl ows and control nodes necessary to model the decision 
+logic of the business process. In this case, there obviously will have to be an initial node, a 
+fi nal-fl ow node, and a set of decision and merge nodes for each decision to be made. Th e 
+fourth step is to identify the object fl ows and object nodes necessary to complete the descrip tion of the business process. In this case, there really is no need to include object nodes and 
+fl ows. Finally, we can lay out the diagram (see Figure 4-12).
+FIGURE 4-11
+Campus Housing 
+Maintain Available 
+Rental Unit 
+ Information Activity 
+ Diagram
+[Apartment Available] [Apartment Rented]
+Capture Location Delete Rental Unit
+Capture Number of
+Bedrooms
+Capture Monthly
+Rent
+Add Rental Unit
+140  Chapter 4 Business Process and Functional Modeling
+BUSINESS PROCESS DOCUMENTATION WITH USE CASES 
+AND USE-CASE DESCRIPTIONS
+Use-case diagrams provided a bird’s-eye view of the basic functionality of the business pro cesses contained in the evolving system. Activity diagrams, in a sense, open up the black box of 
+each business process by providing a more-detailed graphical view of the underlying activities 
+that support each business process. Use-case descriptions provide a means to more fully doc ument the diff erent aspects of each individual use case.12 Th e use-case descriptions are based 
+on the identifi ed requirements, use-case diagram, and the activity diagram descriptions of the 
+business processes. Use-case descriptions contain all the information needed to document the 
+functionality of the business processes.13
+Use cases are the primary drivers for all the UML diagramming techniques. A use case 
+communicates at a high level what the system needs to do, and all the UML diagramming tech niques build on this by presenting the use-case functionality in a diff erent way for a diff erent 
+purpose. Use cases are the building blocks by which the system is designed and built.
+12 For a more detailed description of use-case modeling, see Alistair Cockburn, Writing Eff ective Use Cases (Reading, 
+MA: Addison-Wesley, 2001).
+13 Nonfunctional requirements, such as reliability requirements and performance requirements, are oft en docu mented outside of the use case through more traditional requirements documents. See Gerald Kotonya and Ian 
+Sommerville, Requirements Engineering (Chichester, England: Wiley, 1998); Benjamin L. Kovitz, Practical Soft ware 
+Requirements: A Manual of Content & Style (Greenwich, CT: Manning, 1999); Dean Leffi ngwell and Don Widrig,
+Managing Soft ware Requirements: A Unifi ed Approach (Reading, MA: Addison-Wesley, 2000); Richard H. Th ayer, 
+M. Dorfman, and Sidney C. Bailin (eds.), Soft ware Requirements Engineering, 2nd Ed. (Los Alamitos, CA: IEEE 
+Computer Society, 1997).
+[Valid Card]
+[No Overdue Books & No Fines]
+Validate ID Card
+Check Out Books
+Check for Overdue Books and Fines
+FIGURE 4-12
+Activity Diagram for 
+the Borrow Books 
+Use Case
+Business Process Documentation with Use Cases and Use-Case Descriptions  141
+Use cases capture the typical interaction of the system with the system’s users (end 
+users and other systems). Th ese interactions represent the external, or functional, view of the 
+system from the perspective of the user. Each use case describes one and only one function 
+in which users interact with the system. Although a use case may contain several paths that 
+a user can take while interacting with the system, each possible execution path through the 
+use case is referred to as a scenario. Another way to look at a scenario is as if a scenario is 
+an instantiation of a specifi c use case. Scenarios are used extensively in behavioral modeling 
+(see Chapter 6). Finally, by identifying all scenarios and trying to execute them through 
+role-playing CRC cards (see Chapter 5), you will be testing the clarity and completeness of 
+your evolving understanding of the system being developed.14
+When creating use-case descriptions, the project team must work closely with the users to 
+fully document the functional requirements. Organizing the functional requirements and docu menting them in a use-case description are a relatively simple process, but it takes considerable 
+practice to ensure that the descriptions are complete enough to use in structural (Chapter 5) and 
+behavioral (Chapter 6) modeling. Th e best place to begin is to review the use-case and activity 
+diagrams. Th e key thing to remember is that each use case is associated with one and only one 
+role that users have in the system. For example, a receptionist in a doctor’s offi ce may play mul tiple roles—he or she can make appointments, answer the telephone, fi le medical records, wel come patients, and so on. It is possible that multiple users will play the same role. Th erefore, use 
+cases should be associated with the roles played by the users and not with the users themselves.
+Types of Use Cases
+Th ere are many diff erent types of use cases. We suggest two separate dimensions on which to 
+classify a use case based on the purpose of the use case and the amount of information that 
+the use case contains: overview versus detail and essential versus real.
+An overview use case is used to enable the analyst and user to agree on a high-level over view of the requirements. Typically, overview use cases are created very early in the process 
+of understanding the system requirements, and they document only basic information about 
+the use case, such as its name; ID number; primary actor; type; a brief description; and the 
+relationships among the actors, actors and use cases, and use cases. Th ese can easily be created 
+immediately aft er the creation of the use-case diagram.
+Once the user and the analyst agree upon a high-level overview of the requirements, the 
+overview use cases are converted to detail use cases. A detail use case typically documents, as 
+far as possible, all the information needed for the use case. Th ese can be based on the activities 
+and control fl ows contained in the activity diagrams.
+An essential use case is one that describes only the minimum essential issues necessary to 
+understand the required functionality. A real use case goes farther and describes a specifi c set 
+of steps. For example, an essential use case in a doctor offi ce might say that the receptionist 
+should attempt to match the patient’s desired appointment times with the available times, 
+whereas a real use case might say that the receptionist should look up the available dates on 
+the calendar using Google Calendar to determine if the requested appointment times were 
+available. Th e primary diff erence is that essential use cases are implementation independent, 
+whereas real use cases are detailed descriptions of how to use the system once it is imple mented. Th us, real use cases tend to be used only in the design, implementation, and testing.
+Elements of a Use-Case Description
+A use-case description contains all the information needed to build the structural (Chapter 5) 
+and behavioral (Chapter 6) diagrams that follow, but it expresses the information in a less-formal 
+14 For presentation purposes, we defer discussion of role-playing to Chapter 5.
+142  Chapter 4 Business Process and Functional Modeling
+way that is usually simpler for users to understand. Figure 4-13 shows a sample use-case 
+description.15 A use-case description has three basic parts: overview information, relationships, 
+and the fl ow of events.
+Overview Information Th e overview information identifi es the use case and provides basic 
+background information about the use case. Th e use-case name should be a verb–noun phrase 
+(e.g., Make Old Patient Appt). Th e use-case ID number provides a unique way to fi nd every 
+use case and also enables the team to trace design decisions back to a specifi c requirement. 
+Th e use-case type is either overview or detail and essential or real. Th e primary actor is usually 
+the trigger of the use case—the person or thing that starts the execution of the use case. Th e 
+primary purpose of the use case is to meet the goal of the primary actor. Th e brief description
+is typically a single sentence that describes the essence of the use case.
+Th e importance level can be used to prioritize the use cases. Th e importance level enables 
+the users to explicitly prioritize which business functions are most important and need to be 
+part of the fi rst version of the system and which are less important and can wait until later 
+versions if necessary. Th e importance level can use a fuzzy scale, such as high, medium, and 
+low (e.g., in Figure 4-13 we have assigned an importance level of high to the Make Old Patient 
+Appt use case). It can also be done more formally using a weighted average of a set of criteria. 
+For example, Larman16 suggests rating each use case over the following criteria using a scale 
+from zero to fi ve:
+■ Th e use case represents an important business process.
+■ Th e use case supports revenue generation or cost reduction.
+■ Technology needed to support the use case is new or risky and therefore requires 
+considerable research.
+■ Functionality described in the use case is complex, risky, and/or time critical. 
+Depending on a use case’s complexity, it may be useful to consider splitting its imple mentation over several diff erent versions.
+■ Th e use case could increase understanding of the evolving design relative to the 
+eff ort expended.
+A use case may have multiple stakeholders that have an interest in the use case. Each use 
+case lists each of the stakeholders with each one’s interest in the use case (e.g., Old Patient and 
+Doctor). Th e stakeholders’ list always includes the primary actor (e.g., Old Patient).
+Each use case typically has a trigger—the event that causes the use case to begin (e.g., Old 
+Patient calls and asks for a new appointment or asks to cancel or change an existing appoint ment). A trigger can be an external trigger, such as a customer placing an order or the fi re 
+alarm ringing, or it can be a temporal trigger, such as a book being overdue at the library or 
+the need to pay the rent.
+Relationships Use-case relationships explain how the use case is related to other use cases 
+and users. Th ere are four basic types of relationships: association, extend, include, and gener alization. An association relationship documents the communication that takes place between 
+the use case and the actors that use the use case. An actor is the UML representation for the 
+15 Currently there is no standard set of elements for a use case. Th e elements described in this section are based on 
+recommendations contained in Alistair Cockburn, Writing Eff ective Use Cases (Reading, MA: Addison-Wesley, 
+2001); Craig Larman, Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and 
+the Unifi ed Process, 2nd Ed. (Upper Saddle River, NJ: Prentice Hall, 2002); Brian Henderson-Sellers and Bhuvan 
+Unhelkar, OPEN Modeling with UML (Reading, MA: Addison-Wesley, 2000). Also see Graham, Migrating to Object 
+Technology.
+16 Larman, Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design.
+Business Process Documentation with Use Cases and Use-Case Descriptions  143
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Make Old Patient Appt 2 Low
+Old Patient
+Old Patient – wants to make, change, or cancel an appointment
+Doctor – wants to ensure patient’s needs are met in a timely manner
+Use Case Type: Detail, Essential
+Patient calls and asks for a new appointment or asks to cancel or change an existing appointment
+Old Patient
+Update Patient Information
+Manage Appointments
+1. The Patient contacts the office regarding an appointment.
+2. The Patient provides the Receptionist with his or her name and address.
+3. If the Patient’s information has changed
+ Execute the Update Patient Information use case.
+4. If the Patient’s payment arrangements has changed
+ Execute the Make Payments Arrangements use case.
+5. The Receptionist asks Patient if he or she would like to make a new appointment, cancel an existing appointment, or change
+ an existing appointment.
+S-1: New Appointment
+1. The Receptionist asks the Patient for possible appointment times.
+2. The Receptionist matches the Patient’s desired appointment times with available dates and 
+times and schedules the new appointment.
+S-2: Cancel Appointment
+1. The Receptionist asks the Patient for the old appointment time.
+2. The Receptionist finds the current appointment in the appointment file and cancels it. 
+S-3: Change Appointment
+1. The Receptionist performs the S-2: cancel appointment subflow.
+2. The Receptionist performs the S-1: new appointment subflow.
+S-1, 2a1: The Receptionist proposes some alternative appointment times based on what is available in the 
+ appointment schedule.
+S-1, 2a2: The Patient chooses one of the proposed times or decides not to make an appointment. 
+6. The Receptionist provides the results of the transaction to the Patient.
+This use case describes how we make an appointment as well as changing or canceling 
+an appointment for a previously seen patient.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+If the patient wants to make a new appointment,
+ the S-1: new appointment subflow is performed.
+If the patient wants to cancel an existing appointment,
+ the S-2: cancel appointment subflow is performed.
+If the patient wants to change an existing appointment,
+ the S-3: change appointment subflow is performed.
+FIGURE 4-13  Sample Use-Case Description
+role that a user plays in the use case. For example, in Figure 4-13, the Make Old Patient Appt 
+use case is associated with the actor Old Patient (see Figure 4-4). In this case, a patient makes 
+an appointment. All actors involved in the use case are documented with the association 
+relationship.
+TEMPLATE
+can be found at
+www.wiley.com
+/college/dennis
+144  Chapter 4 Business Process and Functional Modeling
+An include relationship represents the mandatory inclusion of another use case. Th e 
+include relationship enables functional decomposition—the breaking up of a complex use 
+case into several simpler ones. For example, in Figure 4-4, the Manage Schedule use case was 
+considered to be complex and complete enough to be factored out as a separate use case that 
+could be executed by the Produce Schedules and Record Availability use cases. Th e include 
+relationship also enables parts of use cases to be reused by creating them as separate use cases.
+An extend relationship represents the extension of the functionality of the use case to 
+incorporate optional behavior. In Figure 4-13, the Make Old Patient Appt use case condi tionally uses the Update Patient Information use case. Th is use case is executed only if the 
+patient’s information has changed.
+Th e generalization relationship allows use cases to support inheritance. For example, 
+the use case in Figure 4-4, the Manage Appointments use case, was specialized so that 
+a new patient would be associated with the Make New Patient Appt and an old patient 
+could be associated with a Make Old Patient Appt. Th e common, or generalized, behav ior that both the Make New Patient Appointment and Make Old Patient Appointment 
+use cases contain would be placed in the generalized Manage Appointments use case. 
+In other words, the Make New Patient Appointment and Make Old Patient Appointment 
+use cases would inherit the common functionality from the Manage Appointments use 
+case. Th e specialized behavior would be placed in the appropriate specialized use case. 
+For example, the extend relationship to the Update Patient Information use case would be 
+placed with the specialized Make Old Patient Appointment use case.
+Flow of Events Finally, the individual steps within the business process are described. Th ree 
+diff erent categories of steps, or fl ows of events, can be documented: normal fl ow of events, 
+subfl ows, and alternative, or exceptional, fl ows:
+■ Th e normal fl ow of events includes only steps that normally are executed in a use 
+case. Th e steps are listed in the order in which they are performed. In Figure 4-13, 
+the patient and the receptionist have a conversation regarding the patient’s name, 
+address, and action to be performed.
+■ In some cases, the normal fl ow of events should be decomposed into a set of subfl ows
+to keep the normal fl ow of events as simple as possible. In Figure 4-13, we have 
+identifi ed three subfl ows: Create Appointment, Cancel Appointment, and Change 
+Appointment. Each of the steps of the subfl ows is listed. Th ese subfl ows are based on 
+the control fl ow logic in the activity diagram representation of the business process 
+(see Figure 4-7). Alternatively, we could replace a subfl ow with a separate use case 
+that could be incorporated via the include relationships (see the earlier discussion). 
+However, this should be done only if the newly created use case makes sense by itself. 
+For example, in Figure 4-13, does it make sense to factor out a Create Appointment, 
+Cancel Appointment, and/or Change Appointment use case? If it does, then the spe cifi c subfl ow(s) should be replaced with a call to the related use case, and the use case 
+should be added to the include relationship list.
+■ Alternative or exceptional fl ows are ones that do happen but are not considered to be 
+the norm. Th ese must be documented. For example, in Figure 4-13, we have identi fi ed two alternative or exceptional fl ows. Th e fi rst one simply addresses the situation 
+that occurs when the set of requested appointment times is not available. Th e second 
+one is simply a second step to the alternative fl ow. Like the subfl ows, the primary 
+purpose of separating out alternate or exceptional fl ows is to keep the normal fl ow of 
+events as simple as possible. Again, as with the subfl ows, it is possible to replace the 
+alternate or exceptional fl ows with separate use cases that could be integrated via the Cambridge University Press/SIGS Books, 2001); Scott W. Ambler, Th e Elements of UML Style (Cambridge, England: 
+Cambridge University Press, 2003).
+Business Process Modeling with Activity Diagrams  137
+might not include the forks and joins associated with the Get Jelly, Get Bread, Get Peanut 
+Butter, Get Drink, and Get Dessert activities. Th is would greatly simplify the diagram.11
+When laying out the activity diagram, line crossings should be minimized to enhance 
+the readability of the diagram. Th e activities on the diagram should also be laid out in a left -
+to-right and/or top-to-bottom order based on the order in which the activities are executed. 
+For example, in Figure 4-10, the Create Sandwich activity takes place before the Create Lunch 
+activity.
+Swimlanes should be used only to simplify the understanding of an activity diagram. 
+Furthermore, the swimlanes should enhance the readability of a diagram. For example, 
+when using a horizontal orientation for swimlanes, the top swimlane should represent the 
+most important object or individual involved with the process. Th e order of the remain ing swimlanes should be based on minimizing the number of fl ows crossing the diff erent 
+swimlanes. Also, when there are object fl ows among the activities associated with the dif ferent individuals (swimlanes) executing the activities of the process, it is useful to show the 
+actual object fl owing from one individual to another individual by including an object node 
+between the two individuals (i.e., between the two swimlanes). Th is, of course, aff ects how the 
+swimlanes should be placed on the diagram.
+Finally, any activity that does not have any outfl ows or any infl ows should be challenged. 
+Activities with no outfl ows are referred to as black-hole activities. If the activity is truly an 
+end point in the diagram, the activity should have a control fl ow from it to a fi nal-activity or 
+fi nal-fl ow node. An activity that does not have any infl ow is known as a miracle activity. In 
+this case, the activity is missing an infl ow either from the initial node of the diagram or from 
+another activity.
+Creating Activity Diagrams
+Th ere are fi ve steps in creating an activity diagram to document and model a business process. 
+First, you must choose a business process that was previously identifi ed to model. To do this, 
+you should review the requirements defi nition (see Figure 3-1) and the use-case diagram (see 
+Figures 4-2, 4-3, and 4-4) created to represent the requirements. You should also review all 
+of the documentation created during the requirements-gathering process (see Chapter 3), 
+e.g., reports created that documented interviews or observations, any output from any JAD 
+sessions, any analysis of any questionnaires used, and any story cards or task lists created. In 
+most cases, the use cases on the use-case diagram will be the best place to start. For example, 
+in the appointment system, we had identifi ed three primary use cases: Manage Appointments, 
+Produce Schedule, and Record Doctor Availability. We also identifi ed a whole set of minor use 
+cases (these will be useful in identifying the elements of the activity diagram).
+Second, identify the set of activities necessary to support the business process. For exam ple, in Figure 3-1, three processes are identifi ed as being part of the Manage Appointments 
+business process. Also, by reviewing the use-case diagram (see Figure 4-4), we see that fi ve 
+minor use cases are associated with the Manage Appointments major use case. Based on this 
+information, we can identify a set of activities. In this case, the activities are Update Patient 
+Information, Make Payment Arrangements, Create New Patient, Create Appointment, 
+Cancel Appointment, and Change Appointment.
+Th ird, identify the control fl ows and nodes necessary to document the logic of the business 
+process. For example, in Figure 4-4, the Make Payment Arrangements and Update Patient 
+11 In fact, the only reason we depicted the diagram in Figure 4-10 with the multiple fork and join nodes was to 
+demonstrate that it could be done.
+1. Choose a Business 
+Process
+2. Identify Activities
+3. Identify Control 
+Flows & Nodes
+138  Chapter 4 Business Process and Functional Modeling
+Information use cases are extensions to the Manage Appointments and Make Old Patient 
+Appt uses cases. We know that these use cases are executed only in certain circumstances. When should events be factored out from the normal fl ow of events into subfl ows? When 
+should subfl ows and/or alternative or exceptional fl ows be factored out into separate use cases? 
+Or when should things simply be left alone? Th e primary criteria should be based on the level of 
+complexity that the use case entails. Th e more diffi cult it is to understand the use case, the more 
+likely events should be factored out into subfl ows, or subfl ows and/or alternative or exceptional 
+fl ows should be factored out into separate use cases that are called by the current use case. Th is, 
+of course, creates more use cases. Th erefore, the use-case diagram will become more cluttered. 
+In other words, the choice that the analyst must make is to have a more complex use-case diagram with simpler use cases or have a simpler use-case diagram with more complex use cases. 
+Practically speaking, we must decide which makes more sense. Th is varies greatly, depending 
+on the problem and the client. Remember, we are trying to represent, in a manner as complete 
+and concise as possible, our understanding of the business processes that we are investigating 
+so that the client can validate the requirements that we are modeling. Th erefore, there really is 
+no single right answer. It really depends on the analyst, the client, and the problem.
+Optional Characteristics Other characteristics of use cases can be documented by use-case 
+descriptions. Th ese include the level of complexity of the use case; the estimated amount of 
+time it takes to execute the use case; the system with which the use case is associated; specifi c 
+data fl ows between the primary actor and the use case; any specifi c attribute, constraint, or 
+operation associated with the use case; any preconditions that must be satisfi ed for the use 
+case to execute; or any guarantees that can be made based on the execution of the use case. As 
+we noted at the beginning of this section, there is no standard set of characteristics of a use 
+case that must be captured. We suggest that the information contained in Figure 4-13 is the 
+minimal amount to be captured.
+Guidelines for Creating Use-Case Descriptions17
+Th e essence of a use case is the fl ow of events. Writing the fl ow of events in a manner that is 
+useful for later stages of development generally comes with experience.
+First, write each individual step in the form subject–verb–direct object and, optionally, 
+preposition–indirect object. Th is form has become known as SVDPI sentences. Th is form of 
+sentence has proved to be useful in identifying classes and operations (see Chapter 5). For 
+example, in Figure 4-13, the fi rst step in the normal fl ow of events, the Patient contacts the 
+offi ce regarding an appointment, suggests the possibility of three classes of objects: Patient, 
+Offi ce, and Appointment. Th is approach simplifi es the process of identifying the classes in 
+the structural model (see Chapter 5). SVDPI sentences cannot be used for all steps, but they 
+should be used whenever possible.
+Second, make clear who or what is the initiator of the action and who or what is the 
+receiver of the action in each step. Normally, the initiator should be the subject of the sentence and the receiver should be the direct object of the sentence. For example, in Figure 
+4-13, the second step, Patient provides the Receptionist with his or her name and address, 
+clearly portrays the Patient as the initiator and the Receptionist as the receiver.
+Th ird, write the step from the perspective of an independent observer. To accomplish 
+this, each step might have to be written fi rst from the perspective of both the initiator and 
+the receiver. Based on the two points of view, the bird’s-eye view version can then be written. 
+For example, in Figure 4-13, the Patient provides the Receptionist with his or her name and 
+address, neither the patient’s nor the receptionist’s perspective is represented.
+Fourth, write each step at the same level of abstraction. Each step should make about 
+the same amount of progress toward completing the use case as each of the other steps. 
+17 Th ese guidelines are based on Cockburn, Writing Eff ective Use Cases, and Graham, Migrating to Object Technology.
+146  Chapter 4 Business Process and Functional Modeling
+On high-level use cases, the amount of progress could be very substantial, whereas in a 
+ low-level use case, each step could represent only incremental progress. For example, in 
+Figure 4-13, each step represents about the same amount of eff ort to complete.
+Fift h, ensure that the use case contains a sensible set of actions. Each use case should 
+represent a transaction. Th erefore, each use case should comprise four parts:
+1. Th e primary actor initiates the execution of the use case by sending a request 
+(and possibly data) to the system.
+2. Th e system ensures that the request (and data) is valid.
+3. Th e system processes the request (and data) and possibly changes its own internal state.
+4. Th e system sends the primary actor the result of the processing.
+For example, in Figure 4-13, the patient requests an appointment (steps 1 and 2), the 
+receptionist determines whether any of the patient’s information has changed or not (step 3), 
+the receptionist determines whether the patient’s payments arrangements have changed or 
+not (step 4), the receptionist sets up the appointment transaction (step 5), and the receptionist 
+provides the results of the transaction to the patient (step 6).
+Th e sixth guideline is the KISS principle. If the use case becomes too complex and/or too 
+long, the use case should be decomposed into a set of use cases. Furthermore, if the normal fl ow 
+of events of the use case becomes too complex, subfl ows should be used. For example, in Figure 
+4-13, the fi ft h step in the normal fl ow of events was suffi ciently complex to decompose it into 
+three separate subfl ows. However, care must be taken to avoid the possibility of decomposing too 
+much. Most decomposition should be done with classes (see Chapter 5).
+Th e seventh guideline deals with repeating steps. Normally, in a programming language, 
+we put loop defi nition and controls at the beginning of the loop. However, because the usecase steps are written in simple English, it is normally better to simply write Repeat steps A 
+through E until some condition is met aft er step E. It makes the use case more readable to 
+people unfamiliar with programming.
+Creating Use Case Descriptions
+Use cases provide a bird’s-eye view of the business processes contained in the evolving system. 
+Th e use-case diagram depicts the communication path between the actors and the system. 
+Use cases and their use-case description documentation tend to be used to model both 
+the contexts of the system and the detailed requirements for the system. Even though the primary purpose of use cases is to document the functional requirements of the system, they also 
+are used as a basis for testing the evolving system. In this section, we provide a set of steps that 
+can be used to guide the actual creation of a use-case description for each use case in the usecase diagram based on the requirements defi nition and the use-case and activity diagrams.18
+Th ese steps are performed in order, but of course the analyst oft en cycles among them in an 
+iterative fashion as he or she moves from one use case to another use case.
+Th e fi rst step is to choose one of the use cases to document with a use-case description. Using 
+the importance level of the use case can help do this. For example, in Figure 4-13, the Make Old 
+Patient Appt use case has an importance level of high. As such, it should be one of the earlier use 
+18 Th e approach in this section is based on the work of Cockburn, Writing Eff ective Use Cases; Graham, Migrating to 
+Object Technology; George Marakas and Joyce Elam, “Semantic Structuring in Analyst Acquisition and Representation of Facts in Requirements Analysis,” Information Systems Research 9, no. 1 (1998): 37–63; Alan Dennis, Glenda 
+Hayes, and Robert Daniels, “Business Process Modeling with Group Support Systems,” Journal of Management 
+Information Systems 15, no. 4 (1999): 115–142.
+1. Choose a 
+Use Case
+Business Process Documentation with Use Cases and Use-Case Descriptions  147
+cases to be expanded. Th e criteria suggested by Larman19 can also be used to set the prioritization 
+of the use cases, as noted earlier. An alternative approach suggests that each use case should be 
+voted on by each member of the development team. In this approach, each team member is given 
+a set of “dots” that they can use to vote on the use cases. Th ey can use all of their dots to vote for a 
+single use case, or they can spread them over a set of use cases. Th e use cases then can be ranked 
+in order of the number of dots received. Use case descriptions are created for the individual use 
+cases based on the rank order.20
+Th e second step is to create an overview description of the use case; that is, name the primary 
+actor, set the type for the use case, list all of the identifi ed stakeholders and their interests in 
+the use case, identify the level of importance of the use case, give a brief description of the use 
+case, give the trigger information for the use case, and list the relationships in which the use 
+case participates.
+Th e third step is to fi ll in the steps of the normal fl ow of events required to describe each use 
+case. Th e steps focus on what the business process does to complete the use case, as opposed 
+to what actions the users or other external entities do. In general, the steps should be listed 
+in the order in which they are performed, from fi rst to last. Remember to write the steps in 
+an SVDPI form whenever possible. In writing the use case, remember the seven guidelines 
+described earlier. Th e goal at this point is to describe how the chosen use case operates. One of 
+the best ways to begin to understand how an actor works through a use case is to visualize performing the steps in the use case—i.e., role play. Th e techniques of visualizing how to interact 
+with the system and of thinking about how other systems work (informal benchmarking) are 
+important techniques that help analysts and users understand how systems work and how to 
+write a use case. Both techniques (visualization and informal benchmarking) are common in 
+practice. It is important to remember that at this point in the development of a use case, we 
+are interested only in the typical successful execution of the use case. If we try to think of all of 
+the possible combinations of activities that could go on, we will never get anything written. At 
+this point, we are looking only for the three to seven major steps. Focus only on performing 
+the typical process that the use case represents.
+Th e fourth step is to ensure that the steps listed in the normal fl ow of events are not too 
+complex or too long. Each step should be about the same size as the others. For example, if 
+we were writing steps for preparing a meal, steps such as take fork out of drawer and put fork 
+on table are much smaller than prepare cake using mix. If we end up with more than seven 
+steps or steps that vary greatly in size, we should go back and review each step carefully and 
+possibly rewrite the steps.
+

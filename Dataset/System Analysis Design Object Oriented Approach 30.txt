@@ -1,0 +1,524 @@
+﻿fi gure that balancing all the functional, structural, and behavioral models is a very timeconsuming, tedious, and diffi cult task. However, without paying this level of attention to the 
+evolving models that represent the system, the models will not provide a sound foundation 
+on which to design and build the system.
+EVOLVING THE ANALYSIS MODELS INTO DESIGN MODELS
+Now that we have successfully verifi ed and validated our analysis models, we need to begin 
+evolving them into appropriate design models. Th e purpose of the analysis models was 
+to represent the underlying business problem domain as a set of collaborating objects. In 
+other words, the analysis activities defi ned the functional requirements. To achieve this, the 
+analysis activities ignored nonfunctional requirements such as performance and the system 
+environment issues (e.g., distributed or centralized processing, user-interface issues, and 
+database issues). In contrast, the primary purpose of the design models is to increase the 
+likelihood of successfully delivering a system that implements the functional requirements in 
+a manner that is aff ordable and easily maintainable. Th erefore, in systems design, we address 
+both the functional and nonfunctional requirements.
+From an object-oriented perspective, system design models simply refi ne the system 
+ analysis models by adding system environment (or solution domain) details to them and 
+refi ning the problem domain information already contained in the analysis models. When 
+evolving the analysis model into the design model, you should fi rst carefully review the use 
+cases and the current set of classes (their operations and attributes and the relationships 
+between them). Are all the classes necessary? Are there any missing classes? Are the classes fully 
+defi ned? Are any attributes or methods missing? Do the classes have any unnecessary attributes 
+and methods? Is the current representation of the evolving system optimal? Obviously, if we 
+have already verifi ed and validated the analysis models, quite a bit of this has already taken 
+place. Yet, object-oriented systems development is both incremental and iterative. Th erefore, 
+we must review the analysis models again. However, this time we begin looking at the models 
+of the problem domain through a design lens. In this step, we make modifi cations to the problem domain models that will enhance the effi ciency and eff ectiveness of the evolving system.
+In the following sections, we introduce factoring, partitions and collaborations, and 
+layers as a way to evolve problem domain-oriented analysis models into optimal solution domain-oriented design models. From an enhanced Unifi ed Process perspective (see 
+Figure 1-16), we are moving from the analysis workfl ow to the design workfl ow, and we are 
+moving further into the Elaboration phase and partially into the Construction phase.
+Factoring
+Factoring is the process of separating out a module into a stand-alone module. Th e new 
+module can be a new class or a new method. For example, when reviewing a set of classes, 
+it may be discovered that they have a similar set of attributes and methods. Th us, it might 
+make sense to factor out the similarities into a separate class. Depending on whether the 
+new class should be in a superclass relationship to the existing classes or not, the new 
+class can be related to the existing classes through a generalization (a-kind-of) or possibly 
+through an aggregation (has-parts) relationship. Using the appointment system example, 
+if the Employee class had not been identified, we could possibly identify it at this stage by 
+factoring out the similar methods and attributes from the Nurse, Receptionist, and Doctor 
+classes. In this case, we would relate the new class (Employee) to the existing classes using 
+the generalization (a-kind-of) relationship. Obviously, by extension we also could have 
+created the Participant class if it had not been previously identifi ed.
+Abstraction and refi nement are two processes closely related to factoring. Abstraction deals 
+with the creation of a higher-level idea from a set of ideas. Identifying the Employee class is an 
+example of abstracting from a set of lower classes to a higher one. In some cases, the abstraction 
+process identifi es abstract classes, whereas in other situations, it identifi es additional concrete 
+classes.5 Th e refi nement process is the opposite of the abstraction process. In the appointment 
+system example, we could identify additional subclasses of the Employee class, such as Secretary 
+and Bookkeeper. Of course we would add the new classes only if there were suffi cient diff erences 
+among them. Otherwise, the more general class, Employee, would suffi ce.
+Partitions and Collaborations
+Based on all the factoring, refi ning, and abstracting that can take place to the evolving system, 
+the sheer size of the system representation can overload the user and the developer. At this 
+point in the evolution of the system, it might make sense to split the representation into a 
+set of partitions. A partition is the object-oriented equivalent of a subsystem,6 where a subsystem is a decomposition of a larger system into its component systems (e.g., an accounting 
+information system could be functionally decomposed into an accounts-payable system, an 
+accounts-receivable system, a payroll system, etc.). From an object- oriented perspective, 
+partitions are based on the pattern of activity (messages sent) among the objects in an objectoriented system. We describe an easy approach to model partitions and collaborations later 
+in this chapter: packages and package diagrams.
+A good place to look for potential partitions is the collaborations modeled in UML’s communication diagrams (see Chapter 6). If you recall, one useful way to identify collaborations is 
+to create a communication diagram for each use case. However, because an individual class can 
+support multiple use cases, an individual class can participate in multiple use-case-based collaborations. In cases where classes are supporting multiple use cases, the collaborations should 
+be merged. Th e class diagram should be reviewed to see how the diff erent classes are related 
+to one another. For example, if attributes of a class have complex object types, such as Person, 
+Address, or Department, and these object types were not modeled as associations in the class 
+diagram, we need to recognize these implied associations. Creating a diagram that combines the 
+class diagram with the communication diagrams can be very useful to show to what degree the 
+classes are coupled.7 Th e greater the coupling between classes, the more likely the classes should 
+be grouped together in a collaboration or partition. By looking at a CRUDE matrix, we can use 
+CRUDE analysis (see Chapter 6) to identify potential classes on which to merge collaborations.
+One of the easiest techniques to identify the classes that could be grouped to form a 
+collaboration is through the use of cluster analysis or multiple dimensional scaling. Th ese 
+statistical techniques enable the team to objectively group classes together based on their 
+affi nity for each other. Th e affi nity can be based on semantic relationships, diff erent types 
+of messages being sent between them (e.g., create, read, update, delete, or execute), or some 
+weighted combination of both. Th ere are many diff erent similarity measures and many 
+diff erent algorithms on which the clusters can be based, so one must be careful when using 
+these techniques. Always make sure that the collaborations identifi ed using these techniques 
+258 Chapter 7 Moving on to Design
+5 See Chapter 5 for the diff erences between abstract and concrete classes.
+6 Some authors refer to partitions as subsystems [e.g., see R. Wirfs-Brock, B. Wilkerson, and L. Weiner, Designing 
+Object-Oriented Soft ware (Englewood Cliff s, NJ: Prentice Hall, 1990)], whereas others refer to them as layers [e.g., 
+see I. Graham, Migrating to Object Technology (Reading, MA: Addison-Wesley, 1994)]. However, we have chosen 
+to use the term partition [C. Larman, Applying UML and Patterns: An Introduction to Object-Oriented Analysis 
+and Design (Englewood Cliff s, NJ: Prentice Hall, 1998)] to minimize confusion between subsystems in a traditional 
+systems development approach and layers associated with Rational’s Unifi ed Approach.
+7 We describe the concept of coupling in Chapter 8.
+Evolving the Analysis Models into Design Models  259
+make sense from the problem domain perspective. Just because a mathematical algorithm 
+suggests that the classes belong together does not make it so. However, this is a good 
+approach to create a fi rst-cut set of collaborations.
+Depending on the complexity of the merged collaboration, it may be useful in decomposing the collaboration into multiple partitions. In this case, in addition to having collaborations 
+between objects, it is possible to have collaborations among partitions. Th e general rule is the 
+more messages sent between objects, the more likely the objects belong in the same partition. Th e 
+fewer messages sent, the less likely the two objects belong together.
+Another useful approach to identifying potential partitions is to model each collaboration between objects in terms of clients, servers, and contracts. A client is an instance 
+of a class that sends a message to an instance of another class for a method to be executed; 
+a server is the instance of a class that receives the message; and a contract is the specifi cation that formalizes the interactions between the client and server objects (see Chapters 5 
+and 8). Th is approach allows the developer to build up potential partitions by looking at the 
+contracts that have been specifi ed between objects. In this case, the more contracts there are 
+between objects, the more likely that the objects belong in the same partition. Th e fewer contracts, the less chance there is that the two classes belong in the same partition.
+Remember, the primary purpose of identifying collaborations and partitions is to determine which classes should be grouped together in design.
+Layers
+Until this point in the development of our system, we have focused only on the problem 
+domain; we have totally ignored the system environment (data management, user interface, 
+and physical architecture). To successfully evolve the analysis model of the system into a 
+design model of the system, we must add the system environment information. One useful 
+way to do this, without overloading the developer, is to use layers. A layer represents an element of the soft ware architecture of the evolving system. We have focused only on one layer 
+in the evolving soft ware architecture: the problem domain layer. Th ere should be a layer for 
+each of the diff erent elements of the system environment (e.g., data management, user interface, physical architecture). Like partitions and collaborations, layers also can be portrayed 
+using packages and package diagrams (see the next section of this chapter).
+Th e idea of separating the diff erent elements of the architecture into separate layers can 
+be traced back to the MVC architecture of Smalltalk.8 When Smalltalk was fi rst created,9 
+the authors decided to separate the application logic from the logic of the user interface. 
+In this manner, it was possible to easily develop diff erent user interfaces that worked with 
+the same application. To accomplish this, they created the Model–View–Controller (MVC)
+architecture, where Models implemented the application logic (problem domain) and Views
+and Controllers implemented the logic for the user interface. Views handled the output, and 
+Controllers handled the input. Because graphical user interfaces were fi rst developed in the 
+Smalltalk language, the MVC architecture served as the foundation for virtually all graphical 
+user interfaces that have been developed today (including the Mac interfaces, the Windows 
+family, and the various Unix-based GUI environments).
+8 See S. Lewis, Th e Art and Science of Smalltalk: An Introduction to Object-Oriented Programming Using Visual-Works
+(Englewood Cliff s, NJ: Prentice Hall, 1995).
+9 Smalltalk was invented in the early 1970s by a soft ware-development research team at Xerox PARC. It introduced 
+many new ideas into the area of programming languages (e.g., object orientation, windows-based user interfaces, 
+reusable class library, and the development environment). In many ways, Smalltalk is the parent of all object-based 
+and object-oriented languages, such as Visual Basic, C++, and Java.
+Based on Smalltalk’s innovative MVC architecture, many diff erent soft ware layers have 
+been proposed.10 We suggest the following layers on which to base soft ware architecture: 
+foundation, problem domain, data management, human–computer interaction, and physical architecture (see Figure 7-17). Each layer limits the types of classes that can exist on it 
+(e.g., only user interface classes may exist on the human–computer interaction layer).
+Foundation Th e foundation layer is, in many ways, a very uninteresting layer. It contains 
+classes that are necessary for any object-oriented application to exist. Th ey include classes that 
+represent fundamental data types (e.g., integers, real numbers, characters, strings), classes that 
+represent fundamental data structures, sometimes referred to as container classes (e.g., lists, 
+trees, graphs, sets, stacks, queues), and classes that represent useful abstractions, sometimes 
+referred to as utility classes (e.g., date, time, money). Th ese classes are rarely, if ever, modifi ed by a developer. Th ey are simply used. Today, the classes found on this layer are typically 
+included with the object-oriented development environments.
+Problem Domain Th e problem-domain layer is what we have focused our attention on up 
+until now. At this stage in the development of our system, we need to further detail the classes 
+so that we can implement them in an eff ective and effi cient manner. Many issues need to be 
+addressed when designing classes, no matter on which layer they appear. For example, there 
+are issues related to factoring, cohesion and coupling, connascence, encapsulation, proper use 
+of inheritance and polymorphism, constraints, contract specifi cation, and detailed method 
+design. Th ese issues are discussed in Chapter 8.
+Data Management Th e data management layer addresses the issues involving the persistence of 
+the objects contained in the system. Th e types of classes that appear in this layer deal with how 
+objects can be stored and retrieved. Th e classes contained in this layer are called the Data Access 
+and Manipulation (DAM) classes. Th e DAM classes allow the problem domain classes to be 
+independent of the storage used and, hence, increase the portability of the evolving system. Some 
+of the issues related to this layer include choice of the storage format and optimization. Th ere is 
+a plethora of diff erent options in which to choose to store objects. Th ese include sequential fi les, 
+random access fi les, relational databases, object/relational databases, object-oriented databases, 
+260 Chapter 7 Moving on to Design
+Foundation Date, Enumeration 7, 8
+Problem Domain Employee, Customer 4, 5, 6, 7, 8
+Data Management DataInputStream, 8, 9
+ FileInputStream
+Human–Computer Interaction Button, Panel 8, 10
+Physical Architecture ServerSocket, URLConnection 8, 11
+FIGURE 7-17
+Layers and 
+Sample Classes
+ Layers Examples Relevant Chapters
+10 For example, Problem Domain, Human Interaction, Task Management, and Data Management [P. Coad and 
+E. Yourdon, Object-Oriented Design (Englewood Cliff s, NJ: Yourdon Press, 1991)]; Domain, Application, and 
+Interface (I. Graham, Migrating to Object Technology [Reading, MA: Addison-Wesley, 1994)]; Domain, Service, 
+and Presentation [C. Larman, Applying UML and Patterns: An Introduction to Object-Oriented Analysis and 
+Design (Englewood Cliff s, NJ: Prentice Hall, 1998)]; Business, View, and Access [A. Bahrami, Object-Oriented 
+Systems Development using the Unifi ed Modeling Language (New York: McGraw-Hill, 1999)]; ApplicationSpecifi c, Application-General, Middleware, System-Soft ware [I. Jacobson, G. Booch, and J. Rumbaugh, Th e Unifi ed Soft ware Development Process (Reading, MA: Addison-Wesley, 1999)]; Foundation, Architecture, Business, 
+and Application [M. Page-Jones, Fundamentals of Object-Oriented Design in UML (Reading, MA: AddisonWesley, 2000)].
+and NoSQL data stores. Each of these options has been optimized to provide solutions for diff erent access and storage problems. Today, from a practical perspective, there is no single solution 
+that optimally serves all applications. Th e correct solution is most likely some combination of 
+the diff erent storage options. A complete description of all the issues related to the data management layer is well beyond the scope of this book.11 However, we do present the fundamentals 
+in Chapter 9.
+Human–Computer Interaction Th e human–computer interaction layer contains classes associated with the View and Controller idea from Smalltalk. Th e primary purpose of this layer is to 
+keep the specifi c user-interface implementation separate from the problem domain classes. Th is 
+increases the portability of the evolving system. Typical classes found on this layer include classes 
+that can be used to represent buttons, windows, text fi elds, scroll bars, check boxes, drop-down 
+lists, and many other classes that represent user-interface elements.
+When designing the user interface for an application, many issues must be addressed: How 
+important is consistency across diff erent user interfaces? What about diff ering levels of user 
+experience? How is the user expected to be able to navigate through the system? What about help 
+systems and online manuals? What types of input elements should be included? What types of 
+output elements should be included? Other questions that must be addressed are related to the 
+platform on which the soft ware will be deployed. For example, is the application going to run 
+on a stand-alone computer, is it going to be distributed, or is the application going mobile? If it 
+is expected to run on mobile devices, what type of platform: notebooks, tablets, or phones? Will 
+it be deployed using Web technology, which runs on multiple devices, or will it be created using 
+apps that are based on Android from Google, iOS from Apple, or Windows from Microsoft ? 
+Depending on the answer to these questions, diff erent types of user interfaces are possible.
+With the advent of social networking platforms, such as Facebook, Twitter, blogs, 
+YouTube, and LinkedIn, the implications for the user interface can be mind boggling. 
+Depending on the application, diff erent social networking platforms may be appropriate for 
+diff erent aspects of the application. Furthermore, each of the diff erent social networking platforms enables (or prevents) consideration of diff erent types of user interfaces. Finally, with 
+the potential audience of your application being global, many diff erent cultural issues will 
+arise in the design and development of culturally aware user interfaces (such as multilingual 
+requirements). Obviously, a complete description of all the issues related to human–computer 
+interaction is beyond the scope of this book.12 However, from the user’s perspective, the user 
+interface is the system. We present the basic issues in user interface design in Chapter 10.
+Physical Architecture Th e physical architecture layer addresses how the soft ware will execute on specifi c computers and networks. Th is layer includes classes that deal with communication between the soft ware and the computer’s operating system and the network. For 
+example, classes that address how to interact with the various ports on a specifi c computer 
+are included in this layer.
+Evolving the Analysis Models into Design Models  261
+11 Th ere are many good database design books that are relevant to this layer; see, for example, M. Gillenson, 
+Fundamentals of Database Management Systems (Hoboken, NJ: John Wiley & Sons, 2005); F. R. McFadden, 
+J. A. Hoff er, and Mary B. Prescott, Modern Database Management, 4th Ed. (Reading, MA: Addison-Wesley, 1998); 
+M. Blaha and W. Premerlani, Object-Oriented Modeling and Design for Database Applications (Englewood Cliff s, 
+NJ: Prentice Hall, 1998); R. J. Muller, Database Design for Smarties: Using UML for Data Modeling (San Francisco: 
+ Morgan Kaufmann, 1999).
+12 Books on user interface design that address these issues include B. Schheiderman, Designing the User Interface: 
+Strategies for Eff ective Human Computer Interaction, 3rd Ed. (Reading, MA: Addison-Wesley, 1998); J. Tidwell, 
+Designing Interfaces: Patterns for Eff ective Interaction Design, 2nd Ed. (Sebastopol, CA: O’Reilly Media, 2010); 
+S. Krug, Don’t Make Me Th ink: A Common Sense Approach to Web Usability (Berkeley, CA: New Riders Publishing, 
+2006); N. Singh and A. Pereira, Th e Culturally Customized Web Site: Customizing Web Sites for the Global Marketplace (Oxford, UK: Elsevier, 2005).
+Unlike in the foundation layer, many design issues must be addressed before choosing the 
+appropriate set of classes for this layer. Th ese design issues include the choice of a computing 
+or network architecture (such as the various client-server architectures), the actual design of a 
+network, hardware and server soft ware specifi cation, and security issues. Other issues that must 
+be addressed with the design of this layer include computer hardware and soft ware confi guration (choice of operating systems, such as Linux, Mac OSX, and Windows; processor types 
+and speeds; amount of memory; data storage; and input/output technology), standardization, 
+virtualization, grid computing, distributed computing, and Web services. Th is then leads us to 
+one of the proverbial gorillas on the corner. What do you do with the cloud? Th e cloud is essentially a form of distributed computing. In this case, the cloud allows you to treat the platform, 
+infrastructure, soft ware, and even business processes as remote services that can be managed by 
+another fi rm. In many ways, the cloud allows much of IT to be outsourced (see the discussion 
+of outsourcing later in this chapter). Also as brought up with the human–computer interaction 
+layer, the whole issue of mobile computing is very relevant to this layer. In particular, the diff erent 
+devices, such as phones and tablets, are relevant and the way they will communicate with each 
+other, such as through cellular networks or WiFi, is also important.
+Finally, given the amount of power that IT requires today, the whole topic of Green IT must 
+be addressed. Topics that need to be addressed related to Green IT are the location of the data 
+center, data center cooling, alternative power sources, reduction of consumables, the idea of a 
+paperless offi ce, Energy Star compliance, and the potential impact of virtualization, the cloud, 
+and mobile computing. Like the data management and human–computer interaction layers, a 
+complete description of all the issues related to the physical architecture is beyond the scope of 
+this book.13 However, we do present the basic issues in Chapter 11.
+PACKAGES AND PACKAGE DIAGRAMS
+In UML, collaborations, partitions, and layers can be represented by a higher-level construct: a 
+package.14 In fact, a package serves the same purpose as a folder on your computer. When packages are used in programming languages such as Java, packages are actually implemented as folders. A package is a general construct that can be applied to any of the elements in UML models. 
+In Chapter 4, we introduced the idea of packages as a way to group use cases together to make 
+the use-case diagrams easier to read and to keep the models at a reasonable level of complexity. 
+In Chapters 5 and 6, we did the same thing for class and communication diagrams, respectively. 
+In this section, we describe a package diagram: a diagram composed only of packages. A package 
+diagram is eff ectively a class diagram that only shows packages.
+Th e symbol for a package is similar to a tabbed folder (see Figure 7-18). Depending 
+on where a package is used, packages can participate in diff erent types of relationships. For 
+example, in a class diagram, packages represent groupings of classes. Th erefore, aggregation 
+and association relationships are possible.
+In a package diagram, it is useful to depict a new relationship, the dependency relationship. A dependency relationship is portrayed by a dashed arrow (see Figure 7-18). A 
+dependency relationship represents the fact that a modifi cation dependency exists between 
+two packages. Th at is, it is possible that a change in one package could cause a change to 
+262 Chapter 7 Moving on to Design
+13 Some books that cover these topics include S. D. Burd, Systems Architecture, 6th Ed. (Boston: Course Technology, 
+2011); I. Englander, Th e Architecture of Computer Hardware, Systems Soft ware, & Networking: An Information 
+ Technology Approach (Hoboken, NJ: Wiley, 2009); K.K. Hausman and S. Cook, IT Architecture for Dummies
+(Hoboken, NJ: Wiley Publishing, 2011).
+14 Th is discussion is based on material in Chapter 7 of M. Fowler with K. Scott, UML Distilled: A Brief Guide to the 
+Standard Object Modeling Language, 3rd Ed. (Reading, MA: Addison-Wesley, 2004).
+Packages and Package Diagrams  263
+be required in another package. Figure 7-19 portrays the dependencies among the diff erent 
+layers (foundation, problem domain, data management, human–computer interaction, and 
+physical architecture). For example, if a change occurs in the problem domain layer, it most 
+likely will cause changes to occur in the human–computer interaction, physical architecture, 
+and data management layers. Notice that these layers point to the problem domain layer and 
+therefore are dependent on it. However, the reverse is not true.15 Also note that all layers 
+are dependent upon the foundation layer. Th is is due to the contents of the foundation layer 
+being the fundamental classes from which all other classes will be built. Consequently, any 
+changes made to this layer could have ramifi cabitons to all other layers.
+At the class level, there could be many causes for dependencies among classes. For 
+example, if the protocol for a method is changed, then this causes the interface for all 
+A package:
+■ Is a logical grouping of UML elements.
+■ Is used to simplify UML diagrams by grouping related elements into a single 
+higher-level element.
+A dependency relationship:
+■ Represents a dependency between packages: If a package is changed, the 
+dependent package also could have to be modified.
+■ Has an arrow drawn from the dependent package toward the package on which it 
+is dependent.
+Package
+FIGURE 7-18  Syntax for Package Diagram
+Human–Computer Interaction
+Problem Domain
+Physical Architecture Data Management
+Foundation
+FIGURE 7-19
+Package Diagram 
+of Dependency 
+Relationships 
+among Layers
+15 A useful side eff ect of the dependencies among the layers is that the project manager can divide the project team up 
+into separate subteams: one for each design layer. Th is is possible because each of the design layers is dependent on 
+the problem domain layer, which has been the focus of analysis. In design, the team can gain some productivity-based 
+effi ciency by working on the diff erent layer designs in parallel.
+264 Chapter 7 Moving on to Design
+objects of this class to change. Th erefore, all classes that have objects that send messages 
+to the instances of the modifi ed class might have to be modifi ed. Capturing dependency 
+relationships among the classes and packages helps the organization in maintaining 
+object-oriented information systems.
+Collaborations, partitions, and layers are modeled as packages in UML. Collaborations 
+are normally factored into a set of partitions, which are typically placed on a layer. Partitions 
+can be composed of other partitions. Also, it is possible to have classes in partitions, which are 
+contained in another partition, which is placed on a layer. All these groupings are represented 
+using packages in UML. Remember that a package is simply a generic grouping construct 
+used to simplify UML models through the use of composition.16
+A simple package diagram, based on the appointment system example from the previous chapters, is shown in Figure 7-20. Th is diagram portrays only a very small portion of the 
+entire system. In this case, we see that the Patient UI, Patient-DAM, and Patient Table classes 
+depend on the Patient class. Furthermore, the Patient-DAM class depends on the Patient Table 
+class. Th e same can be seen with the classes dealing with the actual appointments. By isolating 
+the Problem Domain classes (such as the Patient and Appt classes) from the actual objectpersistence classes (such as the Patient Table and Appt Table classes) through the use of the 
+intermediate Data Management classes (Patient-DAM and Appt-DAM classes), we isolate the 
+Problem Domain classes from the actual storage medium.17 Th is greatly simplifi es the maintenance and increases the reusability of the Problem Domain classes. Of course, in a complete 
+description of a real system, there would be many more dependencies.
+Guidelines for Creating Package Diagrams
+As with the UML diagrams described in the earlier chapters, we provide a set of guidelines 
+that we have adapted from Ambler to create package diagrams.18 In this case, we off er six 
+guidelines.
+■ Use package diagrams to logically organize designs. Specifi cally, use packages to 
+group classes together when there is an inheritance, aggregation, or composition 
+relationship between them or when the classes form a collaboration.
+■ In some cases, inheritance, aggregation, or association relationships exist 
+between packages. In those cases, for readability purposes, try to support inheritance relationships vertically, with the package containing the superclass being 
+placed above the package containing the subclass. Use horizontal placement 
+to support aggregation and association relationships, with the packages being 
+placed side by side.
+■ When a dependency relationship exists on a diagram, it implies that there is 
+at least one semantic relationship between elements of the two packages. Th e 
+direction of the dependency is typically from the subclass to the superclass, 
+from the whole to the part, and with contracts, from the client to the server. In 
+other words, a subclass is dependent on the existence of a superclass, a whole is 
+dependent upon its parts existing, and a client can’t send a message to a nonexistent server.
+16 For those familiar with traditional approaches, such as structured analysis and design, packages serve a similar 
+purpose as the leveling and balancing processes used in data fl ow diagramming.
+17 Th ese issues are described in more detail in Chapter 9.
+18 S. W. Ambler, Th e Elements of UML 2.0 Style (Cambridge, UK: Cambridge University Press, 2005).
+■ When using packages to group use cases together, be sure to include the actors and 
+the associations that they have with the use cases grouped in the package. Th is will 
+allow the diagram’s user to better understand the context of the diagram.
+■ Give each package a simple, but descriptive name to provide the package diagram user with enough information to understand what the package encapsulates. 
+ Otherwise, the user will have to drill-down or open up the package to understand 
+the package’s purpose.
+■ Be sure that packages are cohesive. For a package to be cohesive, the classes contained in the package, in some sense, belong together. A simple, but not perfect, rule 
+to follow when grouping classes together in a package is that the more the classes 
+depend on each other, the more likely they belong together in a package.
+HCI Layer
+Appt Sys UI
+Patient UI Appt UI
+PD Layer
+Appt Sys
+Patient Appt
+DM Layer
+Patient-DAM Appt-DAM
+Patient Table Appt Table FIGURE 7-20
+Partial Package 
+Diagram of the 
+Appointment System
+Packages and Package Diagrams  265
+266 Chapter 7 Moving on to Design
+Creating Package Diagrams
+In this section, we describe a simple fi ve-step process to create package diagrams. Th e fi rst 
+step is to set the context for the package diagram. Remember, packages can be used to model 
+partitions and/or layers. Revisiting the appointment system again, let’s set the context as the 
+problem domain layer.
+Th e second step is to cluster the classes together into partitions based on the relationships 
+that the classes share. Th e relationships include generalization, aggregation, the various 
+associations, and the message sending that takes place between the objects in the system. 
+To identify the packages in the appointment system, we should look at the diff erent analysis models [e.g., the class diagram (see Figure 7-15), the communication diagrams (see 
+Figure 7-10)], and the CRUDE matrix (see Figure 7-12). Classes in a generalization hierarchy 
+should be kept together in a single partition.
+Th e third step is to place the clustered classes together in a partition and model the partitions 
+as packages. Figure 7-21 portrays fi ve packages in the PD Layer: Account Pkg, Participant 
+Pkg, Patient Pkg, Appointment Pkg, and Treatment Pkg.
+Th e fourth step is to identify the dependency relationships among the packages. We accomplish this by reviewing the relationships that cross the boundaries of the packages to uncover 
+potential dependencies. In the appointment system, we see association relationships that 
+connect the Account Pkg with the Appointment Pkg (via the associations between the Entry 
+class and the Appointment class), the Participant Pkg with the Appointment Pkg (via the 
+association between the Doctor class and the Appointment class), the Patient Pkg, which is 
+contained within the Participant Pkg, with the Appointment Pkg (via the association between 
+the Patient and Appointment classes), and the Patient Pkg with the Treatment Pkg (via the 
+association between the Patient and Symptom classes).
+Th e fi fth step is to lay out and draw the diagram. Using the guidelines, place the packages 
+and dependency relationships in the diagram. In the case of the Appointment system, there 
+are dependency relationships between the Account Pkg and the Appointment Pkg, the 
+Participant Pkg and the Appointment Pkg, the Patient Pkg and the Appointment Pkg, and 
+the Patient Pkg and the Treatment Pkg. To increase the understandability of the dependency 
+relationships among the diff erent packages, a pure package diagram that shows only the 
+dependency relationships among the packages can be created (see Figure 7-22).
+Verifying and Validating Package Diagrams
+Like all the previous models, package diagrams need to be verifi ed and validated. In this case, 
+the package diagrams were derived primarily from the class diagram, the communications 
+diagrams, and the CRUDE matrix. Only two areas need to be reviewed.
+First, the identifi ed packages must make sense from a problem domain point of view. For 
+example, in the context of an appointment system, the packages in Figure 7-22 (Participant, 
+Patient, Appt, Account, and Treatment) seem to be reasonable.
+Second, all dependency relationships must be based on message-sending relationships on 
+the communications diagram, cell entries in the CRUDE matrix, and associations on the class 
+diagram. In the case of the appointment system, the identifi ed dependency relationships are 
+reasonable (see Figures 7-10, 7-12, 7-15, and 7-22).
+1. Set Context
+2. Cluster Classes
+3. Create Packages
+4. Identify 
+Dependencies
+5. Lay Out and Draw 
+Diagram
+267
+PD Layer
+Account
+Pkg
+Account has
+1..1
+1..1..*
+1..1
+1..1
+1..1
+1..1
+1..1
+0..1
+1..1
+1..1
+1..1 1..1
+0..*
+0..*
+0..*
+0..* 0..*
+0..*
+0..*
+1..*
+0..*
+0..*
+1..*
+1..*
+1..*
+has Item contains
+Entry Debit
+Credit
+Appointment
+Pkg
+Participant
+Pkg
+-time
+-date
+-reason
++cancel without notice()
+locatedAt
+Place
+Prescription
+Good Service
+Brace Physical Checkup
+Transaction Line Item
+AssignedTo
+Patient
+Pkg
+Participant
+-lastname
+-firstname
+-address
+-phone
+-birthdate
+-/ age
+schedules
+Employee
+Doctor Receptionist Nurse
+Patient
+-amount
+-insurance carrier
++make appointment() +calculate last visit()
++change status() +provides medical history()
+suffers
+provides
++ primary
+insurance
+carrier
+Unpaid Bill
+Medical History
+-heart disease
+-high blood pressure -diabetes
+-allergies
+Symptom
+-description
+Treatment
+medication
+instructions
+symptom severity
+-name
+Illness
+owes
+Appointment
+Treatment
+Pkg
+FIGURE 7-21  Package Diagram of the PD Layer of the Appointment Problem
+268 Chapter 7 Moving on to Design
+PD Layer
+Account Pkg
+Patient Pkg
+Appointment
+ Pkg
+Treatment
+ Pkg
+Participant
+ Pkg
+FIGURE 7-22  Overview Package Diagram of the PD Layer for the Appointment System
+DESIGN STRATEGIES
+Until now, we have assumed that the system will be built and implemented by the project 
+team; however, there are actually three ways to approach the creation of a new system: developing a custom application in-house, buying and customizing a packaged system, and relying on an external vendor, developer, or service provider to build the system. Each of these 
+choices has strengths and weaknesses, and each is more appropriate in diff erent scenarios. 
+Th e following sections describe each design choice in turn, and then we present criteria that 
+you can use to select one of the three approaches for your project.
+Custom Development
+Many project teams assume that custom development, or building a new system from scratch, 
+is the best way to create a system. For one thing, teams have complete control over the way 
+the system looks and functions. Custom development also allows developers to be fl exible 
+and creative in the way they solve business problems. Additionally, a custom application is 
+easier to change to include components that take advantage of current technologies that can 
+support such strategic eff orts.
+Design Strategies  269
+Building a system in-house also builds technical skills and functional knowledge within 
+the company. As developers work with business users, their understanding of the business 
+grows and they become better able to align IS with strategies and needs. Th ese same developers climb the technology learning curve so that future projects applying similar technology 
+require much less eff ort.
+Custom application development, however, requires dedicated eff ort that involves long 
+hours and hard work. Many companies have a development staff who already is overcommitted to fi lling huge backlogs of systems requests and just does not have time for another 

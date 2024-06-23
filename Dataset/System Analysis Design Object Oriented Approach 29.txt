@@ -1,0 +1,848 @@
+﻿associated transition in a behavioral state machine that represents the instances of the receiving 
+class. For example in Figure 6-23 the R and U entries in the Receptionist row and Appointments 
+column imply that instances of the Receptionist actor will read and update instances of the 
+Appointments class. Th us, there should be read and update messages on the sequence and 
+communication diagrams corresponding with the appointments processes. Reviewing Figures 
+6-1 and 6-10, we see that there is a message, MatchAppts(), from the aReceptionist actor to the 
+Appointments object. However, based on this review, it is unclear whether the MatchAppts() 
+message represents a read, an update, or both. Th erefore, additional analysis is required.22 
+Because there is an (U)pdate message involved, there must be a transition on a behavioral state 
+machine that portrays the life cycle of an Appointments object.
+Finally, many representation-specifi c rules have been proposed. However, as in the other 
+models, these rules are beyond the scope of this section on verifi cation and validation.23
+Figure 6-27 portrays the associations among the behavioral models.
+Key Terms  235
+APPLYING THE CONCEPTS AT PATTERSON 
+ SUPERSTORE
+Aft er developing the functional and structural models, the project manager, Ruby Ross, 
+tasked the team with developing the behavioral models for the Mobile Scheduling 
+(Version 1) of the Integrated Health Clinic Delivery System. Th e behavioral models include 
+the interactions diagram (sequence and communications) as well as the behavioral state 
+machine. In addition, the team created a CRUDE matrix to analyze the collaboration 
+between the objects identifi ed during structural modeling. While the structural model 
+depicted the static aspects of the system, behavioral models show the internal dynamic 
+aspects of the system. By modeling both the static (structural) and dynamic (behavioral) 
+aspects of a system, object-oriented systems analysis and design attempts to view the 
+underlying problem domain in a holistic way.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe the purpose of the behavioral models.
+ Describe the purpose of the interaction diagrams.
+ Describe the diff erent elements of the sequence diagrams.
+ Create a behavioral model using a sequence diagram.
+ Describe the diff erent elements of the communication diagrams.
+ Create a behavioral model using a communication diagram.
+ Explain the purpose of a behavioral state machine.
+ Describe the diff erent elements of the behavioral state machines.
+ Create a behavioral model using a behavioral state machine.
+ Describe the purpose of CRUDE analysis.
+ Create a behavioral model using a CRUDE matrix.
+ Verify and validate the evolving behavioral model using CRUDE analysis and walkthroughs.
+ Verify and validate the functional model by ensuring the consistency of the four behavioral representations: 
+ sequence diagrams, communication diagrams, behavioral state machines, and a CRUDE matrix.
+KEY TERMS
+Action
+Activity
+Actor
+Association
+Attributes
+Behavior
+Behavior models
+Behavioral state machines
+Black hole states
+Class
+Class diagram
+Collaboration
+Communication diagram
+Condition
+CRC cards
+CRUDE analysis
+CRUDE matrix
+Dynamic model
+Event
+Execution occurrence
+Final state
+Frame
+Generic sequence diagram
+Guard condition
+Initial state
+Instance
+Instance sequence 
+diagram
+Lifeline
+Message
+Method
+Miracle states
+Object
+Operation
+Operation call message
+Packages
+Return message
+Scenario
+Self-delegation
+Sequence 
+diagram
+State
+State symbol
+Temporary object
+Transition
+Trigger
+Use case
+236 Chapter 6 Behavioral Modeling
+ 1. How is behavioral modeling related to functional and 
+structural modeling?
+ 2. How does a use case relate to a sequence diagram? A 
+communication diagram?
+ 3. Contrast the following sets of terms: state, behavior, 
+class, object, action, and activity.
+ 4. Why is iteration important when creating a behavioral 
+model?
+ 5. What are the main building blocks for the sequence 
+diagram? How are they represented on the model?
+ 6. How do you show that a temporary object is to go out 
+of existence on a sequence diagram?
+ 7. Do lifelines always continue down the entire page of a 
+sequence diagram? Explain.
+ 8. Describe the steps used to create a sequence diagram.
+ 9. When drawing a sequence diagram, what guidelines 
+should you follow?
+10. Describe the main building blocks for the communication diagram and how they are represented on 
+the model.
+11. How do you show the sequence of messages on a 
+ communication diagram?
+12. How do you show the direction of a message on a 
+communication diagram?
+13. Describe the steps used to create a communication 
+diagram.
+14. When drawing a communication diagram, what 
+guidelines should you follow?
+15. Are states always depicted using rounded rectangles 
+on a behavioral state machine? Explain.
+16. What kinds of events can lead to state transitions on a 
+behavioral state machine?
+17. What are the steps in building a behavioral state 
+machine?
+18. When drawing a behavioral state machine, what 
+guidelines should you follow?
+19. How are guard conditions shown on a behavioral state 
+machine?
+20. Describe the type of class that is best represented by 
+a behavioral state machine. Give two examples of 
+classes that would be good candidates for a behavioral 
+state machine.
+21. What is CRUDE analysis, and what is it used for?
+22. Identify the models that contain each of the following 
+components: actor, association, class, extends, association, fi nal state, guard condition, initial state, links, 
+message, multiplicity, object, state, transition, and 
+update operation.
+QUESTIONS
+EXERCISES
+A. Th ink about sending a fi rst-class letter to an international pen pal. Describe the process that the letter goes 
+through to get from your initial creation of the letter 
+to being read by your friend, from the letter’s perspective. Draw a behavioral state machine that depicts the 
+states that the letter moves through.
+B. Draw a behavioral state machine that describes the 
+various states that a travel authorization can have 
+through its approval process. A travel authorization 
+form is used in most companies to approve travel 
+expenses for employees. Typically, an employee fi lls 
+out a blank form and sends it to his or her boss for a 
+signature. If the amount is fairly small (<$300), then 
+the boss signs the form and routes it to accounts payable to be input into the accounting system. Th e system cuts a check that is sent to the employee for the 
+right amount, and aft er the check is cashed, the form 
+is fi led away with the canceled check. If the check is 
+not cashed within 90 days, the travel form expires. 
+When the amount of the travel voucher is a large 
+amount (>$300), then the boss signs the form and 
+sends it to the CFO, along with a paragraph explaining the purpose of the travel; the CFO signs the form 
+and passes it along to accounts payable. Of course, 
+the boss and the CFO can reject the travel authorization form if they do not feel that the expenses are 
+reasonable. In this case, the employee can change the 
+form to include more explanation or decide to pay 
+the expenses.
+C. Th ink about the system that handles student admissions 
+at your university. Th e primary function of the system 
+should be able to track a student from the request for 
+information through the admissions process until the 
+student is either admitted to the school or rejected.
+1. Write a use-case description that can describe an 
+Admit Student use case.
+ Assume that applicants who are children of alumni 
+are handled diff erently from other applicants. Also, 
+assume that a generic Update Student Information use 
+case is available for your system to use.
+Minicases  237
+2. Create a use-case diagram that includes all of the 
+above use cases.
+ Assume that an admissions form includes the contents of the form, SAT information, and references. 
+Additional information is captured about children of 
+alumni, such as their parent’s graduation year, contact 
+information, and college major.
+3. Create a class diagram for the use cases identifi ed 
+with questions 1 and 2. Also, be sure to include the 
+above information.
+ Assume that a temporary student object is used by the 
+system to hold information about people before they 
+send in an admission form. Aft er the form is sent in, 
+these people are considered students.
+4. Create sequence diagrams for the scenarios of the 
+above use cases.
+5. Create a communication diagram for the scenarios 
+of the above use cases.
+6. Create a behavioral state machine to depict a person 
+as he or she moves through the admissions process.
+7. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+D. For the A Real Estate Inc. problem in Chapters 4 
+(exercises I, J, and K) and 5 (exercises P and Q):
+1. Choose one use case and, for each scenario, create 
+a sequence diagram.
+2. Create a communication diagram for each scenario 
+of the use case chosen in Question 1.
+3. Create a behavioral state machine to depict one 
+of the classes on the class diagram you created for 
+Chapter 5, exercise P.
+4. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+5. Perform a verifi cation and validation walkthrough 
+of the problem.
+E. For the A Video Store problem in Chapters 4 (exercises L, M, and N) and 5 (exercises R and S):
+1. Choose one use case and, for each scenario, create 
+a sequence diagram.
+2. Create a communication diagram for each scenario 
+of the use case chosen in Question 1.
+3. Create a behavioral state machine to depict one 
+of the classes on the class diagram you created for 
+Chapter 5, exercise R.
+4. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+5. Perform a verifi cation and validation walkthrough 
+of the problem.
+F. For the gym membership problem in Chapters 4 (exercises O, P, and Q) and 5 (exercises T and U):
+1. Choose one use case and, for each scenario, create 
+a sequence diagram.
+2. Create a communication diagram for each scenario 
+of the use case chosen in Question 1.
+3. Create a behavioral state machine to depict one 
+of the classes on the class diagram you created for 
+Chapter 5, exercise T.
+4. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+5. Perform a verifi cation and validation walkthrough 
+of the problem.
+G. For the Picnics R Us problem in Chapters 4 (exercises 
+R, S, and T) and 5 (exercises V and W):
+1. Choose one use case and, for each scenario, create 
+a sequence diagram.
+2. Create a communication diagram for each scenario 
+of the use case chosen in Question 1.
+3. Create a behavioral state machine to depict one 
+of the classes on the class diagram you created for 
+Chapter 5, exercise V.
+4. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+5. Perform a verifi cation and validation walkthrough 
+of the problem.
+H. For the Of-the-Month-Club problem in Chapters 4 
+(exercises U, V, and W) and 5 (exercises X and Y):
+1. Choose one use case and, for each scenario, create 
+a sequence diagram.
+2. Create a communication diagram for each scenario 
+of the use case chosen in Question 1.
+3. Create a behavioral state machine to depict one 
+of the classes on the class diagram you created for 
+Chapter 5, exercise X.
+4. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+5. Perform a verifi cation and validation walkthrough 
+of the problem.
+1. Refer to the functional model (use-case diagram, 
+activity diagrams, and use-case descriptions) you prepared for the Professional and Scientifi c Staff Management (PSSM) Minicase in Chapter 4. Based on your 
+performance, PSSM was so satisfi ed that it wanted you 
+to develop both the structural and behavioral models 
+MINICASES
+238 Chapter 6 Behavioral Modeling
+so that it could more fully understand both the interaction that would take place between the users and the 
+system and the system itself in greater detail.
+a. Create both CRC cards and a class diagram based 
+on the functional models created in Chapter 4.
+b. Create a sequence and a communication diagram 
+for each scenario of each use case identifi ed in the 
+functional model.
+c. Create a behavioral state machine for each of the 
+complex classes in the class diagram.
+d. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+e. Perform a verifi cation and validation walkthrough 
+of each model: functional, structural, and behavioral.
+2. Refer to the structural model (CRC cards and class diagram) that you created for the Holiday Travel Vehicles 
+Minicase in Chapter 5. Based on your performance, 
+Holiday Travel Vehicles was so satisfi ed that it wanted 
+you to develop both the functional and behavioral 
+models so that it could more fully understand both the 
+interaction that would take place between the users 
+and the system and the system itself in greater detail.
+a. Based on the structural model you created in Chapter 5 and the problem description in Chapter 5, create 
+a functional model (use case diagram, activity diagrams, and use case descriptions) for the business 
+processes associated with the Holiday Travel Vehicles sales system.
+b. Create a sequence and a communication diagram 
+for each scenario of each use case identifi ed in the 
+functional model.
+c. Create a behavioral state machine for each of the 
+complex classes in the class diagram.
+d. Perform a CRUDE analysis to show the interactivity of the objects in the system.
+e. Perform a verifi cation and validation walkthrough of each model: functional, structural, and 
+behavioral.
+Storyboards
+User Interface 
+Prototypes Contracts Templates Interface Diagrams Navigation Windows 
+Whereas analysis modeling concentrated on the functional 
+requirements of the evolving system, design modeling incorporates 
+the nonfunctional requirements. Th at is, design modeling focuses 
+on how the system will operate. First, the project team verifi es 
+and validates the analysis models (functional, structural, and 
+behavioral). Next, a set of factored and partitioned analysis models 
+are created. Th e class and method designs are illustrated using 
+the class specifi cations (using CRC cards and class diagrams), 
+contracts, and method specifi cations. Next, the data management 
+layer is addressed by designing the actual database or fi le structure 
+to be used for object persistence, and a set of classes that will map 
+the class specifi cations into the object persistence format chosen. 
+Concurrently, the team produces the user interface layer design 
+using use scenarios, windows navigation diagrams, real use cases, 
+interface templates, storyboards, windows layout diagrams, and 
+user interface prototypes. Th e physical architecture layer design 
+is created using deployment diagrams and hardware soft ware 
+specifi cations. Th is collection of deliverables represents the 
+system specifi cation that is handed to the programming team for 
+implementation.
+CHAPTER 7
+Moving on 
+to Design
+CHAPTER 8
+Class and 
+Method Design
+CHAPTER 9
+Data 
+Management 
+Layer Design
+CHAPTER 10
+Human 
+Computer 
+Interaction Layer 
+Design 
+CHAPTER 11
+Physical 
+Architecture 
+Layer Design 
+Factored/
+Partitioned 
+Functional Model
+Factored/
+Partitioned 
+Behavioral Model
+Factored/
+Partitioned 
+Structural Model Diagrams
+Package 
+Alternative 
+Matrix
+Class 
+Specifi cations
+Method 
+Specifi cations
+Object 
+Persistence 
+Design
+Manipulation 
+Data Access & 
+Class Design
+Use 
+Scenarios Real Use Cases
+PART TWO
+Design Modeling
+Windows 
+Layout 
+Diagrams
+Deployment 
+Diagrams
+Hardware/
+Software 
+Specifi cation
+240
+Object-oriented system development uses the requirements that were gathered during 
+analysis to create a blueprint for the future system. A successful object-oriented design 
+builds upon what was learned in earlier phases and leads to a smooth implementation by 
+creating a clear, accurate plan of what needs to be done. Th is chapter describes the initial 
+transition from analysis to design and presents three ways to approach the design for the 
+new system.
+OBJECTIVES
+■ Understand the verifi cation and validation of the analysis models.
+■ Understand the transition from analysis to design.
+■ Understand the use of factoring, partitions, and layers.
+■ Be able to create package diagrams.
+■ Be familiar with the custom, packaged, and outsource design alternatives.
+■ Be able to create an alternative matrix.
+INTRODUCTION
+Th e purpose of analysis is to fi gure out what the business needs are. Th e purpose of design is 
+to decide how to build the system. Th e major activity that takes place during design is evolving 
+the set of analysis representations into design representations.
+Th roughout design, the project team carefully considers the new system with respect 
+to the current environment and systems that exist within the organization as a whole. 
+Major considerations in determining how the system will work include environmental factors, such as integrating with existing systems, converting data from legacy systems, and 
+leveraging skills that exist in-house. Although the planning and analysis are undertaken 
+to develop a possible system, the goal of design is to create a blueprint for a system that 
+can be implemented.
+An important initial part of design is to examine several design strategies and decide 
+which will be used to build the system. Systems can be built from scratch, purchased and 
+customized, or outsourced to others, and the project team needs to investigate the viability of each alternative. Th is decision infl uences the tasks that are to be accomplished 
+during design.
+At the same time, detailed design of the individual classes and methods that are used to 
+map out the nuts and bolts of the system and how they are to be stored must still be completed. 
+Techniques such as CRC cards, class diagrams, contract specifi cation, method specifi cation, 
+and database design provide the fi nal design details in preparation for the implementation 
+CHAPTER 7
+Moving on to Design
+Introduction  241
+phase, and they ensure that programmers have suffi cient information to build the right system effi ciently. Th ese topics are covered in Chapters 8 and 9.
+Design also includes activities such as designing the user interface, system inputs, and 
+system outputs, which involve the ways that the user interacts with the system. Chapter 10 
+describes these three activities in detail, along with techniques such as storyboarding and 
+prototyping, which help the project team design a system that meets the needs of its users 
+and is satisfying to use.
+Finally, physical architecture decisions are made regarding the hardware and soft ware 
+that will be purchased to support the new system and the way that the processing of the 
+system will be organized. For example, the system can be organized so that its processing is 
+centralized at one location, distributed, or both centralized and distributed, and each solution 
+off ers unique benefi ts and challenges to the project team. Because global issues and security 
+infl uence the implementation plans that are made, they need to be considered along with the 
+system’s technical architecture. Physical architecture, security, and global issues are described 
+in Chapter 11.
+Th e many steps of design are highly interrelated and, as with the steps in analysis, the 
+analysts oft en go back and forth among them. For example, prototyping in the interface 
+design step oft en uncovers additional information that is needed in the system. Alternatively, 
+a system that is being designed for an organization that has centralized systems might require 
+substantial hardware and soft ware investments if the project team decides to change to a system in which all the processing is distributed.
+Avoiding Classic Design
+In Chapter 2, we discussed several classic mistakes and 
+how to avoid them. Here, we summarize four classic mistakes in design and discuss how to avoid them.
+1. Reducing design time: If time is short, there is a 
+temptation to reduce the time spent in “unproductive” activities such as design so that the team can 
+jump into “productive” programming. This results 
+in missing important details that have to be investigated later at a much higher time and cost (usually at 
+least ten times higher).
+ Solution: If time pressure is intense, use timeboxing 
+to eliminate functionality or move it into future 
+ versions.
+2. Feature creep: Even if you are successful at avoiding 
+scope creep, about 25 percent of system requirements will still change. And, changes—big and 
+small—can signifi cantly increase time and cost.
+ Solution: Ensure that all changes are vital and that 
+the users are aware of the impact on cost and time. 
+Try to move proposed changes into future versions.
+3. Silver bullet syndrome: Analysts sometimes believe 
+the marketing claims for some design tools that claim 
+to solve all problems and magically reduce time and 
+costs. No one tool or technique can eliminate overall 
+time or costs by more than 25 percent (although some 
+can reduce individual steps by this much).
+ Solution: If a design tool has claims that appear too 
+good to be true, just say no.
+4. Switching tools midproject: Sometimes analysts 
+switch to what appears to be a better tool during 
+design in the hopes of saving time or costs. Usually, 
+any benefi ts are outweighed by the need to learn the 
+new tool. This also applies even to minor upgrades 
+to current tools.
+ Solution: Don’t switch or upgrade unless there is a 
+compelling need for specifi c features in the new tool, 
+and then explicitly increase the schedule to include 
+learning time.
+Based upon material from Steve McConnell, Rapid Development (Redmond, 
+WA: Microsoft Press, 1966).
+PRACTICAL
+TIP
+242 Chapter 7 Moving on to Design
+VERIFYING AND VALIDATING THE ANALYSIS MODELS1
+Before we evolve our analysis representations into design representations, we need to 
+verify and validate the current set of analysis models to ensure that they faithfully represent 
+the problem domain under consideration. Th is includes testing the fi delity of each model; 
+for example, we must be sure that the activity diagram(s), use-case descriptions, and usecase diagrams all describe the same functional requirements. It also involves testing the 
+fi delity between the models; for instance, transitions on a behavioral state machine are 
+associated with operations contained in a class diagram. In Chapters 4, 5, and 6, we focused 
+on verifying and validating the individual models: function, structural, and behavioral. In 
+this chapter, we center our attention on ensuring that the diff erent models are consistent. 
+Figure 7-1 portrays the fact that the object-oriented analysis models are highly interrelated. 
+For example, do the functional and structural models agree? What about the functional and 
+behavioral models? And fi nally, are the structural and behavioral models trustworthy? In this 
+section, we describe a set of rules that are useful to verify and validate the intersections of the 
+analysis models. Depending on the specifi c constructs of each actual model, diff erent interrelationships are relevant. Th e process of ensuring the consistency among them is known as 
+balancing the models.
+Balancing Functional and Structural Models
+To balance the functional and structural models, we must ensure that the two sets of models 
+are consistent with each other. Th at is, the activity diagrams, use-case descriptions, and 
+use-case diagrams must agree with the CRC cards and class diagrams that represent the 
+evolving model of the problem domain. Figure 7-2 shows the interrelationships between 
+the functional and structural models. By reviewing this fi gure, we uncover four sets of 
+associations between the models. Th is gives us a place to begin balancing the functional 
+and structural models.2
+First, every class on a class diagram and every CRC card must be associated with at least 
+one use case, and vice versa. For example, the CRC card portrayed in Figure 7-3 and its related 
+class contained in the class diagram (see Figure 7-4) are associated with the Make Old Patient 
+Appt use case described in Figure 7-5.
+Second, every activity or action contained in an activity diagram (see Figure 7-6) and 
+every event contained in a use-case description (see Figure 7-5) should be related to one 
+or more responsibilities on a CRC card and one or more operations in a class on a class 
+diagram and vice versa. For example, the Get Patient Information activity on the example 
+activity diagram (see Figure 7-6) and the fi rst two events on the use-case description (see 
+Figure 7-5) are associated with the make appointment responsibility on the CRC card 
+(see Figure 7-3) and the makeAppointment() operation in the Patient class on the class 
+diagram (see Figure 7-4).
+Th ird, every object node on an activity diagram must be associated with an instance of 
+a class on a class diagram (i.e., an object) and a CRC card or an attribute contained in a class 
+and on a CRC card. However, in Figure 7-6, there is an object node, Appt Request Info, that 
+does not seem to be related to any class in the class diagram portrayed in Figure 7-4. Th us, 
+either the activity or class diagram is in error or the object node must represent an attribute. In this case, it does not seem to represent an attribute. We could add a class to the 
+1 Th e material in this section is based upon material from E. Yourdon, Modern Structured Analysis (Englewood 
+Cliff s, NJ: Prentice Hall, 1989). Verifying and validating are a type of testing. We also describe testing in Chapter 12.
+2 Role-playing the CRC cards (see Chapter 5) also can be very useful in verifying and validating the relationships 
+among the functional and structural models.
+Verifying and Validating the Analysis Models  243
+class diagram that creates temporary objects associated with the object node on the activity 
+diagram. However, it is unclear what operations, if any, would be associated with these 
+ temporary objects. Th erefore, a better solution would be to delete the Appt Request Info 
+object nodes from the activity diagram. In reality, this object node represented only a set of 
+bundled attribute values, i.e., data that would be used in the appointment system process 
+(see Figure 7-7).
+Fourth, every attribute and association/aggregation relationships contained on a CRC 
+card (and connected to a class on a class diagram) should be related to the subject or object 
+of an event in a use-case description. For example, in Figure 7-5, the second event states: Th e 
+Patient provides the Receptionist with his or her name and address. By reviewing the CRC card 
+in Figure 7-3 and the class diagram in Figure 7-4, we see that the Patient class is a subclass of 
+the Participant class and hence inherits all the attributes, associations, and operations defi ned 
+with the Participant class, where name and address attributes are defi ned.
+Balancing Functional and Behavioral Models
+As in balancing the functional and structural models, we must ensure the consistency of the 
+two sets of models. In this case, the activity diagrams, use-case descriptions, and use-case 
+diagrams must agree with the sequence diagrams, communication diagrams, behavioral state 
+machines, and CRUDE matrix. Figure 7-8 portrays the relationships between the functional 
+and behavioral models. Based on these interrelationships, we see that there are four areas with 
+which we must be concerned.3
+First, the sequence and communication diagrams must be associated with a use case 
+on the use-case diagram and a use-case description. For example, the sequence diagram in 
+Figure 7-9 and the communication diagram in Figure 7-10 are related to scenarios of the 
+Make Old Patient Appt use case that appears in the use-case description in Figure 7-5 and the 
+use-case diagram in Figure 7-11.
+Second, actors on sequence diagrams, communication diagrams, and/or CRUDE 
+matrices must be associated with actors on the use-case diagram or referenced in the usecase description, and vice versa. For example, the aPatient actor in the sequence diagram 
+in Figure 7-9, the communication diagram in Figure 7-10, and the Patient row and column 
+in the CRUDE matrix in Figure 7-12 appears in the use-case diagram in Figure 7-11 and 
+the use-case description in Figure 7-5. However, the aReceptionist does not appear in the 
+use-case diagram but is referenced in the events associated with the Make Old Patient Appt 
+use-case description. In this case, the aReceptionist actor is obviously an internal actor, which 
+cannot be portrayed on UML’s use-case diagram. Th ird, messages on sequence and communication diagrams, transitions on behavioral 
+state machines, and entries in a CRUDE matrix must be related to activities and actions 
+on an activity diagram and events listed in a use-case description, and vice versa. For 
+example, the CreateAppt() message on the sequence and communication diagrams (see 
+ Figures 7-9 and 7-10) is related to the CreateAppointment activity (see Figure 7-7) and the 
+S-1: New Appointment subfl ow on the use-case description (see Figure 7-5). Th e C entry 
+in the Receptionist Appointment cell of the CRUDE matrix is also associated with these 
+ messages, activity, and subfl ow.
+Fourth, all complex objects represented by an object node in an activity diagram must 
+have a behavioral state machine that represents the object’s lifecycle, and vice versa. As stated 
+in Chapter 6, complex objects tend to be very dynamic and pass through a variety of states 
+during their lifetimes. However, in this case because we no longer have any object nodes in 
+the activity diagram (see Figure 7-7), there is no necessity for a behavioral state machine to 
+be created based on the activity diagram.
+Front:
+Class Name: Patient ID: 3
+Change status
+Medical history
+Calculate last visit
+Make appointment Appointment
+Provide medical history
+Responsibilities
+Description: An individual who needs to receive or has received Associated Use Cases: 2
+ medical attention
+Type: Concrete, Domain
+Collaborators
+Back:
+Attributes: 
+Insurance carrier (text)
+Amount (double)
+Relationships: 
+Generalization (a-kind-of):
+Aggregation (has-parts):
+Other Associations: Appointment, Medical History
+Participant
+FIGURE 7-3
+Old Patient CRC 
+Card (Figure 5-25)
+Account
+Employee
+0..*
+0..* 0..*
+0..*
+0..*
+0..*
+0..*
+0..*
+1..*
+1..*
+1..*
+1..*
+1..*
+1..1
+v 1..1
+1..1
+1..1
+1..1
+0..1 1..1 1..1
+1..1
+1..1 1..1
+1..1
+Debit
+Credit
+Entry
+Appointment
+-time
+-date
+-reason
++cancel without notice()
+Patient
+-amount
+-insurance carrier
++make appointment()
++calculate last visit()
++change status()
++provides medical history()
+Participant
+-lastname
+-firstname
+-address
+-phone
+-birthdate
+-/age
+Item
+Transaction Line Item
+has
+has contains
+AssignedTo
+Doctor Receptionist Nurse
+Medical History 
+-heart disease
+-high blood pressure
+-diabetes
+-allergies
+provides
+suffers
+schedules
+locatedAt
+Good Service
+Prescription Brace Physical Checkup
+Symptom Illness
+Place
+Treatment
+medication
+instructions
+symptom severity
++ primary
+insurance
+carrier
+-name -description
+FIGURE 7-4  Appointment Problem Class Diagram (Figure 5-7)
+246
+Verifying and Validating the Analysis Models  247
+FIGURE 7-5  Use-Case Description for the Make Old Patient Appt Use Case (Figure 4-13)
+Use-Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Make Old Patient Appt 2 Low
+Old Patient
+Old patient - wants to make, change, or cancel an appointment
+Doctor - wants to ensure patient’s needs are met in a timely manner
+Use Case Type: Detail, Essential
+Patient calls and asks for a new appointment or asks to cancel or change an existing appointment
+Old Patient
+Update Patient Information
+Manage Appointments
+1. The Patient contacts the office regarding an appointment.
+2. The Patient provides the Receptionist with his or her name and address.
+3. If the Patient’s information has changed
+ Execute the Update Patient Information use case.
+4. If the Patient’s payment arrangements has changed
+ Execute the Make Payments Arrangements use case.
+5. The Receptionist asks Patient if he or she would like to make a new appointment, cancel an existing appointment, or change
+ an existing appointment.
+S-1: New Appointment
+1. The Receptionist asks the Patient for possible appointment times.
+2. The Receptionist matches the Patient’s desired appointment times with available dates and 
+ times and schedules the new appointment.
+S-2: Cancel Appointment
+1. The Receptionist asks the Patient for the old appointment time.
+2. The Receptionist finds the current appointment in the appointment file and cancels it. 
+S-3: Change Appointment
+1. The Receptionist performs the S-2: cancel appointment subflow.
+2. The Receptionist performs the S-1: new appointment subflow.
+S-1, 2a1: The Receptionist proposes some alternative appointment times based on what is available in the 
+ appointment schedule.
+S-1, 2a2: The Patient chooses one of the proposed times or decides not to make an appointment. 
+6. The Receptionist provides the results of the transaction to the Patient.
+This use case describes how we make an appointment as well as changing or canceling 
+an appointment for a previously seen patient.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+If the patient wants to make a new appointment,
+ the S-1: new appointment subflow is performed.
+If the patient wants to cancel an existing appointment,
+ the S-2: cancel appointment subflow is performed.
+If the patient wants to change an existing appointment,
+ the S-3: change appointment subflow is performed.
+TEMPLATE
+can be found at
+www.wiley.com
+/college/dennis
+248 Chapter 7 Moving on to Design
+Get Patient Information
+Appt
+Request Info
+Appt Create New Patient Request Info
+Update Patient Information
+[Old Patient] [New Patient]
+[Change]
+Create Appointment Cancel Appointment Change Appointment
+Make Payment Arrangements
+Create Appointment
+Make Payment Arrangements
+[New Info]
+[New Arrange]
+[Cancel]
+[Create]
+FIGURE 7-6  Activity Diagram for the Manage Appointments Use Case (Figure 4-8)
+Get Patient Information
+Create New Patient
+Update Patient Information
+[Old Patient] [New Patient]
+[Change]
+Create Appointment Cancel Appointment Change Appointment
+Make Payment Arrangements
+Create Appointment
+Make Payment Arrangements
+[New Info]
+[New Arrange]
+[Cancel]
+[Create]
+FIGURE 7-7  Corrected Activity Diagram for the Manage Appointments Use Case
+Verifying and Validating the Analysis Models  249
+Including
+AssociatedWith
+AssociatedWith
+AssociatedWith
+AssociatedWith
+Contains
+Describe
+Including
+Contains
+Contains
+Contains
+HasKinds
+HasKinds
+Contains
+Contains
+Have
+HasKinds
+Contains
+Behavioral Models
+CRUDE Matrix
+Communication Diagram
+Associations Messages
+Sequence Diagram
+Cell Entries Transitions States
+Activity Diagram
+Use-Case Diagram
+Use-Case Descriptions
+Object Nodes
+Stakeholders
+Activities/Actions
+Relationships
+Update Create
+Objects
+Use Cases
+Control Flows Object Flows
+Flows
+Events
+Actors
+Functional Models
+Behavioral State Machine
+Interaction Diagram
+Read
+Delete
+Scenarios
+Actors
+FIGURE 7-8  Relationships between Functional and Behavioral Models
+250
+Verifying and Validating the Analysis Models  251
+sd Make Appt Use Case
+RequestAppt(name, address)
+NewCancelChangeAppt?()
+ApptTimes?()
+aPatient
+LookUpPatient()
+aReceptionist
+[aPatient Exists] LookupBills()
+MatchAppts()
+CreateAppt()
+aPatient:Patient :UnpaidBill :Appointment
+FIGURE 7-9
+Sequence Diagram 
+for a Scenario of the 
+Make Old Patient 
+Appt Use Case 
+(Figure 6-1)
+sd Make Appt Use Case
+aPatient
+1: RequestAppt(name, address)
+4: NewCancelChangeAppt?
+5: ApptTimes?
+aReceptionist
+2: LookUpPatient()
+3: [aPatient Exists] LookupBills()
+7: CreateAppt
+6: MatchAppts
+:Appointment
+aPatient:Patient
+:UnpaidBill
+FIGURE 7-10  Communication Diagram for a Scenario of the Make Old Patient ApptFirst, objects that appear in a CRUDE matrix must be associated with classes that are 
+represented by CRC cards and appear on the class diagram, and vice versa. For example, 
+the Patient class in the CRUDE matrix in Figure 7-12 is associated with the CRC card in 
+Figure 7-3 and the Patient class in the class diagram in Figure 7-4.
+Second, because behavioral state machines represent the life cycle of complex objects, they 
+must be associated with instances (objects) of classes on a class diagram and with a CRC card 
+that represents the class of the instance. For example, the behavioral state machine that describes 
+an instance of a Patient class in Figure 7-14 implies that a Patient class exists on a related class 
+diagram (see Figure 7-4) and that a CRC card exists for the related class (see Figure 7-3).
+Th ird, communication and sequence diagrams contain objects that must be an instantiation of a class that is represented by a CRC card and is located on a class diagram. For 
+example, Figure 7-9 and Figure 7-10 have an anAppt object that is an instantiation of the 
+Appointment class. Th erefore, the Appointment class must exist in the class diagram (see 
+Figure 7-4), and a CRC card should exist that describes it. However, there is an object 
+on the communication and sequence diagrams associated with a class that did not exist 
+on the class diagram: UnpaidBill. At this point, the analyst must decide to either modify 
+the class diagram by adding these classes or rethink the communication and sequence 
+diagrams. In this case, it is better to add the class to the class diagram (see Figure 7-15).
+Fourth, messages contained on the sequence and communication diagrams, transitions 
+on behavioral state machines, and cell entries on a CRUDE matrix must be associated with 
+responsibilities and associations on CRC cards and operations in classes and asso ciations 
+connected to the classes on class diagrams. For example, the CreateAppt() message on the 
+sequence and communication diagrams (see Figures 7-9 and 7-10) relate to the makeAppointment operation of the Patient class and the schedules association between the Patient 
+and Appointment classes on the class diagram (see Figure 7-15).
+Fift h, the states in a behavioral state machine must be associated with diff erent values 
+of an attribute or set of attributes that describe an object. For example, the behavioral state 
+machine for the hospital patient object implies that there should be an attribute, possibly 
+current status, which needs to be included in the defi nition of the class.
+Summary
+Figure 7-16 portrays a concept map that is a complete picture of the interrelationships 
+among the diagrams covered in this section. It is obvious from the complexity of this

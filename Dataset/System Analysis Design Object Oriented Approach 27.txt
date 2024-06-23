@@ -1,0 +1,699 @@
+﻿Behavioral models describe the internal dynamic aspects of an information system that 
+supports the business processes in an organization. During analysis, behavioral models 
+describe what the internal logic of the processes is without specifying how the processes 
+are to be implemented. Later, in the design and implementation phases, the detailed design 
+of the operations contained in the object is fully specifi ed. In this chapter, we describe three 
+Unifi ed Modeling Language (UML) diagrams that are used in behavioral modeling (sequence 
+diagrams, communication diagrams, and behavioral state machines) and CRUDE (create, 
+read, update, delete, execute) matrices.
+OBJECTIVES
+■ Understand the rules and style guidelines for sequence and communication diagrams 
+and behavioral state machines.
+■ Understand the processes used to create sequence and communication diagrams, 
+ behavioral state machines, and CRUDE matrices.
+■ Be able to create sequence and communication diagrams, behavioral state machines, 
+and CRUDE matrices.
+■ Understand the relationship between the behavioral models and the structural and 
+ functional models.
+INTRODUCTION
+Th e previous two chapters discussed how analysts create both business process and functional 
+models and structural models. Systems analysts use business process and functional models to 
+describe the functional or external behavioral view of an information system. And, they use 
+structural models to depict the internal structural or static view of an information system. In 
+this chapter, we discuss how analysts use behavioral models to represent the internal behavior 
+or dynamic view of an information system. 
+By supporting all three views (functional, structural, and behavioral), object-oriented 
+systems analysis and design supports an architecture-centric approach to developing information systems. Furthermore, the behavioral view is driven by the original use cases uncovered during business process and functional modeling. As such, behavioral modeling is also 
+use case driven. Finally, as with business process and functional modeling and structural 
+modeling, you will fi nd that you will need to not only iterate across the behavioral models 
+(described in this chapter), but you will also have to iterate across all three architectural 
+views (functional, structural, and behavioral) to capture and represent the requirements for 
+a business information system.
+Th ere are two types of behavioral models. First, there are behavioral models used to represent the underlying details of a business process portrayed by a use-case model. In UML, 
+CHAPTER 6
+Behavioral Modeling
+Behavioral Models  203
+interaction diagrams (sequence and communication) are used for this type of behavioral 
+model. Practically speaking, interaction diagrams allow the analyst to model the distribution 
+of the behavior of the system over the actors and objects in the system. In this way, we can 
+easily see how actors and objects collaborate to provide the functionality defi ned in a use case. 
+Second, a behavioral model is used to represent the changes that occur in the underlying data. 
+UML uses behavioral state machines for this.
+During analysis, analysts use behavioral models to capture a basic understanding of 
+the dynamic aspects of the underlying business process. Traditionally, behavioral models 
+have been used primarily during design, where analysts refi ne the behavioral models to 
+include implementation details (see Chapter 8). For now, our focus is on what the dynamic 
+view of the evolving system is and not on how the dynamic aspect of the system will be 
+implemented.
+In this chapter, we concentrate on creating behavioral models of the underlying business process. Using the interaction diagrams (sequence and communication diagrams) 
+and behavioral state machines, it is possible to give a complete view of the dynamic 
+aspects of the evolving business information system. We fi rst describe behavioral models 
+and their components. We then describe each of the diagrams, how they are created, 
+and how they are related to the functional and structural models described in Chapters 
+4 and 5. Finally, we describe CRUDE analysis and the process to verify and validate the 
+behavioral models.
+BEHAVIORAL MODELS
+When an analyst is attempting to understand the underlying application domain of a 
+problem, he or she must consider both structural and behavioral aspects of the problem. 
+Unlike other approaches to the development of information systems, object-oriented 
+approaches attempt to view the underlying application domain in a holistic manner. By 
+viewing the problem domain as a set of use cases that are supported by a set of collaborating objects, object-oriented approaches allow an analyst to minimize the semantic gap 
+between the real-world set of objects and the evolving object-oriented model of the problem domain. However, as we pointed out in the previous chapter, the real world tends to 
+be messy; because soft ware must be logical to work, perfect modeling of the application 
+domain is nearly impossible.
+One of the primary purposes of behavioral models is to show how the underlying 
+objects in a problem domain will work together to form a collaboration to support each 
+of the use cases. Whereas structural models represent the objects and the relationships 
+between them, behavioral models depict the internal view of the business process that a 
+use case describes. Th e process can be shown by the interaction that takes place between 
+the objects that collaborate to support a use case through the use of interaction (sequence 
+and communication) diagrams. It is also possible to show the eff ect that the set of use cases 
+that make up the system has on the objects in the system through the use of behavioral 
+state machines.
+Creating behavioral models is an iterative process that iterates not only over the individual behavioral models [e.g., interaction (sequence and communication) diagrams and 
+behavioral state machines] but also over the functional (see Chapter 4) and structural (see 
+Chapter 5) models. As the behavioral models are created, it is not unusual to make changes 
+to the functional and structural models. In this chapter, we describe interaction diagrams, 
+behavioral state machines, and CRUDE analysis and when to use each.
+204 Chapter 6 Behavioral Modeling
+INTERACTION DIAGRAMS
+One of the primary diff erences between class diagrams and interaction diagrams, besides the 
+obvious diff erence that one describes structure and the other behavior, is that the modeling 
+focus on a class diagram is at the class level, whereas the interaction diagrams focus on the 
+object level. In this section, we review objects, operations, and messages and we cover the two 
+diff erent diagrams (sequence and communication) that can be used to model the interactions 
+that take place between the objects in an information system.
+Objects, Operations, and Messages
+An object is an instantiation of a class, i.e., an actual person, place, or thing about which 
+we want to capture information. If we were building an appointment system for a doctor’s 
+offi ce, classes might include doctor, patient, and appointment. Th e specifi c patients, such as 
+Jim Maloney, Mary Wilson, and Th eresa Marks, are considered objects—i.e., instances of the 
+patient class.
+Each object has attributes that describe information about the object, such as a patient’s 
+name, birth date, address, and phone number. Each object also has behaviors. At this point 
+in the development of the evolving system, the behaviors are described by operations. An 
+operation is nothing more than an action that an object can perform. For example, an 
+appointment object can probably schedule a new appointment, delete an appointment, 
+and locate the next available appointment. Later on during the development of the evolving 
+system, the behaviors will be implemented as methods.
+Each object also can send and receive messages. Messages are information sent to objects 
+to tell an object to execute one of its behaviors. Essentially, a message is a function or procedure call from one object to another object. For example, if a patient is new to the doctor’s 
+offi ce, the system sends an insert message to the application. Th e patient object receives the 
+instruction (the message) and does what it needs to do to insert the new patient into the system (the behavior).
+Sequence Diagrams
+Sequence diagrams are one of two types of interaction diagrams. Th ey illustrate the objects 
+that participate in a use case and the messages that pass between them over time for one use 
+case. A sequence diagram is a dynamic model that shows the explicit sequence of messages 
+that are passed between objects in a defi ned interaction. Because sequence diagrams emphasize the time-based ordering of the activity that takes place among a set of objects, they are 
+very helpful for understanding real-time specifi cations and complex use cases.
+Th e sequence diagram can be a generic sequence diagram that shows all possible scenarios1 for a use case, but usually each analyst develops a set of instance sequence diagrams, each 
+of which depicts a single scenario within the use case. If you are interested in understanding 
+the fl ow of control of a scenario by time, you should use a sequence diagram to depict this 
+information. Th e diagrams are used throughout the analysis and design phases. However, the 
+design diagrams are very implementation specifi c, oft en including database objects or specifi c 
+user interface components as the objects.
+Elements of a Sequence Diagram Figure 6-1 shows an instance sequence diagram that depicts 
+the objects and messages for the Make Old Patient Appt use case, which describes the process by 
+which an existing patient creates a new appointment or cancels or reschedules an appointment 
+1 Remember that a scenario is a single executable path through a use case.
+Interaction Diagrams  205
+RequestAppt(name, address)
+NewCancelChangeAppt?()
+ApptTimes?()
+aPatient
+LookUpPatient()
+aReceptionist
+[aPatient Exists] LookupBills()
+MatchAppts()
+CreateAppt()
+aPatient:Patient :UnpaidBill :Appointment
+sd Make Appt Use Case
+FIGURE 6-1  Example Sequence Diagram
+for the doctor’s offi ce appointment system. In this specifi c instance, the Make Old Patient Appt 
+process is portrayed.
+Actors and objects that participate in the sequence are placed across the top of the diagram using actor symbols from the use-case diagram and object symbols from the object 
+diagram (see Figure 6-2). Notice that the actors and objects in Figure 6-1 are aPatient, aReceptionist, aPatient, UnpaidBill, and Appointment.2 For each of the objects, the name of the 
+class of which they are an instance is given aft er the object’s name (e.g., aPatient means that 
+aPatient is an instance of the Patient class).
+A dotted line runs vertically below each actor and object to denote the lifeline of the 
+actors and objects over time (see Figure 6-1).3 Sometimes an object creates a temporary 
+object; in this case, an X is placed at the end of the lifeline at the point where the object is 
+destroyed (not shown). For example, think about a shopping cart object for a Web commerce application. Th e shopping cart is used for temporarily capturing line items for an 
+order, but once the order is confi rmed, the shopping cart is no longer needed. In this case, 
+an X would be located at the point at which the shopping cart object is destroyed. When 
+objects continue to exist in the system aft er they are used in the sequence diagram, then 
+the lifeline continues to the bottom of the diagram (this is the case with all of the objects 
+in Figure 6-1).
+2 In some versions of the sequence diagram, object symbols are used as surrogates for the actors. However, for clarity, 
+we recommend using actor symbols for actors instead.
+3 Technically speaking, in UML 2.0 the lifeline actually refers to both the object (actor) and the dashed line drawn 
+vertically underneath the object (actor). However, we prefer to use the older terminology because it is more 
+ descriptive of what is actually being represented.
+206 Chapter 6 Behavioral Modeling
+Context
+An actor:
+■ Is a person or system that derives benefit from and is external to the system.
+■ Participates in a sequence by sending and/or receiving messages.
+■ Is placed across the top of the diagram.
+■ Is depicted either as a stick figure (default) or, if a nonhuman actor is involved, as 
+a rectangle with <<actor>> in it (alternative).
+An object:
+■ Participates in a sequence by sending and/or receiving messages.
+■ Is placed across the top of the diagram.
+A lifeline:
+■ Denotes the life of an object during a sequence.
+■ Contains an X at the point at which the class no longer interacts.
+An execution occurrence:
+■ Is a long narrow rectangle placed atop a lifeline.
+■ Denotes when an object is sending or receiving messages.
+A message:
+■ Conveys information from one object to another one.
+■ A operation call is labeled with the message being sent and a solid arrow, whereas 
+a return is labeled with the value being returned and shown as a dashed arrow.
+A guard condition:
+■ Represents a test that must be met for the message to be sent.
+<<actor>>
+anActor
+anActor
+aMessage()
+[aGuardCondition]:aMessage()
+ReturnValue
+For object destruction:
+■ An X is placed at the end of an object’s lifeline to show that it is going out 
+of existence.
+A frame:
+■ Indicates the context of the sequence diagram.
+X
+Term and Definition Symbol
+anObject : aClass
+FIGURE 6-2  Sequence Diagram Syntax
+A thin rectangular box, called the execution occurrence, is overlaid onto the lifeline 
+to show when the classes are sending and receiving messages (see Figure 6-2). A message 
+is a communication between objects that conveys information with the expectation that 
+Interaction Diagrams  207
+activity will ensue. Many diff erent types of messages can be portrayed on a sequence diagram. 
+However, in the case of using sequence diagrams to model use cases, two types of messages 
+are typically used: operation call and return. Operation call messages passed between objects 
+are shown using solid lines connecting two objects with an arrow on the line showing which 
+way the message is being passed. Argument values for the message are placed in parentheses 
+next to the message’s name. Th e order of messages goes from the top to the bottom of the 
+page, so messages located higher on the diagram represent messages that occur earlier on in 
+the sequence, versus the lower messages that occur later. A return message is depicted as a 
+dashed line with an arrow on the end of the line portraying the direction of the return. Th e 
+information being returned is used to label the arrow. However, because adding return messages tends to clutter the diagram, unless the return messages add a lot of information to the 
+diagram, they can be omitted. For example, in Figure 6-1, no return messages are depicted.4 
+In Figure 6-1, LookUpPatient() is a message sent from the actor aReceptionist to the object 
+aPatient to determine whether the aPatient actor is a current patient.
+At times a message is sent only if a condition is met. In those cases, the condition 
+is placed between a set of brackets, [ ]—for example, [aPatient Exists] LookupBills(). 
+Th e condition is placed in front of the message name. However, when using a sequence 
+diagram to model a specifi c scenario, conditions are typically not shown on any single 
+sequence diagram. Instead, conditions are implied only through the existence of diff erent 
+sequence diagrams.
+An object can send a message to itself, e.g., Create Sandwich in Figure 6-3. Th is is known 
+as self-delegation. Sometimes, an object creates another object. Th is is shown by the message 
+being sent directly to an object instead of its lifeline.
+Figure 6-3 portrays two additional examples of instance-specifi c sequence diagrams. Th e 
+fi rst one is related to the Make Lunch use case that was described in the activity diagram portrayed in Figure 4-10. Th e second one is related to the Place Order use case associated with 
+the activity diagram in Figure 4-9. In both examples, the diagrams simply represent a single 
+scenario. Notice in the Make Lunch sequence diagram there is a message being sent from 
+an actor to itself [CreateSandwich()]. Depending on the complexity of the scenario being 
+modeled, this particular message could have been eliminated. Obviously, both the process 
+of making a lunch and placing an order can be quite a bit more complex. However, from a 
+learning point of view, you should be able to see how the sequence diagrams and the activity 
+diagrams relate to one another.
+Guidelines for Creating Sequence Diagrams Ambler5 provides a set of guidelines when 
+drawing sequence diagrams. In this section, we review six of them.
+■ Try to have the messages not only in a top-to-bottom order but also, when possible, in 
+a left -to-right order. Given that Western cultures tend to read left to right and top to 
+bottom, a sequence diagram is much easier to interpret if the messages are ordered 
+as much as possible in the same way. To accomplish this, order the actors and objects 
+along the top of the diagram in the order that they participate in the scenario of the 
+use case.
+■ If an actor and an object conceptually represent the same idea, one inside of the 
+soft ware and the other outside, label them with the same name. In fact, this implies 
+that they exist in both the use-case diagram (as an actor) and in the class diagram 
+4 However, some CASE tools require the return messages to be displayed. Obviously, when you are using these tools, 
+you have to include the return messages on the diagram.
+5 S.W. Ambler, Th e Elements of UML 2.0 Style (Cambridge, England: Cambridge University Press, 2005).
+208 Chapter 6 Behavioral Modeling
+(as a class). At fi rst glance, this might seem to lead to confusion. However, if they do 
+indeed represent the same idea, then they should have the same name. For example, 
+a customer actor interacts with the system and the system stores information about 
+the customer. In this case, they do indeed represent the same conceptual idea.
+■ Th e initiator of the scenario—actor or object—should be the drawn as the farthest left 
+item in the diagram. Th is guideline is essentially a specialization of the fi rst guideline. 
+In this case, it relates specifi cally to the actor or object that triggers the scenario.
+■ When there are multiple objects of the same type, be sure to include a name for 
+the object in addition to the class of the object. For example, in the making a lunch 
+ example (see Figure 6-3) there are two objects of type Parent. As such, they should be 
+named. Otherwise, you can simply use the class name. Th is will simplify the diagram. 
+In this case, the Child object did not have to be named. We could have simply placed 
+a colon in front of the classname instead.
+sd Make Lunch Use Case
+sd Submit Order Use Case
+MakeLunch
+Lunch
+aChild:Child firstParent:Parent secondParent:Parent
+CreateLunch
+Sandwich
+Lunch
+GetSandwich
+Create Sandwich
+SubmitOrderRequest()
+OrderRejected
+aCustomer:Customer aSalesPerson:SalesPerson
+SubmitCreditRequest()
+CreditDenied
+aCustomer:Customer
+FIGURE 6-3
+Additional Sample 
+Instance-Specifi c 
+Sequence Diagrams
+Interaction Diagrams  209
+■ Show return values only when they are not obvious. Showing all of the returns tends 
+to make a sequence diagram more complex and potentially diffi cult to comprehend. 
+In many cases, less is more. Only show the returns that actually add information for 
+the reader of the diagram.
+■ Justify message names and return values near the arrowhead of the message and 
+return arrows, respectively. Th is makes it much easier to interpret the messages and 
+their return values.
+Creating a Sequence Diagram In this section, we describe a six-step process used to 
+create a sequence diagram.6 Th e fi rst step in the process is to determine the context of the 
+sequence diagram. Th e context of the diagram can be a system, a use case, or a scenario of a 
+use case. Th e context of the diagram is depicted as a labeled frame around the diagram (see 
+Figures 6-1, 6-2, and 6-3). Most commonly, it is one use-case scenario. Figure 6-1 portrays 
+the instance-specifi c sequence diagram for the scenario from the Make Old Patient Appt 
+use case given in Figure 4-13 for making a new appointment for an existing patient. For 
+each possible scenario for the Make Old Patient Appt use case, a separate instance-specifi c 
+sequence diagram would be created. On the surface, this seems to be a lot of potentially 
+redundant and useless work. However, at this point in the representation of a system, we are 
+still trying to completely understand the problem. Th is process of creating instance-specifi c 
+sequence diagrams for each scenario instead of creating a single generic sequence diagram 
+for the entire use case will enable the developers to attain a more complete understanding 
+of the problem being addressed. Each instance-specifi c sequence diagram is fairly simple to 
+interpret, whereas a generic sequence diagram can be very complex. Th e testing of a specifi c 
+use case is accomplished in a much easier manner by validating and verifying the completeness of the set of instance-specifi c sequence diagrams instead of trying to work through a 
+single complex generic sequence diagram.
+Th e second step is to identify the actors and objects that participate in the sequence being 
+modeled—i.e., the actors and objects that interact with each other during the use-case scenario. 
+Th e actors were identifi ed during the creation of the functional model, whereas the objects 
+are identifi ed during the development of the structural model. Th ese are the classes on which 
+the objects of the sequence diagram for this scenario will be based. One very useful approach 
+to identifying all of the scenarios associated with a use case is to role-play the CRC cards (see 
+Chapter 5). Th is can help you identify potentially missing operations that are necessary to 
+support the business process, which the use case is representing, in a complete manner. Also, 
+during role-playing, it is likely that new classes, and hence new objects, will be uncovered.7 
+Don’t worry too much about identifying all the objects perfectly; remember that the behavioral 
+modeling process is iterative. Usually, the sequence diagrams are revised multiple times during 
+the behavioral modeling processes.
+Th e third step is to set the lifeline for each object. To do this, you need to draw a vertical dotted line below each class to represent the class’s existence during the sequence. An X should 
+be placed below the object at the point on the lifeline where the object goes out of existence.
+Th e fourth step is to add the messages to the diagram. Th is is done by drawing arrows to 
+represent the messages being passed from object to object, with the arrow pointing in the 
+message’s transmission direction. Th e arrows should be placed in order from the fi rst message 
+6 Th e approach described in this section is adapted from Grady Booch, James Rumbaugh, and Ivar Jacobson, Th e 
+Unifi ed Modeling Language User Guide (Reading, MA: Addison-Wesley, 1999).
+7 Th is obviously will cause you to go back and modify the structural model (see Chapter 5).
+1. Set Context
+2. Identify Actors 
+and Objects
+4. Add Messages
+3. Set Lifeline
+210 Chapter 6 Behavioral Modeling
+(at the top) to the last (at the bottom) to show time sequence. Any parameters passed along 
+with the messages should be placed in parentheses next to the message’s name. If a message is 
+expected to be returned as a response to a message, then the return message is not explicitly 
+shown on the diagram.
+Th e fi fth step is to place the execution occurrence on each object’s lifeline by drawing a narrow 
+rectangle box over the lifelines to represent when the classes are sending and receiving messages.
+Th e sixth and fi nal step is to validate the sequence diagram. Th e purpose of this step is to 
+guarantee that the sequence diagram completely represents the underlying process. Th is is 
+done by guaranteeing that the diagram depicts all the steps in the process.8
+Campus Housing Example In Chapters 4 and 5, we created a set of functional and structural 
+models for the campus housing service. In this section, we are going to use those models to 
+create a sequence diagram for the Add Apartment use case. As stated above, the fi rst thing we 
+should do is to set the context, which is in this case the Add Apartment use case. Second, we 
+must identify the actors and objects that will participate in the execution of the use case. To do 
+this, we should review the functional and structural models that were created for the campus 
+housing service problem in Chapters 4 and 5. Figure 6-4 replicates these representations.
+5. Place Execution 
+Occurrence
+6. Validate
+Campus Housing System
+Apartment
+Owner
+Add Apartment
+Delete Apartment
+* * *
+* *
+*
+Student
+Search Available
+Rental Units
+Campus Housing Use-Case 
+Diagram (Figure 4-15)
+8 We describe validation in more detail later in this chapter.
+Capture Location
+Capture Number of
+Bedrooms
+Capture Monthly
+Rent
+Add Apartment
+Capture Apartment
+Identifier
+Delete Apartment
+Campus Add and Delete Apartment Activity 
+Diagrams (Figure 4-16)
+FIGURE 6-4   
+Campus Housing 
+Service Functional 
+and Structural 
+Models
+Interaction Diagrams  211
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Add Apartment 1 High
+Apartment Owner
+Apartment Owner – wants to advertise available apartment
+Campus Housing Service – provides a service that enables the apartment owners to rent their available apartments
+Use Case Type: Detail, Essential
+Apartment Owner wants to add an available apartment
+Apartment Owner
+1. Capture the location of the apartment.
+2. Capture the number of bedrooms in the apartment.
+3. Capture the monthly rent of the apartment.
+4. Add the apartment to the listing of available apartments.
+This use case describes how the campus housing service can maintain an up-to-date listing of
+available apartments.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+Campus Housing Service Add an Apartment Use Case Description (Figure 4-17)
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Normal Flow of Events:
+SubFlows:
+Alternate/Exceptional Flows:
+Type: External
+Delete Apartment 2 High
+Apartment Owner
+Apartment Owner – wants to delist apartment
+Campus Housing Service – provides a service that enables the apartment owners to rent their available apartments
+Use Case Type: Detail, Essential
+Apartment Owner wants to delete an available apartment
+Apartment Owner
+1. Capture the apartment identifier.
+2. Delete the apartment from the listing of available apartments.
+This use case describes how the campus housing service can maintain an up-to-date listing of
+available apartments.
+Relationships:
+Association:
+Include:
+Extend:
+Generalization:
+Campus Housing Service Delete an Apartment Use Case Description (Figure 4-18)
+FIGURE 6-4  Continued
+212 Chapter 6 Behavioral Modeling
+Based on the functional and structural representations, we see that the actors involved 
+in the use case are the Apartment Owner and the Campus Housing Service itself. By looking 
+through the Normal Flow of Events and the activity diagram, we see that the only object 
+that seems to be relevant is the instance of the Apartment class that is being added. Given 
+that there are no Alternate/Exceptional Flows or any decisions being made in the Normal 
+Flow of Events, nor are there any decisions in the activity diagram associated with the Add 
+Front:
+Class Name: Apartment Owner ID: 1
+Delete Apartment
+Add Apartment
+Responsibilities
+Description: An apartment owner who has apartments for rent Associated Use Cases: 2
+Type: Concrete, Domain
+Apartment
+Apartment
+Collaborators
+Back:
+Attributes: 
+Address (address)
+Phone number (phone number)
+Email (Email address)
+Name (string)
+Relationships: 
+Generalization (a-kind-of):
+Aggregation (has-parts):
+Other Associations: Apartment
+Campus Housing Apartment Owner CRC Card (Figure 5-16)
+Apartment Owner Apartment
+0..1 0..*
+Campus Housing Class Diagram (Figure 5-17)
+FIGURE 6-4   
+Continued
+Interaction Diagrams  213
+Apartment use case, there is only one scenario to be portrayed. Consequently, there is only 
+one instance-specifi c sequence diagram to be created. Figure 6-5 depicts the sequence diagram for this use case.
+Library Example In the previous chapters, we have demonstrated the diagramming and 
+modeling processes using the Borrow Books use case of the Library Book Collection Management System. When considering instance-specifi c scenario diagrams, we need to draw one 
+sequence diagram per scenario. In the case of the Borrow Books use case in Chapter 4, there 
+are nine diff erent scenarios. Th erefore, for this one use case, there would be nine separate 
+diagrams. In this example, we are setting the context of the sequence diagram to only one 
+specifi c scenario of the Borrow Books use case: Students who have a valid ID and do not have 
+any overdue books or any fi nes. Th e other scenarios include Students without a valid ID, 
+Students with a valid ID but who owe fi nes or have overdue books, and the same three scenarios for the other two types of Borrowers: Faculty/Staff and Guest. In this example, we are 
+only drawing the one sequence diagram for the Students with a valid ID scenario. To begin with, 
+we should review the Flow of Events of the use-case description (see Figure 6-6), the activity 
+diagram (see Figure 6-7), and the use-case diagram (see Figure 6-8).
+Add Apartment()
+Apartment Information
+Request Apartment Information()
+anApartment
+Apartment Owner Campus Housing Service
+Create(ApartmentInformation)
+anApartment
+Apartment
+FIGURE 6-5
+Sequence Diagram 
+for the Add 
+ Apartment Use Case
+FIGURE 6-6  Flow of Events Section of the Use-Case Description of the Borrow Books 
+Use Case
+Normal Flow of Events:
+SubFlows:
+1. The Borrower brings books to the Librarian at the check out desk.
+2. The Borrower provides Librarian their ID card.
+3. The Librarian checks the validity of the ID Card.
+ If the Borrower is a Student Borrower, Validate ID Card against Registrar’s Database.
+ If the Borrower is a Faculty/Staff Borrower, Validate ID Card against Personnel Database.
+ If the Borrower is a Guest Borrower, Validate ID Card against Library’s Guest Database.
+4. The Librarian checks whether the Borrower has any overdue books and/or fines.
+5. The Borrower checks out the books.
+Alternate/Exceptional Flows:
+4a. The ID Card is invalid, the book request is rejected.
+5a. The Borrower either has overdue books, fines, or both, the book request is rejected.
+214 Chapter 6 Behavioral Modeling
+FIGURE 6-7
+Activity Diagram of 
+the Borrow Books 
+Use Case (Figure 4-12)
+Validate ID Card
+Check for Overdue Books and Fines
+Check Out Books
+[Valid Card]
+[No Overdue Books & No Fines]
+FIGURE 6-8
+Use-Case Diagram 
+for the Library 
+Book Collection 
+Management System 
+(Figure 4-6)
+Process Overdue
+Books
+Library Book 
+Collection
+Management 
+System
+Maintain Book
+Collection
+Borrow Books
+Search Collection
+Return Books
+*
+* *
+*
+*
+*
+*
+*
+* *
+*
+*
+<<actor>>
+Personnel Office
+<<actor>>
+Registrar Office
+Librarian
+*
+Borrower
+Interaction Diagrams  215
+Th e next step is to identify the actors and objects involved in the scenario. By studying the fl ow of events and the use-case diagram, we identify students, librarians, and the 
+registrar’s database as actors and borrowers, the book collection, and books as the objects. 
+We place the actors and objects across the top of the diagram based on the ordering of 
+their appearance in the normal fl ow of events. Th e next step involves simply drawing 
+the lifelines beneath the actors and objects in the scenario. Th e fourth step is to add the 
+actual messages to the diagram. To do this, we again review the actual steps taken when 
+executing this scenario by reviewing the fl ow of events (see Figure 6-6) and the activity 
+diagram (see Figure 6-7). We also should review any results from the role-playing of the 
+CRC cards (see Chapter 5). Th is will help us to properly portray where the functionality 
+is located. For example, in Figure 6-9, the Librarian executes the CheckOutBooks() procedure (the Student sends the message CheckOutBooks () to ask the Librarian to execute 
+the CheckOutBooks () procedure) when the student hands the librarian the books to 
+check out. Th e Librarian in return asks the Student for the ID card. When the student 
+hands the ID Card to the Librarian, the Librarian asks the Registrar’s Database to execute the ValidID() procedure when the Librarian passes the student’s ID number over 
+to the database system to ask the database system to validate the student’s ID number. 
+Th is continues until the ID Card and Books are returned to the student. Once we have 
+decided from whom the messages are to be sent and to whom they are sent, we can place 
+the messages on the diagram. Th e fi fth step then is to add the execution occurrence to 
+the diagrams to show when each actor or object is in the process of executing one of its 
+operations. Next, we must validate the diagram. Finally, we should replicate this process 
+for the other eight scenarios.
+FIGURE 6-9
+Sequence Diagram 
+of the Borrow 
+Books Use Case 
+for Students with 
+a Valid ID and No 
+Overdue Books 
+or Fines
+sd Borrow Books Use Case
+:Student
+Books
+BookAccts
+FindBook(BookID)
+BookAcct
+FindBooks(BookID)
+No
+ValidID(ID 
+Number)
+Yes
+ID
+IDCard?()
+CheckOutBooks(Books)
+:Librarian
+Registrar’s Database :Fine Database :BookCollection :Book
+Overdue Books or Fines(ID)
+216 Chapter 6 Behavioral Modeling
+Communication Diagrams
+Communication diagrams, like sequence diagrams, essentially provide a view of the 
+dynamic aspects of an object-oriented system. Th ey can show how the members of a set of 
+objects collaborate to implement a use case or a use-case scenario. Th ey can also be used to 
+model all the interactions among a set of collaborating objects, in other words, a collaboration (see CRC cards in Chapter 5). In this case, a communication diagram can portray how 
+dependent the diff erent objects are on one another.9 A communication diagram is essentially an object diagram that shows message-passing relationships instead of aggregation 
+or generalization associations. Communication diagrams are very useful to show process 
+patterns (i.e., patterns of activity that occur over a set of collaborating classes).
+Communication diagrams are equivalent to sequence diagrams, but they emphasize the 
+fl ow of messages through a set of objects, whereas the sequence diagrams focus on the time 
+ordering of the messages being passed. Th erefore, to understand the fl ow of control over a 
+set of collaborating objects or to understand which objects collaborate to support business 
+processes, a communication diagram can be used. For time ordering of the messages, a 
+sequence diagram should be used. In some cases, both can be used to more fully understand 
+the dynamic activity of the system.
+Elements of a Communication Diagram Figure 6-10 shows a communication diagram for 
+the Make Old Patient Appt use case. Like the sequence diagram in Figure 6-1, the Make Old 
+Patient Appt process is portrayed.
+Actors and objects that collaborate to execute the use case are placed on the communication diagram in a manner to emphasize the message passing that takes place between 
+them. Notice that the actors and objects in Figure 6-10 are the same ones in Figure 6-1: 
+aPatient, aReceptionist, aPatient, UnpaidBill, and Appointment.10 Again, as with the 
+sequence diagram, for each of the objects, the name of the class of which they are an 
+instance is given after the object’s name (e.g., aPatient: Patient). (The communication 
+9 We return to this idea of dependency in Chapters 7 and 8.
+10 In some versions of the communication diagram, object symbols are used as surrogates for the actors. However, 
+again we recommend using actor symbols for actors instead.
+FIGURE 6-10  Sample Communication Diagram
+sd Make Appt Use Case
+aPatient
+1: RequestAppt(name, address)
+4: NewCancelChangeAppt?
+5: ApptTimes?
+aReceptionist
+2: LookUpPatient()
+3: [aPatient Exists] LookupBills()
+7: CreateAppt()
+6: MatchAppts()
+:Appointment
+aPatient:Patient
+:UnpaidBill
+Interaction Diagrams  217
+diagram syntax is given in Figure 6-11.) Unlike the sequence diagram, the communication diagram does not have a means to explicitly show an object being deleted or created. 
+It is assumed that when a delete, destroy, or remove message is sent to an object, it will 
+go out of existence, and a create or new message will cause a new object to come into 
+existence. Another difference between the two interaction diagrams is that the communication diagram never shows returns from message sends, whereas the sequence diagram 
+can optionally show them.
+An association is shown between actors and objects with an undirected line. For example, an association is shown between the aPatient and aReceptionist actors. Messages are 
+shown as labels on the associations. Included with the labels are lines with arrows showing 
+the direction of the message being sent. For example, in Figure 6-10, the aPatient actor 
+sends the RequestAppt() message to the aReceptionist actor, and the aReceptionist actor 
+FIGURE 6-11  Communication Diagram Syntax
+An actor:
+■ Is a person or system that derives benefit from and is external to the system.
+■ Participates in a collaboration by sending and/or receiving messages.
+An object:
+■ Participates in a collaboration by sending and/or receiving messages.
+An association:
+■ Shows an association between actors and/or objects.
+■ Is used to send messages.
+A message:
+■ Conveys information from one object to another one.
+■ Has direction shown using an arrowhead.
+■ Has sequence shown by a sequence number.
+A frame:
+■ Indicates the context of the communication diagram.
+A guard condition:
+■ Represents a test that must be met for the message to be sent.
+<<actor>>
+anActor
+anActor
+Context
+SeqNumber: aMessage
+SeqNumber: [aGuardCondition]: aMessage
+Term and Definition Symbol
+■ Is depicted either as a stick figure (default) or, if a nonhuman actor is involved,
+ as a rectangle with <<actor>> in it (alternative).
+anObject : aClass
+218 Chapter 6 Behavioral Modeling
+sends the NewCancelChangeAppt?() and the ApptTimes?() messages to the aPatient actor. 
+Th e sequence of the message sends is designated with a sequence number. In Figure 6-10, the 
+RequestAppt() message is the fi rst message sent, whereas the NewCancelChangeAppt?() and 
+the ApptTimes?() messages are the fourth and fi ft h message sent, respectively.
+Like the sequence diagram, the communication diagram can represent conditional messages. For example, in Figure 6-10, the LookupBills() message is sent only if the [aPatient exists] condition is met. If a message is repeatedly sent, an asterisk is placed aft er the 
+sequence number. Finally, an association that loops onto an object shows self-delegation. 
+Th e message is shown as the label of the association.
+When a communication diagram is fully populated with all the objects, it can become 
+very complex and diffi cult to understand. When this occurs, it is necessary to simplify the 
+diagram. One approach to simplifying a communication diagram, like use-case diagrams 
+(see Chapter 4) and class diagrams (see Chapter 5), is through the use of packages (i.e., 
+logical groups of classes). In the case of communication diagrams, its objects are grouped 
+together based on the messages sent to and received from the other objects.11
+Figure 6-12 provides two additional examples of communication diagrams. Th ese diagrams are equivalent to the sequence diagrams contained in Figure 6-3. However, when 
+comparing the communication diagrams to the sequence diagrams in these fi gures, you see 
+that quite a bit of information is lost. For example, the CreateSandwich() message is nowhere 
+to be found. However, the primary purpose of the communication diagram is to show how 
+the diff erent actors and classes interact, and this is exactly the information that is included.
+Guidelines for Creating Communication Diagrams Ambler12 provides a set of guidelines 
+when drawing communication diagrams. In this section, in addition to the fi rst four guidelines for drawing sequence diagrams, we consider two more.
+■ Use the correct diagram for the information you are interested in communicating 
+with the user. Communication diagrams allow the team to easily identify a set of 
+objects that are intertwined. Do not use communication diagrams to model process 
+fl ow. Instead, you should use an activity diagram with swimlanes that represent 
+11 For those familiar with structured analysis and design, packages serve a purpose similar to the leveling and balancing processes used in data fl ow diagramming. Packages and package diagrams are described in Chapter 7.
+12 S.W. Ambler, Th e Elements of UML 2.0 Style (Cambridge, England: Cambridge University Press, 2005)

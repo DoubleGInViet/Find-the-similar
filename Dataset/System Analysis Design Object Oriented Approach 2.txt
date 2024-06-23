@@ -1,0 +1,323 @@
+﻿Renegotiating commitments
+Stakeholders can’t stuff more and more functionality into a project that has schedule, staff, budget, or quality constraints and still expect to succeed. Before accepting a significant requirement change, renegotiate commitments with management and customers to accommodate the change. You might ask for more time or to defer lower-priority requirements. If you don’t obtain some commitment adjustments, document the threats to success in your project’s risk list so people aren’t surprised if there are negative outcomes.
+
+Change control tools
+Many teams use commercial issue-tracking tools to collect, store, and manage requirements changes.
+A report of recently submitted change requests extracted from the tool can serve as the agenda
+for a CCB meeting. Issue-tracking tools can report the number of requests having each state at any given time. Because the available tools, their vendors, and their features frequently change, we don’t provide specific tool recommendations here. To support your change process, look for a tool that:
+■	Allows you to define the attributes that constitute a change request.
+■	Allows you to implement a change request life cycle with multiple change request statuses.
+■	Enforces the state-transition model so that only authorized users can make specific status changes.
+■	Records the date of each status change and the identity of the person who made it.
+■	Provides customizable, automatic email notification when an Originator submits a new request or when a request’s status is updated.
+■	Produces both standard and custom reports and charts.
+Some commercial requirements management tools have a change-request system built in. These systems can link a proposed change to a specific requirement so that the individual responsible for each requirement is notified by email whenever someone submits a pertinent change request.
+
+ 
+Measuring change activity
+Measuring change activity is a way to assess the stability of the requirements. It also reveals opportunities for process improvements that might lead to fewer changes in the future. Consider tracking the following aspects of your requirements change activity:
+■	The total number of change requests received, currently open, and closed
+■	The cumulative number of added, deleted, and modified requirements
+■	The number of requests that originated from each change origin
+■	The number of changes received against each requirement since it was baselined
+■	The total effort devoted to processing and implementing change requests
+You don’t necessarily need to monitor your requirements change activities to this degree. As with all software metrics, understand your goals and how you’ll use the data before you decide what to measure (Wiegers 2007). Start with simple metrics to begin establishing a measurement culture in your organization and to collect the data you need to manage your projects effectively.
+Figure 28-3 illustrates a way to track the amount of requirements change your project experiences during development (Wiegers 2006). This requirements volatility chart tracks the rate at which new proposals for requirements changes arrive after a baseline was established. This chart should trend toward zero as you approach release. A sustained high frequency of changes implies a risk of failing to meet your schedule commitments. It probably also indicates that the original requirements set was incomplete; better elicitation practices might be in order.
+
+FIGURE 28-3 Sample chart of requirements change activity.
+
+Tracking the requirements change origins is also illuminating. Figure 28-4 shows a way to represent the number of change requests that came from different sources. The project manager could discuss a chart like this with the marketing manager and point out that marketing has requested the most requirements changes. This might lead to a fruitful discussion about actions the team could take to
+ 
+reduce the number of changes received from marketing in the future or better ways to handle them. Using data as a starting point for such discussions is more constructive than holding a confrontational debate fueled by emotion. Come up with your own list of possible requirements change origins.
+
+FIGURE 28-4 Sample chart of requirement change origins.
+
+
+Change impact analysis
+The need for impact analysis is obvious for major enhancements. However, unexpected complications can lurk below the surface of even minor change requests. A company once had to change the text of one error message in its product. What could be simpler? The product was available in both English- language and German-language versions. There were no problems in English, but in German the new message exceeded the maximum character length allocated for error message displays in both the message box and a database. Coping with this seemingly simple change request turned out to be much more work than the developer had anticipated when he promised a quick turnaround.
+Impact analysis is a key aspect of responsible requirements management (Arnold and Bohner 1996). It provides an accurate understanding of the implications of a proposed change, which helps the team make informed business decisions about which proposals to approve. The analysis examines the request to identify components that might have to be created, modified, or discarded, and to estimate the effort required to implement the change. Before a developer says, “Sure, no problem” in response to a change request, he should spend a little time on impact analysis.
+
+Impact analysis procedure
+The CCB Chair will ask one or more technical people (business analysts, developers, and/or testers) to perform the impact analysis for a specific change proposal. Impact analysis involves three steps:
+1.	Understand the possible implications of making the change. A requirement change often produces a large ripple effect, leading to modifications in other requirements, architectures,
+ 
+designs, code, and tests. Changes can lead to conflicts with other requirements or can compromise quality attributes, such as performance or security.
+2.	Identify all the requirements, files, models, and documents that might have to be modified if
+.
+ 
+
+3.
+complete those tasks.
+ 
+change, and estimate the effort needed to
+ 
+
+   
+
+Figure 28-5 presents a checklist of questions to help the evaluator understand the implications of accepting a proposed change. The checklist in Figure 28-6 contains questions to help identify all software elements and other work products that the change might affect. Requirements trace information that links the affected requirement to other downstream deliverables helps greatly with impact analysis.
+projects. (Note: Figures 28-5 through 28-8 are available for downloading from this book’s companion content website.)
+
+FIGURE 28-5 Questions to understand the possible implications of a proposed change.
+ 
+ 
+FIGURE 28-6 Checklist to determine work products that might be affected by a proposed change.
+
+Many estimation problems arise because the estimator doesn’t think of all the work required
+to complete an activity. Therefore, this impact analysis approach emphasizes thorough task identification. For substantial changes, use a small team—not just one developer—to do the analysis and effort estimation to avoid overlooking important tasks.
+1.	Work through the checklist in Figure 28-5.
+2.	Work through the checklist in Figure 28-6. Some requirements management tools include an impact analysis report that follows traceability links and finds the system elements that depend on the requirements affected by a change request.
+3.	Use the worksheet in Figure 28-7 to estimate the effort required for the anticipated tasks. Most change requests will require only a portion of the tasks on the worksheet.
+4.	Sum the effort estimates.
+5.	Identify the sequence in which the tasks must be performed and how they can be interleaved
+with currently planned tasks.
+6.	Estimate the impact of the proposed change on the project’s schedule and cost.
+7.	Evaluate the change’s priority compared to other pending requirements.
+8.	Report the impact analysis results to the CCB.
+ 
+ 
+
+FIGURE 28-7 Worksheet for estimating effort of a requirement change.
+
+In most cases, this procedure shouldn’t take more than a couple of hours to complete for a single change request. This seems like a lot of time to a busy developer, but it’s a small investment in making sure the project wisely invests its limited resources. To improve your future impact analysis, compare the actual effort needed to implement each change with the estimated effort. Understand the reasons for any differences, and modify the impact estimation checklists and worksheet to help ensure that future impact analyses are more accurate.
+ 
+ 	 
+
+Impact analysis template
+Figure 28-8 suggests a template for reporting the results from analyzing the impact of a requirement change. The people who will implement the change will need the analysis details and the effort planning worksheet, but the CCB needs only the summary of analysis results. As with all templates, try it and then adjust it to meet your project needs.
+
+FIGURE 28-8 Impact analysis template.
+
+
+Change management on agile projects
+Agile projects are specifically structured to respond to—and even welcome—scope changes. One  of the 12 principles of agile software development is “Welcome changing requirements, even late in development. Agile processes harness change for the customer’s competitive advantage” (www.agilemanifesto.org/principles.html). This principle acknowledges the reality that requirements
+ 
+changes are inevitable, necessary, and often valuable. Accepting change helps to meet evolving business objectives and priorities and to accommodate the limitations of human plans and foresight.
+Agile projects manage change by maintaining a dynamic backlog of work to be done (see Figure 28-9). “Work” includes user stories yet to be implemented, defects to be corrected, business process changes to be addressed, training to be developed and delivered, and the myriad other activities involved with any software project. Each iteration implements the set of work items in the backlog that have the highest priority at that time. As stakeholders request new work, it goes into the backlog and is prioritized against the other backlog contents. Work that has not yet been allocated can be reprioritized or removed from the backlog at any time. A new, high-priority story could be allocated to the forthcoming iteration, forcing a lower-priority story of about the same size to be deferred to a later iteration. Carefully managing the scope of each iteration ensures that it is completed on time and with high quality.
+
+FIGURE 28-9 Agile projects manage change with a dynamic product backlog.
+
+Because of the iterative nature of agile projects, every few weeks there will be an opportunity to select a set of work items from the backlog for the next development iteration. Agile teams vary as to whether new work that arrives during an iteration is always deferred to a future iteration, or whether they can modify the contents of the current iteration. Keeping the contents of an iteration frozen while it is under way provides stability for developers and predictability regarding what stakeholders can expect out of the iteration. On the other hand, adjusting the iteration’s contents makes the team more responsive to customer needs.
+Agile methods vary as to their philosophy on this point; there is no single “correct” approach. Either freeze the baseline for an iteration once it is under way or introduce high-priority changes as soon as you learn about them, whatever you think will work best for your team and the project’s
+business objectives. The basic principle is to avoid both excessive change (churning requirements) and excessive rigidity (frozen requirements) within an iteration. One solution is to set the iteration length to the right duration for keeping most change out of the current iteration. That is, if changes need to be introduced too often, the standard iteration length might need to be shortened.
+All agile methods define a role representing the end-user and customer constituencies. In Scrum this is the product owner role; in Extreme Programming this is the customer role. The customer or product owner has primary responsibility for prioritizing the contents of the product backlog.
+ 
+He also makes decisions to accept proposed requirements changes, based on their alignment with the overarching product vision and the business value they will enable (Cohn 2010).
+Because an agile team is a collaborative and cross-functional group of developers, testers,
+a business analyst, a project manager, and others, the team is already configured like the change control board discussed earlier in the chapter. The short duration of agile iterations and the small increment of product delivered in each iteration allows agile teams to perform change control frequently but on a limited scale. However, even agile projects must evaluate the potential cost of changes in requirements and their impact on product components. Scope changes that could affect the overall cost or duration of the project need to be escalated to a higher-level change authority, such as the project sponsor (Thomas 2008).
+No matter what kind of project you’re working on or what development life cycle your team is following, change is going to happen. You need to expect it and be prepared to handle it. Disciplined change-management practices can reduce the disruption that changes can cause. The purpose of change control is not to inhibit change, nor to inhibit stakeholders from proposing changes. It is
+to provide visibility into change activity and mechanisms by which the right people can consider proposed changes and incorporate appropriate ones into the project at the right time. This will maximize the business value and minimize the negative impact of changes on the team.
+
+
+ 
+C HA P T E R 2 9
+Links in the requirements chain
+
+“We just learned that the new union contract is changing how overtime pay and shift bonuses are calculated,” Justin reported at the weekly team meeting. “It’s also changing how the seniority rules affect priority for vacation scheduling and shift preferences. We have to update the payroll and staff scheduling systems to handle all these changes right away. How long do you think it will take to get this done, Chris?”
+“Man, that’s going to be a lot of work,” said Chris. “The logic for the seniority rules is sprinkled throughout the scheduling system. I can’t give you a decent estimate yet. It’s going to take hours just to scan through the code and try to find all the places where those rules show up.”
+
+. It’s hard to find all the system elements that might be affected by an altered requirement. Chapter 28, “Change happens,” discussed the importance of performing an impact analysis to make sure the team knows what it’s getting into before it commits to implementing a proposed change. Change impact analysis is easier if you have a road map that shows where each requirement or business rule was implemented in the software.
+This chapter addresses the subject of requirements tracing (or traceability). Requirements trace information documents the dependencies and logical links between individual requirements and other system elements. These elements include other requirements of various types, business rules, architecture and other design components, source code modules, tests, and help files. Trace
+information facilitates impact analysis by helping you identify all the work products you might have to
+modify to implement a proposed requirement change.
+
+ 
+Tracing requirements
+
+through implementation. Chapter 11, “Writing excellent requirements,”
+ 
+
+
+
+d, from origin
+ 
+of the characteristics of excellent requirements. (Note that being traceable—having the properties to facilitate tracing—is not the same as being traced—actually having logical links between requirements and other elements recorded.) For requirements to be traceable, each one must be uniquely and persistently labeled so that you can refer to it unambiguously throughout the project. Write the requirements in a fine-grained fashion, rather than creating large paragraphs containing many individual functional requirements that readers have to parse out.
+
+491
+ 
+Figure 29-1 illustrates four types of requirements trace links (Jarke 1998). Customer needs are traced forward to requirements, so you can tell which requirements will be affected if those needs change during or after development. Customer needs could be articulated in the form of business objectives, market demands, and/or user requirements. A complete set of forward traces also gives you confidence that the requirements set has addressed all stated customer needs. Conversely, you can trace backward from requirements to customer needs to identify the origin of each software requirement. If you choose to represent customer needs in the form of use cases, the top half of Figure 29-1 illustrates tracing between use cases and functional requirements.
+
+FIGURE 29-1 Four types of requirements tracing.
+
+The bottom half of Figure 29-1 indicates that, as requirements flow into downstream deliverables during development, you can trace forward from requirements by defining links between individual functional and nonfunctional requirements and specific system elements. This type of link allows you to determine that you’ve satisfied every requirement because you know which design components and code elements address each one. The fourth type of link traces specific product elements backward to requirements so that you know why each element was created. Most applications include some scaffolding or enabling code, such as for testing, that doesn’t relate directly to user-specified requirements, but you should know why each line of code was written.
+Suppose a tester encounters unexpected functionality with no corresponding written requirement. This code could indicate that a developer implemented a legitimate implied or verbally communicated requirement that the business analyst can now add to the requirements set. Alternatively, it might be “orphan code,” an instance of gold-plating that doesn’t belong in the
+product. Trace links can help you sort out these kinds of situations and build a more complete picture of how the pieces of your system fit together. Conversely, tests that are derived from—and traced back to—individual requirements provide a mechanism for detecting unimplemented requirements, because the expected functionality will be missing from the system being tested. Trace links also help you keep track of parentage, interconnections, and dependencies among individual requirements.
+ 
+This information reveals the propagation of change that can result when a particular requirement is deleted or modified.
+Figure 29-2 illustrates many kinds of traceability relationships that can be defined on a project. Of course, you don’t need to define and manage all these trace link types. On many projects, you can gain most of the traceability benefits you want for just a fraction of the potential effort. Maybe you only need to trace system tests back to functional requirements or user requirements. Perform a
+cost-benefit analysis to decide which links will contribute to the success of your project, both in terms of development and long-term maintenance effort. Don’t ask team members to spend time recording information unless you know how they can use it.
+
+
+FIGURE 29-2 Some possible requirements trace links.
+ 
+ 
+
+ 
+I’ve had the embarrassing experience of writing a program and then realizing that I had inadvertently overlooked a requirement. It was in the SRS—I simply missed it. I had to go back and write
+additional code after I thought I was done programming. Overlooking a requirement is more than an embarrassment if it means a customer isn’t satisfied or a product is missing a critical function. Requirements tracing provides a way to demonstrate compliance with a specification, contract, or regulation. At an organization level, implementing requirements tracing can improve the quality of your products, reduce maintenance costs, and facilitate reuse.
+Keeping the link information current as the system undergoes development and maintenance takes discipline and time. If the trace information becomes obsolete, you’ll probably never reconstruct it. Obsolete or inaccurate trace data wastes time by sending developers and maintainers down the wrong path, destroying any trust the developers might have had in the information. Because of these realities, you should adopt requirements tracing for the right reasons (Ramesh et al. 1995). Following are some potential benefits of implementing requirements tracing:
+■	Finding missing requirements Look for business requirements that don’t trace to any user requirements, and user requirements that don’t trace to any functional requirements.
+■	Finding unnecessary requirements Look for any functional requirements that don’t trace back to user or business requirements and therefore might not be needed.
+■	Certification and compliance   You can use trace information when certifying a
+safety-critical product, to demonstrate that all requirements were implemented—although that doesn’t confirm that they were implemented correctly! Trace information demonstrates that requirements demanded for regulatory compliance have been included and addressed, as is often needed for applications for health care and financial services companies.
+■	Change impact analysis Without trace information, there’s a good chance that you’ll overlook a system element that would be affected if you add, delete, or modify a particular requirement.
+■	Maintenance  Reliable trace information facilitates your ability to make changes correctly and completely during maintenance. When corporate policies or government regulations change, software systems often must be updated. A table that shows where each applicable business rule was addressed in the functional requirements, designs, and code makes it easier to make the necessary changes properly.
+■	Project tracking If you record the trace data during development, you’ll have an accurate record of the implementation status of planned functionality. Absent links indicate work products that have not yet been created.
+■	Reengineering You can list the functions in an existing system you’re replacing and trace them to where they are addressed in the new system’s requirements and software components.
+ 
+■	Reuse Trace information facilitates the reuse of product components by identifying packages of related requirements, designs, code, and tests.
+■	Testing  When a test fails, the links between tests, requirements, and code point developers
+toward likely areas to examine for the defect.
+Many of these are long-term benefits, reducing overall product life-cycle costs but increasing the development cost by the effort expended to accumulate and manage the trace information.
+View requirements tracing as an investment that increases your chances of delivering a maintainable product that satisfies all the stated customer requirements. This investment will pay dividends anytime you have to modify, extend, or replace the product. Establishing traces is not much work
+if you collect the information as development proceeds, but it’s tedious and expensive to do on a
+completed system.
+
+
+The requirements traceability matrix
+The most common way to represent the links between requirements and other system elements is
+in a	, also called a requirements trace matrix or a traceability table.
+Joy Beatty and Anthony Chen (2012) describe a similar tool called a requirements mapping matrix that shows the relationships between multiple types of objects. Table 29-1 illustrates a portion of a requirements traceability matrix, drawn from the Chemical Tracking System. When I’ve set up such matrices in the past, I started with a copy of the baselined SRS and deleted everything except the labels for the functional requirements. Then I set up a table laid out like Table 29-1 with only the “Functional requirement” column populated. As fellow team members and I worked on the project, we gradually filled in the blank cells in the matrix.
+
+TABLE 29-1 One kind of requirements traceability matrix
+
+User requirement	Functional requirement	Design element	Code element	Test
+UC-28	catalog.query.sort	Class catalog	CatalogSort()	search.7 search.8
+UC-29	catalog.query.import	Class catalog	CatalogImport() CatalogValidate()	search.12 search.13 search.14
+Table 29-1 shows how each functional requirement is linked backward to a specific use case and forward to one or more design, code, and test elements. A design element can be something like an architectural component, a table in a relational data model, or an object class. Code references can be class methods, stored procedures, source code file names, or modules within a source file. Including more trace detail takes more work, but it gives you the precise locations of the related software elements.
+Fill in the information as the work gets done, not as it gets planned. That is, enter CatalogSort() in the “Code element” column of the first row in Table 29-1 only when the code in that function has been written. That way a reader knows that populated cells in the requirements traceability matrix indicate work that’s been completed.
+ 
+   
+Another way to represent trace information is through a set of matrices that define links between
+pairs of system elements, such as these:
+■	One type of requirement to other requirements of that same type
+■	One type of requirement to requirements of another type
+■	One type of requirement to tests
+You can use these matrices to define various relationships that are possible between pairs of requirements, such as “specifies/is specified by,” “is dependent on,” “is parent of,” and “constrains/is constrained by” (Sommerville and Sawyer 1997).
+Table 29-2 illustrates a two-way traceability matrix. Most cells in the matrix are empty. Each cell at the intersection of two linked components contains a symbol to indicate the connection. Table 29-2 uses an arrow to indicate that a certain functional requirement is traced from a particular use case. For instance, FR-2 is traced from UC-1, and FR-5 is traced from both UC-2 and UC-4. This indicates that the functional requirement FR-5 is reused across two use cases, UC-2 and UC-4.
+TABLE 29-2 Requirements traceability matrix showing links between use cases and functional requirements
+
+	Use case
+Functional requirement	UC-1	UC-2	UC-3	UC-4
+FR-1	
+ 			
+FR-2	
+ 			
+FR-3			
+ 	
+FR-4			
+ 	
+FR-5		
+ 		
+ 
+FR-6			
+ 	
+Trace links can define one-to-one, one-to-many, or many-to-many relationships between system elements. The format in Table 29-1 accommodates these cardinalities by letting you enter several items in each table cell. Here are some examples of the possible link cardinalities:
+■	One-to-one   One design element is implemented in one code module.
+■	One-to-many   One functional requirement is verified by multiple tests.
+ 
+■	Many-to-many Each use case leads to multiple functional requirements, and certain functional requirements are common to several use cases. Similarly, a shared or repeated design element might satisfy several functional requirements. Ideally, you’ll capture all these interconnections, but in practice, many-to-many trace relationships become complex and difficult to manage.
+Nonfunctional requirements such as quality attributes often do not trace directly into code. A response-time requirement might dictate the use of certain hardware, algorithms, database structures, and architectural approaches. A portability requirement could restrict the language features that
+the programmer uses but might not result in specific code segments that enable portability. Other quality attributes are indeed implemented in code. Security requirements for user authentication lead to derived functional requirements that might be implemented through passwords or biometrics functionality. In those cases, you can trace the corresponding functional requirements backward
+to their parent nonfunctional requirement and forward into downstream deliverables as usual. Figure 29-3 illustrates a possible traceability chain involving nonfunctional requirements.
+
+FIGURE 29-3 Sample traceability chain for requirements dealing with application security.
+
+Trace links should be defined by whomever has the appropriate information available. Table 29-3 identifies some typical sources of knowledge about links between various types of source and target objects. Determine the roles and individuals who should supply each type of trace information for your project. Expect some pushback from busy people whom the analyst or project manager asks
+ 
+to provide this data. Those practitioners are entitled to an explanation of requirements tracing, why it provides value, and why they’re being asked to contribute to the process. Point out that the incremental cost of capturing trace information at the time the work is done is small; it’s primarily a matter of habit, discipline, and having the storage mechanism established.
+
+
+TABLE 29-3 Likely sources of trace link information
+
+Link source object type	Link target object type	Information source
+System requirement	Functional requirement	System engineer
+User requirement	Functional requirement	Business analyst
+Business requirement	User requirement	Business analyst
+Functional requirement	Functional requirement	Business analyst
+Functional requirement	Test	Tester
+Functional requirement	Architecture element	Architect or developer
+Functional requirement	Other design elements	Designer or developer
+Design element	Code	Developer
+Business rule	Functional requirement	Business analyst
+
+
+Tools for requirements tracing
+As Chapter 30, “Tools for requirements engineering,” describes, commercial requirements management tools often have powerful requirements-tracing capabilities. You can store requirements and other information in a tool’s database and define links between the various types of stored objects, including peer links between two requirements of the same kind. Some tools let you differentiate traced-to and traced-from relationships, automatically defining the complementary links. That is, if you indicate that requirement R is traced to test T, the tool will also show the symmetrical relationship in which T is traced from R.
+Some tools automatically flag a trace link as being suspect whenever the object on either end of the link is modified. A suspect link displays a visual indicator (such as a red question mark or a diagonal red line)
+in the corresponding cell in the requirements traceability matrix. For example, if you changed Use Case 3, the requirements traceability matrix in Table 29-2 might look like Table 29-4 the next time you see it. The suspect link indicators (in this case, question marks) tell you to check whether functional requirements 3, 4, and 6 need to be changed to remain consistent with the modified UC-3. After making any necessary changes, you clear the suspect link indicators manually. This process helps ensure that you’ve accounted for the known ripple effects of a change. Requirements management tools also let you define cross-project or cross-subsystem links.
+I know of one large software product that had 20 major subsystems, with certain high-level system requirements apportioned among multiple subsystems. In some cases, a requirement that was allocated to one subsystem was actually implemented through a service that another subsystem provided. This project used a requirements management tool to successfully track these complex trace relationships.
+It’s impossible to perform requirements tracing manually for any but very small applications. You can use a spreadsheet to maintain trace data for up to a couple hundred requirements, but larger systems demand a more robust solution. Requirements tracing can’t be fully automated because the knowledge of the links originates in the development team members’ minds. However, after you’ve identified the links, tools can help you manage the vast quantity of trace information.
+
+
+
+ 
+Consider following this sequence of steps when you begin to implement requirements tracing on a specific project:
+1.
+, your objectives for this activity, where the trace data is stored, and the techniques for defining the links. Ask all participants to commit to their responsibilities.
+2.	from the possibilities shown in Figure 29-2.
+Don’t try to do all of these at once! You’ll be overwhelmed.
+3.	Choose the type of traceability matrix you want to use: the single-matrix style shown in Table 29-1 or several matrices like the one illustrated in Table 29-2. Select a mechanism for
+ 
+storing the data: a table in a text document, a spreadsheet, or (much better) a requirements management tool.
+4.	want to maintain traceability information. Start
+with the critical core functions, the high-risk portions, or the portions that you expect will
+undergo the most maintenance and evolution over the product’s life.
+5.	who will supply each type of link information and the person
+(most likely a BA) who will coordinate the tracing activities and manage the data.
+6.	Modify your development procedures to remind	links after
+implementing a requirement or an approved change. The trace data should be updated soon after someone completes a task that creates or changes a link in the requirements chain.
+7.		will use to give each system element a unique identifier so that the elements can be linked together. Chapter 10, “Documenting the requirements,” described several ways to label requirements.
+8.		participant provide the requested trace information as they complete small bodies of work. Stress the advantage of ongoing accumulation of the trace data over assembling it at a major milestone or at the end of the project.
+9.	Audit the trace information periodically to make sure it’s being kept current. If a requirement is reported as implemented and verified, yet its trace data is incomplete or inaccurate, your requirements tracing process isn’t working as intended.
+I’ve described this procedure as though you were starting to collect trace information at the outset of a new project. If you’re maintaining an existing system, you probably don’t have trace data available. There’s no time like the present to begin accumulating this information. The next time
+you add an enhancement or make a modification, write down what you discover about connections between code, tests, designs, and requirements. You’ll never reconstruct a complete requirements traceability matrix, but this small amount of effort might make it easier the next time someone needs to work on that same part of the system.
+
+ 
+ 
+
+
+
+
+ 
+You might conclude that accumulating requirements trace information is more expensive than it’s worth or that it’s not feasible for your project. That’s entirely possible. Acquiring a tool with the necessary capabilities, setting it up, entering the data, and keeping it current is expensive and time consuming. You might not need to construct a group memory like this if members of your
+team possess the necessary knowledge and share it with others when it’s needed. Only your team can decide whether requirements tracing—be it just requirements-to-tests or something more elaborate—adds value to your project above its cost.
+Consider the following example, though. A conference attendee who worked at an aircraft manufacturer told me that the SRS for his team’s part of the company’s latest jetliner was a stack of paper six feet thick. They had a complete requirements traceability matrix. I’ve flown on that very model of airplane, and I was happy to hear that the developers had managed their software
+requirements so carefully. Managing traces on a huge product with many interrelated subsystems is a lot of work. This aircraft manufacturer knows it is essential. The U.S. Federal Aviation Administration agrees: traceability from requirements to designs is required for certification of aviation software.
+Similarly, the U.S. Food and Drug Administration advocates that medical device manufacturers demonstrate traceability of a product’s requirements into downstream deliverables as part of the validation process for the device.
+Even if your products won’t cause loss of life or limb if they fail, you should take requirements tracing seriously. At a minimum, consider tracing between business requirements and user requirements to look for alignment, omissions, and unnecessary requirements. The CEO of a major corporation who was present when I described requirements tracing at a seminar asked, “Why wouldn’t you do this for your strategic business systems?” That’s an excellent question. You should decide to use any improved requirements engineering practice based on both the costs of applying the technique and the risks of not using it. As with all software processes, make an economic decision to invest your valuable time where you expect the greatest payback.
+ 
+Next steps
+■	Set up a trace matrix for 15 or 20 requirements from an important portion of the system you’re currently developing. Try the approaches shown in both Tables 29-1 and 29-2. Populate the matrix as the project progresses for a few weeks. Evaluate which method seems most effective and what procedures for collecting and storing traceability information will work for your team.
+■	The next time you perform maintenance on a poorly documented system, record what you learn from reverse engineering the part of the product you’re modifying. Build
+a fragment of a requirements traceability matrix for the piece of the puzzle you’re manipulating so that the next time someone has to work on it they have a head start. Grow the matrix as your team continues to maintain the product.
+■	Trace your functional requirements back to user requirements, and trace your user requirements to business requirements. Count the requirements that you could cut because they don’t link back to a business requirement. Count the requirements that were missing until the trace matrix revealed their absence. Estimate the costs had you not discovered these requirements errors until much later in the project. This analysis will help you judge whether requirements tracing will pay off in your environment.
+ 
+C HA P T E R 3 0
+Tools for requirements engineering
+
+Estelle finally got her SRS document completed and approved. Now James wants to add a requirement, but it messes up the numbering scheme, incrementing the labels for requirements that follow it in that section of the document. Estelle hopes that changing the requirement identifiers won’t cause problems for anyone already working from those requirements. Sean requests to delete a requirement. Estelle suspects that the requirement might come back into scope in the future, so she wonders where to put it and how to keep the developers from working on it now. Antonio asked Estelle yesterday why a specific requirement was included, but she didn’t have any way to answer that question.
+One of the developers, Rahm, asked for a list of all the requirements that he was responsible for on the next release, but Estelle doesn’t have any easy way to generate such a list. In fact, it’s not easy to keep track of which requirements are scheduled for which release, because they are all stored in the same document. Estelle would like to know the status of requirements that are already under development, but she doesn’t have an easy way to find that information either.
+Estelle’s document-based requirements approach is falling short of her requirements management needs. She needs a tool.
+In earlier chapters, we discussed the creation of a natural-language software requirements specification to contain the functional and nonfunctional requirements, as well as documents that contain the business requirements and user requirements. We pointed out that these deliverables are just containers for sets of requirements information; they need not be traditional word-processing documents. Although still
+:
+■	It’s difficult to keep the documents current and synchronized.
+■	Communicating changes to all affected team members is a manual process.
+■	It’s not easy to store supplementary information—attributes—about each requirement.
+■	It’s hard to define links between requirements and other system elements.
+■	Tracking the status of both individual requirements and the entire set of requirements is cumbersome.
+
+
+503
+ 
+■	Concurrently managing sets of requirements that are planned for different releases or for related products is tricky. When a requirement is deferred from one release to a later one, a BA needs to manually move it from one requirements specification to another.
+■	Reusing a requirement generally means that the business analyst must copy the text from the original document into another document for each other system or product where the requirement is to be used.
+■	It’s difficult for multiple project participants to modify the requirements, particularly if the participants are geographically separated.
+■	There’s no convenient place to store proposed requirements that were considered but rejected and requirements that were deleted from a baseline.
+■	It’s hard to create, trace, and track edits to analysis models in the same location as
+requirements.
+■	Identifying missing, duplicate, and unnecessary requirements is difficult.
+
+. RD tools can help you elicit the right requirements for your project and judge whether those requirements are well-written. RM tools help you manage changes to those requirements, track status, and trace requirements to other project deliverables.
+A team working on a small project might be able to get away without using any requirements tools, instead using documents, spreadsheets, or simple databases to manage their requirements. Teams working on large projects will benefit from commercial requirements engineering tools. None of these tools replaces a defined process that your team members follow to develop and manage their requirements. Use a tool when you already have an approach that works but that requires greater efficiency. Don’t expect a tool to compensate for a lack of business analysis and requirements engineering process, training, discipline, or experience.
+
+This chapter presents several benefits of using requirements tools and identifies some general capabilities you can expect to find in such products. Dozens of commercial requirements tools are available. This chapter doesn’t contain a feature-by-feature tool comparison, because the products are constantly evolving and their capabilities (and sometimes their vendors) change with each release. RD and RM tools often aren’t cheap, but the high cost of requirements-related problems can justify your investment in them. Recognize that the cost of a tool is not simply what you pay for the initial license. The cost also includes annual maintenance fees and periodic upgrades, software installation and configuration, administration, vendor support and consulting, and training for users. Cloud-based

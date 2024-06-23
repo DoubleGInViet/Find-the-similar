@@ -1,0 +1,605 @@
+﻿are often completed well in advance of the start of the first project iteration. 
+They might be called pre-project activities of Core Process 1:
+■ Identify the problem and document the objective of the solution system.
+■ Obtain approval to commence the project.
+❚ System Vision Document
+As with all new projects within RMO, a System Vision Document is developed 
+to identify the benefits to the company and the functional capabilities that will 
+be included in the system. Frequently, this is done in two steps: developing a preliminary statement of benefits and then adding estimates of specific dollar costs 
+and dollar benefits. Figure 1-8 is the System Vision Document for this project.
+As described earlier, RMO needs a mobile system that can be used by its 
+purchasing agents as they attend various product, clothing, and fabric trade 
+shows. The system needs to fulfill two major requirements. First, it has to have 
+the functionality to capture information about suppliers and products. Second, 
+it needs to be able to communicate with the home office systems, and because 
+these trade shows are held in various venues around the world, various methods 
+of connectivity are needed.
+Preliminary investigation included various equipment options, like notebook computers, tablets, and smartphones. Smartphones appeared to have the 
+best connection options, but their small size made viewing the details of photographs somewhat difficult; the iPad and other portable tablets with advanced 
+connectivity options also appear to be viable options. Because smartphones and 
+tablets have similar requirements, analysts determine to develop an application 
+that will execute on either type of device, giving purchasing agents multiple options for system access.
+Toward the end of the initial project activities, a meeting is held involving 
+all the key persons, including a representative of executive management. The 
+decision is made to move ahead with the project and budget the necessary funds.
+■ Day 1 Activities
+❚ RMO—Tradeshow System Overall
+The project actually begins with Day 1, which is essentially a planning day. 
+Usually, the project team first reviews the System Vision Document and verifies that the preliminary work is still valid. It reviews the scope of the project 
+to become familiar with the problem, and then it plans the iterations and activities for the remainder of the project. The second SDLC core process—Plan and 
+monitor the project—includes business analysis and project management activities. These Core Process 2 activities are completed on Day 1:
+■ Determine the major components (functional areas) that are needed.
+■ Define the iterations and assign each functional area to an iteration.
+■ Determine team members and responsibilities.
+❚ Planning the Overall Project and the Project Iterations
+Many details need to be considered in a project plan. For our project, we will 
+only focus on the bare essentials. We will describe project planning more elaborately in later chapters. The project team meets with the users to review the 
+overall business need and the objectives of the new system. The System Vision 
+Document serves as the starting point for these discussions. As is often the case, 
+the list of system capabilities provides the foundation information for determining the overall project plan. The first step is to divide the system into several subsystems or components. A subsystem is a fully functional part of the complete 
+subsystem an identifiable and fully 
+functional part of a complete system
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 13
+information system. Based on the list of system capabilities, the project team 
+identifies these two subsystems:
+■ Supplier Information Subsystem
+■ Product Information Subsystem
+The Supplier Information Subsystem will collect and maintain information 
+about the manufacturers or wholesalers and the contact people who work for 
+them. The Product Information Subsystem will capture information about the 
+various products offered by the manufacturers or wholesalers, including detailed descriptions and photographs.
+Problem Description
+Trade shows have become an important information source for new products, new 
+fashions, and new fabrics. In addition to the large providers of outdoor clothing and 
+fabrics, there are many smaller providers. It is important for RMO to capture information 
+about these suppliers while the trade show is in progress. It is also important to obtain 
+information about specific merchandise products that RMO plans to purchase. 
+Additionally, if quality photographs of the products can be obtained while at the trade 
+show, then the creation of online product pages is greatly facilitated.
+It is recommended that a new system be developed and deployed so field purchasing
+agents can communicate more rapidly with the home office about suppliers and specific
+products of interest. This system should be deployed on portable equipment.
+System Vision Document
+RMO Tradeshow System
+System Capabilities
+The new system should be capable of:
+• Collecting and storing information about the manufacturer/wholesaler (suppliers)
+• Collecting and storing information about sales representatives and other key
+ personnel for each supplier
+• Collecting information about products
+• Taking pictures of products (and/or uploading stock images of products)
+• Functioning as a stand-alone without connection
+• Connecting via Wi-Fi (Internet) and transmitting data
+• Connecting via telephone and transmitting data
+Business Benefits
+It is anticipated that the deployment of this new system will provide the following 
+business benefits to RMO:
+• Increase timely communication between trade show attendees and home office,
+ thereby improving the quality and speed of purchase order decisions
+• Maintain correct and current information about suppliers and their key personnel,
+ thereby facilitating rapid communication with suppliers
+• Maintain correct and rapid information and images about new products, thereby 
+facilitating the development of catalogs and Web pages
+• Expedite the placing of purchase orders for new merchandise, thereby catching
+ trends more rapidly and speeding up product availability
+Figure 1-8 Tradeshow System 
+Vision Document
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+14 PART 1 ■ Introduction to System Development
+The next step is to identify the order in which the subsystems will be developed. Many issues are considered, such as dependencies between the various 
+tasks, sequential versus parallel development, project team availability, and project urgency. In our case, the team decides that the Supplier Information Subsystem 
+should be scheduled for the first iteration and the Product Information Subsystem should be scheduled for the second iteration. The third and fourth iterations 
+would complete the implementation, testing, and deployment of the system based 
+on what was initially implemented in the first two iterations.
+❚ Planning the Rest of the First Iteration: The Supplier Subsystem
+Each iteration is like a system development mini-project. The core processes described earlier can all be applied, with the scope limited to the component that 
+is to be developed during the iteration. The planning process for an iteration 
+consists of these three steps:
+■ Identify the tasks required for the iteration.
+■ Organize and sequence these tasks into a schedule.
+■ Identify required resources (especially people), and assign people to tasks.
+The first step is to identify—or attempt to identify—all the individual tasks 
+that need to be done. As these tasks are identified, they are compiled and organized. Sometimes, this organized list of tasks is called a work breakdown structure (WBS). Figure 1-9 shows the WBS for this iteration.
+Part of this effort is trying to estimate how long each task will take. Because 
+this iteration has a very limited scope (and only six days), all the estimates will 
+be in hours. These estimates do not include the time expended by those who are 
+not on the team. However, of those on the team, the estimates include the time 
+for the original work, the time for discussion, and the time for reviewing and 
+checking the WBS for accuracy and correctness.
+Figure 1-9 Sample handwritten 
+work breakdown structure (WBS)
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 15
+The next step is get these tasks organized into a schedule. Again, we can be 
+very formal and use a sophisticated project scheduling tool, or we can just list 
+the tasks in the order we think they need to be done. Creating the tasks in order 
+is an important part of building the schedule because it identifies any dependencies among the tasks, though many tasks can be done in parallel. For example, it 
+does not make sense to try to design the database before we have identified the 
+information requirements. Again, the great benefit of planning a single iteration 
+is that we can make the schedule informal, and we will be able to adjust the 
+work day-by-day to respond to complexities that occur.
+For this iteration, we have taken the tasks from the WBS and placed them on 
+a day-by-day sequence that we call an iteration schedule, as shown in Figure 1-10. 
+The project manager can use this diagram to assign people to the tasks and to put 
+the tasks on a specific schedule chart with calendar dates if necessary.
+0-1
+Develop project plan Day 1: Plan
+project
+Day 2: 12 hours
+Day 3: 14 hours
+Day 6: 12 hours
+Start
+I-1 3 hrs
+Meet with purchasing manager
+I-2 4 hrs
+Meet with purchasing agents
+I-3 3 hrs
+Define use cases
+I-5 6 hrs
+Develop workflows
+I-4 2 hrs
+Define information requirements
+II-1 8 hrs
+Design screens
+Day 5: 28 hours
+IV-1 5 hrs
+Perform functional tests
+IV-2 7 hrs
+Perform user acceptance test
+II-2 4 hrs
+Design and build database
+II-3 4 hrs
+Design overall architecture
+II-4 6 hrs
+Design program
+details
+III-1 14 hrs
+Code and test
+GUI layer
+III-2 8 hrs
+Code and test logic
+layer
+Morning of
+Day 4: 8 hours
+Figure 1-10 Schedule for the first 
+iteration
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+16 PART 1 ■ Introduction to System Development
+You should be aware that the sequence of activities and the dependencies of 
+those activities are represented in this diagram with only partial accuracy. For 
+example, we show that programming does not start until design has finished. 
+However, in reality, there may be some overlap between the two activities.
+The benefit of an iteration schedule is threefold. First, it helps the team organize its work so developers have enough time to think through the critical 
+design issues before programming begins. Second, it provides a measuring rod 
+to see if the iteration is on schedule. For example, if meetings with the purchasing agents take all day or more than a day, the team will know early on that this 
+iteration will take longer than expected. Third, the project manager can see that 
+programming may require more resources if the project is going to stay on this 
+schedule. Hence, the project manager can begin lining up resources to help with 
+that part of the iteration. It should be obvious that even this simple diagram can 
+help a project manager plan and organize the work.
+■ Day 2 Activities
+❚ The Tradeshow System Overall
+Day 1 involved planning and organizing the project. Day 2 involves discovering 
+and understanding details, which is a key part of systems analysis. Now we will 
+complete the systems analysis activities in more detail for the complete Tradeshow System. These Core Process 3 activities include:
+■ Do fact-finding tasks to understand the requirements.
+■ Develop a list of use cases and a use case diagram.
+■ Develop a list of classes and a class diagram.
+❚ Fact Finding and User Involvement
+Before the project commenced, a broad definition of requirements was developed. It is now time to examine those requirements and determine exactly what 
+the user needs the system to do. There are various techniques to ensure that the 
+fact finding is complete and thorough. These include interviewing the key users, 
+observing existing work processes, reviewing existing documentation and existing systems, and even researching other companies and other systems. The first 
+step is to identify the key users who will define these details. In this scenario, 
+the manager of the Purchasing Department will be one of the first users to meet 
+with. She will probably designate one or two knowledgeable purchasing agents 
+who can work with the team on an ongoing basis to develop the specifications 
+and to verify that the system performs as required. All successful projects depend on heavy user involvement. In Chapter 2, you will learn more about identifying key stakeholders and gathering information.
+❚ Identifying Use Cases
+Identifying and describing use cases is the way to document what the users need 
+to do with the system, hence, the term use case—a case or situation where the 
+system is used. For example, suppose a purchasing agent goes to a trade show 
+and finds a new lightweight sports jacket that will work well for RMO’s fall 
+merchandise offerings. Suppose that the first task the purchasing agent needs to 
+do is find out if this supplier has worked with RMO before. Thus, a use case required for the Tradeshow System might be Look up a supplier. One good way to 
+help you talk about use cases is to say, “The purchasing agent ‘uses’ the system 
+to ‘Look up a supplier.’” There are multiple methods used to identify use cases, 
+which you will learn later in this book. Some developers prefer to use a similar 
+concept called a user story.
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 17
+Figure 1-11 is a preliminary list of use cases for the entire Tradeshow System. When the project team meets with the purchasing agents in brainstorming 
+sessions, they identify the use cases together. Because the first iteration is focusing only on the Supplier Information Subsystem, the project team will also focus 
+its attention on only the first four use cases on the list.
+❚ Identifying Domain Classes
+Domain classes identify those things in the real world that the system needs to 
+know about and keep track of. To find domain classes, we look for all objects, 
+or things, that the system uses or captures. Objects come in all types and variations, from tangible items (such as merchandise products that you can see and 
+touch) to more abstract concepts that you cannot touch (such as a promotion), 
+which, though intangible, is an important thing to remember and track. Domain 
+classes are the categories of objects identified, much like a table in a database 
+represents the category of the records it contains. A Product class represents all 
+of the product objects used by the system.
+Domain classes are identified during the discussions with purchasing agents 
+by looking for the nouns that describe categories of things. For example, the 
+agents will often talk about suppliers, merchandise products, or inventory items. 
+These nouns become the domain classes, and each domain class has attributes 
+(like contact information, product, or business location) that detail the information you need to store about the domain class.
+Figure 1-12 illustrates which nouns are fundamental domain classes for the 
+Tradeshow System. The attributes are pieces of information that help define and 
+describe details about a domain class.
+Figure 1-11 List of use cases for 
+Tradeshow System Use Case Description
+Look up supplier Using supplier name, nd supplier information and
+contacts
+Enter/update supplier
+information
+Enter (new) or update (existing) supplier information
+Look up contact Using contact name, nd contact information
+Enter/update contact
+information
+Enter (new) or update (existing) contact information
+Look up product
+information
+Using description or supplier name, look up product
+information
+Enter/update product
+information
+Enter (new) or update (existing) product information
+Upload product image Upload images of the merchandise product
+Object Classes Attributes
+Supplier supplier name, address, description, comments
+Contact name, address, phone(s), e-mail address(es),
+position, comments
+Product category, name, description, gender, comments
+ProductPicture ID, image
+Figure 1-12 List of domain 
+classes for Tradeshow System
+© Cengage Learning®
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+18 PART 1 ■ Introduction to System Development
+In addition to just providing a list of domain classes, systems analysts often 
+develop a visual diagram of the classes, their attributes, and their associations 
+with other classes. This diagram is called a domain class diagram. Figure 1-13
+shows the domain class diagram for the Tradeshow System.
+Each box is a class and can be thought of as a particular set of objects that 
+are important to the system. Important attributes of each class are also included 
+in each box. These represent the detailed information about each object that 
+will be maintained by the system. Note that some classes have lines connecting 
+them. These represent associations between the classes that need to be remembered by the system. For example, a contact is a person who works for a particular supplier. A specific example might be that Bill Williams is the contact person 
+for the South Pacific Sportswear Company. Thus, the system needs to associate 
+Bill Williams and the South Pacific Sportswear Company. The association line 
+documents that requirement.
+Domain class diagrams are a powerful and frequently used way to understand and document the information requirements of a system. The Tradeshow 
+System is very simple, with only four classes identified—two of which belong to 
+the Supplier Information Subsystem. Most real-life systems are much larger and 
+have dozens or even hundreds of domain classes.
+■ Day 3 Activities
+The purpose of Day 3 activities is to analyze in detail the use cases and domain 
+classes that are scheduled to be implemented in the first iteration for the Supplier 
+Subsystem. Included are these Core Process 3 activities:
+■ Perform in-depth fact finding to understand details of each use case.
+■ Understand and document the detailed workflow of each use case.
+■ Define the user experience with sketches of screens and reports needed for 
+each use case.
+After working with the purchasing agents, developers determined the following use cases pertaining to the Supplier Information Subsystem:
+■ Look up supplier
+■ Enter/update supplier information
+name
+address
+description
+comments
+Supplier
+productCategory
+name
+description
+gender
+comments
+Productltem
+1..*
+1
+1 1..* name
+address
+phone(s)
+emailAddress(es)
+position
+comments
+Contact
+pictureID
+image
+ProductPicture
+1 0..*
+Figure 1-13 Preliminary domain 
+class diagram for the Tradeshow 
+System
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 19
+■ Look up contact information
+■ Enter/update contact information
+From this list, the developer will then create a use case diagram. A use case 
+diagram is used to graphically portray the use cases and users involved in the 
+subsystem. Figure 1-14 illustrates a simple use case diagram for the Supplier 
+Information Subsystem showing the four use cases as ovals and the two users as 
+stick figures. The lines connecting users and use cases shows who uses the system for the use case: The purchasing agent carries out all four use cases, but the 
+manager also looks up suppliers or contacts.
+The project team will look closely at the steps to follow for each use case 
+to better understand how the application needs to work and to identify what 
+screens and reports will need to be developed. As the team gets more into the 
+details, it may discover that some of the initial analysis is incomplete or not correct and can adjust the WBS to reflect the changes. This is a good time to make 
+such discoveries—much better to find mistakes earlier than after the programs 
+have been written.
+❚ Developing Use Case Descriptions and Workflow Diagrams
+There are various methods for documenting the details of a use case. One that 
+you will learn later in this text is called a use case description. Another method 
+is developing an activity diagram, which shows all the steps within the use case. 
+The purpose with either method is to document the interactions between the 
+user and the system (i.e., how the user interacts and uses the system to carry out 
+a specific work task for a single use case).
+Let us develop an activity diagram for one use case. Figure 1-15 illustrates 
+the Look up supplier use case. The flattened ovals in the diagram represent the 
+activities, the diamonds represent decision points, and the arrows represent the 
+sequence of the flow. The columns designate the person who performs the activities, in this case the purchasing agent in the first column and the Tradeshow 
+System in the second column. Usually, activity diagrams are quite easy for users 
+to understand and critique.
+Look up supplier
+Enter/update
+supplier
+information
+Look up contact
+Enter/update
+contact
+information
+Purchasing Manager
+agent
+Figure 1-14 Use case diagram for 
+the Supplier Information Subsystem
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+20 PART 1 ■ Introduction to System Development
+The arrows that cross the line between users (center) represent the interactions 
+between the user and the system. These are critically important because they designate situations where the developers must provide a screen or Web page that either 
+captures or displays information. These situations become part of the user interface.
+In Figure 1-15, the top arrow indicates that the supplier name is entered 
+into the system first. Thus, we infer that the use case must have an online lookup 
+page with a field available to enter the supplier name. The next arrow indicates 
+the application requires a page that displays all the details for an individual supplier, including a list of existing contacts. The user may also want to see more 
+details about a specific contact person for this supplier, so the application must 
+provide detailed information request fields for a particular contact. Because the 
+user will need to select one of the displayed results, we must design the page so 
+each entry on the list is either a hot link or can be selected.
+❚ Defining Screen Layout
+User-interface design includes creating how a system looks and how the user 
+interacts with it. Because the user interface is the user’s window to the functionality of the system, it is essentially the system itself to the users. If the interface is poorly designed, users will not be able to take full advantage of the 
+system; they may even consider the system to be less than optimal. On the other 
+Purchasing Agent Tradeshow System
+Start
+Enter supplier name
+Return supplier information
+not found
+found
+View supplier and
+contact names
+done
+look up contact
+Select contact name
+Retrieve contact information
+View contact information
+End
+Figure 1-15 Activity diagram for 
+the Look up supplier use case
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 21
+hand, a well-designed user interface—one that is intuitive and easy to use, has a 
+full range of features to facilitate navigation, and provides good information—
+will enhance the utility of the system tremendously.
+Figure 1-16 illustrates the layout of the first page used for the workflow 
+in the use case Look up supplier. The top half of the page provides the fields 
+where the user enters supplier information, and the bottom portion of the page 
+shows the results. After results are provided, the search box for data entry will 
+remain visible to allow the user to enter another search. Each entry in the results 
+section will be built as a hot link, so the user can click on any particular supplier 
+to retrieve more detailed information. This drill-down technique is a common 
+method used in today’s systems and will be intuitively easy for the users.
+Data for all of the required fields are stored in the database. Searches seek 
+information in the database, and display the required data, such as name, address, and contact information. An Internet-wide search is also possible. This 
+allows the purchasing agents to look for and view the suppliers’ own Web sites, 
+including forums and discussions about the supplier.
+■ Day 4 Activities
+The primary focus of Day 4 is to design the various components of the solution 
+system, corresponding to Core Process 4: Design System Components. Up to 
+now, we have mostly been gathering the user requirements. On Day 4, we design 
+the system based on the user requirements, which leads to programming efforts. 
+In that sense, design activities can be considered a bridge. The design documents 
+provide the blueprints for how the solution will be structured and how it is to be 
+programmed. System design also tends to involve the technical people, with less 
+need for user participation.
+Design can be a complex process. In our small project, we will limit our 
+design examples to only a few models and techniques. Day 4 activities (Core 
+Process 4) include the following:
+■ Design the database structure (schema).
+■ Design the system’s high-level structure.
+Web Search
+RMO Database Search
+Supplier Name
+Product Category
+Product
+Country
+Contact Name
+Supplier Name
+Search Results
+Contact Name Contact Position
+GO
+GO Logo
+Figure 1-16 Initial page layout for 
+the Look up supplier use case
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+22 PART 1 ■ Introduction to System Development
+Database design is a fairly straightforward activity that uses the domain class 
+diagram and develops the detailed database schema that can be directly implemented by a database management system. Such elements as table design, key 
+and index identification, attribute types, and other efficiency decisions are made 
+during this activity.
+Designing the high-level system structure and the individual programs can 
+be an intricate and complex process. First, the overall structure of the system is 
+designed by identifying the subsystems and connections to other systems. Then, 
+within each subsystem, decisions are made about individual program modules, 
+such as the user interface, business logic, and database access.
+It is not uncommon for developers to begin writing program code as they 
+develop portions of the design. However, best practice suggests that the designer 
+complete most of the high-level structure design before writing code. Consequently, 
+in the RMO Tradeshow System project, we will list them as separate activities.
+❚ Designing the Database
+Designing the database uses the information provided by the domain class diagram to determine the tables, the columns in the tables, and other components. 
+Sometimes, the database design is done for the entire system at once or by subsystem. At other times, it is built piecemeal—use case by use case. To keep our project simple, we will just show the database design for the two Supplier Information 
+Subsystem classes. Figure 1-17 shows the two relational database tables that result with attributes included along with data types and other properties.
+❚ A General Approach to Design
+One of the first questions encountered in software design is how and where to 
+start. So far, we have compiled three sets of information that can answer that 
+question:
+■ Use cases, with activity diagrams
+■ Domain classes, with accompanying diagrams
+■ Pages and reports, with program and display logic specifications
+Supplier SupplierID: integer {key}
+Name: string {index}
+Address1: string
+Address1: string
+City: string
+State-province: string
+Postal-code: string
+Country: string
+SupplierWebURL: string
+Comments: string
+ContactID: integer {key}
+SupplierID: integer {foreign key}
+Name: string {index}
+Title: string
+WorkAddress1: string
+WorkAddress2: string
+WorkCity: string
+WorkState: string
+WorkPostal-code: string
+WorkCountry: string
+WorkPhone: string
+MobilePhone: string
+EmailAddress1: string
+EmailAddress2: string
+Comments: string
+Contact
+Table Name Attributes Figure 1-17 Database design for 
+Supplier Information Subsystem
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 23
+Incidentally, in the previous section, we used the class diagram as the basis 
+for the database design. Those same classes are important in developing objectoriented program classes.
+Before we jump more into software design, let us briefly discuss the objective 
+of systems design and what we expect the output or result to be. Object-oriented 
+programs are structured as a set of interacting objects based on classes. To program, we need to know what the classes are, what the logic is within each class 
+(i.e., the functions), and which classes must interact. This is the final objective of 
+systems design.
+We perform this design by starting at the very highest level and then drilling down to the lowest level until we have defined all the functions within each 
+class. Detailed design documents the thought process of how to program each 
+use case. For Day 4, we focus only on the overall design.
+❚ Designing the Software Components
+Figure 1-18 shows the overall structure of the new system in terms of software 
+components. Although the figure itself appears rather simple, some important decisions have been involved in the development of this design. First, note 
+that the decision was made to build this application as a browser-based system designed for use on smartphones and tablets. A different and very popular 
+approach would have been to build specific smartphone or tablet applications. 
+Browser-based systems sometimes do not provide the same connectivity speed 
+and control as smartphone or tablet applications, but they are more versatile 
+because they are easily deployed on different equipment, such as laptops and 
+tablets, without modification, and on smartphones with only slight modification due to screen size.
+These high-level design decisions will determine the detailed structure of the 
+system. A browser-based system is structured and constructed differently than 
+an application system that runs on a smartphone or a tablet computer.
+❚ Defining the Preliminary Design Class Diagram
+The Tradeshow System will be built by using object-oriented programming their methods that will be needed for the system. Figure 1-19 is a preliminary 
+design class diagram for the Supplier Information Subsystem that identifies 
+the software classes needed for the system (for example, the SupplierView and 
+ContactView classes). In Figure 1-19, we show only the problem domain design classes and the user-interface View layer classes. Problem domain design 
+classes are usually derived from those classes that were identified during analysis activities—hence, the name: problem (user need) domain design classes. You 
+will also notice that they very closely correspond to the database tables; in fact, 
+in this simple project, they are almost exactly the same as the database tables.
+The design classes in Figure 1-19 include the attributes that are needed for 
+the class. They also include method names of the important methods within 
+each class. One final element in the design class diagram is the arrows that show 
+where a class accesses the methods of another class.
+❚ Designing Subsystem Software Architecture
+Once we have an overall structure and approach for implementing the new system, we begin to drill down to the software design for the subsystem. Figure 1-20
+illustrates the design of the Supplier Information Subsystem. Notice that this subsystem is further divided into layers: a View layer and a Domain layer. One of the 
+advantages of partitioning the system into layers is it is much easier to build and 
+maintain with this kind of structure given its modular format. For example, the 
+system will be browser based, but different browsers require different techniques. 
+It is better not to get these complexities mixed in with the basic program functions. Hence, they are separated out into a distinct layer.
++lookupSupplier ( )
++displaySupplier ( )
+SupplierView
++lookUpContact ( )
++displayContact ( )
+ContactView
+–supplierID {key}
+name: string
+address: string
+address2: string
+city: string
+state: string
+country: string
+URL: string
+comments: string
+Supplier
+–contactID {key}
+–name: string {index}
+title: string
+waddress1: string
+waddress2: string
+wcity: string
+wstate: string
+wpostal: string
+wcountry: string
+wphone: string
+mobilephone: string
+email1: string
+email2: string
+comments: string
+Contact
++getSupplierInfo ( ) +getContactInfo ( )
+Figure 1-19 Preliminary design 
+class diagram
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 1 ■ From Beginning to End: An Overview of Systems Analysis and Design 25
+The View layer includes two classes that represent what is seen on the user 
+interface—SupplierView and ContactView—as well as some JavaScript functions. The Domain layer includes two classes that interact with each other and 
+with the database—Supplier and Contact.
+❚ Managing the Project
+Design is a complex activity with multiple perspectives—from high-level structural design to low-level detailed program design. In our project, we have separated the tasks for designing the overall system structure from detailed design of 
+the programs themselves. However, these activities are often done concurrently. 
+The basic high-level software architectural structure is defined first, but midlevel and low-level design are often done concurrently with programming.
+Detailed design and programming are quite time-consuming activities. 
+A project manager must decide whether to extend the project or bring on additional programmers to help write the code. In our project, we have elected to 
+insert a half-day of free time to bring in two additional programmers and train 
+them. Of course, we could go ahead and begin Day 5’s activities to ensure that 
+we keep the project on schedule.
+■ Day 5 Activities
+As mentioned previously, though detailed design and programming may begin 
+earlier in the project, we identify it as a separate day’s activity. We want to emphasize that it is not a good practice to begin programming before critical information is obtained and decisions are made. A much better approach is to 
+understand, design, and build small chunks of the system at a time. Iterative
+(OOP) techniques, beginning with developing the set of software classes and

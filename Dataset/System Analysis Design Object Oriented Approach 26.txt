@@ -1,0 +1,754 @@
+﻿good reason to change the default visibility of these properties, then the defaults should 
+be accepted. Finally, the analyst should examine the model for additional opportunities to 
+use aggregation or generalization relationships. Th ese types of relationships can simplify 
+the individual class descriptions. As in the previous steps, all changes must be recorded 
+on the CRC cards.
+Th e fi fth step is to review the structural model for missing and/or unnecessary classes, attributes, operations, and relationships. Until this step, the focus of the process has been on adding information to the evolving model. At this point, the focus begins to switch from simply 
+adding information to also challenging the reasons for including the information contained 
+in the model. One very useful approach here is to play devil’s advocate, where a team member, 
+just for the sake of being a pain in the neck, challenges the reasoning for including all aspects 
+of the model.
+Th e sixth step is to incorporate useful patterns into the evolving structural model. A useful 
+pattern is one that would allow the analyst to more fully describe the underlying domain of 
+the problem being investigated. Looking at the collection of patterns available (Figure 5-5) 
+and comparing the classes contained in the patterns with those in the evolving class diagram enable this. Aft er identifying the useful patterns, the analyst incorporates the identifi ed patterns into the class diagram and modifi es the aff ected CRC cards. Th is includes 
+adding and removing classes, attributes, operations, and/or relationships.
+Th e seventh and fi nal step is to validate the structural model, including both the CRC cards 
+and the class diagram. We discuss this content in the next section of the chapter and in 
+Chapter 7.
+Campus Housing Example
+In the previous chapter, we identifi ed a set of use cases (Add an Apartment, Delete an 
+Apartment, and Search Available Rental Units) for the campus housing service that helps 
+students fi nd apartments. By reviewing the use cases, we can easily determine that the campus housing service must keep track of information for each available apartment and its 
+owner. Th e information to be captured for each apartment is the location of the apartment, 
+the number of bedrooms in the apartment, the monthly rent, and how far the apartment is 
+from the campus. Regarding the owner of the apartment, we need to capture the owner’s 
+contact information (e.g., name, address, phone number, e-mail address). Since students 
+are simply users of the system, there is no need to capture any information regarding them; 
+that is, in this case, students are simply actors. Finally, with regards to relationships among 
+the classes, there is a single, optional, one to many association relationship that links the 
+two classes together. Th e Apartment Owner CRC card is portrayed in Figure 5-16, and the 
+class diagram for this situation is shown in Figure 5-17. 
+Library Example
+As with the Campus Housing example, the fi rst step is to create the CRC cards that represent the classes in the structural model. In the previous chapter, we used the Library Book 
+Collection Management System example to describe the process of creating the functional 
+models (use-case and activity diagrams and use-case descriptions). In this chapter, we follow the same familiar example. Because we are following a use-case-driven approach to 
+object-oriented systems development, we fi rst review the events described in the use-case 
+descriptions (see Figure 5-18).
+188 Chapter 5 Structural Modeling
+Front:
+Class Name: Apartment Owner ID: 1
+Delete apartment
+Add apartment
+Responsibilities
+Description: An apartment owner who has apartments for rent Associated Use Cases: 2
+Type: Concrete, Domain
+Apartment
+Apartment
+Collaborators
+Back:
+Attributes: 
+Address (address)
+Phone number (PhoneNumber)
+Email (EmailAddress)
+Name (string)
+Relationships: 
+Generalization (a-kind-of):
+Aggregation (has-parts):
+FIGURE 5-16 Other Associations: Apartment
+Campus Housing 
+Apartment Owner 
+CRC Card
+Next, we perform textual analysis on the events by applying the textual analysis rules 
+described in Figure 5-1. In this case, we can quickly identify the need to include classes 
+for Borrower, Books, Librarian, Check Out Desk, ID Card, Student Borrower, Faculty/
+Staff Borrower, Guest Borrower, Registrar’s Database, Personnel Database, Library’s 
+Guest Database, Overdue Books, Fines, Book Request. We also can easily identify operations to “check the validity” of a book request, to “check out” the books, and to “reject” a 
+book request. Furthermore, the events suggest a “brings” relationship between Borrower 
+and Books and a “provides” relationship between Borrower and Librarian. Th is step 
+FIGURE 5-17
+Campus Housing 
+Class Diagram
+Apartment Owner Apartment
+0..1 0..*
+Creating Structural Models Using CRC Cards And Class Diagrams  189
+also suggests that we should review the overview section of the use-case description (see 
+Figure 5-19). In this case, the only additional information gleaned from the use-case 
+description is the possible inclusion of classes for Personnel Offi ce and Registrar’s Offi ce. 
+Th is same process would also be completed for the remaining use cases contained in the 
+functional model: Process Overdue Books, Maintain Book Collection, Search Collection, 
+and Return Books (see Figure 4-6). Since we did not discuss these use cases in the previous 
+chapter, we will review the problem description as a basis for beginning the next step (see 
+Figure 5-20).
+Normal Flow of Events:
+SubFlows:
+1. The Borrower brings books to the Librarian at the check out desk.
+2. The Borrower provides Librarian his or her ID card.
+3. The Librarian checks the validity of the ID Card.
+ If the Borrower is a Student Borrower, Validate ID Card against Registrar’s Database.
+ If the Borrower is a Faculty/Staff Borrower, Validate ID Card against Personnel Database.
+ If the Borrower is a Guest Borrower, Validate ID Card against Library’s Guest Database.
+4. The Librarian checks whether the Borrower has any overdue books and/or fines.
+5. The Borrower checks out the books.
+Alternate/Exceptional Flows:
+4a. The ID Card is invalid, the book request is rejected.
+5a. The Borrower either has overdue books fines, or both, the book request is rejected.
+FIGURE 5-18  Flow Descriptions for the Borrow Books Use Case (Figure 4-21)
+Association: Borrower, Personnel Office, Registrar’s Office
+Include:
+Extend:
+Generalization :
+Use Case Name:
+Primary Actor:
+Stakeholders and Interests:
+Brief Description:
+ID: Importance Level:
+Trigger:
+Type: External
+Use Case Type:
+Relationships:
+Borrow Books 2 High
+Borrower
+Borrower brings books to check out desk.
+Detail, Essential
+This use case describes how books are checked out of the library.
+Borrower—wants to check out books
+Librarian—wants to ensure borrower only gets books deserved
+FIGURE 5-19  Overview Description for the Borrow Books Use Case (Figure 4-20)
+190 Chapter 5 Structural Modeling
+Th e second step is to review the CRC cards to determine if there is any information missing. In the case of the library system, because we only used the Borrow Books 
+use-case description, some information is obviously missing. By reviewing Figure 5-20, 
+we see that we need to include the ability to search the book collection by title, author, 
+keywords, and ISBN. Th is obviously implies a Book Collection class with four diff erent 
+search operations: Search By Title, Search By Author, Search By Keywords, and Search By 
+ISBN. Interestingly, the description also implies either a set of subclasses or states for the 
+Book class: Checked Out, Overdue, Requested, Available, and Damaged. We will return 
+to the issue of states versus subclasses in the next chapter. Th e description implies many 
+additional operations, including Returning Books, Requesting Books, Adding Books, 
+Removing Books, Repairing Books, Fining Borrowers, and Emailing Reminders.
+Next, we should use our own library experience to brainstorm potential additional 
+classes, attributes, operations, and relationships that could be useful to include in the 
+Library Book Collection Management System. In our library, there is also the need to 
+Retrieve Books From Storage, Move Books to Storage, Request Books from the Interlibrary 
+Loan System, Return Books to the Interlibrary Loan System, and Deal with E-Books. You 
+also could include classes for Journals, DVDs, and other media. As you can see, many 
+classes, attributes, operations, and relationships can be identifi ed.
+Th e third step, role-playing the CRC cards, requires us to apply the three role-playing 
+steps described earlier:
+■ Review Use Cases
+■ Identify Relevant Actors and Objects
+■ Role Play Scenarios
+FIGURE 5-20
+Overview Description 
+of the Library 
+Book Collection 
+ Management System
+The functional requirements for an automated university library circulation system include the 
+need to support searching, borrowing, and book-maintenance activities. The system should 
+support searching by title, author, keywords, and ISBN. Searching the library’s collection database 
+should be available on terminals in the library and available to potential borrowers via the World 
+Wide Web. If the book of interest is currently checked out, a valid borrower should be allowed 
+to request the book to be returned. Once the book has been checked back in, the borrower 
+requesting the book should be notifi ed of the book’s availability.
+The borrowing activities are built around checking books out and returning books 
+by borrowers. There are three types of borrowers: students, faculty and staff, and guests. 
+Regardless of the type of borrower, the borrower must have a valid ID card. If the borrower 
+is a student, having the system check with the registrar’s student database validates the ID 
+card. If the borrower is a faculty or staff member, having the system check with the personnel 
+offi ce’s employee database validates the ID card. If the borrower is a guest, the ID card is 
+checked against the library’s own borrower database. If the ID card is valid, the system must 
+also check to determine whether the borrower has any overdue books or unpaid fi nes. If the ID 
+card is invalid, the borrower has overdue books, or the borrower has unpaid fi nes, the system 
+must reject the borrower’s request to check out a book; otherwise the borrower’s request 
+should be honored. If a book is checked out, the system must update the library’s collection 
+database to refl ect the book’s new status.
+The book-maintenance activities deal with adding and removing books from the library’s 
+book collection. This requires a library manager to both logically and physically add and 
+remove the book. Books being purchased by the library or books being returned in a damaged 
+state typically cause these activities. If a book is determined to be damaged when it is returned 
+and it needs to be removed from the collection, the last borrower will be assessed a fi ne. 
+However, if the book can be repaired, depending on the cost of the repair, the borrower might 
+not be assessed a fi ne. Finally, every Monday, the library sends reminder e-mails to borrowers 
+who have overdue books. If a book is overdue more than two weeks, the borrower is assessed 
+a fi ne. Depending on how long the book remains overdue, the borrower can be assessed 
+additional fi nes every Monday.
+Creating Structural Models Using CRC Cards And Class Diagrams  191
+For our purposes, we will use the Borrow Books use case to demonstrate. Th e relevant 
+actors include Student Borrowers, Faculty/Staff Borrowers, Guest Borrowers, Librarians, 
+Personnel Offi ce, and Registrar’s Offi ce. Th ese can be easily gleaned from the overview 
+section of the use-case description (see Figure 5-19) and the use-case diagram (see Figure 
+4-6). Th e relevant objects seem to include Books, Borrower, and ID Card. Finally, to 
+role-play the scenarios, we need to assign the roles to the diff erent members of the team 
+and try to perform each of the paths through the events of the use-case (see Figure 5-18). 
+Based on the Events of the use case and the use case’s activity diagram (see Figure 5-21), 
+we can quickly identify nine scenarios, three for each type of Borrower (Student, Faculty/
+Staff , and Guest): Valid ID and No Overdue Books & No Fines, Valid ID only, and no Valid 
+ID. When role-playing these scenarios, one question arises: What happens to the books that 
+are requested when the request is rejected? Based on the current functional and structural 
+models, the books are left sitting on the check out desk. Th at doesn’t quite seem right. In 
+reality, the books are reshelved. In fact, the notion of reshelving books is also relevant to 
+when books are checked back in or aft er books have been repaired. Furthermore, the idea of 
+adding books to the collection should also include the operation of shelving the books. As 
+you should readily see, building structural models will also help uncover behavior that was 
+omitted when building the functional models. Remember, object-oriented systems development is not only use-case driven but also is incremental and iterative.
+Th e fourth step is to put everything together and to draw the class diagram. Figure 5-22 
+ represents the fi rst cut at drawing the class diagram for the Library Book Collection Management 
+System. Th e classes identifi ed in the previous steps have been linked with other classes via association, aggregation, and generalization relationships. For simplicity purposes, we only show the 
+classes and their relationships; not their attributes, operations, or even the multiplicities on the 
+association relationships.
+FIGURE 5-21  
+Activity Diagram 
+for the Borrow 
+Books Use Case 
+(Figure 4-12)
+[Valid Card]
+[No Overdue Books & No Fines]
+Validate ID Card
+Check Out Books
+Check for Overdue Books and Fines
+192
+Book Collection
+Borrower ID
+Student
+Librarian
+Student ID
+Registrar’s DB Personnel DB
+Faculty/Staff ID Guest ID
+Library DB
+Faculty/Staff Guest Fine Request
+Library
+Shelf Reshelving Check Out Desk
+Storage Pers Off Registrar Off InterLibrary Loan System
+Book DVD
+Location
+Book Location
+Journal Other Media
+Media
+*
+1
+FIGURE 5-22  First-Cut Class Diagram for the Library Book Collection System
+Creating Structural Models Using CRC Cards And Class Diagrams  193
+FIGURE 5-23 Second-Cut Class Diagram for the Library Book Collection System
+Student
+Borrower Book
+Guest Storage
+Book Location
+InterLibrary Loan System Library
+Book Collection
+Faculty/Staff
+Librarian
+0..* 0..* 0..* 1..1
+1
+*
+Th e fi fth step is to carefully review what has been created. Not only should you look 
+for any missing classes, attributes, operations, and/or relationships, but you should also 
+challenge every aspect of the current model. Specifi cally, are there classes, attributes, 
+operations, and/or relationships that should be removed from the model? If so, there may 
+be classes on the diagram that should have been modeled as attributes. For example, the 
+Student, Fac/Staff , and Guest IDs should have been attributes with their respective classes. 
+Furthermore, because this is a book collection management system, the inclusion of other 
+media seems to be inappropriate. Finally, the Personnel Offi ce and Registrar’s Offi ce are 
+actually only actors in the system, not objects. Based on all of these deletions, a new version 
+of the class diagram was drawn (see Figure 5-23). Th is diagram is much simpler and easier 
+to understand.
+Th e sixth step, incorporating useful patterns, enables us to take advantage of knowledge 
+that was developed elsewhere. In this case, the pattern used in the library problem includes 
+too many ideas that are not relevant to the current problem. However, by looking back to 
+Figure 5-3, we see that one of the original patterns (the Place, Transaction, Participant, 
+Transaction Line Item, and Item pattern—see the top left of the fi gure) is relevant. We 
+incorporate that pattern into the class diagram by replacing Place by Check Out Desk, 
+Participant by Borrower, Transaction by Check Out Trans, and Item by Book (Figure 5-24). 
+Technically speaking, each of these replacements is simply a pattern customized to the 
+problem at hand. We also then add the Transaction Line Item class that we had missed in 
+the original structural model.
+Th e seventh step is to review the current state of the structural model. Needless to say, the 
+CRC card version and the class diagram version are no longer in agreement with each other. 
+We return to this step in the next section of the chapter.
+194 Chapter 5 Structural Modeling
+VERIFYING AND VALIDATING THE STRUCTURAL MODEL17
+Before we move on to creating behavioral models (see Chapter 6) of the problem domain, 
+we need to verify and validate the structural model. In the previous chapter, we introduced 
+the notion of walkthroughs as a way to verify and validate business processes and functional 
+models. In this chapter, we combine walkthroughs with the power of role-playing as a way 
+to more completely verify and validate the structural model that will underlie the business 
+processes and functional models. In fact, all of the object identifi cation approaches described 
+in this chapter can be viewed as a way to test the fi delity of the structural model. Because we 
+have already introduced the idea of role-playing the CRC cards and object identifi cation, in 
+this section we focus on performing walkthroughs.
+In this case, the verifi cation and validation of the structural model are accomplished 
+during a formal review meeting using a walkthrough approach in which an analyst presents 
+the model to a team of developers and users. Th e analyst walks through the model, explaining 
+each part of the model and all the reasoning behind the decision to include each of the classes 
+in the structural model. Th is explanation includes justifi cations for the attributes, operations, 
+and relationships associated with the classes. Each class should be linked back to at least one 
+use case; otherwise, the purpose of including the class in the structural model will not be 
+17 Th e material in this section has been adapted from E. Yourdon, Modern Structured Analysis (Englewood Cliff s, 
+NJ: Prentice Hall, 1989).
+FIGURE 5-24  Class Diagram with Incorporated Pattern for the Library Book Collection System
+Check Out Trans Transaction Line Item Book
+Check Out Desk
+Storage
+Book Location
+InterLibrary Loan System Library
+Book Collection
+Student
+Borrower
+Faculty/Staff Guest
+Librarian
+1..1 0..* 0..* 1..1
+1..1
+0..*
+0..*
+1..1
+1..* 1..1
+1
+*
+Verifying and Validating the Structural Model  195
+understood. Also including people outside the development team who produced the model 
+can bring a fresh perspective to the model and uncover missing objects.
+Previously, we suggested three representations that could be used for structural modeling: CRC cards, class diagrams, and object diagrams. Because an object diagram is simply 
+an instantiation of some part of a class diagram, we limit our discussion to CRC cards and 
+class diagrams. Similar to how we verifi ed and validated the business process and functional models in the last chapter, we provide a set of rules that will test the consistency 
+within the structural models. For example purposes, we use the appointment problem 
+described in Chapter 4 and in this chapter. An example of the CRC card for the old patient 
+class is shown in Figure 5-6, and the associated class diagram is portrayed in Figure 5-7.
+First, every CRC card should be associated with a class on the class diagram, and vice 
+versa. In the appointment example, the Old Patient class represented by the CRC card does 
+not seem to be included on the class diagram. However, there is a Patient class on the class 
+diagram (see Figures 5-6 and 5-7). Th e Old Patient CRC card most likely should be changed 
+to simply Patient.
+Second, the responsibilities listed on the front of the CRC card must be included as 
+operations in a class on a class diagram, and vice versa. Th e make appointment responsibility on the new Patient CRC card also appears as the make appointment() operation in the 
+Patient class on the class diagram. Every responsibility and operation must be checked.
+Th ird, collaborators on the front of the CRC card imply some type of relationship on 
+the back of the CRC card and some type of association that is connected to the associated 
+class on the class diagram. Th e appointment collaborator on the front of the CRC card also 
+appears as another association on the back of the CRC card and as an association on the 
+class diagram that connects the Patient class with the Appointment class.
+Fourth, attributes listed on the back of the CRC card must be included as attributes in 
+a class on a class diagram, and vice versa. For example, the amount attribute on the new 
+Patient CRC card is included in the attribute list of the Patient class on the class diagram.
+Fift h, the object type of the attributes listed on the back of the CRC card and with the 
+attributes in the attribute list of the class on a class diagram implies an association from the 
+class to the class of the object type. For example, technically speaking, the amount attribute 
+implies an association with the double type. However, simple types such as int and double 
+are never shown on a class diagram. Furthermore, depending on the problem domain, object 
+types such as Person, Address, or Date might not be explicitly shown either. However, if we 
+know that messages are being sent to instances of those object types, we probably should 
+include these implied associations as relationships.
+Sixth, the relationships included on the back of the CRC card must be portrayed using 
+the appropriate notation on the class diagram. For example in Figure 5-6, instances of the 
+Patient class are a-kind-of Person, it has instances of the Medical History class as part of it, 
+and it has an association with instances of the Appointment class. Th us, the association from 
+the Patient class to the Person class should indicate that the Person class is a generalization of 
+its subclasses, including the Patient class; the association from the Patient class to the Medical 
+History class should be in the form of an aggregation association (a white diamond); and the 
+association between instances of the Patient class and instances of the Appointment class 
+should be a simple association. However, when we review the class diagram in Figure 5-7, 
+this is not what we fi nd. If you recall, we included in the class diagram the transaction pattern 
+portrayed in Figure 5-4. When we did this, many changes were made to the classes contained 
+in the class diagram. All of these changes should have been cascaded back through all of 
+the CRC cards. In this case, the CRC card for the Patient class should show that a Patient is 
+a-kind-of Participant (not Person) and that the relationship from Patient to Medical History 
+should be a simple association (see Figure 5-25).
+196 Chapter 5 Structural Modeling
+FIGURE 5-25
+Patient CRC Card
+Front:
+Class Name: Patient ID: 3
+Medical history
+Make appointment Appointment
+Change status
+Calculate last visit
+Provide medical history
+Responsibilities
+Description: An individual who needs to receive or has received Associated Use Cases: 2
+ medical attention
+Type: Concrete, Domain
+Collaborators
+Back:
+Attributes: 
+Insurance carrier (text)
+Amount (double)
+Relationships: 
+Generalization (a-kind-of):
+Aggregation (has-parts):
+Other Associations: Appointment, Medical History
+Participant
+Seventh, an association class, such as the Treatment class in Figure 5-7, should be created 
+only if there is indeed some unique characteristic (attribute, operation, or relationship) about 
+the intersection of the connecting classes. If no unique characteristic exists, then the association class should be removed and only an association between the two connecting classes 
+should be displayed.
+Finally, as in the functional models, specifi c representation rules must be enforced. For 
+example, a class cannot be a subclass of itself. Th e Patient CRC card cannot list Patient with 
+the generalization relationships on the back of the CRC card, nor can a generalization relationship be drawn from the Patient class to itself. Again, all the detailed restrictions for each 
+representation are beyond the scope of this book.18 Figure 5-26 portrays the associations 
+among the structural models.
+18 A good reference for these types of restrictions is S.W. Ambler, Th e Elements of UML 2.0 Style (Cambridge, UK: 
+Cambridge University Press, 2005).
+Verifying and Validating the Structural Model  197
+Structural Models
+Including
+Contains Contains
+Contains
+Class Diagram
+Responsibilities
+Collaborators
+Association Aggregation
+Composition
+Attributes
+Classes
+Type
+CRC Cards
+Objects
+Object Diagram
+Contains
+Represents
+Associations/
+Relationships
+Have
+HasKinds
+Generalization
+Association Class
+HasKinds HasKinds
+AssociatedWith
+AssociatedWith
+AssociatedWith
+AssociatedWith
+Operations
+InstanceOf
+FIGURE 5-26  Interrelationships among Structural Models
+APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+ In Chapter 4, you learned how the functional models were developed in an iterative 
+manner. Aft er creating the functional model for the Mobile Scheduling (Version 1) of 
+the Integrated Health Clinic Delivery System, the team had a good understanding of the 
+business processes. Now it is time to identify the key data and to develop the structural 
+model of the objects that support those business processes. Structural modeling for 
+Mobile Scheduling (Version 1) involves creating, verifying, and validating CRC cards, 
+class diagram, and object diagrams.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+198 Chapter 5 Structural Modeling
+CHAPTER REVIEW 
+Aft er reading and studying this chapter, you should be able to:
+ Describe the purpose of a structural model.
+ Describe the diff erent elements of a structural model.
+ Explain the diff erence between abstract and concrete classes.
+ Describe the three general types of relationships typically used in a structural model.
+ Create a structural model using textual analysis of use-case descriptions, brainstorming, common object lists, 
+and patterns.
+ Explain the purpose of a CRC card in structural modeling.
+ Create a structural model using CRC cards.
+ Describe the diff erent elements of a CRC card.
+ Describe how to role-play CRC cards using use-case scenarios.
+ Describe the diff erent elements of a class diagram.
+ Describe the four basic operations that can be represented on a class diagram.
+ Explain the diff erences between the types of relationships supported on a class diagram.
+ Create a class diagram that represents a structural model.
+ Describe the diff erent elements of an object diagram.
+ Create an object diagram that represents an instantiation of a portion of a class diagram.
+ Verify and validate the evolving structural model using role-playing and walkthroughs.
+ Verify and validate the functional model by ensuring the consistency of the three structural representations: CRC 
+cards, class diagrams, and object diagrams.
+KEY TERMS
+A-kind-of
+A-part-of
+Abstract class
+Aggregation association
+Assemblies
+Association
+Association class
+Attribute
+Brainstorming
+Class
+Class diagram
+Client
+Collaboration
+Common object list
+Conceptual model
+Concrete class
+Constructor operation
+Contract
+Class–Responsibility–
+Collaboration (CRC)
+CRC cards
+Decomposition
+Derived attribute
+Doing responsibility
+Destructor operation
+Generalization 
+association
+Has-parts
+Incidents
+Instance
+Interactions
+Knowing responsibility
+Method
+Multiplicity
+Object
+Object diagram
+Operation
+Package
+Parts
+Pattern
+Private
+Protected
+Public
+Query operation
+Responsibility
+Role-playing
+Roles
+Server
+State
+Static model
+Static structure 
+diagram
+Structural model
+Subclass
+Substitutability
+Superclass
+SVDPI
+Tangible things
+Textual analysis
+Update operation
+View
+Visibility
+Wholes
+QUESTIONS
+1. Describe to a businessperson the multiplicity of a relationship between two classes.
+2. Why are assumptions important to a structural 
+model?
+3. What is an association class?
+4. Contrast the following sets of terms: object, class, 
+method, attribute, superclass, subclass, concrete class, 
+abstract class.
+5. Give three examples of derived attributes that may 
+exist on a class diagram. How would they be denoted 
+on the class diagram?
+Exercises  199
+EXERCISES
+A. Create a CRC card for each of the following classes:
+Movie (title, producer, length, director, genre)
+Ticket (price, adult or child, showtime, movie)
+Patron (name, adult or child, age)
+B. Create a class diagram based on the CRC cards you 
+created for exercise A.
+C. Create a CRC card for each of the following classes. 
+Consider that the entities represent a system for a 
+patient billing system. Include only the attributes that 
+would be appropriate for this context.
+Patient (age, name, hobbies, blood type, occupation, 
+insurance carrier, address, phone)
+Insurance carrier (name, number of patients on plan, 
+address, contact name, phone)
+Doctor (specialty, provider identifi cation number, 
+golf handicap, age, phone, name)
+D. Create a class diagram based on the CRC cards you 
+created for exercise C.
+E. Draw a class diagram for each of the following situations:
+1. Whenever new patients are seen for the fi rst time, 
+they complete a patient information form that asks 
+their name, address, phone number, and insurance 
+carrier, which are stored in the patient information 
+fi le. Patients can be signed up with only one carrier, 
+but they must be signed up to be seen by the doctor. 
+Each time a patient visits the doctor, an insurance 
+claim is sent to the carrier for payment. Th e claim 
+must contain information about the visit, such as 
+the date, purpose, and cost. It would be possible for 
+a patient to submit two claims on the same day.
+2. Th e state of Georgia is interested in designing a 
+system that will track its researchers. Information 
+of interest includes researcher name, title, position, 
+researcher’s university name, university location, university enrollment, and researcher’s research interests. Researchers are associated with one institution, 
+and each researcher has several research interests.
+3. A department store has a wedding registry. Th is 
+registry keeps information about the customer 
+(usually the bride), the products that the store 
+carries, and the products for which each customer 
+registers. Customers typically register for a large 
+number of products, and many customers register 
+for the same products.
+4. Jim Smith’s dealership sells Fords, Hondas, and 
+Toyotas. In order to get in touch with these manufacturers easily, the dealership keeps information about each of them. Th e dealership keeps 
+information about the models of cars from each 
+6. What are the diff erent types of visibility? How would 
+they be denoted on a class diagram?
+7. Draw the relationships that are described by the following business rules. Include the multiplicities for 
+each relationship.
+A patient must be assigned to only one doctor, and a 
+doctor can have one or many patients.
+An employee has one phone extension, and a unique 
+phone extension is assigned to an employee.
+A movie theater shows at least one movie, and a movie 
+can be shown at up to four other movie theaters 
+around town.
+A movie either has one star, two costars, or more than 
+ten people starring together. A star must be in at 
+least one movie.
+8. How do you designate the reading direction of a relationship on a class diagram?
+9. For what is an association class used in a class diagram? Give an example of an association class that 
+may be found in a class diagram that captures students 
+and the courses that they have taken.
+10. Give two examples of aggregation, generalization, and 
+association relationships. How is each type of association depicted on a class diagram?
+11. Identify the following operations as constructor, 
+query, or update. Which operations would not need 
+to be shown in the class rectangle?
+Calculate employee raise (raise percent)
+Calculate sick days ()
+Increment number of employee vacation days ()
+Locate employee name ()
+Place request for vacation (vacation day)
+Find employee address ()
+Insert employee ()
+Change employee address ()
+Insert spouse ()
+12. How are the diff erent structural models related, and how 
+does this aff ect verifi cation and validation of the model?
+200 Chapter 5 Structural Modeling
+manufacturer, including dealer price, model name, 
+and series (e.g., Honda, Civic, LX). Additionally, 
+the dealership also keeps all sales information, 
+including buyer’s name, address and phone number, 
+car purchased, and amount paid.
+F. Create object diagrams based on the class diagrams 
+you drew for exercise F.
+G. Examine the class diagrams that you created for exercise F. How would the models change (if at all) based 
+on these new assumptions?
+ 1. Two patients have the same fi rst and last names.
+ 2. Researchers can be associated with more than one 
+institution.
+ 3. Th e store would like to keep track of purchase 
+items.
+ 4. Many buyers have purchased multiple cars from 
+Jim over time because he is such a good dealer.
+H. Visit a website that allows customers to order a 
+product over the Web (e.g., Amazon.com). Create a 
+structural model (CRC cards and class diagram) that 
+the site must need to support its business process. 
+Include classes to show what they need information 
+about. Be sure to include the attributes and operations 
+to represent the type of information they use and create. Finally, draw relationships, making assumptions 
+about how the classes are related.
+I. Using the seven-step process described in this chapter, 
+create a structural model (CRC cards and class diagram) for exercise C in Chapter 4.
+J. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise J.
+K. Using the seven-step process described in this 
+chapter, create a structural model for exercise E in 
+Chapter 4.
+L. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise L.
+M. Using the seven-step process described in this 
+chapter, create a structural model for exercise G in 
+Chapter 4.
+N. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise N.
+O. Using the seven-step process described in this chapter, 
+create a structural model for exercise I in Chapter 4.
+P. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise P.
+Q. Using the seven-step process described in this chapter, 
+create a structural model for exercise L in Chapter 4.
+R. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise R.
+S. Using the seven-step process described in this 
+chapter, create a structural model for exercise O in 
+Chapter 4.
+T. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise T.
+U. Using the seven-step process described in this chapter, 
+create a structural model for exercise R in Chapter 4.
+V. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise V.
+W. Using the seven-step process described in this 
+chapter, create a structural model for exercise U in 
+Chapter 4.
+X. Perform a verifi cation and validation walkthrough for 
+the structural model created for exercise X.
+MINICASES
+1. West Star Marinas is a chain of twelve marinas that 
+off er lakeside service to boaters; service and repair of 
+boats, motors, and marine equipment; and sales of 
+boats, motors, and other marine accessories. Th e systems development project team at West Star Marinas 
+has been hard at work on a project that eventually 
+will link all the marina’s facilities into one unifi ed, 
+networked system.
+Th e project team has developed a use-case diagram 
+of the current system. Th is model has been carefully 
+checked. Last week, the team invited a number of 
+system users to role-play the various use cases, and 
+the use cases were refi ned to the users’ satisfaction. 
+Right now, the project manager feels confi dent that 
+the as-is system has been adequately represented in 
+the use-case diagram.
+Th e director of operations for West Star is the 
+sponsor of this project. He sat in on the role-playing 
+of the use cases and was very pleased by the thorough 
+job the team had done in developing the model. He 
+made it clear to you, the project manager, that he 
+was anxious to see your team begin work on the use 
+cases for the to-be system. He was a little skeptical 
+that it was necessary for your team to spend anytime modeling the current system in the fi rst place 
+but grudgingly admitted that the team really seemed 
+to understand the business aft er going through that 
+work.
+Th e methodology you are following, however, 
+specifi es that the team should now turn its attention 
+to developing the structural models for the as-is system. When you stated this to the project sponsor, he 
+seemed confused and a little irritated. “You are going 
+to spend even more time looking at the current system? I thought you were done with that! Why is this 
+necessary? I want to see some progress on the way 
+things will work in the future!”
+What is your response to the director of operations? 
+Why do we perform structural modeling? Is there any 
+benefi t to developing a structural model of the current 
+system at all? How do the use cases and use-case diagram help us develop the structural model?
+2. Holiday Travel Vehicles sells new recreational vehicles and travel trailers. When new vehicles arrive at 
+Holiday Travel Vehicles, a new vehicle record is created. Included in the new vehicle record are a vehicle 
+serial number, name, model, year, manufacturer, and 
+base cost.
+When a customer arrives at Holiday Travel Vehicles, he or she works with a salesperson to negotiate a 
+vehicle purchase. When a purchase has been agreed 
+upon, a sales invoice is completed by the salesperson. 
+Th e invoice summarizes the purchase, including full 
+customer information, information on the trade-in 
+vehicle (if any), the trade-in allowance, and information on the purchased vehicle. If the customer 
+requests dealer-installed options, they are listed on the 
+invoice as well. Th e invoice also summarizes the fi nal 
+negotiated price, plus any applicable taxes and license 
+fees. Th e transaction concludes with a customer signature on the sales invoice.
+ a. Identify the classes described in the preceding scenario 
+(you should fi nd six). Create CRC cards for each class.
+Customers are assigned a customer ID when they 
+make their fi rst purchase from Holiday Travel Vehicles. Name, address, and phone number are recorded 
+for the customer. Th e trade-in vehicle is described by a 
+serial number, make, model, and year. Dealer-installed 
+options are described by an option code, description, 
+and price.
+ b. Develop a list of attributes for each class. Place the 
+attributes onto the CRC cards.
+Each invoice lists just one customer. A person does 
+not become a customer until he or she purchases a 
+vehicle. Over time, a customer may purchase a number of vehicles from Holiday Travel Vehicles.
+Every invoice must be fi lled out by only one salesperson. A new salesperson might not have sold any 
+vehicles, but experienced salespeople have probably 
+sold many vehicles.
+Each invoice only lists one new vehicle. If a new 
+vehicle in inventory has not been sold, there will be no 
+invoice for it. Once the vehicle sells, there will be just 
+one invoice for it.
+A customer may decide to have no options added 
+to the vehicle or may choose to add many options. An 
+option may be listed on no invoices, or it may be listed 
+on many invoices.
+A customer may trade in no more than one vehicle 
+on a purchase of a new vehicle. Th e trade-in vehicle 
+may be sold to another customer who later trades it in 
+on another Holiday Travel vehicle.
+ c. Based on the preceding business rules in force at 
+Holiday Travel Vehicles and CRC cards, draw a 
+class diagram and document the relationships with 
+the appropriate multiplicities. Remember to update 
+the CRC cards

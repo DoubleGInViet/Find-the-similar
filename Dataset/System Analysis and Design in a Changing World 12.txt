@@ -1,0 +1,513 @@
+﻿data that fail any important validation check to prevent invalid information from entering 
+the system. However, this can be very diffi cult, and invalid data oft en slip past data-entry 
+operators and the users providing the information. It is up to the system to identify invalid 
+data and either make changes or notify someone who can resolve the information problem.
+Th ere are six diff erent types of validation checks: completeness check, format check, range 
+check, check digit check, consistency check, and database check (see Figure 10-13). Every system 
+should use at least one validation check on all entered data and, ideally, performs all appro priate checks where possible.
+Type of Box When to Use Notes
+Check box
+Presents a complete list of 
+choices, each with a square 
+box in front
+When several items can be 
+selected from a list of items
+Check boxes are not mutually exclusive.
+Do not use negatives for box labels.
+Check box labels should be placed in some logical order, 
+such as that defi ned by the business process, or failing that, 
+alphabetically or most commonly used fi rst.
+Use no more than ten check boxes for any particular set of 
+options. If you need more boxes, group them into subcat egories.
+Radio button
+Presents a complete list of 
+mutually exclusive choices, 
+each with a circle in front
+When only one item can be 
+selected from a set of mutually 
+exclusive items
+Use no more than six radio buttons in any one list; if you 
+need more, use a drop-down list box.
+If there are only two options, one check box is usually preferred 
+to two radio buttons, unless the options are not clear.
+Avoid placing radio buttons close to check boxes to prevent 
+confusion between different selection lists.
+On-screen list box
+Presents a list of choices in 
+a box
+Seldom or never—only if there 
+is insuffi cient room for check 
+boxes or radio buttons
+This type of box can permit only one item to be selected (in 
+which case it is an ugly version of radio buttons).
+This type of box can also permit many items to be selected 
+(in which case it is an ugly version of check boxes), but 
+users often fail to realize they can choose multiple items.
+This type of box permits the list of items to be scrolled, thus 
+reducing the amount of screen space needed.
+Drop-down list box
+Displays selected item in one line box that opens to reveal 
+list of choices
+When there is insuffi cient room 
+to display all choices
+This type of box acts like radio buttons but is more compact.
+This type of box hides choices from users until it is opened, 
+which can decrease ease of use; conversely, because it 
+shelters novice users from seldom-used choices, it can 
+improve ease of use.
+This type of box simplifi es design if the number of choices is 
+unclear, because it takes only one line when closed.
+Combo box
+A special type of drop-down 
+list box that permits uses to 
+type as well as scroll the list
+Shortcut for experienced users This type of box acts like drop-down list but is faster for 
+experienced users when the list of items is long.
+Slider
+Graphic scale with a sliding 
+pointer to select a number
+Entering an approximate 
+numeric value from a large 
+continuous scale
+The slider makes it diffi cult for the user to select a precise 
+number.
+Some sliders also include a number box to enable the user 
+to enter a specifi c number.
+FIGURE 10-12  Types of Selection Boxes
+392 Chapter 10 Human–Computer Interaction Layer Design
+OUTPUT DESIGN
+Outputs are what the system produces, whether on the screen, on paper, or in other media, 
+such as the Web. Outputs are perhaps the most visible part of any system because a primary 
+reason for using an information system is to access the information that it produces.
+Basic Principles
+Th e goal of the output mechanism is to present information to users so that they can accu rately understand it with the least eff ort. Th e fundamental principles for output design refl ect 
+how the outputs are used and ways to make it simpler for users to understand them.
+Type of Validation When to Use Notes
+Completeness check
+Ensures all required data have 
+been entered
+When several fi elds must be 
+entered before the form can 
+be processed
+If required information is missing, the form is returned to the 
+user unprocessed.
+Format check
+Ensures data are of the right 
+type (e.g., numeric) and in the 
+right format (e.g., month, day, 
+year)
+When fi elds are numeric or 
+contain coded data
+Ideally, numeric fi elds should not permit users to type text 
+data, but if this is not possible, the entered data must be 
+checked to ensure it is numeric.
+Some fi elds use special codes or formats (e.g., license plates 
+with three letters and three numbers) that must be checked.
+Range check
+Ensures numeric data are 
+within correct minimum and 
+maximum values
+With all numeric data, if 
+ possible
+A range check permits only numbers between correct values.
+Such a system can also be used to screen data for “reasona bleness”—e.g., rejecting birthdates prior to 1880 because 
+people do not live to be a great deal over 100 years old 
+(most likely, 1980 was intended).
+Check digit check
+Check digits are added to 
+numeric codes
+When numeric codes are used Check digits are numbers added to a code as a way of enabling 
+the system to quickly validate correctness. For example, U.S. 
+Social Security numbers and Canadian Social Insurance num bers assign only eight of the nine digits in the number. The 
+ninth number—the check digit—is calculated using a mathe matical formula from the fi rst eight numbers.
+When the identifi cation number is typed into a computer sys tem, the system uses the formula and compares the result 
+with the check digit. If the numbers don’t match, then an 
+error has occurred.
+Consistency checks
+Ensure combinations of data 
+are valid
+When data are related Data fi elds are often related. For example, someone’s birth year 
+should precede the year in which he or she was married.
+Although it is impossible for the system to know which 
+data are incorrect, it can report the error to the user for 
+ correction.
+Database checks
+Compare data against a data base (or fi le) to ensure they 
+are correct
+When data are available to be 
+checked
+Data are compared against information in a database (or fi le) 
+to ensure they are correct. For example, before an iden tifi cation number is accepted, the database is queried to 
+ensure that the number is valid.
+Because database checks are more expensive than the other 
+types of checks (they require the system to do more work), 
+most systems perform the other checks fi rst and perform 
+database checks only after the data have passed the previ ous checks.
+FIGURE 10-13  Types of Input Validation
+Output Design  393
+Understand Report Usage Th e fi rst principle in designing reports is to understand how 
+they are used. Reports can be used for many diff erent purposes. In some cases—but not 
+very oft en—reports are read cover to cover because all information is needed. In most 
+cases, reports are used to identify specifi c items or used as references to fi nd information, 
+so the order in which items are sorted on the report or grouped within categories is criti cal. Th is is particularly important for the design of electronic or Web-based reports. Web 
+reports that are intended to be read from start to fi nish should be presented in one long 
+scrollable page, whereas reports that are used primarily to fi nd specifi c information should 
+be broken into multiple pages, each with a separate link. Page numbers and the date on 
+which the report was prepared are also important for reference reports.
+Th e frequency of the report can also play an important role in its design and distribution.
+Real-time reports provide data that are accurate to the second or minute at which they were 
+produced (e.g., stock market quotes). Batch reports are those that report historical informa tion that may be months, days, or hours old, and they oft en provide additional information 
+beyond the reported information (e.g., totals, summaries, historical averages).
+There are no inherent advantages to real-time reports over batch reports. The only 
+advantages lie in the time value of the information. If the information in a report is time 
+critical (e.g., stock prices, air-traffic control information), then real-time reports have 
+value. This is particularly important because real-time reports are often expensive to pro duce; unless they offer some clear business value, they might not be worth the extra cost.
+Manage Information Load Most managers get too much information, not too little (i.e., the 
+information load that the manager must deal with is too great). Th e goal of a well-designed 
+report is to provide all the information needed to support the task for which it was designed. 
+Th is does not mean that the report needs to provide all the information available on the 
+ subject—just what the users decide they need in order to perform their jobs. In some cases, this 
+can result in the production of several diff erent reports on the same topics for the same users 
+because they are used in diff erent ways. Th is is not a bad design.
+For users in Westernized countries, the most important information should always be 
+presented fi rst in the top-left corner of the screen or paper report. Information should be 
+provided in a format that is usable without modifi cation. Th e user should not need to re-sort 
+the report’s information; instead critical information should be highlighted so that users can 
+fi nd it more easily amid a mass of data, or perform additional mathematical calculations.
+Minimize Bias No analyst sets out to design a biased report. Th e problem with bias is that 
+it can be very subtle; analysts can introduce it unintentionally. Bias can be introduced by the 
+way lists of data are sorted because entries that appear fi rst in a list can receive more atten tion than those later in the list. Data are oft en sorted in alphabetical order, making those 
+entries starting with the letter A more prominent. Data can be sorted in chronological order 
+(or reverse chronological order), placing more emphasis on older (or most recent) entries. 
+Data may be sorted by numeric value, placing more emphasis on higher or lower values. For 
+example, consider a monthly sales report by state. Should the report be listed in alphabetical 
+order by state name, in descending order by the amount sold, or in some other order (e.g., 
+geographic region)? Th ere are no easy answers to this, except to say that the order of pres entation should match the way the information is used.
+Graphical displays and reports can present particularly challenging design issues.13 Th e 
+scale on the axes in graphs is particularly subject to bias. For most types of graphs, the scale 
+should always begin at zero; otherwise, comparisons among values can be misleading. For 
+13 Two of the best books on the design of charts and graphical displays are by Edward R. Tuft e, Th e Visual Display 
+of Quantitative Information, Envisioning Information (Cheshire, CT: Graphics Press, 2001) and Visual Explanations: 
+Images and Quantities, Evidence and Narrative (Cheshire, CT: Graphics Press, 1997). Another good book is b Types of Inputs
+Each data item that has to be input is linked to a fi eld on the form into which its value is 
+typed. Each fi eld also has a fi eld label, which is the text beside, above, or below the fi eld that 
+tells the user what type of information belongs in the fi eld. Oft en the fi eld label is similar to 
+the name of the data element, but they do not have to have identical words. In some cases, a 
+fi eld displays a template over the entry box to show the user exactly how data should be typed. 
+Th ere are many diff erent types of inputs, in the same way that there are many diff erent types 
+of fi elds (see Figure 10-12).
+Text As the name suggests, a text box is used to enter text. Text boxes can be defi ned to have a 
+fi xed length or can be scrollable and can accept a virtually unlimited amount of text. In either 
+case, boxes can contain single or multiple lines of textual information. We never use a text 
+box if we can use a selection box.
+Text boxes should have fi eld labels placed to the left of the entry area, their size clearly 
+delimited by a box (or a set of underlines in a non-GUI interface). If there are multiple text 
+boxes, their fi eld labels and the left edges of their entry boxes should be aligned. Text boxes 
+should permit standard GUI functions, such as cut, copy, and paste.
+Numbers A number box is used to enter numbers. Some soft ware can automatically format 
+numbers as they are entered, so that 3452478 becomes $34,524.78. Dates are a special form 
+of numbers that sometimes have their own type of number box. Never use a number box if 
+you can use a selection box.
+Selection Box A selection box enables the user to select a value from a predefi ned list. Th e 
+items in the list should be arranged in some meaningful order, such as alphabetical for long 
+lists or in order of most frequently used. Th e default selection value should be chosen with 
+care. A selection box can be initialized as unselected. However, it is better to start with the 
+most commonly used item already selected.
+Input Design  391
+Input Validation
+All data entered into the system need to be validated to ensure their accuracy. Input validation
+(also called edit checks) can take many forms. Ideally, computer systems should not accept example, have sales increased by very much since year 1 (see Figure 10-14a and b)? Th e numbers in both charts are the same, but the visual images the two present are quite diff erent. A 
+glance at Figure 10-14a would suggest only minor changes, whereas a glance at Figure 10-14b 
+might suggest that there have been some signifi cant increases. In fact, sales have increased by 
+a total of 15 percent over fi ve years, or 3 percent per year. Figure 10-14a presents the most 
+accurate picture; Figure 10-14b is biased because the scale starts very close to the lowest value 
+in the graph and misleads the eye into inferring that there have been major changes. You 
+should also beware of the so-called 3D eff ects. For example, the pie charts in Figures 10-14c 
+and d represent the same data; in fact the data itself are constant. However, owing to the “3D” 
+pie chart, the slices nearer the front look bigger.
+Types of Outputs
+Th ere are many diff erent types of reports, such as detail reports, summary reports, exception reports, turnaround documents, and graphs (see Figure 10-15). Classifying reports is 
+ challenging because many reports have characteristics of several diff erent types. For example, 
+some detail reports also produce summary totals, making them summary reports.
+Media
+Many diff erent types of media are used to produce reports. Today, most organizations have 
+moved toward “printing” reports electronically. One popular format is Adobe’s pdf. Th ese 
+“reports” are stored in electronic format on fi le servers or Web servers so that users can 
+Sales
+120
+100
+80
+60
+40
+20
+0
+(a) Unbiased graph with scale starting at 0
+12 4 3 5 6 7 8 9 10
+Sales
+110
+106
+108
+104
+102
+100
+98
+96
+94
+(b) Biased graph with scale starting at 94
+12 4 3 5 6 7 8 9 10
+(c) Unbiased graph in 2D (d) Biased graph in 3D
+FIGURE 10-14  Bias in Graphs
+Mobile Computing and User Interface Design  395
+easily access them. Oft en the reports are available in more predesigned formats than their 
+paper-based counterparts because the cost of producing and storing diff erent formats is 
+minimal. Electronic reports also can be produced on demand as needed, and they enable 
+the user to more easily search for certain words. Furthermore, electronic reports can 
+provide a means of supporting ad hoc reports, where users customize the contents of the 
+report at the time the report is generated. Some users still print the electronic report on 
+their own printers, but the reduced cost of electronic delivery over distance and the ease of 
+enabling more users to access the reports than when they were only in paper form usually 
+off set the cost of local printing.
+MOBILE COMPUTING AND USER INTERFACE DESIGN14
+From a user interface design perspective, going mobile is both exciting and challenging. 
+Obviously, with today’s smartphones, such as the DroidTM or iPhoneTM, there are many possibilities. However, just because these phones have the ability to surf the Web doesn’t mean 
+Type of Report When to Use Notes
+Detail report
+Lists detailed information 
+about all the items requested
+When user needs full information about the items
+This report is usually produced only in response to a query 
+about items matching some criteria.
+This report is usually read cover to cover to aid understanding of one or more items in depth.
+Summary report
+Lists summary information 
+about all items
+When user needs brief information on many items
+This report is usually produced only in response to a query 
+about items matching some criteria, but it can be a complete database.
+This report is usually read for the purpose of comparing several items to each other.
+The order in which items are sorted is important.
+Turnaround document
+Outputs that “turn around” 
+and become inputs
+When a user (often a customer) 
+needs to return an output to 
+be processed
+Turnaround documents are a special type of report that are 
+both outputs and inputs. For example, most bills sent to 
+consumers (e.g., credit-card bills) provide information 
+about the total amount owed and also contain a form that 
+consumers fi ll in and return with payment.
+Graphs
+Charts used in addition to and 
+instead of tables of numbers
+When users need to compare 
+data among several items
+Well-done graphs help users compare two or more items or 
+understand how one has changed over time.
+Graphs are poor at helping users recognize precise numeric 
+values and should be replaced by or combined with tables 
+when precision is important.
+Bar charts tend to be better than tables of numbers or 
+other types of charts when it comes to comparing values 
+between items (but avoid three-dimensional charts that 
+make comparisons diffi cult).
+Line charts make it easier to compare values over time, 
+whereas scatter charts make it easier to fi nd clusters or 
+unusual data.
+Pie charts show proportions or the relative shares of a whole.
+FIGURE 10-15  Types of Reports
+14 Obviously, in a short section we cannot cover all of the issues related to developing mobile applications. For 
+anyone who is seriously considering developing mobile applications, we recommend that you begin by looking at 
+books that deal with the specifi c devices on which you will be deploying your application. For example, Donn Felker, 
+AndroidTM Application Development for DummiesTM (Hoboken, NJ: Wiley, 2011); Neal Goldstein and Tony Bove, 
+iPhoneTM Application Development All-In-One for DummiesTM (Hoboken, NJ: Wiley, 2010); Neal Goldstein and 
+Tony Bove, iPadTM Application Development for DummiesTM (Hoboken, NJ: Wiley, 2010); Chris Stevens, Designing 
+for the iPadTM: Building Applications that Sell (Chichester, UK: Wiley, 2011).
+396 Chapter 10 Human–Computer Interaction Layer Design
+that a simple Web interface is the answer. Th ese devices have limited screen space and have 
+capabilities, such as touch screens and haptic feedback (such as vibration or pulses), which 
+regular computers do not. Consequently, you really need to focus on designing the interface 
+for the device and not simply porting the Web interface over to it. Furthermore, you need 
+to realize that a tablet, such as the iPadTM, is not a big smartphone; it is in its own category 
+with its own challenges and capabilities. Consequently, you really need to design the interface for mobile devices from the ground up. In this section, we discuss some challenges and 
+provide some guidelines to develop eff ective mobile interfaces. However, before we begin, 
+you should realize that all of the material described previously is still applicable. It’s just that 
+when you are dealing with these devices, additional issues must be considered.
+Tidwell15 identifi es six challenges that a mobile user interface designer must face. Th e 
+screen of a phone is tiny. Th ere simply is not a lot of “real estate” available to use. Not only 
+are the screens tiny, but they come in diff erent sizes. What works on one screen might not 
+work on another screen. Some screens have haptic abilities: Th ey respond to touch and orientation, and in some case, they vibrate. Obviously, these abilities are not available on all mobile 
+devices. However, they do provide interesting possibilities for user interface design. Virtual 
+and actual physical keypads are tiny. Consequently, too much typing can be challenging 
+for the user to input the right information. People use their mobile devices, especially their 
+phones, in all kinds of environments. Th ey use them in dark places (like a poorly lit classroom). Th ey use them in bright sunlight. Th ey use them in quiet places (like the library or 
+movie theater) and they use them in noisy places (such as at a football game). Th ese devices 
+are simply used everywhere today. Because these devices are used everywhere, the users can be 
+easily distracted from the device. For example, have you ever texted someone when you aren’t 
+supposed to be using your phone, like during class? Or, what about out on a date? In other 
+words, users are typically multitasking while using their phone. Th ey do not want to spend a 
+lot of energy on trying to navigate your mobile site or app. Consequently, Krug’s three design 
+principles described earlier are very important, especially his fi rst one: Don’t make me think!
+Based on these challenges, Tidwell provides a set of suggestions that you should follow 
+in designing a user interface for these devices. First, given the mobile context, you really need 
+to focus on what the user needs and not what the user might want. In other words, you really 
+should go back to business process and functional modeling (Chapter 4). In this case, only 
+focus on the tasks that users need to perform when they are in the mobile context. Th is is 
+a good example of a nonfunctional requirement (mobile computing) aff ecting the possible 
+functional requirements.
+Second, if you are porting an application or website to a mobile device, remove all 
+“fl uff ” from the site: Strip the site down to its bare essentials. If the user needs access to 
+the full site, be sure to provide a link to it in an obvious location. Alternatively, you could 
+provide a complete mobile version of the application or website to the user. Obviously, 
+the design of the user interface will be diff erent, but the functionality should be the same.
+Th ird, whenever possible, take advantage of the unique capabilities built into these 
+devices. Some of the devices have GPS built in. Depending on your application, knowing 
+where the user is could change the results. In other cases, the device has an accelerometer that 
+allows the app to “know” the orientation of the device. Many of these devices have speech 
+recognition capabilities, cameras that can be used for scanning, touch screens that allow 
+sophisticated gestures to be used, and haptic feedback, such as bumps and vibrations. All of 
+these capabilities could prove useful in developing diff erent mobile applications.
+Fourth, when considering a phone, you tend to have a limited width from which to work. 
+Consequently, you should try to linearize the content of the application (see Figure 10-16). 
+15 Jenifer Tidwell, Designing Interfaces: Patterns for Eff ective Design, 2nd Ed. (Sebastopol, CA: O’Reilly, 2010).
+Mobile Computing and User Interface Design  397
+By that we mean, take advantage of vertical scrolling and try to 
+minimize, if not eliminate, horizontal scrolling. It is simply more 
+natural for users to scroll up and down instead of left to right on 
+these devices.
+Fift h, optimize your mobile application for the user. Th is 
+includes minimizing the number of times the device must interact with a server to download or upload information with a 
+server. Not everyone has access to 3G, alone true 4G, networks. 
+In many cases, uploading and downloading are still very slow. 
+Optimization also includes the user’s interaction with the device. 
+Instead of using a lot of typing, scrolling, and taps on a touch 
+screen, consider using the speech recognition capability. It’s a lot 
+easier to speak slowly to a smartphone than it is to have to type a 
+lot into a virtual or physical keyboard.
+Tidwell also provides a set of reusable patterns that have 
+been customized for mobile devices. Th ese include things such as 
+a vertical stack, fi lmstrip, and bottom navigation.16
+In addition to the general suggestions that Tidwell provides, the whole area of interaction 
+must be designed. With traditional GUI-based interfaces, the interactions tended to be limited 
+to typing on a keyboard; using a mouse to click, scroll, or zoom in an interface; or using a 
+combination of keyboard and the mouse to rotate part of the content in the interface. Overall, 
+it is a fairly limited set of interactions. However, with the new mobile devices that have speech 
+recognition, voice generation, touch screens, haptic feedback (via vibration), accelerometers 
+that allow the device to know its orientation, and cameras that can be used for scanning input, 
+the number of options for designing the navigation and input and output parts of the user 
+interface have increased substantially. From our perspective, we are just now detecting the tip 
+of the proverbial iceberg of possibilities with these devices. However, the general prototyping 
+approach suggested earlier in the chapter works. Just the number of options to consider has 
+increased substantially. 
+When it comes to the navigation part of the user interface, the primary additional option is 
+the use of the touchscreen.17 In fact, there is an entire vocabulary when it comes to the way users 
+interact with touchscreens. Today, the designer needs to consider tapping, pinching, spreading, 
+fl icking, scrolling (one-fi nger vs. two-fi nger), and dragging to name a few. For example:
+■ Tapping can be used to open or activate an app, to select an object in the interface, or 
+to stop an action, such as scrolling.
+■ Pinching is used to shrink or zoom out.
+■ Spreading is used to enlarge or zoom in.
+■ Flicking can be used to move an object or for interacting with a slider to scroll.
+■ Scrolling can be accomplished by using a single fi nger on a scroll bar or by using two 
+fi ngers on anywhere on the interface.
+■ Move an object on the screen by placing a fi nger on the object and dragging it 
+to another location. Th is is similar to using a mouse to drag an object to another 
+ location.
+Diff erent mobile devices may implement each of these slightly diff erently. Obviously, the number of choices to support navigation has greatly expanded.
+FIGURE 10-16
+Linearization 
+Example, Wiley 
+Business Study 
+Center, used with 
+ permission.
+16 Tidwell also suggests that the Design for Mobile (patterns.design4mobile.com) pattern library provides many good 
+patterns to use when developing mobile applications.
+17 A good reference to gestural design is Dan Saff er, Designing Gestural Interfaces (Sebastopol, CA: O’Reilly, 2008).
+398 Chapter 10 Human–Computer Interaction Layer Design
+For the input part of the user interface, the primary additional options to consider are the 
+use of the camera as a device to scan items; microphone as a speech input device; and accelerometer to detect acceleration, orientation, and vibrations. For example, the Amazon MobileTM
+and the eBay Mobile’s Red Laser Barcode & QR ScannerTM provide a means to easily scan a 
+barcode of a product and quickly look the product up online to provide all kinds of information 
+on the product. Google MapsTM supports a voice recognition interface to fi nd a location. Also, 
+there are numerous apps that use the accelerometer to detect acceleration and vibration (e.g., 
+Wavefront Labs’ Accelerometer Data ProTM) and to compute orientation (e.g., NH for Mobikats’ 
+Easy Spirit LevelTM). Furthermore, many games available on mobile devices use the accelerometer as an input device.
+Th e primary additional options to consider for the output part of the user interface 
+include voice generation and haptic feedback. For example, Google MapsTM and WazeTM
+support a voice generation capability that provides driving directions. Additionally, virtually all smartphones support a vibrate option when the phone rings and when alerts or text 
+messages arrive.
+SOCIAL MEDIA AND USER INTERFACE DESIGN18
+Given the impact that FacebookTM and TwitterTM, e.g., the Arab uprising, have had in 
+today’s world, developing applications for social media has obviously come to the forefront. In many ways, mobile computing and social media have grown up together. Like 
+mobile computing, each social media platform has its own capabilities and challenges. 
+Social media platforms range from sites that allow you to simply upload material to them, 
+such as FlickrTM and YouTubeTM, to sites that support a virtual existence in the metaverse, 
+such as Second LifeTM. During your career, you might need to develop applications for a 
+specifi c social media platform, such as FacebookTM or TwitterTM, or possibly develop your 
+own social media site.
+When developing your own social media presence, you must understand who is your 
+target audience. Is the audience employees of your fi rm, or is the audience outside of the fi rm? 
+In this section, we only focus on an external audience. Once you know who the audience is, 
+you need to know what they are saying about the fi rm. In many ways, social media is nothing 
+more than another channel for marketing the fi rm’s products and capabilities. Before you can 
+deploy a social media presence, you really need to understand what the users’ needs (desires) 
+are. In other words, back to requirements determination. In this case, the problem is that the 
+users are “out there” somewhere, so typical approaches to gathering requirements, such as 
+interviews and observation, don’t work. Instead, you need to hunt through the Web to root 
+out your requirements. Some of the more useful places to look are blogs or other social media 
+outlets that address issues that would be of interest to your fi rm. When all else fails, you can 
+always use a search engine such as GoogleTM. Regardless, you obviously have to understand 
+the functional requirements before you can design your social media presence.
+Once you understand your functional requirements, you need to determine what type 
+of social media presence is necessary to address the requirements eff ectively. Each social 
+media platform has its own niche. Consequently, you might need to deploy many diff erent 
+applications across diff erent platforms to eff ectively meet the fi rm’s social media presence 
+requirements. Also, you must look at your social media site as a means for your fi rm to 
+build and maintain a positive image or brand. Th erefore, the social media site must contain 
+material that your potential customers want to consume. You must remember that the 
+18 Much of the material in this section has been based upon material from Jenifer Tidwell, Designing Interfaces: 
+ Patterns for Eff ective Design, 2nd Ed. (Sebastopol, CA: O’Reilly, 2010).
+Social Media and User Interface Design  399
+underlying purpose of marketing is to “manufacture” wants and then “convert” the wants 
+into needs. Given that your social media site is eff ectively another marketing channel, your 
+site must be able to draw in new customers and to get current customers to regularly return. 
+In this section, we provide some general guidelines for developing your own social media 
+site so that both new customers visit and current customers return.19
+First, you really need to post to your site regularly. If the content of the site becomes 
+stagnant, no one will want to visit. The content of the site should contain a mixture of 
+media: videos, podcasts, sound clips, and so on. The site’s material should include a mixture of firm-driven material, material from customers, and links to relevant content that 
+is located on other sites. Also, be sure to include ways for visitors to join in a “conversation” with the firm, such as FacebookTM comments or TwitterTM Tweets.
+Second, make sure that you understand the difference between push and pull
+approaches. If the user must come to you to fi nd out something, then you are using a pullbased approach. On the other hand, if you put the information out to the user, then you 
+are using a push-based approach. When it comes to social media, you really need to use 
+a combination of the approaches. For example, in FacebookTM if someone posts on your 
+wall or sends you a request, FacebookTM will send you an e-mail message to try and entice 
+you back to the FacebookTM site. Th e act of posting to your site was a pull-based action, 
+and the e-mail message sent to you is a push-based action. In a nutshell, you want to focus 
+on more of a push-based approach. You want your content to get to your customers in 
+as an eff ective manner as possible. You don’t want them to have to come looking for you. 
+Encourage them to opt in for update notifi cations to come to them in a form that they 
+prefer. Some might prefer e-mail notifi cations, and others might prefer you post to their 
+FacebookTM or TwitterTM accounts. Also, be sure to include links to your social media sites 
+on your home page. But be sure not to overwhelm the customer. Not every customer wants 
+to know every tidbit regarding the fi rm. Only give the customer what the customer wants. 
+Remember, Krug’s fi rst principle: Don’t make me think! A corollary to this principle for 
+social media would be: Don’t make me work! Make it easy for the customer to fi nd only 
+what they want (or maybe what we want them to want).
+Th ird, be sure that your home page and your social media sites are all synced together 
+so that when one is updated, the other sites “know” about the update. Th is makes your job of 
+maintaining the diff erent sites much easier, and it allows your customers to have a consistent 
+experience across all sites. However, don’t overdo this. It is obvious that diff erent sites have 
+diff erent media and, potentially, diff erent audiences. You aren’t going to use FacebookTM in the 
+same way you would use TwitterTM, YouTubeTM, or a blog. Be sure to include crosslinks among 
+the diff erent sites. Th is enables your customer to easily navigate through your diff erent sites.
+Fourth, enable the customers to share the great content that you have created. You 
+can include buttons that allow them to email the content to their closest “friends” or other 
+followers in their own social network. You also should provide a means to gather feedback 
+from your customers regarding your content. One way is to include the ability for customers to make and shar voting or “like” mechanism to encourage the customer to become engaged with your site.
+Fift h, be sure to design your sites so that not only your customers can easily fi nd the 
+material for which they are searching, but also search engines can fi nd the material. Search 
+engines are at least as likely to bring new customers to your sites as other customers. Design 
+19 Two good books devoted to developing applications for social media in general are Erin Malone, Designing Social 
+Interfaces (Sebastopol, CA: O’Reilly, 2009) and Gavin Bell, Building Social Web Applications: Establishing Community 
+at the Heart of Your Site (Sebastopol, CA: O’Reilly, 2009). Th ere are a couple of books devoted to two specifi c social 

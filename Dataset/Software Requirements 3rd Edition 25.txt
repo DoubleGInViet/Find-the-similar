@@ -1,0 +1,264 @@
+﻿A mock-up doesn’t perform any useful work, although it looks as if it should. The simulation is often good enough to let the users judge whether any functionality is missing, wrong, or
+unnecessary. Some prototypes represent the developer’s concept of how a specific use case might be implemented. User evaluations of the prototype can point out alternative flows for the use case, missing interaction steps, additional exceptions, overlooked postconditions, and pertinent business rules.
+When working with a throwaway mock-up prototype, the user should focus on broad requirements and workflow issues without becoming distracted by the precise appearance of screen elements (Constantine 1998). Don’t worry at this stage about exactly where the screen elements will be positioned, fonts, colors, or graphics. The time to explore the specifics of user interface design is after you’ve clarified the requirements and determined the general structure of the interface. With an evolutionary mock-up, building in those refinements moves the user interface closer to being releasable.
+, implements a slice of application functionality
+from the user interface through all the technical services layers. A
+is supposed to work because it touches on all levels of the system implementation.
+Develop a proof of concept when you’re uncertain whether a proposed architectural approach is feasible and sound, or when you want to optimize algorithms, evaluate a proposed database schema, confirm the soundness of a cloud solution, or test critical timing requirements. To make the results meaningful, such prototypes are constructed by using production tools in a production-like operating environment. A proof of concept is also useful for gathering information to improve the team’s ability to estimate the effort involved in implementing a specific user story or block of functionality. Agile development projects sometimes refer to a proof-of-concept prototype as a “spike.”
+I once worked with a team that wanted to
+an application environment based on networked UNIX servers and workstations (Thompson and Wiegers 1995). A proof-of-concept prototype that implemented just a bit of the user interface client (on a mainframe) and the corresponding server functionality (on a UNIX workstation) allowed us to evaluate the communication components, performance, and reliability of our proposed architecture. The experiment was a success, as was the ultimate implementation based on that architecture.
+
+Throwaway and	prototypes
+Before constructing a prototype, make an explicit and well-communicated decision as to whether
+the prototype is exploratory only or will become part of the delivered product. B
+(Davis 1993). Because you’ll discard the prototype after it has served its purpose, build it as quickly and cheaply as you can. The more effort you invest in the prototype, the more reluctant the project participants are to discard it and the less time you will have available to build the real product.
+ 
+You don’t have to throw the prototype away if you see merit in keeping it for possible future use. However, it won’t be incorporated into the delivered product. For this reason, you might prefer to call it a nonreleasable prototype.
+When developers build a	, they ignore solid software construction techniques.
+A throwaway prototype emphasizes quick implementation and modification over robustness, reliability, performance, and long-term maintainability. For this reason, you must not allow low-quality code from a throwaway prototype to migrate into a production system. If you do, the users and the maintainers will suffer the consequences for the life of the product.
+A	when the team faces uncertainty, ambiguity,
+ 
+incompleteness, or vagueness in the requirements, or when system from the requirements alone. Resolving these issues
+ 
+
+oceeding with
+ 
+construction. A prototype that helps users and developers visualize how the requirements might be implemented can reveal gaps in the requirements. It also lets users judge whether the requirements will enable the necessary business processes.
+
+
+
+ 
+
+ 
+■	The conceptual requirements
+■	The information architecture or navigation design
+■	The high-resolution, detailed design of the pages
+The pages sketched when exploring conceptual requirements in the first type of wireframe need not resemble the final screens. This wireframe is useful for working with users to understand the types of activities they might want to perform at the screen. Paper prototypes can work fine for this purpose, as described later in this chapter. The second type of wireframe need not involve page designs at all. The analysis model called the dialog map, described in Chapter 12, “A picture is worth 1024 words,” is an excellent tool for exploring and iterating on page navigation for a website. The third type of wireframe gets into the details of what the final pages would look like.
+In contrast to a throwaway prototype, an evolutionary prototype provides a solid architectural foundation for building the product incrementally as the requirements become clear over time (McConnell 1996). Agile development provides an example of evolutionary prototyping. Agile teams construct the product through a series of iterations, using feedback on the early iterations to adjust the direction of future development cycles. This is the essence of evolutionary prototyping.
+ 
+In contrast to the quick-and-dirty nature of throwaway prototyping, an
+must be built with robust, production-quality code from the outset. Therefore, an
+ototype that simulates the same system
+capabilities. An e	t be designed for easy growth and frequent
+enhancement, so developers must emphasize software architecture and solid design principles. There’s no room for shortcuts in the quality of an evolutionary prototype.
+Think of the first iteration of an evolutionary prototype as a pilot release that implements an initial portion of the requirements. Lessons learned from user acceptance testing and initial usage lead
+to modifications in the next iteration. The full product is the culmination of a series of evolutionary prototyping cycles. Such prototypes quickly get useful functionality into the hands of the users.
+Evolutionary prototypes work well for applications that you know will grow over time, but that can be valuable to users without having all the planned functionality implemented. Agile projects often are planned such that they could stop development at the end of an iteration and still have a product that is useful for customers, even though it is incomplete.
+Evolutionary prototyping is well suited for web development projects. On one such project, my team created a series of four prototypes, based on requirements that we developed from a use case analysis. Several users evaluated each prototype, and we revised each one based on their responses to questions we posed. The revisions following the fourth prototype evaluation resulted in the production website.
+Figure 15-1 illustrates several possible ways to combine the various prototypes. For example, you can use the knowledge gained from a series of throwaway prototypes to refine the requirements, which you might then implement incrementally through an evolutionary prototyping sequence. An alternative path through Figure 15-1 uses a throwaway mock-up to clarify the requirements prior to finalizing the user interface design, while a concurrent proof-of-concept prototyping effort validates the architecture and core algorithms. What you cannot do successfully is turn the deliberately
+low quality of a throwaway prototype into the maintainable robustness that a production system demands. In addition, working prototypes that appear to get the job done for a handful of concurrent users likely won’t scale up to handle thousands of users without major architectural changes. Table 15-1 summarizes some typical applications of throwaway, evolutionary, mock-up, and proof-of-concept prototypes.
+TABLE 15-1 Typical applications of software prototypes
+
+	Throwaway	Evolutionary
+Mock-up	■	Clarify and refine user and functional requirements.
+■	Identify missing functionality.
+■	Explore user interface approaches.	■	Implement core user requirements.
+■	Implement additional user requirements based
+on priority.
+■	Implement and refine websites.
+■	Adapt system to rapidly changing business
+needs.
+Proof of concept	■	Demonstrate technical feasibility.
+■	Evaluate performance.
+■	Acquire knowledge to improve estimates
+for construction.	■	Implement and grow core multi-tier
+functionality and communication layers.
+■	Implement and optimize core algorithms.
+■	Test and tune performance.
+ 
+ 
+
+FIGURE 15-1 Several possible ways to incorporate prototyping into the software development process.
+
+
+
+ 
+You don’t always need an executable prototype to resolve requirements uncertainties. A paper prototype (sometimes called a low-fidelity prototype) is a cheap, fast, and low-tech way to explore how a portion of an implemented system might look (Rettig 1994). Paper prototypes help you test whether users and developers hold a shared understanding of the requirements. They let you take a tentative and low-risk step into a possible solution space prior to developing production code. A
+similar deliverable is called a storyboard (Leffingwell and Widrig 2000). Use low-fidelity prototypes to explore functionality and flow, and use high-fidelity prototypes to determine precise look and feel.
+
+. The designer sketches ideas of possible screens without worrying about exactly where the controls appear and what they look like. Users willingly provide feedback on designs drawn on a piece of paper, although they’re sometimes less eager to critique a lovely computer-based prototype
+ 
+in which it appears the developer has invested a lot of work. Developers, too, might resist making substantial changes in a carefully crafted electronic prototype.
+When a low-fidelity prototype is being evaluated, someone plays the role of the computer while a user walks through an evaluation scenario. The user initiates actions by saying aloud what she would like to do at a specific screen: “I’m going to select Print Preview from the File menu.” The person simulating the computer then displays the piece of paper or index card that represents the display that would appear when the user takes that action. The user can judge whether that is indeed the expected response and whether the item displayed contains the correct elements. If it’s wrong, you simply take a blank page or index card and try again.
+
+
+No matter how efficient your prototyping tools are, sketching displays on paper or a whiteboard is faster. Paper prototyping facilitates rapid iteration, and iteration is a key success factor in requirements development. Paper prototyping is an excellent technique for refining the requirements prior to designing detailed user interfaces, constructing an evolutionary prototype, or undertaking traditional design and construction activities. It also helps the development team manage customer expectations.
+Numerous tools are available if you decide to build an electronic throwaway prototype. They range from simple drawing tools such as Microsoft Visio and Microsoft PowerPoint to commercial prototyping tools and graphical user interface builders. Tools also are available specifically for creating website wireframes. Such tools will let you easily implement and modify user interface components, regardless of how inefficient the temporary code behind the interface is. Of course, if you’re building an evolutionary prototype, you must use production development tools from the outset. Because tools and their vendors change so rapidly, we won’t suggest specific ones here.
+Various tools are commercially available that let you simulate your application before you build it. Application simulation lets you quickly assemble screen layouts, user interface controls, navigation flow, and functionality into something that closely resembles the product you think you need to build. The ability to iterate on the simulation provides a valuable mechanism for interacting with user representatives to clarify requirements and revise your thinking about the solution.
+ 
+With any kind of prototyping—paper prototypes, wireframes, electronic prototypes, or simulations—the business analyst must be careful not get drawn into high-precision user interface designs prematurely. Prototype evaluators often offer feedback like “Can this text be a little darker red?”, “Let’s move this box up just a little,” or “I don’t like that font.” Unless the purpose of the prototype is to perform detailed screen or webpage design, those sorts of comments are just distractions. The color, font, and box positioning are immaterial if the application doesn’t properly support the users’ business tasks. Until you’re sure you have a rich understanding of the necessary functionality, focus the prototyping efforts on refining requirements, not visual designs.
+
+
+
+ 
+Figure 15-2 shows
+detailed user interface design with the help of a throwaway prototype. Each use case description includes a sequence of actor actions and system responses, which you can model by using a dialog map to depict a possible user interface architecture. A throwaway prototype or a wireframe
+elaborates the dialog elements into specific screens, menus, and dialog boxes. When users evaluate the prototype, their feedback might lead to changes in the use case descriptions (if, say, an alternative flow is discovered) or to changes in the dialog map. After the requirements are refined and the screens sketched, each user interface element can be optimized for usability. These activities don’t need to be performed strictly sequentially. Iterating on the use case, the dialog map, and the wireframe is the best way to quickly reach an acceptable and agreed-upon approach to user interface design.
+
+FIGURE 15-2 Activity sequence from use cases to user interface design using a throwaway prototype.
+
+This progressive refinement approach is cheaper than leaping directly from use case descriptions to a complete user interface implementation and then discovering major issues that necessitate extensive rework. You only need to perform as many steps in this sequence as are necessary to acceptably reduce the risk of going wrong on the user interface design. If your team is confident that they understand the requirements, that the requirements are sufficiently complete, and that they have a good handle on the right UI to build, then there’s little point in prototyping. Also, you can focus prototyping on user requirements that have a big risk of error or a big impact if there is
+a problem. One project performed an e-commerce website redesign for a major corporation that would be used by millions of users. The team prototyped the core elements of the website, including the online catalog, shopping cart, and checkout process, to make sure they got those right the first time. They spent less time exploring exception paths and less commonly used scenarios.
+ 
+To help make this whole process more tangible, let’s look at an actual example, a small website
+to promote a book, a memoir of life lessons called Pearls from Sand. The author of the book (Karl, actually) thought of several things that visitors should be able to do at the website, each of which is a use case. There are additional use cases for other user classes (Table 15-2).
+TABLE 15-2 Some use cases for PearlsFromSand.com
+
+User class	Use case
+Visitor	Get Information about the Book Get Information about the Author Read Sample Chapters
+Read the Blog
+Contact the Author
+Customer	Order a Product
+Download an Electronic Product
+Request Assistance with a Problem
+Administrator	Manage the Product List Issue a Refund to a Customer Manage the Email List
+The next step was to think of the pages the website should provide and imagine the navigation pathways between them. The final website might not implement all of these pages separately. Some pages might be condensed together; others might function as pop-ups or other modifications of
+a single page. Figure 15-3 illustrates a portion of a dialog map that illustrates a conceptual page architecture. Each box represents a page that would contribute to providing the services identified in the use cases. The arrows represent links to enable navigation from one page to another. While drawing a dialog map, you might discover new actions a user would want to perform. While working through a use case, you might find ways to simplify and streamline the user’s experience.
+
+FIGURE 15-3 Partial dialog map for PearlsFromSand.com.
+ 
+The next step was to construct a throwaway prototype or a wireframe of selected pages to work out the visual design approach. Each of these can be a hand-drawn sketch on paper (see the example in Figure 10-1 in Chapter 10, “Documenting the requirements”), a simple line drawing, or a mock-up created with a dedicated prototyping or visual design tool. The wireframe illustrated in Figure 15-4 was drawn by using PowerPoint in just a few minutes. Such a simple diagram is a tool to work with user representatives to understand the broad strokes of what sort of page layout and cosmetic features would make the pages easy to understand and use.
+
+FIGURE 15-4 Sample wireframe of one page for PearlsFromSand.com.
+
+Finally, the fourth step illustrated in Figure 15-2 is to create a detailed user interface screen design.
+Figure 15-5 shows one final page from the PearlsFromSand.com website, the culmination of the requirements analysis and prototyping activities that came before. This iterative approach to user interface design leads to better results than diving immediately into high-resolution page design without having a clear understanding of what members of various user classes will want to do when they visit a website.
+ 
+ 
+
+FIGURE 15-5 A final implemented page from PearlsFromSand.com.
+
+
+ 
+Prototype evaluation
+Prototype evaluation is related to
+ 
+
+
+testing (Rubin and Chisnell 2008). You’ll learn more by
+ 
+watching users work with the prototype than just by asking them to tell you what they think of it. Watch where the user’s fingers or mouse pointer try to go instinctively. Spot places where the prototype conflicts with the behavior of other applications that the evaluators use. The
+might try incorrect keyboard shortcuts or have to “mouse around” hunting for the correct menu option. Look for the furrowed brow that indicates a puzzled user who can’t determine what to do next, how to navigate to a desired destination, or how to take a side trip to another part of the application. See if the prototype has any dead ends, as happens sometimes when a user submits a form on a website.
+Have the right people evaluate the prototype from the appropriate perspectives. Include members
+. When you present the prototype to the evaluators, stress that it addresses only a portion of the functionality; the rest will be implemented when the actual system is developed.
+ 
+ 
+To improve the evaluation of user interface prototypes, create scripts that guide the users through a series of operations and ask specific questions to elicit the information you seek. This supplements a general invitation to “tell me what you think of this prototype.” Derive the evaluation scripts from the use cases, user stories, or features that the prototype addresses. The script asks evaluators to perform specific tasks, working through the parts of the prototype that have the most uncertainty. At the end of each task, and possibly at intermediate points, the script presents specific task-related questions.
+
+the way you expected?
+■	What functionality is missing from the prototype?
+■	Can you think of any possible error conditions that the prototype doesn’t address?
+■	Are any unnecessary functions present?
+■	How logical and complete does the navigation seem to you?
+■	Are there ways to simplify any of the tasks that require too many interaction steps?
+■	Were you ever unsure of what to do next?
+Ask evaluators to share their thoughts aloud as they work with the prototype so that you understand what they’re thinking and can detect any issues that the prototype handles poorly. Create a nonjudgmental environment in which the evaluators feel free to express their thoughts, ideas, and concerns. Avoid coaching users on the “right” way to perform some function with the prototype.
+Document what you learn from the prototype evaluation. Use the information from a mock-up prototype to refine the requirements. If the evaluation led to some user-interface design decisions, such as the selection of specific interaction techniques, record those conclusions and how you arrived at them. Decisions that lack the accompanying thought processes tend to be revisited repeatedly.
+For a proof of concept, document the evaluations you performed and their results, culminating in the decisions you made about the technical approaches explored. Resolve any conflicts between the specified requirements and the prototype.
+
+Risks of prototyping
+Creating even a simple prototype costs time and money. Although prototyping reduces the risk of software project failure, it poses its own risks, some of which are explained in this section.
+ 
+ 
+The biggest risk is that a stakeholder will see a running	and conclude that the
+product is nearly completed. “Wow, it looks like you’re almost done!” says the enthusiastic prototype evaluator. “This looks great. Can you just finish this up and give it to me?”
+In a word: NO! A throwaway prototype is never intended for production use, no matter how much it looks like the real thing. It is merely a model, a simulation, an experiment. Unless there’s a compelling business motivation to achieve a marketplace presence immediately (and management accepts the resulting high maintenance burden and risk of annoyed users), resist the pressure to deliver a throwaway prototype. Delivering this prototype will likely delay the project’s completion because the design and code were intentionally created without regard to quality or durability.
+Expectation management is a key to successful prototyping. Everyone who sees the prototype must understand its purpose and its limitations. Be clear about why you are creating specific kinds of prototypes, decide what their ultimate fate will be, and communicate this clearly to those stakeholders who are involved with them.
+Don’t let the fear of premature delivery pressure dissuade you from creating prototypes, though. Make it clear to those who see the prototype that you will not release it as production software. One way to control this risk is to use paper, rather than electronic, prototypes. No one who evaluates a paper prototype will think the product is nearly done! Another option is to use prototyping tools that are different from those used for actual development. No one will mistake a navigable PowerPoint mock-up or a simple wireframe for the real thing. This will help you resist pressure to “just finish up” the prototype and ship it. Leaving the prototype looking a bit rough and unpolished also mitigates this risk. Some of the many tools available for creating wireframes allow for the quick development
+of a high-fidelity user interface. This increases the likelihood of people expecting that the software is almost done, and it adds to the pressure to transform a throwaway prototype into an evolutionary one.
+One developer cobbled together an executable prototype of a user interface with a shocking pink motif. As he explained it, “When we showed the customers the first couple of iterations with this color scheme, NO ONE thought this was a close-to-finished product. I actually retained that abomination for an additional iteration just to avoid falling into some of these prototyping risk traps.”
+
+Distraction by details
+Another risk of prototyping is that users become fixated on details about how the user interface will look and operate. When working with real-looking prototypes, it’s easy for users to forget that they should be primarily concerned with conceptual issues at the requirements stage. Limit the prototype to the displays, functions, and navigation options that will let you clear up uncertain requirements.
+ 
+ 	 
+
+Unrealistic performance expectations
+A third risk is that users will infer the expected performance of the final product from the prototype’s performance. You won’t be evaluating a mock-up in the intended production environment, though. You might have built it using tools or languages that differ in efficiency from the production development tools, such as interpreted scripts versus compiled code. A proof-of-concept prototype might not use tuned algorithms, or it could lack security layers that will reduce the ultimate performance. If evaluators see the prototype respond instantaneously to a simulated database query using hard-coded sample query results, they might expect the same fabulous performance in the production software with an enormous distributed database. Consider building in time delays to more realistically simulate the expected behavior of the final product—and perhaps to make the prototype look even less ready for immediate delivery. You might put a message on the screen to clearly state that this is not necessarily representative of the final system.
+In agile development and other evolutionary prototyping situations, be sure to design a robust and extendable architecture and craft high-quality code from the beginning. You’re building production software, just a small portion at a time. You can tune up the design through refactoring in later iterations, but don’t substitute refactoring in the future for thinking about design today.
+
+Investing excessive effort in prototypes
+Finally, beware of prototyping activities that consume so much effort that the development team runs out of time and is forced to deliver the prototype as the product or to rush through a haphazard product implementation. This can happen when you are prototyping the whole solution rather than only the most uncertain, high-risk, or complex portions. Treat a prototype as an experiment. You’re testing the hypothesis that the requirements are sufficiently defined and the key human-computer
+ 
+interface and architectural issues are resolved so that design and construction can proceed. Do just enough prototyping to test the hypothesis, answer the questions, and refine the requirements.
+
+Prototyping success factors
+S
+ 
+
+ 
+■	Include prototyping tasks in your project plan. Schedule time and resources to develop, evaluate, and modify the prototypes.
+
+■
+: either discard (or archive) the prototype, retaining the knowledge it provided, or build upon it to grow it into the ultimate solution. Make sure those who build the prototypes and those who evaluate them understand these intentions.
+■	Plan to develop multiple prototypes. You’ll rarely get them right on the first try, which is the whole point of prototyping!
+■ Create throwaway prototypes as quickly and cheaply as possible. Invest the minimum amount of effort that will answer questions or resolve requirements uncertainties. Don’t try to perfect a throwaway prototype.
+■	Don’t include input data validations, defensive coding techniques, error-handling code, or extensive code documentation in a throwaway prototype. It’s an unnecessary investment of effort that you’re just going to discard.
+■	Don’t prototype requirements that you already understand, except to explore design alternatives.
+■ Use plausible data in prototype screen displays and reports. Evaluators can be distracted by unrealistic data and fail to focus on the prototype as a model of how the real system might look and behave.
+■	Don’t expect a prototype to replace written requirements. A lot of behind-the-scenes functionality is only implied by the prototype and should be documented in an SRS to make it complete, specific, and traceable. Screen images don’t give the details of data field definitions and validation criteria, relationsh
+
+ 
+
+Thoughtfully applied and skillfully executed, prototypes serve as a valuable tool to help with requirements elicitation, requirements validation, and that tricky translation from needs into solutions.
+ 
+   
+ 
+
+ 
+C HA P T E R 1 6
+First things first: Setting
+requirement priorities
+
+After most of the user requirements for the Chemical Tracking System were identified, the project manager, Dave, and the business analyst, Lori, met with two of the product champions. Tim represented the chemist community and Roxanne spoke for the chemical stockroom staff.
+Dave said, “Now that we have a general idea of the main capabilities you want, we need to think about allocating some of the user stories you’ve identified to the first few iterations. It’s important that we agree on where to start so you can begin getting some value from the system as quickly as possible. Let’s do a first-cut prioritization on these user stories so we know what’s most important to you. Then we can learn more about exactly what you expect from each of those initial capabilities.”
+Tim was puzzled. “Why do you need the requirements prioritized? They’re all important, or we
+wouldn’t have given them to you.”
+Lori, the BA, explained, “We know they’re all important, but we need to address the most urgent requirements in the first few iterations. We’re asking you to help us distinguish the requirements that must be included initially from those that can wait for later iterations. Can you think of certain functionality that would provide the greatest immediate value to chemists or other user classes?”
+“I know that the reports that the Health and Safety Department needs to generate for the government have to be available soon or the company will get in trouble,” Roxanne pointed out. “We can use our current inventory system for a few more months if we have to.”
+Tim added, “I promised the online catalog search function to the chemists as a way for this system to save them time. Can we please start on that right away? It doesn’t have to be perfect, but we want to get access to the catalogs as quickly as we can.”
+Tim and Roxanne realized that, because the project couldn’t deliver every desired feature at the same time, it would be better if everyone could agree on the set to implement first. They continued sorting their user stories into a top-priority category for early implementation and others that could wait a while.
+Few software projects deliver all the capabilities that all stakeholders want by the targeted initial delivery date. Every project with resource limitations needs to define the relative priorities of the requested product capabilities. Prioritization, also called requirements triage (Davis 2005), helps reveal competing goals, resolve conflicts, plan for staged or incremental deliveries, control scope creep,
+313
+ 
+and make the necessary trade-off decisions. This chapter discusses the importance of prioritizing requirements, describes several prioritization techniques, and presents a spreadsheet tool for prioritization analysis based on value, cost, and risk.
+
+Why prioritize requirements?
+
+. Establishing the relative priority of each product capability lets you plan construction to provide the highest value at the lowest cost. Because prioritization is relative, you can begin prioritization as soon as you discover your second requirement.
+Sometimes customers don’t like to prioritize requirements, thinking that they won’t ever get the ones that are low priority. Well, if you aren’t going to get everything you’d like, as is often the case, you should make sure that you do get the capabilities that are most important to achieving your business objectives. Sometimes developers don’t like to prioritize requirements because it gives the impression that they can’t do it all. The reality is that they can’t, at least not all at once. Prioritization helps the project deliver the maximum business value as quickly as possible within the project constraints.
+
+. Project teams can populate their product backlog with user stories, features, business processes, and defect stories (bugs awaiting correction). Customers prioritize the stories in the backlog and select which ones they’d like to have implemented in each development iteration. Developers estimate the effort involved with implementing each story and judge how many of these stories they can fit into each iteration, based on their empirically demonstrated delivery capacity as measured by the team’s velocity.
+ 
+. All projects should do this to ensure that the team is always working on those capabilities that will get useful software in the users’ hands as soon as possible.
+On every project, a project manager must balance the desired project scope against the constraints of schedule, budget, staff, and quality goals (Wiegers 1996). One way to accomplish this is to drop—or to defer to a later release—low-priority requirements when new, more essential requirements are accepted or when other project conditions change. That is, prioritization is a
+dynamic and ongoing process. If customers don’t distinguish their requirements by importance and urgency, project managers must make these decisions on their own. Not surprisingly, customers might not agree with a project manager’s priorities; therefore, customers must indicate which requirements are needed initially and which can wait. Establish priorities early in the project, when you have more flexibility for achieving a successful project outcome, and revisit them periodically.
+It’s difficult enough to get any one customer to decide which of his requirements are top priority. Achieving consensus among multiple customers with diverse expectations is even harder.
+ 
+People naturally have their own interests at heart and aren’t eager to compromise their needs for someone else’s benefit. However, contributing to requirements prioritization is one of the customer’s responsibilities in the customer-development partnership, as was discussed in Chapter 2, “Requirements from the customer’s perspective.” More than simply defining the sequence of requirements implementation, discussing priorities helps to clarify the customers’ expectations.
+
+Some prioritization pragmatics
+Even a medium-sized project can have dozens of user requirements and hundreds of functional requirements, too many to classify analytically and consistently.
+ 
+. Within a use case, some alternative flows could have a higher priority than others. You might decide to do an initial prioritization at the feature level and then to prioritize the functional requirements within certain features separately. This will help you to distinguish the core functionality from refinements that can be deferred or cut entirely. As was described in Chapter 5, “Establishing the business requirements,” feature prioritization feeds directly into scope and release planning. Don’t lose sight of the low-priority requirements, although there’s no point in analyzing them further just yet. Their priority might change later, and knowing about them now will help the developers plan for future enhancements.
+V
+. You really need one
+r when stakeholders can’t agree. A good starting point is for the prioritization participants to agree upon a set of criteria to use for judging whether one requirement has higher priority than another. The prioritization can include considerations of customer value, business value, business or technical risk, cost, difficulty of implementation, time to market, regulatory or policy compliance, competitive marketplace advantage, and contractual commitments (Gottesdiener 2005).
+
+■
+
+
+
+
+ 
+
+
+Customers place a high priority on those functions that provide the greatest business or usability benefit. However, after a developer points out the cost, difficulty, technical risk, or trade-offs associated with a specific requirement, the customers might conclude that it isn’t as essential as they first thought. The developer might also decide to implement certain lower-priority functions early on because of their effect on the system’s architecture, laying the foundation to implement future functionality efficiently without major restructuring. Some functionality must have high priority because it is required to meet regulatory demands for the application. As with all aspects of requirements development, the overarching business objectives that led to launching the project in the first place should drive priority decisions.
+Certain requirements must be implemented together or in a specific sequence. It makes no sense to implement a redo edit capability in release 1 but not implement the corresponding undo capability until some months later. Similarly, suppose you implement just the normal flow of a particular use case in release 1, deferring the lower-priority alternative flows to some later date. That’s fine, but you must also implement the corresponding exception handlers at the same time you implement each success flow. Otherwise, you could end up writing code to, say, accept credit card payments without checking to see if the card is valid, rejecting cards that were reported stolen, or handling other exceptions.
+
+Games people play with priorities
+The knee-jerk response to a request for customers to set priorities sometimes is, “I need all these features. Just make it happen.” They feel that every requirement should be ranked as high priority, and they might not recognize that prioritization will help to ensure the project’s success. Start by explaining that all things cannot be done simultaneously, so you want to make sure you work on the right things first. It can be difficult to persuade customers to discuss priorities if they know that low-priority requirements might never be implemented. One developer told me that it wasn’t politically acceptable in his company to say that a requirement had low priority. Therefore, the
+priority categories they adopted were “high,” “super-high,” and “incredibly high.” Another developer who was filling the BA role claimed that priorities weren’t necessary: if he wrote something in the SRS, he intended to build it. That doesn’t address the issue of when each piece of functionality gets built, though.
+I recently visited one company that had great difficulty getting their projects done on time.
+Although management claimed that there would be multiple releases of applications so lower-priority requirements could wait, in reality each project delivered just a single release. Consequently, the stakeholders all knew that they only had one shot to get all the functionality they needed. Every requirement, therefore, became high priority, overloading the team’s capacity to deliver.
+In reality, some system capabilities are more essential than others from the perspective of satisfying business objectives. This becomes apparent during the all-too-common “rapid descoping phase” late in the project, when nonessential features are jettisoned to ensure that the critical capabilities ship on schedule. At that point, people are clearly making priority decisions, but in a panicked state. Setting priorities early in the project and reassessing them in response to changing customer preferences, market conditions, and business events lets the team spend time wisely on high-value activities. Implementing most of a feature before you conclude that it isn’t necessary is wasteful and frustrating.

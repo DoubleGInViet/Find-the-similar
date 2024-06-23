@@ -1,0 +1,308 @@
+﻿Tracking requirements status
+“How are you coming on implementing that subsystem, Yvette?” asked the project manager, Dave. “Pretty good, Dave. I’m about 90 percent done.”
+Dave was puzzled. “Didn’t you say you were 90 percent done a couple of weeks ago?” he asked.
+Yvette replied, “Yes, I thought I was, but now I’m really 90 percent done.”
+Like nearly everyone, software developers are sometimes overly optimistic when they report how much of a task is complete. The common “90 percent done” syndrome doesn’t tell Dave much about how close Yvette really is to finishing the subsystem. But suppose Yvette had replied, “Pretty good, Dave. Of the 84 requirements for the subsystem, 61 are implemented and verified, 14 are implemented but not yet verified, and I haven’t implemented the other 9 yet.” Tracking the status of each functional requirement throughout development provides a more precise gauge of project progress.
+Status was one of the requirement attributes proposed in the previous section. Tracking
+status means comparing where you really are at a particular time against the expectation of what “complete” means for this development cycle. You might have planned to implement only certain flows of a use case in the current release, leaving full implementation for a future release. Monitor the status of just those functional requirements that were committed for the current release, because
+that’s the set that’s supposed to be 100 percent done before you declare success and ship the release.
+
+Table 27-1 lists several possible requirement statuses. Some practitioners add others, such as Designed (the design elements that address the functional requirement have been created and reviewed) and Delivered (the software containing the requirement is in the hands of the users, as for acceptance or beta testing). It’s valuable to keep a record of rejected requirements and the reasons they were rejected. Rejected requirements have a way of resurfacing later during development or on a future project. The Rejected status lets you keep a proposed requirement available for possible future reference without cluttering up a specific release’s set of committed requirements. You don’t need to monitor all of the possible statuses in Table 27-1; choose the ones that add value to your requirements activities.
+ 
+TABLE 27-1 Suggested requirement statuses
+
+Status	Definition
+Proposed	The requirement has been requested by an authorized source.
+In Progress	A business analyst is actively working on crafting the requirement.
+Drafted	The initial version of the requirement has been written.
+Approved	The requirement has been analyzed, its impact on the project has been estimated, and it has been allocated to the baseline for a specific release. The key stakeholders have agreed to incorporate the requirement, and the software development group has committed to implement it.
+Implemented	The code that implements the requirement has been designed, written, and unit tested. The requirement has been traced to the pertinent design and code elements. The software that implemented the requirement is now ready for testing, review, or other verification.
+Verified	The requirement has satisfied its acceptance criteria, meaning that the correct functioning of the implemented requirement has been confirmed. The requirement has been traced to pertinent tests. It is now considered complete.
+Deferred	An approved requirement is now planned for implementation in a later release.
+Deleted	An approved requirement has been removed from the baseline. Include an explanation of why and by whom the decision was made to delete it.
+Rejected	The requirement was proposed but was never approved and is not planned for implementation in any upcoming release. Include an explanation of why and by whom the decision was made to reject it.
+Classifying requirements into several status categories is more meaningful than trying to monitor the percent completion of each requirement or of the complete release baseline. Update a requirement’s status only when specified transition conditions are satisfied. Certain status changes
+also require updates to the requirements trace data to indicate which design, code, and test elements
+addressed the requirement, as illustrated in Table 29-1 in Chapter 29.
+Figure 27-2 illustrates how you can visually monitor the status of a set of requirements throughout a hypothetical 10-month project. It shows the percentage of all the system’s requirements having each status value at the end of each month. Tracking the distribution by percentages doesn’t
+show whether the number of requirements in the baseline is changing over time. The number of requirements increases as scope is added and decreases when functionality is removed from the baseline. The curves illustrate how the project is approaching its goal of complete verification of all approved requirements. A body of work is done when all requirements allocated to it have a status of Verified, Deleted, or Deferred.
+ 
+ 
+
+FIGURE 27-2 Tracking the distribution of requirements status throughout a project’s development cycle.
+
+
+Resolving requirements issues
+Numerous questions, decisions, and issues related to requirements will arise during the course of a project. Potential issues include items flagged as TBD, pending decisions, information that is needed, and conflicts awaiting resolution. It’s easy to lose sight of these open issues. Record issues in an issue- tracking tool so all affected stakeholders have access to them. Keep the issue-tracking and resolution process simple to ensure that nothing slips through the cracks. Some of the benefits of using an issue- tracking tool are:
+■	Issues from multiple requirements reviews are collected so that no issue ever gets lost.
+■	The project manager can easily see the current status of all issues.
+■	A single owner can be assigned to each issue.
+■	The history of discussion around an issue can be retained.
+■	The team can begin development earlier with a known set of open issues rather than having to wait until the SRS is complete.
+Resolve requirements issues so they don’t impede the timely baselining of a high-quality requirements set for your next release or iteration. A burndown chart that shows remaining issues and the rate at which they are being closed can help predict when all of the issues will be closed so you can accelerate issue resolution if necessary. (See “Managing requirements on agile projects”
+later in this chapter for a sample burndown chart.) Categorizing issues will help you determine which sections of requirements still need work. Few open issues on a section could mean either that the requirements haven’t been reviewed yet or that the open issues are mostly resolved.
+ 
+Nearly all of the defects logged early in a project are related to issues in the requirements, such as asking for clarification on a requirement, scope decisions, questions about development feasibility, and to-do items on the requirements themselves. All stakeholders can log questions as they review the requirements. Table 27-2 lists several common types of requirements issues that can arise.
+TABLE 27-2 Common types of requirements issues
+
+Issue type	Description
+Requirement question	Something isn’t understood or decided about a requirement.
+Missing requirement	Developers uncovered a missed requirement during design or implementation.
+Incorrect requirement	A requirement was wrong. It should be corrected or removed.
+Implementation question	As developers implement requirements, they have questions about how something
+should work or about design alternatives.
+Duplicate requirement	Two or more equivalent requirements are discovered. Delete all but one of them.
+Unneeded requirement	A requirement simply isn’t needed anymore.
+Bad things can happen if you don’t have an organized process for handling your requirements issues. On one project, a stakeholder mentioned very early on that we would handle something in “the portal.” This was the first I had heard of a portal as part of the solution, so I asked about it. The stakeholder assured me that the COTS package being acquired included a portal component that simply had to be configured properly. We hadn’t included any time for portal requirements in our plan, so I thought we might have a gap. I asked a teammate to record an issue about the portal so we wouldn’t overlook that need. I left the project a few weeks later.
+As it turned out, my teammate jotted the portal issue on a whiteboard that was later erased; she didn’t record it in our issue-tracking tool. Six months into the project, our executive stakeholder came to me absolutely furious that no one had elicited requirements for the portal. I had to find out why we hadn’t developed portal requirements: we simply forgot about it. Recording the issue in a tracking tool would have kept us from scrambling at the last minute and avoided upsetting the customer.
+
+Measuring requirements effort
+As with requirements development, your project plan should include tasks and resources for the requirements management activities described in this chapter. If you track how much effort you spend on requirements development and management activities, you can evaluate whether it was too little, about right, or too much, and adjust your future planning accordingly. Karl Wiegers (2006) discusses measuring various other aspects of the requirements work on a project.
+Measuring effort requires a culture change and the individual discipline to record daily work
+activities (Wiegers 1996). Effort tracking isn’t as ti
+
+ 
+quirements-related activities.
+ 
+Note that work effort is not the same as elapsed calendar time. Tasks can be interrupted; they might require interactions with other people that lead to delays. The total effort for a task, in units of labor hours, might not change because of such factors (although frequent interruptions do reduce an individual’s productivity), but the calendar duration increases.
+When tracking requirements development effort, you might find it valuable to separate the time spent by people in the
+time will help you plan how much BA effort is needed on future projects (see Chapter 19, “Beyond requirements development,” for more about estimating BA time). Measuring the total effort spent on requirements activities by all stakeholders gives you a sense of the total cost of requirements activities on a project. Record the number of hours spent on requirements development activities such as the
+■	Planning requirements-related activities for the project
+■	Holding workshops and interviews, analyzing documents, and performing other elicitation
+activities
+■	Writing requirements specifications, creating analysis models, and prioritizing requirements
+■	Creating and evaluating prototypes intended to assist with requirements development
+■	Reviewing requirements and performing other validation activities
+Count the effort devoted to the following activities as requirements management effort:
+■	Configuring a requirements management tool for your project
+■	Submitting requirements changes and proposing new requirements
+■	Evaluating proposed changes, including performing impact analysis and making decisions
+■	Updating the requirements repository
+■	Communicating requirements changes to affected stakeholders
+■	Tracking and reporting requirements status
+■	Creating requirements trace information
+Remember, the time you spend on these requirements-related activities is an investment in project success, not just a cost. To justify the activities, compare this time investment with the time the team spends dealing with issues that arose because these things were not done—the cost of poor quality.
+
+Managing requirements on agile projects
+Agile projects accommodate change by building the product through a series of development iterations and managing a dynamic product backlog of work remaining to be done. As described in Chapter 2, the stakeholders reach agreement on the stories to be implemented in each iteration.
+New stories that customers add while an iteration is under way are prioritized against the remaining
+ 
+backlog contents and allocated to future iterations. New stories might displace lower-priority stories if the team wants to keep the original delivery schedule. The goal—as it should be for all projects—is to always be working on the highest-priority stories to deliver the maximum value to customers as quickly as possible. See Chapter 28 for more information about handling requirement changes on agile projects.
+Some agile teams, particularly large or distributed teams, use an agile project management tool to track the status of an iteration and the stories allocated to it. The stories and their associated acceptance criteria and acceptance tests might all be placed in a product backlog or user story–management tool. Story status can be monitored by using statuses analogous to those described earlier in Table 27-1 (Leffingwell 2011):
+■	In backlog (the story is not yet allocated to an iteration)
+■	Defined (details of the story were discussed and understood, and acceptance tests were written)
+■	In progress (the story is being implemented)
+■	Completed (the story is fully implemented)
+■	Accepted (acceptance tests were passed)
+■	Blocked (the developer is unable to proceed until something else is resolved)
+Agile projects typically monitor their progress with an iteration burndown chart (Cohn 2004; Cohn 2005). The team estimates the total amount of work to do on the project, often sized in units of story points, which are derived from an understanding of the user stories in the product backlog (Cohn 2005; Leffingwell 2011). The story point total is thus proportional to the amount of effort the team must expend to implement the requirements. The team allocates certain user stories to each iteration based on their priority and their estimated size in story points. The team’s past or average velocity dictates the number of story points the team plans to deliver in an iteration of a particular calendar duration.
+The team charts the story points remaining in the product backlog at the end of each iteration.
+This total will change as work is completed, as current stories are better understood and re-estimated, as new stories are added, and as customers remove pending work from the backlog. That is, rather than monitoring the count and status of individual functional requirements or features (which can come in a variety of sizes), the burndown chart shows the total work remaining to be done at a specific time.
+Figure 27-3 illustrates a burndown chart for a hypothetical project. Notice that the scope remaining, as measured in story points, actually increased in iterations 2, 3, and 5. This indicates that more new functionality was added to the backlog than was completed or removed during the course of the iteration. The burndown chart helps the team avoid the “90 percent done” syndrome by making visible the amount of work remaining, as opposed to the amount of work completed,
+which doesn’t reflect the inevitable scope increases. The slope of the burndown chart also reveals the projected end date for the project, the point at which no work remains in the backlog.
+ 
+ 
+
+FIGURE 27-3 Sample iteration burndown chart for monitoring the product backlog on an agile project.
+
+ 
+Why manage requirements?
+Whether your project is following a
+ 
+
+
+
+, one of the various agile life
+ 
+cycles, or any other approach, managing the requirements is an essential activity. Requirements management helps to ensure that the effort you invest in requirements development isn’t squandered. Effective requirements management reduces the expectation gap by keeping all project stakeholders informed about the current state of the requirements throughout the development process. It lets you know where you’re headed, how the trip is going, and when you’ve arrived at your destination.
+
+ 
+C HA P T E R 2 8
+Change happens
+
+“How’s your development work coming, Glenn?” asked Dave, the Chemical Tracking System’s project manager, during a status meeting.
+“I’m not as far along as I’d planned to be,” Glenn admitted. “I’m adding a new catalog query function for Harumi, and it’s taking a lot longer than I expected.”
+Dave was puzzled. “I don’t remember hearing about a new catalog query function. Did Harumi
+submit that request through the change process?”
+“No, she approached me directly with the suggestion,” said Glenn. “It seemed pretty simple, so I told her I’d work it in. It turned out not to be simple at all! Every time I think I’m done, I realize I missed a change needed in another file, so I have to fix that, rebuild the component, and test it again. I thought this would take about six hours, but I’ve spent almost three days on it so far. I know I’m holding up the next build. Should I finish adding this query function or go back to what I was working on before?”
+
+
+ 
+. Additionally, when developers who want to be accommodating agree to add enhancements that users request, requirements changes slip in through the back door instead of being approved by the right stakeholders. Such
+change is a common source of project chaos, schedule slips, quality problems, and hard feelings. This chapter describes both formal change control practices and how agile projects incorporate changes.
+
+ 
+Why manage changes?
+ 
+
+
+; in fact, it’s necessary. It’s virtually impossible to define all of
+ 
+a product’s requirements up front. The world changes as development progresses: new market opportunities arise, regulations and policies change, and business needs evolve. An effective software team can nimbly respond to necessary changes so that the product they build provides timely customer value. An organization that’s serious about managing its software projects must ensure that:
+■	Proposed requirements changes are thoughtfully evaluated before being committed to.
+■	Appropriate individuals make informed business decisions about requested changes.
+
+
+
+471
+ 
+■	Change activity is made visible to affected stakeholders.
+■	Approved changes are communicated to all affected participants.
+■	The project incorporates requirements changes in a consistent and effective fashion.
+But change always has a price. Revising a simple webpage might be quick and easy; making a change in an integrated circuit design can cost tens of thousands of dollars. Even a rejected change request consumes the time needed to submit, evaluate, and decide to reject it. Unless project stakeholders manage changes during development, they won’t really know what will be delivered, which ultimately leads to an expectation gap.
+Problems can also arise if a developer implements a requirement change directly in the code without communicating with other team members. The documented requirements then become an inaccurate representation of what the product does. The code can become brittle if changes are made without respecting the architecture and design structure. On one project, developers introduced new and modified functionality that the rest of the team didn’t discover until system testing. They didn’t expect that functionality, and they didn’t know how to test it. This required unplanned rework of test procedures and user documentation. Consistent change control practices help prevent such problems and the associated frustration, rework, and wasted time.
+
+
+
+Managing scope creep
+In an ideal world, you would document all of a new system’s requirements before beginning construction, and they’d remain stable throughout the development effort. This is the premise behind the pure waterfall development model, but it doesn’t work well in practice. At some point, you
+ 
+must freeze the requirements for a specific release or development iteration or you’ll never finish it. However, stifling change prematurely ignores the realities that customers aren’t always sure what they need, business needs change, and developers want to respond to those changes.
+Requirements growth includes new functionality and significant modifications that are presented after a set of requirements has been baselined (see Chapter 2, “Requirements from the customer’s perspective”). The longer a project goes on, the more growth it experiences. The requirements
+for software systems typically grow between 1 percent and 3 percent per calendar month (Jones 2006). Some requirements evolution is legitimate, unavoidable, and even advantageous. Scope creep, though, in which the project continuously incorporates more functionality without adjusting resources, schedules, or quality goals, is insidious. The problem is not that requirements change but that late changes can have a big impact on work already performed. If every proposed change is approved, it might appear to stakeholders that the software will never be delivered—and indeed, it might not.
+The first step in managing scope creep is to document the business objectives, product vision, project scope, and limitations of the new system, as described in Chapter 5, “Establishing the business requirements.” Evaluate every proposed requirement or feature against the business requirements. Engaging customers in elicitation reduces the number of requirements that are overlooked. Prototyping helps to control scope creep by helping developers and users share a clear understanding of user needs and prospective solutions. Using short development cycles to release a system incrementally provides frequent opportunities for adjustments.
+The most effective technique for controlling scope creep is the ability to say “no“ (Weinberg 1995). People don’t like to say “no,“ and development teams can receive intense pressure to always say “yes.“ Philosophies such as “the customer is always right” or “we will achieve total customer satisfaction” are fine in the abstract, but you pay a price for them. Ignoring the price doesn’t alter the fact that change is not free. The president of one software tool vendor is accustomed to hearing the development manager say “not now” when he suggests a new feature. “Not now” is more palatable than a simple rejection. It holds the promise of including the feature in a subsequent release.
+
+ 
+
+Change control policy
+Management should communicate a policy that states its expectations of how project teams will handle proposed changes in requirements and all other significant project artifacts. Policies are meaningful only if they are realistic, add value, and are enforced. The following change control policy statements can be helpful:
+■	All changes must follow the process. If a change request is not submitted in accordance with this process, it will not be considered.
+■	No design or implementation work other than feasibility exploration will be performed on unapproved changes.
+■	Simply requesting a change does not guarantee that it will be made. The project’s will decide which changes to implement.
+■	The contents of the change database must be visible to all project stakeholders.
+■	Impact analysis must be performed for every change.
+■	Every incorporated change must be traceable to an approved change request.
+■	The rationale behind every approval or rejection of a change request must be recorded.
+Of course, tiny changes will hardly affect the project, and big changes will have a significant impact. In practice, you might decide to leave certain requirements decisions to the developers’ discretion, but no change affecting more than one individual’s work should bypass your process. Include a “fast path” to expedite low-risk, low-investment change requests in a compressed decision cycle.
+
+Basic concepts of the change control process
+When performing a software process assessment, I asked a project team how they handled requirements changes. After an awkward silence, one person said, “Whenever the marketing representative wants to make a change, he asks Bruce or Robin because they always say ‘yes.’ The rest of us push back about changes.” This didn’t strike me as a great change process.
+A sensible change control process lets the project’s leaders make informed business decisions that will provide the greatest customer and business value while controlling the product’s life-cycle cost and the project’s schedule. The process lets you track the status of all proposed changes, and it helps ensure that suggested changes aren’t lost or overlooked. After you’ve baselined a set of requirements, you should follow this process for all proposed changes to that baseline.
+Stakeholders sometimes balk at being asked to follow a new process, but a change control process
+is not an obstacle to making necessary modifications. It’s a funneling and filtering mechanism to
+ 
+ensure that the project expeditiously incorporates the most appropriate changes. If a proposed change isn’t important enough for a stakeholder to take just a couple of minutes to submit it through a standard, simple channel, then it’s not worth considering for inclusion. Your change process should be well documented, as simple as possible, and—above all—effective.
+
+Managing requirements changes is similar to the process for collecting and making decisions about defect reports. The same tools can support both activities. Remember, though: a tool is not a substitute for a documented process, and neither one is a substitute for appropriate discussions between stakeholders. Regard both a tool and a written process as ways to support these critical conversations.
+When you need to incorporate a change, start at the highest level of abstraction that the change touches and cascade the change through affected system components. For example, a proposed change might affect a user requirement but not any business requirements. Modifying a high-level system requirement could affect numerous software and hardware requirements in multiple subsystems. Some changes pertain only to system internals, such as the way a communication service is implemented. These aren’t user-visible requirements changes, but rather design or code changes.
+
+A change control process description
+Figure 28-1 illustrates a template for a change control process description to handle requirements modifications. A sample change control process description is available for downloading from this book’s companion content website. If this template is too elaborate for your environment, scale it down for more informal projects. We find it helpful to include the following four components in all process descriptions:
+■	Entry criteria, the conditions that must be satisfied before the process execution can begin
+■	The various tasks involved in the process, the project role responsible for each task, and other
+participants in the task
+■	Steps to verify that the tasks were completed correctly
+■	Exit criteria, the conditions that indicate when the process is successfully completed
+The rest of this section describes the various sections in the change control process description. 1.	Purpose and scope
+Describe the purpose of this process and the organizational scope to which it applies. Indicate whether any specific kinds of changes are exempted, such as changes in interim work products. Define any terms that are necessary for understanding the rest of the document.
+
+2.	Roles and responsibilities
+List the project team roles that participate in the change control activities and describe their responsibilities. Table 28-1 suggests some pertinent roles; adapt these to each project situation. Different individuals need not be required for each role. For example, the CCB Chair might also receive submitted change requests. The same person can fill several—perhaps all—roles on a small project. As one experienced project manager put it, “What I find important is that the representation of the CCB needs to be able to speak to the needs of the diverse stakeholders, including the end users, the business, and the development community: do we need it, can we sell it, can we build it?”
+TABLE 28-1 Possible project roles in change-management activities
+
+Role	Description and responsibilities
+CCB Chair	Chairperson of the change control board; generally has final decision-making authority if the CCB does not reach agreement; identifies the Evaluator and the Modifier for each change request
+CCB	The group that decides to approve or reject proposed changes for a specific project
+Evaluator	Person whom the CCB Chair asks to analyze the impact of a proposed change
+Modifier	Person who is responsible for making changes in a work product in response to an approved change request
+Originator	Person who submits a new change request
+Request Receiver	Person who initially receives newly submitted change requests
+Verifier	Person who determines whether the change was made correctly
+ 
+3.	Change request status
+A change request passes through a defined life cycle of states. You can represent these states by using a state-transition diagram (see Chapter 12,” A picture is worth 1024 words”), as illustrated in Figure 28-2.
+Update a request’s status only when the specified transition criteria are met. For instance, you can set the state to “Change Made” after all affected work products have been modified to implement the change, whether that is just a single requirement statement or a set of related development work products.
+
+
+FIGURE 28-2 State-transition diagram for a change request.
+ 
+4.	Entry criteria
+The basic entry criterion for your change control process is that a change request with all the necessary information has been received through an approved channel. All potential originators should know how to submit a change request. Your change tool should assign a unique identifier to each request and route all changes to the Request Receiver.
+
+5.	Tasks
+This section of the process describes the tasks that are performed to handle a single change request.
+
+5.1	Evaluate change request
+Begin by evaluating the request for technical feasibility, cost, and alignment with the project’s business requirements and resource constraints. The CCB Chair might assign an Evaluator to perform impact analysis, risk and hazard analysis, or other assessments. (See the “Change impact analysis” section later in this chapter.) This ensures that the consequences of accepting the change are understood. The Evaluator and the CCB should also consider the business and technical implications, if any, of rejecting the request.
+
+5.2	Make change decision
+The appropriate decision makers, chartered as the CCB, then decide whether to approve or reject the change. The CCB gives each approved change a priority or target implementation date, or it allocates the change to a specific iteration or release. It might simply add a new requirement to the
+product backlog of pending work. The CCB updates the request’s status and notifies all affected team members.
+
+5.3	Implement the change
+The assigned Modifier (or Modifiers) updates the affected work products as necessary to fully implement the change. Use requirements trace information to find all the parts of the system that the change touches, and revise the trace information if necessary to reflect the changes made.
+
+5.4	Verify the change
+Requirements changes typically are verified through a peer review to ensure that modified deliverables correctly address all aspects of the change. Multiple team members might verify the changes made in various downstream work products through testing or review. After verification is complete, the Modifier stores updated work products in the appropriate locations per the project’s document and code management conventions.
+ 
+6.	Exit criteria
+Satisfying the following exit criteria indicates that an execution of your change control process was properly completed:
+q	The status of the request is Rejected, Closed, or Canceled.
+q	All modified work products are updated and stored in the correct locations.
+q	The relevant stakeholders have been notified of the change details and the status of the change request.
+
+7.	Change control status reporting
+Identify the charts and reports you’ll use to summarize the contents of the change database. These charts might show the number of change requests in each state as a function of time, or trends in the average time that a change request is unresolved. Describe the procedures for producing the charts and reports. The project manager uses these reports when tracking the project’s status.
+
+Appendix: Attributes stored for each request
+Table 28-2 lists some data attributes to consider storing for each change request. Some of these items are supplied by the Originator and some by the CCB. In your change control process, indicate which attributes are required and which are optional. Don’t define more attributes than you really need.
+Your change tool should handle some of these (ID, date submitted, date updated) automatically.
+
+TABLE 28-2 Suggested change request attributes
+
+Item	Description
+Change origin	Functional area that requested the change; possible groups include marketing, management,
+customer, development, and testing
+Change request ID	Unique identifier assigned to the request
+Change type	Type of change request, such as requirement change, proposed enhancement, or defect report
+Date submitted	Date the Originator submitted the change request
+Date updated	Date the change request was most recently modified
+Description	Free-form text description of the change being requested
+Implementation priority	The relative importance of making the change as determined by the CCB: low, medium, or high
+Modifier	Person who is primarily responsible for implementing the change
+Originator	Person who submitted this change request
+Originator priority	The relative importance of making the change from the Originator’s point of view: low, medium,
+or high
+Planned release	Product release or iteration for which an approved change is scheduled
+Project	Name of the project in which a change is being requested
+ 
+Item	Description
+Response	Free-form text of responses made to the change request; multiple responses can be made over
+time; do not change existing responses when entering a new one
+Status	The current status of the change request, selected from the options in Figure 28-2
+Title	One-line summary of the proposed change
+Verifier	Person who is responsible for determining whether the change was made correctly
+
+The change control board
+The change control board is the body of people—whether it is one individual or a diverse group—that decides which proposed changes and new requirements to accept, which to accept with revisions, and which to reject. The CCB also decides which reported defects to correct and when to correct them.
+Some CCBs are empowered to make decisions, whereas others can only make recommendations for management decision. Projects always have some de facto group that makes change decisions. Establishing a CCB formalizes this group’s composition and authority and defines its operating procedures.
+To some people, the term “change control board” conjures an image of wasteful bureaucratic overhead. Instead, think of the CCB as providing a valuable structure to help manage even a small project. On a small project, it makes sense to have only one or two people make the change
+decisions. Very large projects or programs might have several levels of CCBs, some responsible for business decisions, such as requirements changes, and some for technical changes. A large program that encompasses multiple projects would establish a program-level CCB and an individual CCB for each project. Each project CCB resolves issues and changes that affect only that project. Issues that affect multiple projects and changes that exceed a specified cost or schedule impact are escalated to the program-level CCB.
+
+CCB composition
+The CCB membership should represent all groups who need to participate in making decisions within the scope of that CCB’s authority. Consider selecting representatives from the following areas:
+■	Project or program management
+■	Business analysis or product management
+■	Development
+■	Testing or quality assurance
+■	Marketing, the business for which the application is being built, or customer representatives
+■	Technical support or help desk
+Only the subset of these people who need to make the decisions will be part of the CCB, although all stakeholders must be informed of decisions that affect their work. The CCB for a project with both
+ 
+software and hardware components might also include representatives from hardware engineering, systems engineering, and/or manufacturing. Keep the CCB small so the group can respond promptly and efficiently to change requests. Make sure the CCB members understand and accept their responsibilities. Invite other individuals to CCB meetings as necessary to ensure that the group has adequate technical and business information.
+
+CCB charter
+All of the project teams in an organization can follow the same change control process. However, their CCBs might function in different ways. Each project should create a brief charter (which could be part of the project management plan) that describes its CCB’s purpose, scope of authority, membership, operating procedures, and decision-making process (Sorensen 1999). A template for a CCB charter is available for downloading from this book’s companion content website. The charter should state the frequency of regularly scheduled CCB meetings and the conditions that trigger a special meeting or decision. The scope of the CCB’s authority indicates which decisions it can make and which ones it must escalate.
+
+Making decisions
+Each CCB needs to define its decision-making process, which should indicate:
+■	The number of CCB members or the key roles that constitute a decision-making quorum.
+■	The decision rules to be used (see Chapter 2 for more about decision rules).
+■	Whether the CCB Chair can overrule the CCB’s collective decision.
+■	Whether a higher level of CCB or management must ratify the group’s decision.
+The CCB balances the anticipated benefits against the estimated impact of accepting a proposed change. Benefits from improving the product could include financial savings, increased revenue, higher customer satisfaction, and competitive advantage. Possible negative impacts include increased development and support costs, delayed delivery, and degraded product quality.
+First thing first im the realest im so fancy baby I like sex talk
+
+Communicating status
+After the CCB makes its decision, a designated individual updates the request’s status in the change database. Some tools automatically generate an email message to communicate the new status to the Originator who proposed the change and to others affected by the change. If an email message is not generated automatically, inform the affected people so they can respond to the change.

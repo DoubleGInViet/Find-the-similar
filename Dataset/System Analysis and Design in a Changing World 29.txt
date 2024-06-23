@@ -1,0 +1,632 @@
+﻿A final part of a user story is the acceptance criteria. These indicate the 
+features that must be present for the user to be satisfied with the resulting implementation. They focus on functionality, not on features or user-interface design. 
+For example, the following are the acceptance criteria for the user story “bank 
+teller making a deposit”:
+1. Customer lookup must be by name or by account number.
+2. It would be nice to display photo and signature of customer.
+3. Any check hold requirements must be indicated.
+4. Current balance and new balance must be displayed.
+The programmer analyst uses the acceptance criteria to clarify the expectations of the user and to verify the user is looking at the user story at an 
+appropriate level of analysis. When the user story is implemented and refined, 
+the acceptance criteria are used for testing. Some consider it much like a contract between the developers and the users that limits controversy later in the 
+project. Figure 3-1 shows two user stories handwritten on index cards. The 
+first user story is for the bank teller example just discussed. The other user 
+story is for a shipping clerk responsible for shipping the items on a new order 
+for RMO.
+User Story
+As a teller, I want to make a deposit to quickly serve more customers.
+Acceptance Criteria:
+1. Customer lookup must be by name or by account number.
+2. Nice to display photo and signature of customer.
+3. Any check hold requirements must be indicated.
+4. Current balance and new balance must be displayed.
+User Story
+As a shipping clerk, I want to ship an order as accurately as possible as soon as the order
+details are available.
+Acceptance Criteria:
+1. Available order details must pop up on the screen when available.
+2. Portable display and scan device would cut time in half. 
+3. Sort the items by bin location. 
+4. Indicate number of items in stock for each item and mark backorder for those not
+available.
+5. Recommend shipper based on weight, size, and location.
+6. Print out shipping label for selected shipper.
+Figure 3-1 Two user stories with 
+acceptance criteria
+acceptance criteria features that must 
+be present in the final system for the user to 
+be satisfied
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 73
+A use case is an activity the system performs in response to a request by 
+a user. In Chapter 1, the RMO Tradeshow System example had a list of uses 
+that included Look up supplier, Enter/update product information, and Look 
+up product information. Two techniques are recommended for identifying use 
+cases: the user goal technique and the event decomposition technique. Use case 
+techniques place the responsibility for identifying and detailing the requirements on the system developers. The developers typically interview all types 
+of users and stakeholders, and then make and refine notes about each use case. 
+Some of the more complex use cases are modeled in more detail by the developers before turning the uses cases over to the programmer analysts for design 
+and implementation.
+■ Use Cases and the User Goal Technique
+“User stories will help analysts identify and define use cases, which are the primary focus of this chapter.”
+One approach to identifying use cases, called the user goal technique, is 
+to ask users to describe their goals for using the new or updated system. The 
+analyst first identifies all the users, categorizes them by user type, and then conducts a structured interview with each user. By focusing on one type of user at a 
+time, the analyst can systematically address the problem of identifying use cases.
+During the interview, the analyst guides the user to identify specific ways 
+the computer system could help the user perform his or her assigned tasks. 
+The overarching objective is to identify what the system could do to improve the 
+user’s performance and productivity. Subsidiary goals might include streamlining tasks the user currently performs, or enabling the user to perform new tasks 
+that are not possible or practical with the current system. As these goals are 
+uncovered and described, the analyst probes for specific requests from the user 
+and desired responses from the proposed system, which the analyst documents 
+as use cases. Although the users are the ultimate source of this information, they 
+often require guidance from the analyst to think beyond the boundaries of the 
+ways they currently approach their jobs.
+Consider various user goals for the RMO Consolidated Sales and 
+Marketing System (CSMS) introduced in Chapter 2. In an example like this, 
+the analyst might talk to the people in the Shipping Department to identify 
+their specific goals. These might include: Ship items, Track shipment, and 
+Create item return. The Marketing Department might identify goals like 
+Add/update product information, Add/update promotion, and Produce sales 
+history report. When considering the goals of the prospective customer, the 
+analyst might ask RMO users from different departments to think about the 
+system from the customer’s viewpoint and to imagine the value-added features 
+and functions that would make RMO appealing and useful. Additionally, focus 
+groups of actual customers might be formed to pinpoint their wants and needs. 
+Goals identified for potential customers might include Search for item, Fill 
+shopping cart, and View product rating and comments. Figure 3-2 lists a few 
+of the user goals for potential users of the CSMS. Note that for the Shipping 
+personnel, there is a use case named Ship order, which corresponds to the same 
+user story identified in Figure 3-1.
+The user goal technique for identifying use cases includes these steps:
+1. Identify all the potential users for the new system.
+2. Classify the potential users in terms of their functional role (e.g., shipping, 
+marketing, sales).
+3. Further classify potential users by organizational level (e.g., operational, 
+management, executive).
+use case an activity that the system 
+performs in response to a request by a user
+user goal technique a technique to 
+identify use cases by determining what 
+specific goals or objectives must be 
+completed by the system for the user
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+74 PART 2 ■ Systems Analysis Activities
+4. Interview each type of user to determine the specific goals they will have 
+when using the new system. Start with goals they currently have and then 
+get them to imagine innovative functions they think would add value. 
+Encourage them to state each goal in the imperative verb-noun form, such 
+as Add customer, Update order, and Produce month-end report.
+5. Create a list of preliminary use cases organized by type of user.
+6. Look for duplicates with similar use case names and resolve inconsistencies.
+7. Identify where different types of users need the same use cases.
+8. Review the completed list with each type of user and then with interested 
+stakeholders.
+■ Use Cases and Event Decomposition
+The most comprehensive technique for identifying use cases is the event decomposition technique. The event decomposition technique begins by identifying all the business events the information system responds to, with each event 
+leading to a use case. Starting with business events helps the analyst define each 
+use case at the appropriate level of detail. For example, one analyst might identify a use case as typing in a customer name on a form. A second analyst might 
+identify a use case as the entire process of adding a new customer. A third analyst might even define a use case as working with customers all day, which could 
+include adding new customers, updating customer records, deleting customers, 
+following up on late-paying customers, or contacting former customers. The 
+first example is too narrow to be useful. Conversely, working with customers all 
+day—the third example—is too broad to be useful. The second example defines 
+a complete user goal, which is the right level of analysis for a use case.
+The appropriate level of detail for identifying use cases is one that focuses on 
+elementary business processes (EBPs). An EBP is a task that is performed 
+by one person in one place in response to a business event, adds measurable 
+business value, and leaves the system and its data in a stable and consistent state. 
+In Figure 3-2, the RMO CSMS potential customer use cases Search for item, 
+Fill shopping cart, and View product rating and comments are good examples 
+of elementary business processes. Fill shopping cart is a response to the business 
+event “Customer wants to shop.” There is one person filling the cart, and there 
+is measurable value for the customer as items are added to the cart. When the 
+customer stops adding items and moves to another task, the system remembers 
+the current cart and is ready to switch to the new task.
+Note that each EBP (and thus each use case) occurs in response to a business event. An event occurs at a specific time and place, can be described, and 
+should be remembered by the system. Events drive or trigger all processing that 
+a system does, so listing events and analyzing them makes sense when you need 
+to define system requirements by identifying use cases.
+User User goal and resulting use case 
+Potential customer Search for item 
+Fill shopping cart 
+View product rating and comments
+Marketing manager Add/update product information
+Add/update promotion
+Produce sales history report 
+Shipping personnel Ship order
+Track shipment
+Create item return
+Figure 3-2 Identifying use cases 
+with the user goal technique
+event decomposition technique a technique to identify use cases by determining the 
+business events to which the system must 
+respond
+elementary business processes (EBP)
+the most fundamental task in a business 
+process, which leaves the system and data in 
+a quiescent state; usually performed by one 
+person in response to a business event
+event something that occurs at a specific 
+time and place, can be precisely identified, 
+and must be remembered by the system
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 75
+■ Event Decomposition Technique
+When defining the requirements for a system, it is useful to begin by asking, 
+“What business events occur that will require the system to respond?” By asking 
+about the events that affect the system, you direct your attention to the external 
+environment and look at the system as a black box. This means you don’t see 
+the underlying functions, just the input and results. This initial perspective helps 
+keep your focus on a high-level view of the system (looking at the scope), rather 
+than on the inner workings of the system. It also focuses your attention on the 
+system’s interfaces with outside people and other systems.
+Some events that are important to a retail store’s charge account 
+processing system are shown in Figure 3-3. The functional requirements are 
+defined by use cases based on six events. A customer triggers three events: 
+“customer pays a bill,” “customer makes a charge,” and “customer changes 
+address.” The system responds with three use cases: Record a payment, 
+Process a charge, or Maintain customer data. Three other events are triggered 
+inside the system by reaching a point in time: “time to send out monthly 
+statements,” “time to send late notices,” and “time to produce end-of-week 
+summary reports.” The system responds with use cases that carry out what 
+it is time to do: Produce monthly statements, Send late notices, and Produce 
+summary reports. Describing this system in terms of events keeps the focus of 
+the charge account system on the business requirements and the elementary 
+business processes. The result is a list of use cases triggered by business events 
+at the right level of analysis.
+Using events to define functional requirements was first emphasized for 
+real-time systems in the early 1980s. Real-time systems must react immediately 
+Charge account processing system
+Figure 3-3 Events in a charge account processing system that lead to use cases
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+76 PART 2 ■ Systems Analysis Activities
+to events in the environment. Early real-time systems include manufacturing 
+process control systems and avionics guidance systems. For example, in process 
+control, if a vat of chemicals is full, then the system needs to Turn off the fill 
+valve. The relevant event is “vat is full,” and the system needs to respond to that 
+event immediately. In an airplane guidance system, if the plane’s altitude drops 
+below 5,000 feet, then the system needs to Turn on the low-altitude alarm.
+Most information systems now being developed are so interactive that 
+they can be thought of as real-time systems. In fact, people expect a real-time 
+response to almost everything. Thus, use cases for business systems are often 
+identified by using the event decomposition technique.
+■ Types of Events
+There are three types of events to consider when using the event decomposition technique to identify use cases: external events, temporal events, and state 
+events (also called internal events). The analyst begins by trying to identify 
+and list as many of these events as possible, refining the list while talking with 
+system users.
+❚ External Events
+An external event is an event that occurs outside the system—usually initiated 
+by an external agent or actor. An external agent (or actor) is a person or organizational unit that supplies or receives data from the system. To identify the 
+key external events, the analyst first tries to identify all the external agents that 
+might want something from the system. A classic example of an external agent is 
+a customer. The customer may want to place an order for one or more products. 
+This event is of fundamental importance to an order-processing system, such as 
+the one needed by Ridgeline Mountain Outfitters. But other events are associated with a customer. Sometimes, a customer wants to return an ordered product, or a customer needs to pay the invoice for an order. External events such as 
+these define what the system needs to be able to do. They are events that lead to 
+important transactions that the system must process.
+When describing external events, it is important to name the event so the 
+external agent is clearly defined. The description should also include the action 
+that the external agent wants to pursue. Thus, the event “Customer places an 
+order” describes the external agent (a customer) and the action that the customer 
+wants to take (to place an order for some products) that directly affects the system.
+Important external events can also result from the wants and needs of people or organizational units inside the company (e.g., management requests for 
+information). A typical event in an order-processing system might be “Management wants to check order status.” Perhaps managers want to follow up on an 
+order for a key customer; the system must routinely provide that information.
+Another type of external event occurs when external entities provide new 
+information that the system simply needs to store for later use. For example, a 
+regular customer reports a change in address, phone, or employer. Usually, one 
+event for each type of external agent can be described to handle updates to data, 
+such as “Customer needs to update account information.” Figure 3-4 provides a 
+checklist to help in identifying external events.
+external event an event that occurs 
+outside the system, usually initiated by an 
+external agent
+actor an external agent; a person, group 
+or external system that interacts with the 
+system by supplying or receiving data
+External events to look for include:
+√ External agent wants something resulting in a transaction
+√ External agent wants some information
+√ Data changed and needs to be updated
+√ Management wants some information
+Figure 3-4 External event 
+checklist
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 77
+❚ Temporal Events
+A second type of event is a temporal event—an event that occurs as a result 
+of reaching a point in time. Many information systems produce outputs at 
+defined intervals, such as payroll systems that produce a paycheck every two 
+weeks (or each month). Sometimes, the outputs are reports that management 
+wants to receive regularly, such as monthly or weekly performance or exception reports. These events are different from external events in that the system 
+should automatically produce the required output without being told to do so. 
+In other words, no external agent or actor is making demands, but the system is 
+supposed to generate information or other outputs when they are needed.
+The analyst begins identifying temporal events by asking about specific 
+deadlines that the system must accommodate. What outputs are produced at 
+that deadline? What other processing might be required at that deadline? In a 
+payroll system, a temporal event might be named “Time to produce biweekly 
+payroll.” The event defining the need for a monthly summary report might be 
+named “Time to produce monthly sales summary report.” Figure 3-5 provides 
+a checklist to use in identifying temporal events.
+Temporal events do not have to occur on a fixed date. They can occur after 
+a defined period of time has elapsed. For example, a bill might be given to a customer when a sale has occurred. If the bill has not been paid within 15 days, the 
+system might send a late notice. The temporal event “Time to send late notice” 
+might be defined as a point 15 days after the billing date.
+❚ State Events
+A third type of event is a state event—an event that occurs when something happens inside the system that triggers the need for processing. State events are also 
+called internal events. For example, if the sale of a product results in an adjustment 
+to an inventory record, and the inventory in stock drops below a reorder point, it 
+is necessary to reorder. The state event might be named “Reorder point reached.” 
+Often, state events occur as a consequence of external events. Sometimes, they are 
+similar to temporal events, except the point in time cannot be defined.
+■ Identifying Events
+Defining the events that affect a system is not always easy, but some guidelines 
+can help an analyst think through the process.
+❚ Events Versus Prior Conditions and Responses
+It is sometimes difficult to distinguish between an event and part of a sequence 
+of prior conditions that leads up to the event. Consider a customer buying a 
+shirt from a retail store (see Figure 3-6). From the customer’s perspective, this 
+purchase involves a long sequence of events. The first event might be that the 
+customer wants to get dressed. Then, the customer wants to wear a striped shirt. 
+Next, the striped shirt appears to be worn out. The customer decides to drive 
+to the mall, and he decides to go into Sears. Then, he tries on a striped shirt. 
+At this point, the customer decides to leave Sears and go to Walmart to try on a 
+Temporal events to look for include:
+√ Internal outputs needed
+ √ Management reports (summary or exception)
+ √ Operational reports (detailed transactions)
+ √ Internal statements and documents (including payroll)
+√ External outputs needed
+ √ Statements, status reports, bills, reminders
+Figure 3-5 Temporal event 
+checklist
+temporal event an event that occurs as a 
+result of reaching a point in time
+state event an event that occurs when 
+something happens inside the system that 
+triggers some process
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+78 PART 2 ■ Systems Analysis Activities
+shirt. Finally, the customer wants to purchase the shirt. The analyst has to think 
+through such a sequence to arrive at the point where an event directly affects the 
+system. In this case, the system is not affected until the customer is in the store, 
+has a shirt in hand ready to purchase, and says “I want to buy this shirt.”
+In other situations, it is not easy to distinguish between an external event 
+and the system’s response. For example, when the customer buys the shirt, the 
+system requests a credit card number and then the customer supplies the credit 
+card. Is the act of supplying the credit card an event? In this case, no; it is part of 
+the interaction that occurs while completing the original transaction.
+The way to determine whether an occurrence is an event or whether it is 
+part of the interaction following the event is by asking if any long pauses or 
+intervals occur (i.e., can the system transaction be completed without interruption?). Or is the system at rest again, waiting for the next transaction? After the 
+customer wants to buy the shirt (the event), the process continues until the transaction is complete. There are no significant stops after the transaction begins. 
+After the transaction is complete, the system is at rest, waiting for the next 
+transaction to begin. The EBP concept defined earlier describes this as leaving 
+the system and its data in a consistent state.
+On the other hand, separate events occur when the customer buys the shirt by 
+using his store credit card account. When the customer pays the bill at the end of 
+the month, is the processing part of the interaction involving the purchase? In this 
+case, no; the system records the transaction and then does other things. It does not 
+halt all processes to wait for the payment. A separate event occurs later that results 
+in sending the customer a bill. (This is a temporal event: “Time to send monthly 
+bills.”) Eventually, another external event occurs (“Customer pays the bill”).
+❚ The Sequence of Events: Tracing a Transaction’s Life Cycle
+A useful method for identifying events is to trace the sequence of events that 
+might occur for a specific external agent or actor. In the case of Ridgeline 
+Mountain Outfitters’ new CSMS, the analyst can think through all the possible 
+transactions that might result from one new customer (see Figure 3-7). First, 
+the customer wants a catalog or asks for some information about item availability, resulting in a name and address being added to the database. Then, the 
+customer might want to place an order. Perhaps he or she will want to change 
+the order—for example, correcting the size of the shirt or buying another shirt. 
+Customer thinks
+about getting a
+new shirt
+Customer drives to
+the mall
+Customer tries on a
+shirt at Sears
+Customer goes to
+Walmart
+Customer tries on a
+shirt at Walmart
+Customer buys
+a shirt
+Figure 3-6 Sequence of actions 
+that lead up to only one event 
+affecting the system
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 79
+Next, the customer might want to check the status of an order to find out the 
+shipping date. Perhaps the customer has moved and wants an address change 
+recorded for future catalog mailings. Finally, the customer might want to return 
+an item. Thinking through this type of sequence can help identify events.
+❚ Technology-Dependent Events and System Controls
+Sometimes, the analyst is concerned about events that are important to the system, but do not directly concern users or transactions. Such events typically 
+involve design choices or system controls. During analysis, the analyst should 
+temporarily ignore these events. However, they are important later for design.
+Some examples of events that affect design issues include external events 
+that refer to the physical system, such as logging on. Although important to the 
+final operation of the system, such implementation details should be deferred. 
+At this stage, the analyst should focus only on the functional requirements (i.e., 
+the work that the system needs to complete). A functional requirements model 
+does not need to indicate how the system is actually implemented, so the model 
+should omit the implementation details.
+Most of these physical system events involve system controls, which are 
+checks or safety procedures put in place to protect the integrity of the system. For 
+example, logging on to a system is required because of system security controls. 
+Other controls protect the integrity of the database, such as backing up the data 
+every day. These controls are important to the system, and they will certainly be 
+added to the system during design. But spending time on system controls during 
+analysis only adds details to the requirements model that users are not typically 
+very concerned about; they trust the system developers to take care of such details.
+One way to help decide which events apply to system controls is to assume 
+that technology is perfect. The perfect technology assumption states that 
+events should be included during analysis only if the system would be required 
+to respond under perfect conditions (i.e., with equipment never breaking down, 
+capacity for processing and storage being unlimited, and people operating the 
+system being completely honest and never making mistakes). By pretending that 
+technology is perfect, analysts can eliminate events like “Time to back up the 
+database” because they can assume that the disk will never crash. Again, during 
+design, the project team adds these controls because technology is obviously not 
+perfect. Figure 3-8 lists some examples of events that can be deferred until the 
+developer is designing in system controls.
+Customer requests a
+catalog
+Customer wants to check
+item availability
+Customer places
+an order
+Customer changes or
+cancels an order
+Customer wants to
+check order status
+Customer updates
+account information
+Customer returns
+the item
+Figure 3-7 The sequence of “transactions” for one specific customer resulting in many events
+system controls checks or safety procedures to protect the integrity of the system 
+and the data
+perfect technology assumption the 
+assumption that a system runs under perfect 
+operating and technological conditions
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+80 PART 2 ■ Systems Analysis Activities
+■ Steps in the Event Decomposition Technique
+To summarize, the event decomposition technique for identifying use cases 
+includes these steps:
+1. Consider the external events in the system environment that require a 
+response from the system by using the checklist shown in Figure 3-4.
+2. For each external event, identify and name the use case that the system 
+requires.
+3. Consider the temporal events that require a response from the system by 
+using the checklist shown in Figure 3-5.
+4. For each temporal event, identify and name the use case that the system 
+requires and then establish the point of time that will trigger the use case.
+5. Consider the state events that the system might respond to, particularly 
+if it is a real-time system in which devices or internal state changes trigger 
+use cases.
+6. For each state event, identify and name the use case that the system requires 
+and then define the state change.
+7. When events and use cases are defined, check to see if they are required as 
+part of analysis by using the perfect technology assumption. Do not include 
+events that involve such system controls as login, logout, change password, 
+and backup or restore the database, as these are put in as system controls.
+■ Use Cases in the Ridgeline Mountain 
+Outfitters Case
+The RMO CSMS involves a variety of use cases, many of them just discussed. 
+The analysts working on the new system have used all three techniques for 
+identifying, validating, and refining use cases. The initial system vision (discussed in Chapter 2) identified four subsystems: the Sales subsystem, the Order 
+Fulfillment subsystem, the Customer Account subsystem, and the Marketing 
+subsystem. As work progressed, the analysts combined reports required by each 
+subsystem into a fifth subsystem called the Reporting subsystem. In a system 
+this size, the analyst should organize the use cases by subsystem to help trackwhich subsystem is responsible for each use case. The analyst should also identify which use cases involve more than one type of user.
+It is important to recognize that this list of uses cases will continue to evolve 
+as the project progresses. Additional use cases will be added, some might be 
+eliminated, and some might be combined. It is helpful to immediately describe 
+some of the details of each use case, preferably in one sentence. This brief 
+description is usually expanded to record more of the details when the developers are designing and implementing the use case (see Chapter 5). Some examples of brief use case descriptions are shown in Figure 3-9. Figures 3-10a
+through 3-10e show the initial list of use cases for the RMO CSMS along with 
+the users. Note that many use cases have more than one user.
+Sometimes, it is useful to create diagrams that visually depict use cases and 
+how they are organized. The use case diagram is the UML model used to 
+illustrate use cases and their relationship to users. Recall from Chapter 2 that 
+Unified Modeling Language (UML) is the standard set of diagrams and model 
+constructs used in system development. You saw an example of a use case diagram in Chapter 1. The notation is fairly simple.
+■ Use Cases, Actors, and Use Case Diagram Notation
+Implied in most use cases is a person who uses the system, whom we have 
+referred to up to this point as the user. In UML, that person is called an actor. 
+An actor is always outside the automation boundary of the system but may be 
+part of the manual portion of the system. Sometimes, the actor for a use case is 
+not a person; instead, it can be another system or device that receives services 
+from the system.
+Figure 3-11 shows the basic parts of a use case diagram. A simple stick 
+figure represents an actor. The stick figure is given a name that characterizes 
+the role the actor is playing. The use case itself is represented by an oval with 
+the name of the use case inside. The connecting line between the actor and 
+the use case indicates that the actor is involved with that use case. Finally, the 
+automation boundary, which defines the border between the computerized 
+portion of the application and the people operating the application, is shown 
+as a rectangle containing the use case. The actor’s communication with the use 
+case crosses the automation boundary. The example in Figure 3-11 shows the 
+actor as a shipping clerk and the use case Ship items.
+❚ Use Case Diagram Examples
+Figure 3-12 shows a more complete use case diagram for a subsystem of 
+the RMO CSMS: the Customer Account subsystem. The information in 
+Figure 3-10c is recast as a single use case diagram to visually highlight the uses 
+cases and actors for an individual subsystem. In this example, the customer, 
+customer service representative, and store sales representative are all allowed to 
+access the system directly. As indicated by the relationship lines, each actor can 
+access the use case Create/update customer account. The customer might do 
+Use case 
+Create customer account
+Look up customer
+Process account adjustment
+Brief use case description 
+User/actor enters new customer account data, and the system
+assigns account number, creates a customer record, and 
+creates an account record.
+User/actor enters customer account number, and the system
+retrieves and displays customer and account data.
+User/actor enters order number, and the system retrieves 
+customer and order data; actor enters adjustment amount, and
+the system creates a transaction record for the adjustment.
+Figure 3-9 Use cases and brief 
+descriptions
+brief use case description an often 
+one-sentence description that provides a 
+quick overview of a use case
+use case diagram the UML model used 
+to illustrate use cases and their relationships 
+to actors
+automation boundary the boundary 
+between the computerized portion of the 
+application and the users who operate the 
+application but are part of the total system
+© Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+82 PART 2 ■ Systems Analysis Activities
+CSMS Sales Subsystem
+Use cases Users/actors
+Search for item Customer, customer service representative, store
+sales representative
+View product comments and ratings Customer, customer service representative, store
+sales representative
+View accessory combinations Customer, customer service representative, store
+sales representative
+Fill shopping cart 
+Customer
+Customer
+Empty shopping cart Customer
+Check out shopping cart 
+Fill reserve cart Customer
+Empty reserve cart Customer
+Convert reserve cart Customer
+Store sales representative
+Create phone sale Customer service representative
+Create store sale 
+CSMS Order Fulfillment Subsystem
+Use cases Users/actors 
+Ship items Shipping 
+Manage shippers Shipping 
+Create backorder Shipping 
+Create item return 
+Shipping, customer, marketing 
+Shipping, customer 
+Look up order status Shipping, customer, management 
+Track shipment 
+Rate and comment on product Customer
+Provide suggestion Customer
+Review suggestions Management 
+Figure 3-10a Use cases 
+and actors for CSMS Sales 
+Subsystem
+Figure 3-10b Use cases 
+and actors for CSMS Order 
+Fulfillment Subsystem
+© Cengage Learning® © Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+CHAPTER 3 ■ Identifying User Stories and Use Cases 83
+CSMS Customer Account Subsystem
+Use cases Users/actors 
+Create/update customer account Customer, customer service representative, store
+sales representative
+Process account adjustment Management
+Send message Customer
+Browse messages
+Customer
+Customer
+Request friend linkup Customer
+Reply to linkup request 
+Send/receive partner credits Customer
+View “mountain bucks” Customer
+Transfer “mountain bucks” Customer
+CSMS Marketing Subsystem
+Use cases Users/actors 
+Add/update product information Merchandising, marketing
+Add/update promotion Marketing
+Add/update accessory package Merchandising
+Add/update business partner link Marketing
+CSMS Reporting Subsystem
+Use cases Users/actors 
+Produce daily transaction summary 
+report 
+Management
+Produce sales history report Management, marketing
+Produce sales trends report Marketing
+Produce customer usage report Marketing
+Produce shipment history report Management, shipping
+Produce promotion impact report Marketing
+Produce promotional partner activity
+report 
+Management, marketing
+Figure 3-10e Use cases and 
+actors for CSMS Reporting 
+Subsystem
+Figure 3-10c Use cases and 
+actors for CSMS Customer 
+Account Subsystem
+Figure 3-10d Use cases and 
+actors for CSMS Marketing 
+Subsystem
+© Cengage Learning® © Cengage Learning® © Cengage Learning®
+Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+84 PART 2 ■ Systems Analysis Activities
+Actor is a stick
+figure, usually
+meaning an
+actual person
+using the system
+Automation
+boundary
+Ship items
+Shipping clerk
+Connecting line
+to show which
+actors participate
+in use cases
+Figure 3-11 A simple use case 
+with an actor
+Create/update
+customer account
+Customer Account Subsystem
+All Actors
+Process account
+adjustment
+Send message
+Browse
+messages
+Request friend
+linkup
+Reply to friend
+linkup
+Send/receive
+partner credits
+View "mountain
+bucks"
+Transfer
+"mountain bucks"
+Customer Store sales
+representative
+Managem

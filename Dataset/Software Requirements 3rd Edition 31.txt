@@ -1,0 +1,225 @@
+﻿requirements are essential to most successful COTS implementations. One approach is to define configuration requirements for one process flow, use case, or user story at a time. Walk through user manuals for the purchased system to learn how to execute a specific task, looking for settings that need to be configured to suit your environment. Consider the full set of business rules when you are configuring the system, not just those you examined during the selection process. It might be helpful to create decision tables and decision trees to model these requirements. Many COTS solutions come with predefined mechanisms to specify roles and permissions. Use a roles and permissions matrix, such as the one shown in Figure 9-2 in Chapter 9, “Playing by the rules,” to define which roles to create and what permissions those roles should have.
+ 
+Integration requirements
+Unless the packaged solution is used in a standalone mode, you’ll need to integrate it into your application environment. This integration involves understanding the external interfaces the package will present to each of the other applications with which it must interact. Precisely specify the requirements for interchanging data and services between the package and other components in your environment. You will likely have to create some custom code to make all the parts fit together. This code could take the form of:
+■	Adapters that modify interfaces or add missing functionality.
+■	Firewalls that isolate the COTS software from other parts of the enterprise.
+■	Wrappers that intercept inputs to and outputs from the package and modify the data as
+necessary to be used on the other side of the interface (NASA 2009).
+
+Extension requirements
+One common goal of COTS implementations is to minimize customizations to the solution. Otherwise, you should just custom build the application yourself. In most COTS projects, though, there will
+be gaps between what the organization needs and what the package delivers. For each such gap, decide whether to ignore it (remove the requirement and just live with the tool); change how you do something outside the solution (modify the business process); or build something to bridge the gap (extend the solution). If you are extending the COTS solution, you’ll need to fully specify the requirements for those new capabilities just as you would for any new product development. If you are implementing a COTS solution to replace an older system, look at the practices related to replacing a system that were discussed in Chapter 21, “Enhancement and replacement projects.” While analyzing the requirements for any components to be added, assess whether they could negatively affect any existing elements or workflows in the package.
+
+Data requirements
+Begin with the data requirements used in the selection process. Map data entities and attributes from your existing data dictionary to the COTS entities and attributes. There will likely be areas where the solution doesn’t handle some of your existing data entities or attributes. As with functional gaps, you’ll need to decide how to handle data gaps, typically by adding attributes or repurposing an existing data structure in the COTS solution. Otherwise, when you convert data from any existing systems into the COTS solution, you will likely lose any data that was not properly mapped. Use report tables to specify requirements for deploying existing or new reports, as described in Chapter 13, “Specifying data requirements.” Many COTS packages will provide some standard report templates to start with.
+ 
+Business process changes
+COTS packages are usually selected because implementing and maintaining them is expected to be less expensive than building custom software. Organizations need to be prepared to adapt their
+business processes to the package’s workflow capabilities and limitations. This is different from most development projects where the software is designed specifically to accommodate existing or planned processes. In fact, a COTS solution that can be fully configured to meet your existing processes is
+likely to be expensive and complex. The more buttons and knobs you can adjust, the harder it is to configure. You need to strike a balance between implementing all of the desired user functionality and only what the COTS product offers out of the box (Chung, Hooper, and Huynh 2001).
+Start with the user requirements identified during the selection process. Develop use cases or swimlane diagrams to understand how the tasks will change when users execute their tasks in the COTS solution. Users might resist the new packaged solution because it looks or behaves differently than their existing systems, so involve them early in this process. Users are more willing to accept the new solution if they contributed to shaping the necessary changes in their business processes.
+My team implemented a packaged solution for an insurance company to let them meet new compliance requirements. We started by modeling the as-is business processes. Then we studied the package’s manuals to learn basic information about how to use the product. Based on the as-is models, we created to-be business processes to reflect how the users would complete their tasks using the COTS solution. We also created a data dictionary for their existing system and added a column to reflect the mapped field in the COTS solution. The users helped develop all of these work products, so they weren’t surprised by the new system when it was deployed.
+
+Common challenges with packaged solutions
+The following are common challenges that you might encounter when selecting or implementing a
+packaged solution:
+■	Too many candidates   There might be many solutions on the market that meet your needs at first glance. Select a short list of criteria to narrow the candidate list to a few top choices for a more refined evaluation.
+■	Too many evaluation criteria It might be hard to focus the evaluation criteria to only the most important ones without doing in-depth requirements specification. Use business objectives to help select the most important requirements as criteria. If you narrow the candidate package choices down to only a few, you can evaluate them against a long list of criteria.
+■	Vendor misrepresents package capabilities In the typical packaged software purchasing process, the vendor sales staff sells their solution to the customer organization’s decision makers, and then engages a technical implementation team to provide in-depth knowledge about the product. That in-depth knowledge might prove to conflict somewhat with the customer’s understanding of the product’s capabilities based on the sales pitch. It’s a good
+ 
+idea to ask to have a vendor technical specialist participate during the sales cycle. Determine
+whether you can have a healthy relationship with the vendor that enables both parties to be successful. The vendor is your business partner, so make sure they can play that role constructively.
+■	Incorrect solution expectations Sometimes a solution looks great during vendor demos, but it doesn’t work like you expect after installation. To avoid this, during the selection process, have the vendor walk through your actual use cases so you can see how well the solution matches your expectations.
+■		Just because an organization bought the software, there is no guarantee that the users will be receptive to it. As with all software development projects, engage users in the selection process or early in the implementation to make sure their needs are clearly understood and addressed to the extent possible. Expectation management is an important part of successful packaged solution implementation.
+Buying, configuring, and extending a commercial software package often is a sensible business alternative to building a custom solution. Packages can provide a lot of flexibility, but at the same time they come with built-in limitations and constraints. You don’t want to have to pay for a lot
+of features that your organization doesn’t need. Nor do you want to build a fragile structure of extensions and integrations that might break with the next release of the package from the vendor. A careful package selection and implementation process will help you find the optimum balance of capability, usability, extensibility, and maintainability in a commercial packaged software solution. C HA P T E R 2 3
+Outsourced projects
+
+Rather than building systems by using their own staff, many organizations outsource their development efforts to contract development companies. They might outsource the work to take advantage of development skills they do not have available in-house, to augment their internal staff resources, to save money, or to accelerate development. The outsourced development supplier could be located physically nearby, on the other side of the world, or anywhere in between. Outsourced teams in other countries are typically referred to as being offshore. Offshoring is sometimes called nearshoring if the supplier’s country is close by or shares a language and/or culture with the acquirer’s country.
+
+The role of a
+project. Often, the BA’s job is harder. If the team members are all in one location, developers can walk down the hall to ask the BA a question or to demonstrate newly developed functionality.
+This close collaboration can’t happen in the same way with outsourced development, although modern communication tools certainly help. Compared to in-house development, outsourced—and particularly offshore—projects face requirements-related challenges such as the following:
+■	It’s harder to get developer input on requirements and to pass along user feedback on
+delivered software to developers.
+■	A formal contractual definition of requirements is necessary, which can lead to contention if differences of interpretation are discovered late in the project.
+■	There might be a bigger gap between what the customers ultimately need and the product they get based on the initial requirements, because there are fewer opportunities to adjust the project’s direction along the way.
+■	It might take longer to resolve requirements issues because of large time zone differences.
+■	.
+■	Limited written requirements that might be adequate for in-house projects are insufficient
+for outsourced projects, because users and BAs are not readily available to answer developer questions, clarify ambiguities, and close gaps.
+■	Remote developers lack the organizational and business knowledge that in-house developers acquire with experience.
+
+415
+ 
+Although the original arguments for offshoring included anticipated cost savings based on hourly staff costs, many offshore projects actually experience a net increase in cost. Contributing factors include the additional effort required for more precise requirements, likely additional development iterations to close gaps because of unstated implied and assumed requirements, the additional overhead of the contractual arrangements, initial costs in developing effective norms of team behavior between the groups, and the costs of increased project communications and oversight throughout.
+Software development work is the most common type of activity that is outsourced, but testing can also be outsourced. Outsourced testing presents the same challenges as outsourced development. Both types of activities rely on a solid foundation of clear requirements for success.
+This chapter suggests techniques that are most important to enable successful requirements development and management on outsourced projects. This chapter does not discuss the decision process that leads to outsourcing the development or the process to select a vendor for the work.
+
+Appropriate levels of requirements detail
+Outsourcing product development to a separate company demands high-quality written requirements, because your direct interactions with the development team are likely to be minimal. As shown in Figure 23-1, you’ll be sending the supplier a request for proposal (RFP), a requirements specification, and product acceptance criteria. Early on, both parties will engage in a review and will reach agreement, perhaps with negotiation and adjustments, before the supplier initiates
+development. The supplier will deliver the finished software product and supporting documentation.
+
+FIGURE 23-1 Requirements are the cornerstone of an outsourced project.
+
+With outsourcing, you won’t have the opportunities for day-to-day clarifications, decision making, and changes that you enjoy when developers and customers work in close proximity. Particularly with offshore development, you should anticipate that the supplier will build exactly what you ask them
+to build. You will get no more and no less, sometimes with no questions asked. The supplier won’t implement the implicit and assumed requirements you thought were too obvious to write down. As a result, poorly defined and managed requirements are a common cause of outsourced project failure.
+ 
+If you distribute an RFP, suppliers need to know exactly what you’re requesting before they can produce realistic responses and estimates (Porter-Roth 2002). Because of the information that has to go into the RFP, you might have to develop more detailed requirements earlier in the project than on in-house development projects (Morgan 2009). At a minimum, specify a rich set of user requirements and nonfunctional requirements for the RFP. After the project is under way, you will likely need to specify all of the requirements with more precision than if an in-house team were building the same system, particularly if the outsourced team is offshore. If you are ever inclined to err on the side
+of overspecifying requirements, outsourced projects are the place to do so. It’s the requirements author’s responsibility to express the acquirer’s expectations clearly. If certain deliverables must be produced for the acquirer to maintain a process certification or for compliance reasons, be sure to include those particulars as part of the RFP as well.
+As with in-house development, visual requirements models augment functional and nonfunctional
+requirements for outsourced teams. Creating multiple representations of requirements increases the bandwidth of communication, so you might find it beneficial to create more models than if an
+in-house team were developing the software. Using representations like visual models to supplement written specifications is even more valuable if you are working across cultures and native languages, because it gives developers something to check their interpretations against. However, be sure the developers can understand the models you send them. If they aren’t familiar with the models, that only raises the potential for confusion. One development manager was concerned that a written requirements specification plus mock-ups would not provide enough information for his offshore team to correctly implement a complex user interface (Beatty and Chen 2012). The display-action- response model described in Chapter 19, “Beyond requirements development,” was developed specifically to meet the needs of this outsourced project.
+Prototypes can also help clarify expectations for the supplier team. Similarly, the supplier can create prototypes to demonstrate to the acquirer their interpretation of the requirements and how they plan to respond to them. This is a way to create more customer-development interaction points to make course adjustments early in the project rather than late. Chapter 15, “Risk reduction through prototyping,” has more information about creating and using prototypes.
+Watch out for the ambiguous terms from Table 11-2 in Chapter 11, “Writing excellent requirements,” that cause so much confusion. I once read an SRS intended for outsourcing that contained the word “support” in many places. The business analyst who wrote the SRS acknowledged that a contractor who was going to implement the software wouldn’t know just what “support” meant in each case. A glossary is valuable when dealing with people who don’t share the tacit knowledge held by those who are familiar with the acquiring company’s environment. The structured keyword notation called Planguage (see Chapter 14, “Beyond functionality”) can be used to describe requirements very explicitly for outsourced development (Gilb 2007).
+ 
+Acquirer-supplier interactions
+In the absence of real-time, face-to-face communication, you need other mechanisms to stay on top of what the supplier is doing, so arrange formal touch points between the acquirer and the supplier. In some outsourced projects, the supplier helps to write the functional requirements (Morgan 2009). This increases the initial costs associated with the outsourcing, but it also reduces the risk of misunderstandings.
+Plan time for multiple review cycles of the requirements.
+reviews with participants in multiple locations (Wiegers 2002). Be aware, though, that members of certain cultures find it difficult to offer even constructive criticism of another person’s work. Authors in such a culture whose work is being reviewed could take review comments personally (Van Veenendaal 1999). The result is that the reviewers might sit politely during the peer review,
+saying nothing because they don’t want to offend the author. This is courteous and considerate, but it does not contribute to a shared goal of discovering requirements defects as early as possible to make development cheaper and faster. Discover whether this cultural characteristic applies to your outsource partners so you can determine realistic expectations and strategies for your peer reviews.
+The project schedule for one failed offshore project included a one-week task named
+“Hold requirements workshops,” followed immediately by tasks to implement several subsystems (Wiegers 2003). The supplier forgot to include vital intermediate tasks to document, review,
+and revise the requirements specifications. The iterative and communication-intensive nature of requirements development dictates that you must allow sufficient time for these review cycles. The acquirer and the supplier on this project were in different countries, at opposite ends of the same continent. They experienced slow turnaround on the myriad questions that arose as the SRS cycled back and forth. Failure to resolve requirements issues in a timely way derailed the schedule and contributed to eventually sending the two parties into litigation.
+Peer reviews and prototypes provide insight into how the supplier is interpreting the requirements.
+Incremental development is another risk-management technique that permits course corrections when a misunderstanding sends the supplier’s developers in the wrong direction. If the supplier raises questions, document them and integrate the answers into the requirements (Gilb 2007). Monitor the resolution of the questions in an issue-tracking tool to which both supplier and acquirer teams have access, as described in Chapter 27, “Requirements management practices.”
+Contract development companies that work on many types of projects might lack the specific domain or company knowledge that is critical to making the right decisions. Consider delivering some training to the contractor staff about the project and application domain prior to requirements review, to try to bridge this knowledge gap.
+Outsourced projects often involve teams with disparate company cultures and attitudes. Some suppliers will be so eager to please that they agree to outcomes they cannot deliver. When an error is brought to their attention, they might strive to save face by not fully accepting responsibility for the problems. Additional cultural differences arise with offshore suppliers. Some developers might hesitate to ask for help or clarification. They might be reluctant to say “no” or “I don’t understand.”
+This can lead to misinterpretations, unresolved issues, and unachievable commitments. To avoid these
+ 
+issues, employ elicitation and facilitation techniques such as reading between the lines for what isn’t said and asking open-ended questions to gain accurate visibility into issues and status. Consider establishing ground rules with your team members, both local and remote, to expressly define how the team members should interact when they work together.
+
+e likely to interpret requirements literally, not picking up nuances or fully appreciating
+the implications. They might make user interface design choices that you wouldn’t expect. Things as diverse as date formats, systems of measurement (such as United States customary units, SI units, or imperial units), the symbolism of colors, and the order of people’s given and family names can vary between countries. When interacting with people who have a different native language from yours, make your intentions and desires as clear as possible in simple language. Avoid the use of colloquialisms, jargon, idioms, and references to pop culture that could be misconstrued.
+One offshore team took a customer’s requirements very literally.
+. The product that was delivered to the customer technically met the requirements, but it fell far short of meeting expectations.
+The developers weren’t trying to be difficult. They just didn’t understand the language of the requirements very well. Consequently, they never fully grasped the essence of what they were building. The customer brought most of the development work back in-house and effectively had to pay twice to have the software developed correctly.
+
+
+Change management
+At the beginning of the project,	l
+participants can use, no matter where they’re located. Using a common set of web-based tools for handling change requests and tracking open issues is essential.
+.
+Identify the decision makers for proposed changes and the communication mechanisms you’ll use to make sure the right people are kept informed. Most outsourced work has contractual agreements in place to describe exactly what the development team must deliver. The contract should specify who will pay for various kinds of changes, such as newly requested functionality or corrections made in the original requirements, and the process for incorporating the changes into the product. When there
+is misalignment between requirements and delivery, the arguments that ensue are consequently also
+contractual in nature. Unfortunately, often both parties lose (McConnell 1997).
+ 
+Acceptance criteria
+In keeping with Stephen Covey’s recommendation to “begin with the end in mind” (Covey 2004), define in advance how you’ll assess whether the contracted product is acceptable to you and your customers. How will you judge whether to make the final payment to the supplier? If the acceptance criteria are not fully satisfied, who is responsible for making corrections, and who pays for those?
+Include acceptance criteria in the RFP so the supplier knows up front what to expect. Validate the requirements before you give them to the outsourced team, to help ensure that the delivered product will be on target. Chapter 17, “Validating the requirements,” suggested some approaches to defining acceptance criteria, as well as methods for reviewing and testing requirements.
+Properly handled, outsourcing the development work can be an effective strategy to build your software system. Building collaborative relationships with outsourced development suppliers is challenging because of distance, language and cultural differences, and potentially competing interests. Suppliers might not be motivated to correct any requirement errors or ambiguities discovered along the way if they will be paid more to fix the problems following delivery of a
+release candidate. An essential starting point on a journey to a successful outsourced development experience is a set of high-quality, complete, and explicitly clear requirements. If the requirements you provide to the supplier are incomplete or misunderstood, failure of the project is probably at least as much your fault as theirs.
+ 
+C H AP T E R 24 
+Business process automation projects
+
+Organizations often choose to fully or partially replace manual business processes with software to lower operational costs. In fact, most corporate IT projects involve some amount of business process automation, including the Chemical Tracking System and other projects we have mentioned in this book. Processes can be automated by building a new software system, extending an existing system, or buying a COTS package. If you’re working on a business process automation project, there are several requirements techniques to consider using to mesh the new systems and updated business processes.
+Because business process automation is so prevalent in software projects, many of the techniques described elsewhere in this book are relevant. This chapter presents a structure to help you tackle these sorts of projects and points out the techniques from the rest of the book that are most applicable. It also presents some additional techniques that aren’t covered elsewhere in the book.
+Here’s an illustration of how business process automation projects sometimes go. One customer of ours had a spreadsheet that used approximately 300 inputs from different sources to calculate a risk profile for loans. The business stakeholders wanted software that would gather the data inputs and run the risk profile calculation, because it took a long time for their risk managers to execute this frequently repeated process. We analyzed where their users spent the bulk of their time on this process and quickly determined that assembling the data that fed into the spreadsheet took the most time. The calculations the spreadsheet performed were nearly instantaneous. The development team already had access to most of the data sources to populate the spreadsheet, so a manageable first phase of the project was to automatically pull that data into the spreadsheet. The business
+users would continue to manually assemble the rest of the inputs for awhile. In the second phase, development would automate the rest of the data inputs. The team decided they would not build software to replicate the spreadsheet calculations because the calculations were fast enough already.
+This case study illustrates a typical business process automation project. The business identified a time-consuming, repetitive activity that they thought could be accelerated with the help of suitable software. Some analysis revealed the bottlenecks and identified possible efficiencies. This led to requirements and project plans for a partial solution that would save the business considerable time, reduce costs, and reduce data input errors.
+
+
+
+421
+ 
+Modeling business processes
+Eliciting requirements to automate business processes begins by modeling those processes. By identifying tasks that users need to accomplish with the system, the business analyst can derive the necessary functional requirements that will let users perform those tasks. The processes that describe how the business currently works are called the as-is processes. Those that describe the envisioned future state of how the business will operate are called the to-be processes.
+
+Business process acronyms galore
+Extensive resources are available on business process analysis (BPA), business process reengineering (BPR), business process improvement (BPI), business process management (BPM), and business process model and notation (BPMN). This chapter is not a comprehensive resource on those topics. The following list provides some basic definitions of these concepts and their purposes, though you will find significant overlap in these definitions:
+■	Business process analysis (BPA) involves understanding the processes as a basis for improving them. It is similar to process modeling, as described in the Business Analysis Body of Knowledge (IIBA 2009).
+■	Business process reengineering (BPR) consists of analyzing and redesigning business processes for greater efficiency and effectiveness. BPR could target specific process areas, or it could involve a complete overhaul of an organization’s processes from the ground up (Hammer and Champy 2006).
+■	Business process improvement (BPI) involves measuring and looking for opportunities for incremental process improvement (Harrington 1991). Tools from Six Sigma and lean management practices are often used for BPI efforts (Schonberger 2008).
+■	Business process management (BPM) encompasses understanding all of the enterprise’s business processes, analyzing them to make them more efficient and effective, and working with organizations to make changes to the processes (Harmon 2007; Sharp and McDermott 2008). A BPM initiative might involve some combination of BPA, BPR, and BPI.
+■	Business process model and notation (BPMN) is a graphical notation for modeling business processes (OMG 2011). BPMN can be applied in any of these approaches to business process modeling. It is a robust language of symbols that can be useful when the basic syntax of a swimlane diagram doesn’t suffice.
+A variety of methods and tools implement BPA, BPR, BPI, and BPM, which are appropriate to employ if your project is undergoing major business process redesign. All four techniques are established approaches for understanding the business challenges and opportunities. After an organization decides that a software component is part of the solution for improving their business processes, the requirements engineering techniques described in this book become valuable.
+ 
+Using current processes to derive requirements
+The following steps will help you model a set of business processes and elicit requirements for an application that automates some or all of them. The sequence of these steps is not always the same, and you might not need all of them on every project. In some cases, the to-be process flows can come earlier in the sequence as a way of driving a gap analysis or to help ensure that the new system is more just than the old system dressed up in a new outfit. In general, though, consider following these steps:
+1.	As always with software development, start by understanding the business objectives, so you can link each objective to one or more processes.
+2.	Use organization charts to find all of the affected organizations and potential user classes for a future software solution.
+3.	Identify all of the	participation of those user classes.
+4.	Document the as-is business processes by using flow charts, activity diagrams, or swimlane diagrams. Any of the three models is a practical choice for representing users’ tasks. Users can quickly read them and point out any missing or incorrect steps, roles, or decision logic (Beatty and Chen 2012). You’ll need to judge how far down into the as-is modeling you need to drill to get the necessary information to perform the remaining steps in this list.
+5.
+automation. If this is not obvious, you will need to gather some data about how long it takes to execute individual steps or full processes. You can model these measures by using the key performance indicator model (KPIM) described later in this chapter. This step helps identify opportunities and, if a software solution is deemed appropriate, set the scope of the software development part of the project. Make sure you are addressing true bottlenecks in the process, so that accelerating them will speed up the overall process.
+6.	For the processes that are in scope for automation, walk through each as-is process flow with the appropriate stakeholders to elicit software requirements to support each step in the flow. The techniques described in Chapter 7, “Requirements elicitation,” will be valuable during this activity. If applicable, you might also look for industry standards for the process you are modeling, to help you set improvement goals.
+7.	Trace the requirements to the process flow steps so that it is obvious if you are missing requirements for any specific steps. If you have process steps without requirements traced to them, confirm that those steps are not being automated as part of the project.
+8.	Document to-be process flows to help the business prepare for the new system and to identify any gaps that the new system might leave in their process. You might also create use cases
+to provide more detail about how users will interact with the new system. This information helps developers ensure that they create a system to meet the business’s expectations and helps users understand what they are getting. The to-be process flows and use cases can be used to develop training materials for the new system and to identify any other transition
+ 
+requirements. This step helps stakeholders to understand not only what is coming, but what manual activities and automated systems need to be unplugged.
+
+
+Designing
+There is a chicken-and-egg problem with information systems and business processes. In some cases, people expect that building a new system will drive improvements or changes in the processes.
+However, the way the application is used in practice might not enable the desired business process changes. Process changes involve culture changes and user education that a software system cannot deliver. Some customers believe that the development team is responsible for a successful application rollout and for guiding the implementation of associated business processes. Users won’t embrace a new system just because a developer says to, though.
+In many cases, it’s better to devise the new business processes first and then assess the needed changes in your information systems architecture. Properly supporting a new business process might involve changing multiple systems. Thinking about which users will use the system and how they will use it to do their jobs will help you define the correct user requirements, which in turn will maximize user adoption of the new system. Concurrent development of new processes and new applications helps ensure that the two merge nicely.
+
+Modeling business performance metrics
+It’s important to understand which business performance metrics are most important to address with business process automation so that the development work can be prioritized. You might have success metrics to use as a starting point from the vision and scope document (see the “1.4 Success metrics” section in Chapter 5, “Establishing the business requirements”). If not, the business performance metrics developed here will help complete the vision and scope. For the spreadsheet
+ 
+example earlier in the chapter, you might care about how long it takes to populate the spreadsheet
+manually and how fast you need it to be in the automated solution.
+KPIMs associate business processes with their important performance metrics. KPIMs are drawn as flowcharts, swimlane diagrams, or activity diagrams with key performance indicators (KPIs) overlaid on the related steps. Figure 24-1 shows an example KPIM (drawn as a flowchart) for the spreadsheet project to automate a risk profile calculation spreadsheet.
+
+FIGURE 24-1 Example KPIM for a loan risk profile calculation process.
+
+The most important processes to automate are those that have the most important metrics to maintain or improve. Determine a current baseline value for each metric, so that when you automate the process, you can tell if they are improving as desired. Keep in mind that you might degrade certain business performance metrics to improve others. Chapter 14, “Beyond functionality,” discusses making trade-offs between quality attributes. The same concept applies here, but in this case the trade-offs are to favor one performance metric over another, perhaps in different parts of the business. Tracing requirements to the process flow steps, which in turn are mapped to KPIs, allows you to prioritize the requirements to be implemented.
+You might need to build functionality into the system to periodically measure the relevant KPIs to evaluate the effectiveness of the newly automated solution, raising a warning flag if a KPI falls out of tolerance. In the spreadsheet example, the system could measure how much time it takes to aggregate data inputs to determine if the system is achieving the two-minute goal. If not, further changes might be needed.
+Business users often think it’s always best to automate a manual process if you can. However, there are costs associated with all development projects. Business analysis helps you determine which processes are worth automating and which are not. As an example, Seilevel (Joy’s company) uses a COTS solution for managing the sales pipeline and another for managing human resource allocations. We run a report from the sales pipeline tool and manually input the upcoming projects into the resource allocation tool to forecast resource needs. Our consulting manager has to do this at least once a week. It takes him approximately 30 minutes each week to run the sales pipeline report, decide which projects from sales should be transferred, when those projects will start, and how
+many resources each one needs. We evaluated whether we should enable the integration feature to
+ 
+automatically transfer the data from one tool to the other. Although integrating the tools is as simple as enabling a feature, it would require custom development to automate the decision process our consulting manager goes through. Specifying and automating that decision logic would require more effort than we can justify.
+
+Good practices for business process automation projects
+Many of the practices from the rest of this book are important to business process automation projects. Table 24-1 lists the most important practices, describes how they apply to such projects, and indicates where to find more information in other chapters.
+TABLE 24-1 A road map to chapters that address useful business process automation techniques
+
+
+I
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You will likely apply the concepts from this chapter on almost every information systems project you work on. When you encounter part or all of a business process to be automated, use the framework in this chapter to ensure that you fully understand the goals of automating the
+process and the requirements to support it. This will help everyone understand user expectations so development can deliver a successful solution that yields the desired business benefits.
+ 
+C HA P T E R 2 5
+Business analytics projects
+
+Most normal people don’t look at data sets just for fun. They study views of the data to make decisions about what to do, be it a decision to take some specific action or a decision to do nothing
+ 
+at all. In some cases, software systems automate the
+and taking actions based on predefined algorithms and rules. T
+ 
+processes by interpreting data
+
+ 
+ 
+
+ 
+any other classes of projects might have business analytics components; the concepts presented in this chapter apply to those projects as well.
+The decisions that people make using business analytics systems can be strategic, operational, or tactical. An executive might look at his sales team’s global performance dashboard to decide who to promote (tactical), which products need different marketing strategies (operational), or which products to target by markets (strategic). Generally speaking, all software systems that include an analytics component should enable users to make decisions that improve organizational performance in some dimension.
+There are many software applications commercially available to implement business analytics solutions. The business analyst who wants to use one of those applications might need to perform requirements activities for tool selection and implementation, using the process described in Chapter 22, “Packaged solution projects.”
+This chapter is meant only as an introduction to issues to consider when developing software requirements for business analytics projects. Bert Brijs (2013) authored an extensive resource for performing business analysis on these types of projects. He provides many definitions of the core concepts, specific domain examples, questions to ask, and issues you might encounter.
+
+Overview of business analytics projects
+For most information systems, reports represent a small portion of the functionality implemented. However, on business analytics projects, complex reports and the ability to manipulate their contents constitute the core functionality. Often, the output of analysis is embedded in applications that automate decision making. Business analytics projects have multiple layers, all of which might need to have software requirements defined for them. These projects must deal with understanding
+what data is required, the operations performed on the data, and the formatting and distribution of
+the data for use (Figure 25-1). There is no rigid sequence to these activities. A user might work with
+

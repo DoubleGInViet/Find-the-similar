@@ -1,0 +1,280 @@
+﻿If left to their own devices, customers will establish perhaps 85 percent of the requirements as high priority, 10 percent as medium, and 5 percent as low. This doesn’t give the project manager much flexibility. If all requirements truly are of top priority, your project has a high risk of not being fully successful. Scrub the requirements to eliminate any that aren’t essential and to simplify those that are unnecessarily complex. One study found that nearly two-thirds of the features developed in software systems are rarely or never used (The Standish Group 2009). To encourage customers to acknowledge
+that some requirements have lower priority,	:
+
+■
+
+
+
+ 
+
+
+■
+
+
+. The management team on one large commercial project displayed impatience over the analyst’s insistence on prioritizing the
+requirements. The managers pointed out that often they can do without a particular feature but that another feature might need to be beefed up to compensate. If they deferred too many requirements, the resulting product wouldn’t achieve the projected revenue.
+Conflicts arise among stakeholders who are convinced that their requirements are the most important. As a general rule, members of the favored user classes should get preference in the case of competing priorities. This is one reason to identify and assess your user classes early in the project.
+
+Some prioritization techniques
+On a small project, the stakeholders should be able to agree on requirement priorities informally. Large or contentious projects with many stakeholders demand a more structured approach that removes some of the emotion, politics, and guesswork from the process. Several analytical and mathematical techniques have been proposed to assist with requirements prioritization. These methods involve estimating the relative value and relative cost of each requirement. The highest priority requirements are those that provide the largest fraction of the total product value at the smallest fraction of the total cost (Karlsson and Ryan 1997; Jung 1998). This section discusses several techniques people use for prioritizing requirements. Simpler is better, provided the technique is effective.
+ 
+ 
+
+In or out
+The simplest of all prioritization methods is to have a
+Keep referring to the project’s business
+objectives to make this judgment, paring the list down to the bare minimum needed for the first release. Then, when implementation of that release is under way, you can go back to the previously “out” requirements and go through the process again for the next release.
+
+
+Pairwise comparison and rank ordering
+People sometimes try to assign a unique priority sequence number to each requirement. Rank ordering a list of requirements involves making pairwise comparisons between all of them so you can judge which member of each pair has higher priority. Figure 14-1 in Chapter 14, “Beyond functionality,” illustrated the use of a spreadsheet to perform just such a pairwise comparison of
+quality attributes; the same strategy could be applied to a set of features, user stories, or any other set of requirements of the same type. Performing such comparisons becomes unwieldy for more than a couple of dozen requirements. It could work at the granularity level of features, but not for all the functional requirements for a system as a whole.
+In reality, rank ordering all of the requirements by priority is overkill. You won’t be implementing all of these in individual releases; instead, you’ll group them together in batches by release or development timebox. Grouping requirements into features, or into small sets of requirements that have similar priority or that otherwise must be implemented together, is sufficient.
+ 
+Three-level scale
+A common prioritization approach groups requirements into three categories. No matter how you label them, if you’re using three categories they boil down to high, medium, and low priority. Such prioritization scales are subjective and imprecise. To make the scale useful, the stakeholders must agree on what each level means in the scale they use.
+One way to assess priority is to consider the two dimensions of importance and urgency
+(Covey 2004). Every requirement can be considered as being either important to achieving business objectives or not so important, and as being either urgent or not so urgent. This is a relative assessment among a set of requirements, not an absolute binary distinction. As Figure 16-1 shows, these alternatives yield four possible combinations, which you can use to define a priority scale:
+■
+(customers need it in the next release). Alternatively, contractual or compliance obligations might dictate that a specific requirement must be included, or there might be compelling business reasons to implement it promptly. If you can wait to implement a requirement in a later release without adverse consequences, then it is not high priority per this definition.
+■	Medium-priority requirements are important (customers need the capability) but not urgent (they can wait for a later release).
+■	Low-priority requirements are neither important (customers can live without the capability if necessary) nor urgent (customers can wait, perhaps forever).
+■	Requirements in the fourth quadrant appear to be urgent to some stakeholder, perhaps for political reasons, but they really aren’t important to achieving the business objectives. Don’t waste your time working on these, because they don’t add sufficient value to the product. If they aren’t important, either set them to low priority or scrub them entirely.
+
+FIGURE 16-1 Requirements prioritization based on importance and urgency.
+
+Include the priority of each requirement as an attribute of the requirement in the user requirements documents, the SRS, or the requirements database. Establish a convention so that the reader knows whether the priority assigned to a high-level requirement is inherited by all its subordinate requirements or whether every individual functional requirement is to have its own priority attribute.
+ 
+Sometimes, particularly on a large project, you might want to perform prioritization iteratively. Have the team rate requirements as high, medium, or low priority. If the number of high-priority requirements is excessive and you’re not convinced that they all really must be delivered in the next release, perform a second-level partitioning of the high-priority ones into three groups. You could call them high, higher, and highest if you like, so people don’t lose sight of the fact that they were originally designated as being important. The requirements rated “highest” become your new group of top-priority requirements. Group the “high” and “higher” requirements in with your original medium-priority group (Figure 16-2). Taking a hard line on the criterion of “must be in the
+next release or that release is not shippable” helps keep the team focused on the truly high-priority capabilities.
+
+FIGURE 16-2 Multipass prioritization keeps the focus on a manageable set of top-priority requirements.
+
+When performing a prioritization analysis with the three-level scale, you need be aware of requirement dependencies. You’ll run into problems if a high-priority requirement is dependent on another that is ranked lower in priority and hence planned for implementation later on.
+
+The four capitalized letters in the MoSCoW prioritization scheme stand for four possible priority classifications for the requirements in a set (IIBA 2009):
+■	Must: The requirement must be satisfied for the solution to be considered a success.
+■	Should: The requirement is important and should be included in the solution if possible, but it’s not mandatory to success.
+ 
+■	Could: It’s a desirable capability, but one that could be deferred or eliminated. Implement it only if time and resources permit.
+■	Won’t: This indicates a requirement that will not be implemented at this time but could be included in a future release.
+The MoSCoW scheme changes the three-level scale of high, medium, and low into a four-level scale. It doesn’t offer any rationale for making the decision about how to rate the priority of a given requirement compared to others. MoSCoW is ambiguous as to timing, particularly when it comes to the “Won’t” rating. “Won’t” could mean either “not in the next release” or “not ever.” Such distinctions must be made clear so that all stakeholders share a common understanding of the implications of a particular priority rating. The three-level scale described previously, which relies on analysis of the two dimensions of importance and urgency, and focuses specifically on the forthcoming release or development timebox, is a crisper way to think about priorities. We don’t recommend MoSCoW.
+
+
+$100
+
+Prioritization is about thoughtfully allocating limited resources to achieve the maximum benefit from
+the investment an organization makes in a project. One way to make prioritization more tangible is to
+cast it in terms of an actual resource: money	. In this case, it’s just play money, but money nonetheless.
+Give the prioritization team 100 imaginary dollars to work with. Team members allocate these dollars to “buy” items that they would like to have implemented from the complete set of candidate requirements. They weight the higher-priority requirements more heavily by allocating more dollars to
+them. If one requirement is three times as important to a stakeholder as another requirement, she would assign perhaps nine dollars to the first requirement and three dollars to the second. But 100 dollars is all the prioritizers get—when they are out of money, nothing else can be implemented, at least not in the release they are currently focusing on. One approach is to have different participants in the prioritization process perform their own dollar allocations, then add up the total number of dollars assigned to each requirement to see which ones collectively come out as having the highest priority.
+ 
+The hundred-dollar approach is not a bad way to get a group of people to think in terms of allocating resources based on priority. However, Davis (2005) points out several ways that participants can “game” the process to skew the results. For instance, if you really, REALLY want a particular requirement, you might give it all 100 of your dollars to try to float it to the top of the list. In reality, you’d never accept a system that possessed just that single requirement, though. Nor does this scheme take into account any concern about the relative amount of effort needed to implement each of those requirements. If you could get three requirements each valued at $10 for the same effort as one valued at $15, you’re likely better off with the three. The scheme is based solely on the perceived value of certain requirements to a particular set of stakeholders, a limitation of many prioritization techniques.
+Another prioritization technique is based on real money, not play money. In Joy Beatty and Anthony Chen’s (2012) objective chain technique, you assign an estimated dollar value that represents how much each proposed feature contributes to achieving the project’s business objectives. You can then compare the relative value of features to one another and select which ones to implement first.
+
+Prioritization based on value, cost, and risk
+When the stakeholders can’t agree on requirement priorities through the other relatively informal techniques, it might be useful to apply a more analytical method. A definitive, rigorous way to relate customer value to proposed product features is with a technique called Quality Function Deployment, or QFD (Cohen 1995). Few software organizations seem to be willing to undertake the rigor of QFD, although a structured prioritization method adapted from QFD has proven to be helpful.
+Table 16-1 illustrates a spreadsheet model to help estimate the relative priorities for a set of requirements. This technique was ranked in the top tier of effectiveness in a comparative evaluation of 17 requirements prioritization methods (Kukreja et al. 2012). The Microsoft Excel spreadsheet is available in the companion content for this book. The example in Table 16-1 lists several features from (what else?) the Chemical Tracking System. This scheme borrows from the QFD concept of basing customer value on both the benefit provided to the customer if a specific product feature
+is present and the penalty paid if that feature is absent (Pardee 1996).
+
+ 
+. This approach distributes a set of estimated priorities across a continuum, rather than grouping them into just a few discrete levels.
+ 
+TABLE 16-1 Sample prioritization matrix for the Chemical Tracking System
+
+Relative weights	2	1			1		0.5		
+Feature	Relative
+benefit	Relative penalty	Total
+value	Value
+%	Relative cost	Cost %	Relative risk	Risk %	Priority
+1.	Print a material safety
+data sheet.	2	4	8	5.2	1	2.7	1	3.0	1.22
+2.	Query status of a
+vendor order.	5	3	13	8.4	2	5.4	1	3.0	1.21
+3.	Generate a chemical stockroom inventory report.	9	7	25	16.1	5	13.5	3	9.1	0.89
+4.	See history of a specific chemical container.	5	5	15	9.7	3	8.1	2	6.1	0.87
+5.	Search vendor catalogs
+for a specific chemical.	9	8	26	16.8	3	8.1	8	24.2	0.83
+6.	Maintain a list of
+hazardous chemicals.	3	9	15	9.7	3	8.1	4	12.1	0.68
+7.	Change a pending chemical request.	4	3	11	7.1	3	8.1	2	6.1	0.64
+8.	Generate a laboratory
+inventory report.	6	2	14	9.0	4	10.8	3	9.1	0.59
+9.	Check training database for hazardous chemical training record.	3	4	10	6.5	4	10.8	2	6.1	0.47
+10.	Import chemical structures from structure drawing tools.	7	4	18	11.6	9	24.3	7	21.2	0.33
+	Totals	53	49	155	100.0	37	100.0	33	100.0	
+Apply this prioritization scheme to discretionary requirements, those that aren’t obviously top priority. For instance, you wouldn’t include in this analysis items that implement the product’s core business functions, key product differentiators, or items required for regulatory compliance. After you’ve identified those features that absolutely must be included for the product to be releasable, use the model in Table 16-1 to scale the relative priorities of the remaining capabilities. Typical
+■	The project manager or business analyst, who leads the process, arbitrates conflicts, and adjusts prioritization data received from the other participants if necessary.
+■	Customer representatives, such as product champions, a product manager, or a product owner, who supply the benefit and penalty ratings.
+■	Development representatives, who provide the cost and risk ratings.
+ 
+Follow these steps to use this prioritization model (it’s more complicated to explain than to use):
+ 
+1.	Lis
+ 
+l
+r. We’ve used features in the
+ 
+example. All the items must be at the same level of abstraction—don’t mix functional requirements with features, use cases, or user stories. Certain features might be logically linked (you’d implement feature B only if feature A were included) or have dependencies (feature A must be implemented before feature B). For those, include only the driving feature in the analysis. This model will work with up to several dozen items before it becomes unwieldy. If you have more than that, group related items together to create a manageable list. You can apply the method hierarchically. After you perform an initial prioritization
+on, for example, features, you can apply it again within a feature to prioritize its individual subfeatures or functional requirements.
+2.	Have the cu
+siness on a scale of 1 to 9. A rating of 1 indicates that no one would find it useful; 9 means that it would be extremely valuable. These benefit ratings indicate alignment of the features with the product’s business objectives.
+3.	Estimate the relative penalty that the customer or the business would suffer if each feature
+. Again, use a scale of 1 to 9. A rating of 1 means that no one will be upset if it’s absent; 9 indicates a serious downside. Requirements with both a low benefit and a low penalty add cost but little value. Sometimes a feature could have a fairly low value, if not many customers will use it, but a high penalty if your competitor’s product boasts that feature and the customers expect it to be there—even if they don’t personally plan to use it!
+Marketing people sometimes call these “checkbox features”: you need to say you have it, even if few people really care. When assigning penalty ratings, consider what might happen if you do not include the capability:
+•	Would your product suffer in comparison with other products that do have that capability?
+•	Would there be any legal or contractual consequences?
+•	Would you be violating some government or industry standard?
+•	Would users be unable to perform some necessary or expected functions?
+•	Would it be a lot harder to add that capability later as an enhancement?
+•	Would problems arise because marketing promised a feature to some customers?
+4.	The spreadsheet calculates the total value for each feature as the sum of its benefit and penalty scores (weighted as described later in the chapter). The spreadsheet sums the values for all the features and calculates the percentage of the total value that comes from each of the features (the Value % column). Note that this is not the percentage of total value for the entire product, just for the set of features you’re prioritizing against each other here.
+ 
+5.	Have developers estimate the relative cost of implementing each feature, again on a scale of 1 (quick and easy) to 9 (time-consuming and expensive). The spreadsheet will calculate the percentage of the total cost that each feature contributes. Developers estimate the cost ratings based on the feature’s complexity, the extent of user interface work required, the potential ability to reuse existing code, the amount of testing needed, and so forth. Agile teams could base these cost ratings on the number of story points they’ve assigned to each
+user story. (See Chapter 19, “Beyond requirements development,” for more about estimation on agile projects.)
+6.	Similarly, have developers rate the relative technical (not business) risk associated with each feature on a scale of 1 to 9. Technical risk is the probability of not getting the feature right on the first try. A rating of 1 means you can program it in your sleep. A 9 indicates serious concerns about feasibility, the lack of necessary expertise on the team, the use of unfamiliar tools and technologies, or concern about the amount of complexity hidden within the requirement. The spreadsheet will calculate the percentage of the total risk that comes from each feature.
+7.	After you’ve entered all the estimates into the spreadsheet, it will calculate a priority value for each feature by using the following formula:
+
+priority =	value %
+	cost % + risk %
+8.	Finally, sort the list of features in descending order by calculated priority, the rightmost column. The features at the top of the list have the most favorable balance of value, cost, and risk and thus—all other factors being equal—should have highest priority. Discussions that focus on those features at the top of the list will let you refine that preliminary ranking into a priority sequence that stakeholders can agree on, even if not everyone gets exactly what they want.
+By default, the benefit, penalty, cost, and risk terms are weighted equally. You can change the relative weights for the four factors in the top row of the spreadsheet, to reflect the thought process by which your team makes priority decisions. In Table 16-1, all benefit ratings are weighted twice as heavily as the corresponding penalty ratings, penalty and cost are weighted the same, and risk has half the weight of the cost and penalty terms. To drop a term out of the model, set its weight to zero.
+When using this spreadsheet model with prioritization participants, you might want to hide certain columns that appear in Table 16-1: Total value, Value %, Cost %, and Risk %. These show intermediate results from the calculations that could just be a distraction. Hiding them will let the customers focus on the four rating categories and the calculated priority values.
+ 
+ 	 
+
+This priority model’s usefulness is limited by the team’s ability to estimate the benefit, penalty, cost, and risk for each item. Therefore, use the calculated priorities only as a guideline. Stakeholders should review the completed spreadsheet to agree on the ratings and the resulting sorted priority sequence. If you aren’t sure whether you can trust the results, consider calibrating this model for your own use with a set of implemented requirements from a previous project. Adjust the weighting factors until the calculated priority sequence correlates well with your after-the-fact evaluation of how important the requirements in your calibration set really were. This will give you some confidence in using the tool as a predictive model of how you make priority decisions on your projects.
+
+Different stakeholders often have conflicting ideas about the relative benefit of a specific requirement or the penalty of omitting it. The prioritization spreadsheet includes a variant that accommodates input from several user classes or other stakeholder groups. In the Multiple Stakeholders worksheet tab in the downloadable spreadsheet, duplicate the Relative Benefit and Relative Penalty columns so that you have a set for each stakeholder who’s contributing to the analysis. Then assign a weighting factor to each stakeholder, giving higher weights to favored user classes than to groups who have less influence on the project’s decisions. Have each stakeholder representative provide his own benefit and penalty ratings for each feature. The spreadsheet will incorporate the stakeholder weights when it calculates the final value scores.
+ 
+This model can also help you to make trade-off decisions when you’re evaluating proposed requirements additions. Add the new requirements to the prioritization spreadsheet and see how their priorities align with those of the existing requirements baseline so you can choose an appropriate implementation sequence.
+You don’t always need to use a method this elaborate. Keep your prioritization process as simple as possible, but no simpler. Strive to move prioritization away from the political and emotional arena into a forum in which stakeholders can make honest assessments. This will give you a better chance of building products that deliver the maximum business value with the minimum cost.
+
+Next steps
+■	Reevaluate the requirements in your backlog for an upcoming release, using the definitions in Figure 16-1 to distinguish requirements that truly must be included in that release from those that could wait if necessary. Does this make you change any of your priorities?
+■	Apply the spreadsheet model illustrated in Table 16-1 to prioritize 10 or 15 features, use cases, or user stories from a recent project. How well do the calculated priorities compare with the priorities you had determined by some different method? How well do they compare with your subjective sense of the proper priorities?
+■	If the model’s priorities don’t match what you think is right, analyze which part of the model isn’t giving sensible results. Try using different weighting factors for benefit, penalty, cost, and risk. Adjust the model until it provides results consistent with what you expect. Otherwise, you can’t trust its predictive capability.
+■	After you’ve calibrated the prioritization model, apply it to a new project. Incorporate the calculated priorities into the decision-making process. See whether this yields results that the stakeholders find more satisfying than those from their previous prioritization approach.
+■	Try one new prioritization technique today that you have not used before. For example, if you use MoSCoW already, try using the three-level method to see how it compares.
+ 
+
+ 
+C HA P T E R 1 7
+Validating the requirements
+
+Barry, a test lead, was the moderator for an inspection meeting whose participants were carefully examining a software requirements specification for problems. The meeting included representatives from two user classes, a developer named Jeremy, and Trish, the business analyst who wrote the SRS. One requirement stated, “The system shall provide unattended terminal timeout security of workstations accessing the training system.” Jeremy presented his interpretation of this requirement to the rest of the group. “This requirement says the system will automatically log off the current user of any workstation logged into the training system if there hasn’t been any activity within a certain period of time.”
+Hui-Lee, one of the product champions, chimed in. “How does the system determine that the terminal is unattended? Is it like a screen saver, so if there isn’t any mouse or keyboard activity for several minutes, it logs the user off? That could be annoying if the user was just talking to someone briefly.”
+Trish added, “The requirement doesn’t say anything about logging off the user. I assumed that timeout security meant a logoff, but maybe the user just has to retype her password to keep going.”
+Jeremy was confused also. “Does this mean any workstation that can connect to the training system, or just workstations that are actively logged into the system at the moment? How long of a timeout period are we talking about? Maybe there’s a security guideline for this kind of thing.”
+Barry made sure that the inspection recorder had captured all these concerns accurately. He followed up with Trish after the meeting to ensure that she understood all of the issues so she could resolve them.
+Most software developers have experienced the frustration of being presented with requirements that were ambiguous or incomplete. If they can’t get the information they need, the developers have to make their own interpretations, which aren’t always correct. As you saw in Chapter 1, “The essential software requirement,” it costs far more to correct a requirement error after implementation than
+to correct one found during requirements development. One study found that it took an average of 30 minutes to fix a defect discovered during the requirements phase. In contrast, 5 to 17 hours were needed to correct a defect identified during system testing (Kelly, Sherif, and Hops 1992). Clearly, any measures you can take to detect errors in the requirements specifications will save time and money.
+On many projects, testing is a late-stage activity. Requirements-related problems linger in the product until they’re finally revealed through time-consuming system testing or—worse—by the end user. If you start your test planning and test-case development in parallel with requirements development, you’ll detect many errors shortly after they’re introduced. This prevents them from doing further damage and minimizes your development and maintenance costs.
+329
+ 
+Figure 17-1 illustrates the V model of software development. It shows test activities beginning in parallel with the corresponding development activities. This model indicates that acceptance tests are derived from the user requirements, system tests are based on the functional requirements, and integration tests are based on the system’s architecture. This model is applicable whether the
+software development activities being tested are for the product as a whole, a particular release, or a
+single development increment.
+
+FIGURE 17-1 The	.
+
+As we will discuss later in the chapter, you can use the tests to validate each of these requirement types during requirements development. You can’t actually execute any tests during requirements development because you don’t have any running software yet. However, conceptual (that is, implementation-independent) tests based on the requirements will reveal errors, ambiguities, and omissions in your requirements and models before the team writes any code.
+Project participants sometimes are reluctant to spend time reviewing and testing requirements.
+Their intuition tells them that inserting time into the schedule to improve requirements quality would delay the planned ship date by that same duration. However, this expectation assumes a zero return on your investment in requirements validation. In reality, that investment can actually shorten the delivery schedule by reducing the rework required and by accelerating system integration and testing (Blackburn, Scudder, and Van Wassenhove 1996). Better requirements lead to higher product quality and customer satisfaction, which reduce the product’s lifetime costs for maintenance, enhancement, and customer support. Investing in requirements quality usually saves you much more than you spend.
+Various techniques can help you to evaluate the correctness and quality of your requirements (Wallace and Ippolito 1997). One approach is to quantify each requirement so that you can think of a way to measure how well a proposed solution satisfies it. Suzanne and James Robertson (2013) use the term fit criteria to describe such quantifications. This chapter addresses the validation techniques of formal and informal requirements reviews, developing tests from requirements, and having customers define their acceptance criteria for the product.
+ 
+Validation and verification
+
+. Some authors use the term “verification” for this step. In this book, we’ve adopted the terminology of the Software Engineering Body of Knowledge (Abran et al. 2004) and refer to this aspect of requirements development as “validation.” Verifying requirements to ensure that they have all the desired properties of high-quality requirements is also an essential activity. Precisely speaking, validation and verification are two different activities in software development.
+ 
+
+ 
+Extending these definitions to requirements, verification determines whether you have written the requirements right: your requirements have the desirable properties described in Chapter 11, “Writing excellent requirements.” Validation of requirements assesses whether you have written the right requirements: they trace back to business objectives. These two concepts are closely intertwined. For simplicity in this chapter, we talk about validating the requirements, but the techniques we describe contribute both to having the correct requirements and to having high-quality requirements.
+Validating requirements allows teams to build a correct solution that meets the stated business
+objectives. Requirements validation activities attempt to ensure that:
+
+■
+
+
+ 
+
+
+
+
+Validation isn’t a single discrete phase that you perform after eliciting and documenting all the requirements. Some validation activities, such as incremental reviews of the growing requirements set, are threaded throughout the iterative elicitation, analysis, and specification processes. Other activities, such as formal inspections, provide a final quality gate prior to baselining a set of requirements.
+Include requirements validation activities as tasks in your project plan. Of course, you can validate only requirements that have been documented, not implicit requirements that exist only in someone’s mind.
+ 
+Reviewing requirements
+
+
+ 
+or	requirements, requirements that aren’t defined clearly enough for design to begin,
+and other problems.
+Different kinds of peer reviews go by a variety of names (Wiegers 2002). Informal reviews are useful for educating other people about the product and collecting unstructured feedback. However, they are not systematic, thorough, or performed in a consistent way. Informal review approaches include:
+■	A peer deskcheck, in which you ask one colleague to look over your work product.
+■	A passaround, in which you	deliverable concurrently.
+■	A walkthrough, during which the author describes a deliverable and solicits comments on it.
+Informal reviews are good for catching glaring errors, inconsistencies, and gaps. They can help you spot statements that don’t meet the characteristics of high-quality requirements. But it’s hard for a reviewer to catch all of the ambiguous requirements on his own. He might read a requirement and think he understands it, moving on to the next without a second thought. Another reviewer might read the same requirement, arrive at a different interpretation, and also not think there is an issue. If these two reviewers never discuss the requirement, the ambiguity will go unnoticed until later in the project.
+follow a well-defined process. A
+that identifies the material examined, the reviewers, and the review team’s judgment as to whether the requirements are acceptable. The principal deliverable is a summary of the defects found and the issues raised during the review. The members of a formal review team share responsibility
+for the quality of the review, although authors ultimately are responsible for the quality of the
+deliverables they create.
+The best-established type of formal peer review is called an inspection. Inspection of requirements documents is one of the highest-leverage software quality techniques available. Several companies have avoided as many as 10 hours of labor for every hour they invested in inspecting requirements documents and other software deliverables (Grady and Van Slack 1994). A 1,000 percent return on investment is not to be sneezed at.
+If you’re serious about maximizing the quality of your software, your teams will inspect most of their requirements. Detailed inspection of large requirements sets is tedious and time consuming. Nonetheless, the teams I know who have adopted requirements inspections agree that every minute they spent was worthwhile. If you don’t have time to inspect everything, use risk analysis to
+differentiate those requirements that demand inspection from less critical, less complex, or less novel material for which an informal review will suffice. Inspections are not cheap. They’re not even that much fun. But they are cheaper—and more fun—than the alternative of expending lots of effort and customer goodwill fixing problems found much later on.
+ 
+ 	 
+
+The inspection process
+Michael Fagan developed the inspection process at IBM (Fagan 1976; Radice 2002), and others have extended or modified his method (Gilb and Graham 1993; Wiegers 2002). Inspection has been recognized as a software industry best practice (Brown 1996). Any
+
+ 
+Inspection is a well-defined multistage process. It involves a small team of participants who carefully examine a work product for defects and improvement opportunities. Inspections serve as a quality gate through which project deliverables must pass before they are baselined. There are several forms of inspection, but any one of them is a powerful quality technique. The following description is based on the Fagan inspection technique.
+
+Ensure that you have all of the necessary people in an inspection meeting before proceeding. Otherwise you might correct issues only to find out later that someone important disagrees with the change. The participants in an inspection should represent four perspectives (Wiegers 2002):
+■	The a
+document provides this perspective. Include another experienced BA if you can, because he’ll know what sorts of requirements-writing errors to look for.
+■	People who are the sources of information that fed into the item being
+These participants could be actual user representatives or the author of a predecessor specification. In the absence of a higher-level specification, the inspection must include customer representatives, such as product champions, to ensure that the requirements describe their needs correctly and completely.
+ 
+■	People who will do work based on the item being inspected For an SRS, you might include a developer, a tester, a project manager, and a user documentation writer because they will detect different kinds of problems. A tester is most likely to catch an unverifiable requirement; a developer can spot requirements that are technically infeasible.
+■	People who are responsible for interfacing systems that will be affected by the item being inspected These inspectors will look for problems with the external interface requirements. They can also spot ripple effects, in which changing a requirement in the SRS being inspected affects other systems.
+Try to limit the team to seven or fewer inspectors. This might mean that some perspectives won’t be represented in every inspection. Large teams easily get bogged down in side discussions, problem solving, and debates over whether something is really an error. This reduces the rate at which they cover the material during the inspection and increases the cost of finding each defect.
+The author’s manager normally should not attend an inspection meeting, unless the manager is actively contributing to the project and his presence is acceptable to the author. An effective inspection that reveals many defects might create a bad impression of the author to a hypercritical manager. Also, the manager’s presence might stifle discussion from other participants.
+
+Inspection roles
+All participants in an inspection, including the author, look for defects and improvement opportunities. Some of the inspection team members perform the following specific roles during the inspection (Wiegers 2002).
+Author The author created or maintains the work product being inspected. The author of a requirements document is usually the business analyst who elicited customer needs and wrote the requirements. During informal reviews such as walkthroughs, the author often leads the discussion. However, the author takes a more passive role during an inspection. The author should not assume any of the other assigned roles—moderator, reader, or recorder. By not having an active role, the author can listen to the comments from other inspectors, respond to—but not debate—their questions, and think. This way the author can often spot errors that other inspectors don’t see.
+Moderator
+. The moderator distributes the materials to be inspected, along with any relevant predecessor documents, to the participants a few days before the inspection meeting.
+Moderator responsibilities include starting the meeting on time, encouraging contributions from all participants, and keeping the meeting focused on finding major defects rather than resolving problems or being distracted by minor stylistic issues and typos. The moderator follows up on proposed changes with the author to ensure that the issues that came out of the inspection were addressed properly.
+ 
+Reader One inspector is assigned the role of reader. During the inspection meeting, the reader paraphrases the requirements and model elements being examined one at a time. The other participants then point out potential defects and issues that they see. By stating a requirement in her own words, the reader provides an interpretation that might differ from that held by other inspectors.
+This is a good way to reveal an ambiguity, a possible defect, or an assumption. It also underscores the value of having someone other than the author serve as the reader. In less formal types of peer reviews, the reader role is omitted, with the moderator walking the team through the work product and soliciting comments on one section at a time.
+standard forms to document the issues raised and the defects found during the meeting. The recorder should review aloud or visually share (by projecting or sharing in a web conference) what he wrote to confirm its accuracy. The other inspectors should help the recorder capture the essence of each issue in a way that clearly communicates to the author the location and nature of the issue so he can address it efficiently and correctly.
+
+Entry criteria
+You’re ready to inspect a requirements document when it satisfies specific prerequisites. These entry criteria set some clear expectations for authors to follow while preparing for an inspection. They also keep the inspection team from spending time on issues that should be resolved prior to the inspection. The moderator uses the entry criteria as a checklist before deciding to proceed with the inspection. Following are some suggested inspection entry criteria for requirements documents:
+q	The documen	,
+q	Line numbers or other unique identifiers are printed on the document to facilitate referring to specific locations.
+q	All open issues are marked as TBD (to be determined) or accessible in an issue-tracking tool.
+q	The
+.
+
+Inspection stages
+An inspection is a multistep process, as illustrated in Figure 17-2. You can inspect small sets of requirements at a time—perhaps those allocated to a specific development iteration—thereby eventually covering the full requirements collection. The purpose of each inspection process stage is summarized briefly in this section.
+ 
+ 
+
+FIGURE 17-2 Inspection is a multistep process. The dotted lines indicate that portions of the inspection process might be repeated if reinspection is necessary because of extensive rework.
+
+Planning The author and moderator plan the inspection together. They determine who should participate, what materials the inspectors should receive prior to the inspection meeting, the total meeting time needed to cover the material, and when the inspection should be scheduled. The number of pages reviewed per hour has a large impact on how many defects are found (Gilb and Graham 1993). As Figure 17-3 shows, proceeding through a requirements document slowly reveals the most defects. (An alternative interpretation of this frequently reported relationship is that the inspection slows down if you encounter a lot of defects. It’s not totally clear which is cause and which is effect.) Because no team has infinite time available for requirements inspections, select an appropriate inspection rate based on the risk of overlooking major defects. Two to four pages per
+hour is a practical guideline, although the optimum rate for maximum defect-detection effectiveness
+is about half that rate (Gilb and Graham 1993). Adjust this rate based on the following factors:
+■	The team’s previous inspection data, showing inspection effectiveness as a function of rate
+■	The amount of text on each page
+■	The complexity of the requirements
+■	The likelihood and impact of having errors remain undetected
+■	How critical the material being inspected is to project success
+■	The experience level of the person who wrote the requirements
+Prior to the inspection meeting, the author should share background information with inspectors so they understand the context of the items being inspected and know the author’s objectives for the inspection. Each inspector then examines the product to identify possible defects and issues, using the checklist of typical requirements defects described later in this chapter or other

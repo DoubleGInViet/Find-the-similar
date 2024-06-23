@@ -1,0 +1,317 @@
+﻿which attributes from Table 14-1 are most important to your project’s success. Then you can craft specific quality objectives in terms of these essential attributes so designers can make appropriate choices.
+Different projects will demand different sets of quality attributes for success. Jim Brosseau (2010) recommends the following practical approach for identifying and specifying the most important attributes for your project. He provides a spreadsheet to assist with the analysis at www.clarrus.com/ resources/articles/software-quality-attributes.
+Step 1: Start with a broad taxonomy
+Begin with a rich set of quality attributes to consider, such as those listed in Table 14-1. This broad starting point reduces the likelihood of overlooking an important quality dimension.
+Step 2: Reduce the list
+Engage a cross-section of stakeholders to assess which of the attributes are likely to be important to the project. (See Figure 2-2 in Chapter 2, “Requirements from the customer’s perspective,” for an
+extensive list of possible project stakeholders.) An airport check-in kiosk needs to emphasize usability (because most users will encounter it infrequently) and security (because it has to handle payments). Attributes that don’t apply to your project need not be considered further. Record the rationale for deciding that a particular quality attribute is either in or out of consideration.
+Recognize, though, that if you don’t specify quality goals, no one should be surprised if the product doesn’t exhibit the expected characteristics. This is why it’s important to get input from multiple stakeholders. In practice, some of the attributes will clearly be in scope, some will clearly be out of scope, and only a few will require discussion about whether they are worth considering for the project.
+Step 3: Prioritize the attributes
+Prioritizing the pertinent attributes sets the focus for future elicitation discussions. Pairwise rank- ing comparisons can work efficiently with a small list of items like this. Figure 14-1 illustrates how to use Brosseau’s spreadsheet to assess the quality attributes for an airport check-in kiosk. For each cell at the intersection of two attributes, ask yourself, “If I could have only one of these attributes, which would I take?” E
+i	; a c
+or instance, comparing availability and integrity, I conclude that integrity is more
+important. The passenger can always check in with the desk agent if the kiosk isn’t operational (albeit, perhaps with a long line of fellow travelers). But if the kiosk doesn’t reliably show the correct data,
+the passenger will be very unhappy. So I put a caret in the cell at the intersection of availability and integrity, pointing up to integrity as being the more important of the two.
+ 
+ 
+FIGURE 14-1 Sample quality attribute prioritization for an airport check-in kiosk.
+
+The spreadsheet calculates a relative score for each attribute, shown in the second column. In this illustration, security is most important (with a score of 7), closely followed by integrity (6) and
+usability (5). Though the other factors are indeed important to success—it’s not good if the kiosk isn’t available for travelers to use or if it crashes halfway through the check-in process—the fact is that not all quality attributes can have top priority.
+The	step helps in two ways. First, it lets you focus elicitation efforts on those
+attributes that are most strongly aligned with project success. Second, it helps you know how to respond when you encounter conflicting quality requirements. In the airport check-in kiosk example, elicitation would reveal a desire to achieve specific performance goals, as well as some
+specific security goals. These two attributes can clash, because adding security layers can slow down transactions. However, because the prioritization exercise revealed that security is more important (with a score of 7) than performance (with a score of 4), you should bias the resolution of any such conflicts in favor of security.
+
+Step 4: Elicit specific expectations for each attribute
+The comments users make during requirements elicitation supply some clues about the quality characteristics they have in mind for the product. The trick is to pin down just what the users are thinking when they say the software must be user-friendly, fast, reliable, or robust. Questions that explore the users’ expectations can lead to specific quality requirements that help developers create a delightful product.
+ 
+Users won’t know how to answer questions such as “What are your interoperability requirements?” or “How reliable does the software have to be?” The business analyst will need to ask questions that guide the users’ thought processes through an exploration of interoperability, reliability, and other attributes. Roxanne Miller (2009) provides extensive lists of suggested questions to use when eliciting quality requirements; this chapter also presents many examples. When planning an elicitation session, a BA should start with a list of questions like Miller’s and distill it down to those questions that are most pertinent to the project. As an illustration, following are a
+
+ 
+1.	What would be a reasonable or acceptable response time for retrieval of a typical patent
+application in response to a query?
+2.	What would users consider an unacceptable response time for a typical query?
+3.
+
+4.	What’s the maximum number of simultaneous users that you would anticipate?
+5.	What times of the day, week, month, or year have much heavier usage than usual?
+Sending a list of questions like these to elicitation participants in advance gives them an opportunity to think about or research their answers so they don’t have to answer a barrage of questions off the tops of their heads. A good final question to ask during any such elicitation discussion is, “Is there anything I haven’t asked you that we should discuss?”
+Consider asking users what would constitute unacceptable performance, security, or reliability.
+That is, specify system properties that would violate the user’s quality expectations, such as allowing an unauthorized user to delete files (Voas 1999). Defining unacceptable characteristics lets you devise tests that try to force the system to demonstrate those characteristics. If you can’t force them, you’ve probably achieved your quality goals. This approach is particularly valuable for safety-critical applications, in which a system that violates reliability or safety tolerances poses a risk to life or limb.
+Another possible elicitation strategy is to begin with the quality goals that stakeholders have for the system under development (Alexander and Beus-Dukic 2009). A stakeholder’s quality goal can be decomposed to reveal both functional and nonfunctional subgoals—and hence requirements—which become both more specific and easier to measure through the decomposition.
+Step 5: Specify well-structured quality requirements
+Simplistic quality requirements such as “The system shall be user-friendly” or “The system shall be available 24x7” aren’t useful. The former is far too subjective and vague; the latter is rarely realistic or necessary. Neither is measurable. Such requirements provide little guidance to developers. So the final step is to craft specific and verifiable requirements from the information that was elicited
+regarding each quality attribute. When writing quality requirements, keep in mind the useful SMART mnemonic—make them Specific, Measurable, Attainable, Relevant, and Time-sensitive.
+Quality requirements need to be measurable to establish a precise agreement on expectations
+among the BA, the customers, and the development team. If it’s not measurable, there is little point
+ 
+in specifying it, because you’ll never be able to determine if you’ve achieved a desired goal. If a tester can’t test a requirement, it’s not good enough. Indicate the scale or units of measure for each attribute and the target, minimum, and maximum values. The notation called Planguage described later in this chapter helps with this sort of precise specification. It might take a few discussions with users to pin down clear, measurable criteria for assessing satisfaction of a quality requirement.
+Suzanne and James Robertson (2013) recommend including fit criteria—”a quantification of the requirement that demonstrates the standard the product must reach”—as part of the specification  of every requirement, both functional and nonfunctional. This is excellent advice. Fit criteria describe a measurable way to assess whether each requirement has been implemented correctly. They help designers select a solution they believe will meet the goal, and they help testers evaluate the results.
+Instead of inventing your own way to document unfamiliar requirements, look for an existing requirement pattern to follow. A pattern provides guidance about how to write a particular type of requirement, along with a template you can populate with the specific details for your situation. Stephen Withall (2007) provides numerous patterns for specifying quality requirements, including performance, availability, flexibility, scalability, security, user access, and installability. Following patterns like these will help even novice BAs write sound quality requirements.
+
+Defining quality requirements
+This section describes each of the quality attributes in Table 14-1 and presents some sample quality requirements from various projects. Soren Lauesen (2002) and Roxanne Miller (2009) provide many additional examples of well-specified quality attribute requirements. As with all requirements, it’s
+a good idea to record the origin of each quality requirement and the rationale behind the stated quality goals if these are not obvious. The rationale is important in case questions arise about the need for a specific goal or whether the cost is justifiable. That type of source information has been omitted from the examples presented in this chapter.
+
+External quality attributes describe characteristics that are observed when the software is executing. They profoundly influence the user experience and the user’s perception of system quality.
+The external quality attributes described in this chapter are availability, installability, integrity, interoperability, performance, reliability, robustness, safety, security, and usability.
+
+Availability
+
+use and fully operational. Formally, availability equals the ratio of up time to the sum of up time and
+down time. Still more formally,	equals the mean time between failures (MTBF) for the
+system divided by the sum of the MTBF and the mean time to repair (MTTR) the system after a failure is encountered. Scheduled maintenance periods also affect availability. Availability is closely related to reliability and is strongly affected by the maintainability subcategory of modifiability.
+ 
+Certain tasks are more time-critical than others. Users become frustrated—even irate—when they need to get essential work done and the functionality they need isn’t available. Ask users what
+percentage of up time is really needed or how many hours in a given time period the system must be available. Ask whether there are any time periods for which availability is imperative to meet business or safety objectives. Availability requirements are particularly complex and important for websites, cloud-based applications, and applications that have users distributed throughout many time zones. An availability requirement might be stated like the following:
+
+AVL-1. The system shall be at least 95 percent available on weekdays between	
+6:00 A.M. and midnight Eastern Time, and at least 99 percent available on weekdays
+between 3:00 P.M. and 5:00 P.M. Eastern Time	.
+As with many of the examples presented in this chapter, this requirement is somewhat simplified. It doesn’t define the level of performance that constitutes being available. Is the system considered available if only one person can use it on the network in a degraded mode? Probably not.
+Availability requirements are sometimes stipulated contractually as a service level agreement.
+Service providers might have to pay a penalty if they do not satisfy such agreements. Such requirements must precisely define exactly what constitutes a system being available (or not) and could include statements such as the following:
+A
+
+ 
+
+
+When eliciting availability requirements, ask questions to explore the following issues (Miller 2009):
+■	What portions of the system are most critical for being available?
+■	What are the business consequences of the system being unavailable to its users?
+■	If scheduled maintenance must be performed periodically, when should it be scheduled? What is the impact on system availability? What are the minimum and maximum durations of the maintenance periods? How are user access attempts to be managed during the maintenance periods?
+ 
+■	If maintenance or housekeeping activities must be performed while the system is up, what
+impact will they have on availability and how can that impact be minimized?
+■	What user notifications are necessary if the system becomes unavailable?
+■	What portions of the system have more stringent availability requirements than others?
+■	What availability dependencies exist between functionality groups (such as not accepting credit card payment for purchases if the credit-card authorization function is not available)?
+
+Software is not useful until it is installed on the appropriate device or platform. Some examples of software installation are: downloading apps to a phone or tablet; moving software from a PC onto a web server; updating an operating system; installing a huge commercial system, such as an enterprise resource planning tool; downloading a firmware update into a cable TV set-top box; and installing
+an end-user application onto a PC. Installability describes how easy is it to perform these operations correctly. Increasing a system’s installability reduces the time, cost, user disruption, error frequency, and skill level needed for an installation operation. Installability addresses the following activities:
+■	Initial installation
+■	Recovery from an incomplete, incorrect, or user-aborted installation
+■	Reinstallation of the same version
+■	Installation of a new version
+■	Reverting to a previous version
+■	Installation of additional components or updates
+■	Uninstallation
+A measure of a system’s installability is the mean time to install the system. This depends on a lot of factors, though: how experienced the installer is, how fast the destination computer is, the medium from which the software is being installed (Internet download, local network, CD/DVD), manual
+steps needed during the installation, and so forth. The Testing Standards Working Party provides a detailed list of guidelines and considerations for installability requirements and installability testing at www.testingstandards.co.uk/installability_guidelines.htm. Following are some sample installability requirements:
+INS-1.
+
+
+ 
+
+ 
+ 
+
+ 
+
+
+
+ 
+Following are examples of some questions to explore when eliciting installability requirements:
+■	What installation operations must be performed without disturbing the user’s session?
+■	What installation operations will require a restart of the application? Of the computer or device?
+■	What should the application do upon successful, or unsuccessful, installation?
+■	What operations should be performed to confirm the validity of an installation?
+■	Does the user need the capability to install, uninstall, reinstall, or repair just selected portions of the application? If so, which portions?
+■	What other applications need to be shut down before performing the installation?
+■	What authorization or access privileges does the installer need?
+■	How should the system handle an incomplete installation, such as one interrupted by a power failure or aborted by the user?
+
+Integrity
+
+. Integrity requirements have no tolerance for error: the data is either in good shape and protected, or it is not. Data needs to be protected against threats such as accidental loss or corruption, ostensibly identical data sets that do not match, physical damage to storage media, accidental file erasure, or data overwriting by users. Intentional attacks that attempt to deliberately corrupt or steal data are also a risk. Security sometimes is considered a subset of integrity, because some security requirements are intended to prevent access to data by unauthorized users. Integrity requirements should ensure that the data received from other systems matches what is sent and vice versa. Software executables themselves are subject to attack, so their integrity also must be protected.
+Data integrity also addresses the accuracy and proper formatting of the data (Miller 2009). This includes concerns such as formatting of fields for dates, restricting fields to the correct data type or length, ensuring that data elements have valid values, checking for an appropriate entry in one field when another field has a certain value, and so on. Following are some sample integrity requirements:
+INT-1.
+es.
+ 
+INT-2. The system shall protect against the unauthorized addition, deletion, or modification of data.
+INT-3. The Chemical Tracking System shall confirm that an encoded chemical structure imported from third-party structure-drawing tools represents a valid chemical structure.
+INT-4. The system shall confirm daily that the application executables have not been modified by the addition of unauthorized code.
+Some factors to consider when discussing integrity requirements include the following
+(Withall 2007):
+■	Ensuring that changes in the data are made either entirely or not at all. This might mean backing out of a data change if a failure is encountered partway through the operation.
+■	Ensuring the persistence of changes that are made in the data.
+■	Coordinating changes made in multiple data stores, particularly when changes have to be made simultaneously (say, on multiple servers) and at a specific time (say, at 12:00 A.M. GMT on January 1 in several locations).
+■	Ensuring the physical security of computers and external storage devices.
+■	Performing data backups. (At what frequency? Automatically and/or on demand? Of what files or databases? To what media? With or without compression and verification?)
+■	Restoring data from a backup.
+■	Archiving of data: what data, when to archive, for how long, with what deletion requirements.
+■	Protecting data stored or backed up in the cloud from people who aren’t supposed to access it.
+
+Interoperability
+
+. To assess interoperability, you need to know which other applications the users will employ in conjunction with your product and what data they expect to exchange. Users of the Chemical Tracking System were accustomed to drawing chemical structures with several commercial tools, so they presented the following interoperability requirement:
+I
+s
+5	tools.
+You might prefer to state this as an external interface requirement and define the information formats that the Chemical Tracking System can import. You could also define several functional requirements that deal with the import operation. Identifying and documenting such requirements is more important than exactly how you classify them.
+ 
+ 
+Interoperability requirements might dictate that standard data interchange formats be used to facilitate exchanging information with other software systems. Such a requirement for the Chemical Tracking System was:
+IOP-2. The Chemical Tracking System shall be able to import any chemical structure
+encoded using the SMILES (simplified molecular-input line-entry system) notation.
+Thinking about the system from the perspective of quality attributes sometimes reveals previously unstated requirements. The users hadn’t expressed this chemical structure interoperability need when we were discussing either external interfaces or system functionality. As soon as the BA asked about other systems to which the Chemical Tracking System had to connect, though, the product champion immediately mentioned the two chemical structure drawing packages.
+Following are some questions you can use when exploring interoperability requirements:
+■	To what other systems must this one interface? What services or data must they exchange?
+■	What standard data formats are necessary for data that needs to be exchanged with other
+systems?
+■	What specific hardware components must interconnect with the system?
+■	What messages or codes must the system receive and process from other systems or devices?
+■	What standard communication protocols are necessary to enable interoperability?
+■	What externally mandated interoperability requirements must the system satisfy?
+
+Performance
+Performance is one of the quality attributes that users often will bring up spontaneously. Performance represents the responsiveness of the system to various user inquiries and actions, but it encompasses much more than that, as shown in Table 14-2. Withall (2007) provides patterns for specifying several of these classes of performance requirements.
+Poor performance is an irritant to the user who’s waiting for a query to display results. But performance problems can also represent serious risks to safety, such as when a real-time process control system is overloaded. Stringent performance requirements strongly affect software design strategies and hardware choices, so define performance goals that are appropriate for the operating
+ 
+environment. All users want their applications to run instantly, but the real performance requirements will be different for a spell-check feature than for a missile’s radar guidance system. Satisfying performance requirements can be tricky because they depend so much upon external factors such as the speed of the computer being used, network connections, and other hardware components.
+TABLE 14-2 Some aspects of performance
+
+Performance dimension	Example
+Response time	Number of seconds to display a webpage
+Throughput	Credit card transactions processed per second
+Data capacity	Maximum number of records stored in a database
+Dynamic capacity	Maximum number of concurrent users of a social media website
+Predictability in real-time systems	Hard timing requirements for an airplane’s flight-control system
+Latency	Time delays in music recording and production software
+Behavior in degraded modes or overloaded conditions	A natural disaster leads to a massive number of emergency telephone system calls
+When documenting performance requirements, also document their rationale to guide the developers in making appropriate design choices. For instance, stringent database response time demands might lead the designers to mirror the database in multiple geographical locations. Specify the number of transactions per second to be performed, response times, and task scheduling relationships for real-time systems. You could also specify memory and disk space requirements, concurrent user loads, or the maximum number of rows stored in database tables. Users and BAs might not know all this information, so plan to collaborate with various stakeholders to research
+the more technical aspects of quality requirements. Following are some sample performance
+requirements:
+
+ 
+PER-2. The anti-lock braking system speed sensors shall report wheel speeds every 2 milliseconds with a variation not to exceed 0.1 millisecond.
+PER-3. Webpages shall fully download in an average of 3 seconds or less over a 30 megabits/second Internet connection.
+PER-4. At least 98 percent of the time, the trading system shall update the transaction status display within 1 second after the completion of each trade.
+Performance is an external quality attribute because it can be observed only during program execution. It is closely related to the internal quality attribute of efficiency, which has a big impact on the user-observed performance.
+ 
+Reliability
+The probability of the software executing without failure for a specific period of time is known as reliability (Musa 1999). Reliability problems can occur because of improper inputs, errors in the software code itself, components that are not available when needed, and hardware failures.
+Robustness and availability are closely related to reliability. Ways to specify and measure software reliability include the percentage of operations that are completed correctly, the average length of time the system runs before failing (mean time between failures, or MTBF), and the maximum acceptable probability of a failure during a given time period. Establish quantitative reliability
+requirements based on how severe the impact would be if a failure occurred and whether the cost of maximizing reliability is justifiable. Systems that require high reliability should also be designed for high verifiability to make it easier to find defects that could compromise reliability.
+My team once wrote some software to control laboratory equipment that performed day-long
+experiments using scarce, expensive chemicals. The users required the software component that actually ran the experiments to be highly reliable. Other system functions, such as logging temperature data periodically, were less critical. A reliability requirement for this system was
+REL-1. No more than 5 experimental runs out of 1,000 can be lost because of software failures.
+Some system failures are more severe than others. A failure might force the user to re-launch an application and recover data that was saved. This is annoying but not catastrophic. Failures that result in lost or corrupted data, such as when an attempted database transaction fails to commit properly, are more severe. Preventing errors is better than detecting them and attempting to recover from them.
+Like many other quality attributes, reliability is a lagging indicator: you can’t tell if you’ve achieved it until the system has been in operation for awhile. Consider the following example:
+
+REL-2. The mean time between failures of the card reader component shall be at least 90 days.
+There’s no way to tell if the system has satisfied this requirement until at least 90 days have passed. However, you can tell if the system has failed to demonstrate sufficient reliability if the card reader component fails more than once within a 90-day period.
+Following are some questions to ask user representatives when you’re eliciting reliability
+requirements:
+■	How would you judge whether this system was reliable enough?
+■	What would be the consequences of experiencing a failure when performing certain
+operations with the system?
+■	What would you consider to be a critical failure, as opposed to a nuisance?
+■	Under what conditions could a failure have severe repercussions on your business operations?
+ 
+■	No one likes to see a system crash, but are there certain parts of the system that absolutely have to be super-reliable?
+■	If the system goes down, how long could it stay offline before it significantly affects your business operations?
+Understanding reliability requirements lets architects, designers, and developers take actions that they think will achieve the necessary reliability. From a requirements perspective, one way to make a system both reliable and robust is to specify exception conditions and how they are to be handled. Badly handled exceptions can convey an impression of poor reliability and usability to users. A website that blanks out the information a user had entered in a form when it encounters a single bad input value is exasperating. No user would ever specify that behavior as being acceptable. Developers can make systems more reliable by practicing defensive programming techniques, such as testing all input data values for validity and confirming that disk write operations were completed successfully.
+
+Robustness
+A customer once told a company that builds measurement devices that its next product should be “built like a tank.” The developing company therefore adopted—slightly tongue-in-cheek—the new quality attribute of “tankness.” Tankness is a colloquial way of saying robustness. Robustness is the degree to which a system continues to function properly when confronted with invalid inputs, defects in connected software or hardware components, external attack, or unexpected operating conditions. Robust software recovers gracefully from problem situations and is forgiving of user mistakes. It recovers from internal failures without adversely affecting the end-user experience. Software errors are handled in a way the user perceives as reasonable, not annoying. Other attribute terms associated with robustness are fault tolerance (are user input errors caught and corrected?), survivability (can
+the camera experience a drop from a certain height without damage?), and recoverability (can the PC
+resume proper operation if it loses power in the middle of an operating system update?).
+When eliciting robustness requirements, ask users about error conditions the system might encounter and how the system should react. Think about ways to detect possible faults that could lead to a system failure, report them to the user, and recover from them if the failure occurs.
+Make sure you understand when one operation (such as preparing data for transmission) must be completed correctly before another can begin (sending the data to another computer system). One example of a robustness requirement is
+ROB-1. If the text editor fails before the user saves the file, it shall recover the contents of the file being edited as of, at most, one minute prior to the failure the next time the same user launches the application.
+A requirement like this might lead a developer to implement checkpointing or periodic autosave to minimize data loss, along with functionality to look for the saved data upon startup and restore the file contents. You wouldn’t want to stipulate the precise mechanism in a robustness requirement, though. Leave those technical decisions to developers.
+ 
+ 	 
+
+I once led a project to develop a reusable software component called the Graphics Engine, which interpreted data files that defined graphical plots and rendered the plots on a designated output device. Several applications that needed to generate plots invoked the Graphics Engine. Because the developers had no control over the data that these applications fed into the Graphics Engine, robustness was an essential quality. One of our robustness requirements was
+ROB-2. All plot description parameters shall have default values specified, which the
+Graphics Engine shall use if a parameter’s input data is missing or invalid.
+With this requirement, the program wouldn’t crash if, for example, an application requested an unsupported line style. The Graphics Engine would supply the default solid line style and continue executing. This would still constitute a product failure because the end user didn’t get the desired output. But designing for robustness reduced the severity of the failure from a program crash to generating an incorrect line style, an example of fault tolerance.
+
+Safety
+Safety requirements deal with the need to prevent a system from doing any injury to people or damage to property (Leveson 1995; Hardy 2011). Safety requirements might be dictated by
+government regulations or other business rules, and legal or certification issues could be associated with satisfying such requirements. Safety requirements frequently are written in the form of conditions or actions the system must not allow to occur.
+People are rarely injured by exploding spreadsheets. However, hardware devices controlled by software can certainly pose a risk to life and limb. Even some software-only applications can have unobvious safety requirements. An application to let people order meals from a cafeteria might include a safety requirement like the following:
+SAF-1. The user shall be able to see a list of all ingredients in any menu items, with ingredients highlighted that are known to cause allergic reactions in more than
+0.5	percent of the North American population.
+ 
+Web browser capabilities like parental controls that disable access to certain features or URLs could be considered as solutions to either safety or security requirements. It’s more common to see safety requirements written for systems that include hardware, such as the following examples:
+
+
+ 
+
+
+
+ 
+
+
+ 
+When eliciting safety requirements you might need to interview subject matter experts who are very familiar with the operating environment or people who have thought a lot about project risks. Consider asking questions like the following:
+■	Under what conditions could a human be harmed by the use of this product? How can the system detect those conditions? How should it respond?
+■	What is the maximum allowed frequency of failures that have the potential to cause injury?
+■	What failure modes have the potential of causing harm or property damage?
+■	What operator actions have the potential of inadvertently causing harm or property damage?
+■	Are there specific modes of operation that pose risks to humans or property?
+
+Security
+Security deals with blocking unauthorized access to system functions or data, ensuring that the software is protected from malware attacks, and so on. Security is a major issue with Internet software. Users of e-commerce systems want their credit card information to be secure. Web surfers don’t want personal information or a record of the sites they visit to be used inappropriately. Companies want to protect their websites against denial-of-service or hacking attacks. As with integrity requirements, security requirements have no tolerance for error. Following are some considerations to examine when eliciting security requirements:
+■	User authorization or privilege levels (ordinary user, guest user, administrator) and user access controls (the roles and permissions matrix that was illustrated in Figure 9-2 can be a useful tool)
+■	User identification and authentication (password construction rules, password change frequency, security questions, forgotten logon name or password procedures, biometric identification, account locking after unsuccessful access attempts, unrecognized computer)
+■	Data privacy (who can create, see, change, copy, print, and delete what information)
+■	Deliberate data destruction, corruption, or theft
+■	Protection against viruses, worms, Trojan horses, spyware, rootkits, and other malware ■	Firewall and other network security issues
+■	Encryption of secure data
+■	Building audit trails of operations performed and access attempts
+Following are some examples of security requirements. It’s easy to see how you could design tests to verify that these requirements are correctly implemented.
+SEC-1. The system shall lock a user’s account after four consecutive unsuccessful
+logon attempts within a period of five minutes.
+SEC-2. The system shall log all attempts to access secure data by users having
+insufficient privilege levels.
+SEC-3. A user shall have to change the temporary password assigned by the security officer to a previously unused password immediately following the first successful logon with the temporary password.
+SEC-4. A door unlock that results from a successful security badge read shall keep the door unlocked for 8.0 seconds, with a tolerance of 0.5 second.
+SEC-5. The resident antimalware software shall quarantine any incoming Internet
+traffic that exhibits characteristics of known or suspected virus signatures.
+SEC-6. The magnetometer shall detect at least 99.9 percent of prohibited objects, with a false positive rate not to exceed 1 percent.
+Security requirements often originate from business rules, such as corporate security policies, as the following example illustrates:
+SEC-7. Only users who have Auditor access privileges shall be able to view customer transaction histories.
+Try to avoid writing security requirements with embedded design constraints. Specifying passwords for access control is an example. The real requirement is to restrict access to the system to authorized users; passwords are merely one way (albeit the most common way) to accomplish that objective. Depending on which user authentication method is chosen, this security requirement will lead to specific functional requirements that implement the authentication method.
+Following are some questions to explore when eliciting security requirements:
+■	What sensitive data must be protected from unauthorized access?
+■	Who is authorized to view sensitive data? Who, specifically, is not authorized?
+■	Under what business conditions or operational time frames are authorized users allowed to access functionality?
+■	What checks must be performed to confirm that the user is operating the application in a secure environment?
+ 
+■	How frequently should virus software scan for viruses?
+■	Is there a specific user authentication method that must be used?
+
+Usability addresses the myriad factors that constitute what people describe colloquially as
+user-friendliness, ease of use, and human engineering. Analysts and developers shouldn’t talk about “friendly” software but rather about software that’s designed for effective and unobtrusive usage. Usability measures the effort required to prepare input for a system, operate it, and interpret its outputs.
+Software usability is a huge topic with a considerable body of literature (for example: Constantine and Lockwood 1999; Nielsen 2000; Lazar 2001; Krug 2006; Johnson 2010). Usability encompasses several subdomains beyond the obvious ease of use, including ease of learning; memorability; error avoidance, handling, and recovery; efficiency of interactions; accessibility; and ergonomics. Conflicts can arise between these categories. For instance, ease of learning can be at odds with ease of use.
+The actions a designer might take to make it easy for a new or infrequent user to employ the system can be irritating impediments to a power user who knows exactly what he wants to do and craves efficiency. Different features within the same application might also have different usability goals.
+It might be important to be able to enter data very efficiently, but also to be able to easily figure out how to generate a customized report. Table 14-3 illustrates some of these usability design
+approaches; you can see the possible conflict if you optimize for one aspect of usability over another inappropriately for specific user classes.
+
+TABLE 14-3 Possible design approaches for ease of learning and ease of use
+
+Ease of learning	Ease of use
+Verbose prompts	Keyboard shortcuts
+Wizards	Rich, customizable menus and toolbars
+Visible menu options	Multiple ways to access the same function
+Meaningful, plain-language messages	Autocompletion of entries
+Help screens and tooltips	Autocorrection of errors
+Similarity to other familiar systems	Macro recording and scripting capabilities
+Limited number of options and widgets displayed	Ability to carry over information from a previous transaction
+	Automatically fill in form fields
+	Command-line interface As with the other quality attributes, it is possible to measure many aspects of “user-friendliness.” Usability indicators include:
+■	The average time needed for a specific type of user to complete a particular task correctly.
+■	How many transactions the user can complete correctly in a given time period.
+■	What percentage of a set of tasks the user can complete correctly without needing help.
+■	How many errors the user makes when completing a task.
+■	How many tries it takes the user to accomplish a particular task, like finding a specific function buried somewhere in the menus.
+■	The delay or wait time when performing a task.
+■	The number of interactions (mouse clicks, keystrokes, touch-screen gestures) required to get to a piece of information or to accomplish a task.
+
+
+To explore their usability expectations, the business analysts on the Chemical Tracking System asked their product champions questions such as “How many steps would you be willing to go through to request a chemical?” and “How long should it take you to complete a chemical request?” These are simple starting points toward defining the many characteristics that will make the software easy to use. Discussions about usability can lead to measurable goals such as the following:
+USE-1. A trained user shall be able to submit a request for a chemical from a vendor catalog in an average of three minutes, and in a maximum of five minutes, 95 percent of the time.

@@ -1,0 +1,859 @@
+“Software Requirements, Third Edition, is the most valuable requirements guidance you will find. Wiegers and Beatty cover the entire landscape of practices that today’s business analyst is expected to know. Whether you are a veteran of requirements specification or a novice on your first project, this is the book that needs to be on your desk or in your hands.”
+—Gary K. Evans, Agile Coach and Use Case Expert, Evanetics, Inc.
+
+“It’s a three-peat: Karl Wiegers and Joy Beatty score again with this third edition. From the first edition in 1999 through each successive edition, the guidance that Software Requirements provides has been the foundation of my requirements consulting practice. To beginning and experienced practitioners alike, I cannot recommend this book highly enough.”
+—Roxanne Miller, President, Requirements Quest
+
+“The best book on requirements just got better! The third edition’s range of new topics expands the project circumstances it covers. Using requirements in agile environments is perhaps the most significant, because everyone involved still needs to understand what a new system must do—and agile developers are now an audience who ought to have a good grasp of what’s in this book.”
+—Stephen Withall, author of Software Requirement Patterns
+
+“The third edition of Software Requirements is finally available—and it was worth waiting so long. Full of practical guidance, it helps readers identify many useful practices for their work. I particularly enjoy the examples and many hands-on solutions that can be easily implemented in real-life scenarios.
+A must-read, not only for requirements engineers and analysts but also for project managers.”
+—Dr. Christof Ebert, Managing Director, Vector Consulting Services
+
+“Karl and Joy have updated one of the seminal works on software requirements, taking what
+was good and improving on it. This edition retains what made the previous versions must-have references for anyone working in this space and extends it to tackle the challenges faced in today’s complex business and technology environment. Irrespective of the technology, business domain, methodology, or project type you are working in, this book will help you deliver better outcomes for your customers.”
+—Shane Hastie, Chief Knowledge Engineer, Software Education
+
+“Karl Wiegers’s and Joy Beatty’s new book on requirements is an excellent addition to the literature. Requirements for large software applications are one of the most difficult business topics of the century. This new book will help to smooth out a very rough topic.”
+—T. Capers Jones, VP and CTO, Namcook Analytics LLC
+ 
+“Simply put, this book is both a must-read and a great reference for anyone working to define and manage software development projects. In today’s modern software development world, too often sound requirements practices are set aside for the lure of “unencumbered” agile. Karl and Joy have detailed a progressive approach to managing requirements, and detailed how to accommodate the ever-changing approaches to delivering software.”
+—Mark Kulak, Software Development Director, Borland, a Micro Focus company
+
+“I am so pleased to see the updated book on software requirements from Karl Wiegers and Joy Beatty. I especially like the latest topic on how to apply effective requirements practices to agile projects, because it is a service that our consultants are engaged in more and more these days. The practical guide and real examples of the many different requirement practices are invaluable.”
+—Doreen Evans, Managing Director of the Requirements and Business Analysis Practice for Robbins Gioia Inc.
+
+“As an early adopter of Karl’s classic book, Software Requirements, I have been eagerly awaiting his new edition—and it doesn’t disappoint. Over the years, IT development has undergone a change of focus from large, new, ‘green-field’ projects towards adoption of ready-made off-the-shelf solutions and quick-release agile practices. In this latest edition, Karl and Joy explore the implications of these new developments on the requirements process, with invaluable recommendations based not on dogma but on what works, honed from their broad and deep experience in the field.”
+—Howard Podeswa, CEO, Noble Inc., and author of The Business Analyst’s Handbook
+
+“If you are looking for a practical guide into what software requirements are, how to craft them, and what to do with them, then look no further than Software Requirements, Third Edition. This usable and readable text walks you through exactly how to approach common requirements-related scenarios. The incorporation of multiple stories, case studies, anecdotes, and examples keeps it engaging to read.”
+—Laura Brandenburg, CBAP, Host at Bridging the Gap
+
+“How do you make a good requirements read better? You add content like Karl and Joy did to address incorporating product vision, tackling agility issues, covering requirements reuse, tackling packaged and outsourced software, and addressing specific user classes. You could take an outside look inside of requirements to address process and risk issues and go beyond just capturing functionality.”
+—Donald J. Reifer, President, Reifer Consultants LLC
+
+“This new edition keeps pace with the speed of business, both in deepening the foundation of the second edition and in bringing analysts down-to-earth how-to’s for addressing the surge in agile development, using features to control scope, improving elicitation techniques, and expanding modeling. Wiegers and Beatty have put together a must-read for anyone in the profession.”
+—Keith Ellis, President and CEO, Enfocus Solutions Inc., and author of Business Analysis Benchmark
+ 
+ 
+
+
+
+
+
+
+
+Software Requirements, Third Edition
+
+
+Karl Wiegers and Joy Beatty
+ 
+PUBLISHED BY
+Microsoft Press
+A Division of Microsoft Corporation One Microsoft Way
+Redmond, Washington 98052-6399 Copyright © 2013 Karl Wiegers and Seilevel
+All rights reserved. No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.
+
+Library of Congress Control Number: 2013942928 ISBN: 978-0-7356-7966-5
+Microsoft Press books are available through booksellers and distributors worldwide. If you need support related to this book, email Microsoft Press Book Support at mspinput@microsoft.com. Please tell us what you think of this book at http://www.microsoft.com/learning/booksurvey.
+
+“Microsoft and the trademarks listed at http://www.microsoft.com/about/legal/en/us/IntellectualProperty/ Trademarks/EN-US.aspx are trademarks of the Microsoft group of companies. All other marks are property of their respective owners.”
+
+The example companies, organizations, products, domain names, email addresses, logos, people, places, and events depicted herein are fictitious. No association with any real company, organization, product, domain name, email address, logo, person, place, or event is intended or should be inferred.
+
+This book expresses the author’s views and opinions. The information contained in this book is provided without any express, statutory, or implied warranties. Neither the authors, Microsoft Corporation, nor its resellers, or distributors will be held liable for any damages caused or alleged to be caused either directly or indirectly by this book.
+Acquisitions Editor: Devon Musgrave
+Developmental Editors: Devon Musgrave and Carol Dillingham
+Project Editor: Carol Dillingham
+Editorial Production: Christian Holdener, S4Carlisle Publishing Services
+Copyeditor: Kathy Krause Indexer: Maureen Johnson Cover: Twist Creative • Seattle
+
+
+
+
+
+
+
+
+[LSI]
+[2013-09-06]
+ 
+
+
+
+
+
+For Chris, yet again. Eighth time’s the charm.
+—K.W.
+
+For my parents, Bob and Joanne, for a lifetime of encouragement.
+—J.B.
+ 
+
+ 
+
+
+
+
+
+Contents at a glance
+Introduction	xxv
+Acknowledgments	xxxi
+PART I	SOFTWARE REQUIREMENTS: WHAT, WHY, AND WHO
+CHAPTER 1	3
+CHAPTER 2	25
+CHAPTER 3	43
+CHAPTER 4	61
+PART II	REQUIREMENTS DEVELOPMENT
+CHAPTER 5	Establishing the business requirements	77
+CHAPTER 6	Finding the voice of the user	101
+ 
+CHAPTER 7
+CHAPTER 8
+CHAPTER 9	Playing by the rules
+ 
+119
+143
+167
+ 
+CHAPTER 10	Documenting the requirements	181
+CHAPTER 11	Writing excellent requirements	203
+CHAPTER 12	A picture is worth 1024 words	221
+CHAPTER 13	Specifying data requirements	245
+CHAPTER 14	Beyond functionality	261
+CHAPTER 15	Risk reduction through prototyping	295
+CHAPTER 16	First things first: Setting requirement priorities	313
+CHAPTER 17	Validating the requirements	329
+CHAPTER 18	Requirements reuse	351
+CHAPTER 19	Beyond requirements development	365
+PART III	REQUIREMENTS FOR SPECIFIC PROJECT CLASSES
+CHAPTER 20	Agile projects	383
+CHAPTER 21	Enhancement and replacement projects	393
+CHAPTER 22	Packaged solution projects	405
+CHAPTER 23	Outsourced projects	415
+ 
+
+
+
+
+
+
+CHAPTER 24	Business process automation projects	421
+ 
+CHAPTER 25
+ 
+427
+ 
+CHAPTER 26	Embedded and other real-time systems projects	439
+PART IV	REQUIREMENTS MANAGEMENT
+CHAPTER 27	Requirements management practices	457
+CHAPTER 28	Change happens	471
+CHAPTER 29	Links in the requirements chain	491
+CHAPTER 30	Tools for requirements engineering	503
+PART V	IMPLEMENTING REQUIREMENTS ENGINEERING
+CHAPTER 31	Improving your requirements processes	517
+CHAPTER 32	Software requirements and risk management	537
+Epilogue	549
+Appendix A	551
+Appendix B	559
+Appendix C	575
+Glossary	597
+References	605
+Index	619
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+viii	Contents at a glance
+ 
+
+
+
+
+
+Contents
+Introduction	xxv
+Acknowledgments	xxxi
+PART I	SOFTWARE REQUIREMENTS: WHAT, WHY, AND WHO
+Chapter 1	The essential software requirement	3
+Software requirements defined	5
+Some interpretations of ”requirement”	6
+Levels and types of requirements	7
+Working with the three levels	12
+Product vs. project requirements	14
+Requirements development and management	15
+Requirements development	15
+Requirements management	17
+Every project has requirements	18
+When bad requirements happen to good people	19
+Insufficient user involvement	20
+Inaccurate planning	20
+Creeping user requirements	20
+Ambiguous requirements	21
+Gold plating	21
+Overlooked stakeholders	22
+Benefits from a high-quality requirements process	22
+Chapter 2	Requirements from the customer’s perspective	25
+The expectation gap	26
+Who is the customer?	27
+The customer-development partnership	29
+Requirements Bill of Rights for Software Customers	31
+Requirements Bill of Responsibilities for Software Customers	33
+ix
+ 
+
+
+
+
+
+Creating a culture that respects requirements	36
+Identifying decision makers	38
+Reaching agreement on requirements	38
+The requirements baseline	39
+What if you don’t reach agreement?	40
+Agreeing on requirements on agile projects	41
+Chapter 3	Good practices for requirements engineering	43
+A requirements development process framework	45
+Good practices: Requirements elicitation	48
+Good practices: Requirements analysis	50
+Good practices: Requirements specification	51
+Good practices: Requirements validation	52
+Good practices: Requirements management	53
+Good practices: Knowledge	54
+Good practices: Project management	56
+Getting started with new practices	57
+Chapter 4	The business analyst	61
+The business analyst role	62
+The business analyst’s tasks	63
+Essential analyst skills	65
+Essential analyst knowledge	68
+The making of a business analyst	68
+The former user	68
+The former developer or tester	69
+The former (or concurrent) project manager	70
+The subject matter expert	70
+The rookie	71
+The analyst role on agile projects	71
+Creating a collaborative team	72
+x	Contents
+ 
+
+
+
+
+PART II	REQUIREMENTS DEVELOPMENT
+Chapter 5	Establishing the business requirements	77
+Defining business requirements	78
+Identifying desired business benefits	78
+Product vision and project scope	78
+Conflicting business requirements	80
+Vision and scope document	81
+1.	Business requirements	83
+2.	Scope and limitations	88
+3.	Business context	90
+Scope representation techniques	92
+Context diagram	92
+Ecosystem map	94
+Feature tree	95
+Event list	96
+Keeping the scope in focus	97
+Using business objectives to make scoping decisions	97
+Assessing the impact of scope changes	98
+Vision and scope on agile projects	98
+Using business objectives to determine completion	99
+Chapter 6	Finding the voice of the user	101
+User classes	102
+Classifying users	102
+Identifying your user classes	105
+User personas	107
+Connecting with user representatives	108
+The product champion	109
+External product champions	110
+Product champion expectations	111
+Multiple product champions	112
+ 
+
+
+
+
+
+Selling the product champion idea	113
+Product champion traps to avoid	114
+User representation on agile projects	115
+Resolving conflicting requirements	116
+Chapter 7	Requirements elicitation	119
+Requirements elicitation techniques	121
+Interviews	121
+Workshops	122
+Focus groups	124
+Observations	125
+Questionnaires	127
+System interface analysis	127
+User interface analysis	128
+Document analysis	128
+Planning elicitation on your project	129
+Preparing for elicitation	130
+Performing elicitation activities	132
+Following up after elicitation	134
+Organizing and sharing the notes	134
+Documenting open issues	135
+Classifying customer input	135
+How do you know when you’re done?	138
+Some cautions about elicitation	139
+Assumed and implied requirements	140
+Finding missing requirements	141
+ 
+Chapter 8
+ 
+user requirements	143
+Use cases and user stories	144
+The use case approach	147
+Use cases and usage scenarios	149
+Identifying use cases	157
+ 
+
+
+
+
+
+
+Exploring use cases	158
+Validating use cases	160
+Use cases and	l requirements	161
+Use case traps to avoid	163
+Benefits of usage-centric requirements	164
+Chapter 9	Playing by the rules	167
+A business rules taxonomy	169
+Facts	170
+Constraints	170
+Action enablers	171
+Inferences	173
+Computations	173
+Atomic business rules	174
+Documenting business rules	175
+Discovering business rules	177
+Business rules and requirements	178
+Tying everything together	180
+Chapter 10 Documenting the requirements	181
+The software requirements specification	183
+Labeling requirements	186
+Dealing with incompleteness	188
+User interfaces and the SRS	189
+A software requirements specification template	190
+1.	Introduction	192
+2.	Overall description	193
+3.	System features	194
+4.	Data requirements	195
+5.	External interface requirements	196
+6.	Quality attributes	197
+7.	Internationalization and localization requirements	198
+8.	[Other requirements]	199
+ 
+
+
+
+
+
+
+Appendix A: Glossary	199
+Appendix B: Analysis models	199
+Requirements specification on agile projects	199
+Chapter 11 Writing excellent requirements	203
+Characteristics of excellent requirements	203
+Characteristics of requirement statements	204
+Characteristics of requirements collections	205
+Guidelines for writing requirements	207
+System or user perspective	207
+Writing style	208
+Level of detail	211
+Representation techniques	212
+Avoiding ambiguity	213
+Avoiding incompleteness	216
+Sample requirements, before and after	217
+Chapter 12 A picture is worth 1024 words	221
+Modeling the requirements	222
+From voice of the customer to analysis models	223
+Selecting the right representations	225
+Data flow diagram	226
+Swimlane diagram	230
+State-transition diagram and state table	232
+Dialog map	235
+Decision tables and decision trees	239
+Event-response tables	240
+A few words about UML diagrams	243
+Modeling on agile projects	243
+A final reminder	244
+ 
+
+
+
+
+Chapter 13 Specifying data requirements	245
+Modeling data relationships	245
+The data dictionary	248
+Data analysis	251
+Specifying reports	252
+Eliciting reporting requirements	253
+Report specification considerations	254
+A report specification template	255
+Dashboard reporting	257
+Chapter 14 Beyond	261
+Software quality attributes	262
+Exploring quality attributes	263
+Defining quality requirements	267
+External quality attributes	267
+Internal quality attributes	281
+Specifying quality requirements with Planguage	287
+Quality attribute trade-offs	288
+Implementing quality attribute requirements	290
+Constraints	291
+Handling quality attributes on agile projects	293
+Chapter 15 Risk reduction through prototyping	295
+Prototyping: What and why	296
+Mock-ups and proofs of concept	297
+Throwaway and evolutionary prototypes	298
+Paper and electronic prototypes	301
+Working with prototypes	303
+Prototype evaluation	306
+ 
+
+
+
+
+
+
+Risks of prototyping	307
+Pressure to release the prototype	308
+Distraction by details	308
+Unrealistic performance expectations	309
+Investing excessive effort in prototypes	309
+Prototyping success factors	310
+Chapter 16 First things first: Setting requirement	313
+Why	requirements?	314
+Some prioritization pragmatics	315
+Games people play with priorities	316
+Some prioritization techniques	317
+In or out	318
+Pairwise comparison and rank ordering	318
+Three-level scale	319
+MoSCoW	320
+$100 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .321
+Prioritization based on value, cost, and risk	322
+Chapter 17 Validating the requirements	329
+Validation and verification	331
+Reviewing requirements	332
+The inspection process	333
+Defect checklist	338
+Requirements review tips	339
+Requirements review challenges	340
+Prototyping requirements	342
+Testing the requirements	342
+Validating requirements with acceptance criteria	347
+Acceptance criteria	347
+Acceptance tests	348
+ 
+
+
+
+
+
+
+Chapter 18 Requirements reuse
+Why reuse requirements?	352
+Dimensions of requirements reuse	352
+Extent of reuse	353
+Extent of modification	354
+Reuse mechanism	354
+Types of requirements information to reuse	355
+Common reuse scenarios	356
+Software product lines	356
+Reengineered and replacement systems	357
+Other likely reuse opportunities	357
+Requirement patterns	358
+Tools to facilitate reuse	359
+Making requirements reusable	360
+Requirements reuse barriers and success factors	362
+Reuse barriers	362
+Reuse success factors	363
+Chapter 19 Beyond requirements development	365
+Estimating requirements effort	366
+From requirements to project plans	369
+Estimating project size and effort from requirements	370
+Requirements and scheduling	372
+From requirements to designs and code	373
+Architecture and allocation	373
+Software design	374
+User interface design	375
+From requirements to tests	377
+From requirements to success	379
+ 
+
+
+
+
+
+
+PART III	REQUIREMENTS FOR SPECIFIC PROJECT CLASSES
+Chapter 20 Agile projects	383
+Limitations of the waterfall	384
+The agile development approach	385
+Essential aspects of an agile approach to requirements	385
+Customer involvement	386
+Documentation detail	386
+The backlog and prioritization	387
+Timing	387
+Epics, user stories, and features, oh my!	388
+Expect change	389
+Adapting requirements practices to agile projects	390
+Transitioning to agile: Now what?	390
+Chapter 21 Enhancement and replacement projects	393
+Expected challenges	394
+Requirements techniques when there is an existing system	394
+Prioritizing by using business objectives	396
+Mind the gap	396
+Maintaining performance levels	397
+When old requirements don’t exist	398
+Which requirements should you specify?	398
+How to discover the requirements of an existing system	400
+Encouraging new system adoption	401
+Can we iterate?	402
+Chapter 22 Packaged solution projects	405
+Requirements for selecting packaged solutions	406
+Developing user requirements	406
+Considering business rules	407
+Identifying data needs	407
+ 
+
+
+
+
+
+Defining quality requirements	408
+Evaluating solutions	408
+Requirements for implementing packaged solutions	411
+Configuration requirements	411
+Integration requirements	412
+Extension requirements	412
+Data requirements	412
+Business process changes	413
+Common challenges with packaged solutions	413
+Chapter 23 Outsourced projects	415
+Appropriate levels of requirements detail	416
+Acquirer-supplier interactions	418
+Change management	419
+Acceptance criteria	420
+Chapter 24 Business process automation projects	421
+Modeling business processes	422
+Using current processes to derive requirements	423
+Designing future processes first	424
+Modeling business performance metrics	424
+Good practices for business process automation projects	426
+ 
+Chapter 25
+ 
+427
+Overview of business analytics projects	427
+Requirements development for business analytics projects	429
+Prioritizing work by using decisions	430
+Defining how information will be used	431
+Specifying data needs	432
+Defining analyses that transform the data	435
+The evolutionary nature of analytics	436
+ 
+
+
+
+
+
+
+Chapter 26 Embedded and other real-time systems projects	439
+System requirements, architecture, and allocation	440
+Modeling real-time systems	441
+Context diagram	442
+State-transition diagram	442
+Event-response table	443
+Architecture diagram	445
+Prototyping	446
+Interfaces	446
+Timing requirements	447
+Quality attributes for embedded systems	449
+The challenges of embedded systems	453
+PART IV	REQUIREMENTS MANAGEMENT
+ 
+
+Chapter 27 Requirements management practices	457
+Requirements management process	458
+The requirements baseline	459
+Requirements version control	460
+Requirement attributes	462
+Tracking requirements status	464
+Resolving requirements issues	466
+Measuring requirements effort	467
+Managing requirements on agile projects	468
+Why manage requirements?	470
+Chapter 28 Change happens	471
+Why manage changes?	471
+Managing scope creep	472
+Change control policy	474
+Basic concepts of the change control process	474
+ 
+
+
+
+
+
+A change control process description	475
+1.	Purpose and scope	476
+2.	Roles and responsibilities	476
+3.	Change request status	477
+4.	Entry criteria	478
+5.	Tasks	478
+6.	Exit criteria	479
+7.	Change control status reporting	479
+Appendix: Attributes stored for each request	479
+The change control board	480
+CCB composition	480
+CCB charter	481
+Renegotiating commitments	482
+Change control tools	482
+Measuring change activity	483
+Change impact analysis	484
+Impact analysis procedure	484
+Impact analysis template	488
+Change management on agile projects	488
+Chapter 29 Links in the requirements chain	491
+Tracing requirements	491
+Motivations for tracing requirements	494
+The requirements traceability matrix	495
+Tools for requirements tracing	498
+A requirements tracing procedure	499
+Is requirements tracing feasible? Is it necessary?	501
+Chapter 30 Tools for requirements engineering	503
+Requirements development tools	505
+Elicitation tools	505
+Prototyping tools	505
+Modeling tools	506
+ 
+
+
+
+
+
+Requirements management tools	506
+Benefits of using an RM tool	506
+RM tool capabilities	508
+Selecting and implementing a requirements tool	510
+Selecting a tool	511
+Setting up the tool and processes	511
+Facilitating user adoption	513
+PART V	IMPLEMENTING REQUIREMENTS ENGINEERING
+Chapter 31 Improving your requirements processes	517
+How requirements relate to other project processes	518
+Requirements and various stakeholder groups	520
+Gaining commitment to change	521
+Fundamentals of software process improvement	522
+Root cause analysis	524
+The process improvement cycle	526
+Assess current practices	526
+Plan improvement actions	527
+Create, pilot, and roll out processes	528
+Evaluate results	529
+Requirements engineering process assets	530
+Requirements development process assets	531
+Requirements management process assets	532
+Are we there yet?	533
+Creating a requirements process improvement road map	535
+Chapter 32 Software requirements and risk management	537
+Fundamentals of software risk management	538
+Elements of risk management	538
+Documenting project risks	539
+Planning for risk management	542
+ 
+
+
+
+
+
+Requirements-related risks	542
+Requirements elicitation	543
+Requirements analysis	544
+Requirements specification	545
+Requirements validation	545
+Requirements management	546
+Risk management is your friend	546
+
+Epilogue
+549 
+Appendix A
+551 
+Appendix B
+559 
+Appendix C
+575 
+Glossary
+597 
+References
+605 
+Index
+619 
+ 
+
+ 
+
+Introduction
+
+Despite decades of industry experience, many software organizations struggle to understand, document, and manage their product requirements. Inadequate user input, incomplete requirements, changing requirements, and misunderstood business objectives are major reasons why so many information technology projects are less than fully successful. Some software teams aren’t proficient at eliciting requirements from customers and other sources. Customers often don’t have the time or patience to participate in requirements activities. In many cases, project participants don’t even agree on what a “requirement” is. As one writer observed, “Engineers would
+rather decipher the words to the Kingsmen’s 1963 classic party song ‘Louie Louie’ than decipher customer requirements” (Peterson 2002).
+The second edition of Software Requirements was published 10 years prior to this one. Ten years is a long time in the technology world. Many things have changed in that time, but others have not. Major requirements trends in the past decade include:
+■	The recognition of business analysis as a professional discipline and the rise of professional certifications and organizations, such as the International Institute of Business Analysis and the International Requirements Engineering Board.
+■	The maturing of tools both for managing requirements in a database and for assisting with requirements development activities such as prototyping, modeling, and simulation.
+■	The increased use of agile development methods and the evolution of techniques for handling requirements on agile projects.
+■	The increased use of visual models to represent requirements knowledge.
+So, what hasn’t changed? Two factors contribute to keeping this topic important and relevant. First, many undergraduate curricula in software engineering and computer science continue to underemphasize the importance of requirements engineering (which encompasses both requirements development and requirements management). And second, those of us in the software domain tend to be enamored with technical and process solutions to our challenges. We sometimes fail to appreciate that requirements elicitation—and much of software and systems project work in general— is primarily a human interaction challenge. No magical new techniques have come along to automate that, although various tools are available to help geographically separated people collaborate effectively.
+We believe that the practices presented in the second edition for developing and managing requirements are still valid and applicable to a wide range of software projects. The creative business analyst, product manager, or product owner will thoughtfully adapt and scale the practices to best meet the needs of a particular situation. Newly added to this third edition are a chapter on handling requirements for agile projects and sections in numerous other chapters that describe how to apply and adapt the practices in those chapters to the agile development environment.
+Software development involves at least as much communication as it does computing, yet both educational curricula and project activities often emphasize the computing over the communication aspect. This book offers dozens of tools to
+facilitate that communication and to help software practitioners, managers, marketers, and customers apply effective requirements engineering methods. The techniques presented here constitute a tool kit of mainstream “good practices,” not exotic new techniques or an elaborate methodology that purports to solve all of your requirements problems. Numerous anecdotes and sidebars present stories—all true—that illustrate typical requirements-related experiences; you have likely had similar experiences. Look for the “true stories” icon, like the one to the left, next to real examples drawn from many project experiences.
+Since the first edition of this book appeared in 1999, we have each worked on numerous projects and taught hundreds of classes on software requirements to people from companies and government agencies of all sizes and types. We’ve learned that these practices are useful on virtually any project: small projects and large, new development and enhancements, with local and distributed teams, and using traditional and agile development methods. The techniques apply to hardware and systems engineering projects, too, not just software projects. As with any other technical practice, you’ll need to use good judgment and experience to learn how to make the methods work best for you. Think of these practices as tools to help ensure that you have effective conversations with the right people on your projects.
+
+Benefits this book provides
+Of all the software process improvements you could undertake, improved requirements practices are among the most beneficial. We describe practical, proven techniques that can help you to:
+■	Write high-quality requirements from the outset of a project, thereby minimizing rework and maximizing productivity.
+ 
+
+■	Deliver high-quality information systems and commercial products that achieve their business objectives.
+■	Manage scope creep and requirements changes to stay both on target and
+under control.
+■	Achieve higher customer satisfaction.
+■	Reduce maintenance, enhancement, and support costs.
+Our objective is to help you improve the processes you use for eliciting and analyzing requirements, writing and validating requirements specifications, and managing the requirements throughout the software product development cycle. The techniques we describe are pragmatic and realistic. Both of us have used these very techniques many times, and we always get good results when we do.
+
+Who should read this book
+Anyone involved with defining or understanding the requirements for any system that contains software will find useful information here. The primary audience consists of individuals who serve as business analysts or requirements engineers on a development project, be they full-time specialists or other team members who sometimes fill the
+analyst role. A second audience includes the	,
+who must understand and satisfy user expectations and participate in the creation and review of effective requirements. Marketers and product managers who are charged with specifying the features and attributes that will make a product a commercial success will find these practices valuable. Project managers will learn how to plan and track the project’s requirements activities and deal with requirements changes. Yet another audience is made up of stakeholders
+who participate in defining a product that meets their business, functional, and quality needs. This book will help end users, customers who procure or contract for software products, and numerous other stakeholders understand the importance of the requirements process and their roles in it.
+
+Looking ahead
+This book is organized into five parts. Part I, “Software requirements: What, why, and who,” begins with some definitions. If you’re on the technical side of the house, please share Chapter 2, on the customer-development partnership, with your key customers. Chapter 3 summarizes several dozen “good practices” for requirements development
+ 
+
+and management, as well as an overall process framework for requirements development. The role of the business analyst (a role that also goes by many other names) is the subject of Chapter 4.
+Part II, “Requirements development,” begins with techniques for defining the project’s business requirements. Other chapters in Part II address how to find appropriate customer representatives, elicit requirements from them, and document user requirements, business rules, functional requirements, data requirements, and nonfunctional requirements. Chapter 12 describes numerous visual models that represent the requirements from various perspectives to supplement natural-language text, and Chapter 15 addresses the use of prototypes to reduce risk. Other chapters in Part II present ways to prioritize, validate, and reuse requirements. Part II concludes by describing how requirements affect other aspects of project work.
+New to this edition, Part III contains chapters that recommend the most effective requirements approaches for various specific classes of projects: agile projects developing products of any type, enhancement and replacement projects, projects that incorporate packaged solutions, outsourced projects, business process automation projects, business analytics projects, and embedded and other real-time systems.
+The principles and practices of requirements management are the subject of Part IV, with emphasis on techniques for dealing with changing requirements.
+Chapter 29 describes how requirements tracing connects individual requirements both to their origins and to downstream development deliverables. Part IV concludes with a description of commercial tools that can enhance the way your teams conduct both requirements development and requirements management.
+The final section of this book, Part V, “Implementing requirements engineering,” helps you move from concepts to practice. Chapter 31 will help you incorporate new requirements techniques into your group’s development process. Common requirements-related project risks are described in Chapter 32. The self-assessment in Appendix A can help you select areas that are ripe for improvement. Two other appendices present a requirements troubleshooting guide and several sample requirements documents so you can see how the pieces all fit together.
+
+Case studies
+To illustrate the methods described in this book, we have provided examples from several case studies based on actual projects, particularly a medium-sized information system called the Chemical Tracking System. Don’t worry—you don’t need to know anything about chemistry to understand this project. Sample discussions among
+ 
+
+participants from the case studies are sprinkled throughout the book. No matter what kind of software your organization builds, you’ll be able to relate to these dialogs.
+
+From principles to practice
+It’s difficult to muster the energy needed for overcoming obstacles to change and putting new knowledge into action. As an aid for your journey to improved
+requirements, most chapters end with several “next steps,” actions you can take to begin applying the contents of that chapter immediately. Various chapters offer suggested templates for requirements documents, a review checklist, a requirements prioritization spreadsheet, a change control process, and many other process assets. These items are available for downloading at the companion content website for this book:
+http://aka.ms/SoftwareReq3E/files
+Use them to jump-start your application of these techniques. Start with small improvements, but start today.
+Some people will be reluctant to try new requirements techniques. Use this book to educate your peers, your customers, and your managers. Remind them of requirements-related problems encountered on previous projects, and discuss the potential benefits of trying some new approaches.
+You don’t need to launch a new development project to begin applying better requirements practices. Chapter 21 discusses ways to apply many of the techniques to enhancement and replacement projects. Implementing requirements practices
+incrementally is a low-risk process improvement approach that will prepare you for the
+next major project.
+The goal of requirements development is to accumulate a set of requirements that are good enough to allow your team to proceed with design and construction of the next portion of the product at an acceptable level of risk. You need to devote enough attention to requirements to minimize the risks of rework, unacceptable products, and blown schedules. This book gives you the tools to get the right people to collaborate on developing the right requirements for the right product.
+ 
+
+Errata & book support
+We’ve made every effort to ensure the accuracy of this book and its companion content. Any errors that have been reported since this book was published are listed on our Microsoft Press site at oreilly.com:
+http://aka.ms/SoftwareReq3E/errata
+If you find an error that is not already listed, you can report it to us through the same page.
+If you need additional support, email Microsoft Press Book Support at
+mspinput@microsoft.com.
+Please note that product support for Microsoft software is not offered through the
+addresses above.
+
+
+We want to hear from you
+At Microsoft Press, your satisfaction is our top priority, and your feedback our most
+valuable asset. Please tell us what you think of this book at:
+http://aka.ms/tellpress
+The survey is short, and we read every one of your comments and ideas. Thanks in advance for your input!
+
+Stay in touch
+Let’s keep the conversation going! We’re on Twitter: http://twitter.com/MicrosoftPress.
+
+
+Acknowledgments
+
+Writing a book like this is a team effort that goes far beyond the contributions from the two authors. A number of people took the time to review the full manuscript and offer countless suggestions for improvement; they have our deep gratitude. We especially appreciate the invaluable comments from Jim Brosseau, Joan Davis, Gary K. Evans, Joyce Grapes, Tina Heidenreich, Kelly Morrison Smith, and Dr. Joyce Statz. Additional review input was received from Kevin Brennan, Steven Davis, Anne Hartley,
+Emily Iem, Matt Leach, Jeannine McConnell, Yaaqub Mohamed, and John Parker. Certain individuals reviewed specific chapters or sections in their areas of expertise, often providing highly detailed comments. We thank Tanya Charbury, Mike Cohn, Dr. Alex Dean, Ellen Gottesdiener, Shane Hastie, James Hulgan, Dr. Phil Koopman, Mark Kulak, Shirley Sartin, Rob Siciliano, and Betsy Stockdale. We especially thank
+Roxanne Miller and Stephen Withall for their deep insights and generous participation.
+We discussed aspects of the book’s topics with many people, learning from their personal experiences and from resource materials they passed along to us. We appreciate such contributions from Jim Brosseau, Nanette Brown, Nigel Budd, Katherine Busey, Tanya Charbury, Jennifer Doyle, Gary Evans, Scott Francis, Sarah Gates, Dr. David Gelperin, Mark Kerin, Norm Kerth, Dr. Scott Meyers, John Parker,
+Kathy Reynolds, Bill Trosky, Dr. Ricardo Valerdi, and Dr. Ian Watson. We also thank the many people who let us share their anecdotes in our “true stories.”
+Numerous staff members at Seilevel contributed to the book. They reviewed specific sections, participated in quick opinion and experience surveys, shared blog material they had written, edited final chapters, drew figures, and helped us with operational issues of various sorts. We thank Ajay Badri, Jason Benfield, Anthony Chen,
+Kell Condon, Amber Davis, Jeremy Gorr, Joyce Grapes, John Jertson, Melanie Norrell, David Reinhardt, Betsy Stockdale, and Christine Wollmuth. Their work made ours easier. The editorial input from Candase Hokanson is greatly appreciated.
+Thanks go to many people at Microsoft Press, including acquisitions editor Devon Musgrave, project editor Carol Dillingham, project editor Christian Holdener of S4Carlisle Publishing Services, copy editor Kathy Krause, proofreader Nicole Schlutt, indexer Maureen Johnson, compositor Sambasivam Sangaran, and production artists Balaganesan M., Srinivasan R., and Ganeshbabu G. Karl especially values his long-term relationship, and friendship, with Devon Musgrave and Ben Ryan.
+The comments and questions from thousands of students in our requirements
+training classes over the years have been most helpful in stimulating our thinking about
+
+xxxi
+ 
+
+requirements issues. Our consulting experiences and the thought-provoking questions we receive from readers have kept us in touch with what practitioners struggle with on a daily basis and helped us think through some of these difficult topics. Please share your own experiences with us at karl@processimpact.com or joy.beatty@seilevel.com.
+As always, Karl would like to thank his wife, Chris Zambito. And as always, she was patient and good-humored throughout the process. Karl also thanks Joy for prompting him into working on this project and for her terrific contributions. Working with her was a lot of fun, and she added a great deal of value to the book. It was great to have someone to bounce ideas off, to help make difficult decisions, and to chew hard on draft chapters before we inflicted them on the reviewers.
+Joy is particularly grateful to her husband, Tony Hamilton, for supporting her writing dreams so soon again; to her daughter, Skye, for making it easy to keep her daily priorities balanced; and to Sean and Estelle for being the center of her family fun times.
+Joy wants to extend a special thanks to all of the Seilevel employees who collaborate to push the software requirements field forward. She particularly wants to thank two colleagues and friends: Anthony Chen, whose support for her writing this book was paramount; and Rob Sparks, for his continued encouragement in such endeavors.
+Finally, Joy owes a great deal of gratitude to Karl for allowing her to join him in this co-authorship, teaching her something new every day, and being an absolute joy to work with!
+ 
+
+
+
+
+
+
+
+
+
+
+PART I
+Software requirements: What, why, and who
+CHAPTER 1	The essential software requirement	3
+CHAPTER 2	Requirements from the customer's
+perspective	25
+CHAPTER 3	Good practices for requirements
+engineering	43
+CHAPTER 4	The business analyst	61
+ 
+
+ 
+C HA P T E R 1
+The essential software requirement
+
+“Hello, Phil? This is Maria in Human Resources. We’re having a problem with the personnel system you programmed for us. An employee just changed her name to Sparkle Starlight, and we can’t get the system to accept the name change. Can you help?”
+“She married some guy named Starlight?”
+“No, she didn’t get married, just changed her name,” Maria replied. “That’s the problem. It looks like we can change a name only if someone’s marital status changes.”
+“Well, yeah, I never thought someone might just change her name. I don’t remember you telling me about this possibility when we talked about the system,” Phil said.
+“I assumed you knew that people could legally change their name anytime they like,” responded Maria. “We have to straighten this out by Friday or Sparkle won’t be able to cash her paycheck. Can you fix the bug by then?”
+“It’s not a bug!” Phil retorted. “I never knew you needed this capability. I’m busy on the new performance evaluation system. I can probably fix it by the end of the month, but not by Friday. Sorry about that. Next time, tell me these things earlier and please write them down.”
+“What am I supposed to tell Sparkle?” demanded Maria. “She’ll be upset if she can’t cash her check.”
+“Hey, Maria, it’s not my fault,” Phil protested. “If you’d told me in the first place that you had to be able to change someone’s name at any time, this wouldn’t have happened. You can’t blame me for not reading your mind.”
+Angry and resigned, Maria snapped, “Yeah, well, this is the kind of thing that makes me hate
+computers. Call me as soon as you get it fixed, will you?”
+If you’ve ever been on the customer side of a conversation like this, you know how frustrating it is when a software system doesn’t let you perform an essential task. You hate to be at the mercy of a developer who might get to your critical change request eventually. On the other hand, developers are frustrated to learn about functionality that a user expected only after they’ve implemented the system. It’s also annoying for a developer to have his current project interrupted by a request to modify a system that does precisely what he was told it should do in the first place.
+ 
+Many problems in the software world arise from shortcomings in the ways that people learn about, document, agree upon and modify the product’s requirements. As with Phil and Maria, common problem areas are informal information gathering, implied functionality, miscommunicated assumptions, poorly specified requirements, and a casual change process. Various studies suggest that errors introduced during requirements activities account for 40 to 50 percent of all defects found in a software product (Davis 2005). Inadequate user input and shortcomings in specifying
+and managing customer requirements are major contributors to unsuccessful projects. Despite this evidence, many organizations still practice ineffective requirements methods.
+Nowhere more than in the requirements do the interests of all the stakeholders in a project intersect. (See Chapter 2, “Requirements from the customer’s perspective,” for more about stakeholders.) These stakeholders include customers, users, business analysts, developers, and many others. Handled well, this intersection can lead to delighted customers and fulfilled developers.
+Handled poorly, it’s the source of misunderstanding and friction that undermine the product’s quality and business value. Because requirements are the foundation for both the software development and the project management activities, all stakeholders should commit to applying requirements practices that are known to yield superior-quality products.
+But developing and managing requirements is hard! There are no simple shortcuts or magic solutions. On the plus side, so many organizations struggle with the same problems that you can look for techniques in common that apply to many different situations. This book describes dozens of such practices. The practices are presented as though you were building a brand-new system. However, most of them also apply to enhancement, replacement, and reengineering projects (see Chapter 21, “Enhancement and replacement projects”) and to projects that incorporate commercial off-the-shelf (COTS) packaged solutions (see Chapter 22, “Packaged solution projects”). Project teams that build products incrementally by following an agile development process also need to understand the requirements that go into each increment (see Chapter 20, ”Agile projects”).

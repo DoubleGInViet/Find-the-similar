@@ -1,0 +1,418 @@
+﻿versus client–server architectures has centered on 
+cost. One of the great claims of server-based networks in the 1980s was that they provided economies of scale. Manufacturers of big mainframes claimed it was cheaper to provide computer 
+services on one big mainframe than on a set of smaller computers. Th e personal computer revolution changed this. Since the 1980s, the cost of personal computers has continued to drop, whereas 
+their performance has increased signifi cantly. Today, personal computer hardware is more than 
+1,000 times cheaper than mainframe hardware for the same amount of computing power.
+With cost differences like these, it is easy to see why there has been a sudden rush 
+to microcomputer-based client–server computing. The problem with these cost comparisons is that they ignore the total cost of ownership, which includes factors other than 
+obvious hardware and software costs. For example, many cost comparisons overlook the 
+increased complexity associated with developing application software for client–server 
+networks. Most experts believe that it costs four to five times more to develop and 
+maintain application software for client–server computing than it does for server-based 
+computing.
+Client–Server Tiers
+Th ere are many ways the application logic can be partitioned between the client and the 
+server. Th e example in Figure 11-3 is one of the most common. In this case, the server is 
+responsible for the data, and the client is responsible for the application and presentation. 
+Th is is called a two-tiered architecture because it uses only two sets of computers, clients, and 
+servers.
+A three-tiered architecture uses three sets of computers (see Figure 11-4). In this case, the 
+soft ware on the client computer is responsible for presentation logic, an application server (or 
+servers) is responsible for the application logic, and a separate database server (or servers) is 
+responsible for the data access logic and data storage.
+An n-tiered architecture uses more than three sets of computers. In this case, the client 
+is responsible for presentation, database servers are responsible for the data access logic and 
+data storage, and the application logic is spread across two or more diff erent sets of servers. 
+Elements of the Physical Architecture Layer  423
+Th is type of architecture is common in today’s e-commerce systems (see Figure 11-5). Th e 
+fi rst component is the Web browser on the client computer employed by a user to access the 
+system and enter commands (presentation logic). Th e second is a Web server that responds 
+to the user’s requests, either by providing (HTML) pages and graphics (application logic) or 
+by sending the request to the third component on another application server that performs 
+various functions (application logic). Th e fourth component is a database server that stores 
+all the data (data access logic and data storage). Each of these four components is separate, 
+making it easy to spread the diff erent components on diff erent servers and to partition the 
+application logic on two diff erent servers.
+Th e primary advantage of an n-tiered client–server architecture compared with a twotiered architecture (or a three-tiered architecture with a two-tiered architecture) is that it separates the processing that occurs to better balance the load on the diff erent servers; it is more 
+scalable. In Figure 11-5, we have three separate servers, a confi guration that provides more 
+power than if we had used a two-tiered architecture with only one server. If we discover that 
+FIGURE 11-4
+Three-Tiered 
+Client–Server 
+Architecture
+Client
+(microcomputer)
+Presentation logic
+Application server
+(microcomputer)
+Database server
+(micro, mini, or mainframe)
+Application logic Data access logic
+Data storage
+Client
+(microcomputer)
+Presentation logic
+Web server
+(micro, mini, or mainframe)
+Web-related
+Application logic
+Data access logic
+Data storage
+Application server
+(micro, mini, or mainframe)
+Database server
+(micro, mini, or mainframe)
+Non–Web-related
+Application logic
+FIGURE 11-5
+Four-Tiered 
+Client–Server 
+Architecture
+424 Chapter 11 Physical Architecture Layer Design
+the application server is too heavily loaded, we can simply replace it with a more powerful 
+server or just put in several more application servers. Conversely, if we discover the database 
+server is underused, we could store data from another application on it.
+Th ere are two primary disadvantages to an n-tiered architecture compared with a twotiered architecture (or a three-tiered architecture with a two-tiered architecture). First, the 
+confi guration puts a greater load on the network. If you compare Figures 11-3, 11-4, and 
+11-5, you will see that the n-tiered model requires more communication among the servers; 
+it generates more network traffi c, so you need a higher-capacity network. It is also much 
+more diffi cult to program and test soft ware in n-tiered architectures than in two-tiered 
+architectures because more devices have to communicate to complete a user’s transaction.
+Selecting a Physical Architecture
+Most systems are built to use the existing infrastructure in the organization, so oft en the 
+current infrastructure restricts the choice of architecture. For example, if the new system 
+will be built for a mainframe-centric organization, a server-based architecture may be the 
+best option. Other factors such as corporate standards, existing licensing agreements, and 
+product/vendor relationships can also mandate what architecture the project team needs to 
+design. However, many organizations now have a variety of infrastructures available or are 
+openly looking for pilot projects to test new architectures and infrastructures, enabling a 
+project team to select an architecture based on other important factors.
+Each of the computing architectures just discussed has its strengths and weaknesses, and 
+no architecture is inherently better than the others. Th us, it is important to understand the 
+strengths and weaknesses of each computing architecture and when to use each. Figure 11-6 
+presents a summary of the important characteristics of each.
+Cost of Infrastructure One of the strongest driving forces to client–server architectures is 
+cost of infrastructure (the hardware, soft ware, and networks that will support the application 
+system). Simply put, personal computers are more than 1,000 times cheaper than mainframes 
+for the same amount of computing power. Th e personal computers on our desks today have 
+more processing power, memory, and hard disk space than the typical mainframe of the past, 
+and the cost of the personal computers is a fraction of the cost of the mainframe.
+Th erefore, the cost of client–server architectures is low compared to server-based architectures that rely on mainframes. Client–server architectures also tend to be cheaper than 
+client-based architectures because they place less of a load on networks and thus require less 
+network capacity.
+Cost of Development Th e cost of developing systems is an important factor when considering the fi nancial benefi ts of client–server architectures. Developing application soft ware for 
+client–server computing is extremely complex, and most experts believe that it costs four to 
+Characteristic Server-based Client-based Client–Server
+Cost of infrastructure Very high Medium Low
+Cost of development Medium Low High
+Ease of development Low High Low to medium
+Interface capabilities Low High High
+Control and security High Low Medium
+Scalability Low Medium High
+FIGURE 11-6
+Characteristics 
+of Computing 
+Architectures
+Elements of the Physical Architecture Layer  425
+fi ve times more to develop and maintain application soft ware for client–server computing 
+than it does for server-based computing. Developing application soft ware for client-based 
+architectures is usually cheaper still, because there are many GUI development tools for simple stand-alone computers that communicate with database servers.
+Th e cost diff erential might change as more companies gain experience with client–server 
+applications, new client–server products are developed and refi ned, and client–server standards mature. However, given the inherent complexity of client–server soft ware and the need 
+to coordinate the interactions of soft ware on diff erent computers, there is likely to remain a 
+cost diff erence.
+Ease of Development In most organizations today, there is a huge backlog of mainframe applications, systems that have been approved but that lack the staff to implement 
+them. Th is backlog signals the diffi culty in developing server-based systems. Th e tools 
+for mainframe-based systems oft en are not user friendly and require highly specialized 
+skills—skills that new graduates oft en don’t have and aren’t interested in acquiring. In 
+contrast, client-based and client–server architectures can rely on graphical user interface 
+(GUI) development tools that can be intuitive and easy to use. Th e development of applications for these architectures can be fast and painless. Unfortunately, the applications for 
+client–server systems can be very complex because they must be built for several layers of 
+hardware (e.g., database servers, Web servers, client workstations) that need to communicate eff ectively with one another. Project teams oft en underestimate the eff ort involved in 
+creating secure, effi cient client–server applications.
+Interface Capabilities Typically, server-based applications contain plain, character-based 
+interfaces. For example, think about airline reservation systems such as SABRE, which can 
+be quite diffi cult to use unless the operator is well trained on the commands and hundreds 
+of codes that are used to navigate through the system. Today, most users of systems expect 
+a GUI or a Web-based interface that they can operate using a mouse and graphical objects. 
+GUI and Web development tools typically are created to support client-based or client–server 
+applications; rarely can server-based environments support these types of applications.
+Control and Security Th e server-based architecture was originally developed to control 
+and secure data, and it is much easier to administer because all the data are stored in a single 
+location. In contrast, client–server computing requires a high degree of coordination among 
+many components, and the chance for security holes or control problems is much more likely. 
+Also, the hardware and soft ware used in client–server architecture are still maturing in terms 
+of security. When an organization has a system that absolutely must be secure, then the project team may be more comfortable with the server-based alternative on highly secure and 
+control-oriented mainframe computers.
+Scalability Scalability refers to the ability to increase or decrease the capacity of the 
+computing infrastructure in response to changing capacity needs. Th e most scalable architecture is client–server computing because servers can be added to (or removed from) the 
+architecture when processing needs change. Also, the types of hardware that are used in 
+client–server situations typically can be upgraded at a pace that most closely matches the 
+growth of the application. In contrast, server-based architectures rely primarily on mainframe hardware that needs to be scaled up in large, expensive increments, and client-based 
+architectures have ceilings above which the application cannot grow because increases 
+in use and data can result in increased network traffi c to the extent that performance is 
+unacceptable.
+426 Chapter 11 Physical Architecture Layer Design
+CLOUD COMPUTING3
+Cloud computing is the idea of treating IT as a utility or commodity. Essentially, cloud computing is the latest approach to support distributed computing in a client–server type of 
+architecture (see previous section) where the server is “in the cloud” and the client is on the 
+desktop. Th e cloud can be the fi rm’s corporate data center, an external data center, or some 
+combination of the two; however, more and more it generally is seen as an external, rather 
+than an internal, service. Consequently, the idea of multitenancy, where the cloud vendor has 
+multiple customers using the same resource at the same time, becomes a real issue for both 
+the cloud vendor and the cloud customer. Cloud computing may become the greatest enabler 
+for IT outsourcing (see Chapter 7).
+Th ere are three diff erent classifi cations of clouds: private, public, and hybrid. Private 
+clouds are available only to employees of the fi rm, public clouds are available to the general 
+public, and hybrid clouds combine the private and public cloud ideas to form a single cloud. 
+In some senses, all e-commerce sites could run in a hybrid cloud environment where the customer sales transaction portion of the system would need to be public while all other aspects 
+would be private.
+Fundamentally, cloud computing is an umbrella technology that encompasses the ideas 
+of virtualization, service-oriented architectures, and grid computing. Th e idea of virtualization is not new. Virtualization is the idea of treating any computing resource, regardless of 
+where it is located, as if it is “in” the client machine. Th is idea evolved from virtual memory. 
+Virtual memory was developed originally in the 1960s. Virtual memory allowed the user/
+programmer to act as if the amount of main memory in the computer was unlimited. Th is 
+was done by swapping “pages” of main memory out to disk when the content of the pages 
+was not being used and by swapping a page from disk back to main memory when it was 
+needed. Before virtual memory was created, the programmer had to write code to perform 
+the paging function for each application. Virtualization is simply the scaling up of this idea 
+to all computing resources, not simply main memory. Th is includes treating a mainframe 
+computer as if it is a set of virtual servers, each of which can be running diff erent operating 
+and/or application systems.
+Web services basically support connections between diff erent services to form service-oriented 
+architectures.
+4 Basically, a service is a piece of soft ware that supports some aspect of a business 
+process. A service can be an implementation of part of a business process, it can be an implementation of an entire business process, or it can be object persistence support for the data management layer (see Chapter 9). Th ese services can be either internal or external to the fi rm. Services 
+can be combined to support business processes. A service-oriented architecture allows business 
+processes to be supported by “plugging and playing” services together in a static and/or dynamic 
+manner.5 Some of the pluggable and playable services can be purchased outright, or they can be 
+billed to the fi rm based on their use, a sort of pay-as-you-go model.
+Grid computing6 tends to be the underlying hardware technology that supports the cloud. 
+A grid is a very large set of networked computers that tend to be geographically dispersed. 
+For example, the grid that supports SalesForce.com’s CRM application contains about 1,000 
+3 Judith Hurwitz, Marcia Kaufman, Fern Halper, and Robin Bloor, Cloud Computing for DummiesTM (Hoboken, NJ: 
+Wiley 2010).
+4 Douglas K. Barry, Web Services and Service-Oriented Architectures (San Francisco: Morgan Kaufman, 2003).
+5 P. Ghandforoush, T.K. Sen, and D. Tegarden, R. Ramaswamy, “Designing Systems Using Business Components: 
+A Case Study in Call Center Automation.” International Journal of Electronic Customer Relationship Management 
+4, no. 2 (2010): 161–179.
+6 Pawel Plaszczak and Richard Welner, Jr., Grid Computing (San Francisco: Morgan Kaufman, 2006).
+Cloud Computing  427
+computers. Th e computers do not have to be of the same type. For example, they can be a 
+mixture of Linux servers and mainframes. With grid computing, fi rms have the ability to add 
+and remove computers to support a business process based on the current level of activity 
+taking place in that particular business process. Th is provides an enormous amount of fl exibility in confi guring the underlying physical architecture that supports business processes.
+Combining virtualization, service-oriented architectures, and grid computing is what 
+all the hoopla is about with regard to cloud computing. Cloud computing is highly elastic 
+and scalable, it supports a demand-driven approach to provisioning and deprovisioning of 
+resources, and it supports a billing model that only charges for the resources being used. 
+From a business perspective, cloud computing supports the idea of IT being a commodity.
+Th e cloud can contain the fi rm’s IT infrastructure, IT platform, and soft ware. Infrastructure 
+as a Service (IaaS) refers to the cloud providing the computing hardware to the fi rm as a remote 
+service. Th e hardware typically includes the computing hardware that supports application 
+servers, networking, and data storage. Amazon’s EC2 (aws.amazon.com/ec2/) service is a good 
+example of this. With Platform as a Service (PaaS), the cloud vendor not only provides 
+hardware support to a customer but also provides the customer with either package-based 
+solutions, diff erent services that can be combined to create a solution, or the development 
+tools necessary to create custom solutions in the PaaS vendor’s cloud. SalesForce.com is a 
+good example of the vendor providing a package-based solution, Amazon’s SimpleDB and 
+Simple Query Service are examples of diff erent services being supported, and Google’s App 
+Engine is an example of a cloud vendor providing good development tools. Like most things 
+in IT, Soft ware as a Service (SaaS) is not a new idea. SaaS has been around for more than 
+thirty years. In the 1970s, there were many “service bureaus” that supported timesharing of 
+hardware and soft ware to many diff erent customers; that is, they supported multitenancy. 
+For example, ADP has supported payroll functions for many fi rms for a very long time. 
+Today, SalesForce.com’s CRM system is a good example of a SaaS cloud-based solution.
+However, cloud computing must overcome certain obstacles before it becomes the primary approach to provision the physical architecture layer.7 Th e fi rst obstacle is the mixed 
+level of cloud performance. One issue is whether the vendor has the resources to provide the 
+fi rm with enough “power” during a peak load. Th e issue here is that a typical cloud vendor 
+is supporting many diff erent fi rms. If the vendor does not have enough computing resources 
+to handle all of the fi rms’ peak loads at the same time, then there will have to be some degradation of some or all of the fi rms’ support. Th is is primarily a result of the unpredictability 
+of the overall performance requirements with disk I/O and network traffi c. Given the multitenancy typical of a cloud vendor’s hardware, bottlenecks with disks will occur. However, 
+given the dependency on networks, data transfer rates are critical. In an enlightening example, Armbrust and colleagues show that when dealing with large volumes of data, it is faster 
+to transfer data using overnight shipping. In their example, they showed that if you were to 
+transfer 10 terabytes of data with an average transfer rate of 20 Mbits/sec, then it would take 
+more than 45 days to complete the transfer. If you shipped the data overnight instead, you 
+would eff ectively be using a transfer rate of 1500 Mbits/sec.
+Th e second obstacle deals with the level of dependency that a customer’s fi rm has on a 
+cloud vendor. Firms are dependent on cloud vendors based on the type of service that they 
+are using (IaaS, PaaS, and SaaS), the actual level of service availability, and the potential of 
+data lock-in. Currently, most cloud vendor’s API to storage is proprietary. Consequently, the 
+customer’s data become “locked in” to the specifi c cloud vendors storage. Th is is also true for 
+7 Michael Armbrust, Armando Fox, Rean Griffi th, Anthony D. Joseph, Randy Katz, Andy Konwinski, Gunho Lee, 
+David Patterson, Areil Rabkin, Ion Stoica, and Matei Zahara, “A View of Cloud Computing,” Communications of 
+the ACM 53, no. 4 (2010): 50–58.
+428 Chapter 11 Physical Architecture Layer Design
+much of the actual service APIs. Consequently, customers fi nd themselves hoping that the 
+cloud vendor will be the equivalent of a benevolent dictator that will act in the interest of the 
+customer; otherwise, actual level of service being provided could suff er. Given the potential 
+for data and/or service lock-in, a customer must pay close attention to the viability of the 
+cloud vendor. If the vendor goes out of business, the customer could be following suit very 
+quickly. If the cloud vendor also has outsourced to other cloud vendors, such as to a disk 
+farm company, then they could fi nd themselves in the same situation. Th is could lead to a 
+cascading eff ect of business failures. Consequently, when a fi rm is considering outsourcing its 
+IT area into the cloud, the fi rm had better understand the total risk involved.
+Th e third major obstacle to cloud adoption is the perceived level of security available in 
+the cloud. Not only does a fi rm have to worry about security from the outside, but due to 
+multitenancy, the fi rm must seriously consider potential attacks from within its cloud from 
+other cloud users. From a service availability perspective, a denial-of-service attack against 
+another tenant within the cloud can cause performance degradation of the fi rm’s systems. 
+Finally, a fi rm must consider protecting itself from the cloud vendor. Th e cloud vendor is 
+responsible only for physical security and fi rewalls. All application-level security tends to be 
+the responsibility of the cloud customer. Obviously, security in the cloud is a very complex 
+endeavor. Given the confi dentiality and auditability requirements of Sarbanes-Oxley (SOX) 
+and the Health and Human Services Health Insurance Portability and Accountability Act 
+(HIPAA), security in the cloud becomes a major concern when a fi rm considers moving 
+any of its confi dential data, including e-mail, to the cloud. In many ways, when using a 
+cloud a fi rm is simply taking a leap of faith that the cloud is secure.
+UBIQUITOUS COMPUTING AND THE INTERNET OF THINGS 8
+Oft en, ubiquitous computing and the Internet of Th ings (IoT) are the beginning of the realization of all of the dreams (or nightmares) of science fi ction writers. Th is ranges from the 
+dystopian views portrayed in Blade Runner and the Terminator movies to the Precrime unit 
+of Minority Report and fi nally to the extremely optimistic future portrayed in Th e Jetsons cartoon of the 1960s. Essentially, ubiquitous computing is the idea that computing takes place 
+everywhere and in everything. With ubiquitous computing, computing becomes so engrained 
+into everyday things that computing eff ectively disappears into the background. In other 
+words, computing becomes so deeply rooted into everyday things that the things themselves 
+seem to become magical. Th e IoT is the idea that, in addition to things having some form 
+of computing capacity built into them, everyday things become connected via the Internet. 
+So, in addition to having some form of computing capacity, everyday things can communicate with each other. Th is raises the importance of understanding mobile computing, social 
+media, and cloud computing even further. Obviously, the opportunities (or pitfalls) that this 
+provides may be endless. 
+Currently, there are two major approaches to support ubiquitous computing: general 
+computing devices and specialized computing devices. General computing devices include 
+devices such as smartphones and tablets. Th ese devices can be loaded with many diff erent apps that provide all types of computing and communication support. For example, 
+your smartphone can be used as a GPS, an e-book reader, a music or video player, a game 
+8 Th is section is based on material contained in Adam Greenfi eld, Everywhere: Th e Dawning If the Age of Ubiquitous Computing (Berkeley, CA: New Riders, 2006); Bo Begole, Ubiquitous Computing for Business (Upper Saddle 
+River, NJ: FT Press, 2011); Adrian McEwen and Hakim Cassimally, Designing the Internet of Th ings (Chichester, 
+West Sussex, UK: Wiley, 2014); David Rose, Enchanted Objects: Design, Human Desire, and the Internet of Th ings
+(New York, NY: Scribner, 2014); Gershon Dublon and Joseph A. Paradiso, “Extra Sensory Perception,” Scientifi c 
+American 311, no. 1 (July 2014): 36–41.
+Ubiquitous Computing and the Internet of Things   429
+console, a WWW interface, a camera, a “tape” recorder, a restaurant advisor, etc. In other 
+words, if there is an app for it, you can have it loaded on your smartphone to give you that 
+capability. Today’s smartphones are essentially general computers that happen to support 
+voice communications, i.e., it also is a phone. And, like general-purpose computers, the 
+smartphone typically requires you to activate the app before it can do anything for you. 
+Even though it is very impressive to have that amount of computing capability at your 
+fi ngertips, it only supports the dream of ubiquitous computing in a very limited manner. 
+Essentially, from an information systems development perspective, this is not new; it is no 
+diff erent than having a computer connected to the Internet. Th us, developing apps for these 
+devices should follow the same basic development approach used throughout this book.
+Th e second approach, having specialized computing devices, goes a long way toward 
+realizing the dream of ubiquitous computing. With this approach, we have so-called 
+enchanted objects that can interact with each other. An enchanted object is an everyday 
+object that has a very specialized processor embedded in it that augments the object such 
+that the object seems to be magical. For example, an umbrella that, since there is a good 
+chance of rain, lets you know that you should take it with you today, or a wallet that lets you 
+know that you are reaching your monthly budget limits or that your account just received 
+a deposit. In the case of the umbrella, the umbrella is connected to AccuWeather. If the 
+forecast is for rain, the umbrella activates a set of LEDs in the handle that informs you that 
+you should take it with you when you leave. In the case of the wallet, as you deplete your 
+monthly budget, the wallet becomes more diffi cult to open, or if you receive a deposit to 
+your account, the wallet “puff s” up to let you know that your wallet is fatter, i.e., you have 
+more cash available. 
+Th e general information systems development approach used in this book is applicable to the development of enchanted objects. However, given that enchanted objects, by 
+defi nition, are enhanced everyday things, additional issues must also be addressed. Th ese 
+issues include a set of unique design principles, a set of characteristics, and a set of levels 
+of enchantment. 
+McEwen and Cassimally identify a set of unique design principles that need to be considered when developing enchanted objects. First, enchanted objects should be in the background simply providing its message for you to receive at your leisure, not “in your face.” 
+Th is is in contrast with most apps today. Typically, apps will notify you about some topic at 
+their leisure by interrupting you. Second, magic is a useful metaphor for people to adopt an 
+enchanted object. Th e umbrella mentioned earlier is a good example of this principle. Th e 
+umbrella simply sits by the door letting you know whether it wants to be taken with you or 
+not. Th ird is the whole issue of privacy. With all of these enchanted objects “sharing” data 
+about you, all of the issue related to Orwell’s “Big Brother” creeps into focus. How will you 
+keep anything secret and, possibly even more important, who actually owns the data being 
+collected? However, this issue is not unique to enchanted objects. It is equally applicable 
+to smartphones and their apps. Fourth, we need to consider how to “mash-up” a set of 
+enchanted objects that are loosely connected to support a larger purpose. In fact, Brynjolfsson 
+and McAfee suggest that this type of recombinant innovation may provide the basis for 
+a new type of economy that will increase both progress and prosperity.9 Fift h, the idea of 
+aff ordances becomes increasingly important. For an enchanted object to be adopted, it must 
+be very simple to use. Th e object itself must imply how to use it. Th e umbrella, for example, 
+simply lets you know that you should take it with you by drawing your attention to it. 
+9 Erik Brynjolfsson and Andrew McAfee, Th e Second Machine Age: Work, Progress, and Prosperity in a Time of 
+Brilliant Technologies (New York, NY: Norton, 2014).
+430 Chapter 11 Physical Architecture Layer Design
+Rose provides a set of characteristics that enchanted objects should possess if we are 
+to adopt them. First, they should be glanceable. Th e umbrella, again, is a great example. 
+You don’t have to do anything but glance at the umbrella to know whether you should 
+take it with you or not. Second, enchanted objects should be gestureable. Th is is related to 
+the idea aff ordances. It must be intuitively obvious as to how to use an enchanted object. 
+For example, years ago Th e A.T. Cross Company sold a notebook and pen combination 
+(CrossPadTM) that you could use to take notes. Th e aff ordance of this product was the fact 
+that you simply used a special pen to write your notes on the paper contained in the notebook. Th e enchanted part was the fact that the product also had a radio transmitter built 
+in to the pen that enabled it to store your notes in electronic form that could be uploaded 
+to you computer later. Th ird, the enchanted object must be aff ordable. In this case, given 
+the falling cost of computing hardware, if the object isn’t that aff ordable at fi rst, it should 
+be fairly quickly. Fourth, the objects should be wearable. Th e Nike FuelBandTM is a perfect 
+example. You simply wear it like a watch. Fift h, an enchanted object should be indestructible. Obviously, this one would only be true as it is related to the underlying object. For 
+example, the enchanted umbrella is as indestructible as any normal umbrella, but it is not as 
+indestructible as other things in the real world. Sixth, an enchanted object must be capable 
+of doing its thing with minimal interaction with the user. For example, you simply wear 
+the Nike FuelBandTM and plug it up at night to your computer, and it will update itself, 
+recharge itself, update your profi le, and be waiting for you to put it on in the morning. 
+Seventh, an enchanted object should be loveable. By that we mean that they should be easy 
+to anthropomorphize. We should enjoy using them, and we should miss them when we 
+don’t. Obviously, you should recognize that there are trade-off s among some of the characteristics and, as such, not all objects will possess all of them. However, as a designer, your 
+enchanted objects should have as many as possible.
+Rose also suggests a set of levels (or steps) of enchantment of which enchanted objects 
+designers should be aware. For the fi rst level, he suggests that enchanted objects should be 
+augmented everyday objects that are connected to the network. Th is allows them to send 
+and receive data that can be used by other enchanted objects or other systems. Given the 
+amount of data to be collected about ourselves and everyone else for both current time and 
+in the future, the second level for enchanted objects is to be able to be personalized such 
+that they can interact with us in a customized manner. Currently, to a small degree Amazon 
+and Netfl ix are already doing this, e.g., with their list of recommendations that they make 
+to you. Th eir recommendations are based on your past interactions with them and matching those interactions to the interactions of others. Th e potential for this type of activity in 
+health systems is enormous. Th e third level is where our enchanted objects interact with our 
+social networks to automatically inform our colleagues, or a special subset of them, of our 
+activities with the enchanted object. Th is again could be very useful in health systems where 
+the object informs our physician’s system or our health support group of certain types of 
+positive (or negative) activities. Th e fourth level adapts gaming ideas to our enchanted 
+objects, i.e., gamifi cation. Nike’s FuelBandTM is a perfect example of using gamifi cation to 
+keep a user intrinsically motivated to reach his or her individual goals. Th e last level is that 
+designers of enchanted objects will improve their adoption if the objects can be part of a 
+story; Rose refers to this as story-ifi cation. Th rough the use of stories, users can more easily 
+understand the purpose of and the utility provided by the enchanted objects, thus increasing the likelihood of a user “bonding” with the enchanted object.
+Given the potential of ubiquitous computing and the IoT, you should begin considering possible applications that may benefi t from them. For example, today, through the 
+use of RFID and GPS, it is possible to know the location of each and every one of a fi rm’s 
+inventory items. Even though it can be argued that an inventory item with an RFID tag 
+Green IT  431
+that has GPS ability isn’t an enchanted object, it is useful one. And, even though the cost of 
+these types of augmentations is dropping, it can be further argued that you may not want to 
+tag each and every item. However, before the enchanted object vision can become a reality, 
+two possible technical problems will need to be addressed.10 First, given the current set of 
+communication networks, can the current networks handle the additional communication 
+volume required? Do the Internet, cell phone, and WiFi networks have suffi cient bandwidth to support all of these additional things? When you start to hook up everything to 
+the Net, it is doubtful that the capacity is there. Second, is it reasonable to expect the simple 
+special-purpose devices that are embedded in enchanted objects to handle the complexity 
+of the required communication protocols of the existing networks? To address these problems could mean that a new physical architecture could be necessary.
+GREEN IT11
+Given all of the computing power being deployed to solve today’s business problems, Green 
+IT has become important. Green IT is a broad term that encompasses virtually anything that 
+helps reduce the environmental impact of IT. Some of the topics included are e-waste, greening data centers, and the dream of the paperless offi ce. 
+First, when it comes to disposing old electronic devices, care must be taken. Old computers contain very toxic material, including lead, PCBs, mercury, and cadmium. One of 
+the major Green IT issues is how to dispose of this e-waste. One of the most disturbing 
+trends in dealing with e-waste is the shipping of the e-waste from the developed world to 
+the developing world where environmental standards are virtually nonexistent. Owing to 
+“backyard recycling” techniques used in these locations, the toxic material contained in the 
+e-waste shows up in the soil, water, and air. Alternatives to simply dumping old computers into the trash include extending the replacement cycles of the machines by converting 
+the machines from Windows-based machines to Linux-based machines. Linux takes less 
+“horsepower” to run than Windows. Th erefore, for certain applications, a Linux-based 
+desktop is more than suffi cient to implement parts of the physical architecture layer.
+Second, large data centers use as much electricity in a day as a small city. Consequently, 
+given this level of power consumption, creating green data centers in the future will be crucial. Th ere are a whole set of ways to create a green data center. One way is to pay very close 
+attention to where the data center is to be located. Placing the data center in the shade of a 
+mountain or tall building will reduce the cost of energy required. For example, HP placed 
+one of its new data centers in northeast England so that it could be cooled by the cold winds 
+that blow onto shore from the North Sea.12 Looking into alternative energy possibilities is 
+another way to deal with energy consumption. For example, Google has been in the business 
+of buying wind farms to generate the power for its data centers, and HP has shown how a 
+cow manure-based methane power plant could be created to generate the power to run a data 
+center in dairy country.13
+10 Francis da Costa, Rethinking the Internet of Th ings: A Scalable Approach to Connecting Everything (New York, 
+NY: Apress Media, 2013).
+11 Caril Baroudi, Jeff rey Hill, Arnold Reinhold, and Jhana Senxian, Green IT for DummiesTM (Hoboken, NJ: Wiley, 
+2009).
+12 Andrew Nusca, “Smart Takes: HP Opens First Wind-Cooled Green Data Center; Most Effi cient to Date,” SMARTPLANET (February 11, 2010). Retrieved August 2014 from www.smartplanet.com/blog/smart-takes/hp-opens-fi rstwind-cooled-green-data-center-most-effi cient-to-date. 
+13 Google Data Centers, Renewable Energy. Retrieved August 2014 from www.google.com/about/datacenters/renewabl

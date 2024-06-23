@@ -1,0 +1,1174 @@
+﻿project activities (and, therefore, should be continued in the next system or project) and what 
+needs to be improved. Project assessment is not routine in most organizations, except for 
+military organizations, which are accustomed to preparing aft er-action reports. Nonetheless, 
+assessment can be an important component in organizational learning because it helps organ izations and people understand how to improve their work. It is particularly important for 
+junior staff members because it helps promote faster learning. Th ere are two primary parts to 
+project assessment—project team review and system review.
+Project Team Review A project team review focuses on the way the project team carried out 
+its activities. Each project member prepares a short two- to three-page document that reports 
+and analyzes his or her performance. Th e focus is on performance improvement, not pen alties for mistakes made. By explicitly identifying mistakes and understanding their causes, 
+project team members will, it is hoped, be better prepared for the next time they encounter a 
+similar situation—and less likely to repeat the same mistakes. Likewise, by identifying excel lent performance, team members will be able to understand why their actions worked well 
+and how to repeat them in future projects.
+Th e project manager, who meets with the team members to help them understand how 
+to improve their performance, assesses the documents prepared by each team member. Th e 
+Post-Implementation Activities  501
+project manager then prepares a summary document that outlines the lessons learned from 
+the project. Th is summary identifi es what actions should be taken in future projects to improve 
+performance but is careful not to identify team members who made mistakes. Th e summary is 
+widely circulated among all project managers to help them understand how to manage their 
+projects better. Oft en, it is also circulated among regular staff members who did not work on 
+the project so that they, too, can learn from other projects.
+System Review Th e focus of the system review is to understand the extent to which the 
+proposed costs and benefi ts from the new system identifi ed during feasibility analysis were 
+actually recognized from the implemented system. Project team review is usually conducted 
+immediately aft er the system is installed while key events are still fresh in team members’ 
+minds, but system review is oft en undertaken several months aft er the system is installed 
+because it oft en takes a while before the system can be properly assessed.
+System review starts with the system request and feasibility analysis prepared at the start 
+of the project. Th e detailed analyses prepared for the expected business value (both tangible 
+and intangible) as well as the economic feasibility analysis are reexamined, and a new analysis 
+is prepared aft er the system has been installed. Th e objective is to compare the anticipated 
+business value against the actual realized business value from the system. Th is helps the 
+organization assess whether the system actually provided the value it was planned to provide. 
+Whether or not the system provides the expected value, future projects can benefi t from an 
+improved understanding of the true costs and benefi ts.
+A formal system review also has important behavior implications for project initiation. 
+Because everyone involved with the project knows that all statements about business value 
+and the fi nancial estimates prepared during project initiation will be evaluated at the end of 
+the project, they have an incentive to be conservative in their assessments. No one wants to 
+be the project sponsor or project manager for a project that goes radically over budget or fails APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+In this chapter, we see how the fi rst phase of the Integrated Health Clinic Delivery 
+System transitions from development into production for use by the user community. Making this transition involved providing training to the users, including Clinic 
+employees and clients. Ruby and the team conducted an assessment of the development process and each member’s contribution. Th ey also developed a plans for continued maintenance of the system. 
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+CHAPTER REVIEW
+Aft er reading and studying this chapter, you should be able to:
+ Describe how Hall’s and Hofstede’s cultural dimensions can eff ect the adoption of an information system.
+ Describe the technical and managerial issues related to system conversion.
+ Discuss the three dimensions of system conversion.
+ Discuss why people resist and accept change.
+ Describe the major steps in a change management plan.
+ Discuss the diff erent strategies to motivate adoption of a new system.
+ Discuss why training is crucial to the acceptance of a new system.
+ Describe the diff erent post-implementation activities that take place aft er the successful deployment of the 
+information system.
+Exercises  503
+QUESTIONS
+1. What are the three basic steps in managing organizational change?
+2. What are the cultural issues of which developers 
+should be aware?
+3. What are the major components of a migration plan?
+4. Compare and contrast direct conversion and parallel 
+conversion.
+5. Compare and contrast pilot conversion, phased conversion, and simultaneous conversion.
+6. Compare and contrast modular conversion and 
+whole-system conversion.
+7. Explain the trade-off s among selecting between the 
+types of conversion in questions 4, 5, and 6.
+ 8. What are the three key roles in any change management initiative?
+9. Why do people resist change? Explain the basic model 
+for understanding why people accept or resist change.
+10. What are the three major elements of management 
+policies that must be considered when implementing 
+a new system?
+11. Compare and contrast an information change management strategy with a political change management 
+strategy. Is one better than the other?
+12. Explain the three categories of adopters you are likely 
+to encounter in any change management initiative.
+13. How should you decide what items to include in your 
+training plan?
+14. Compare and contrast three basic approaches to training.
+15. What is the role of the operations group in system 
+development?
+16. Compare and contrast two major ways of providing 
+system support.
+17. How is a problem report diff erent from a change 
+request?
+18. What are the major sources of change requests?
+19. Why is project assessment important?
+20. How is project team review diff erent from system review?
+21. What do you think are three common mistakes that 
+novice analysts make in migrating from the as-is to 
+the to-be system?
+22. Some experts argue that change management is more 
+important than any other part of system development. 
+Do you agree or not? Explain.
+23. In our experience, change management planning 
+oft en receives less attention than conversion planning. 
+Why do you think this happens?
+EXERCISES
+A. Suppose you are installing a new accounting package 
+in your small business. What conversion strategy 
+would you use? Develop a conversion plan (i.e., technical aspects only).
+B. Suppose you are installing a new room reservation 
+system for your university that tracks which courses 
+are assigned to which rooms. Assume that all the 
+rooms in each building are “owned” by one college 
+or department and only one person in that college or 
+department has permission to assign them. What conversion strategy would you use? Develop a conversion 
+plan (i.e., technical aspects only).
+C. Suppose you are installing a new payroll system in a 
+very large multinational corporation. What conversion strategy would you use? Develop a conversion 
+plan (i.e., technical aspects only).
+D. Consider a major change you have experienced in 
+your life (e.g., taking a new job, starting a new school). 
+Prepare a cost–benefi t analysis of the change in terms 
+of both the change and the transition to the change.
+E. Suppose you are the project manager for a new library 
+system for your university. Th e system will improve 
+the way students, faculty, and staff can search for 
+books by enabling them to search over the Web, 
+rather than using only the current text-based system 
+available on the computer terminals in the library. 
+Prepare a cost–benefi t analysis of the change in terms 
+of both the change and the transition to the change for 
+the major stakeholders.
+F. Prepare a plan to motivate the adoption of the system 
+in exercise E.
+G. Prepare a training plan that includes both what you 
+would train and how the training would be delivered 
+for the system in exercise E.
+H. Suppose you are leading the installation of a new DSS 
+to help admissions offi cers manage the admissions 
+process at your university. Develop a change management plan (i.e., organizational aspects only).
+I. Suppose you are the project leader for the development 
+of a new Web-based course registration system for your 
+504 Chapter 13 Installation and Operations
+university that replaces an old system in which students 
+had to go to the coliseum at certain times and stand in 
+line to get permission slips for each course they wanted 
+to take. Develop a migration plan (including both technical conversion and change management).
+J. Suppose you are the project leader for the development 
+of a new airline reservation system that will be used 
+by the airline’s in-house reservation agents. Th e system will replace the current command-driven system 
+designed in the 1970s that uses terminals. Th e new 
+system uses PCs with a Web-based interface. Develop a 
+migration plan (including both conversion and change 
+management) for your telephone operators.
+K. Develop a migration plan (including both conversion and change management) for the independent 
+travel agencies that use the airline reservation system 
+described in exercise J.
+L. For the A Real Estate Inc problem in Chapters 4 
+through 12:
+ 1. Prepare a plan to motivate adoption of the system.
+ 2. Prepare a training plan that includes both what you 
+would train and how the training would be delivered.
+ 3. Prepare a change management plan.
+ 4. Develop a migration plan.
+M. For the A Video Store problem in Chapters 4 through 12:
+ 1. Prepare a plan to motivate adoption of the system.
+ 2. Prepare a training plan that includes both what 
+you would train and how the training would be 
+ delivered.
+ 3. Prepare a change management plan.
+ 4. Develop a migration plan.
+N. For the gym problem in Chapters 4 through 12:
+ 1. Prepare a plan to motivate adoption of the system.
+ 2. Prepare a training plan that includes both what you 
+would train and how the training would be delivered.
+ 3. Prepare a change management plan.
+ 4. Develop a migration plan.
+O. For the Picnics R Us problem in Chapters 4 through 
+12:
+ 1. Prepare a plan to motivate adoption of the system.
+ 2. Prepare a training plan that includes both what you 
+would train and how the training would be delivered.
+ 3. Prepare a change management plan.
+ 4. Develop a migration plan.
+P. For Of-the-Month Club problem in Chapters 4 
+through 12:
+ 1. Prepare a plan to motivate adoption of the system.
+ 2. Prepare a training plan that includes both what 
+you would train and how the training would be 
+delivered.
+ 3. Prepare a change management plan.
+ 4. Develop a migration plan.
+MINICASES
+1. Nancy is the IS department head at MOTO Inc., a human 
+resources management fi rm. Th e IS staff at MOTO Inc. 
+completed work on a new client management soft ware 
+system about a month ago. Nancy was impressed with 
+the performance of her staff on this project because the 
+fi rm had not previously undertaken a project of this scale 
+in-house. One of Nancy’s weekly tasks is to evaluate and 
+prioritize the change requests that have come in for the 
+various applications used by the fi rm.
+ Right now, Nancy has fi ve change requests for 
+the client system on her desk. One request is from a 
+system user who would like some formatting changes 
+made to a daily report produced by the system. 
+Another request is from a user who would like the 
+sequence of menu options changed on one of the 
+system menus to more closely refl ect the frequency of 
+use for those options. A third request came in from 
+the billing department.
+ Th is department performs billing through a billing 
+soft ware package. A major upgrade of this soft ware is 
+being planned, and the interface between the client system and the bill system need to be changed to accommodate the new soft ware’s data structures. Th e fourth 
+request seems to be a system bug that occurs whenever 
+a client cancels a contract (a rare occurrence, fortunately). Th e last request came from Susan, the company president. Th is request confi rms the rumor that 
+MOTO Inc. is about to acquire another new business. 
+Th e new business specializes in the temporary placement of skilled professional and scientifi c employees 
+and represents a new business area for MOTO Inc. 
+Th e client management soft ware system will need to 
+be modifi ed to incorporate the special client arrangements that are associated with the acquired fi rm.
+ How do you recommend that Nancy prioritize these 
+change requests for the client/management system?
+Minicases  505
+2. Sky View Aerial Photography off ers a wide range of 
+aerial photographic, video, and infrared imaging services. Th e company has grown from its early days of 
+snapping pictures of client houses to its current status 
+as a full-service aerial image specialist. Sky View now 
+maintains numerous contracts with various governmental agencies for aerial mapping and surveying 
+work. Sky View has its offi ces at the airport, where it 
+keeps its fl eet of specially equipped aircraft . Sky View 
+contracts with several freelance pilots and photographers for some of its aerial work and also employs 
+several full-time pilots and photographers.
+ Th e owners of Sky View Aerial Photography 
+recently contracted with a systems development 
+consulting fi rm to develop a new information system 
+for the business. As the number of contracts, aircraft , 
+fl ights, pilots, and photographers increased, the company experienced diffi culty keeping accurate records 
+of its business activity and the utilization of its fl eet 
+of aircraft . Th e new system will require all pilots and 
+photographers to swipe an ID badge through a reader 
+at the beginning and conclusion of each photo fl ight, 
+along with recording information about the aircraft 
+used and the client served on that fl ight. Th ese records 
+are to be reconciled against the actual aircraft utilization logs maintained and recorded by the hangar 
+personnel.
+ Th e offi ce staff was eagerly awaiting the installation 
+of the new system. Th eir general attitude was that the 
+system would reduce the number of problems and 
+errors that they encountered and would make their 
+work easier. Th e pilots, photographers, and hangar 
+staff were less enthusiastic, being unaccustomed to 
+having their activities monitored in this way.
+ a. Discuss the factors that might inhibit the acceptance 
+of this new system by the pilots, photographers, and 
+hangar staff .
+ b. Discuss how an informational strategy could be 
+used to motivate adoption of the new system at Sky 
+View Aerial Photography.
+ c. Discuss how a political strategy could be used to 
+motivate adoption of the new system at Sky View 
+Aerial Photography.
+3. For the Holiday Travel Vehicles problem described in 
+Chapters 5 through 12:
+ a. Prepare a plan to motivate adoption of the system.
+ b. Prepare a training plan that includes both what you 
+would train and how the training would be delivered.
+ c. Prepare a change management plan.
+ d. Develop a migration plan.
+4. For the Professional and Scientifi c Staff Management 
+problem described in Chapters 4, and 6 through 11:
+ a. Prepare a plan to motivate adoption of the system.
+ b. Prepare a training plan that includes both what you 
+would train and how the training would be delivered.
+ c. Prepare a change management plan.
+ d. Develop a migration plan.
+
+A
+Abstract class, 22, 164, 258
+Abstraction, 258
+in object-oriented systems, 281
+Accelerometers, 397, 398
+Acceptance tests, 472, 477
+Access control, 361
+Access control requirements, defi ned, 445
+Acknowledgment messages, 386
+Action–object order, 384
+Actions
+in activity diagrams, 131, 132, 317
+in behavioral state machines, 222
+Action statements, 316
+Activities
+in activity diagrams, 131, 132, 317
+in behavioral state machines, 222
+black-hole, 136
+miracle, 136
+Activity-based costing, 94
+Activity coordination, 458
+Activity diagrams, 119, 120
+actions in, 131, 317
+activities in, 131, 317
+control fl ows in, 131, 317
+control nodes in, 132–136
+decision node in, 134, 317
+fi nal-activity node in, 132–133, 317
+fi nal-fl ow node in, 133, 317
+fork node in, 135, 317
+guard condition, 134
+guidelines for creating, 136–137
+initial node in, 132, 317
+joint node in, 136, 317
+merge node in, 134, 317
+object fl ows in, 131, 317
+object nodes in, 131, 317
+steps in creating, 137–140
+swimlanes in, 136, 317
+syntax for, 132, 317
+of UML, 316
+Activity elimination, 95
+Actors
+average, 59
+defi ned, 59, 206, 217
+in interaction diagrams, 205
+primary, 142
+simple, 59
+specialized, 122
+in use-case diagrams, 121–123
+Adjusted usecase points (UCP), 62
+Adoption, motivating, 493–495
+Aesthetics, 370–371
+Aggregation association, 181–183
+Aggregation relationships
+in factoring process, 257
+in structural modeling, 166
+Agile development, 12–15
+criticisms, 13
+extreme programming (XP), 13–14
+principles, 12
+scrum, 14–15
+A-kind-of
+in factoring, 257
+in object-oriented systems, 21
+in structural model, 165
+Alexander, Christopher, 170
+Algorithm specifi cations, 316–319
+Alpha testing, 477
+Alternative fl ows, 144
+Alternative matrix, 274–275, 439
+Alternative requirements documentation techniques, 
+see Requirements documentation techniques, 
+alternative
+Amazon.com, 408, 445
+Ambler, S. W., 30, 136, 207, 218, 226
+Analysis models, 4
+balancing, 242–257
+evolving into design models, 257–262
+verifying and validating, 242–257
+Analysis paralysis, 28
+Analysis patterns, 294
+INDEX
+507
+508 Index
+B
+Backyard recycling technique, 431
+Bar-code readers, 389
+Batch processing, 387–389
+Batch reports, 393
+Behavior, 282
+Behavioral modeling, 202–235
+behavioral state machines for, 221–229
+crude analysis for, 229–232
+interaction diagrams for, 204–221
+verifying and validating, 233–234
+Behavioral models, 6, 203
+balancing functional model and, 243–251
+balancing structural model and, 251–254
+Behavioral state machine, 221–229, 473
+actions in, 222
+activities in, 222
+creating, 226–229
+elements of, 222–226
+events, 222
+guidelines for creating, 226
+states, 221
+transitions in, 222
+Behavioral view, 24
+Behavior diagrams, 34
+Behaviors, 204
+in object-oriented systems, 20
+Bellin, D., 167
+Benchmark, 440
+Benchmarking, informal, 94
+Beta testing, 477
+Bias minimization, 393–394
+Binding technique, 23
+Black-box testing, 471, 472
+Black hole states, 226
+Booch, Grady, 24, 25, 34
+Bottom-up interviews, 98, 99
+Brainstorming, 167–169
+Breadth of information 
+(requirements analysis), 109
+Break-even point
+defi ned, 51
+determination, 47, 50–51
+graphing, 47
+Brief description (use cases), 142
+Broad and shallow menu, 384
+Brynjolfsson, Erik, 429
+Business analyst, 18
+Business-modeling workfl ow (Unifi ed Process), 28
+Business need, 43, 272
+Analysis phase, 3–4. See also Systems development 
+life cycle (SDLC)
+analysis strategy, 3
+requirements gathering, 4
+system proposal, 4
+Analysis workfl ow (Unifi ed Process), 28–29
+API, see Application program interface
+Appelo, J., 76
+Application logic, 419
+Application program interface (API), 
+59, 297, 469
+Application service providers (ASP), 270
+Application soft ware, 420
+Application system, 336–337
+Approval committee, 3, 43
+Architectural components, 419
+Architecture-centric OOSAD, 24
+Architecture design, 4
+Artifact, 432, 433
+As-is system, 3, 86
+ASP, see Application service providers
+Assemblies, 166
+Association
+class, 180
+in communication diagram, 217
+Association relationships
+in structural models, 166
+in use-case descriptions, 142
+in use-case diagrams, 122, 123–124
+Asymmetric encryption algorithm, 446
+Attributes, 165, 204, 282
+derived, 176, 300
+multivalued, 333
+in object-oriented systems, 20
+private, 176
+protected, 176
+public, 176
+visibility of, 176
+Attribute sets, 333
+Audit fi les, 330
+Augmented reality (AR), 404
+Authentication, 446
+Authentication requirements, 445–446
+defi ned, 445
+Authentication testing, 477
+Authorization testing, 477
+Availability and reliability 
+requirements, 443–444
+Average actors, 59
+Avison, D., 91
+Index  509
+Data Access and Manipulation (DAM), 260
+in factoring, 257
+in object orientation, 282
+in object-oriented systems, 19, 20
+in structural models, 164–165
+utility, 260
+Class and method design, 280–321
+constraints, 304–314
+contracts, 304–314
+design criteria, 286–293
+method specifi cation, 314–319
+object design activities, 293–304
+object orientation, characteristics of, 282–286
+verifying and validating, 319–321
+Class cohesion, 290
+ideal, 291
+mixed-domain, 291
+mixed-instance, 291
+mixed-role, 291
+Class diagrams
+aggregation association, 181–183
+class, 176–179
+generalization association, 181
+object diagrams, 184
+relationships, 179–181
+simplifying, 184
+Class library, 297
+Class-Responsibility-Collaboration (CRC) cards
+collaborations, 173
+elements of, 173–174
+role-playing, with use cases, 174–175
+Class–Responsibility–Collaboration (CRC) cards
+responsibilities, 172
+Classroom training, 496
+Class tests, 473
+Client, 259
+Client-based architectures, 420–421
+Client computers, 419
+Client-server architectures, 421–422
+Client-server tiers, 422–424
+Closed-ended questions, 97, 98
+Cloud computing, 426–428
+Cloud services, 270
+Clustering, 354–355
+Coad, Peter, 286, 289
+COBIT (Control Objectives for Information and related 
+Technology), 88
+Coding practices, 14
+Coding standards, 78
+Cognitive map, 405 Business process, 426. See also specifi c types of 
+business process
+Business process documentation, 140–152. See also
+Use-case description
+use cases, types of, 141
+Business process identifi cation, 121–129
+use-case diagram, creating, 127–129
+use-case diagram, elements of, 121–126
+use cases, identifying, 126–127
+Business process modeling, 129–140
+activity diagram creation, 137–140
+activity diagrams, 131–136
+guidelines for activity diagrams creation, 136–137
+Business requirements, 44, 87
+Business value, 44
+C
+CA, see Certifi cate authority
+Caching computational results, 300
+Capability list, 477
+Capability Maturity Model compliance, 88
+Capacity requirements, 443
+CASE, see Computer-aided soft ware engineering
+Cash fl ow
+determination, 48–49
+method, 49
+Cassimally, Hakim, 429
+Certainty of benefi ts, 494
+Certainty of costs, 494
+Certifi cate authority (CA), 446
+Champion, 52
+Change agents, 17
+Change control, 458
+Change management, 482, 489–497
+adoption, motivating, 493–495
+analyst, 19
+cost and benefi ts, 492–493
+management policies, revising, 491–492
+resistance to change, 490–491
+training, 495–497
+Change management workfl ow, confi guration 
+and, 30, 33–34
+Change request, 498, 499, 500
+Check box, 391
+Check digit check, 392
+Class(es)
+abstract, 164
+in class diagrams, 176–179
+concrete, 164
+container, 260
+510 Index
+system, 5
+test designing, 467–477
+Construction phase (Unifi ed Process), 27
+Constructor operation, 176
+Container classes, 260
+Content awareness, 369–370
+Context, 408, 460, 483
+Contract, 173, 259, 294, 304
+Elements of, 306–314
+fi xed-price, 271
+time-and-arrangements, 271
+value-added, 271
+Control and security (server-based architecture), 425
+Control fl ows, 131, 132, 317
+Controllers, 259
+Control nodes
+decision node, 134
+fi nal-activity node, 132–133
+fi nal-fl ow node, 133
+fork node, 135
+initial node, 132
+joint node, 136
+merge node, 134
+Conversion, 485–489. See also specifi c types of 
+conversion
+location, 486–487
+modules, 487–488
+selecting, 488–489
+style of, 486
+Conversion location, 486–487
+phased, 487
+pilot, 487
+simultaneous, 487
+style of, 486
+Conversion modules
+modular conversion, 487–488
+whole-system conversion, 487
+Conversion strategy
+cost, 489
+risk, 488–489
+time, 489
+Conversion style
+direct, 486
+parallel, 486
+Costs, 109
+certainty of, 494
+in conversion strategy, 489
+development, 47, 48
+of development, 424–425
+of infrastructure, 424
+Cohesion
+class, 290
+defi ned, 289
+generalization/specialization, 291
+ideal class, 290
+method, 289–290
+Collaborations, 173, 258–259
+Collectivism, 461
+Color
+aesthetics, 370
+cultural meanings of, 407
+Columnar data stores, 334
+Combo box, 391
+Command language, 384
+Common object lists, 169
+Communication diagrams
+creating, 219
+elements of, 216–218
+examples, 219–221
+guidelines for creating, 218–219
+Communication path, 433
+Compatibility, 46
+Completeness check, 392
+Complex actors, 59
+Complex systems, 16–17
+Component, 297
+Computer-aided soft ware engineering (CASE)
+benefi ts of, 77
+defi ned, 77
+repository, 77
+tools, 77
+Computer-based training (CBT), 496, 497
+Concept mapping, 110
+Concept maps, 110–112
+Conceptual model, 163
+Concrete class, 21, 164, 258
+Confi guration and change management workfl ow 
+ (Unifi ed Process), 30, 33–34
+Confi rmation message, 386
+Confl ict management, 76
+Connascence, 292–293
+Consistency, 369, 371–372
+Consistency check, 392
+Constantine, L. L., 30
+Constraints, 304
+types of, 306
+Construction, 456–477
+defi ned, 456
+documentation development, 462–467
+programming management, 457–461
+Index  511
+Data entry operator, 389
+Data management layer, 261
+Data management layer design, 326–363
+data access and manipulation classes, 
+designing, 357–360
+mapping problem domain objects to object 
+ persistence formats, 337–346
+nonfunctional requirements and, 
+360–361
+object persistence formats, 327–337
+RDBMS-based object storage, 346–357
+verifying and validating, 361–362
+Data storage, 419
+size of, 356–357
+DBMS, see Database management system
+Decision node, 132, 134, 317
+Decision support systems (DSS), 336
+Decomposition, 166
+Default value, 390
+Delay message, 386
+DeMarco, T., 71
+Dennis, Alan, 105
+Denormalization, 351–354
+Dependency
+partial, 349
+transitive, 351
+Dependency relationship, 262, 263
+Deployment diagrams, 432–434
+Deployment engineering workfl ow, 27
+Deployment workfl ow (Unifi ed Process), 29, 32
+Depth of information (requirements analysis), 109
+Derived attributes, 176, 300
+Design, 240–275
+acquisition strategy, selecting, 273–275
+and balancing of analysis models, 242–257
+classic, avoiding, 241
+custom development, 268–269
+evolving analysis models into design models, 
+257–262
+optimization, 298–300
+outsourcing, 270–272
+packaged soft ware, 269–270
+packages and package diagrams, 262–268
+restructuring, 297–298
+selecting, 272–273
+strategies, 268–273
+Design models, 29
+evolving analysis models into, 257–262
+packages and package diagrams, 262–268
+Design patterns, 294, 295
+intangible, 48
+materials, 94
+operational, 47, 48
+in requirements analysis, 109
+of transition, 494
+Costs and benefi ts analysis
+assigning values to, 48
+in change management, 492–493
+fi nancial calculations for, 51
+identifying, 47–48
+Coupling
+defi ned, 286
+inheritance, 289
+interaction, 287–288
+CRC cards, see Class-Responsibility-Collaboration 
+(CRC) cards
+Critical path method (CPM), 58
+Critical task, 58
+Critical thinking skills, 92
+CRUDE (create, read, update, delete, or execute), 126
+CRUDE analysis, 229–232
+CRUDE matrix, 243, 245
+Cultural and political requirements
+customization requirements, 447
+legal requirements, 448
+synopsis, 449
+Cultural diff erences, 407–410
+Cultural issues, 406–410
+and information technology, 483–484
+in programming management, 460–461
+Cultural requirements, 88
+Custom development, 268–269
+Customization, 269
+Customization requirements, 447
+D
+DAM classes, see Data Access and Manipulation classes
+Data Access and Manipulation (DAM) classes, 260, 338
+designing, 357–360
+Data access logic, 419
+Data access speed optimization, 351–356
+clustering, 354–355
+denormalization, 351–354
+indexing, 355–356
+Database, 327
+Database and fi le specifi cations, 4
+Database checks, 392
+Database management system (DBMS), 327
+Data capture at source, 389390
+Data-centered methodology, 5
+512 Index
+costs and benefi ts, identifying, 47–48
+net present value (NPV), 49–50
+return on investment (ROI), 50
+Edit checks, 391
+EIS, see Executive information systems
+E-JAD, see Electronic JAD
+Elaboration phase (Unifi ed Process), 27
+Electronic brainstorming, 169
+Electronic distribution, 104
+Electronic JAD, 102
+Encapsulation, 282, 468
+in object-oriented systems, 20–21
+in testing and object orientation, 468
+Enchanted objects, 429
+Encryption, 445–446
+defi ned, 445
+End-user DBMS, 327
+Engineering workfl ows. See also Workfl ows
+analysis workfl ow, 28–29
+business-modeling workfl ow, 28
+deployment workfl ow, 29
+design workfl ow, 29
+implementation workfl ow, 29
+requirements workfl ow, 28
+testing workfl ow, 29
+English-language messages, 406
+Enhanced Unifi ed Process, 31, 33
+Enterprise DBMS, 327
+Enterprise resource planning (ERP), 269
+Environmental factors (EF), 59, 62
+Environmental factor value (EFactor), 59, 62
+Environment and infrastructure management, 76–79. 
+See also Project management
+CASE tools, 77
+documentation, 78–79
+standards, 77–78
+Environment workfl ow (Unifi ed Process), 30, 32
+Error(s), 153
+Error correction, 153
+Error message, 386
+Essential use case, 141, 372
+Estimates, refi ning, 69–70
+Estimation, defi ned, 58
+Event
+in behavioral state machines, 222, 223
+in method specifi cation, 314
+Event driven languages, 314
+Evolutionary work breakdown structures, 63–67
+e-waste, 431
+Exceptional fl ows, 144
+Design phase. See also Systems development life 
+cycle (SDLC)
+architecture design, 4
+database and fi le specifi cations, 4
+design strategy, 4
+program design, 4
+Design prototype, 11
+Design strategy, 4
+Design workfl ows, 27, 29
+Destructor operation, 179
+Detail report, 395
+Detail use case, 141
+Development
+costs, 47, 48, 424–425
+incremental, 24–25
+iterative, 24–25
+parallel, 8
+phased, 9
+waterfall, 7
+Digital signatures, 446
+Direct conversion, 486
+Direct manipulation (navigation control), 385–386
+Document analysis, 106–107
+Documentation, 78–79
+development, 462–467
+procedures manuals, 463
+reference documents, 463
+standards, 78
+topics, 463, 465
+tutorials, 463
+Documentation navigation controls, 463
+Documentation structure designing, 463–465
+Document data stores, 334
+Doing responsibilities, 172
+Drop-down list box, 391
+Drop-down menu, 385
+DSS, see Decision support systems
+Duration analysis, 93–94
+Dynamic binding, 468
+in object-oriented systems, 22–23, 283
+Dynamic model, 204
+E
+Ease of development, 425
+Ease of learning, 371
+Ease of use, 371
+Economic feasibility, 46–51. See also Feasibility analysis
+break-even point determination, 50–51
+cash fl ow determination, 48–49
+costs and benefi ts, assigning values to, 48
+Index  513
+Functional model
+balancing behavioral models and, 243–251
+balancing structural model and, 242–243
+and structural model, relationships, 244
+Functional modeling
+interrelationships, 156
+verifi cation and validation, 154–156
+verifi cation and validation through walkthroughs, 
+154–155
+Functional quality, 88
+Functional requirements, 87, 90
+G
+Games, 400
+Gamifi cation, 400–401
+Gantt chart, 56–57
+Generalization association, 181
+Generalization relationship, 122, 144, 165, 257
+Generalization/specialization cohesion, 291
+Generic sequence diagram, 204
+Globalization, 89
+Glocalization, 407
+Gradual refi nement, 3
+Grammar order, consistent, 384
+Graphical displays and reports, 393
+Graphical user interface (GUI), 368, 425
+Graphs, 395
+Green data centers, 431
+Green IT, 431–432
+Grid computing, 426
+Ground rules (JAD sessions), 103
+Group cohesiveness, 76
+Guard condition, 134, 217, 222
+H
+Hall, Edward, 407, 408, 409, 460, 483, 484
+Haptic feedback, 396
+Hardcoded value, 471
+Hardware and operating system, 360
+Hardware and soft ware specifi cation, 438–440
+Hardware components, primary, 419
+Has-parts
+in factoring, 257
+in structural model, 166
+Health and Human Services Health Insurance Portability 
+and Accountability Act (HIPAA), 428
+Help desk, 498
+Help message, 386
+Heuristic evaluation, 381
+Execution occurrence, 206
+Executive information systems (EIS), 336
+Extend relationship, 122, 144
+Extent, 332
+External nonfunctional dimensions, 88
+External trigger, 142
+Extreme programming (XP), 13–14
+F
+Facilitator, 101, 104
+Factoring, 257–258, 298
+Familiarity
+with functional area, 46
+with technology, 46
+Fan-out, 300
+Fat client, 421
+Faults, 153
+Feasibility analysis, 3, 43, 45–53. See also Project 
+ management
+economic feasibility, 46–51
+organizational feasibility, 51–53
+technical feasibility, 45–46
+Feminine cultures, 409
+Field labels, 370
+Final-activity node, 132–133, 317
+Final-fl ow node, 132, 133, 317
+Final state, 222, 223
+Financial awards, 75
+First-line supervisors, 492
+First mover, 43
+First normal form (1NF), 347, 349
+Fitzgerald, G., 91
+Fixed-price contract, 271
+Flow of events
+alternative or exceptional fl ows, 144
+normal, 144
+subfl ows, 144
+in use-case description, 144–145
+Foreign key, 330, 331
+Fork node, 132, 135, 317
+Formal usability testing, 381–382
+Format check, 392
+Foundation layer, 260
+Frame, 209, 217, 223
+Framework, 297
+Frequently asked questions (FAQ), 498
+Friedman, T. L., 89, 407
+Functional decomposition, 144
+Functionality, 44
+Functional lead, 74
+514 Index
+Infrastructure design, 432–438
+deployment diagrams, 432–434
+network model, 434–438
+Infrastructure management workfl ow (Unifi ed 
+Process), 32
+Inheritance, 144, 469
+confl ict, 284, 285
+multiple, 285
+in object orientation, 284–286
+in object-oriented systems, 21–22
+single, 284
+Inheritance coupling, 289
+In-house experience, 272
+Initial node, 132, 317
+Initial state, 222, 223
+Input design, 387–392
+basic principles, 387–390
+input validation, 391–392
+types of inputs, 390, 391
+Input validation, 391–392
+Installation process, 5, 481–501
+change management, 489–497
+conversion, 485–489
+cultural issues in, 483–484
+post-implementation activities, 497–501
+Instance sequence diagrams, 204
+Instantiation, 184
+Institutionalization, 497
+Intangible benefi ts, 47, 48
+Intangible costs, 48
+Intangible value, 44
+Integration of information, 109
+Integration testing, 468, 472
+Integration tests, 475–476
+Interaction, 169
+Interaction coupling, 287–288
+Interaction diagrams, 204–221
+communication diagrams, 216–221
+messages, 204
+objects in, 204
+operations in, 204
+sequence diagrams, 204–215
+Interaction testing, 472, 475
+Interactive evaluation, 381
+Interface actions, 377
+Interface capabilities, 425
+Interface design, 4
+Interface design prototyping, 377–380
+selecting, 379
+storyboard, 377–379
+History fi les, 330
+Hofstede, Geert, 407, 408, 409, 460, 461, 483, 484
+Holland, Ian M., 287
+Hot keys, 385
+Human-computer interaction layer, 261
+Human-computer interaction layer design, 367–410
+games, 400–402
+gamifi cation, 400–402
+immersive environments, 404–406
+input design, 387–392
+international and cultural issues, 406–410
+mobile computing, 395–398
+multidimensional information visualization design, 
+402–404
+navigation design, 383–387
+nonfunctional requirements and, 410
+output design, 392–395
+social media and, 398–400
+user interface design, 368–372, 395–398, 400–402
+user interface design process, 372–383
+Hybrid clouds, 426
+I
+Ideal class cohesion, 290
+Image map, 385
+Immersive environments, 404–406
+Impedance mismatch, 336
+Implementation phase, 4–5. See also Systems 
+ development life cycle (SDLC)
+construction, 5
+installation, 5
+support plan, 5
+Implementation workfl ow (Unifi ed Process), 29
+Importance level (use-cases), 142
+Inception phase (Unifi ed Process), 26–27
+Incidents, 169
+Include relationship, 122, 144
+Incremental development, 24–25
+Indexing, 355–356
+Individualism, 461
+versus collectivism, 409, 484
+Informal benchmarking, 94, 147
+Informational strategy, 493
+Information hiding, 282
+in object-oriented systems, 20–21
+in testing and object orientation, 468
+Information load, 393
+Infrastructure analyst, 19
+Infrastructure as a Service (IaaS), 427
+Infrastructure cost, 424
+Index  515
+conducting session, 103–104
+designing, 103
+electronic, 102
+ground rules, 103
+participant selection, 102–103
+post-session report, 104
+preparing for session, 103
+problem management in, 105
+for RAD-based methodologies, 9
+Joint node, 136
+Jones, Capers, 101
+K
+Karner, Gustav, 58
+Keystrokes minimization, 390
+Key-value data stores, 334
+KISS principle, 13, 146
+Knowing responsibilities, 172
+Krug, Steve, 382, 383, 396, 408
+L
+Languages (navigation control), 384
+Larman, C., 15, 147
+Law of Demeter, 287, 288
+Layers, 259–262. See also Design
+data management, 260–261
+foundation, 260
+human–computer interaction, 261
+physical architecture, 261–262
+problem domain, 260
+Layout (user interface design), 369
+Legal requirements, 448
+Lencioni, P., 72
+Lewin, Kurt, 482
+Lieberherr, Karl J., 287
+Lifeline, 205, 206
+Linked list, 328
+Lister, T., 71
+Load tests, 477
+Local area network (LAN), 420
+Locations, 435
+Logical models, 120
+Long-versus short-term orientation, 461, 484
+Lookup fi les, 328
+M
+Magnetic stripe readers, 389
+Maintainability requirements, 441, 442
+Maintenance oracle, 154
+user interface prototypes, 379
+windows layout diagram, 377
+Interface evaluation, 380–382
+formal usability testing, 381–382
+heuristic evaluation, 381
+interactive evaluation, 381
+walkthrough evaluation, 381
+Interface evaluation, 380–382
+Interface icons, 377
+Interface metaphor, 376
+Interface objects, 376–377
+Interface standards design, 376–377
+Interface templates, 376
+Interfi le clustering, 354
+Internal nonfunctional dimensions, 88
+International issues, 406–410
+Internet of Th ings (IoT), 428–431
+Interpersonal skill, 74
+development of, 102
+Interrelationships
+behavioral models, 234
+functional modeling, 156
+Interview(s), 96–100
+bottom-up, 98, 99
+closed-ended questions, 97
+conducting, 99
+open-ended questions, 97
+post-interview follow-up, 100
+preparing for, 99
+probing question, 97
+as requirements-gathering technique, 96–100, 101
+schedule, 96, 97
+structured, 98
+top-down, 98
+unstructured, 98
+Interview notes, 100
+Interview report, 100, 101
+Intrafi le clustering, 354
+Invariants, 306
+class diagram, 308
+on CRC card, 307
+in text fi le, 308
+Iterative development, 24–25
+Iterative workplans, 63–67
+J
+Jacobson, Ivar, 24, 25, 34
+Jelled team, 71–72
+Join node, 132, 317
+Joint application development (JAD), 100–104, 105
+516 Index
+Middleware, 421
+Migration plan, 482
+Milestones, project, 55, 57
+Miracle states, 226
+Mission-critical systems, 445
+agile for, 13
+and Scrum, 15
+XP for, 14
+Mistakes
+implementation, 459
+preventing, 383
+recovery from, 383
+Mobile computing, 395–398
+Mobile devices, 396, 439
+Model–View–Controller (MVC) 
+architecture, 259
+Modular conversion, 487–488
+Module, 257
+Monochronic time, 408, 461, 484
+Motivation, 75–76
+Multidimensional information visualization 
+design, 402–404
+Multilingual requirements, 406–407 Multiple inheritance, 285 I waited for ur luv I wated for ur luv I waited for ur luv uhh uhhh uhhh uuhhh uhuhh Multiple inheritance, 285 I waited for ur luv I wated for ur luv I waited for ur luv uhh uhhh uhhh uuhhh uhuhh

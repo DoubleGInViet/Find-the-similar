@@ -1,0 +1,585 @@
+﻿objects (see Chapter 4). On the other hand, it would be very diffi cult to “see” how the 
+objects collaborated in an activity diagram.
+■ When trying to understand the sequencing of messages, a sequence diagram should 
+be used instead of a communication diagram. As in the previous guideline, this guideline essentially suggests that you should use the diagram that was designed to deal 
+with the issue at hand. Even though communication diagrams can show sequencing of 
+messages, this was never meant to be their primary purpose.
+Creating a Communication Diagram13 Remember that a communication diagram is 
+basically an object diagram that shows message-passing relationships instead of aggregation 
+or generalization associations. In this section, we describe a fi ve-step process used to build a 
+communication diagram. Th e fi rst step in the process is to determine the context of the communication diagram. Like a sequence diagram, the context of the diagram can be a system, a 
+use case, or a scenario of a use case. Th e context of the diagram is depicted as a labeled frame 
+around the diagram (see Figures 6-10, 6-11, and 6-12).
+Th e second step is to identify the objects (actors) and the associations that link the objects 
+(actors) that participate in the collaboration together. Remember, the objects that participate in the collaboration are instances of the classes identifi ed during the development of 
+the structural model (see Chapter 5). Like the sequence-diagramming process, it is likely 
+that additional objects, and hence classes, will be discovered. Again, this is normal because 
+the underlying development process is iterative and incremental. In addition to the communication diagram being modifi ed, the sequence diagrams and structural model probably 
+also have to be modifi ed. Additional functional requirements might also be uncovered, 
+hence requiring the functional models to be modifi ed as well (see Chapter 4).
+Th e third step is to lay out the objects (actors) and their associations on the communication 
+diagram by placing them together based on the associations that they have with the other 
+objects in the collaboration. By focusing on the associations between the objects (actors) 
+and minimizing the number of associations that cross over one another, we can increase the 
+understandability of the diagram.
+Th e fourth step is to add the messages to the associations between the objects. We do this 
+by adding the name of the message(s) to the association link between the objects and an 
+arrow showing the direction of the message being sent. Each message has a sequence number associated with it to portray the time-based ordering of the message.14
+Th e fi fth and fi nal step is to validate the communication diagram. Th e purpose of this step 
+is to guarantee that the communication diagram faithfully portrays the underlying process(es). Th is is done by ensuring that all steps in the process are depicted on the diagram.
+Campus Housing Example As with the sequence diagram example, we return to the Add 
+Apartment use case for the Campus Housing Service. To begin with, we again set the 
+context for the communication diagram (the Add Apartment use case). Next, we identify 
+the objects (Apartment), actors (Apartment Owner and Campus Housing Service), and 
+13 Th e approach described in this section is adapted from Booch, Rumbaugh, and Jacobson, Th e Unifi ed Modeling 
+Language User Guide.
+14 However, remember the sequence diagram portrays the time-based ordering of the messages in a top-down 
+manner. If your focus is on the time-based ordering of the messages, we recommend that you also use the sequence 
+diagram.
+1. Set Context
+3. Lay Out Diagram
+4. Add Messages
+2. Identify Objects, 
+Actors, & 
+Associations
+5. Validate
+220 Chapter 6 Behavioral Modeling
+associations (links between the Apartment Owner actor and the Campus Housing Service 
+actor and links between the Campus Housing Service actor and the Apartment object). 
+Using this information, we lay out the diagram showing the actors, objects, and associations between them. Finally, we label the associations with the appropriate messages. 
+Figure 6-13 depicts the communication diagram for this use case.
+Library Example As with the sequence diagramming example, we return to the Borrow 
+Books use case of the Library Book Collection Management System. In this case, to set the 
+context of the diagram, we visit the Student without a valid ID and Student with a Valid ID 
+but owes fi nes or has overdue books scenarios. We create two communication diagrams, one 
+for each scenario. As with the sequence-diagramming process, we review the Flow of Events 
+of the use-case description (see Figure 6-6), the activity diagram (see Figure 6-7), and the use 
+case diagram (see Figure 6-8).
+Th e next step is to identify the actor, objects, and associations involved in the scenario. 
+In both scenarios, the actors are Student, Librarian, and the Registrar’s Database. However, 
+because the process is aborted very early in the Student without a valid ID scenario, there are 
+no objects in the scenario. Th e Student with a Valid ID but owes fi nes or has overdue books 
+scenario does include one object: Borrower. Both scenarios have an association between the 
+Student and Librarian actors and the Librarian and Registrar’s Database actor. Th e Student 
+with a Valid ID but owes fi nes or has overdue books scenario also has an association between 
+the Librarian actor and the Borrower object.
+Th e next step is to lay out the diagram. In both cases, because the student initiates the 
+process, we place the Student actor to the far left of the diagram. We then place the other 
+actors on the diagram in the order in which they participate in the process. We also place 
+the :Borrower object to the far bottom right of the diagram that represents the Student 
+with a Valid ID but owes fi nes or has overdue books scenario to refl ect the left -to-right and 
+top-to-bottom direction of reading for most Western cultures.
+Now we place the relevant associations between the actors and objects that participate in 
+the scenarios. In this step, we add the messages to the associations. We again review the fl ow 
+of events (see Figure 6-6) of the use-case description to identify the directionality and content of the messages. Figures 6-14 and 6-15 portray the communication diagrams created.
+FIGURE 6-13
+Communication 
+Diagram for the 
+Add Apartment 
+Use Case
+Apartment
+1: Add Apartment
+2: RequestApartmentinformation 3: Create(ApartmentInformation)
+Apartment Owner Campus Housing Service
+FIGURE 6-14
+Communication 
+Diagram for the 
+Student without a 
+Valid ID
+sd Borrow Books Use Case
+:Student
+1: Checkout Books (Books)
+2: IDCard?()
+:Librarian
+3: ValidID(IDNumber) Registrar’s Database
+Behavioral State Machines  221
+Th e last step is to validate the diagrams. As with sequence diagrams, because we are 
+drawing instance specifi c versions of the communication diagram, we must also draw the 
+remaining seven diagrams for the other scenarios.
+BEHAVIORAL STATE MACHINES
+Some of the classes in the class diagrams represent a set of objects that are quite dynamic in 
+that they pass through a variety of states over the course of their existence. For example, a 
+patient can change over time from being new to current to former based on his or her status 
+with the doctor’s offi ce. A behavioral state machine is a dynamic model that shows the diff erent states through which a single object passes during its life in response to events, along with 
+its responses and actions. Typically, behavioral state machines are not used for all objects; 
+rather, behavioral state machines are used with complex objects to further defi ne them and to 
+help simplify the design of algorithms for their methods. Th e behavioral state machine shows 
+the diff erent states of the object and what events cause the object to change from one state to 
+another. Behavioral state machines should be used to help understand the dynamic aspects of 
+a single class and how its instances evolve over time15 unlike interaction diagrams that show 
+how a particular use case or use-case scenario is executed over a set of classes.
+In this section, we describe states, events, transitions, actions, and activities. We also 
+explain how behavioral state machines model the state changes through which complex 
+objects pass. As with interaction diagrams, when we create a behavioral state machine for 
+an object, it is possible that we will uncover additional events that need to be included in 
+the functional model (see Chapter 4) and additional operations that need to be included in 
+the structural model (see Chapter 5), so our interaction diagrams might have to be modifi ed 
+again. Because object-oriented development is iterative and incremental, this continuous 
+modifi cation of the evolving models (functional, structural, and behavioral) of the system is 
+to be expected.
+States, Events, Transitions, Actions, and Activities
+Th e state of an object is defi ned by the value of its attributes and its relationships with other 
+objects at a particular point in time. For example, a patient might have a state of new, current, 
+or former. Th e attributes or properties of an object aff ect the state that it is in; however, not 
+15 Some authors refer to this as modeling an object’s life cycle.
+FIGURE 6-15
+Communication 
+Diagram for the 
+Student with a Valid 
+ID but Owes Fines or 
+Has Overdue Books
+sd Borrow Books Use Case
+:Student
+1: Checkout Books (Books)
+2: IDCard?()
+:Librarian
+3: ValidID(IDNumber)
+4: Overdue Books or Fines()
+:Borrower
+Registrar’s Database
+222 Chapter 6 Behavioral Modeling
+all attributes or attribute changes will make a diff erence. For example, think about a patient’s 
+address. Th ose attributes make very little diff erence to changes in a patient’s state. However, if 
+states were based on a patient’s geographic location (e.g., in-town patients were treated diff erently than out-of-town patients), changes to the patient’s address would infl uence state changes.
+An event is something that takes place at a certain point in time and changes a value or 
+values that describe an object, which, in turn, changes the object’s state. It can be a designated condition becoming true, the receipt of the call for a method by an object, or the 
+passage of a designated period of time. Th e state of the object determines exactly what the 
+response will be.
+A transition is a relationship that represents the movement of an object from one state 
+to another state. Some transitions have a guard condition. A guard condition is a Boolean 
+expression that includes attribute values, which allows a transition to occur only if the condition is true. An object typically moves from one state to another based on the outcome of an 
+action triggered by an event. An action is an atomic, nondecomposable process that cannot 
+be interrupted. From a practical perspective, actions take zero time, and they are associated 
+with a transition. In contrast, an activity is a nonatomic, decomposable process that can be 
+interrupted. Activities take a long period of time to complete, and they can be started and 
+stopped by an action.
+Elements of a Behavioral State Machine
+Figure 6-16 presents an example of a behavioral state machine representing the patient class 
+in the context of a hospital environment. From this diagram, we can tell that a patient enters a 
+hospital and is admitted aft er checking in. If a doctor fi nds the patient to be healthy, he or she 
+is released and is no longer considered a patient aft er two weeks elapse. If a patient is found 
+to be unhealthy, he or she remains under observation until the diagnosis changes.
+A state is a set of values that describes an object at a specifi c point in time and represents 
+a point in an object’s life in which it satisfi es some condition, performs some action, or waits 
+for something to happen (see Figure 6-17). In Figure 6-16 states include entering, admitted, 
+released, and under observation. A state is depicted by a state symbol, which is a rectangle 
+with rounded corners with a descriptive label that communicates a particular state. Th ere are 
+two exceptions. An initial state is shown using a small, fi lled-in circle, and an object’s fi nal 
+state is shown as a circle surrounding a small, fi lled-in circle. Th ese exceptions depict when 
+an object begins and ceases to exist, respectively.
+FIGURE 6-16  Sample Behavioral State Machine Diagram
+Patient
+Enters Hospital Checks In [Diagnosis = Healthy] [> 2 weeks]
+Entering Admitted Released
+Under Observation
+[Diagnosis = Unhealthy]
+[Diagnosis = Healthy]
+Behavioral State Machines  223
+FIGURE 6-17  Behavioral State Machine Diagram Syntax
+A state:
+■ Is shown as a rectangle with rounded corners.
+■ Has a name that represents the state of an object.
+An initial state:
+■ Is shown as a small, filled-in circle.
+■ Represents the point at which an object begins to exist.
+A final state:
+■ Is shown as a circle surrounding a small, filled-in circle (bull's-eye).
+■ Represents the completion of activity.
+An event:
+■ Is a noteworthy occurrence that triggers a change in state.
+■ Can be a designated condition becoming true, the receipt of an explicit signal 
+from one object to another, or the passage of a designated period of time.
+■ Is used to label a transition.
+A transition:
+■ Indicates that an object in the first state will enter the second state.
+■ Is triggered by the occurrence of the event labeling the transition.
+■ Is shown as a solid arrow from one state to another, labeled by the event name.
+A frame:
+■ Indicates the context of the behavioral state machine.
+Context
+anEvent
+aState
+Term and Definition Symbol
+Arrows are used to connect the state symbols, representing the transitions between 
+states. Each arrow is labeled with the appropriate event name and any parameters or conditions that may apply. For example, the two transitions from admitted to released and under 
+observation contain guard conditions. As in the other behavioral diagrams, in many cases it 
+is useful to explicitly show the context of the behavioral state machine using a frame.
+Figure 6-18 depicts two additional behavioral state machines. Th e fi rst one is for the 
+lunch object that was associated with the Make Lunch use-case scenario of Figures 6-3 
+and 6-12. In this case, there is obviously additional information that has been captured 
+about the lunch object. For example, the scenario of Figures 6-3 and 6-12 did not include 
+information regarding the lunch being taken out of the box or being eaten. Th is implies 
+additional use cases and/or use-case scenarios that would have to be included in a system 
+dealing with lunch processing. Th e second behavioral state machine deals with the life cycle 
+of an order. Th e order object is associated with the submit order use-case scenario described 
+in Figures 6-3 and 6-12. As in the lunch example, there is quite a bit of additional information contained in this behavioral state machine. For an order-processing system, additional 
+224
+FIGURE 6-18  Additional Behavioral State Machine Diagrams
+Order
+Denied
+Order is
+created
+Customer
+submits order
+Customer
+edits order
+information
+Authorization
+= Denied
+Order sent
+for credit
+authorization
+Customer
+withdraws
+order request
+Order sent to
+customer
+Customer
+accepts
+shipment Received
+Authorization
+= Approved
+Order is
+closed
+In Process Ordered Processing Placed Shipped
+Lunch
+[Created] [PlacedInBox] [TakenOutOfBox] [Eaten]
+Created Packed Being Eaten
+Behavioral State Machines  225
+sequence and communication diagrams would be necessary to completely represent all the 
+processing associated with an order object. Obviously, because behavioral state machines 
+can uncover additional processing requirements, they can be very useful in fi lling out the 
+complete description of an evolving system.
+Sometimes, states and subclasses can be confused. For example, in Figure 6-19, are the 
+classes Freshman, Sophomore, Junior, and Senior subclasses of the class Undergraduate or 
+are they states that an instance of the Undergraduate class goes through during its lifetime? 
+In this case, the latter is the better answer. When trying to identify all potential classes 
+Graduate
+Student
+Masters Doctoral
+Freshman
+VS.
+&
+[Accepted]
+Freshman Sophomore
+Undergraduate
+Undergraduate
+Junior Senior Masters Doctoral
+Graduate
+Student
+Sophomore
+[>30 Hours Earned]
+Junior
+[>60 Hours Earned]
+Senior
+[>90 Hours Earned]
+[Graduate]
+FIGURE 6-19  States versus Subclasses
+226 Chapter 6 Behavioral Modeling
+during structural modeling (see Chapter 5), you might actually identify states of the relevant superclass instead of subclasses. Th is is another example of how tightly intertwined 
+the functional, structural, and behavioral models can be. From a modeling perspective, 
+although we eventually removed the Freshman, Sophomore, Junior, and Senior subclasses 
+from the structural model, capturing that information during structural modeling and 
+removing it based on discoveries made during behavioral modeling were preferable to 
+omitting it and taking a chance of missing a crucial piece of information about the problem 
+domain. Remember, object-oriented development is iterative and incremental. As we progress to a correct model of the problem domain, we will make many mistakes.
+Guidelines for Creating Behavioral State Machines As with the sequence and communication diagrams, Amble suggests a set of guidelines when drawing behavior state machines. 
+In this case, we consider six of his recommendations.16
+■ Create a behavioral state machine for objects whose behavior changes based on the state 
+of the object. In other words, do not create a behavioral state machine for an object 
+whose behavior is always the same regardless of its state. Th ese objects are too simple.
+■ To adhere to the left -to-right and top-to-bottom reading conventions of Western 
+ cultures, the initial state should be drawn in the top left corner of the diagram and 
+the fi nal state should be drawn in the bottom right of the diagram.
+■ Make sure that the names of the states are simple, intuitively obvious, and descriptive. For example in Figure 6-16, the state names of the patient object are Entering, 
+Admitted, Under Observation, and Released.
+■ Question black hole and miracle states. These types of states are problematic 
+for the same reason black hole and miracle activities are a problem for activity 
+ diagrams (see Chapter 4). Black hole states, states that an object goes into 
+and never comes out of, most likely are actually fi nal states. Miracle states, states 
+that an object comes out of but never went into, most likely are initial states.
+■ Be sure that all guard conditions are mutually exclusive (not overlapping). For 
+example, in Figure 6-16, the guard condition [Diagnosis = Healthy] and the guard 
+condition [Diagnosis = Unhealthy] do not overlap. However, if you created a guard 
+condition of [x >= 0] and a second guard condition [x <= 0], the guard conditions 
+overlap when x = 0, and it is not clear to which state the object would transition. 
+Th is would obviously cause confusion.
+■ All transitions should be associated with a message and operation. Otherwise, 
+the state of the object could never change. Even though this may be stating the obvious, there have been numerous times that analysts forget to go back and ensure that 
+this is indeed true.
+Creating a Behavioral State Machine
+Behavioral state machines are drawn to depict an instance of a single class from a class diagram. Typically, the classes are very dynamic and complex, requiring a good understanding of 
+their states over time and events triggering changes. You should examine your class diagram 
+to identify which classes undergo a complex series of state changes and draw a diagram for 
+each of them. In this section, we describe a fi ve-step process used to build a behavioral state 
+machine.17 Like the other behavioral models, the fi rst step in the process is determining the 
+16 S.W. Ambler, Th e Elements of UML 2.0 Style (Cambridge, England: Cambridge University Press, 2005).
+17 Th e approach described in this section is adapted from Booch, Rumbaugh, and Jacobson, Th e Unifi ed Modeling 
+Language User Guide.
+1. Set Context
+Behavioral State Machines  227
+context of the behavioral state machine, which is shown in the label of the frame of the diagram. Th e context of a behavioral state machine is usually a class. However, it also could be a 
+set of classes, a subsystem, or an entire system.
+Th e second step is to identify the various states that an object will have over its lifetime. Th is 
+includes establishing the boundaries of the existence of an object by identifying the initial 
+and fi nal states of an object. We also must identify the states of an object. Th e information 
+necessary to perform this is gleaned from reading the use-case descriptions, talking with 
+users, and relying on the requirements-gathering techniques that you learned about in 
+Chapter 3. An easy way to identify the states of an object is to write the steps of what happens to an object over time, from start to fi nish, similar to how the normal fl ow of events 
+section of a use-case description would be created.
+Th e third step is to determine the sequence of the states that an object will pass through during its lifetime. Using this sequence, the states are placed onto the behavioral state machine 
+in a left -to-right order.
+Th e fourth step is to identify the transitions between the states of the objects and to add the 
+events, actions, and guard conditions associated with the transitions. Th e events are the triggers that cause an object to move from one state to the next state. In other words, an event 
+causes an action to execute that changes the value(s) of an object’s attribute(s) in a signifi cant 
+manner. Th e actions are typically operations contained within the object. Also, guard conditions can model a set of test conditions that must be met for the transition to occur. At this 
+point in the process, the transitions are drawn between the relevant states and labeled with 
+the event, action, or guard condition.
+Th e fi fth step is to validate the behavioral state machine by making sure that each state is 
+reachable and that it is possible to leave all states except for fi nal states. Obviously, if an identifi ed state is not reachable, either a transition is missing or the state was identifi ed in error. 
+Only fi nal states can be a dead end from the perspective of an object’s life cycle.
+Campus Housing Example Based on the functional and structural models for the campus 
+housing service (see Figure 6-4), the sequence diagram for the Add Apartment use case (see 
+Figure 6-5), and the communication diagram for the Add Apartment use case (see Figure 
+6-13), in this section, we are going to create a behavioral state machine for the Apartment 
+class. By reviewing all of the representations, it is obvious that the behavioral state machine 
+will be very simple. In this case, an apartment comes into existence when it is added and goes 
+out of existence when it is deleted. Its only state is For Rent. Figure 6-20 depicts the behavioral 
+state machine for this class.
+2. Identify Object 
+States
+3. Lay Out Diagram
+4. Add Transitions
+5. Validate
+FIGURE 6-20   
+Behavioral State 
+Machine for the 
+Apartment Class
+[Add] [Delete]
+For Rent
+228 Chapter 6 Behavioral Modeling
+FIGURE 6-21  Class Diagram for the Library Book Collection Management System
+Check Out Trans
+0..*
+1..1
+Borrower
+1..1
+0..*
+Check Out Desk
+Transaction Line Item Book Book Location
+1..1 1..* 0..* 1..1 0..* 1..1
+*
+1
+Student Faculty/Staff Guest
+Librarian
+Interlibrary Loan System Library Storage
+Book Collection
+Library Example Th e fi rst step in drawing a behavioral state machine is to set the context. For 
+our purposes, the context typically is an instance of a class that has multiple states and whose 
+behavior depends upon the state in which it currently resides. As suggested earlier, we should 
+review the class diagram (see Figure 6-21) to identify the “interesting” classes. In the case of the 
+Library Book Collection Management System, the obvious class to consider is the Book class.
+Th e next step is to identify the diff erent states through which an instance of the Book class 
+can traverse during its lifetime. Good places to look for possible state changes are the use-case 
+descriptions (see Figure 6-6), the activity diagrams (see Figure 6-7), the sequence diagrams 
+(see Figure 6-9), and the communication diagrams (see Figures 6-14 and 6-15). In the case of a 
+book, even though the states may be similar, you must be careful in identifying the states associated with an instance of the Book class and not the states associated with the physical book 
+itself. In Chapter 5, we observed that there were a number of implied states to consider. Th ese 
+included Checked Out, Overdue, Requested, Available, and Damaged. If the book is damaged, 
+the book could either be repaired and put back into circulation or it could be too damaged to 
+repair and be removed from circulation instead. Even though a Borrower could be fi ned for 
+an overdue or damaged book, being fi ned is not a state of a book, it is a state of a borrower.
+Next, we lay out the diagram by ordering the states in a sequential manner based on 
+the life cycle of a book. For example, it probably makes no sense to have a book to go from 
+a repaired state to a damaged state. However, going from a damaged state to a repaired state 
+makes sense. Nor does it make sense for a book to go from an available state directly to an 
+overdue state. However, the converse makes sense. Th e states we identifi ed for a book object 
+include Available, Checked Out, Overdue, Requested, Damaged, and Being Repaired. Next 
+we added the transitions between the states and labeled them with the appropriate guard 
+Crude Analysis  229
+conditions. Th e behavioral state machine for an instance of the Book class is portrayed in 
+Figure 6-22.
+Finally, we validate the diagram by checking for missing states or transitions and ensuring that there are no black hole or miracle states.
+CRUDE ANALYSIS
+One useful technique to identify how the underlying objects in the problem domain work 
+together to collaborate in support of the use cases is CRUDE analysis.18 CRUDE analysis uses 
+a CRUDE matrix, in which each interaction among objects is labeled with a letter for the 
+type of interaction: C for create, R for read or reference, U for update, D for delete, and E for 
+execute. In an object-oriented approach, a class/actor-by-class/actor matrix is used.19 Each 
+cell in the matrix represents the interaction between instances of the classes. For example, 
+in Figure 6-1, an instance of the Receptionist actor creates an instance of the Appointment 
+class. Assuming a Row:Column ordering, a C is placed in the cell Receptionist:Appointment. 
+Also, in Figure 6-1, an instance of the Receptionist actor references an instance of the 
+Appointments class. In this case, an R is placed in the Receptionist:Appointments cell. 
+Figure 6-23 shows the CRUDE matrix based on the Make Old Patient Appt use case.
+Unlike the interaction diagrams and behavioral state machines, a CRUDE matrix is most 
+useful as a system-wide representation. Once a CRUDE matrix is completed for the entire 
+FIGURE 6-22  Behavioral State Machine for an Instance of the Book Class in the Library Book 
+Collection Management System
+Book
+Damaged
+[Added To 
+Collection]
+[Borrower Checks in Book]
+[Borrower Checks in Book]
+[Borrower Checks in Book] [Another Borrower Requests Book]
+[Borrowing Time 
+Expires]
+[Borrower Checks 
+Out Book]
+[Borrower Returns Book Damaged]
+[Book Sent to be Repaired]
+[Book Too Damaged]
+[Book Repaired]
+[Book Too Damaged] [Book Taken Out of Circulation]
+[Borrower Returns Book Damaged]
+[Borrower Returns Book Damaged]
+[Another Borrower 
+Requests Book]
+Checked Out Overdue
+Being Repaired
+Available Requested
+18 CRUD analysis has typically been associated with structured analysis and design [see Alan Dennis, Barbara Haley 
+Wixom and Roberta M. Roth, Systems Analysis Design, 3nd ed. (New York: Wiley, 2006)] and information engineering [see James Martin, Information Engineering, Book II Planning and Analysis (Englewood Cliff s, NJ: Prentice 
+Hall, 1990)]. In our case, we have simply adapted it to object-oriented systems development. In the case of object 
+orientation, we have added an E to allow us to document the execution of operations that do not create, read, update, 
+or delete but that instead simply are executed for possible side-eff ect purposes. Specifi c details on collaborations are 
+described in Chapter 7.
+19 Another useful but more-detailed form of the CRUDE matrix is a Class/Actor:Operation-by-Class/Actor:Operation matrix. For validation and verifi cation purposes, this more-detailed matrix is more useful. However, for our 
+purposes at this point in our discussion, the Class/Actor-by-Class/Actor matrix is suffi cient.
+230 Chapter 6 Behavioral Modeling
+FIGURE 6-23  CRUDE Matrix for the Make Old Patient Apt Use Case
+Receptionist PatientList Patient UnpaidBills Appointments Appointment
+Receptionist RU CRUD R RU CRUD
+PatientList R
+Patient
+UnpaidBills
+Appointments R
+Appointment
+FIGURE 6-24   
+Campus Housing 
+Service CRUDE 
+Matrix
+Apartment 
+Owner Actor
+Student 
+Actor
+Apartment 
+Owner Class
+Apartment 
+Class
+Apartment Owner Actor C,D
+Student Actor R R
+Apartment Owner Class
+Apartment Class
+system, the matrix can be scanned quickly to ensure that every class can be instantiated. Each 
+type of interaction can be validated for each class. For example, if a class represents only temporary objects, then the column in the matrix should have a D in it somewhere. Otherwise, 
+the instances of the class will never be deleted. Because a data warehouse contains historical 
+data, objects that are to be stored in one should not have any U or D entries in their associated 
+columns. In this way, CRUDE analysis can be used as a way to partially validate the interactions among the objects in an object-oriented system. Finally, the more interactions among a 
+set of classes, the more likely they should be clustered together in a collaboration. However, 
+the number and type of interactions are only an estimate at this point in the development 
+of the system. Care should be taken when using this technique to cluster classes to identify 
+collaborations. We return to this subject in the next chapter when we deal with partitions 
+and collaborations.
+CRUDE analysis also can be used to identify complex objects. Th e more (C)reate, (U)pdate, 
+or (D)elete entries in the column associated with a class, the more likely the instances of the 
+class have a complex life cycle. As such, these objects are candidates for state modeling with 
+a behavioral state machine.
+Campus Housing Example In Chapters 4 and 5, we created a set of functional and structural 
+models for the campus housing service. In this section, we are going to use those models as a 
+basis for performing a CRUDE analysis. Th e fi rst thing we need to do is to identify all of the 
+actors and the classes that are involved in the campus housing service example. In this case, 
+the actors are apartment owner and student, and the classes are apartment owner and apartment. Given this, our CRUDE matrix is a 4x4 matrix. In this simple example, we only support 
+creating, reading, and deleting instances. Specifi cally, an apartment owner actor can create 
+and delete instances of apartment, while a student actor can read instances of apartment and 
+apartment owner. Figure 6-24 depicts the CRUDE matrix for the campus housing service. 
+Crude Analysis  231
+FIGURE 6-25  Corrected Campus Housing Service CRUDE Matrix
+Apartment 
+Owner Actor
+Student 
+Actor
+Staff Member 
+Actor
+Apartment 
+Owner Class
+Apartment 
+Class
+Apartment Owner Actor C,D
+Student Actor R R
+Staff Member Actor C,D
+Apartment Owner Class
+Apartment Class
+However, upon review of the matrix, even though instances of apartment owner are 
+read, they are never created or deleted. Unless the instances of apartment owner are created with another system, this is an impossible situation. Th is is another example of why 
+we follow an iterative and incremental approach in object-oriented systems development. 
+In this case, by creating a CRUDE matrix, we discovered an additional requirement that 
+had previously been overlooked. Consequently, we need to go back and add additional use 
+cases that add and delete apartment owners that are associated with an additional campus 
+housing service staff member actor that executes them (see Figure 6-25). Obviously, at this 
+point in time we should modify the use-case diagram; add activity diagrams; add sequence 
+diagrams; add communication diagrams; and review the class diagrams, CRC cards, and 
+behavioral state machines to ensure that they are still correct. We will leave those modifi cations to you and move on next to the library problem that we have been using in this and 
+the previous chapters.
+Library Example Th e best way to create a CRUDE matrix is to conceptually merge the 
+sequence and communication diagrams that model all of the scenarios of all of the use cases 
+in a system. Th e easiest way to accomplish this is simply to create an empty class/actorby-class/actor matrix. In the case of the Library Book Collection Management System, we 
+have six actors (Student, Faculty/Staff , Guest, Librarian, Personnel Offi ce, and Registrar’s 
+Offi ce) and eight classes (Book, Book Collection, Student, Faculty/Staff , Guest, Interlibrary 
+Loan System, Library, and Storage). Once this matrix has been laid out, role-playing the 
+scenarios will show which actors and classes interact with each other. Based on the type of 
+interaction, record a C, R, U, D, or E in the appropriate cell of the matrix. Do this repeatedly until all of the scenarios of all of the use cases have been executed. Th e CRUDE matrix 
+for the Library Book Collection Management System is shown in Figure 6-26. One of the 
+functions that the matrix can serve is to begin the validation process of the entire system. 
+In this case, by quickly reviewing the matrix we can see that absolutely nothing seems to 
+be interacting with the Library and Storage objects. Th is raises an important question as 
+to whether these objects should exist or not. If nothing calls or uses them and they don’t 
+call or use anything, then why are they part of this system? Either they should be removed 
+from the current representation of the system, or we have managed to miss some interaction. Knowing this allows us to go back to the user, in this case the Librarian, and ask what 
+should be doneIn this chapter, we described three diff erent diagrams (sequence diagram, communication 
+diagram, and behavioral state machine) and CRUDE matrices that could be used to represent 
+the behavioral model. Th e sequence and communication diagrams modeled the interaction 
+among instances of classes that work together to support the business processes included in 
+a system, the behavioral state machine described the state changes through which an object 
+traverses during its lifetime, and the CRUDE matrix represented a system-level overview of 
+the interactions among the objects in the system. In this chapter, we combine walkthroughs 
+with CRUDE matrices to more completely verify and validate the behavioral models. Since 
+we covered CRUDE analysis and matrices in the previous section, we focus only on walkthroughs in this section. We again use the appointment system and focus on Figures 6-1, 6-10, 
+6-16, and 6-23 to describe a set of rules that can be used to ensure that the behavioral model 
+is internally consistent.
+First, every actor and object included on a sequence diagram must be included as an actor 
+and an object on a communication diagram, and vice versa. For example, in Figures 6-1 and 6-10, 
+the aReceptionist actor and the Patients object appear on both diagrams.
+Second, if there is a message on the sequence diagram, there must be an association on 
+the communications diagram, and vice versa. For example, Figure 6-1 portrays a message 
+being sent from the aReceptionist actor to the Patient object, and a matching association 
+appears in the corresponding communication diagram (see Figure 6-10).
+Th ird, every message that is included on a sequence diagram must appear as a message on 
+an association in the corresponding communication diagram, and vice versa. For example, the 
+LookUpPatient() message sent by the aReceptionist actor to the Patient object on the sequence 
+diagram (see Figure 6-1) appears as a message on the association between the aReceptionist actor 
+and the Patient object on the communication diagram (see Figure 6-10).
+Fourth, if a guard condition appears on a message in the sequence diagram, there must be 
+an equivalent guard condition on the corresponding communication diagram, and vice versa. 
+For example, the message sent from the aReceptionist actor to the UnpaidBills object has a 
+guard condition of [aPatient Exists] (see Figure 6-1). Figure 6-10 shows the matching guard 
+condition included on the communication diagram.
+Fift h, the sequence number included as part of a message label in a communications 
+diagram implies the sequential order in which the message will be sent. Th erefore, it must 
+correspond to the top-down ordering of the messages being sent on the sequence diagram. 
+For example, the LookUpPatient message sent from the aReceptionist actor to the Patient 
+object on the sequence diagram (see Figure 6-1) is the second from the top of the diagram. 
+Th e LookUpPatient message sent from the aReceptionist actor to the Patients object on the 
+communications diagram (see Figure 6-10) is labeled with the number 2.21
+Sixth, all transitions contained in a behavior state machine must be associated with a 
+message being sent on a sequence and communication diagram, and it must be classifi ed as 
+a (C)reate, (U)pdate, or (D)elete message in a CRUDE matrix. For example, in Figure 6-16 the 
+Checks In transition must be associated with a message in the corresponding sequence and 
+communication diagrams. Furthermore, it should be associated with an (U)pdate entry in the 
+CRUDE matrix associated with the hospital patient system.
+Seventh, all entries in a CRUDE matrix imply a message being sent from an actor or object 
+to another actor or object. If the entry is a (C)reate, (U)pdate, or (D)elete, then there must be an 
+20 Th e material in this section has been adapted from E. Yourdon, Modern Structured Analysis (Englewood Cliff s, 
+NJ: Prentice Hall, 1989).
+21 Th ere are more complicated numbering schemes that could be used. However, for our purposes

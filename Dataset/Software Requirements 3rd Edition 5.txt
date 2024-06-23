@@ -1,0 +1,355 @@
+TABLE 3-2 Implementing requirements engineering good practices
+
+Value	Difficulty
+	High	Medium	Low
+High	■	Define a requirements
+engineering process
+■	Base plans on requirements
+■	Renegotiate commitments	■	Train business analysts
+■	Plan requirements approach
+■	Select product champions
+■	Identify user requirements
+■	Hold elicitation interviews
+■	Specify nonfunctional requirements
+■	Prioritize requirements
+■	Define vision and scope
+■	Establish a change control
+process
+■	Review the requirements
+■	Allocate requirements to subsystems
+■	Use a requirements management
+tool
+■	Record business rules	■	Educate developers about
+application domain
+■	Adopt requirement document templates
+■	Identify user classes
+■	Model the application environment
+■	Identify requirement origins
+■	Establish baselines and control
+versions of requirements sets
+■	Identify requirements decision makers
+Medium	■	Maintain a requirements traceability matrix
+■	Hold facilitated elicitation
+workshops
+■	Estimate requirements
+effort
+■	Reuse existing requirements	■	Educate stakeholders about
+requirements
+■	Conduct focus groups
+■	Create prototypes
+■	Analyze feasibility
+■	Define acceptance criteria
+■	Model the requirements
+■	Analyze interfaces
+■	Perform change impact analysis
+■	Select an appropriate life cycle
+■	Identify system events and responses
+■	Manage requirements risks
+■	Review past lessons learned
+■	Track requirements effort	■	Create a data dictionary
+■	Observe users performing their jobs
+■	Test the requirements
+■	Track requirements status
+■	Perform document analysis
+■	Track requirements issues
+■	Uniquely label each
+requirement
+■	Create a glossary
+Low		■	Distribute questionnaires
+■	Maintain change history
+■	Simulate the requirements	■	Examine problem reports
+Don’t try to apply all of these techniques on your next project. Instead, think of these good practices as new items for your requirements tool kit. You can begin to use certain practices, such as those dealing with change management, no matter where your project is in its development cycle. Elicitation practices will be more useful when you begin the next project or iteration. Still others might not fit your current project, organizational culture, or resource availability. Chapter 31 and Appendix A describe ways to evaluate your organization’s current requirements engineering
+practices. Chapter 31 will help you devise a road map for implementing selected improvements in your requirements process based on the practices described in this chapter. Incorporate the adoption of new requirements techniques into your organization’s software process improvement activities, relying on change leadership to facilitate the piloting, rollout, and adoption of better practices. Just make sure that each of your development teams tries something new and better at each opportunity.
+ 
+   
+ 
+
+ 
+C HA P T E R 4
+The business analyst
+
+Molly is a senior business analyst in an insurance company, where she has worked for seven years. Her manager recently told her that, because of her stellar performance over the course of her career, he wanted her to help build a stronger BA career path for the rest of the department. He asked Molly for ideas of what to look for when hiring new BAs and how to train the ones already on the team. Molly was flattered. She reflected on her own career path to see if she could replicate any of her formative experiences.
+Molly received a degree in computer science from a university whose curriculum did not discuss requirements; the focus was on the technical aspects of software development. Her first career was as an enterprise software developer. Within a year she knew it was not the job for her. Molly spent most of her time stuck in a cubicle writing code, desperately wanting to talk to other people. Over the next couple of years, she evolved her role into one of a BA, though she was still called a developer. She eventually convinced her manager to give her the more appropriate title and formally redefine her role. Molly also took a basic class on software requirements to learn the fundamentals. Then she got herself assigned to projects where she could try different practices and learn from more experienced mentors. Within a couple more years, she was able to develop a requirements process for her company. Molly had become the resident business analysis expert.
+Molly recognizes that she shouldn’t expect a specific educational background when hiring new business analysts. She’ll focus on interviewing for the most important BA soft skills. Her training development program will emphasize the fundamentals of business analysis and how to apply the critical soft skills. Finally, she will establish a mentoring program for junior BAs.
+Explicitly or implicitly, someone performs the role of business analyst (BA) on every software project. A business analyst enables change in an organizational context by defining needs and recommending
+ 
+solutions that deliver value to stakeholders. The	e tran
+ 
+s others’ perspectives, n, and communicates the
+ 
+s. The	helps stakeholders find the difference between what
+they say they want and what they really need. She educates, questions, listens, organizes, and learns. It’s a tough job.
+This chapter looks at the
+(Wiegers 2000; IIBA 2011). Ralph Young (2004) proposes a job description for a requirements analyst, and you can also access a sample BA job description from the companion content for this book.
+
+61
+ 
+The business analyst role
+The
+ 
+
+
+,
+. The analyst serves as the p
+ 
+through which requirements flow between the customer community and the software development team, as shown in Figure 4-1. Many other communication pathways also are used, so the analyst isn’t solely responsible for information exchange on the project. The BA plays a central role in collecting and disseminating product information, whereas the project manager takes the lead in communicating project information.
+
+FIGURE 4-1 The business analyst bridges communication between customer and development stakeholders.
+
+
+ 
+. These job titles are used inconsistently from organization to organization. One or more dedicated specialists could perform the role on a given project or it could be assigned to team members who also perform other project functions. These team members include project manager, product manager, product owner, subject matter expert (SME), developer, and sometimes even user.
+It’s important to note that when a person who has another project role also serves as the business analyst, he is doing two distinct jobs. Consider a project manager who is also the BA on a project.
+A project manager needs to create and manage plans, including schedules and resource needs, based on work that BAs define. The project manager must help manage scope and deal with schedule changes as scope evolves. He might perform the project management role one minute, then change hats to execute the analyst practices the next. But these are distinct roles, requiring somewhat different skill sets.
+In organizations that develop consumer products,
+. Essentially, the product manager acts as a BA, often with additional emphasis on understanding the market landscape and anticipating external users’ needs. If the
+ 
+project has both a product manager and a BA, typically the product manager focuses on the external market and user demands, and the BA converts those into functional requirements.
+Agile projects need business analysis skills, too. There will likely be a project role such as a product owner who performs some of the traditional BA tasks. Some teams find it helpful to have someone in an analyst role as well (Cohn 2010). The BA can help represent the users and understand their needs, while performing the additional BA activities described later in the chapter. Regardless of the job title, the person performing the analyst tasks must have the skills, knowledge, and personality to perform the role well.
+
+A talented analyst can make the difference between a project that succeeds and one that struggles. One company discovered that they could inspect requirements specifications written by experienced analysts twice as fast as those written by novices because they contained fewer defects. In the popular Cocomo II model for project estimation, analyst experience and capability have a great influence on a project’s effort and cost (Boehm et al. 2000). Using highly experienced analysts can reduce the project’s overall effort by one-third compared to similar projects with inexperienced analysts.
+
+The business analyst’s tasks
+The analyst must first understand the business objectives for the project and then define user, functional, and quality requirements that allow teams to estimate and plan the project and to design, build, and verify the product. The BA is also a leader and a communicator, turning vague customer notions into clear specifications that guide the software team’s work. This section describes some of the typical activities that you might perform while wearing an analyst’s hat.
+Define business requirements Your work as a BA begins when you help the business or funding sponsor, product manager, or marketing manager define the project’s business requirements. You might suggest a template for a vision and scope document (see Chapter 5, “Establishing the business requirements”) and work with those who hold the vision to help them express it clearly.
+The analyst should develop plans to elicit, analyze, document, validate, and manage requirements throughout the project. Work closely with the project manager to ensure these plans align with the overall project plans and will help achieve the project goals.
+Identify project stakeholders and user classes Work with the business sponsors to select appropriate representatives for each user class (see Chapter 6, “Finding the voice of the user”), enlist their participation, and negotiate their responsibilities. Explain what you would like from your customer collaborators and agree on an appropriate level of engagement from each one.
+ 
+
+A proactive analyst helps users articulate the system capabilities they need to meet their business objectives by using a variety of information-gathering techniques. See Chapter 7, “Requirements elicitation,” and Chapter 8, “Understanding user requirements,” for further discussion.
+ 
+Look for d
+ 
+s that are a l
+ 
+of what
+ 
+the customers requested and for i	that the customers seem to expect without
+saying so. Use requirements models to recognize patterns, identify gaps in the requirements,
+ 
+l conflicting requirements, and
+with stakeholders to determine the necessary level of
+requirements.
+ 
+specified are within scope. Work
+and functional
+ 
+The analyst is responsible for documenting requirements in a
+well-organized and well-written manner that clearly describes the solution that will address the customer’s problem. Using standard templates accelerates requirements development by reminding the BA of topics to discuss with the user representatives.
+s You must
+es. The BA should determine when it is helpful to represent requirements by using methods other than text, including various types of visual analysis models (discussed in Chapters 5, 12, and 13), tables, mathematical equations, and prototypes (discussed in Chapter 15, “Risk reduction through prototyping”). Communication is not simply a matter of putting requirements on paper and tossing them over a wall. It involves ongoing collaboration with the team to ensure that they understand the information you are communicating.
+The BA must ensure that requirement statements possess the desired characteristics that are discussed in Chapter 11, “Writing excellent requirements,” and that a solution based on the requirements will satisfy stakeholder needs. Analysts are the central
+participants in reviews of requirements. You should also review designs and tests that were derived from the requirements to ensure that the requirements were interpreted correctly. If you are creating acceptance tests in place of detailed requirements on an agile project, those should also be reviewed.
+Facilitate requirements prioritization   The analyst brokers	and negotiation among
+the various stakeholders and the developers to ensure that they make sensible priority decisions in
+alignment with achieving business objectives.
+
+, so she should help create, review, and execute the project’s requirements management plan. After establishing a requirements baseline for a given product release or development iteration, the BA’s focus shifts to tracking the status of those requirements,
+. With input from various colleagues, the analyst collects traceability information that connects individual requirements to other system elements.
+ 
+Essential analyst skills
+It isn’t reasonable to expect people to serve as analysts without sufficient training, guidance, and experience. They won’t do a good job, and they’ll find the experience frustrating. The job includes many “soft skills” that are more people-oriented than technical. Analysts need to know how to use a variety of elicitation techniques and how to represent information in forms other than natural-language text. An effective BA combines strong communication, facilitation, and
+interpersonal skills with technical and business domain knowledge and the right personality for the job. Patience and a genuine desire to work with people are key success factors. The skills described in this section are particularly important. Young (2004) provides a comprehensive table of skills that are appropriate for junior-level, mid-level, and senior-level requirements analysts.
+Listening skills   To become proficient at two-way communication, learn how to listen effectively.
+Active listening involves eliminating distractions, maintaining an attentive posture and eye contact,
+ 
+and restating key points to confirm your understanding. You need t and also to read between the lines to
+collaborators prefer to communicate, and avoid
+ 
+le are saying
+. Learn how your
+r of understanding on
+ 
+what you hear from the customers. Watch for unstated assumptions that underlie either what you hear from others or your own interpretation.
+Interviewing and questioning skills Most requirements input comes through discussions, so the BA must be able to interact with diverse individuals and groups about their needs. It can be intimidating to work with senior managers and with highly opinionated or aggressive individuals.
+You need to ask the right questions to surface essential requirements information. For example, users naturally focus on the system’s normal, expected behaviors. However, much code gets written to handle exceptions. Therefore, you must also probe to identify error conditions and determine how the system should respond. With experience, you’ll become skilled in the art of asking questions that reveal and clarify uncertainties, disagreements, assumptions, and unstated expectations (Gause and Weinberg 1989).
+
+   
+ 
+. They need to spot c
+ 
+ons,
+ 
+y, vagueness, and
+ 
+assumptions so they can discuss them in the moment if appropriate. You can try to script the perfect set of interview questions; however, you’ll always need to ask something you could not have foreseen. You need to draft good questions, listen clearly to the responses, and quickly come up with the next smart thing to say or ask. Sometimes you won’t be asking a question but rather giving an appropriate example in context to help your stakeholder formulate the next answer.
+and knows when to move from one to another. Sometimes, you must drill down from high-level information into details. In other situations, you’ll need to generalize from a specific need that one user described to a set of requirements that will satisfy multiple stakeholders. B
+s related to that information. They need to critically evaluate the information to reconcile conflicts, separate user “wants” from the underlying true needs, and distinguish solution ideas from requirements.
+ 
+Systems thinking skills  Although a business analyst must be detail-oriented, he must also see the
+big picture. The BA must check requirements against what he knows about the whole enterprise, the
+
+business environment, and the application to look for inconsistencies and impacts. T	he BA needs to
+understand the interactions and relationships among the people, processes, and tec	hnology related
+to the system (IIBA 2009).	If a customer requests a requirement for his functional area, the BA needs
+to judge whether the requirement affects other parts of the system in unobvious ways.	
+Analysts must learn new material quickly, whether it is about new requirements approaches or the application domain. They need to be able to translate that knowledge into practice efficiently. Analysts should be efficient and critical readers because they have to wade through a lot of material and grasp the essence quickly. You do not have to be an expert in the domain, so don’t hesitate to ask clarifying questions. Be honest about what you don’t know. It’s okay not to know it all, but it’s not okay to hide your ignorance.
+The ability to facilitate requirements discussions and elicitation workshops is a vital analyst capability. Facilitation is the act of leading a group towards success. Facilitation is essential when collaboratively defining requirements, prioritizing needs, and resolving conflicts. A neutral facilitator who has strong questioning, observational, and facilitation skills can help a group build trust and improve the sometimes tense relationship between business and IT staff. Chapter 7 presents guidelines for facilitating requirements elicitation activities.
+A strong analyst can influence a group of stakeholders to move in a certain direction to accomplish a common goal. Leadership requires understanding a variety of techniques to negotiate agreements among project stakeholders, resolve conflicts, and make decisions. The analyst should create a collaborative environment, fostering trust among the various stakeholder groups who might not understand each other’s motivations, needs, and constraints.
+An observant analyst will detect comments made in passing that might turn out to be significant. By watching a user perform her job or use a current application, a good observer can detect subtleties that the user might not think to mention. Strong observational skills sometimes expose new areas for elicitation discussions, thereby revealing additional requirements.
+The principal deliverable from requirements development is a set of written requirements that communicates information effectively among customers, marketing, managers, and technical staff. The analyst needs a solid command of the language and the ability to express complex ideas clearly, both in written form and verbally. You must be able to write for multiple audiences, including customers who have to validate the requirements and developers who need clear, precise requirements for implementation. A BA needs to speak clearly, adapting to local
+terminology and to regional differences in dialect. Also, a BA must be able to summarize and present information at the level of detail the target audience needs.
+Organizational skills BAs must contend with a vast array of jumbled information gathered during elicitation and analysis. Coping with rapidly changing information and structuring all the bits into a coherent whole demands exceptional organizational skills and the patience and tenacity to make sense from ambiguity and disarray. As an analyst, you need to be able to set up an information architecture to support the project information as it grows throughout the project (Beatty and Chen 2012).
+ 
+   
+) to Unified Modeling Language (UML) notations should be part of every analyst’s repertoire (Beatty and Chen 2012). Some will be useful when communicating with users, others when communicating with developers, and still others purely for analysis to help the BA improve the requirements. The BA will need to know when to select specific models based on how they add value. Also, he’ll need to educate other stakeholders on
+the value of using these models and how to read them. See Chapters 5, 12, and 13 for overviews of several types of analysis models.
+
+and at all levels of the organization. A BA should speak the language of the audience she is talking to, not using technical jargon with business stakeholders. She might need to work with virtual teams whose members are separated by geography, time zones, cultures, or native languages. A BA should be easy to communicate with and be clear and consistent when communicating with team members.
+The BA is not merely a scribe who records whatever customers say.
+or customers to consider (Robertson 2002). They conceive innovative product capabilities, imagine new markets and business opportunities, and think of ways to surprise and delight their customers. A really valuable BA finds creative ways to satisfy needs that users didn’t even know they had. Analysts can offer new ideas because they are not as close as users to the problem being solved. Analysts have to be careful to avoid gold-plating the solution, though; don’t simply add new requirements to the specification without customer approval.
+
+ 
+Essential analyst knowledge
+In addition to having specific capabilities and personal characteristics, business analysts need a breadth of knowledge, much of which is gained through experience. They need to understand contemporary requirements engineering practices and how to apply them in the context of various software development life cycles. They might need to educate and persuade those who are not familiar with established requirements practices. The effective analyst has a rich tool kit of techniques available and knows when—and when not—to use each one.
+
+. An analyst with a sound understanding of project management, development
+life cycles, risk management, and quality engineering can help prevent requirements issues from torpedoing the project. In a commercial development setting, the BA will benefit from knowledge of product management concepts. BAs benefit from a basic level of knowledge about the architecture and operating environment, so that they can engage in technical conversations about priorities and nonfunctional requirements.
+Knowledge of the business, the industry, and the organization are powerful assets for an effective BA (IIBA 2009). The business-savvy analyst can minimize miscommunications with users. Analysts who understand the organization and business domains often detect unstated assumptions and implicit requirements. They can suggest ways that users could improve their business processes or propose valuable functionality that no other stakeholder thought of. Understanding the industry domain
+can be particularly helpful in a commercial environment so analysts can offer marketplace and
+competitive product analysis.
+
+
+The making of a business analyst
+Great business analysts are grown from diverse backgrounds of education and work experience, so they will likely have gaps in their knowledge and skill sets. All analysts should decide which of the knowledge and skills described in this chapter pertain to their situation and actively seek to fill their
+own gaps. The International Institute of	(IIBA) describes the competencies that
+entry-level, junior, intermediate, and senior business analysts should exhibit across the common BA activities (IIBA 2011). All new BAs will benefit from mentoring and coaching from those who have more experience, perhaps in the form of an apprenticeship. Let’s explore how people with different backgrounds might move into the analyst role and see some of the challenges and risks they’ll face.
+
+The
+Corporate IT departments often have business analysts who migrated into that role after working on the business side as a user of information systems. These individuals understand the business and the work environment, so they can easily gain the trust of their former colleagues. They speak the user’s language, and they know the existing systems and business processes.
+ 
+On the downside,	might know little about software engineering
+or how to communicate with technical people. If they aren’t familiar with modeling techniques, they will express all information in textual form. Users who become BAs need to learn more about the technical side of software development so they can represent information in the most appropriate forms for their multiple audiences.
+Some former users believe they understand what is needed better than current users do, so they don’t solicit or respect input from those who will actually use the new system. Recent users can be stuck in the here-and-now of the current ways of working, such that they don’t see opportunities to improve business processes with the help of a new information system. It’s also easy for a former user to think of requirements strictly from a user interface perspective. Focusing on solution ideas can impose unnecessary design constraints and often fails to solve the real problem.
+
+
+The
+Project managers who lack a dedicated BA often expect a developer to do the job. Unfortunately, the skills and personality needed for requirements development aren’t the same as those needed for software development. Some developers have little patience with users, preferring to work with the code and promote the glamour of technology. Of course, many other developers do recognize the criticality of the requirements process and can work as analysts when necessary. Those who enjoy collaborating with customers to understand the needs that drive software development are good candidates to specialize in business analysis.
+ 
+The developer-turned-analyst might need to learn more about the business domain. Developers can easily lapse into technical thinking and jargon, focusing on the software to be built instead of the customers’ needs. They’ll need to get up to speed on current best practices for requirements engineering. Developers will benefit from training and mentoring in the diverse soft skills that the best analysts master, as described earlier in this chapter.
+Testers aren’t commonly asked to perform the analyst role. However, a tester often has an analytical mindset that can lend itself to being a good BA. Testers are already used to thinking about exceptions and how to break things, a useful skill for finding gaps in requirements. As with a former developer, a tester will have to learn about good requirements engineering practices. She might also need to become more knowledgeable about the business domain.
+
+The
+Project managers are sometimes asked to also fill the role of business analyst, probably because they have some of the same skills and domain knowledge required. This can be an effective role change. Project managers will already be used to working with the appropriate teams, understanding the organization and business domains, and demonstrating strong communication skills. They will likely be good at listening, negotiation, and facilitation. They should have strong organizational and writing skills as well.
+However, the former project manager will have to learn more about requirements engineering practices. It is one thing to set up a plan, allocate resources, and coordinate the activities of analysts and other team members. It is a very different matter to perform the business analyst role yourself. Former project managers must learn to focus on understanding the business needs and prioritizing those within existing project schedules, rather than focusing on timelines, resources, and budget constraints. They will need to develop the analysis, modeling, and interviewing skills that are less important for project managers but are essential to BA success.
+
+Young (2001) recommends that the business analyst be an application domain expert or a SME, as opposed to being a typical user: “SMEs can determine, based on their experience, whether the
+requirements are reasonable, how they extend the existing system, how the proposed architecture should be designed, and the impacts on users, among other areas.” Some product development organizations hire expert users of their products who have extensive domain experience into their companies to serve either as analysts or as user surrogates.
+There are risks here, though, too. The business analyst who is a domain expert might specify the system’s requirements to suit his own preferences, rather than addressing the legitimate needs of the various user classes. He might have blinders on when thinking about requirements and be less creative in proposing new ideas. SMEs are expert in their understanding of the “as-is” system; they sometimes have difficulty imagining the “to-be” system. It often works better to have a BA from the development team work with the SME, who then serves as a key user representative or product champion. The product champion is described in Chapter 6.
+ 
+The rookie
+Becoming a business analyst is a good entry point into the information technology arena for someone right out of school or coming from a completely unrelated job. The new graduate will have little, if any, relevant experience or knowledge. He will likely be hired into the BA role because he demonstrates many of the skills required to be a good analyst. An advantage of hiring a novice as a BA is that he will have few preconceived notions about how requirements processes should work.
+Because he lacks related experience and knowledge, a new graduate will have much to learn about how to execute the BA tasks and the intricacies of the practices. The recent graduate also needs to learn enough about the software development process to understand the challenges that developers, testers, and other team members face so he can collaborate effectively with them. Mentoring can reduce the learning curve for a novice BA and instill good habits from the outset.
+No matter what his background, a creative business analyst can apply it to enhance his effectiveness. The analyst needs to gain the knowledge and skills he is lacking, build on any past experiences, and practice performing the BA tasks to become more proficient. All of these help create the well-rounded BA (Figure 4-2).
+
+
+FIGURE 4-2 Knowledge, skills, and experience feed into creating an effective business analyst.
+
+
+The
+On projects using agile development methods, the business analyst functions still need to be performed, but the individual who does them might not be called a BA. Some agile approaches have a key team member called the product owner. The person in that role might perform some of the traditional business analysis activities, as well as providing the product vision, communicating
+ 
+constraints, prioritizing the product backlog of remaining work, and making the ultimate decisions about the product (Cohn 2010). Other projects maintain a business analyst role separate from the product owner. Additionally, other team members, such as developers, perform portions of the analyst role. The point is that, regardless of the project’s development approach, the tasks associated with the BA role still have to get done. The team will benefit from having members who possess the skills associated with business analysts.
+Often, in an organization moving toward an agile development approach, the BA finds herself unsure as to how she can most effectively contribute to the project. In the spirit of agile development, the analyst has to be willing to step out of a preconceived role of “business analyst” and fill in where needed to help deliver a successful product. Ellen Gottesdiener (2009) offers a detailed list of how traditional business analyst activities can be adapted to an agile environment. Following are a few suggestions for a BA to apply her skills on an agile project:
+ 
+■	Define a lightweight, flexible requirements process and
+■
+(Many BAs tend to document e
+ 
+
+ 
+l: not t
+ 
+the project warrants.
+.
+ree. Some purists
+ 
+suggest agile projects should have little or no requirements documentation. Neither extreme is ideal.)
+■	Help determine the best approach to document the backlog, including whether story cards or more formal tools are most appropriate.
+■	Apply facilitation and leadership skills to ensure that stakeholders are talking to one another
+frequently about requirements needs, questions, and concerns.
+■	Help validate that customer needs are accurately represented in the product backlog, and facilitate backlog prioritization.
+■	Work with customers when they change their minds about requirements and priorities, and help record those changes. Work with the rest of the team to determine the impact of changes on iteration contents and release plans.
+There is a lot of value in having a role such as a product owner to represent the users throughout development. However, the person filling the product owner role might not have all of the business analysis skills or time to perform all the related activities. A BA can bring those critical capabilities to the team.
+
+Creating a collaborative team
+Software projects sometimes experience strained relationships among analysts, developers, users, managers, and marketing. The parties don’t always trust each other’s motivations or appreciate each other’s needs and constraints. In reality, though, the producers and consumers of a software product share common objectives. For corporate information systems development, all parties work for the
+ 
+same company, so they all benefit from improvements to the corporate bottom line. For commercial products, happy customers generate revenue for the producer and satisfaction for the developers.
+The business analyst has the major responsibility for forging a collaborative relationship among the user representatives and other project stakeholders. An effective analyst appreciates the challenges that both business and technical stakeholders face and demonstrates respect for his
+or her collaborators at all times. The analyst steers the project participants toward a requirements
+agreement that leads to a win-win-win outcome in the following ways:
+■	Customers are delighted with the product.
+■	The developing organization is happy with the business outcomes.
+■	All team members are proud of the good work they did on a challenging and rewarding
+project.
+PART II
+Requirements development
+
+
+
+ 
+
+CHAPTER 5
+
+CHAPTER 6
+
+CHAPTER 7
+
+CHAPTER 8
+
+CHAPTER 9
+
+CHAPTER 10
+ 
+
+ 
+
+
+
+
+. . . . . . . . . . . . . . .181
+ 
+CHAPTER 11	Writing excellent requirements	203
+CHAPTER 12	A picture is worth 1024 words	221
+CHAPTER 13
+CHAPTER 14	Beyond functionality	261
+CHAPTER 15	Risk reduction through prototyping	295
+CHAPTER 16	First things first: Setting requirement
+priorities	313
+ 
+CHAPTER 17
+ 
+. . . . . . . . . . . . . . . . . .329
+ 
+CHAPTER 18	Requirements reuse	351
+CHAPTER 19	Beyond requirements development	365
+ 
+
+ 
+C HA P T E R 5
+Establishing the business requirements
+
+Karen is a business analyst on a project to implement a new online product catalog for the company’s customer service representatives. The drafted SRS is going through review when the marketing manager says he wants to add a “Like this product” feature. Karen’s first instinct is to push back; there is already concern about meeting schedules with the current requirements set. But then she realizes that maybe that’s a smart feature to add, because customer service representatives can promote the most-liked products with other customers. Before she elicits and documents functional requirements for this feature, she needs an objective analysis about whether this feature should be added to the scope or not.
+When she explains to the marketing manager the need to analyze this request further, he responds, “Well, soon the developers are going to be in there changing code anyway. How hard is it to add just one tiny feature?” Karen’s analysis determines that the proposed feature lies outside the project’s scope: it won’t contribute to the business objectives to reduce the customer service representatives’ average call
+time, and it wouldn’t be simple to implement. Karen needs to be able to clearly articulate why the feature isn’t in scope to the marketing manager, who doesn’t have the business objectives readily in mind.
+As you saw in Chapter 1, “The essential software requirement,” business requirements represent the top of the requirements chain. They define the vision of the solution and the scope of the project that will implement the solution. The user requirements and functional requirements must align with the context and objectives that the business requirements establish. Requirements that don’t help the project achieve its business objectives shouldn’t be implemented.
+A project without a clearly defined and well-communicated direction invites disaster. Project participants can unwittingly work at cross-purposes if they have different objectives and priorities. The stakeholders will never agree on the requirements if they lack a common understanding of the project’s business objectives. Without this understanding up front, project deadlines will likely be missed and budgets will likely be overrun as the team struggles to deliver the right product.
+This chapter describes the vision and scope document, a deliverable that contains the project’s business requirements. Figure 5-3 later in this chapter suggests a template for the vision and scope document. But before we get to the template, let’s see just what we mean by “business requirements.” Defining business requirements
+
+
+ 
+Business opportunities, business objectives, success metrics, and a vision statement make up the business requirements.
+
+d. A statement of the project’s scope and limitations helps greatly with discussions of proposed features and target releases. The business requirements provide a reference for making decisions about proposed requirement changes and enhancements. We recommend displaying the business objectives, vision, and scope highlights in every requirements elicitation session so the team can quickly judge whether a proposed requirement is in or out of scope.
+
+Identifying desired business benefits
+The business requirements set the context for, and enable the measurement of, the benefits the business hopes to achieve from undertaking a project. Organizations should not initiate any project without a clear understanding of the value it will add to the business. Set measurable targets with business objectives, and then define success metrics that allow you to measure whether you are on track to meet those objectives.
+B
+. However, it can be challenging to identify and communicate the business benefits. Team members sometimes aren’t exactly sure what the project is intended to accomplish. Sometimes, sponsors don’t want to set objectives in a measurable fashion and then be held accountable for achieving them. There could be multiple important stakeholders who don’t agree on what the objectives should be. The business analyst can ensure that the right stakeholders are setting the business requirements and facilitate elicitation, prioritization, and conflict resolution. Karl Wiegers (2006) suggests some questions that the BA can ask to help elicit business requirements.
+The
+customers. For example, simply merging two systems into one is not a reasonable business objective. Customers don’t care if they are using an application that involves 1, 5, or even 10 systems. They care about issues like increasing revenue and decreasing costs. Merging two systems might be part of the solution, but it is rarely the true business objective. Regulatory and legal compliance projects also have clear business objectives. Often the objectives are phrased as risk avoidance, possibly to avoid getting sued or being put out of business.
+
+P
+s are the vision and the scope. The product vision succinctly describes the ultimate product that will achieve the business objectives. This product could serve as the complete solution for the business requirements or as just a portion of the solution.
+The vision describes what the product is about and what it ultimately could become. It provides the

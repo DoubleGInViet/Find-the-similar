@@ -1,0 +1,619 @@
+﻿to be lightweight approaches to documenting and gathering requirements.14 Stories capture 
+both functional and nonfunctional requirements. For example, with regard to the doctor’s 
+offi ce appointment example, a functional requirement-based story could be:
+As a secretary, I want to be able to schedule appointments for our patients so that we can 
+meet our patients’ needs.
+While an operational nonfunctional requirement-based story could be:
+As a secretary, I want to be able to print the daily schedule using wireless technology so 
+that all printing can be performed using a shared printer without having to deal with 
+printer cables connecting all of the computers to the printer.
+Once the story is written down, it is discussed to determine the amount of eff ort it will take 
+to implement it. During the discussion, a task list is created for the story. If the story is 
+deemed to be too large—e.g., there are too many tasks on the task list—the story is split up 
+into multiple stories each being recorded on its own story card and the tasks are allocated 
+across the new stories. In many shops, once a set of tasks has been identifi ed with a story, 
+the story and its tasks are taped on a wall together so that all members of the development 
+team can see the requirements. Th e story can be prioritized by importance by placing a rat ing on the card. Th e story can also be evaluated for the level of risk associated with it. Th e 
+importance level and amount of risk associated with the story can be used to help choose 
+which requirements to implement fi rst. Th e advantage of using story cards and task lists 
+to document requirements is that they are very low tech, high touch, easily updatable, and 
+very portable.
+112 Chapter 3 Requirements Determination
+14 For more information on story cards and task lists see M. Cohn, User Stories Applied: For Agile Soft ware 
+Development (Boston, MA: Addison-Wesley, 2004); B. Rinzler, Telling Stories: A Short Path to Writing Better 
+Soft ware Requirements (Indianapolis, IN: Wiley, 2009); M. Lippert, S. Roock, H. Wolf, eXtreme Programming 
+in Action: Practical Experiences from Real World Projects (Chichester, England: Wiley & Sons, Ltd., 2002); 
+C. Larman, Agile & Iterative Development: A Manager’s Guide (Boston, MA: Addison-Wesley, 2004).
+1. Table of Contents
+2. Executive Summary
+ A summary of all the essential information in the proposal so that a busy executive can read it 
+quickly and decide what parts of the proposal to read in more depth.
+3. System Request
+ The revised system request form (see Chapter 2).
+4. Workplan
+ The original workplan, revised after having completed analysis (see Chapter 2).
+5. Feasibility Analysis
+ A revised feasibility analysis, using the information from analysis (see Chapter 2).
+6. Requirements Defi nition
+ A list of the functional and nonfunctional business requirements for the system (this chapter).
+7. Functional Model
+ An activity diagram, a set of use-case descriptions, and a use-case diagram that illustrate the basic 
+processes or external functionality that the system needs to support (see Chapter 4).
+8. Structural Models
+ A set of CRC cards, class diagram, and object diagrams that describe the structural aspects of the 
+to-be system (see Chapter 5). This may also include structural models of the current as-is system that 
+will be replaced.
+9. Behavioral Models
+ A set of sequence diagrams, communication diagrams, behavioral-state machines, and a CRUDE 
+matrix that describe the internal behavior of the to-be system (see Chapter 6). This may include 
+behavioral models of the as-is system that will be replaced.
+10. Appendices
+ These contain additional material relevant to the proposal, often used to support the recommended 
+system. This might include results of a questionnaire survey or interviews, industry reports and 
+statistics, and so on.
+FIGURE 3-11
+System Proposal 
+Template
+15 Depending on the client, much more detailed specifi cations may be required; for example the Department 
+of Defense, NASA, IEEE/ANSI, and the Naval Research Laboratory all have very specifi c formats that must be 
+followed. For more information on these more detailed specifi cations, see A. M Davis, Soft ware Requirements, 
+Revision (Upper Saddle River, NJ: Prentice Hall, 1993); G. Kotonya and I. Sommerville, Requirements Engineering 
+(Chichester, England: Wiley, 1998); R. H. Th ayer and M. Dorfman (eds.), Soft ware Requirements Engineering, 2nd Ed. 
+(Los Alamitos, CA: IEEE Computer Society Press, 1997). APPLYING THE CONCEPTS AT PATTERSON 
+SUPERSTORE
+Chapter 3 introduced requirements determination for object-oriented systems development projects. Determining the system’s requirements is the most important activity in 
+the systems development process. A requirement is WHAT the system must do or WHAT 
+characteristics it must have. If the requirements are not fully or correctly defi ned, the system developed is unlikely to meet the needs of the user. In other words, if the requirements 
+are wrong, the system will be wrong.
+In this chapter’s installment of the Patterson Superstore case, we see the requirements analysis and requirement-gathering techniques that the analysts used to determine 
+requirements for Version 1 of the Integrated Health Clinic Delivery System. We also see the 
+functional and nonfunctional requirements that were developed and an initial draft of the 
+developing systems proposal for the project. Th is systems proposal will be fi nalized aft er 
+the functional (Chapter 4), structural (Chapter 5), and behavioral (Chapter 6) modeling of 
+the system has been completed.
+You can fi nd the rest of the case at: www.wiley.com/go/dennis/casestudy
+Informal system
+Interpersonal skills
+Interview
+Interview notes
+Interview report
+Interview schedule
+JAD (joint application 
+development)
+Nonfunctional requirements
+Observation
+Open-ended question
+Outcome analysis
+Parallelization
+Process Integration
+Post-session report
+Potential business value
+Probing question
+Problem analysis
+Project cost
+Questionnaire
+Requirement
+Requirements defi nition
+Requirements 
+ determination
+Risk
+Root cause
+Root cause analysis
+Sample
+Scribe
+Story cards
+Structured interview
+System proposal
+System requirements
+Task lists, 144
+Technology analysis
+To-be system
+Top-down interview
+Unstructured interview
+User stories
+Walkthrough
+QUESTIONS
+ 1. What are the key deliverables that are created during 
+analysis? What is the fi nal deliverable from analysis, 
+and what does it contain?
+ 2. What is the diff erence between an as-is system and a 
+to-be system?
+ 3. What is the purpose of the requirements defi nition?
+ 4. What are the three basic steps of the analysis process? 
+Which step is sometimes skipped or done in a cursory 
+fashion? Why?
+ 5. Compare and contrast problem analysis and root 
+cause analysis. Under what conditions would you use 
+problem analysis? Under what conditions would you 
+use root cause analysis?
+ 6. Compare and contrast duration analysis and activitybased costing.
+ 7. Describe the fi ve major steps in conducting interviews.
+ 8. Explain the diff erences among a closed-ended question, an open-ended question, and a probing question. 
+When would you use each?
+ 9. Explain the diff erences between unstructured interviews and structured interviews. When would you use 
+each approach?
+ 10. Explain the diff erence between a top-down and 
+bottom-up interview approach. When would you use 
+each approach?
+ 11. How are participants selected for interviews and JAD 
+sessions?
+ 12. How can you diff erentiate between facts and opinions? 
+Why can both be useful?
+ 13. Describe the fi ve major steps in conducting JAD 
+sessions.
+ 14. How does a JAD facilitator diff er from a scribe?
+ 15. What are the three primary things that a facilitator 
+does in conducting the JAD session?
+ 16. What is e-JAD, and why might a company be interested in using it?
+ 17. How does designing questions for questionnaires diff er 
+from designing questions for interviews or JAD sessions?
+ 18. What are typical response rates for questionnaires, 
+and how can you improve them?
+ 19. What is document analysis?
+ 20. How does the formal system diff er from the informal 
+system? How does document analysis help you understand both?
+ 21. What are the key aspects of using observation in the 
+information-gathering process?
+ 22. Explain factors that can be used to select informationgathering techniques.
+ 23. What is the primary advantage that concept maps 
+have over traditional textual requirements documents 
+techniques?
+ 24. What are some of the advantages of using story cards 
+and task lists as a requirements-gathering and documentation technique?
+ 25. What information is typically included in a system 
+proposal?
+ 26. What is the purpose of the executive summary of the 
+system proposal?
+EXERCISES
+ A. Review the Amazon.com website. Develop the 
+requirements defi nition for the site. Create a list 
+of functional business requirements that the system 
+meets. What diff erent kinds of nonfunctional business 
+ requirements does the system meet? Provide examples for each kind.
+ B. Suppose you are going to build a new system that automates or improves the interview process for the career 
+Exercises  115
+services department of your school. Develop a requirements defi nition for the new system. Include both 
+functional and nonfunctional system requirements. 
+Pretend you will release the system in three diff erent 
+versions. Prioritize the requirements accordingly.
+ C. Describe in very general terms the as-is business 
+process for registering for classes at your university. 
+Collaborate with another student in your class, and 
+evaluate the process using problem analysis and root 
+cause analysis. Based on your work, list some improvements that you have identifi ed.
+ D. Describe in very general terms the as-is business process for applying for admission at your university. 
+Collaborate with another student in your class, and 
+evaluate the process using informal benchmarking. 
+Based on your work, list some improvements that you 
+have identifi ed.
+ E. Describe in very general terms the as-is business 
+process for registering for classes at your university. 
+Collaborate with another student in your class, and 
+evaluate the process using activity elimination. Based 
+on your work, list some improvements that you have 
+identifi ed.
+ F. Suppose your university is having a dramatic increase 
+in enrollment and is having diffi culty fi nding enough 
+seats in courses for students. Perform a technology 
+analysis to identify new ways to help students complete their studies and graduate.
+ G. Suppose you are the analyst charged with developing a 
+new system for the university bookstore so that students 
+can order books online and have them delivered to their 
+dorms or off -campus housing. What requirementsgathering techniques will you use? Describe in detail 
+how you would apply the techniques.
+ H. Suppose you are the analyst charged with developing 
+a new system to help senior managers make better strategic decisions. What requirements-gathering 
+techniques will you use? Describe in detail how you 
+would apply the techniques.
+ I. Find a partner and interview each other about what 
+tasks each did in the last job you held (full-time, 
+part-time, past, or current). If you haven’t worked 
+before, then assume your job is being a student. 
+Before you do this, develop a brief interview plan. 
+Aft er your partner interviews you, identify the type 
+of interview, interview approach, and types of questions used.
+ J. Find a group of students and run a sixty-minute 
+JAD session on improving alumni relations at your 
+ university. Develop a brief JAD plan, select two techniques that will help identify improvements, and then 
+develop an agenda. Conduct the session using the 
+agenda, and write your post-session report.
+ K. Find a questionnaire on the Web that has been created 
+to capture customer information. Describe the purpose of the survey, the way questions are worded, and 
+how the questions have been organized. How can it be 
+improved? How will the responses be analyzed?
+ L. Develop a questionnaire that will help gather information regarding processes at a popular restaurant 
+or the college cafeteria (e.g., ordering, customer service). Give the questionnaire to ten to fi ft een students, 
+analyze the responses, and write a brief report that 
+describes the results.
+ M. Contact the career services department at your university, and fi nd all the pertinent documents designed 
+to help students fi nd permanent and/or part-time 
+jobs. Analyze the documents and write a brief report.
+MINICASES
+ 1. Th e State Firefi ghter’s Association has a membership 
+of 15,000. Th e purpose of the organization is to provide some fi nancial support to the families of deceased 
+member fi refi ghters and to organize a conference 
+each year bringing together fi refi ghters from all over 
+the state. Members are billed dues and calls annually. 
+Calls are additional funds required to take care of 
+payments made to the families of deceased members. 
+Th e bookkeeping work for the association is handled 
+by the elected treasurer, Bob Smith, although it is 
+widely known that his wife, Laura, does all the work. 
+Bob runs unopposed each year at the election, because 
+no one wants to take over the tedious and timeconsuming job of tracking memberships. Bob is paid 
+a stipend of $8,000 per year, but his wife spends well 
+over twenty hours per week on the job. Th e organization, however, is not happy with their performance.
+ A computer system is used to track the billing and 
+receipt of funds. Th is system was developed in 1984 
+by a computer science student and his father. Th e 
+system is a DOS-based system written using dBase 3. 
+Th e most immediate problem facing the treasurer and 
+116 Chapter 3 Requirements Determination
+his wife is the fact that the soft ware package no longer 
+exists, and there is no one around who knows how to 
+maintain the system. One query, in particular, takes 
+seventeen hours to run. Over the years, they have just 
+avoided running this query, although the information 
+in it would be quite useful. Questions from members concerning their statements cannot easily be 
+answered. Usually Bob or Laura just jots down the 
+inquiry and returns a call with the answer. Sometimes 
+it takes three to fi ve hours to fi nd the information 
+needed to answer the question. Oft en, they have to 
+perform calculations manually because the system 
+was not programmed to handle certain types of queries. When member information is entered into the 
+system, each fi eld is presented one at a time, which 
+makes it very diffi cult to return to a fi eld and correct 
+a value that was entered. Sometimes a new member is 
+entered but disappears from the records. Th e report 
+of membership used in the conference materials does 
+not alphabetize members by city. Only cities are listed 
+in the correct order.
+ What requirements analysis strategy or strategies 
+would you recommend for this situation? Explain 
+your answer.
+ 2. Brian Callahan, IS project manager, is just about ready 
+to depart for an urgent meeting called by Joe Campbell, 
+manager of manufacturing operations. A major project 
+sponsored by Joe recently cleared the approval hurdle, 
+and Brian helped bring the project through project 
+initiation. Now that the approval committee has given 
+the go-ahead, Brian has been working on the project’s 
+analysis plan.
+ One evening, while playing golf with a friend who 
+works in the manufacturing operations department, 
+Brian learned that Joe wants to push the project’s time 
+frame up from Brian’s original estimate of thirteen 
+months. Brian’s friend overheard Joe say, “I can’t see 
+why that IS project team needs to spend all that time 
+analyzing things. Th ey’ve got two weeks scheduled 
+just to look at the existing system! Th at seems like a 
+real waste. I want that team to get going on building 
+my system.”
+ Because Brian has a little inside knowledge about 
+Joe’s agenda for this meeting, he has been considering 
+how to handle Joe. What do you suggest Brian tell Joe?
+ 3. Barry has recently been assigned to a project team that 
+will be developing a new retail store management system for a chain of submarine sandwich shops. Barry 
+has several years of experience in programming, but 
+he has not done much analysis in his career. He was a 
+little nervous about the new work he would be doing, 
+but he was confi dent he could handle any assignment 
+he was given.
+ One of Barry’s fi rst assignments was to visit one 
+of the submarine sandwich shops and prepare an 
+observation report on how the store operates. Barry 
+planned to arrive at the store around noon, but he 
+chose a store in an area of town he was unfamiliar 
+with, and due to traffi c delays and diffi culty in fi nding the store, he did not arrive until 1:30. Th e store 
+manager was not expecting him and refused to let a 
+stranger behind the counter until Barry had her contact 
+the project sponsor (the director of store management) 
+at company headquarters to verify who he was and 
+what his purpose was.
+ Aft er fi nally securing permission to observe, Barry 
+stationed himself prominently in the work area 
+behind the counter so that he could see everything. 
+Th e staff had to maneuver around him as they went 
+about their tasks, but there were only minor occasional collisions. Barry noticed that the store staff 
+seemed to be going about their work very slowly and 
+deliberately, but he supposed that was because the 
+store wasn’t very busy. At fi rst, Barry questioned each 
+worker about what he or she was doing, but the store 
+manager eventually asked him not to interrupt their 
+work so much—he was interfering with their service 
+to the customers.
+ By 3:30, Barry was a little bored. He decided to leave, 
+fi guring he could get back to the offi ce and prepare 
+his report before 5:00 that day. He was sure his team 
+leader would be pleased with his quick completion 
+of his assignment. As he drove, he refl ected, “Th ere 
+really won’t be much to say in this report. All they 
+do is take the order, make the sandwich, collect the 
+payment, and hand over the order. It’s really simple!” 
+Barry’s confi dence in his analytical skills soared as he 
+anticipated his team leader’s praise.
+ Back at the store, the store manager shook her 
+head, commenting to her staff , “He comes here at the 
+slowest time of day on the slowest day of the week. He 
+never even looked at all the work I was doing in the 
+back room while he was here—summarizing yesterday’s sales, checking inventory on hand, making up 
+resupply orders for the weekend . . . plus he never even 
+considered our store-opening and -closing procedures. 
+I hate to think that the new store management system 
+is going to be built by someone like that. I’d better 
+contact Chuck [the director of store management] 
+and let him know what went on here today.”
+Minicases  117
+118 Chapter 3 Requirements Determination
+ Evaluate Barry’s conduct of the observation 
+ assignment.
+ 4. Anne has been given the task of conducting a survey 
+of sales clerks who will be using a new order-entry system being developed for a household products catalog 
+company. Th e goal of the survey is to identify the clerks’ 
+opinions on the strengths and weaknesses of the current 
+system. Th ere are about 50 clerks who work in three 
+diff erent cities, so a survey seemed like an ideal way of 
+gathering the needed information from the clerks.
+ Anne developed the questionnaire carefully and 
+pretested it on several sales supervisors who were 
+available at corporate headquarters. Aft er revising it 
+based on their suggestions, she sent a paper version 
+of the questionnaire to each clerk, asking that it be 
+returned within one week. Aft er one week, she had 
+only three completed questionnaires returned. Aft er 
+another week, Anne received just two more completed 
+questionnaires. Feeling somewhat desperate, Anne 
+then sent out an e-mail version of the questionnaire, 
+again to all the clerks, asking them to respond to 
+the questionnaire by e-mail as soon as possible. She 
+received two e-mail questionnaires and three messages from clerks who had completed the paper version expressing annoyance at being bothered with the 
+same questionnaire a second time. At this point, Anne 
+has just a 14 percent response rate, which she is sure 
+will not please her team leader. What suggestions do 
+you have that could have improved Anne’s response 
+rate to the questionnaire?
+Functional models describe business processes and the interaction of an information system with its environment. In object-oriented systems development, two types of models are 
+used to describe the functionality of an information system: use cases and activity diagrams. 
+Use cases are used to describe the basic functions of the information system. Activity diagrams support the logical modeling of business processes and workfl ows. Both can be used to 
+describe the current as-is system and the to-be system being developed. Th is chapter describes 
+business process and functional modeling as a means to document and understand requirements and to understand the functional or external behavior of the system.
+OBJECTIVES
+■ Understand the process used to identify business processes and use cases.
+■ Understand the process used to create use-case diagrams.
+■ Understand the process used to model business processes with activity diagrams.
+■ Understand the rules and style guidelines for activity diagrams.
+■ Understand the process used to create use-case descriptions.
+■ Understand the rules and style guidelines for use-case descriptions.
+■ Be able to create functional models of business processes using use-case diagrams, 
+ activity diagrams, and use-case descriptions.
+INTRODUCTION
+Th e previous chapter discussed popular requirements-gathering techniques, such as interviewing, JAD, and observation. Using these techniques, the analyst determined the requirements and created a requirements defi nition. Th e requirements defi nition defi ned what the 
+system is to do. In this chapter, we discuss how the information that is gathered using these 
+techniques is organized and presented in the form of use-case and activity diagrams and 
+use-case descriptions. Because Unifi ed Modeling Language (UML) has been accepted as 
+the standard notation by the Object Management Group (OMG), almost all object-oriented 
+development projects today use these models to document and organize the requirements 
+that are obtained during the analysis workfl ow.1
+119
+1 Other, similar techniques that are commonly used in non-UML projects are task modeling and scenario-based 
+design. For task modeling, see Ian Graham, Migrating to Object Technology (Reading, MA: Addison-Wesley, 1995); 
+Ian Graham, Brian Henderson-Sellers, and Houman Younessi, Th e OPEN Process Specifi cation (Reading, MA: Addison-Wesley, 1997). For scenario-based design, see John M. Carroll, Scenario-Based Design: Envisioning Work and 
+Technology in System Development (New York: Wiley, 1995).
+CHAPTER 4
+Business Process and 
+Functional Modeling
+120  Chapter 4 Business Process and Functional Modeling
+As pointed out in Chapter 1, all object-oriented systems development approaches are 
+use-case driven, architecture-centric, and iterative and incremental. A use case is a formal way 
+of representing the way a business sys tem interacts with its environment. Essentially, a use 
+case is a high-level overview of the business processes in a business information system. From 
+a practical perspective, use cases represent the entire basis for an object-oriented system. Use 
+cases can document the current system (i.e., as-is system) or the new system being developed 
+(i.e., to-be system). Given that object-oriented systems are use-case driven, use cases also 
+form the foundation for testing (see Chapter 12) and user-interface design (see Chapter 10). 
+Two forms of use-case driven testing are walkthroughs (described later in this chapter) and 
+role-playing (described in Chapter 5).
+From an architecture-centric perspective, use-case modeling supports the creation of 
+an external or functional view of a business process in that it shows how the users view the 
+process rather than the internal mechanisms by which the process and supporting systems 
+operate. Th e structural and behavioral architecture-based views are described in Chapters 
+5 and 6, respectively. Finally, all object-oriented systems development approaches are 
+developed in an incremental and iterative manner. Even though we present the three 
+architectural views in a sequential manner, this is done primarily for pedagogical reasons. You will find that you will need to not only iterate across the business process and 
+functional models (described in this chapter), you will also have to iterate across all 
+three architectural views to fully capture and represent the requirements for a business 
+information system.
+Activity diagrams are typically used to augment our understanding of the business processes and our use-case model. Technically, an activity diagram can be used for any type of 
+process-modeling activity.2 In this chapter, we describe their use in the context of business 
+process modeling. Process models depict how a business system operates. Th ey illustrate 
+the processes or activities that are performed and how objects (data) move among them. 
+A process model can be used to document a current system (i.e., as-is system) or a new 
+system being developed (i.e., to-be system), whether computerized or not. Many diff erent 
+process-modeling techniques are in use today.3
+Activity diagrams and use cases are logical models—models that describe the business domain’s activities without suggesting how they are conducted. Logical models are 
+sometimes referred to as problem domain models. Reading a use-case or activity diagram, 
+in principle, should not indicate if an activity is computerized or manual, if a piece of 
+information is collected by paper form or via the Web, or if information is placed in 
+a filing cabinet or a large database. These physical details are defined during design 
+when the logical models are refined into physical models. These models provide information that is needed to ultimately build the system. By focusing on logical activities 
+first, analysts can focus on how the business should run without being distracted with 
+ implementation details.
+2 We actually used an activity diagram to describe a simple process in Chapter 1 (see Figure 1-1).
+3 Another commonly used process-modeling technique is IDEF0. IDEF0 is used extensively throughout the 
+U.S. federal government. For more information about IDEF0, see FIPS 183: Integration Defi nition for Function 
+Modeling (IDEF0), Federal Information Processing Standards Publications (Washington, DC: U.S. Department 
+of Commerce, 1993). From an object-oriented perspective, a good book that uses the UML to address business 
+process modeling is Hans-Erik Eriksson and Magnus Penker, Business Modeling with UML (New York: Wiley, 
+2000). Finally, a new process modeling technique is BPMN (Business Process Modeling Notation). A good 
+book that compares the notation and use of BPMN to UML’s activity diagram is Martin Schedlbauer, Th e Art of 
+Business Process Modeling: Th e Business Analysts Guide to Process Modeling with UML & BPMN (Sudbury, MA: Th e 
+Cathris Group, 2010).
+Business Process Identifi cation with Use Cases and Use-Case Diagrams  Last h1  121
+As a fi rst step, the project team gathers requirements from the users (see Chapter 3). 
+Using the gathered requirements, the project team then identifi es the business processes and 
+their environment using use cases and use-case diagrams. Next, users work closely with the 
+team to model the business processes in the form of activity diagrams, and the team documents the business processes described in the use-case and activity diagrams by creating a 
+use-case description for each use case. Finally, the team verifi es and validates the business 
+processes by ensuring that all three models (use-case diagram, activity diagram(s), and usecase descriptions) agree with one another. Once the current understanding of the business 
+processes is documented in the functional models, the team is ready to move on to structural 
+modeling (see Chapter 5).
+In this chapter, we fi rst describe business process identifi cation using use cases and 
+use-case diagrams. Second, we describe business process modeling with activity diagrams. Th ird, we describe use-case descriptions, their elements, and a set of guidelines for 
+creating them. Fourth, we describe the process of verifi cation and validation of the business 
+process and functional models.
+BUSINESS PROCESS IDENTIFICATION WITH USE CASES 
+AND USE-CASE DIAGRAMS
+In the previous chapter, we learned about strategies and techniques that are useful in identifying the diff erent business processes of a system so that a requirements defi nition could 
+be created. In this section, we learn how to begin modeling business processes with use 
+cases and the use-case diagram. An analyst can employ use cases and the use-case diagram 
+to better understand the functionality of the system at a very high level. Typically, because 
+a use-case diagram provides a simple, straightforward way of communicating to the users 
+exactly what the system will do, a use-case diagram is drawn when gathering and defi ning 
+requirements for the system. In this manner, the use-case diagram can encourage the users 
+to provide additional high-level requirements. A use-case diagram illustrates in a very simple 
+way the main functions of the system and the diff erent kinds of users that will interact with 
+it. Figure 4-1 describes the basic syntax rules for a use-case diagram. Figure 4-2 presents 
+a use-case diagram for the doctor’s offi ce appointment system introduced in the previous 
+chapter. We can see from the diagram that patients, doctors, and management personnel 
+will use the appointment system to manage appointments, record availability, and produce 
+schedules, respectively.
+Elements of Use-Case Diagrams
+Th e elements of a use-case diagram include actors, use cases, subject boundaries, and a set of 
+relationships among actors, actors and use cases, and use cases. Th ese relationships consist 
+of association, include, extend, and generalization relationships. Each of these elements is 
+described next.
+Actors Th e stick fi gures on the diagram represent actors (see Figure 4-1). An actor is not a 
+specifi c user but instead is a role that a user can play while interacting with the system. An 
+actor can also represent another system in which the current system interacts. In this case, 
+the actor optionally can be represented by a rectangle containing <<actor>> and the name 
+of the system. Basically, actors represent the principal elements in the environment in which 
+122  Chapter 4 Business Process and Functional Modeling
+An actor:
+■ Is a person or system that derives benefit from and is external to the subject.
+■ Is depicted as either a stick figure (default) or, if a nonhuman actor is involved, a 
+rectangle with <<actor>> in it (alternative). 
+■ Is labeled with its role.
+■ Can be associated with other actors using a specialization/superclass association, 
+denoted by an arrow with a hollow arrowhead.
+■ Is placed outside the subject boundary.
+A use case:
+■ Represents a major piece of system functionality.
+■ Can extend another use case.
+■ Can include another use case.
+■ Is placed inside the system boundary.
+■ Is labeled with a descriptive verb–noun phrase.
+A subject boundary:
+■ Includes the name of the subject inside or on top.
+■ Represents the scope of the subject, e.g., a system or an individual 
+business process.
+An include relationship:
+■ Represents the inclusion of the functionality of one use case within another.
+■ Has an arrow drawn from the base use case to the used use case.
+An extend relationship:
+■ Represents the extension of the use case to include optional behavior.
+■ Has an arrow drawn from the extension use case to the base use case.
+A generalization relationship:
+■ Represents a specialized use case to a more generalized one.
+■ Has an arrow drawn from the specialized use case to the base use case.
+An association relationship:
+■ Links an actor with the use case(s) with which it interacts.
+<<actor>>
+Actor/Role
+Subject
+Actor/Role
+Use Case
+<<include>>
+<<extend>>
+* *
+FIGURE 4-1  Syntax for Use-Case Diagram
+the system operates. Actors can provide input to the system, receive output from the system, 
+or both. Th e diagram in Figure 4-2 shows that three actors will interact with the appointment 
+system (a patient, a doctor, and management).
+Sometimes an actor plays a specialized role of a more general type of actor. For example, 
+there may be times when a new patient interacts with the system in a way that is somewhat 
+diff erent from a general patient. In this case, a specialized actor (i.e., new patient) can be 
+placed on the model, shown using a line with a hollow triangle at the end of the more- general 
+Business Process Identifi cation with Use Cases and Use-Case Diagrams  123
+actor (i.e., patient). Th e specialized actor inherits the behavior of the more general actor and 
+extends it in some way (see Figure 4-3). 
+Association Use cases are connected to actors through association relationships; these relationships show with which use cases the actors interact (see Figure 4-1). A line drawn from 
+an actor to a use case depicts an association. Th e association typically represents two-way 
+ communication between the use case and the actor. If the communication is only one way, 
+then a solid arrowhead can be used to designate the direction of the fl ow of information. 
+Appointment System
+Patient
+Produce Schedules
+Manage
+Appointments
+Management
+Doctor
+Record
+Availability
+* *
+* *
+* *
+Appointment System
+Patient
+New Patient
+Produce Schedules
+Manage
+Appointments
+Management
+Doctor
+Record
+Availability
+* *
+* *
+* *
+FIGURE 4-3
+Use-Case Diagram 
+with a Specialized 
+Actor
+FIGURE 4-2
+Use-Case Diagram 
+for the Appointment 
+System
+124  Chapter 4 Business Process and Functional Modeling
+For example, in Figure 4-2 the Patient actor communicates with the Manage Appointments 
+use case. Because there are no arrowheads on the association, the communication is twoway. Finally, it is possible to represent the multiplicity of the association. Figure 4-2 shows 
+an asterisk (*) at either end of the association between the Patient and the Manage Appointments use case. Th is simply indicates that an individual patient (instance of the Patient actor) 
+executes the Manage Appointments use case as many times as he or she wishes and that it is 
+possible for the appointment part of the Manage Appointments use case to be executed by 
+many diff erent patients. In most cases, this type of many-to-many relationship is appropriate. However, it is possible to restrict the number of patients who can be associated with the 
+Manage Appointments use case. We discuss the multiplicity issue in detail in the next chapter 
+in regard to class diagrams.
+Use Case A use case, depicted by an oval in the UML, is a major process that the system 
+performs and that benefi ts an actor or actors in some way (see Figure 4-1); it is labeled using 
+a descriptive verb–noun phrase. We can tell from Figure 4-2 that the system has three primary 
+use cases: Manage Appointments, Produce Schedule, and Record Availability.
+Th ere are times when a use case includes, extends, or generalizes the functionality of 
+another use case in the diagram. Th ese are shown using include, extend, and generalization 
+relationships. To increase the ease of understanding a use-case diagram, higher-level use cases 
+are normally drawn above the lower-level ones. It may be easier to understand these relationships with the help of examples. Let’s assume that every time a patient makes an appointment, 
+the patient is asked to verify payment arrangements. However, it is occasionally necessary to 
+actually make new payment arrangements. Th erefore, we may want to have a use case called 
+Make Payment Arrangements that extends the Manage Appointments use case to include 
+this additional functionality. In Figure 4-4, an arrow labeled with extend was drawn from the 
+Make Payment Arrangements use case to the Manage Appointment use case to denote this 
+special use-case relationship. Th e Make Payment Arrangements use case was drawn lower 
+than the Manage Appointments use case.
+Similarly, there are times when a single use case contains common functions that are 
+used by other use cases. For example, suppose there is a use case called Manage Schedule that 
+performs some routine tasks needed to maintain the doctor’s offi ce appointment schedule, 
+and the two use cases Record Availability and Produce Schedule both perform the routine 
+tasks. Figure 4-4 shows how we can design the system so that Manage Schedule is a shared 
+use case that is used by others. An arrow labeled with include is used to denote the include 
+relationship, and the included use case is drawn below the use cases that contain it. Notice 
+that the arrows are drawn from the Record Availability and Produce Schedule use cases to 
+the common Manage Schedule use case.
+Finally, there are times when it makes sense to use a generalization relationship to 
+simplify the individual use cases. For example in Figure 4-4, the Manage Appointments use 
+case has been specialized to include a use case for an Old Patient and a New Patient. Th e 
+Make Old Patient Appt use case inherits the functionality of the Manage Appointments 
+use case (including the Make Payment Arrangements use-case extension) and extends its 
+own functionality with the Update Patient Information use case. Th e Make New Patient 
+Appt use case also inherits all the functionality of the generic Manage Appointments use 
+case and calls the Create New Patient use case, which includes the functionality necessary to insert the new patient into the patient database. Th e generalization relationship 
+is represented as an unlabeled hollow arrow with the more general use case being higher 
+than the lower use cases. Also, notice that we have added a second specialized actor, Old 
+Patient, and that the Patient actor is now simply a generalization of the Old and New

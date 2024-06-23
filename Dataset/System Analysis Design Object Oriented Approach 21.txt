@@ -1,0 +1,539 @@
+﻿For example, in Figure 4-2 the Patient actor communicates with the Manage Appointments 
+use case. Because there are no arrowheads on the association, the communication is twoway. Finally, it is possible to represent the multiplicity of the association. Figure 4-2 shows 
+an asterisk (*) at either end of the association between the Patient and the Manage Appointments use case. Th is simply indicates that an individual patient (instance of the Patient actor) 
+executes the Manage Appointments use case as many times as he or she wishes and that it is 
+possible for the appointment part of the Manage Appointments use case to be executed by 
+many diff erent patients. In most cases, this type of many-to-many relationship is appropriate. However, it is possible to restrict the number of patients who can be associated with the 
+Manage Appointments use case. We discuss the multiplicity issue in detail in the next chapter 
+in regard to class diagrams.
+Use Case A use case, depicted by an oval in the UML, is a major process that the system 
+performs and that benefi ts an actor or actors in some way (see Figure 4-1); it is labeled using 
+a descriptive verb–noun phrase. We can tell from Figure 4-2 that the system has three primary 
+use cases: Manage Appointments, Produce Schedule, and Record Availability.
+Th ere are times when a use case includes, extends, or generalizes the functionality of 
+another use case in the diagram. Th ese are shown using include, extend, and generalization 
+relationships. To increase the ease of understanding a use-case diagram, higher-level use cases 
+are normally drawn above the lower-level ones. It may be easier to understand these relationships with the help of examples. Let’s assume that every time a patient makes an appointment, 
+the patient is asked to verify payment arrangements. However, it is occasionally necessary to 
+actually make new payment arrangements. Th erefore, we may want to have a use case called 
+Make Payment Arrangements that extends the Manage Appointments use case to include 
+this additional functionality. In Figure 4-4, an arrow labeled with extend was drawn from the 
+Make Payment Arrangements use case to the Manage Appointment use case to denote this 
+special use-case relationship. Th e Make Payment Arrangements use case was drawn lower 
+than the Manage Appointments use case.
+Similarly, there are times when a single use case contains common functions that are 
+used by other use cases. For example, suppose there is a use case called Manage Schedule that 
+performs some routine tasks needed to maintain the doctor’s offi ce appointment schedule, 
+and the two use cases Record Availability and Produce Schedule both perform the routine 
+tasks. Figure 4-4 shows how we can design the system so that Manage Schedule is a shared 
+use case that is used by others. An arrow labeled with include is used to denote the include 
+relationship, and the included use case is drawn below the use cases that contain it. Notice 
+that the arrows are drawn from the Record Availability and Produce Schedule use cases to 
+the common Manage Schedule use case.
+Finally, there are times when it makes sense to use a generalization relationship to 
+simplify the individual use cases. For example in Figure 4-4, the Manage Appointments use 
+case has been specialized to include a use case for an Old Patient and a New Patient. Th e 
+Make Old Patient Appt use case inherits the functionality of the Manage Appointments 
+use case (including the Make Payment Arrangements use-case extension) and extends its 
+own functionality with the Update Patient Information use case. Th e Make New Patient 
+Appt use case also inherits all the functionality of the generic Manage Appointments use 
+case and calls the Create New Patient use case, which includes the functionality necessary to insert the new patient into the patient database. Th e generalization relationship 
+is represented as an unlabeled hollow arrow with the more general use case being higher 
+than the lower use cases. Also, notice that we have added a second specialized actor, Old 
+Patient, and that the Patient actor is now simply a generalization of the Old and New 
+Patient actors.
+Business Process Identifi cation with Use Cases and Use-Case Diagrams  Last h1  125
+Subject Boundary Th e use cases are enclosed within a subject boundary, which is a box 
+that defi nes the scope of the system and clearly delineates what parts of the diagram are 
+external or internal to it (see Figure 4-1). One of the more diffi cult decisions to make is 
+where to draw the subject boundary. A subject boundary can be used to separate a soft -
+ware system from its environment, a subsystem from other subsystems within the soft ware 
+system, or an individual process in a soft ware system. Th ey also can be used to separate 
+an information system, including both soft ware and internal actors, from its environment. 
+Care should be taken to decide what the scope of the information system is to be.
+Th e name of the subject can appear either inside or on top of the box. Th e subject 
+boundary is drawn based on the scope of the system. In the appointment system, we assumed 
+that the Management and Doctor actors are outside of the scope of the system; that is, they 
+use the system. We could have included a receptionist as an actor. However, in this case, we 
+assumed that the receptionist is an internal actor who is part of the Manage Appointments 
+Appointment System
+Patient
+New Patient
+Old Patient
+Produce Schedules
+Update Patient
+Information
+Make Payment
+Arrangements
+Make Old
+Patient Appt
+Make New
+Patient Appt
+Create New
+Patient
+Manage
+Appointments
+Management
+Doctor
+Record
+Availability
+Manage
+Schedule
+<<extend>>
+<<extend>>
+<<include>>
+<<include>>
+<<include>>
+* *
+*
+*
+*
+*
+*
+*
+FIGURE 4-4  Extend and Include Relationships
+126  Chapter 4 Business Process and Functional Modeling
+use case with which the Patient actor interacts. Th erefore, the receptionist is not drawn on 
+the diagram.4
+Identifying the Major Use Cases
+Th e fi rst step is to review the requirements defi nition (see Figure 3-1). Th is helps the analyst 
+to get a complete overview of the underlying business process being modeled.
+Th e second step is to identify the subject’s boundaries. Th is helps the analyst to identify the 
+scope of the system. However, as we work through the development process, the boundary of 
+the system most likely will change.
+Th e third step is to identify the primary actors and their goals. Th e primary actors involved 
+with the system come from a list of stakeholders and users. Recall that a stakeholder is a person, group, or organization that can aff ect (or will be aff ected by) a new system, whereas an 
+actor is a role that a stakeholder or user plays, not a specifi c user (e.g., doctor, not Dr. Jones). 
+Th e goals represent the functionality that the system must provide the actor for the system 
+to be a success. Identifying the tasks that each actor must perform can facilitate this. For 
+example, does the actor need to create, read, update, delete, or execute (CRUDE)5 any information currently in the system, are there any external changes of which an actor must inform 
+the system, or is there any information that the system should give the actor? Steps 2 and 3 
+are intertwined. As actors are identifi ed and their goals are uncovered, the boundary of the 
+system will change.
+Th e fourth step is to simply identify the business processes and major use cases. Rather than 
+jumping into one use case and describing it completely at this point, we only want to identify the 
+use cases. Identifying only the major use cases at this time prevents the users and analysts from 
+forgetting key business processes and helps the users explain the overall set of business processes 
+for which they are responsible. It is important at this point to understand and defi ne acronyms 
+and jargon so that the project team and others from outside the user group can clearly understand 
+the use cases. Again, the requirements defi nition is a very useful beginning point for this step.
+Th e fi fth step is to carefully review the current set of use cases. It may be necessary to split 
+some of them into multiple use cases or merge some of them into a single use case. Also, 
+based on the current set, a new use case may be identifi ed. You should remember that identifying use cases is an iterative process, with users oft en changing their minds about what a 
+use case is and what it includes. It is very easy to get trapped in the details at this point, so 
+you need to remember that the goal at this step is to only identify the major use cases. For 
+example, in the doctor’s offi ce example in Figure 4-2, we defi ned one use case as Manage 
+Appointments. Th is use case included the cases for both new patients and existing patients, 
+as well as for when a patient changes or cancels an appointment. We could have defi ned each 
+of these activities (makes an appointment, changes an appointment, or cancels an appointment) as separate use cases, but this would have created a huge set of small use cases.
+Th e trick is to select the right size so that you end up with three to nine use cases in each 
+system. If the project team discovers many more than eight use cases, this suggests that the use 
+cases are too small or that the system boundary is too big. If more than nine use cases exist, the 
+4 In other non-UML approaches to object-oriented systems development, it is possible to represent external actors 
+along with internal actors. In this example, the receptionist would be considered an internal actor (see Graham, 
+Migrating to Object Technology, and Graham, Henderson-Sellers, and Younessi, Th e OPEN Process Specifi cation).
+5 We describe the use of CRUDE analysis and matrices in Chapter 6.
+1. Review Require -
+ments Defi nition
+2. Identify Subject’s 
+Boundaries
+3. Identify Primary 
+Actors & Goals
+4. Identify Business 
+Processes & Major 
+Use Cases
+5. Review Current 
+Set of Use Cases
+Business Process Identifi cation with Use Cases and Use-Case Diagrams  Last h1  127
+use cases should be grouped together into packages (i.e., logical groups of use cases) to make the 
+diagrams easier to read and keep the models at a reasonable level of complexity. It is simple at 
+that point to sort the use cases and group together these small use cases into larger use cases that 
+include several small ones or to change the system boundaries.6
+Creating a Use-Case Diagram
+Basically, drawing the use-case diagram is straightforward once use cases have been detailed. 
+Th e actual use-case diagram encourages the use of information hiding. Th e only parts drawn 
+on the use-case diagram are the system boundary, the use cases themselves, the actors, and the 
+various associations between these components. Th e major strength of the use-case diagram 
+is that it provides the user with an overview of the business processes. However, remember 
+that any time a use case changes, it could aff ect the use case diagram. Th ere are four major 
+steps in drawing a use-case diagram.
+First, we place and draw the use cases on the diagram. Th ese are taken directly from the major 
+use cases previously identifi ed. Special use-case associations (include, extend, or generalization) are also added to the model at this point. Be careful in laying out the diagram. Th ere is 
+no formal order to the use cases, so they can be placed in whatever fashion is needed to make 
+the diagram easy to read and to minimize the number of lines that cross. It oft en is necessary 
+to redraw the diagram several times with use cases in diff erent places to make the diagram 
+easy to read. Also, for understandability purposes, there should be no more than three to nine 
+use cases on the model counting use cases that have been factored out and now are associated 
+with another use case through the include, extend, or generalization relationships.
+Second, the actors are placed and drawn on the diagram. To minimize the number of lines 
+that cross on the diagram, the actors should be placed near the use cases with which they are 
+associated.
+Th ird, the subject boundary is drawn. Th is forms the border of the subject, separating use 
+cases (i.e., the subject’s functionality) from actors (i.e., the roles of the external users).
+Th e fourth and last step is to add associations by drawing lines to connect the actors to the use 
+cases with which they interact. No order is implied by the diagram, and the items added along the 
+way do not have to be placed in a particular order; therefore, it might help to rearrange the symbols 
+a bit to minimize the number of lines that cross, making the diagram less confusing.
+Campus Housing Example Identify the actors and major use cases for the following highlevel business processes in a housing system run by the campus housing service. Th e campus 
+housing service helps students fi nd apartments. Apartment owners complete information 
+forms about the available rental units (e.g., location, number of bedrooms, monthly rent), 
+which are then entered into a database. Students can search this database via the Web to fi nd 
+apartments that meet their needs (e.g., a two-bedroom apartment for $400 or less per month 
+within a half mile of campus) and contact the apartment owners directly to see the apartment 
+and possibly rent it. Apartment owners call the service to delete their listing when they have 
+rented their apartment(s).
+As a fi rst step, we identify the primary actors, major business processes, and major use 
+cases. In this case, the primary actors are the apartment owners and the students. Th e goal of 
+6 For those familiar with structured analysis and design, packages serve a similar purpose as the leveling and 
+balancing processes used in data fl ow diagramming. Packages are described in Chapter 7.
+1. Place & Draw 
+Use Cases
+2. Place & Draw 
+Actors
+3. Draw Subject 
+Boundary
+4. Add Associations
+128  Chapter 4 Business Process and Functional Modeling
+the primary actors is both sides of a rental transaction, i.e., to rent the apartments. Th e major 
+business processes and use cases to allow the actors to realize their goal are to maintain the 
+available rental unit information for the apartment owners and to fi nd appropriate rental units 
+to consider for the students. Using the identifi ed actors and use cases and following the process described above, the use-case diagram in Figure 4-5 was created. Notice that the diagram 
+only includes two use cases and two actors. In this case, the Maintain Available Rental Unit 
+Information use case actually includes two separate subprocesses. Th e apartment owners can 
+add a rental unit that has become available, and they can delete a rental unit that has been rented 
+and is no longer available. A student can search the Search Available Rental Units use case by 
+using three separate criteria: distance from campus, number of bedrooms, and monthly rent. 
+Th ese criteria can be used individually or by any combination of the three. We will return to 
+this example in the next section of the chapter. However, before we move on, we next describe 
+a slightly more involved system for a university library.
+Library Example Th e functional requirements for an automated university library circulation 
+system include the need to support searching, borrowing, and book-maintenance activities. Th e 
+system should support searching by title, author, keywords, and ISBN. Searching the library’s 
+collection database should be available on terminals in the library and available to potential 
+borrowers via the Web. If the book of interest is currently checked out, a valid borrower should 
+be allowed to request the book to be returned. Once the book has been checked back in, the 
+borrower requesting the book should be notifi ed of the book’s availability.
+Th e borrowing activities are built around checking books out and returning books by borrowers. Th ere are three types of borrowers: students, faculty or staff , and guests. Regardless of 
+the type of borrower, the borrower must have a valid ID card. If the borrower is a student, having the system check with the registrar’s student database validates the ID card. If the borrower 
+is a faculty or staff member, having the system check with the personnel offi ce’s employee database validates the ID card. If the borrower is a guest, the ID card is checked against the library’s 
+own borrower database. If the ID card is valid, the system must also check to determine whether 
+the borrower has any overdue books or unpaid fi nes. If the ID card is invalid, the borrower has 
+overdue books, or the borrower has unpaid fi nes, the system must reject the borrower’s request 
+to check out a book, otherwise the borrower’s request should be honored. If a book is checked 
+out, the system must update the library’s collection database to refl ect the book’s new status.
+Th e book-maintenance activities deal with adding and removing books from the library’s 
+book collection. Th is requires a library manager to both logically and physically add and remove 
+the book. Books being purchased by the library or books being returned in a damaged state 
+typically cause these activities. If a book is determined to be damaged when it is returned and it 
+needs to be removed from the collection, the last borrower will be assessed a fi ne. However, if the 
+book can be repaired, depending on the cost of the repair, the borrower might not be assessed a 
+fi ne. Every Monday, the library sends reminder e-mails to borrowers who have overdue books. 
+If a book is overdue more than two weeks, the borrower is assessed a fi ne. Depending on how 
+long the book remains overdue, the borrower can be assessed additional fi nes every Monday.
+Campus Housing System
+Apartment
+Owner
+Maintain Available
+Rental Unit * * Information
+* *
+Student
+Search Available
+Rental Units
+FIGURE 4-5
+Campus Housing 
+Use-Case Diagram
+To begin we need to identify the major use cases and create a use-case diagram that 
+represents the high-level business processes in the business situation just described. Based on 
+the steps to identify the major use cases, we need to review the requirements defi nition and 
+identify the boundaries (scope) of the problem. Based on the description of the problem, it is 
+obvious that the system to be created is limited to managing the library’s book collection. Th e 
+next thing we need to do is to identify the primary actors and business processes that need 
+to be supported by the system. Based on the functional requirements described, the primary 
+actors are borrowers and librarians, whereas the primary business processes are borrowing 
+books, returning books, searching the book collection, maintaining the book collection, and 
+processing overdue books. Now that we have identifi ed all of the actors and major use cases, we 
+can draw the use-case diagram that represents an overview of the library’s book collection management system (see Figure 4-6). Notice the addition of two nonhuman actors (Personnel Offi ce 
+and Registrar Offi ce).
+BUSINESS PROCESS MODELING WITH ACTIVITY DIAGRAMS
+Business process models describe the diff erent activities that, when combined, support a business process. Business processes typically cut across functional departments (e.g., the creation 
+of a new product involves many diff erent activities that combine the eff orts of many employees 
+Library Book
+Collection
+Management
+System
+Maintain Book
+Collection
+Process Overdue
+Books
+Librarian
+Borrow Books
+* *
+* *
+*
+*
+*
+Borrower
+*
+*
+* *
+*
+<<actor>>
+Personnel Office
+*
+<<actor>>
+Registrar Office
+Search Collection
+Return Books
+FIGURE 4-6
+Library Book 
+Collection Management 
+System Use-Case 
+ Diagram
+Business Process Modeling with Activity Diagrams  129
+130  Chapter 4 Business Process and Functional Modeling
+in many departments). From an object-oriented perspective, these processes cut across multiple objects. Many of the earlier object-oriented systems development approaches tended to 
+ignore business process modeling. However, today we realize that modeling business processes themselves is a very constructive activity that can be used to make sense of the gathered 
+requirements (see Chapter 3). Th e one potential problem of building business process models, 
+from an object-oriented systems development perspective, is that they tend to reinforce a 
+functional decomposition mindset. However, as long as they are used properly, business process models are very powerful tools for communicating the analyst’s current understanding 
+of the requirements to the user.
+Martin Schedlbauer provides a set of best practices to follow when modeling business 
+processes.7
+■ Be realistic, because it is virtually impossible to identify everything that is included 
+in a business process at this point in the evolution of the system. Even if we could 
+identify everything, everything is not equally important.
+■ Be agile because even though we might not identify every single feature of a 
+ business process, the features that we do identify should be identifi ed in a rigorous 
+manner.
+■ All modeling is a collaborative/social activity. Th erefore, business process modeling must be performed with teams, not by individuals. When an individual creates a 
+model, the chance of mixing up or omitting important tasks is greatly increased.
+■ Do not use a CASE tool to do the modeling but use whiteboards instead. 
+However, once the process is understood, it is a good idea to use a CASE tool to document the process.
+■ Process modeling should be done in an iterative manner. As you better understand 
+a business process, you will need to return to the documented version of the process 
+and revise it.
+■ When modeling a business process, stay focused on that specifi c process. 
+If tasks associated with other business processes are identifi ed, simply record 
+them on a to-do list and get back to the business process that you are currently 
+ modeling.
+■ Remember that a business process model is an abstraction of reality. By that, we 
+mean that you should not include every minor task in the current description of the 
+business process. Remember, you cannot aff ord to lose sight of the proverbial forest 
+for the sake of detailed understanding of a single tree. Too many details at this point 
+in the evolution of the system can cause confusion and actually prevent you from 
+solving the underlying problem being addressed by the new system.
+Activity diagrams are used to model the behavior in a business process independent 
+of objects. Activity diagrams can be used to model everything from a high-level business 
+workfl ow that involves many diff erent use cases, to the details of an individual use case, all 
+the way down to the specifi c details of an individual method. In a nutshell, activity diagrams 
+can be used to model any type of process.8 In this chapter, we restrict our coverage of activity 
+diagrams to documenting and modeling high-level business processes.
+7 Martin Schedlbauer, Th e Art of Business Process Modeling: Th e Business Analysts Guide to Process Modeling with 
+UML & BPMN (Sudbury, MA: Th e Cathris Group, 2010).
+8 Technically speaking, activity diagrams combine process-modeling ideas from many diff erent techniques, including event models, statecharts, and Petri nets. However, UML 2.0’s activity diagram has more in common with 
+Petri nets than the other process-modeling techniques. For a good description of using Petri nets to model business workfl ows, see Wil van der Aalst and Kees van Hee, Workfl ow Management: Models, Methods, and Systems 
+(Cambridge, MA: MIT Press, 2002).
+Business Process Modeling with Activity Diagrams  131
+Elements of an Activity Diagram
+Activity diagrams portray the primary activities and the relationships among the activities in 
+a process. Figure 4-7 shows the syntax of an activity diagram. Figure 4-8 presents a simple 
+activity diagram that represents the Manage Appointments use case of the appointment system for the doctor’s offi ce example.9
+Actions and Activities Actions and activities are performed for some specifi c business 
+reason. Actions and activities can represent manual or computerized behavior. Th ey are 
+depicted in an activity diagram as a rounded rectangle (see Figure 4-7). Th ey should have a 
+name that begins with a verb and ends with a noun (e.g., Get Patient Information or Make 
+Payment Arrangements). Names should be short, yet contain enough information so that the 
+reader can easily understand exactly what they do. Th e only diff erence between an action and 
+an activity is that an activity can be decomposed further into a set of activities and/or actions, 
+whereas an action represents a simple nondecomposable piece of the overall behavior being 
+modeled. Typically, only activities are used for business process or workfl ow modeling. In 
+most cases, each activity is associated with a use case. Th e activity diagram in Figure 4-8 
+shows a set of separate but related activities for the Manage Appointments use case (see 
+ Figures 4-2, 4-3, and 4-4): Get Patient Information, Update Patient Information, Create New 
+Patient, Make Payment Arrangements, Make New Appointment, Change Appointment, 
+and Cancel Appointment. Notice that the Make Payment Arrangements and Make New 
+Appointment activities appear twice in the diagram: once for an “old” patient and once for 
+a “new” patient.
+Object Nodes Activities and actions typically modify or transform objects. Object nodes 
+model these objects in an activity diagram. Object nodes are portrayed in an activity diagram 
+as rectangles (see Figure 4-7). Th e name of the class of the object is written inside the rectangle. Essentially, object nodes represent the fl ow of information from one activity to another 
+activity. Th e simple appointment system portrayed in Figure 4-8 shows object nodes fl owing 
+from Get Patient Information activity.
+Control Flows and Object Flows Th ere are two diff erent types of fl ows in activity diagrams: control and object (see Figure 4-7). Control fl ows model the paths of execution 
+through a business process. A control fl ow is portrayed as a solid line with an arrowhead 
+on it showing the direction of fl ow. Control fl ows can be attached only to actions or activities. Figure 4-8 portrays a set of control fl ows through the doctor’s offi ce’s appointment 
+system. Object fl ows model the fl ow of objects through a business process. Because activities and actions modify or transform objects, object fl ows are necessary to show the actual 
+objects that fl ow into and out of the actions or activities. An object fl ow is depicted as a 
+dashed line with an arrowhead on it showing the direction of fl ow. An individual object 
+fl ow must be attached to an action or activity on one end and an object node on the other 
+end. Figure 4-8 portrays a set of control and object fl ows through the appointment system 
+of a doctor’s offi ce.
+9 Owing to the actual complexity of the syntax of activity diagrams, we follow a minimalist philosophy in our 
+coverage [see John M. Carrol, Th e Nurnberg Funnel: Designing Minimalist Instruction for Practical Computer Skill
+ (Cambridge, MA: MIT Press, 1990)]. However, the material contained in this section is based on the Unifi ed Modeling Language: Superstructure Version 2.5, ptc/2010-11-14 (www.uml.org). Additional useful references include 
+Michael Jesse Chonoles and James A. Schardt, UML 2 for Dummies (Indianapolis, IN: Wiley, 2003); Hans-Erik 
+Eriksson, Magnus Penker, Brian Lyons, and David Fado, UML 2 Toolkit (Indianapolis: Wiley, 2004); Kendall Scott,
+Fast Track UML 2.0 (Berkeley, CA: Apress, 2004). For a complete description of all diagrams, see www.uml.org.
+132  Chapter 4 Business Process and Functional Modeling
+An action:
+■ Is a simple, nondecomposable piece of behavior.
+■ Is labeled by its name. 
+An activity:
+■ Is used to represent a set of actions.
+■ Is labeled by its name. 
+Activity
+Action
+An object node:
+■ Is used to represent an object that is connected to a set of object flows.
+■ Is labeled by its class name. 
+A decision node:
+■ Is used to represent a test condition to ensure that the control flow or object flow
+ only goes down one path.
+■ Is labeled with the decision criteria to continue down the specific path.
+A control flow:
+■ Shows the sequence of execution. 
+A final-activity node:
+■ Is used to stop all control flows and object flows in an activity (or action). 
+An initial node:
+■ Portrays the beginning of a set of actions or activities. 
+A merge node:
+■ Is used to bring back together different decision paths that were created using a 
+ decision node.
+A fork node:
+ Is used to split behavior into a set of parallel or concurrent flows of activities (or 
+A swimlane:
+A join node:
+ Is used to bring back together a set of parallel or concurrent flows of activities (or 
+An object flow:
+■ Shows the flow of an object from one activity (or action) to another activity (or action). 
+A final-flow node:
+■ Is used to stop a specific control flow or object flow.
+Swimlane
+[Decision
+Criteria]
+[Decision
+Criteria]
+Is used to break up an activity diagram into rows and columns to assign the 
+individual activities (or actions) to the individuals or objects that are responsible 
+for executing the activity (or action)
+Is labeled with the name of the individual or object responsible 
+Class Name
+actions)
+actions)
+FIGURE 4-7  Syntax for an Activity Diagram
+Control Nodes Th ere are seven diff erent types of control nodes in an activity diagram: initial, 
+fi nal-activity, fi nal-fl ow, decision, merge, fork, and join (see Figure 4-7). An initial node portrays the beginning of a set of actions or activities. An initial node is shown as a small fi lled-in 
+circle. A fi nal-activity node is used to stop the process being modeled. Any time a fi nal-activity 
+Business Process Modeling with Activity Diagrams  133
+Get Patient Information
+Appt
+Request Info
+Appt
+Request Info
+Create New Patient
+Update Patient Information
+[Old Patient] [New Patient]
+[Create] [Change]
+Create Appointment Cancel Appointment Change Appointment
+Make Payment Arrangements
+Create Appointment
+Make Payment Arrangements
+[New Info]
+[New Arrange]
+[Cancel]
+FIGURE 4-8  Activity Diagram for the Manage Appointments Use Case
+node is reached, all actions and activities are ended immediately, regardless of whether they are 
+ completed. A fi nal-activity node is represented as a circle surrounding a small, fi lled-in circle, 
+making it resemble a bull’s-eye. A fi nal-fl ow node is similar to a fi nal-activity node, except that 
+it stops a specifi c path of execution through the business process but allows the other concurrent or parallel paths to continue. A fi nal-fl ow node is shown as a small circle with an X in it.
+134  Chapter 4 Business Process and Functional Modeling
+Th e decision and merge nodes support modeling the decision structure of a business process. Th e decision node is used to represent the actual test condition that determines which of the 
+paths exiting the decision node is to be traversed. In this case, each exiting path must be labeled 
+with a guard condition. A guard condition represents the value of the test for that particular 
+path to be executed. For example, in Figure 4-8, the decision node immediately below the Get 
+Patient Information activity has two mutually exclusive paths that could be executed: one for 
+old, or previous, patients and the other for new patients. Th e merge node is used to bring back 
+together multiple mutually exclusive paths that have been split based on an earlier decision (e.g., 
+the old- and new-patient paths in Figure 4-8 are brought back together near the bottom of the 
+diagram). However, sometimes, for clarity, it is better not to use a merge node. For example, in 
+Figure 4-9, which of the two activity diagrams, both representing an overview level of an order 
+process, is easier to understand, the one on the left or the one on the right? Th e one on the left 
+contains a merge node for the More Items on Order question, but the one on the right does 
+not. In a sense, the decision node is playing double duty in the diagram on the right: It also 
+serves as a merge node. Technically speaking, we should not omit the merge node; however, 
+[Item Available] [Item Not Available]
+[More Items
+on Order]
+[No More Items on Order]
+Place Order
+Process Order
+Process Item Back Order Item Process Item
+[Item Available] [Item Not Available]
+[More Items
+on Order]
+[No More Items on Order]
+Place Order
+Process Order
+Back Order Item
+FIGURE 4-9  Two Very Similar Activity Diagrams
+Business Process Modeling with Activity Diagrams  135
+sometimes being technically correct according to the UML’s diagramming rules actually causes 
+the diagram to become confusing. From a business process modeling perspective, a good deal 
+of common sense can go a long way.
+Th e fork and join nodes allow parallel and concurrent processes to be modeled (see 
+Figure 4-7). Th e fork node is used to split the behavior of the business process into multiple 
+parallel or concurrent fl ows. Unlike the decision node, the paths are not mutually exclusive 
+(i.e., both paths are executed concurrently). For example, in Figure 4-10, the fork node 
+firstParent secondParent
+GetJelly GetBread
+GetDrink GetDessert
+GetPeanutButter
+CreateSandwich
+CreateLunch
+GetLunchBox
+PutLunchInBox
+FIGURE 4-10
+Activity Diagram for 
+Making a School Box 
+Lunch
+136  Chapter 4 Business Process and Functional Modeling
+is used to show that two concurrent, parallel processes are to be executed. In this case, each 
+process is executed by two separate processors (parents). Th e purpose of the join node is similar to that of the merge node. Th e join node simply brings back together the separate parallel 
+or concurrent fl ows in the business process into a single fl ow.
+Swimlanes Activity diagrams can model a business process independent of any object implementation. However, there are times when it helps to break up an activity diagram in such a 
+way that it can be used to assign responsibility to objects or individuals who would actually 
+perform the activity. Th is is especially useful when modeling a business workfl ow and is 
+accomplished through the use of swimlanes. In Figure 4-10, the swimlanes are used to break 
+up among two parents the making of a school lunch comprising a peanut butter and jelly 
+sandwich, a drink, and dessert. In this case, we use vertical swimlanes. We could also draw the 
+activity diagram using more of a left -to-right orientation instead of a top-down orientation. 
+In that case, the swimlanes are drawn horizontally.
+In an actual business workfl ow, there would be activities that should be associated with 
+roles of individuals involved in the business workfl ow (e.g., employees or customers) and the 
+activities to be accomplished by the information system being created. Th is association of 
+activities with external roles, internal roles, and the system is very useful when creating the 
+use-case descriptions described later in this chapter.
+Guidelines for Creating Activity Diagrams
+Scott Ambler suggests the following guidelines when creating activity diagrams:10
+■ Because an activity diagram can be used to model any kind of process, you should 
+set the context or scope of the activity being modeled. Once you have determined 
+the scope, you should give the diagram an appropriate title.
+■ You must identify the activities, control fl ows, and object fl ows that occur between 
+the activities.
+■ You should identify any decisions that are part of the process being modeled.
+■ You should attempt to identify any prospects for parallelism in the process.
+■ You should draw the activity diagram.
+When drawing an activity diagram, the diagram should be limited to a single initial node 
+that starts the process being modeled. Th is node should be placed at the top or top left of the 
+diagram, depending on the complexity of the diagram. For most business processes, there 
+should only be a single fi nal-activity node. Th is node should be placed at the bottom or bottom right of the diagram (see Figures 4-8, 4-9, and 4-10). Because most high-level business 
+processes are sequential, not parallel, the use of a fi nal-fl ow node should be limited.
+When modeling high-level business processes or workfl ows, only the more important 
+decisions should be included in the activity diagrams. In those cases, the guard conditions 
+associated with the outfl ows of the decision nodes should be mutually exclusive. Th e outfl ows 
+and guard conditions should form a complete set (i.e., all potential values of the decision are 
+associated with one of the fl ows).
+As in decision modeling, forks and joins should be included only to represent the more 
+important parallel activities in the process. For example, an alternative version of Figure 4-10 
+10 Th e guidelines presented here are based on work done by Scott Ambler. For more details, see Scott W. Ambler, Th e 
+Object Primer: Th e Application Developer’s Guide to Object Orientation and the UML, 2nd Ed. (Cambridge, England: 
